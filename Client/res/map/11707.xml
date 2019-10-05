@@ -1,0 +1,38 @@
+<!--修隐岛海岸-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="42,307" targetMapId="11708" targetTransPortId="1"/>
+		<node id="2" pos="546,217" targetMapId="" targetTransPortId=""/>
+		<node id="3" pos="53,317" targetMapId="11706" targetTransPortId="3"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<!--node id="2" type="TransPort" res="MC_door_1" transPortId="2"/-->
+	</object>
+	<npc>
+		<node id="58" type="NPC" res="MC_npc_58" action="0$1" transPortId="3">
+			<event type="play_movie_1" hit="MovieHit" url="res/movie/mapMovie/11707_1.swf" link="RES_BirdRun" movieLevel="taskLevel" endEvent="play_end"/>
+			<event type="play_movie_2" hit="MovieHit" url="res/movie/mapMovie/11707_2.swf" link="RES_BirdRun" movieLevel="taskLevel" endEvent="play_end"/>
+			<event type="play_end" hit="ChangeMapHit"/>
+		</node>
+		<node id="51" type="NPC" res="MC_npc_51" action="2" />
+	</npc>
+	<actions>
+		<proAction npcID="58" id="0" type="0" answer="开船吧！$一路顺风！" to="a3$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#您带晕船药了吗？\n【@nick】如果需要开船，\n和我说一声就行了^_^！]]>				
+			</des>
+		</proAction>	
+		<proAction npcID="58" id="1" type="0" answer="开船吧！$一路顺风！" to="a3$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#您好我是勇士号的舵手，\n【@nick】如果需要开船，\n和我说一声就行了^_^！]]>
+			</des>
+		</proAction>
+		<proAction npcID="51" id="2" type="0" answer="我要【恢复HP/MP】$一路顺风！" to="b8_51$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#我最喜欢和水手们一起乘海船了^^！\n在船上当随船护士比陆地上有趣多了不是么^^。]]>
+			</des>
+		</proAction>	
+		<proAction npcID="58" id="3" type="6" event="ship_start_sail"/>					
+	</actions>
+</map>

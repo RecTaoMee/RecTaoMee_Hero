@@ -1,0 +1,78 @@
+<newspaper id="11">
+	<page title="勇士漫画诞生" jumpType="navigateToUrl"  jumpValue="http://bbs.61.com/thread-48518-1-1.html" content="摩尔勇士漫画系列全3册：[b]《穿越时空的试炼》[/b]、[b]《命运怀表的指引》[/b]、[b]《十三勇士的奇迹》[/b]。勇士快快来收藏！更多精彩内容敬请关注论坛。"/>
+	<page title="精灵转生新篇章" jumpType="panelModule"  jumpValue="PetBagModule" content="经过摩尔王国学者们的苦心钻研，一种可以让精灵体内产生基因重组的神奇[b]技能[/b]诞生了！勇士们只需在45级时完成支线任务[b]消失的配方[/b]就将学会新技能[b]精灵转生[/b]。技能可以对50级以上精灵进行转生操作，转生时精灵将丧失所有记忆但会获得更为强大的[b]成长[/b]能力！"/>
+	<page title="鲸头鹳套装上架" jumpType="panelModule"  jumpValue="MallModule" content="为了让更多人能关注到失去家园的[b]鲸头鹳[/b]们，摩尔王特命王国内十多位天才设计师连夜赶制出了[b]鲸头鹳套装[/b]！套装非常传神的还原出了坐骑鲸头鹳独有的特质，各位喜欢鲸头鹳与时尚装扮的勇士们千万不能错过了，赶快到[b]道具商城[/b]试衣间穿上感受一下吧！"/>
+	<page title="宝石探索第二期" jumpType="panelModule"  jumpValue="GemExplorationModule" content="随着[b]寻宝[/b]队伍的日益庞大，摩尔王国的宝石开采技术和设备已经日趋完备，经过勇士们的不断努力，[b]第二期[/b]的宝石探索地图终于开放了，更多强化装备[b]抗性属性[/b]的宝石出现，为大家的冒险旅途增添更多光彩！"/>
+	<page title="巨龙导师的邀请" jumpType="navigateToUrl"  jumpValue="http://haqi.61.com/webplayer/haqi_guide.html?partner=hero&v=1" content="此次地狱恶魔派出了曾经的手下恶灵“拉希姆”为祸哈奇世界，为迎接这巨大挑战，巨龙导师发出了勇士召集令。邀请各位参与守护魔法大陆，即日起只要登录魔法哈奇[b]创建角色[/b]即得[b]顶级礼包[/b]，[b]40级[/b]更有机会[b]赢iphone5[/b]大奖。"/>
+	<page title="基姆的秘密宝箱" jumpType="panelModule"  jumpValue="boards/ADMission39003Module" content="摩尔勇士王国最近发生了离奇事件，许多勇士突然发现自己的财富被洗劫一空！种种迹象表明，这一切都与[b]黑暗魔王基姆[/b]有着千丝万缕的关系。兴风作浪的他究竟有什么样的[b]秘密[/b]？为了王国的安宁，勇士们，这就去查明真相吧！"/>
+	<page title="天梯战火重燃" jumpType="autoWalk"  jumpValue="11218,562" content="天梯玩法回归勇士！现在起，[b]每天中午12点至晚上9点[/b]，前往斗技场肖恩处，参战勇士天梯擂台，胜利即可获得[b]勇气徽章[/b]。使用相应勇气徽章兑换[b]星座套装[/b]高级奖励，更有最新上架的[b]金牛星座套装[/b]等你来赢取。"/>
+</newspaper>	
+
+
+<!-- 
+<newspaper id="8">
+	<page title="琉璃翼龙的召唤" jumpType="panelModule"  jumpValue="boards/ADMission39004Module" content="这是一个[b]美好的清晨[/b]，勇士王国却迎来了突发情况，大地在不停地颤抖，整个[b]勇士广场[/b]被破坏得面目全非，到底发生了什么事情？勇士们又如何守护王国的[b]安宁与和平[/b]呢？快快带上武器与勇气，去揭开这剧变的谜底！"/>
+	<page title="新坐骑鲸头鹳" jumpType="panelModule"  jumpValue="MallModule" content="[b]鲸头鹳[/b]原本世世代代生活在非常遥远的大陆上，却因栖息地遭到破坏而[b]濒临灭绝[/b]，之后历经千辛万苦终于来到这里。鲸头鹳非常喜欢和摩尔亲近，其庞大的身躯可以轻易驼起勇士们，大家献出[b]爱心[/b]帮帮这稀有而又友善的珍禽吧！"/>
+	<page title="宝石探索第二期" jumpType="panelModule"  jumpValue="GemExplorationModule" content="随着[b]寻宝[/b]队伍的日益庞大，摩尔王国的宝石开采技术和设备已经日趋完备，经过勇士们的不断努力，[b]第二期[/b]的宝石探索地图终于开放了，更多强化装备[b]抗性属性[/b]的宝石出现，为大家的冒险旅途增添更多光彩！"/>
+	<page title="巨龙导师的邀请" jumpType="navigateToUrl"  jumpValue="http://haqi.61.com/webplayer/haqi_guide.html?partner=hero&v=1" content="此次地狱恶魔派出了曾经的手下恶灵“拉希姆”为祸哈奇世界，为迎接这巨大挑战，巨龙导师发出了勇士召集令。邀请各位参与守护魔法大陆，即日起只要登录魔法哈奇[b]创建角色[/b]即得[b]顶级礼包[/b]，[b]40级[/b]更有机会[b]赢iphone5[/b]大奖。"/>
+	<page title="基姆的秘密宝箱" jumpType="panelModule"  jumpValue="boards/ADMission39003Module" content="摩尔勇士王国最近发生了离奇事件，许多勇士突然发现自己的财富被洗劫一空！种种迹象表明，这一切都与[b]黑暗魔王基姆[/b]有着千丝万缕的关系。兴风作浪的他究竟有什么样的[b]秘密[/b]？为了王国的安宁，勇士们，这就去查明真相吧！"/>
+	<page title="金牛星座套装" jumpType="panelModule"  jumpValue="MallModule" content="金牛星座套装在[b]道具商城[/b]上架啦！可以前往试衣间体验购买，也可通过[b]天梯荣誉[/b]兑换。金牛座从不轻易浪费自己的能量，也不愿意毫无意义地说教，不会无缘无故地行动和失去理智激动，性格平稳、有毅力和耐力，勤劳智慧，富有实干精神。"/>
+	<page title="天梯战火重燃" jumpType="autoWalk"  jumpValue="11218,562" content="天梯玩法回归勇士！现在起，[b]每天中午12点至晚上9点[/b]，前往斗技场肖恩处，参战勇士天梯擂台，胜利即可获得[b]勇气徽章[/b]。使用相应勇气徽章兑换[b]星座套装[/b]高级奖励，更有最新上架的[b]金牛星座套装[/b]等你来赢取。"/>
+</newspaper>	
+
+<newspaper id="7">
+	<page title="基姆的秘密宝箱" jumpType="panelModule"  jumpValue="boards/ADMission39003Module" content="摩尔勇士王国最近发生了离奇事件，许多勇士突然发现自己的财富被洗劫一空！种种迹象表明，这一切都与[b]黑暗魔王基姆[/b]有着千丝万缕的关系。兴风作浪的他究竟有什么样的[b]秘密[/b]？为了王国的安宁，勇士们，这就去查明真相吧！"/>
+	<page title="防具鉴定与镶嵌" jumpType="panelModule"  jumpValue="EquipCreatModule" content="勇士们最近[b]装备鉴定[/b]、[b]宝石镶嵌[/b]的需求日益强烈，十二勇士安德鲁都快忙不过来了。但在他的日夜刻苦钻研下，鉴定、镶嵌的技艺日渐炉火纯青。为此，勇士王国迎来了新的篇章，装备鉴定、宝石镶嵌全面开放啦！"/>
+	<page title="金牛星座套装" jumpType="panelModule"  jumpValue="MallModule" content="金牛星座套装在[b]道具商城[/b]上架啦！可以前往试衣间体验购买，也可通过[b]天梯荣誉[/b]兑换。金牛座从不轻易浪费自己的能量，也不愿意毫无意义地说教，不会无缘无故地行动和失去理智激动，性格平稳、有毅力和耐力，勤劳智慧，富有实干精神。"/>
+	<page title="高级黄金锤上架" jumpType="panelModule"  jumpValue="MallModule" content="装备生产制作又有了新的强力帮手！现在购买[b]黄金锤(高级)[/b]，在装备合成时加入，可以提高[b]8倍[/b]紫色品质、金色品质装备合成概率，使出现的装备[b]必然[/b]是紫色或金色品质。道具商城火热开售！"/>
+	<page title="装备鉴定券升级" jumpType="panelModule"  jumpValue="EquipCreatModule" content="由于安德鲁的刻苦钻研，装备鉴定券[b]升级[/b]啦！除了获得额外的鉴定机会以外又有了新功能——重新鉴定[b]不会[/b]降低原有宝石孔数。从此，勇士们可以更加放心鉴定自己心爱的装备了，现在就去试试吧！"/>
+	<page title="精灵属性重置" jumpType="panelModule"  jumpValue="MallModule" content="获得了极品精灵，却对精灵的属性不满意？现在，有了[b]精灵属性重置药水[/b]，对精灵使用后能在其原有的两个属性中调整相应数值，达到更理想的精灵属性效果。[b]道具商城[/b]火热开售！"/>
+	<page title="天梯战火重燃" jumpType="autoWalk"  jumpValue="11218,562" content="天梯玩法回归勇士！现在起，[b]每天中午12点至晚上9点[/b]，前往斗技场肖恩处，参战勇士天梯擂台，胜利即可获得[b]勇气徽章[/b]。使用相应勇气徽章兑换[b]星座套装[/b]高级奖励，更有最新上架的[b]金牛星座套装[/b]等你来赢取。"/>
+</newspaper>	
+
+<newspaper id="6">
+	<page title="宝石时代来袭" jumpType="panelModule"  jumpValue="GemAppModule" content="凭借着西域神秘人的寻宝图纸，勇士王国终于踏入了[b]“宝石时代”[/b]！组建属于自己的船队在整片格历尔大陆上探险发掘，再使用精妙的技巧将发现的宝石与武器融合，打造属于自己独一无二的[b]“宝石神器”[/b]！"/>
+	<page title="灵狐闪亮登场" jumpType="panelModule"  jumpValue="MallModule" content="传说在格历尔大陆的西南角，有一种叫做[b]灵狐[/b]的生物，它们生活在无限的黑暗中，却能发出光芒；它们擅长迷惑意志薄弱的旅人，却忠诚于真正的勇者。现在，灵狐终于来到了勇士王国！[b]勇士商城[/b]有售！"/>
+	<page title="基姆活动预告" jumpType=""  jumpValue="" content="摩尔王国最近发生了许多财宝丢失的现象，许多勇士发现自己的财富突然就被洗劫一空。各种蛛丝马迹把大家的视线都指向了一处——[b]黑暗魔王基姆[/b]。兴风作浪的他又有什么样的[b]秘密[/b]，谜底即将揭晓！"/>
+	<page title="精灵属性重置" jumpType="panelModule"  jumpValue="MallModule" content="获得了极品精灵，却对精灵的属性不满意？现在，有了[b]精灵属性重置药水[/b]，对精灵使用后能在其原有的两个属性中调整相应数值，达到更理想的精灵属性效果。[b]道具商城[/b]火热开售！"/>
+	<page title="武器鉴定开放" jumpType="equipChange"  jumpValue="f3" content="装备强化新玩法即将强势来袭，[b]装备强化[/b]三部曲之装备鉴定，目前已经开放了[b]武器鉴定[/b]。学习了生产制作的勇士们，都可以试玩本功能，具体玩法勇士们多多探索，后续[b]宝石系统[/b]即将上线，敬请期待！"/>
+	<page title="天梯战火重燃" jumpType="autoWalk"  jumpValue="11218,562" content="天梯玩法回归勇士！现在起，[b]每天中午12点至晚上9点[/b]，前往斗技场肖恩处，参战勇士天梯擂台，胜利即可获得[b]勇气徽章[/b]。使用相应勇气徽章兑换[b]星座套装[/b]高级奖励，更有最新上架的[b]白羊星座套装[/b]等你来赢取。"/>
+	<page title="白羊星座套装" jumpType="panelModule"  jumpValue="MallModule" content="十二星座套装之[b]战神白羊座套装[/b]横空出世，三月献礼！白羊座是黄道和春天的第一个星座。春回大地，万物的生机都表现在白羊座的身上。春天的气息赋予白羊座崭新生命力，生机勃勃，激情盎然。大家快去[b]道具商城[/b]试衣间体验购买吧。"/>
+</newspaper>	
+<newspaper id="3">
+	<page title="开学季时装秀" jumpType="panelModule"  jumpValue="TalentShowModule" content="开学临近，新学期新形象，大家都在为自己准备新衣服，特此在阳春三月，举办[b]开学季时装秀[/b]，大家把各种酷炫的装扮都拿出来吧，套装、混搭，装扮出[b]最个性的你[/b]，看谁的时装搭配最受大家的欢迎。"/>
+	<page title="勇士杯冲刺" jumpType="changeMap"  jumpValue="11221" content="勇士杯将于[b]3月3日本周日下午3点[/b]正式闭幕，抓紧最后的时间冲刺吧！每个队伍排名前100勇士，[b]每天可以领取[/b]星豆和经验奖励；最终队伍排行第一的队伍，所有队员会有[b]大把星豆、冠军帽、冠军饰品奖励[/b]，亚军、季军、殿军队同样也有不同的排名奖励，为最后的荣誉冲刺吧！"/>
+	<page title="勇士装备强化" jumpType="panelModule"  jumpValue="MallModule" content="最新预告：摩尔王国来了一批神秘的异域客人，他们精通各种[b]装备锻造技术[/b]，对武器和装备有非常精湛的制造方法。作为友好邦交的诚意礼物，献给了摩尔王国。长老们联合各个商会成员，正在研究。相信[b]武器和装备的强化技术[/b]，很快就会研究出来（3月敬请期待）"/>
+	<page title="萌宠坐骑上架" jumpType="panelModule"  jumpValue="MallModule" content="萌萌的[b]乐比熊[/b]、可爱的[b]摩奇[/b]，还有古灵精怪的[b]飞行扫帚[/b]坐骑，现在可以在勇士商城购买啦，还没收集齐所有坐骑的勇士赶紧去看看吧。"/>
+	<page title="白羊星座套装" jumpType="panelModule"  jumpValue="MallModule" content="预告：[b]十二星座套装[/b]，2013年每月都有更新！白羊座是黄道和春天的第一个星座，春回大地、万物的生机都表现在白羊座的身上。春天的气息赋予白羊座崭新生命力，生机勃勃，激情盎然。[b]战神白羊座套装[/b]即将在3月出现（敬请期待）"/>
+	<page title="魔龙斯巴鲁" jumpType="changeMap"  jumpValue="11202" content="[b]勇士广场[/b]惊现神秘裂缝，黑衣人[b]多修[/b]紧急招募勇士，前往调查。据悉神秘地洞惊现[b]魔龙斯巴鲁[/b]，打败魔龙斯巴鲁有机会获得稀有的[b]紫焰龙鳞[/b]。黑市商人，正用它来交换稀有饰品和[b]神秘精灵蛋[/b]。"/>
+	<page title="勇士论坛开通" jumpType="bbs"  jumpValue="" content="淘米游戏论坛正式开通，大家可以到这里来交流啦。你在摩尔王国遇到了什么困难，热心的勇士们会给你回答。更欢迎高手，来把自己的心得攻略，发送在论坛里，对发出精华攻略的玩家，会有[b]神秘礼物[/b]送出。"/>
+</newspaper>	
+<newspaper id="1">
+	<page title="寒假特别售卖" jumpType="panelModule"  jumpValue="MallModule" content="[b]绝版黑银套装[/b]是目前属性配置[b]最完美套装[/b]之一，现在免去找图书的烦恼，即可从勇士商城购买获得（仅2月28日前有售）；为了大家得到属性更棒的精灵，新研制的[b]高级精灵成长重置丸[/b]，可更大几率获得[b]高属性精灵[/b]，极品精灵刷点必备"/>
+	<page title="魔龙斯巴鲁" jumpType="changeMap"  jumpValue="11202" content="[b]勇士广场[/b]惊现神秘裂缝，黑衣人[b]多修[/b]紧急招募勇士，前往调查。据悉神秘地洞惊现[b]魔龙斯巴鲁[/b]，打败魔龙斯巴鲁有机会获得稀有的[b]紫焰龙鳞[/b]。黑市商人，正用它来交换稀有饰品和[b]神秘精灵蛋[/b]。"/>
+	<page title="寒假疯狂练级" jumpType="activity"  jumpValue="4" content="这个寒假疯狂练级吧，等级66-99级开放，更多成长点更多能力提升。参加等级冲级活动，更可以获得绝版小丑套装、寂灭骨龙精灵蛋等丰富奖励。叫上你的好朋友们，一起来练级吧。"/>
+	<page title="商城好货上架" jumpType="panelModule"  jumpValue="MallModule" content="商城新货到啦，这次上架的有已经[b]绝版[/b]的[b]兔绒套装[/b]、[b]管家套装[/b]、[b]女仆套装[/b]（都是带属性的装备）；特别为大家准备的寒假爽玩[b]3倍经验护符[/b]；另外稳定剂春节礼包、重置丸春节礼包等，特惠套装，[b]最低5折[/b]起特卖，仅限这个寒假。"/>
+	<page title="炼金术之路" jumpType="panelModule"  jumpValue="RaceGameModule" content="玩[b]炼金术之路[/b]游戏，可以获得金豆奖励，更有机会获得[b]炼金机会[/b]。所有勇士的挑战成绩会被记录下来，成绩最棒的[b]前100名[/b]的勇士，其战绩会出现在[b]炼金术排行榜[/b]上。"/>
+	<page title="勇士天梯擂台" jumpType="panelModule"  jumpValue="TiantiModule" content="参加[b]勇士天梯擂台挑战[/b]，获胜可以获得[b]勇士徽章[/b]，收集足够的勇士徽章，可以兑换到超炫的星座套装，霸气的[b]狮子座套装[/b]，和华丽的[b]处女座套装[/b]。"/>
+	<page title="勇士论坛开通" jumpType="bbs"  jumpValue="" content="淘米游戏论坛正式开通，大家可以到这里来交流啦。你在摩尔王国遇到了什么困难，热心的勇士们会给你回答。更欢迎高手，来把自己的心得攻略，发送在论坛里，对发出精华攻略的玩家，会有[b]神秘礼物[/b]送出。"/>
+</newspaper>
+
+<newspaper id="2">
+	<page title="勇士杯开赛" jumpType="changeMap"  jumpValue="11221" content="勇士杯[b]2月22日-3月3日[/b]正式开赛，为自己的队伍荣誉冲刺吧！每个队伍排名前100勇士，[b]每天可以领取[/b]星豆和经验奖励；最终队伍排行第一的队伍，所有队员会有[b]极品称号奖励[/b]；最终每队的前10名勇士，还将额外获得[b]奖杯和勋章奖励[/b]。"/>
+	<page title="萌宠坐骑上架" jumpType="panelModule"  jumpValue="MallModule" content="萌萌的[b]乐比熊[/b]、可爱的[b]摩奇[/b]，还有古灵精怪的[b]飞行扫帚[/b]坐骑，现在可以在勇士商城购买啦，还没收集齐所有坐骑的勇士赶紧去看看吧。"/>
+	<page title="开学季时装秀" jumpType="panelModule"  jumpValue="MallModule" content="预告：开学临近，新学期新形象，大家都在为自己准备新衣服，特此在阳春三月，举办[b]开学季时装秀[/b]，大家把各种酷炫的装扮都拿出来吧，套装、混搭，装扮出[b]最个性的你[/b]，看谁的时装搭配最受大家的欢迎（3月1日开赛）"/>
+	<page title="白羊星座套装" jumpType="panelModule"  jumpValue="MallModule" content="预告：[b]十二星座套装[/b]，2013年每月都有更新！白羊座是黄道和春天的第一个星座，春回大地、万物的生机都表现在白羊座的身上。春天的气息赋予白羊座崭新生命力，生机勃勃，激情盎然。[b]战神白羊座套装[/b]即将在3月出现（敬请期待）"/>
+	<page title="魔龙斯巴鲁" jumpType="changeMap"  jumpValue="11202" content="[b]勇士广场[/b]惊现神秘裂缝，黑衣人[b]多修[/b]紧急招募勇士，前往调查。据悉神秘地洞惊现[b]魔龙斯巴鲁[/b]，打败魔龙斯巴鲁有机会获得稀有的[b]紫焰龙鳞[/b]。黑市商人，正用它来交换稀有饰品和[b]神秘精灵蛋[/b]。"/>
+	<page title="勇士论坛开通" jumpType="bbs"  jumpValue="" content="淘米游戏论坛正式开通，大家可以到这里来交流啦。你在摩尔王国遇到了什么困难，热心的勇士们会给你回答。更欢迎高手，来把自己的心得攻略，发送在论坛里，对发出精华攻略的玩家，会有[b]神秘礼物[/b]送出。"/>
+</newspaper>	
+
+ -->
+ <!-- 
+ 		jumpType和jumpValue支持类型：
+ 		"navigateToUrl"：打开一个新的浏览器窗口，跳转到jumpValue对应的地址
+		"activity"：打开活动面板，并跳转到jumpValue对应活动id页
+		"panelModule"：打开jumpValue对应名称模块
+		"changeMap"：跳转到jumpValue对应id地图
+		"autoWalk"：自动寻路至jumpValue对应位置，jumpValue是由","分隔的属性，属性1：地图ID；属性2：地图中的对象ID
+  -->

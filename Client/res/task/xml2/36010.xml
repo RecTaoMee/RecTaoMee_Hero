@@ -1,0 +1,41 @@
+<Task ID="36010" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="麦田村餐厅麦婶的头痛病又犯了，这是温蒂给她配的药，你要小心不要打碎了。" />
+					<Option Info="恩，我马上送去" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快点把药给c麦婶c送过去吧！" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="麦婶，你的药" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="7" Info="经过温蒂大人的治疗，我头痛已经好多了，你帮我谢谢温蒂大人了。" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

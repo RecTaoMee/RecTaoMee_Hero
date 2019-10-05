@@ -1,0 +1,197 @@
+<Task ID="10106" Memo="前往勇士广场找到副本管理员c薇尔c，她似乎需求帮忙\n（若任务中途中断，可从勇士广场“拉尼克斯”处传送至【兽王峡谷】）" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="前往勇士广场找到副本管理员c薇尔c，她似乎需求帮忙\n（若任务中途中断，可从勇士广场“拉尼克斯”处传送至【兽王峡谷】）" TargetMap="11202" TargetObj="319" TargetName="和t薇尔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="319" TaskOption="薇尔我来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1001" ImageID="1" Info="小勇士，昨天收到了柯特发来的“飞行翼”传书……" />
+					<Option Info="他怎么样啦？" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="1001" ImageID="1" Info="传书上说他出外采集不幸被困在了一个峡谷中，你能不能帮忙去看一下？！" />
+					<Option Info="义不容辞！" />																		
+				</Action>												
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11504,1" />	
+    		</Event>		
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往兽王峡谷找到c柯特c" TargetMap="11504" TargetObj="1" TargetName="和t柯特t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11504" ObjID="1" TaskOption="柯特？" />
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="小勇士，你来啦！终于有救了，因为采药不慎摔落，我被困在这里好几天了！" />
+					<Option Info="没事就好了！" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="不知怎么的一觉醒来就到这里了！？" />
+					<Option Info="o(╯□╰)o" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="那我先走啦，这里好可怕，总有野兽的嚎叫！真叫人毛骨悚然……" />
+					<Option Info="我前去探查一下" />					
+				</Action>	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11504,11504" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11504,11505" />	
+				<Action Type="MOVIE" Url="task10106_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />						
+    		</Event>		
+		</Step>		
+
+						
+  		<Step ID="3" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2918" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜剧毒蜂皇后，与c剧毒蜂皇c对话" TargetMap="11504" TargetObj="11505" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11505" TaskOption="输了吧！" />					 
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哼，这次姑且放你一马，我们走！" />
+					<Option Info="早可以走了！" />			
+				</Action>	
+				<Action Type="MOVIE" Url="task10106_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11504,11505" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11504,11506" />											
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="帕瑞，还不快住手！" />
+					<Option Info="娜蒂丝大人！" SkipTrigger="Y" />
+				</Action>																								
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往c峡谷尽头c进行调查（点击“剧毒蜂皇”调查）" TargetMap="11504" TargetObj="11505" TargetName="前往t峡谷尽头t调查">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11505" TaskOption="（…一只凶狠的黄蜂…）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哈…哈…哈…哈…帕瑞，多年不见你还是老样子，改不了你的火爆脾气啊！" />
+					<Option Info="（一看就不是好人）" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="1012" ImageID="1" Info="坏人！放开我！快放开我！" />		
+					<Msg NpcID="1012" ImageID="1" Info="帕瑞大人，救我！帕瑞大人！" />				
+					<Msg NpcID="1002" ImageID="1" Info="嗷…嗷…嗷…你这只臭虫快放开它！！！" />
+					<Option Info="（大块头发怒了…）" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="好啊，你出来我就放了它，哈…哈…哈…哈！！" />
+					<Option Info="（真狡猾…）" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="我出来一定把你撕成碎片！！" />
+					<Option Info="（得帮他一把…）" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="你还是快点归顺我们吧，和我们一起完成毁灭【勇士王国】的大计吧！" />
+					<Option Info="给我住手！！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="恩？你这个小东西是哪里冒出来的，受死吧！" />
+					<Option Info="来战吧！" />
+					<Option Info="准备一下" NextStep="3" />					
+				</Action>						
+				<Action Type="COMMAND" Command="BATTLE" Params="2918"/>											
+    		</Event>
+		</Step>	
+									
+		
+  		<Step ID="4" ParentList="3" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2919" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜帕瑞后，再与c帕瑞c对话" TargetMap="11504" TargetObj="11504" TargetName="和t帕瑞t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11504" TaskOption="你明白了没有？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="哼，既然败了，要杀要剐，悉听尊便！" />				
+					<Option Info="……" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1012" ImageID="1" Info="帕瑞大人，你搞错了，是他们救了我！" />				
+					<Option Info="终于说话了…" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="（吃惊不已）我居然搞错了，刚才为了救库洛喵心切，实在是惭愧！" />				
+					<Option Info="你伤了娜蒂丝大人" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="我没事，帕瑞，多年不见你还是老样子，改不了你的脾气！" />				
+					<Option Info="你们认识？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="哈哈哈！！！娜蒂丝，你不也还是老样子啊！对了，其它王者怎么样了？" />				
+					<Option Info="哦？" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="我正尝试用“王者之力”呼唤它们，可能还没苏醒吧！" />	
+					<Msg NpcID="1002" ImageID="1" Info="魔族势力的爪牙已经遍布这个世界了，得赶快找到其它王者了！不然我们的世界就…" />														
+					<Option Info="那我先走啦…" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="那个谁，先别走，让我见识下真正你的实力！" />														
+					<Option Info="又打？" SkipTrigger="Y" />
+				</Action>																				
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="情况危机，帮助c娜蒂丝c一起战胜失去理智的c帕瑞c" TargetMap="11504" TargetObj="11506" TargetName="和t娜蒂丝t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11506" TaskOption="娜蒂丝大人…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="娜蒂丝，百年不见没想到你竟然加入了魔族势力！今天休怪我置你于死地！" />
+					<Option Info="帮助娜蒂丝大人" />
+					<Option Info="先准备一下" NextStep="4" />	
+				</Action>								
+				<Action Type="COMMAND" Command="BATTLE" Params="2919"/>										
+    		</Event>
+		</Step>		
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2920" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="再次战胜帕瑞后，与c帕瑞c对话" TargetMap="11504" TargetObj="11504" TargetName="和t帕瑞t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11504" TaskOption="如何？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="哈哈哈！果然实力不俗啊！库洛喵，我给你找到新的主人了，随他去吧，我还有很危险的事要做，你不能再跟着我了!" />				
+					<Option Info="（得照顾这家伙…）" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="1012" ImageID="1" Info="帕瑞大人，我要走了，请你一定要保重啊！" />				
+					<Option Info="……" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="库洛喵…" />				
+					<Option Info="我会照顾好他的" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="你们走吧，我和娜蒂丝还有事要商量，库洛喵要常常来看我啊！" />
+					<Msg NpcID="317" ImageID="1" Info="小勇士，不要辜负帕瑞的嘱托，再见！" />				
+					<Option Info="二位大人再见！" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202,1" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11504,11504" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11504,11506" />					
+				</Action>							
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="再次战胜c帕瑞c，赢得他的考验" TargetMap="11504" TargetObj="11504" TargetName="和t帕瑞t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11504" ObjID="11504" TaskOption="击败你！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="这次是我会真正考验你，看你能否通过！当然，你若证明你的实力，我会有其他事情嘱托于你！" />								
+					<Option Info="来吧！" />
+					<Option Info="先准备一下" NextStep="5" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2920"/>										
+    		</Event>
+		</Step>		
+				
+	</Procedure>
+</Task>

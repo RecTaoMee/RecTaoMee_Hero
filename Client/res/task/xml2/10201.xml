@@ -1,0 +1,79 @@
+<Task ID="10201" Memo="摩尔王国的米拉拉想跟你谈谈，她就在勇士学院。" TargetMap="11215">
+   	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="与c米拉拉c对话" TargetMap="11215" TargetObj="69" TargetName="与t米拉拉t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="我来了！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+    		
+    	<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="与c米拉拉c对话" TargetMap="11215" TargetObj="69" TargetName="与t米拉拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="我来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="你来了，想必你也是听传闻而来吧。"/>
+					<Option Info="什么传闻？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="你不知道？爱精灵协会的会长莓可最近研究出一种神秘卡片。可以赋予勇士们强大的力量。"/>
+					<Option Info="真的？我去看看。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="别急，我的小勇士。工欲善其事，必先利其器。不知你有没有听说过“百变之术”。只有学会了他才能使用神秘的卡片。"/>
+					<Option Info="没有。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="呵呵，战胜暗黑势力可不是件容易的事，你先体验一下效果再决定是否要学习吧。"/>
+					<Option Info="来战！" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+		</Step>
+    		
+    	<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="变身对战" TargetMap="11215" TargetObj="69" TargetName="与t米拉拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="准备好了！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="BATTLE" Params="3061"/>
+    		</Event>
+		</Step>
+    		
+    	<Step ID="5" ParentList="3" ParentCost="1" >
+ 			<Condition>
+				<Battle ID="3061" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="体验变身战斗" TargetMap="11215" TargetObj="69" TargetName="与t米拉拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="轻松搞定！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="怎么样，效果不错吧。你想学习百变之术吗？"/>
+					<Option Info="乐意之至。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="那我就将它传授于你，记住技能是要不断升级的哦。不然是无法驾驭威力强大的卡片的。"/>
+					<Option Info="十分感谢。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="你现在去找莓可吧，向她询问神秘卡片的事。"/>
+					<Option Info="好的。" />
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="体验变身战斗" TargetMap="11215" TargetObj="69" TargetName="与t米拉拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="没想象的那么容易啊。" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="69" ImageID="1" Info="要不要再来一次？"/>
+					<Option Info="好的。" NextStep="3" SkipTrigger="Y" />
+					<Option Info="不要了。" />
+				</Action>
+    		</Event>
+    	</Step>
+    	
+	</Procedure>
+</Task>

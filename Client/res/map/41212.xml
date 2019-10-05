@@ -1,0 +1,31 @@
+<!--月宫正殿-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="98,475" targetMapId="41211" targetTransPortId="2" name="月宫前殿"/>
+		<node id="2" pos="1415,153" targetMapId="41213" targetTransPortId="1" name="月宫后殿"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_1" transPortId="1"/>
+		<node id="2" type="" res="MC_door_2" pods="WalkToTransPortPod,TransTipPod" transPortId="2"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="83" type="NPC" res="MC_npc_368" action="1"/>
+		<node id="1" type="NPC" res="MC_npc_102" action="3" />	
+    </npc>
+    <actions>
+		<proAction npcID="722" id="1" type="0" answer="我跟你拼了！！！$我先准备一下" to="a2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#哪来的小毛孩竟敢擅闯月之宫殿，看我不收拾了你！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="5" fightID="2603" />
+		
+		<proAction npcID="102" id="3" type="0" answer="我这就去！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#小勇士，快去收集这里残破的月饼用来打开第二道门。这里十分危险，要万分小心。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

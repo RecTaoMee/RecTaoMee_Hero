@@ -1,0 +1,35 @@
+<task id="10024">
+  <taskDes>
+	<![CDATA[完成【圣弗雷德】的勇士斗技场新人挑战吧！$$]]>
+	<![CDATA[*勇士斗技场大厅右侧【管理员潘妮】$$]]>
+	<![CDATA[得到【多人比试】的【十字勋章】了！快去【斗技场管理处】交给【圣弗雷德】审核吧！]]>
+  </taskDes>
+  <taskPro>
+		<pro type="0" parent="" npcID="38" title="我完成了！" action="0" bossID="" bossNum="" needRes="" needResNum="" unResAction="2" taskDes="0" mapID="11218"/>
+		<pro type="0" parent="0" npcID="38" title="参加【多人比试】" action="2" bossID="" bossNum="" needRes="290002" needResNum="2" unResAction="3" taskDes="1" mapID="11219"/>
+
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="38" answer="使命必达！" to="so">
+       <des>
+		 <![CDATA[1#接下来去斗技场大厅【管理员潘妮】处，找几个战斗同伴一起参加1场【多人比试】。$$]]>
+		 <![CDATA[1#你挑战的勇气，将以比试获得的【十字勋章】为证！]]>
+	   </des>
+	</proAction>
+	<proAction id="1" type="0" npcID="39" answer="我已准备就绪！$还是再等等吧！" to="（游戏）$o">
+       <des>
+		 <![CDATA[1#你是圣弗雷德大人邀请的小摩尔吧，准备好参加比试了吗？]]>
+	   </des>
+    </proAction>
+    <proAction id="2" type="0" npcID="38" answer="谢谢您！" to="c">
+       <des>
+		 <![CDATA[1#果然没有令我失望。这是给你的奖励——勇士斗技场试炼礼包！希望你好好使用它]]>
+	   </des> 
+	</proAction>	
+	<proAction id="3" type="0" npcID="38" answer="恩，这就去找【潘妮】报名！" to="o">
+       <des>
+		 <![CDATA[1#你还没有完成我布置给你的任务，在勇士斗技场仔细找一下，一个真正的勇士不会惧怕任何困难！]]>
+	   </des>
+	</proAction>	 
+  </actions>
+</task>

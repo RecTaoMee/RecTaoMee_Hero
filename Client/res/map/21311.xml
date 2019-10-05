@@ -1,0 +1,24 @@
+<!--平原六区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="1531,903" targetMapId="21310" targetTransPortId="2" name="平原十区"/>
+		<node id="2" pos="85,127" targetMapId="21312" targetTransPortId="2" name="平原十二区"/>
+		<node id="3" pos="797,478" targetMapId="11501" targetTransPortId="1" name="平原十二区"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="TransPort" level="contentLevel" res="MC_door_2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<node id="225" type="NPC" res="MC_npc_225" action="0"/>
+		<node id="360" type="NPC" res="MC_npc_360" action=""  taskShowSteps="35007_5|6|7|8" />						
+	</npc>	
+	<actions>
+		<proAction npcID="225" id="0" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#……]]>
+			</des>
+		</proAction>
+	</actions>	
+</map> 

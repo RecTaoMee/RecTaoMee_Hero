@@ -1,0 +1,67 @@
+<task id="9">
+	<taskDes>
+		<![CDATA[刚帮村长找到了神杖，还得到了沉死人的亚历山大之剑和盾。村长爷爷又有什么新使命了？$$]]>
+		<![CDATA[这次的使命是帮村长打黄油。——这算什么使命啊?！【出门右拐】【旅行商人】。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="5" title="村长爷爷" action="0" needRes="" needResNum="" unResAction=""  taskDes="1" />
+		<pro type="0" parent="0" npcID="4" title="你是【旅行商人】？" action="3" needRes="" needResNum="" unResAction=""  taskDes="1" />
+		<pro type="0" parent="0" npcID="5" title="黄油来啦——！" action="7" needRes="160003" needResNum="1" unResAction="8"  taskDes="1" />
+		<pro type="0" parent="2" npcID="5" title="黄油来啦——！" action="7" needRes="160003" needResNum="1" unResAction="8"  taskDes="1" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="5" answer="没有" to="a1">
+			<des>
+                <![CDATA[1#【@nick】你来吉普豆村有段日子了吼吼喔~~$$]]>
+                <![CDATA[1#有没有尝过我们最最美味的【吉普豆泥】？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="5" answer="想O(∩_∩)O！" to="a2">
+			<des>
+				<![CDATA[1#想不想尝尝？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="5" answer="交给我吧!" to="so">
+			<des>
+				<![CDATA[7#不过不巧制作吉普豆泥必不可少的【黄油】用完了，$$]]>
+				<![CDATA[1#嚯嚯~你不是得到了很多【星豆】吗，【星豆】可是好东西，$$]]>
+				<![CDATA[1#卖东西的商人就在屋子外面，【出门向右走】。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="4" answer="你怎么知道？" to="a4">
+			<des>
+				<![CDATA[1#做生意就是交朋友！小朋友来打黄油吗？]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="4" answer="（+__+）！" to="a5">
+			<des>
+				<![CDATA[1#小朋友平常不是自己买东西，就是被大人叫来打黄油。最近打黄油的小朋友特别多^~$$]]>
+				<![CDATA[1#哈哈哈，开玩笑的。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="4" answer="好的" to="a9">
+			<des>
+				<![CDATA[1#您是刚来的吉普豆村的摩尔吧，请允许我为您介绍我们【贝塔商会】————]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="4" answer="好的" to="a10">
+			<des>
+				<![CDATA[1#来把没用的星豆换成有用的【黄油】吧————]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="5" answer="给您黄油O(∩_∩)O" to="c">
+			<des>
+                <![CDATA[1#呦嚯嚯嚯嚯嚯嚯~]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="5" answer="现在就去打黄油！" to="o">
+			<des>
+                <![CDATA[1#刚才说帮我去打黄油的好人哪儿去了?]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="1" outMap="1" level="taskLevel" name="task_9_1" moviepos="0,0" to="a6"/>
+		<proAction id="10" type="2" panel="Shop_Travel" data="0" to="e1"/>
+	</actions>
+</task>

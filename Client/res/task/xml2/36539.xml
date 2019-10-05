@@ -1,0 +1,41 @@
+<Task ID="36539" Memo="前往10年后废墟的勇士王国南街找到c菠萝c" TargetMap="51201">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="前往10年后废墟的勇士王国的广场找到c宾得c" TargetMap="51201" TargetObj="1" TargetName="和t菠萝t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="51201" ObjID="1" TaskOption="有什么事？" />
+				</Trigger>						
+				<Action Type="TALK">			
+					<Msg NpcID="61" ImageID="1" Info="这里太危险了，你帮我清除20个这里的法尔·改黑化精灵吧？" />
+					<Option Info="我这就去！" />																		
+				</Action>												
+    		</Event>		
+		</Step>			
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >		
+			<Condition>
+				<Battle ID="101004" Count="20" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="击杀20个的法尔·改后，与c菠萝c对话" TargetMap="51201" TargetObj="1" TargetName="和t菠萝t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="51201" ObjID="1" TaskOption="完成了！" />
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="61" ImageID="1" Info="你真了不起，英雄！这下黑化精灵的力量进一步受到削弱了！" />				
+					<Option Info="没错！" />
+				</Action>							
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="击杀20个法尔·改" TargetMap="51201" TargetObj="1" TargetName="击杀20个t法尔·改t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="51201" ObjID="1" TaskOption="法尔·改在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="61" ImageID="1" Info="法尔·改就在南街游荡！" />								
+					<Option Info="好的！" />
+				</Action>										
+    		</Event>
+		</Step>		
+				
+	</Procedure>
+</Task>

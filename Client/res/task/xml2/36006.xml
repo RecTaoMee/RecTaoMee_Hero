@@ -1,0 +1,41 @@
+<Task ID="36006" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="传教士协会给每位护士送去贴心小礼物哦，现在就只有弗雷基广场的蟹娜那份还没送呢。" />
+					<Option Info="我这就送去。" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="把传教士协会的小礼物送去给c蟹娜c。" TargetMap="11603" TargetObj="51" TargetName="和t蟹娜t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="51" TaskOption="小礼物来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="玲大人对我们实在是太好了O(∩_∩)O~~，好感动哦，我要继续努力！" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

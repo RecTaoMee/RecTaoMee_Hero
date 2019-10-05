@@ -1,0 +1,61 @@
+<task id="10001">
+	<taskDes>
+		<![CDATA[看到听到的不一定是真相，擦亮眼睛，【勇士广场】的公告栏上出现了没有署名的“神秘贴士“，去看看上面写了什么呢？$$]]>
+        <![CDATA[未署名的“神秘人”在【勇敢者旅馆二楼】等你？……真的可以去么？不祥的预感……$$]]>
+		<![CDATA[勇敢者旅馆二楼的“神秘人”想和你聊聊。【给他正确的答案吧！】]]>
+	</taskDes>
+	<laterDes>
+		<![CDATA[想得到最强大的装备吗？我在【勇敢者旅馆二楼】等你。 未署名]]>
+	</laterDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		    <pro type="0" parent="" npcID="300" action="0" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11202"/>
+			<pro type="0" parent="0" npcID="21" title="你是公告栏上的人？" action="0" needRes="" needResNum="" unResAction="" taskDes="2" mapID="11208"/>
+
+	</taskPro>	
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="21" answer="告诉我怎么得到！$也没什么了不起$我找错人了$你有米米号吗？让我玩一下" to="a1$a2$a3$a4">
+			<des>
+				<![CDATA[1#我的装备很强大？那当然！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="21" answer="好吧告诉你密码$还是算了吧" to="a5$a6">
+			<des>
+				<![CDATA[1#说起来太复杂。把密码告诉我，我直接帮你弄吧！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="21" answer="好吧告诉你密码$还是算了吧" to="a5$a6">
+			<des>
+				<![CDATA[1#唷，口气不小。这么说你很厉害？要不要跟我换号玩？我可以跟你交换密码。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="21" answer="好吧告诉你密码$还是算了吧" to="a5$a6">
+			<des>
+				<![CDATA[4#这样啊...真扫兴。唉、等等，你是今天第100个跟我说话的人,我可以送你一样礼物。不过你得先把密码告诉我。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="21" answer="好吧告诉你密码$还是算了吧" to="a5$a6">
+			<des>
+				<![CDATA[1#既然你诚心诚意地发问了，那我就大发慈悲地告诉你————$$]]>
+				<![CDATA[1#哦不对，这不公平。你的密码呢？先让我看看你的诚意！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="21" answer="我晕+_+" to="a7">
+			<des>
+				<![CDATA[3#啊哈！这么容易密码就到手了，我真佩服自己的演技！100星豆我收下了。在悔恨的泪水中挣扎吧！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="21" answer="好吧告诉你密码$真的不能告诉你" to="a5$a7">
+			<des>
+				<![CDATA[4#我是无所谓，你不再考虑一下吗？]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="21" answer="原来如此" to="c" nextTask="10002_0">
+			<des>
+				<![CDATA[4#…我看上去那么不可信吗？呵呵，没关系，警惕是应该的。$$]]>
+				<![CDATA[3#实话告诉你，我是【正义的伙伴】，因为不想再看到轻信的小摩尔自己泄露密码，才想出了这个办法。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

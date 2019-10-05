@@ -1,0 +1,71 @@
+<Task ID="20001" Memo="勇士广场的c公告栏c似乎有新的公告了。" TargetMap="11202">
+<BoardInfo PageType="1" Title="怪盗迪迪拉赏星任务" Content="“怪盗型精灵”王国附近出没频繁，王国悬赏高额星豆维护治安。\n请向守城士兵了解今天【迪迪拉】的最新动向。*摩尔王国南街·南门外·格历尔平原"></BoardInfo>   	
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c公告栏c有新公告了。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 				
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="请向c王国南门外格历尔平原的守城士兵c了解今天怪盗迪迪拉的最新动向。" TargetMap="21301" TargetObj="210" TargetName="和t守卫士兵·Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21301" ObjID="210" TaskOption="怪盗迪迪拉赏星任务" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="217" ImageID="1" Info="你是看到公告栏发布的赏星通告吗？" />
+					<Msg NpcID="217" ImageID="1" Info="因为净化“怪盗型精灵”有被抢钱的风险，因此王国拨款高额星豆悬赏，真是人性化的“赏星制度”啊——！" />
+					<Msg NpcID="217" ImageID="1" Info="我和【K】需要守卫城门，惩治怪盗的任务就拜托你了！请小心！" />					
+					<Option Info="我知道了" />							
+				</Action>				
+    		</Event>
+    	</Step>
+  		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="7" Count="5" />
+			</Condition>			
+    		<Event ConditionType="OUT" Memo="前往c5个黑化精灵怪盗迪迪拉，预备勇士们，代表正义将它净化吧！★c出没地区，王国南门外平原1区c。" TargetMap="21301" TargetObj="" TargetName="击败t怪盗迪迪拉t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21301" ObjID="210" TaskOption="5个怪盗迪迪拉……" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="210" ImageID="1" Info="12345……让我数一数……，没有【5个怪盗迪迪拉】，我可是一直站在这里好好数着呢，【R】可以给我作证。" />
+					<Option Info="这就去净化怪盗迪迪拉" />
+				</Action>																		
+    		</Event>
+    		<Event ConditionType="IN" Memo="" TargetMap="21301" TargetObj="210" TargetName="和t守卫士兵·Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21301" ObjID="210" TaskOption="任务完成！？" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="210" ImageID="1" Info="泪流满面！有你在我和【R】真是轻松了不少！妮娜团长听到这个消息一定会高兴的!" />
+					<Msg NpcID="210" ImageID="1" Info="请去【勇士广场公告栏】领取您应得的赏星吧!" />
+					<Option Info="好的！" />
+				</Action>																
+    		</Event>
+		</Step>	
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="做的不错！这就去勇士广场c公告栏c领取赏星吧！" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="今天你小心谨慎的执行任务了吗？" />
+					<Option Info="O(∩_∩)O完成啦！" TalkOver="Y"/>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="怪盗迪迪拉自从黑化后本性暴发，抢了不少王国居民的星豆，比起那些这些赏星算不了什么……" />
+					<Msg NpcID="15" ImageID="1" Info="…………可恶果然还是太令人羡慕了！……都拿去吧拿去吧！记得好好使用啊！" />
+					<Option Info="O(∩_∩)O哈哈！" />
+				</Action>				
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>

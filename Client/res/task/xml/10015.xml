@@ -1,0 +1,28 @@
+<task id="10015">
+  <taskDes>
+	<![CDATA[加入传教士协会有一段时间了，有没有遇到什么疑惑呢?和温蒂导师聊聊吧。$$打赢了！快找温蒂老师领取奖励吧！]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="22" title="温蒂老师好！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11217"/>
+    <pro type="0" parent="0" npcID="22" title="战胜你啦！" action="3" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11217"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="22" answer="还不错" objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[1#【@nick】，传教士的生活感觉如何呢？]]>
+		</des>
+    </proAction>
+    <proAction id="1" type="0" npcID="22" answer="......" objLevel="" objName="" objType="" objValue="" to="a2">
+      <des>
+		<![CDATA[2#传教士最重要的一点就是在帮助队友的同时要保护好自己，让我看看你做到了没有^^$$]]>
+		<![CDATA[2#友情提示：我可不是一个人在战斗！]]>
+		</des>
+    </proAction>
+    <proAction id="2" type="5" fightID="3004" data="1" to="so"/>
+    <proAction id="3" type="0" npcID="22" answer="谢谢温蒂老师" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[2#嗯，你很努力啊，这根法杖作为礼物送给你了^^。传教士的力量源自对女神的信仰，愿女神的祝福与你同在。]]>
+		</des>
+    </proAction>
+  </actions>
+</task>

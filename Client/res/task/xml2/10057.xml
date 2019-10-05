@@ -1,0 +1,109 @@
+<Task ID="10057" Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407">
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="出什么事了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="【@nick】救我！我家的【小宅罐】出走了！！\n哇啊啊~~麦婶一定不会原谅我的！\n我可不想被罚去“打井水”！" />
+					<Option Info="出走？" />	
+					<Option Info="有事先走了" NextStep="1" />														
+				</Action>					
+    		</Event>
+		</Step>				
+ 		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="【小宅罐】出走？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="2" Info="最近尼康康餐厅生意火爆~\n你麦婶一回到家，马上就睡着了~\n我好像又回到了快乐的单身汉生活^﹏^" />
+					<Msg NpcID="37" ImageID="4" Info="我只是两个星期忘了扔垃圾...\n我家的【小宅罐兄妹】就“离家出走”了！！！" />
+					<Option Info="你太邋遢啦！" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="6" Info="叫你不打扫卫生！\n说你说得我自己都烦了，\n这次看你怎么办！" />
+					<Msg NpcID="37" ImageID="1" Info="哎呀~【味神蘑大人】，\n我错了我知道错了嘛！！\n再不赶快找回它们，\n我这个村长就有大危机了哇！" />
+					<Msg NpcID="37" ImageID="1" Info="路伊说它们去了村后的【海底洞穴】。\n世界上除了麦婶我最怕的就是黑化小精灵！\n麦田村不能没有村长哇~~" />
+					<Msg NpcID="37" ImageID="1" Info="【@nick】是从未来来的勇士？\n拜托帮帮我吧……" />
+					<Option Info="现在就去【海底洞穴】！" />
+					<Option Info="责任太大，我闪^" NextStep="2" />										
+				</Action>	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21401, 30022" /> 						
+    		</Event>
+		</Step>	
+ 		<Step ID="10" ParentList="2" ParentCost="1" >
+    		<Event Memo="向c海底洞穴c出发\n——帮c尼康康c找回“出走的”小宅罐兄妹吧！" TargetMap="21401">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="找不到【小宅罐】" />
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="路伊说【小宅罐兄妹】去了村后的【海底洞穴】。\n就在麦田村的左←上角。\n【@nick】小心黑化精灵！" />
+					<Option Info="现在就去【海底洞穴】！" NextStep="10" />								
+				</Action>					
+    		</Event>
+		</Step>					
+				
+ <!-- 节点2↓ -->	
+ 		<Step ID="11" ParentList="2" ParentCost="1" >
+    		<Event Memo="尼康康村长家的c小宅罐兄妹c“出走”了，\n快去c海底洞穴1层c找找看吧！" TargetMap="21401">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21401" />			
+				</Trigger>	
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="2000, 900" /> 
+    			<Action Type="COMMAND" Command="DELAY" Params="1500" /> 				
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" NextStep="11" /> 												
+    		</Event>
+		</Step>						
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="尼康康村长家的c小宅罐兄妹c“出走”了，\n快去c海底洞穴1层c找找看吧！" TargetMap="21401">
+  				<Trigger>
+ 					<Item Type="OBJ_CLICK" MapID="21401" ObjID="30022" /> 				
+				</Trigger>	 									
+				<Action Type="TALK">
+					<Msg NpcID="313" ImageID="3" Info="我想回家！！\n尼康康大叔你不能把我家弄成这样！" />
+					<Msg NpcID="313" ImageID="2" Info="听说有种神秘的旅行“箱子”每天都用舌头洗脸。\n搬去那里会很舒服吧？" />		
+					<Msg NpcID="37" ImageID="1" Info="你们要走也该留下我的【避难款】啊！\n我存了整整一年那，\n要是世界末日来了我可怎么办？" />		
+					<Option Info="( ^_^ )？！！" />		
+				</Action>						
+				<Action Type="TALK">				
+					<Msg NpcID="37" ImageID="1" Info="……一时找不到适合的存钱罐\n……就放在小宅罐那里了嘛。" />										
+					<Msg NpcID="313" ImageID="3" Info="！！！怪不得身体这么沉，\n我还以为自己长胖了！" />		
+					<Msg NpcID="37" ImageID="4" Info="也不是啦……\n你们不在家我没有安全感哇……\n我保证以后不会拿你们当“存钱罐”了，\n而且每天打扫房间！" />						
+					<Msg NpcID="313" ImageID="2" Info="大叔这次下决心了……" />	
+					<Msg NpcID="313" ImageID="3" Info="嗯嗯！还是住在暖和的家里最安心。\n我喜欢稻草的味道！" />			
+					<Msg NpcID="37" ImageID="2" Info="啊哈，我今天可以不用失眠了。\n谢谢【@nick】。\n回去别告诉麦婶啊~~" />		
+					<Msg NpcID="313" ImageID="2" Info="尼康康就交给我们吧。\n我会用罐子罩住黑化精灵，很管用的！" />																								
+					<Option Info="后会有期！" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="我也想有小宅罐！" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />															
+				</Action>			
+    		</Event>
+		</Step>	
+		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="尼康康村长家的c小宅罐兄妹c“出走”了，\n快去c海底洞穴1层c找找看吧！" TargetMap="21401">
+  				<Trigger>
+ 					<Item Type="OBJ_CLICK" MapID="21401" ObjID="30022" /> 					
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="313" ImageID="1" Info="我们都爱住干净的房子，\n多多打扫卫生吧！" />	
+					<Option Info="( ^___^ )y " NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />																		
+				</Action>			
+    		</Event>
+		</Step>				
+		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="尼康康村长家的c小宅罐兄妹c“出走”了，\n快去c海底洞穴1层c找找看吧！" TargetMap="21401">
+  				<Trigger>
+ 					<Item Type="OBJ_CLICK" MapID="21401" ObjID="30022" /> 					
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="3" Info="小勇士以后要记得经常打扫房间哦！" />	
+					<Option Info="\(^○^)/嗯！" />																		
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21401, 30022" /> 								
+    		</Event>
+		</Step>			
+	</Procedure>
+</Task>
+		
+

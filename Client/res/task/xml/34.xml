@@ -1,0 +1,44 @@
+<task id="34">
+	<taskDes>
+		<![CDATA[不知道摩尔王国有什么好玩的地方，问问蒂蒂拉的意见吧。☆蒂蒂拉在【勇士广场】的【勇敢者旅馆】$$]]>
+		<![CDATA[【女神大圣堂】在【王国西街】！十二勇士之一的铃！真想快点见到她！$$]]>
+		<![CDATA[十二勇士果然和普通摩尔不一样！总有一天我也会达到他们的境界！]]>
+	</taskDes>
+	<taskPro>
+	<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+	<!--type:0任务类型 1:直接接受此任务，2:到达莫个地图时播放,3，加载外部SWF，5：直接执行此动作-->
+		<pro type="0" parent="" npcID="14" title="女神大圣堂" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11207"/>
+		<pro type="0" parent="0" npcID="102" title="大祭司 【铃】" action="2" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11217"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="14" answer="嗯~" to="s1">
+			<des>
+				<![CDATA[1#对了，【@nick】是第一次来摩尔王国吗？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="14" answer="哇~我现在就去" to="o">
+			<des>
+				<![CDATA[1#啊~~~那你一定要去参观【女神大圣堂】！大圣堂是摩尔王国最有名的地方！！$$]]>
+				<![CDATA[1#十二勇者之一的【铃】可是时之女神的祭司，我和琪琪的白魔法都受过铃大人的指导呢！$$]]>
+				<![CDATA[1#如果你还有什么问题都可以去找她。虽然是最接近女神的人，但是铃大人一点架子都没有，大家都很喜欢她^^]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="102" answer="你怎么知道的？" to="a3">
+			<des>
+				<![CDATA[1#来自未来的小摩尔，很高兴在这里见到你O(∩_∩)O~]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="102" answer="我要成为摩尔勇士！" to="a4">
+			<des>
+				<![CDATA[2#“当黑暗再次降临，世界面临末日，来自未来的【光芒】会带给大地希望”$$]]>
+				<![CDATA[1#这是时之女神【神谕】中的一句话。我已经感受到你身上所散发出来的【光芒】，给人一种非常温暖的感觉^^]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="102" answer="谢谢^^" to="c">
+			<des>
+				<![CDATA[1#呵呵，我相信你。$$]]>
+				<![CDATA[1#未来的旅途并不是一帆风顺，也许会碰到许多困难，愿女神的祝福与你同在^^]]>
+			</des>
+		</proAction>	
+	</actions>
+</task>

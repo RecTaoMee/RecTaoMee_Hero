@@ -1,0 +1,107 @@
+<Task ID="10069" Memo="听说c王国南街c新来了一个组织能力很强的女孩子，好像是什么c组队集结员c？过去看看吧。" TargetMap="11201">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="听说c王国南街c新来了一个组织能力很强的女孩子，好像是什么c组队集结员c？过去看看吧。" TargetMap="11201">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="你是“组队集结员？”" />
+				</Trigger>
+					<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="啊啊啊…………【手指饼干盒】到哪去了！？\n啊~~你……你可以帮我找找吗？没有那个可是没有办法专心工作的！" />				
+					<Option Info="好的！" />
+				</Action>								
+    		</Event>
+		</Step>
+		
+		<Step ID="11" ParentList="1" ParentCost="1" >
+    		<Event Memo="到哪去找c手指饼干盒c呢？问问c啦啦c有什么c线索c吧？" TargetMap="11201">
+  				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201,30018" />
+    		</Event>
+		</Step>
+  
+		<Step ID="2" ParentList="11" ParentCost="1" >
+    		<Event Memo="到哪去找c手指饼干盒c呢？问问c啦啦c有什么c线索c吧？" TargetMap="11201">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11201" ObjID="30018" />
+				</Trigger>
+					<Action Type="COMMAND" Command="OUTPUT_ITEM_2" Params="260020" />
+					<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11201,30018" />	
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="11" ParentCost="1" >
+			<Condition>
+				<Item ID="260020" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="这个c手指饼干盒c是c啦啦c的吗？问问她吧！" TargetMap="11201">
+					<Trigger>
+						<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="饼干盒找到了！" />
+					</Trigger>
+						<Action Type="TALK">
+							<Msg NpcID="701" ImageID="1" Info="咦……你手上拿的那个是？" />
+							<Option Info="路边捡到的盒子" SkipTrigger="Y" />
+						</Action>
+    			</Event>
+				<Event ConditionType="OUT" Memo="到哪去找c手指饼干盒c呢？问问c啦啦c有什么c线索c吧？" TargetMap="11201">
+					<Trigger>
+						<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="到哪找手指饼干盒呢？" />
+					</Trigger>
+						<Action Type="TALK">
+							<Msg NpcID="701" ImageID="1" Info="额……我想应该在【王国南街】上吧？早上来的时候还在呢…………" />
+							<Option Info="我去找找！" />
+						</Action>
+				</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="快点把c手指饼干盒c还给啦啦吧！" TargetMap="11201">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="你的饼干盒" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="啊，我的饼干盒！谢谢你啊^^！\n这样就可以安心工作了！【组队集结员】可是要全神贯注工作的！" />				
+					<Option Info="不客气！" />
+				</Action>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260020" SkipTrigger="Y" />				
+    		</Event>
+		</Step>
+		
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="什么是c组队集结员c？问问啦啦吧。" TargetMap="11201">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="什么是“组队集结”？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260020" SkipTrigger="Y" />
+				<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="对了，我们好像是第一次见面呢~不过你看上去很可靠的样子呢！作为报答，我就把【组队的技巧】传授给你吧！" />				
+					<Msg NpcID="701" ImageID="1" Info="我们摩尔是可以组成队伍结伴探险的，你看！" />
+					<Option Info="嗯？" />
+				</Action>
+				<Action Type="MOVIE" Url="task_10069_12014.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="这是最基础的【组队方式】，是不是觉得很不方便呢？\n有时候虽然组到了人，结果发现不是自己想找的队友！" />
+					<Msg NpcID="701" ImageID="1" Info="这种事是不是很郁闷呢？让我教你一种【更方便】的寻找队友方式吧！" />
+					<Option Info="哇！" SkipTrigger="Y" />
+				</Action>									
+    		</Event>
+		</Step>
+		
+		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="c更方便的组队方法c？那是什么！快点问问c啦啦c吧！" TargetMap="11201">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="快告诉我吧！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="哈哈，你看我的称号是“组队集结员”，我的任务是帮助小摩尔寻找合适队友！" />				
+					<Option Info="好厉害！" />
+				</Action>
+				<Action Type="MOVIE" Url="task_10069_12015.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="701" ImageID="1" Info="嘿嘿，这种【组队方法】是不是很方便呢？以后要常来找我呀^^\n记住！【合适的队伍名字】可以告诉别人你的【目的】，更快的组到队友！" />
+					<Option Info="谢谢啦啦！" />
+				</Action>									
+    		</Event>
+		</Step>
+  
+	</Procedure>
+</Task>

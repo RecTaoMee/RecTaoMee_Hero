@@ -1,0 +1,65 @@
+<Task ID="20017" Memo="c麦田村c村长被欺负了？\n快去c尼康康村长家c看看吧！" TargetMap="11407">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c麦田村c村长被欺负了？\n快去c尼康康村长家c看看吧！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="怎么回事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="哎呀呀呀呀~~气死我啦！\n被一群尾巴卷着铁锤，头上顶王冠的家伙打劫了！\n它们不止打劫我，还嘲笑了“摩尔勇士”！！" />
+					<Msg NpcID="37" ImageID="1" Info="去格历尔【平原11区】找【15只】卡西卡，\n让它们见识下勇士的实力吧！ " />
+					<Option Info="使命必达！" SkipTrigger="Y"/>					
+					<Option Info="【王冠卡西卡】？" SkipTrigger="Y" NextStep="4" />
+					<Option Info="让我再想想" NextStep="1"/>					
+				</Action>		
+    		</Event>
+		</Step>
+		<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="c麦田村c村长被欺负了？\n快去c尼康康村长家c看看吧！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="王冠卡西卡？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="4" Info="就是它们！！\n去格历尔【平原11区】找【15只】卡西卡，\n让它们见识下勇士的实力吧！ " />
+					<Option Info="使命必达！" SkipTrigger="Y"/>	
+					<Option Info="让我再想想" NextStep="1"/>	
+				</Action>			
+    		</Event>
+		</Step>		
+		<Step ID="3" ParentList="1, 4" ParentCost="1" TargetObj="37" TargetName="和t尼康康t对话" >
+    		<Event Memo="c麦田村c村长被欺负了？\n快去c尼康康村长家c看看吧！" TargetMap="11407">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="怎么回事？" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" /> 			
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="16" Count="15" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="使命完成↖(^ω^)↗\n快去c麦田村·尼康康村长家c报告吧！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="使命完成！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="2" Info="很好，你维护了勇士的荣誉。\n收下你的奖励吧。" />
+					<Option Info="O(∩_∩)O哈！" />
+				</Action>	
+    		</Event>
+			<Event ConditionType="OUT" Memo="小主人快去c平原11区c找c15只卡西卡c，\n让它们见识下勇士的实力吧！" TargetMap="21311" TargetName="打败t王冠卡西卡t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="打不过【卡西卡】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="还没有让【5个王冠卡西卡】见识到勇士的实力吗？" />
+					<Option Info="现在就去！" />
+				</Action>
+			</Event>
+		</Step>	
+
+	</Procedure>
+</Task>
+
+

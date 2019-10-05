@@ -1,0 +1,95 @@
+<Task ID="10095" Memo="c勇士号水手c在呼叫小主人，\n快去c修隐岛海岸c看看吧！" TargetMap="11701">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c勇士号水手c在呼叫小主人，\n快去c修隐岛海岸c看看吧！" TargetMap="11701" TargetObj="60" TargetName="和t勇士号水手t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="我来啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="这个月最后一班船就要出发了,\n可前几天乘船来的【2位旅客】还没回来。" />
+					<Msg NpcID="58" ImageID="1" Info="你能帮我们去岛上问问【银魂导师们】，\n有没有他们看到吗？" />				
+					<Option Info="这就去问导师们" />
+					<Option Info="有事先走了" NextStep="1"/>					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c修隐岛c上问问c银魂导师c，\n有没有看到奇怪的旅客吧！" TargetMap="11703" TargetObj="55" TargetName="和t银魂·彼得t对话">   
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11703" ObjID="55" TaskOption="有没有看到旅客？" />
+				</Trigger>												
+				<Action Type="TALK">
+					<Msg NpcID="358" ImageID="1" Info="这座岛屿人迹罕至，\n最近除了【@nick】没别的旅客啊。" />																			
+					<Msg NpcID="357" ImageID="1" Info="失礼了，刚才我们在“冲凉”。" />
+					<Option Info="冲凉？" />
+				</Action>	
+    			<Action Type="COMMAND" Command="BGM_MUTE" /> 										
+    			<Action Type="MOVIE" Url="task_10059_4.swf" MapLevel="TASK" Pos="0,0" />									
+    			<Action Type="COMMAND" Command="BGM_NORMAL" />								
+				<Action Type="TALK">		
+					<Msg NpcID="357" ImageID="9" Info="等我们回来，放岸边的衣服都被偷走了，\n有点衣衫不整……" />								
+					<Msg NpcID="358" ImageID="1" Info="对了，岛上也没别人，\n可能就是【那2位旅客】偷了我们的衣服！" />		
+					<Msg NpcID="357" ImageID="1" Info="其实它们是2只精灵，\n大笑着往【锁修塔】方向逃跑了。\n现在追上去还来得及！" />																																	
+					<Option Info="这就去【锁修塔】！" />
+				</Action>							
+    		</Event>
+		</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="快去c锁修塔3层c找到c偷衣服的精灵c吧！" TargetMap="21703" TargetName="和t鼬西小分队t对话">  
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21703" ObjID="353" TaskOption="还衣服吧！" />
+				</Trigger>												
+				<Action Type="TALK">				
+					<Msg NpcID="353" ImageID="2" Info="王国里守卫那么森严，\n我们不来岛上搞点小破坏，\n怎么向【鼬西】老大汇报啊！" />		
+					<Msg NpcID="353" ImageID="3" Info="我说，就还给鼹鼠吧。\n抱着这么大堆奇怪的衣服容易惹人怀疑！" />		
+					<Msg NpcID="353" ImageID="2" Info="不给不给就不给！\n衣服是我偷到的！" />	
+					<Option Info="……" />
+				</Action>		
+    		</Event>
+		</Step>				
+  		<Step ID="5" ParentList="3" ParentCost="1" >
+    		<Event Memo="快去c锁修塔c上找到c偷衣服的精灵c吧！" TargetMap="21703" TargetName="和t鼬西小分队t对话">  								
+    			<Action Type="MOVIE" Url="task_10095_2.swf" MapLevel="CONTENT" Pos="-500,177" SkipTrigger="Y" />		
+    		</Event>
+		</Step>									
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="快去c锁修塔c上找到c偷衣服的精灵c吧！" TargetMap="21703" TargetName="和t鼬西小分队t对话">  
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21703" ObjID="353" TaskOption="还衣服吧！" />
+				</Trigger>												
+				<Action Type="TALK">										
+					<Msg NpcID="353" ImageID="3" Info="爱丝你每次都和我抢东西！\n把“铠甲”都砸坏了！！\n鼬西老大，对不起(T_T)~~" />		
+					<Msg NpcID="353" ImageID="3" Info="现在只剩这件“没用的破【法袍】”了，\n还给你们【导师】好了！" />																																												
+					<Option Info="这就去【锁修塔桥】！" />
+				</Action>							
+    		</Event>
+		</Step>					
+  		<Step ID="4" ParentList="6" ParentCost="1" >
+    		<Event Memo="原来c鼬西小分队c偷了导师的衣服，\n快去c锁修塔桥c报告c银魂·瑞凌c吧！" TargetMap="11703" TargetObj="55" TargetName="和t银魂·彼得t对话">			
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11703" ObjID="55" TaskOption="铠甲被砸烂了" /> 
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="357" ImageID="1" Info="……铠甲没了？！\n我来岛上就带了这一件衣服啊。" />
+					<Option Info="彼得的法袍还在^^！" />
+				</Action>
+				<Action Type="TALK">					
+					<Msg NpcID="358" ImageID="3" Info="虽然破了点，还能穿。\n不好意思瑞凌兄，我先回去守卫啦！" />	
+					<Msg NpcID="357" ImageID="9" Info="……" />					
+					<Msg NpcID="358" ImageID="3" Info="哈哈，不要羡慕我的“人品”。" />										
+					<Option Info="(*^__^*) " />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="358" ImageID="10" Info="噗叽？" />
+					<Msg NpcID="358" ImageID="10" Info="瑞凌你竟然放冷箭？！！！" />					
+					<Msg NpcID="357" ImageID="3" Info="你变成“兔子”稍微可爱一点了——\n可惜法袍已经不适合“现在的你”了。" />	
+					<Msg NpcID="357" ImageID="5" Info="放心，我穿上它一定比你潇洒！" />						
+					<Msg NpcID="358" ImageID="10" Info="咬死你……" />
+					<Msg NpcID="401" ImageID="2" Info="多么和谐美妙的友情啊^^!" />																		
+					<Option Info="O(∩_∩)O！" />	
+				</Action>																
+    		</Event>
+		</Step>		
+	</Procedure>
+</Task>
+

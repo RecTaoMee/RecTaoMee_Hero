@@ -1,0 +1,26 @@
+<!--修隐岛海岸-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="238,298" targetMapId="11705" targetTransPortId="1"/>
+		<node id="2" pos="721,306" targetMapId="11702" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_1" transPortId="2"/>	
+	</object>
+	<npc>
+		<node id="60" type="NPC" res="MC_npc_60" action="0$1" transPortId="1" pods="ShipChangeMapPod"/>
+	</npc>
+	<actions>
+		<proAction npcID="58" id="0" type="0" answer="我要坐船$一路顺风！" to="a2$o" >
+			<des>
+				<![CDATA[1#【修隐岛】……？\n我们以前的航海地图上好像没有这个地方……]]>
+			</des>
+		</proAction>	
+		<proAction npcID="58" id="1" type="0" answer="我要坐船$一路顺风！" to="a2$o" >
+			<des>
+				<![CDATA[2#【@nick】如果需要乘船回【弗雷基港】跟我说一声就行了^^。]]>
+			</des>
+		</proAction>
+		<proAction npcID="58" id="2" type="6" event="ship_change_map"/>						
+	</actions>
+</map>

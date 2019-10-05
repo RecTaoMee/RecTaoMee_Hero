@@ -1,0 +1,78 @@
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3" edgeRect="250,320,250,192">
+	<transport intPos="145,340">
+		<node id="1" pos="150,354" targetMapId="21306"  targetTransPortId="2"/> 
+		<node id="2" pos="1348,590" targetMapId="11602" targetTransPortId="1"/> 
+		<node id="3" pos="1150,330" targetMapId="11604" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="downLevel" res="MC_door2" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="TransPort" level="downLevel" res="MC_door3" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="46" type="NPC" res="MC_npc_46" level="contentLevel" fun="" taskType="0" action="0$1" needLevel="" needKind=""/>
+		<node id="105" type="NPC" res="MC_npc_105" level="downLevel" fun="" taskType="0" action="5$6" needLevel="" needKind=""/>
+		<node id="51" type="NPC" res="MC_npc_51" level="contentLevel" fun="" taskType="0" action="7$8$9" needLevel="" needKind=""/>				
+
+	</npc>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction npcID="7" id="0" type="0" answer="（\乘坐陆行鸟/)$关于陆行鸟$祝你好运" to="d1$a2$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#你想乘坐【陆行鸟】旅行吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="1" type="0" answer="（\乘坐陆行鸟/)$关于陆行鸟$祝你好运" to="d1$a2$o" colorID="1$0$0">
+			<des>
+				<![CDATA[2#你想乘坐【陆行鸟】旅行吗？\n虽然【陆行鸟】们无法跨越浩瀚的海洋……]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="2" type="0" answer="（\乘坐陆行鸟/)$祝你好运" to="d1$o" >
+			<des>
+				<![CDATA[1#你可以看到在我右边的这只就是负责王国区域的【陆行鸟·古力】，它们是目标明确善于奔跑的鸟类精灵。$$]]>
+				<![CDATA[2#从古老的时代开始，陆行鸟就是摩尔们远行的最佳拍档，$$]]>
+				<![CDATA[1#古力是骑乘经验丰富的老手，我从古力小时候开始训练它了。$$]]>				
+				<![CDATA[7#我们一起去过世界的许多地方，看到过许多美好的事情————$$]]>
+				<![CDATA[1#————所以为了让更多的人看到那些美好的景色，我成为了【职业陆行鸟训练师】，为王国里的大家提供陆行鸟服务。]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="3" type="0" answer="我要登记$让我再想想" to="d2$o" >
+			<des>
+				<![CDATA[2#只有在@area登记过，才能使用陆行鸟，现在是否需要进行登记呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="4" type="0" answer="我要使用$不需要，谢谢" to="d3$o" >
+			<des>
+				<![CDATA[2#已经为你登记了@area的陆行鸟传送点，现在需要使用陆行鸟吗？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="105" id="5" type="0" answer="我想修装备$怎样合成装备$祝你好运"  to="b12_105$a10$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#即使再珍惜地使用，装备最后也会坏掉。我最好的装备永远是下一件！哈哈！]]>			
+			</des>
+		</proAction>	
+		<proAction npcID="105" id="6" type="0" answer="我想修装备$怎样合成装备$祝你好运"  to="b12_105$a10$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#在我这里，你可以修理装备、合成装备！采集材料、合成装备均需要耗费精力哦（在线即可自动回复精力值）。]]>
+			</des>
+		</proAction>		
+		<proAction npcID="51" id="7" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_51$o" colorID="1$0">
+			<des>
+				<![CDATA[1#在野外受了伤绝对不要忍耐，第一时间接受治疗才是最聪明的选择! ]]>
+			</des>
+		</proAction>
+		<proAction npcID="51" id="8" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_51$o" colorID="1$0">
+			<des>
+				<![CDATA[1#治疗花费越多星豆，对摩尔王国【公益事业】贡献越大~~\n多多战斗吧，期待经常见到你哦^^! ]]>
+			</des>
+		</proAction>	
+		<proAction npcID="51" id="9" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_51$o" colorID="1$0">
+			<des>
+				<![CDATA[1#传教士协会为您服务！有什么需要帮助的尽管说^—^ ]]>
+			</des>
+		</proAction>		
+		<proAction id="10" type="1" level="taskLevel" name="task_10025_1" moviepos="0,0" to="a6"/>											
+	</actions>
+</map>

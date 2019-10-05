@@ -1,0 +1,42 @@
+<!--锁修塔桥-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="400,1454" targetMapId="11702" targetTransPortId="2"/>
+		<node id="2" pos="405,588" targetMapId="11704" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>	
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+		<node id="5170" type="Object" level="downLevel" res="MC_shui" />	
+		<node id="5171" type="Object" level="downLevel" res="MC_shuia" />							
+	</object>
+	<npc>
+		<node id="53" type="NPC" res="MC_npc_53" level="downLevel" fun="" need="201" needType="task" needAction="2$3" taskType="0" action="0$1" needLevel="" needKind=""/>
+		<node id="54" type="NPC" res="MC_npc_54" level="downLevel" action=""  taskShowSteps="10095_2|3|4" />
+		<node id="55" type="NPC" res="MC_npc_55" level="downLevel" action=""  taskShowSteps="10095_2|3|4" />		
+	</npc>
+	<actions>
+<!--不可学技能-->
+		<proAction npcID="53" id="0" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#拿剑是为了今后的人不再拿剑。\n让光洁的剑身变成女孩子的梳妆镜吧……哈哈。]]>
+			</des>
+		</proAction>
+		<proAction npcID="53" id="1" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#这是剑魂重要的地方……]]>
+			</des>
+		</proAction>									
+<!--可学技能-->
+		<proAction npcID="53" id="2" type="0" answer="我想学【技能】$摩尔勇士万岁！" to="a3$o" >
+			<des>
+				<![CDATA[1#拿剑是为了保护重要的人。]]>
+			</des>
+		</proAction>
+		<proAction npcID="53" id="3" type="0" answer="谢谢银魂老师！$摩尔勇士万岁！" to="b9_53$o" >
+			<des>
+				<![CDATA[1#你已经通过了锁修塔的考验，那么就教给你“二阶段技能”吧！]]>
+			</des>
+		</proAction>	
+	</actions>											
+</map>

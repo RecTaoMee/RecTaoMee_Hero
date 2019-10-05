@@ -1,0 +1,49 @@
+<task id="10027">
+	<taskDes>
+		<![CDATA[学会了【采集】，去问问坷一特吧$$]]>
+		<![CDATA[尝试着去【采集】吧，坷一特需要5个棉球果，在格里尔平原好好寻找一下吧！]]>
+	</taskDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="41" action="0" title="坷一特？" needRes="" needResNum="" unResAction="" taskDes="0" mapID="21301"/>
+		<pro type="0" parent="0" npcID="41" action="4" title="棉球果来了！" needRes="150003" needResNum="5" unResAction="5" taskDes="1" mapID="21301"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="41" answer="好的！" to="s1">
+			<des>
+				<![CDATA[1#第一次学会生活技能是不是很开心呢？可不要得意那么早，第一个考验来了！$$]]>
+				<![CDATA[1#格历尔平原1区可以【采集】到棉球果，这是制作补充HP药剂的常用材料。$$]]>
+				<![CDATA[1#如果你能在格历尔平原采集【5个棉球果】给我，就有神秘奖励哦！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="41" answer="去哪里采集$精力值$明白啦！" to="a2$a3$o">
+			<des>
+				<![CDATA[1#唷！我浑身的采集血液都燃烧起来了！让我们一起用双爪采遍全世界——！$$]]>
+				<![CDATA[1#采集可是一门大学问，你想知道什么呢？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="41" answer="去哪里采集$精力值$明白啦！" to="a2$a3$o">
+			<des>
+				<![CDATA[1#采集需要找到【采集点】，路边的树木，草丛，石堆都有可能采集到好东西，需要“探索之魂”去寻找！$$]]>
+				<![CDATA[1#再告诉你一个小秘密：离城镇越远的【采集点】越容易得到高级材料哦！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="41" answer="去哪里采集$精力值$明白啦！" to="a2$a3$o">
+			<des>
+				<![CDATA[1#每一次采集都需要消耗一定的【精力值】，越高级的【资源点】需要消耗的精力值越多$$]]>
+				<![CDATA[1#当【精力值】不足的时候就无法采集了！【精力值】每天都会恢复一点，所以我们摩尔做事情一定要有计划性！]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="41" answer="谢谢坷一特^^！" to="c">
+			<des>
+				<![CDATA[1#1,2,3,……5！嗯，不错不错，你很有采集的天赋！格历尔棉球果的滋味真是太棒了！$$]]>
+				<![CDATA[1#这些【至纯之水】收下吧，这可是很少见的材料哦！]]>
+			</des>
+		</proAction>
+			<proAction id="5" type="0" npcID="41" answer="加油⊙﹏⊙!" to="o">
+			<des>
+				<![CDATA[1#如果你能在格里尔平原采集【5个棉球果】给我，就有神秘奖励！]]>
+				<![CDATA[1#采集需要耐心的探索精神！请拿出你的耐心和探索之魂吧！不放过每一寸格里尔平原的角落！！!]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,32 @@
+<!--旅馆2楼-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="250,390">
+		 <node id="1" pos="500,300" targetMapId="11401" targetTransPortId="4" name="旅馆1楼"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="36" type="NPC" res="MC_npc_36" level="contentLevel" fun="" taskType="0" action="0$1$2" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction npcID="36" id="0" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[4#你相不相信有从未来来的人？如果有的话我想问它关于未来的事情...]]>
+			</des>
+		</proAction>
+		<proAction npcID="36" id="1" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[1#我想找到解决问题的办法…一定可以找到...]]>
+			</des>
+		</proAction>
+		<proAction npcID="36" id="2" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[4#天冷的时候即使从被窝里爬起来也是需要极大的勇气的！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

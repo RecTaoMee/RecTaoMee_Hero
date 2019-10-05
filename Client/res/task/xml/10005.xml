@@ -1,0 +1,41 @@
+<task id="10005">
+	<taskDes>
+		<![CDATA[从面包店取回生日蛋糕，小事一桩！☆【贝多罗面包店】在【王国南街】。$$]]>
+		<![CDATA[真糟糕，快去【摩尔王国】门口教训一下淘气的【电波兔】。☆【电波兔】似乎在【摩尔王国】城外出没，去城门左边看看吧。$$]]>
+		<![CDATA[【电波兔】好像没有被【黑化】？算了，还是快点把戒指送回【王国南街】的【贝多罗面包店】吧！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+			<pro type="0" parent="" npcID="18" action="0" title="生日蛋糕做好了吗?" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11213"/>
+			<pro type="3" parent="0" mapID="21301" name="task_10005_1" level="contentLevel" point="-672,-680" action="2" taskDes="1"/>
+			<pro type="0" parent="0" npcID="18" action="4" title="生日蛋糕做好了吗?" bossID="" bossNum="" taskDes="1" mapID="21301"/>
+			<pro type="0" parent="2" npcID="18" action="3" title="戒指拿回来了！" taskDes="2" mapID="11213"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		
+		<proAction id="0" type="0" npcID="18" answer="戒指？" to="s1">
+			<des>
+				<![CDATA[5#啊！！！不好了，戒指被【电波兔】抢走了！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="18" answer="使命必达！" to="o">
+			<des>
+				<![CDATA[5#那个戒指是贝利先生特别嘱咐的，一定要藏在蛋糕里作为生日礼物的...绝对不能遗失！$$]]>
+				<![CDATA[5#【@nick】快点从淘气的【电波兔】那里夺回戒指吧!这..这也是摩尔勇士的试炼！ ]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="5" fightID="2" data="2" to="a5"/>
+		<proAction id="3" type="0" npcID="18" answer="嗯" to="c" nextTask="10006_0">
+			<des>
+				<![CDATA[1#你夺回戒指了？]]>			
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="18" answer="我马上去" to="o">
+			<des>
+				<![CDATA[1#想成为摩尔勇士的人绝对不会被这这种难倒的！]]>			
+			</des>
+		</proAction>
+		<proAction id="5" type="7" taskResID="260006" taskResNum="1" delTaskResID="" delTaskResNum="" to="e2"/>
+	</actions>
+</task>

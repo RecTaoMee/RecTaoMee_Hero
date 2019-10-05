@@ -1,0 +1,46 @@
+<taomee>
+	<Dll>
+		<item name="勇士1" path="dll/TaomeeLibraryDLL.swf" ver="20100601"/>
+		<item name="勇士2" path="dll/ClientCoreDLL.swf" ver="20100601"/>
+		<item name="勇士3" path="dll/ClientAppDLL.swf" ver="20100601"/>
+	</Dll>
+	<Bean>
+		<!--=====================core=====================-->
+		<!--Listener-->
+		<item id="ResLoadListener" class="com.mole2.core.cmdListener.ResLoadListener" />
+		<item id="ToolBarController" class="com.mole2.app.toolBar.ToolBarController" />
+		<item id="HeroBroadcastController" class="com.mole2.app.broadcast.HeroBroadcastController" />
+		<item id="SessionUpdateListener" class="com.mole2.core.cmdListener.SessionUpdateListener" />
+		<!--<item id="TopIconPanel" class="com.mole2.app.ui.TopIconPanel" />-->
+		
+		<!--<item id="ChatCmdListener" class="com.mole2.core.cmdListener.ChatCmdListener" />
+		<item id="SimpleNotificationCmdListener" class="com.mole2.core.cmdListener.SimpleNotificationCmdListener" />-->
+		<item id="PersonActionCmdListener" class="com.mole2.core.cmdListener.PersonActionCmdListener" />
+		<Bean id="MessageAlarm" class="com.mole2.app.message.MessageAlarm" />
+		<Bean id="ChallengeMessageAlarm" class="com.mole2.app.message.ChallengeMessageAlarm" />
+		<Bean id="EquipRepairAlarm" class="com.mole2.app.message.EquipRepairAlarm" />
+		<Bean id="PetInfoController" class="com.mole2.app.pet.PetInfoController" />
+		<!-- <item id="MainViewOperation" class="com.mole2.app.ui.MainViewOperation" /> -->
+		<!--config-->
+		<!-- item id="KeyConfig" class="com.gfp.core.config.KeyConfig" /-->
+		
+		<!--=====================app=====================-->
+		<!--item id="ToolBarController" class="com.gfp.app.toolBar.ToolBarController" /-->
+		<item id="UserInfoController" class="com.mole2.app.user.UserInfoController" />
+		<item id="" class="com.mole2.app.bean.EquipAdvertisementBean" /><!--PvP连续失败推荐装备-->
+		<item id="" class="com.mole2.app.bean.ExpPotionAdvertisementBean"  /><!--推荐经验药水-->
+		<!--=====================activity=====================-->
+		<!--item id="ActivityRobberGroup" class="com.mole2.app.activity.ActivityRobberGroup" /-->
+		<!--item id="ActivityVIPGetDragon" class="com.mole2.app.activity.ActivityVIPGetDragon" /-->
+		<item id="ActivityGegelaNotice" class="com.mole2.app.activity.ActivityGegelaNotice" />
+		<item id="LoadingAwardNotice" class="com.mole2.app.activity.LoadingAwardNotice"  />
+		<item id="ActivityNewVipGift" class="com.mole2.app.activity.ActivityNewVipGift"  />	<!--VIP首充-->
+		<!--item id="ActiveFreeVip" class="com.mole2.app.activity.ActiveFreeVip"  /--><!--免费领取VIP-->
+		<!--item id="ActivityJoeMovie" class="com.mole2.app.activity.ActivityJoeMovie" /-->
+		<!--item id="ActivityPayVip" class="com.mole2.app.activity.ActivityPayVipNotice" /-->
+		<!--时间点精灵-->
+		<!--item id="ActivityTimePointPet" class="com.mole2.app.activity.ActivityTimePointPet" /-->
+		<!--item id="ActivitySkyFire" class="com.mole2.app.activity.ActivitySkyFire"/-->
+		<item id="ActivityEnterGameMovie" class="com.mole2.app.activity.ActivityEnterGameMovie"/>
+	</Bean>
+</taomee>

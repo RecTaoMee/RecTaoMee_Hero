@@ -1,0 +1,260 @@
+<Task ID="206" Memo="c摩尔王c正在c国王呈见厅c等你，似乎有紧急要事商谈。" TargetMap="11307">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0">
+    		<Event Memo="c摩尔王c正在c国王呈见厅c等你，似乎有紧急要事商谈。" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您找我？" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="年轻的未来勇士，你的迅速成长让我感到震惊，随着等级的提升，我相信你越来越感受到自己的成长瓶颈。" />
+					<Msg NpcID="30" ImageID="1" Info="这次将你招来，是出于女神的授意。经历了种种考验，是时候该让你踏上进阶之路了。" />	
+					<Option Info="进阶之路？" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+		</Step>					
+ 		<Step ID="101" ParentList="1" ParentCost="1">
+    		<Event Memo="c摩尔王c正在c国王呈见厅c等你，似乎有紧急要事商谈。" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+ 				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="进阶之路？" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="没错，在荣耀时代，进阶职业才是真正的勇士职业，为了抵御魔族，很多摩尔觉醒了自身潜在的力量。" />
+					<Msg NpcID="30" ImageID="1" Info="而在神魔大战后，生活日趋平和，新一代摩尔们已经渐渐失去了血性，进阶职业勇士已经非常罕见了。" />
+					<Msg NpcID="30" ImageID="1" Info="你所了解的剑士、弓术士、魔法师、传教士、忍者五职业，只是进阶职业的分化职业罢了，对应的，这五职业的战斗力也大打折扣。" />	
+					<Option Info="原来如此" />
+				</Action>					
+				<Action Type="TALK">	
+					<Msg NpcID="30" ImageID="1" Info="现在魔族死灰复燃，且力量越来越强大，如果没有新的进阶力量，在女神复苏之前，也许整个大陆都将陷入魔族的控制中。" />
+					<Msg NpcID="30" ImageID="1" Info="情况已经非常不乐观，时代需要你的力量，你愿意接受考验，挖掘自身的潜能，成为更高阶的未来勇士么？" />
+					<Option Info="乐意之至" />
+				</Action>		
+				<Action Type="TALK">	
+					<Msg NpcID="30" ImageID="1" Info="好，请带着这封信件，去找克拉斯环岛岩洞的守卫士兵，他会指引你进阶挑战的。预祝你顺利通过考验！" />
+					<Option Info="我一定会成功" />
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260039" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="22102, 1" />			      																																					
+    		</Event>
+		</Step>	
+		
+  		<Step ID="2" ParentList="101" ParentCost="1" >			  
+    		<Event Memo="带上摩尔王的信件去c克拉斯岩洞外c找c守卫士兵c！" TargetMap="22102" TargetObj="224" TargetName="和t守卫士兵t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22102" ObjID="224" TaskOption="进阶之路！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="来者何人？此处禁入！"/>	
+					<Option Info="出示信件" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="恩，詹姆斯国王已经通知我了，最近未来勇士会来参加进阶考验，没想到会是个小不点。" />	
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">	
+					<Msg NpcID="224" ImageID="1" Info="我可要告诫你，如果只是抱着试试看的态度，那你必定会失败。进阶考验可不是那么容易的。" />																
+					<Msg NpcID="224" ImageID="1" Info="在这之前，先让我试试你的能力吧，如果你无法战胜我，那也不必进去了，老老实实再去练几年吧。准备好了么？" />						
+					<Option Info="准备一下" />
+				</Action>							
+    		</Event>
+		</Step>	
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+  			<Condition>
+				<Battle ID="3104" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="战胜了c守卫士兵c，听听他有什么要交代的！" TargetMap="22102" TargetObj="224" TargetName="和t守卫士兵t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22102" ObjID="224" TaskOption="怎么样？" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="厉害！不愧是女神大人挑选的勇士。好了，接下来我说的话，你要牢牢记住。" />
+					<Msg NpcID="224" ImageID="1" Info="我身后这座山叫克拉斯岩洞，是座死火山，在山洞最深处沉睡着传说中的水之龙伊夫特。" />	
+					<Msg NpcID="224" ImageID="1" Info="因为先天缺陷，伊夫特的孩子无法孵化，长久以来只能浸润在岩洞中得以保存。而为了保护孩子，伊夫特数百年来也未离开这里。" />
+					<Msg NpcID="224" ImageID="1" Info="女神因为神魔战争后的衰弱，始终无力帮助到伊夫特，这也让伊夫特逐渐失去了信心，最终选择沉眠于此，延缓生命流失。" />
+					<Msg NpcID="224" ImageID="1" Info="这些年苦心研究下，王室研究院已经找到了弥补先天缺陷的办法，女神也非常高兴，这才委托你说服伊夫特将他的孩子带去。" />
+					<Msg NpcID="224" ImageID="1" Info="不过现在即使你到达山洞最深处，也是无法见到伊夫特的。" />										
+					<Option Info="为什么？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="克拉斯岩洞原本是金属系精灵王灭特的居住地，伊夫特收服了他，并委派他严守洞穴，禁止任何人进入" />					
+					<Option Info="那怎么办？！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="要不你先进去见见灭特，看看有没有什么办法说服他吧。事不宜迟，准备好了就直接进去吧" />					
+					<Option Info="只能这样了" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="22204,1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="22204,206" />
+    		</Event>
+    		<Event ConditionType="OUT" Memo="c守卫士兵c要考验你的实力，快去挑战他把！" TargetMap="22102" TargetObj="224" TargetName="打败t守卫士兵t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22102" ObjID="224" TaskOption="我来接受考验了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="224" ImageID="1" Info="准备好了么？" />
+					<Option Info="来吧！" />
+					<Option Info="准备一下" NextStep="3" />
+				</Action>
+    			<Action Type="COMMAND" Command="BATTLE" Params="3104" />
+    		</Event>
+		</Step>
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Event Memo="守卫士兵建议你先去见见精灵王c灭特c。" TargetMap="22204" TargetObj="206" TargetName="和t灭特t对话" > 	
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22204" ObjID="206" TaskOption="精灵王灭特"/>																										
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="206" ImageID="1" Info="谁？竟敢闯入克拉斯岩洞，是不把我灭特放在眼里么？" />
+					<Option Info="出示推荐信" />			
+				</Action>
+				<Action Type="TALK">															
+					<Msg NpcID="206" ImageID="1" Info="原来如此，看来伊夫特一族有救了，我也可以解脱了。不过，摩尔王是不是老糊涂了，你这个小不点是未来勇士？" />	
+					<Option Info="出示命运轮盘" />					
+				</Action>	
+				<Action Type="TALK">															
+					<Msg NpcID="206" ImageID="1" Info="……我相信你是未来勇士，但我还是没法让你通过，伊夫特委派我在此守卫，他的命令是绝对的，除非……" />	
+					<Option Info="除非什么？" />					
+				</Action>
+				<Action Type="TALK">															
+					<Msg NpcID="206" ImageID="1" Info="除非你击败我，拿着他的信物去岩洞深处。外面的情况我大致也清楚，魔族势力横行，精灵联盟正在重组，只是我始终无法离开这里。" />
+					<Msg NpcID="206" ImageID="1" Info="来吧，也让我见证一下未来勇士的潜力！" />	
+					<Option Info="准备一下" />					
+				</Action>											
+    		</Event>
+		</Step>	
+			
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="3105" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="战胜了灭特，终于可以面见伊夫特了！" TargetMap="22204" TargetObj="206" TargetName="和t灭特t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22204" ObjID="206" TaskOption="我赢啦！" />
+				</Trigger>
+				<Action Type="TALK">													
+					<Msg NpcID="206" ImageID="1" Info="很好，这是伊夫特的鳞片，拿着它到岩洞最深处，嵌入石碑上，就能将伊夫特唤醒了，之后就看你如何应对了。" />	
+					<Option Info="交给我吧！" />					
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="22209,1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="22204,206" />
+    		</Event>
+    		<Event ConditionType="OUT" Memo="打败c灭特c获得伊夫特的鳞片才能继续前进。" TargetMap="22204" TargetObj="206" TargetName="打败t灭特t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22204" ObjID="206" TaskOption="我来挑战你" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="206" ImageID="1" Info="我不会放水的，尽管使出你的全力吧！" />
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="5" />
+				</Action>
+    			<Action Type="COMMAND" Command="BATTLE" Params="3105" />
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_2" Params="260040" />
+    		</Event>
+		</Step>
+	
+		<Step ID="60" ParentList="5" ParentCost="1" >
+    		<Event Memo="终于获得了伊夫特的鳞片，快去c岩洞深处c唤醒他吧！" TargetMap="22209" ObjID="10" TargetName="点击t石碑t"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="22209" ObjID="10"/>
+				</Trigger>	
+				<Action Type="MOVIE" Url="task_22209_20603.swf" MapLevel="TASK" Pos="0,0" />	
+  				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="22209, 20602" />
+    		</Event>
+		</Step>
+		
+		<Step ID="6" ParentList="60" ParentCost="1" >
+    		<Event Memo="唤醒了c伊夫特c，把推荐信给他看看。" TargetMap="22209" TargetObj="20602" TargetName="与t伊夫特t对话"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22209" ObjID="20602" TaskOption="伊夫特大人！" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="20602" ImageID="1" Info="灭特，我不是告诫过你，没有重要的事情别惊动我么？！" />	
+					<Option Info="我不是灭特" />
+				</Action>
+				<Action Type="TALK">															
+					<Msg NpcID="20602" ImageID="1" Info="不是灭特？你是谁？为什么你会有我的鳞片？灭特呢？你来这里想干什么？" />	
+					<Option Info="出示推荐信" />
+				</Action>
+				<Action Type="TALK">						
+					<Msg NpcID="20602" ImageID="1" Info="什么？真的有办法解救我的孩子了？哼，这么多年来女神都未现身，我还以为她背弃了与我龙族的盟约了呢。" />
+					<Msg NpcID="20602" ImageID="1" Info="你就是那个什么未来勇士，看你这个儿，会有能力拯救这个时代？女神不是糊涂了吧。" />		
+					<Option Info="休得无礼" />				
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20602" ImageID="1" Info="哼！还很有骨气，我倒想试试，希望你的实力与你的骨气一样硬。如果你能击败一成实力的我，姑且信你带来的消息。" />	
+					<Option Info="准备一下" />
+				</Action>	 															
+    		</Event>
+		</Step>
+
+		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Condition>
+				<Battle ID="3106" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="终于击败了c伊夫特c，听听它想说什么。" TargetMap="22209" TargetObj="20602" TargetName="和t伊夫特t对话">	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22209" ObjID="20602" TaskOption="我赢了！" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="20602" ImageID="1" Info="愿赌服输，我的孩子就托付给你了，请帮我带给摩尔王。另外回去的时候带个消息给灭特，现在起他自由了。" />	
+					<Msg NpcID="20602" ImageID="1" Info="也记得告诉女神，我会遵守盟约继续留在这里，别问为什么，理由以后你会明白的，去吧，也许很快我们会再见。" />
+					<Option Info="明白了" />					
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_3" Params="260041" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="22204,206" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="22209,20602" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="22204,1" />
+    		</Event>
+    		<Event ConditionType="OUT" Memo="击败c伊夫特c获得他的认可吧！" TargetMap="22209" TargetObj="20602" TargetName="击败t伊夫特t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22209" ObjID="20602" TaskOption="我来挑战你" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20602" ImageID="1" Info="用尽你的全力，让我看看你的潜力！" />
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="7" />
+				</Action>
+    			<Action Type="COMMAND" Command="BATTLE" Params="3106" />
+    		</Event>
+		</Step>		
+		
+		<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="回程的途中，把伊夫特的转达给c灭特c。" TargetMap="22204" TargetObj="206" TargetName="与t灭特t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="22204" ObjID="206" TaskOption="灭特我来了"/>																										
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="206" ImageID="1" Info="怎么样？有见到伊夫特吗？" />	
+					<Option Info="交代事情经过" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="206" ImageID="1" Info="伊夫特的脾气虽然火爆，但在龙族中也算是非常守信的了。这次还真要多谢你为我取回了自由。" />	
+					<Msg NpcID="206" ImageID="1" Info="精灵联盟形势不容乐观，我可能也会暂时离开这里寻找我的盟友们，你赶快回摩尔王国去吧，一路小心了。" />	
+					<Option Info="谢谢，我走了" />					
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307,1" />
+    		</Event>
+		</Step>	
+		
+		<Step ID="9" ParentList="8" ParentCost="1" >
+    		<Event Memo="终于完成了委托，回去向c詹姆斯c国王汇报下。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11307" ObjID="30" TaskOption="我回来了"/>																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="2" Info="辛苦了，事情办得如何？" />	
+					<Option Info="一切顺利" />					
+				</Action>
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="呵呵，不愧是未来勇士，女神已经知道了事情的经过。我现在送你一件宝物，下周再来找我吧，会有惊喜哦。" />	
+					<Option Info="好期待" />					
+				</Action>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260039" />
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260040" />
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260041" />
+				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="0" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

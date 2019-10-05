@@ -1,0 +1,57 @@
+<!--弗雷基商会-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="1136,366" targetMapId="11603" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->		
+		<node id="49" type="NPC" res="MC_npc_49" level="contentLevel" fun="" taskType="0" action="1" needLevel="" needKind=""/>
+		<node id="50" type="NPC" res="MC_npc_50" level="contentLevel" fun="" taskType="0" action="2" needLevel="" needKind=""/>
+		<node id="48" type="NPC" res="MC_npc_48" level="downLevel" fun="" taskType="0" action="4$5$6" needLevel="" needKind=""/>				
+
+	</npc>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction npcID="49" id="0" type="0" answer="【精灵学魔法技能】$祝你好运" to="b10_49$o" colorID="1$0">
+			<des>
+				<![CDATA[1#精灵学技能要特别注意自身【属性】！$$]]>
+				<![CDATA[1#火属性的精灵使用火系魔法，能发挥更大的威力。不过与水属性精灵战斗就会被【双倍克制】。]]>
+			</des>
+		</proAction>
+		<proAction npcID="49" id="1" type="0" answer="【精灵学魔法技能】$关于魔法技能$祝你好运" to="b10_49$a0$o" colorID="1$0">
+			<des>
+				<![CDATA[1#风地水火四大元素力量相生相克——\n如此美丽的朴素的宇宙——真是奥妙的世界啊!]]>
+			</des>
+		</proAction>
+		<proAction npcID="50" id="2" type="0" answer="【精灵学物理技能】$关于物理技能$祝你好运" to="b10_50$a3$o" colorID="1$0">
+			<des>
+				<![CDATA[1#脆弱的【魔法系职业】需要擅长物理技能的精灵来保护！]]>
+			</des>
+		</proAction>
+		<proAction npcID="50" id="3" type="0" answer="【精灵学物理技能】$祝你好运" to="b10_50$o" colorID="1$0">
+			<des>
+				<![CDATA[1#最近给精灵学习【护卫技能】的魔法师特别多~关键时刻，精灵伙伴挺身而出的“护卫”——就是伟大的友谊和爱啊！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="48" id="4" type="0" answer="我想买道具$我想兑换水晶$我想卖东西$摩尔勇士万岁！" to="b0_48$f5$b1_48$o" colorID="1$1$1$0$0" >
+			<des>
+				<![CDATA[1#今天太阳不错，商会的海船应该就快到了！  ]]>
+			</des>
+		</proAction>
+		<proAction npcID="48" id="5" type="0" answer="我想买道具$我想兑换水晶$我想卖东西$摩尔勇士万岁！" to="b0_48$f5$b1_48$o" colorID="1$1$1$0$0" >
+			<des>
+				<![CDATA[1#海洋运输费又涨价了！看来以后得多进几次货。 ]]>
+			</des>
+		</proAction>
+		<proAction npcID="48" id="6" type="0" answer="我想买道具$我想兑换水晶$我想卖东西$摩尔勇士万岁！" to="b0_48$f5$b1_48$o" colorID="1$1$1$0$0" >
+			<des>
+				<![CDATA[1#你知道旅行不带道具有多糟糕吗，那就等于“出海不看弗雷基天气预报”！]]>
+			</des>
+		</proAction>				
+			
+	</actions>	
+</map>

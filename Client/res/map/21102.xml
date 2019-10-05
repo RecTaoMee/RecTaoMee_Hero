@@ -1,0 +1,48 @@
+<!-- 21102 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-002.mp3">
+	<transport intPos="172,207">
+		<node id="1" pos="172,207" targetMapId="11103" targetTransPortId="2"/>
+		<node id="2" pos="1419,811" targetMapId="11206" targetTransPortId="1"/>
+		<node id="3" pos="929,193" targetMapId="21103" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="" res="MC_sign_1">
+			<event type="enter_map" hit="RepeatSpeakHit" pos="" endEvent="speak1End">
+				<![CDATA[想知道真相吗？$$]]>
+				<![CDATA[点我！]]>
+			</event>
+			<!--event type="speak1End" hit="TimeOutHit" time="4000" endEvent="enter_map"/-->
+			<event type="click" hit="RemoveHit" removeHits="enter_map"/>
+			<event type="click" hit="FunctionHit" func="gotoAndStop" params="2"/>
+			<event type="click" hit="RepeatSpeakHit" pos="">
+				<![CDATA[欢迎前往摩尔王国！]]>
+			</event>
+		</node>
+	</object>
+<!-- speak -->
+	<!-- @last 冒泡持续时间 -->
+	<!-- @interval 冒泡间隔时间 -->
+	<!-- @speakTime 冒泡次数，0表示无限循环 -->
+	<!-- @randomType 0表示des顺序循环，1表示des随机循环 -->
+	<!-- @delay 对话开始的延迟时间 -->
+	<!-- @click 点击执行的动作 -->
+	<!-- @mouseOver 鼠标移上执行的动作 -->
+	<speak>
+		<node id="1" last="2000" interval="2000" speakTime="0" randomType="0" delay="0" click="s2" >
+			<des>
+				<![CDATA[想知道真相吗？]]>
+			</des>
+			<des>
+				<![CDATA[点我！]]>
+			</des>
+		</node>
+		<node id="2" last="5000" interval="2000" speakTime="0" >
+			<des frame="2">
+				<![CDATA[欢迎前往摩尔王国！]]>
+			</des>
+		</node>
+	</speak>	
+</map>

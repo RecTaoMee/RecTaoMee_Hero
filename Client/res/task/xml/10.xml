@@ -1,0 +1,27 @@
+<task id="10">
+	<taskDes>
+		<![CDATA[辛苦了半天最后没吃到“吉普豆泥”啊……这次【奇普力村长】会不会因为开心给我好东西呢^^]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="5" title="吉普豆泥" action="0" needRes="" needResNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="5" title="吉普豆泥" action="1" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="5" answer="想!" to="s1">
+			<des>
+                <![CDATA[2#嚯嚯喔………唔……我又开心了。$$]]>
+				<![CDATA[1#想不想学【只有村长才会的厉害技能】？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="5" answer="好" to="a2">
+			<des>
+				<![CDATA[1#看看我有什么可以教给你的吧————]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="2" panel="Task11Module" to="">
+		</proAction>
+
+	</actions>
+</task>

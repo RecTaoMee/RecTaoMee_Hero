@@ -1,0 +1,27 @@
+<task id="10014">
+  <taskDes>
+	<![CDATA[加入魔法师协会有一段时间了，有没有遇到什么疑惑呢?和彼兔导师聊聊吧。$$打赢了！快找彼兔老师领取奖励吧！]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="27" title="彼兔老师好！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11304"/>
+    <pro type="0" parent="0" npcID="27" title="战胜你啦！" action="3" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11304"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="27" answer="有一点点..." objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[2#【@nick】你加入魔术师协会有一段时间了，觉得自己有变得更强吗？]]>
+		</des>
+    </proAction>
+    <proAction id="1" type="0" npcID="27" answer="好！" objLevel="" objName="" objType="" objValue="" to="a2">
+      <des>
+		<![CDATA[2#很好，但是魔法可不是轻易能够掌握的力量，让我见识一下你对魔法的理解到达了什么境界吧！]]>
+		</des>
+    </proAction>
+    <proAction id="2" type="5" fightID="3001" data="1" to="so"/>
+    <proAction id="3" type="0" npcID="27" answer="谢谢彼兔老师" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[2#做得很好，这根法杖送给你作为奖励吧，记住，魔术来源你的智慧。]]>
+		</des>
+    </proAction>
+  </actions>
+</task>

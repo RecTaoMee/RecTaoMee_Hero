@@ -1,0 +1,87 @@
+<task id="21">
+	<taskDes>
+		<![CDATA[好不容易来到摩尔王国，【摩尔王】一定知道十二勇士的事情！$$]]>
+		<![CDATA[别忘了答应皮皮克克的“勇士签名”，摩尔王一定知道勇士的事情，【和摩尔王聊聊吧！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="30" title="国王陛下" action="0" needRes="" needResNum="" unResAction=""  taskDes="1" mapID="11307"/>
+		<pro type="0" parent="0" npcID="30" title="国王陛下" action="6"  taskDes="1" mapID="11307"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="30" answer="吉普豆村没事吧？$精灵为什么攻击大家？" to="a2$a1">
+			<des>
+				<![CDATA[1#来自未来的摩尔，你肯定有很多问题想问我吧————]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="30" answer="吉普豆村没事吧？" to="a4">
+			<des>
+				<![CDATA[1#神谕中所说的【黑水晶】不知被何种力量打碎，飞散到世界各地。$$]]>
+				<![CDATA[1#精灵们是充满灵力的生命体，所以最容易被黑水晶的力量所影响。$$]]>
+				<![CDATA[2#还有其它想知道的吗？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="30" answer="精灵为什么攻击大家？" to="a3">
+			<des>
+				<![CDATA[1#精灵反常，地下的吉普豆地区也受到了影响。不过我们已经找到方法净化被【黑化】的精灵了。$$]]>
+				<![CDATA[2#“乐观”是我们摩尔族与生俱来的“魔法”，再困难的问题也一定可以解决的哦呵呵呵。$$]]>
+				<![CDATA[2#还有其它想知道的吗？]]>	
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="30" answer="奇普力爷爷不知道吗？" to="a5">
+			<des>
+				<![CDATA[1#神谕中所说的【黑水晶】不知被何种力量打碎，飞散到世界各地。$$]]>
+				<![CDATA[1#精灵们是充满灵力的生命体，所以最容易被黑水晶的力量所影响。$$]]>
+				<![CDATA[1#我们已经在吉普豆村和格历尔全大陆施行净化精灵的方法了，你拿着的【亚历山大之剑】就是受【女神泉水】洗礼过的武器。$$]]>
+				<![CDATA[1#使用这些武器与精灵对战，可以净化精灵体内的黑水晶碎片，而不会伤害精灵们。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="30" answer="奇普力爷爷不知道吗？" to="a5">
+			<des>
+				<![CDATA[1#精灵反常，地下的吉普豆地区也受到了影响。不过我们已经找到净化被“黑化”的精灵的方法了。$$]]>
+				<![CDATA[2#“乐观”是我们摩尔族与生俱来的“魔法”，再困难的问题也一定可以解决的哦呵呵呵。$$]]>
+				<![CDATA[1#我们已经在吉普豆村施行了净化精灵的方法了，你拿着的【光之剑仿制品】就是受【女神泉水】洗礼过的武器。$$]]>
+				<![CDATA[1#使用这些武器与精灵对战，可以净化精灵体内的黑水晶碎片，而不会伤害精灵们。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="30" answer="为什么让我来见您？" to="s6">
+			<des>
+				<![CDATA[1#当然知道————啊哦呵呵。我们是老同学了，很久没见不知道那老家伙怎样了————哦呵呵呵。]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="30" answer="对了，国王陛下。" to="a7">
+			<des>
+				<![CDATA[1#奇普力把【希望之坠】交给你，让你带着它来找我。$$]]>
+				<![CDATA[2#原因我就先不告诉你了哦呵呵呵！————欢迎来到摩尔王国。]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="30" answer="可以带我见摩尔勇士吗？" to="a8">
+			<des>
+				<![CDATA[1#哦呵？]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="30" answer="要“勇士”签名" to="a9">
+			<des>
+				<![CDATA[1#你要找摩尔勇士做什么？]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="0" npcID="30" answer="我答应了别人的事……" to="a10">
+			<des>
+				<![CDATA[1#哦呵呵呵……这个…………]]>
+			</des>
+		</proAction>
+		<proAction id="10" type="0" npcID="30" answer="要怎么证明呢？" to="a11">
+			<des>
+				<![CDATA[1#能够信守诺言很好。不过真正的勇士只会和有勇气的人打交道，如果是胆小鬼，勇士不会见你。$$]]>
+				<![CDATA[1#你可以证明一下你心中的勇气吗？]]>
+			</des>
+		</proAction>
+		<proAction id="11" type="0" npcID="30" answer="没问题！$我再想想" to="c$o">
+			<des>
+				<![CDATA[2#摩尔城堡下有个古老的下水道，那可不是胆怯的小鬼头敢去的地方。$$]]>
+				<![CDATA[1#把存放在那里的特殊材料【黄金龙的指甲盖】拿来给我，证明你有勇气到过那里。你觉得这个提议如何？]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,51 @@
+<Task ID="10074" Memo="收到c皮克司精灵研究所c的邀请函，小主人去看下吗？" TargetMap="11206">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="收到c皮克司精灵研究所c的邀请函，小主人去看下吗？" TargetMap="11206" >
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11206" />						
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究所邀请函？" />									
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="400, 200" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="50" />
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />				 				
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="【@nick】来了！——抓住它！" />								
+					<Option Info="（⊙#⊙）什么？！" SkipTrigger="Y" />
+				</Action>									
+    		</Event>
+		</Step>
+		
+	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="收到c皮克司精灵研究所c的邀请函，小主人去看下吗？" TargetMap="11206" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究所邀请函？" />									
+				</Trigger>
+     			<Action Type="MOVIE" Url="task_10074_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />							
+    		</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="收到c皮克司精灵研究所c的邀请函，小主人去看下吗？" TargetMap="11206" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究所邀请函？" />									
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="12" ImageID="5" Info="没错，这次特别邀请你来，有重大理由——" />					
+					<Msg NpcID="42" ImageID="1" Info="“皮克司废柴精灵研究员”发现未来摩尔【@nick】，\n带来了女神的指引，\n与精灵签订契约成为可能！！" />												
+					<Msg NpcID="50" ImageID="1" Info="摩尔王国【精灵研究所】正在对意外发现的稀有精灵进行深入研究，秘密制定了【G档案】。" />
+					<Msg NpcID="43" ImageID="3" Info="【G档案】中记录了各种传说中的【稀有精灵】出没的信息，我们打算用100年收集所有大陆的精灵情报……" />							
+					<Msg NpcID="43" ImageID="1" Info="你感受到了吗？！伟大的【G档案】是超有意义的事业!!!" />
+					<Option Info="^_^嗯！" />
+				</Action>
+				<Action Type="TALK">							
+					<Msg NpcID="49" ImageID="1" Info="“皮克司精灵研究员”这里的G档案正式向你开放。" />	
+					<Msg NpcID="12" ImageID="1" Info="如果和【稀有精灵】签订契约，一定要以宇宙第一的速度把带它来！\n我们会给它量身高体重，用你的相机“拍个照”进行研究！" />
+					<Option Info="O K ！" />
+				</Action>									
+    		</Event>
+		</Step>
+
+</Procedure>
+</Task>

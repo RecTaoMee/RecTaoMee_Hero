@@ -1,0 +1,226 @@
+<!--
+地图ID中标示 是否战斗区域为第0位（从0开始，从左到右）,标示方法为1非战斗区，大于为战斗区域 
+
+area:区域节点，表示在二级地图上可见的区域ICON,主要是非战斗区域ICON, 
+		id: 区域ID, 定义了一个大陆 所有区域
+		IDS: 实际地图ID中的区域ID与 真正区域ID的对应关系， 我们的地图ID中第2位（从0开始，从左到右），可以表示该地图与其所在的区域ID的关系, 
+		       如11302和11202第三位分别为3,2，它们IDS对应的区域ID为3，所以这两个地图都属于2区域
+		name 区域名称
+		Desc ，区域描述
+		areaIcon 区域ICON
+		magicTransPos: 魔法传送石头传送 表示两个区域之间可以传送的具体位置，
+		magicTransMap 魔法传送石头传送 表示两个区域之间传送 的地图ID
+		magicIcon  魔法传送石头传送 两个区域之间传送点上显示传送工具素材ICON
+		
+		defalutFlyBirdPos 陆行鸟传送 表示两个区域之间可以传送的具体位置，
+		defalutFlyBirdMap 陆行鸟传送 表示两个区域之间传送 的地图ID
+		birdIcon 陆行鸟传送 两个区域之间传送点上显示传送工具素材ICON
+		
+		TipsType: 0,区域ICON上显示的带有传送工具的tips类型，(默认)
+				  1，三级地图上Icon具体有附近低点的tips类型，	
+				  2，简单的描述tips
+				  3，二级地图上 战斗场景 显示怪物等级，物品等类型的tips
+				  4，二级地图上 区域ICON 显示怪物等级，物品等类型的tips
+				
+		transType:表示区域中可用的传送工具（按位运算） 
+			第一位： 鸟，
+			第二位：石头，
+			第三位：船
+AreaPoint 二级地图上显示场景点 Icon			
+node 地图ICON节点 表示在制定区域中的地图ICON
+	 ID： 三级地图上显示ICON的地图ID，
+	 Name: 三级地图上显示ICON的地图名称，（程序未用，可忽略）
+	 NearMapList： 三级地图上显示ICON的地图ID的附近地图ID列表，
+	 Near：  三级地图上显示ICON的地图ID的附近地图名称列表，（地图名称会统一去maps.xml里地图名称，此属性可以忽略）
+	 InitJumpPos： 点击 三级地图上显示ICON的地图ID 会跳到改地图的具体位置的坐标，点的xy以逗号分隔
+	 InitJumpPos： 在任务提示模式下 点击 三级地图上显示ICON的地图ID 会跳到改地图的具体位置的坐标，点的xy以逗号分隔
+	 Desc: 在任务提示模式下 ,任务提示tips上显示的文本
+	 
+BossLevel：对于战斗区 区域ICON或地图ICON的Tips上显示怪物等级信息；
+ItemIDs:对于战斗区 区域ICON或地图ICON的Tips上显可以采集物品信息； 
+items : 对应ItemIDs的物品名称 
+-->
+
+<Areas>
+	<Land ID="1">
+		<Area ID="1" IDS="1" Name="吉普豆村"  
+			  Desc="吉普豆唯一产出地，有着为各地摩尔提供新鲜特大土豆的神圣使命！" 
+			  haveMap="0"
+			  areaIcon="area_1" 
+			  magicTransPos="625,288" 
+			  magicIcon="magic_1" 
+			  magicTransMap="11103" 
+			  path="0|17,16,15,1|0|17,16,15,1,2,3,4,5,6|17,16,15,1,2,3,12,13,14|17,16,15,1,2,3,7,8,9,10,11"
+			  transType="2" />
+		
+		<Area ID="2"  IDS="2,3"  Name="摩尔王国"  
+				Desc="令人向往的摩尔城堡和各大协会所在地。汇集各地优秀人才和丰富物资，引领各种新潮流。是摩尔们交流技艺魔法、精灵研究的繁荣城邦。"
+				 exitPos="323,982" 
+				 defalutFlyBirdPos="580,658" 
+				 defalutFlyBirdMap="11201" 
+				 areaIcon="area_2" 
+				 birdIcon="bird_2" 
+				 bean="0, 0, 0, 200, 200, 200" 
+				 path="1,15,16,17|0|0|1,2,3,4,5,6|1,2,3,12,13,14|1,2,3,7,8,9,10,11" 
+				 magicTransPos="119,637" 
+				 magicIcon="magic_2"  
+				 magicTransMap="11204" 
+				 transType="3" >
+				 
+			<!--城镇区域--> 
+			<node ID="11201"  MapID="11201"  TipsType="1" NearMapList="11206|11213" InitJumpPos="391,794" TaskInitJumpPos="391,794" />
+			<node ID="11202"  MapID="11202"  TipsType="1" NearMapList="11209|11210" InitJumpPos="703,383"  TaskInitJumpPos="703,383" />
+			<node ID="11203"  MapID="11203"  TipsType="1" NearMapList="11217|11218" InitJumpPos="714,412" TaskInitJumpPos="714,412" />
+			<node ID="11205"  MapID="11205"  TipsType="1" NearMapList="11214" InitJumpPos="957,437"  TaskInitJumpPos="957,437" />
+			<node ID="11204"  MapID="11204"  TipsType="1" NearMapList="11204" InitJumpPos="389,473"  TaskInitJumpPos="389,473" />
+			<node ID="11220"  MapID="11220"  TipsType="1" NearMapList="21202|21203|21204|21205|21206|21211" InitJumpPos="457,294"  TaskInitJumpPos="457,294" />
+			<node ID="11301"  MapID="11301"  TipsType="2" NearMapList="11301" InitJumpPos="784,585" TaskInitJumpPos="784,585" Desc="美好的绿色花园，面向全王国公民开放。" />
+			<node ID="11302"  MapID="11302"  TipsType="1" NearMapList="11307" InitJumpPos="801,502" TaskInitJumpPos="801,502" />
+			<node ID="11307"  MapID="11307"  TipsType="1" NearMapList="11302" InitJumpPos="378,469" TaskInitJumpPos="378,469" />
+			<node ID="11303"  MapID="11303"  TipsType="2" InitJumpPos="385,328"  TaskInitJumpPos="385,328"  Desc="导师：瑞凌 技能学习"/>
+			<node ID="11304"  MapID="11304"  TipsType="2" InitJumpPos="418,325"   TaskInitJumpPos="418,325" Desc="导师：彼得 技能学习" />	
+			<node ID="11305"  MapID="11305"  TipsType="2" InitJumpPos="380,334"  TaskInitJumpPos="380,334" Desc="导师：杰森 技能学习" />
+			<node ID="11306"  MapID="11306"  TipsType="2" InitJumpPos="422,338"  TaskInitJumpPos="422,338" Desc="导师：休一 技能学习" />
+			<node ID="11206"  MapID="11206"  TipsType="2" InitJumpPos="363,425"  TaskInitJumpPos="363,425" Desc="也是皮克司的家&lt;br/&gt;精灵技能学习" />				
+			<node ID="11207"  MapID="11207"  TipsType="1" NearMapList="11208" InitJumpPos="505,350"  TaskInitJumpPos="505,350" />				
+			<node ID="11218"  MapID="11218"  TipsType="1" NearMapList="11219" InitJumpPos="645,421"  TaskInitJumpPos="645,421" />
+			<node ID="11217"  MapID="11217"  TipsType="2" InitJumpPos="389,453"  TaskInitJumpPos="389,453" Desc="传教士协会&lt;br/&gt;导师：温蒂 技能学习" />
+			<node ID="11209"  MapID="11209"  TipsType="1" InitJumpPos="286,368"  TaskInitJumpPos="286,368" />
+			<node ID="11210"  MapID="11210"  TipsType="1" InitJumpPos="414,335"  TaskInitJumpPos="414,335" />
+			<node ID="11213"  MapID="11213"  TipsType="1" InitJumpPos="419,267"  TaskInitJumpPos="419,267" />
+			<node ID="11214"  MapID="11214"  TipsType="2" InitJumpPos="522,375"  TaskInitJumpPos="522,375" Desc="协会会长：莓可" />
+			<node ID="21301"  MapID="21301"  TipsType="4" BossLevel="10-15" ItemIDs="150003 170001 170002"  InitJumpPos="804,264" TaskInitJumpPos="804,264" BeatsName="7"/>
+			<node ID="11215"  MapID="11215"  TipsType="1" NearMapList="11309|11310" InitJumpPos="396,215" />  
+			<node ID="11222"  MapID="11222"  TipsType="1" NearMapList="11223" InitJumpPos="422,470" Desc="王国军营：妮娜&lt;br/&gt;通往史诗战场" />  
+			<node ID="11216"  MapID="11216"  TipsType="1" NearMapList="11205" InitJumpPos="422,470"/>  
+		</Area> 
+				
+		<Area ID="4"  IDS="4" Name="麦田村"  Desc="种植了大量黄金麦的宁静的田园村庄。为城区摩尔提供的优质黄金小麦是制作特级面包的必要原料！"
+			  exitPos="175,905" 
+			  defalutFlyBirdPos="239,600" 
+			  defalutFlyBirdMap="11401"  
+			  areaIcon="area_4" 
+			  birdIcon="bird_4" 
+			  bean="0, 200, 0, 0, 200, 200"
+			  path="6,5,4,3,2,1,15,16,17|6,5,4,3,2,1|0|0|6,5,4,3,12,13,14|6,5,4,3,7,8,9,10,11" 
+			  transType="1" >
+				 
+			<node ID="11401"  MapID="11401" TipsType="1" NearMapList="11402|11404|11405" InitJumpPos="500,450"/>
+			<node ID="11402"  MapID="11402" TipsType="1" NearMapList="11406|11407" InitJumpPos="450,360"/>
+			<node ID="11403"  MapID="11403" TipsType="1" NearMapList="11401" InitJumpPos="325,342"/>
+			<node ID="11404"  MapID="11404" TipsType="1" NearMapList="11401" InitJumpPos="510,360"/>	
+			<node ID="11405"  MapID="11405" TipsType="1" NearMapList="11401" InitJumpPos="342,376"/>
+			<node ID="11406"  MapID="11406" TipsType="1" NearMapList="11402" InitJumpPos="490,324"/>	
+			<node ID="11407"  MapID="11407" TipsType="1" NearMapList="11402" InitJumpPos="574,283"/>	
+			<!--node ID="21303"  MapID="21303" TipsType="4" NearMapList="21303" InitJumpPos="1522,485" BossLevel="8-11" ItemIDs="150005 170003 170002" BeatsName="2002 8 9"/-->	
+			<node ID="21401"  MapID="21401" TipsType="4" NearMapList="21401|21402" BossLevel="10-50" ItemIDs="170002 170004" BeatsName="21 22" InitJumpPos="175,945"/> 
+		</Area>
+		
+		<Area ID="5" IDS="5"  Name="风之洞穴" Desc="长年吹出呼呼大风的神秘矿洞" 
+			  exitPos="1569,476" 
+			  defalutFlyBirdPos="247,250" 
+			  defalutFlyBirdMap="21312"  
+			  areaIcon="area_5" 
+			  birdIcon="bird_5" 
+			  bean="0, 200, 0, 200, 0, 200"
+			  path="14,13,12,3,2,1,15,16,17|14,13,12,3,2,1|0|14,13,12,3,4,5,6|0|14,13,12,7,8,9,10,11" 
+			  transType="1" 
+			  
+			  haveMap="0"
+			  
+			  TipsType="3"  
+			  BossLevel="20-100" 
+			  ItemIDs="170006 170008 170010 170012 170014 170016" 
+			  items="铝 银 金 铂金 尼格金属 西尔金属">
+		</Area>
+			
+		<Area  ID="6" IDS="6"  Name="弗雷基港"  Desc="格历尔大陆唯一的出海港口。发达的航运贸易，来自其它大陆奇装异服的旅行者和新奇的玩意令人眼界大开。" 
+			   exitPos="150,354" 
+			   defalutFlyBirdPos="220,357" 
+			   defalutFlyBirdMap="11603" 
+			   areaIcon="area_6" 
+			   birdIcon="bird_6" 
+			   bean="0, 200, 0, 200, 200, 0"
+			   path="11,10,9,8,7,3,2,1,15,16,17|11,10,9,8,7,3,2,1|0|11,10,9,8,7,3,4,5,6|11,10,9,8,7,12,13,14|0" 
+			   transType="1" >
+			 
+			<node ID="21306"  MapID="21306" TipsType="1"  NearMapList="21306" InitJumpPos="414,997" TaskInitJumpPos="414,997" BossLevel="35-40" ItemIDs="150007 170005 170002" BeatsName="10 11"/>
+			<node ID="11603"  MapID="11603" TipsType="1"  Name="弗雷基广场" NearMapList="11602" InitJumpPos="1009,801" TaskInitJumpPos="1348,590" />
+			<node ID="1"  	  MapID="11603"	TipsType="1"  Name="安德鲁铁匠铺"  NearMapList="11602|11603"  InitJumpPos="537,804" />
+			<node ID="11602"  MapID="11602" TipsType="1"  NearMapList="11603" InitJumpPos="861,370"/>
+			<node ID="11604"  MapID="11604" TipsType="1"  NearMapList="11603|11605" InitJumpPos="513,376"/>
+			<node ID="11605"  MapID="11605" TipsType="1"  NearMapList="11604" InitJumpPos="198,257"/>			 
+		</Area>
+	
+		<Area  ID="7" IDS="7"  Name="修隐岛"  Desc="幽静的神秘海岛，由勇士协会的银牌导师们共同守护。" 
+			   exitPos="150,354" 
+			   defalutFlyBirdPos="220,357" 
+			   defalutFlyBirdMap="11701" 
+			   areaIcon="area_7" 
+			   birdIcon="bird_7" 
+			   bean="0, 200, 0, 200, 200, 0"
+			   path="0|11,10,9,8,7,3,2,1|0|11,10,9,8,7,3,4,5,6|0|0" transType="4" >
+			   
+			 <node ID="11701" MapID="11701" TipsType="1"  NearMapList="11701" />
+			 <node ID="11702" MapID="11702" TipsType="1"  NearMapList="11702" />
+			 <node ID="11703" MapID="11703" TipsType="1"  NearMapList="11703|11704|21701|21702|21703|21704" />
+			 <node ID="11709" MapID="11709" TipsType="1"  NearMapList="11709" />
+		</Area>
+		
+		<Area  ID="8" IDS="8"  Name="永恒之森"  Desc="永夜村是精灵的居集地。精灵族长塔西里亚的使命，便是守卫神秘的世界之树。" 
+			 defalutFlyBirdPos="72,319" 
+			 defalutFlyBirdMap="11801">
+			 
+			 <node ID="11801" MapID="11801" TipsType="1"  NearMapList="21802|11802|11803|11804" />
+			 <node ID="11802" MapID="11802" TipsType="1"  NearMapList="11801" />
+			 <node ID="11803" MapID="11803" TipsType="1"  NearMapList="11801" />
+			 <node ID="11804" MapID="11804" TipsType="1"  NearMapList="11801|11805" />
+			 <node ID="11805" MapID="11805" TipsType="1"  NearMapList="11804" />
+		</Area>
+		
+		<Area ID="10" IDS="10"  Name="月光湖" Desc="位于格历尔大陆东南边，因为形状像月亮而得名。相传是少女女神的眼泪流成的，那情感丰富的湖水甚至让鱼儿变成了半鱼人。"
+			  defalutFlyBirdMap="11502" 
+			  haveMap="0"
+			  TipsType="0"  
+			  BossLevel="26-32" 
+			  ItemIDs="160007 160008" 
+			  items="？？？">
+			  
+			 <node ID="11502" MapID="11502" />
+		</Area>
+		
+		<AreaPoint>
+			<node ID="21301"  MapID="21301" TipsType="4" BossLevel="10-15" ItemIDs="150003 170001 170002"  InitJumpPos="804,264" TaskInitJumpPos="804,264" BeatsName="7"/>
+			<node ID="21302"  MapID="21302" TipsType="4" BossLevel="15-20" ItemIDs="150005 170003" BeatsName="7 8"/>
+			<node ID="21303"  MapID="21303" TipsType="4" BossLevel="20-25" ItemIDs="150005 170005 170004" BeatsName="2002 8 9" />
+			<node ID="21304"  MapID="21304" TipsType="4" BossLevel="25-30" items="？？？" BeatsName="8 9" />
+			<node ID="21305"  MapID="21305" TipsType="4" BossLevel="30-35" ItemIDs="150007 170007" BeatsName="7 10" />
+			<node ID="21306"  MapID="21306" TipsType="4" BossLevel="35-40" ItemIDs="150007 170009 170006" BeatsName="10 11"/>
+			<node ID="21307"  MapID="21307" TipsType="4" BossLevel="40-45" items="？？？" BeatsName="11 12" />
+			<node ID="21308"  MapID="21308" TipsType="4" BossLevel="45-50" ItemIDs="170015" BeatsName="12 13" />
+			<node ID="21309"  MapID="21801" TipsType="4" BossLevel="85-90" ItemIDs="160009 160010" BeatsName="3020 3021 3022" />
+			<node ID="21310"  MapID="21310" TipsType="4" BossLevel="55-60" ItemIDs="150009 170011" BeatsName="7 15"/>
+			<node ID="21311"  MapID="21311" TipsType="4" BossLevel="60-65" ItemIDs="150009 170013" BeatsName="15 16" />
+			<node ID="21312"  MapID="21312" TipsType="4" BossLevel="65-70" items="？？？" BeatsName="15 16" />
+			<node ID="21313"  MapID="21313" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>
+			<node ID="21314"  MapID="21314" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>
+			<node ID="21315"  MapID="21315" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>
+			
+			<node ID="21501"  MapID="21501" BeatsName="23 24"/>
+			<node ID="21502"  MapID="21502" BeatsName="23 24"/>
+			<node ID="21503"  MapID="21503" BeatsName="23 24"/> 
+			
+			<node ID="11705" MapID="11705" transType="4" Desc="神魔之战以来，封印着伊恩大魔王手下黑暗军团的高塔。" />
+			<node ID="11706" MapID="11706" transType="1" Desc="神魔之战以来，封印着伊恩大魔王手下黑暗军团的高塔。" />
+			<node ID="11707" MapID="11707"  TipsType="2" />
+			<node ID="11708" MapID="11708"  TipsType="2" />
+		</AreaPoint>
+	</Land>
+	<Land>
+		<AreaPoint>
+			<node ID="12101"  MapID="12101" TipsType="1" NearMapList="22101" InitJumpPos="47,341"/>
+			<node ID="22101"  MapID="22101" TipsType="1" NearMapList="12101" InitJumpPos="90,398"/>
+			<node ID="22102"  MapID="22102" TipsType="1" NearMapList="22201"/>
+		</AreaPoint>
+	</Land>
+</Areas>

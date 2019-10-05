@@ -1,0 +1,62 @@
+<Task ID="10021" Memo="小咸的礼物？是什么呢？去问问c勇敢者旅馆c二楼的神秘人就知道了。" TargetMap="11208">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="小咸的礼物？是什么呢？去问问c勇敢者旅馆c二楼的神秘人就知道了。" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="我来拿礼物" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="21" ImageID="7" Info="我现在要赶去麦田村了！！！！哎呀，我的包裹弄到哪里去了？" />
+						<Option Info="我的礼物..." SkipTrigger="Y"/>
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="小咸的礼物？是什么呢？去问问c勇敢者旅馆c二楼的神秘人就知道了。" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="礼物呢？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="21" ImageID="7" Info="礼物？什么礼物.....哦，我想起来了，那个礼物......" />
+						<Msg NpcID="21" ImageID="7" Info="啊啊~~~你的礼物我忘记在【勇士大厅】了，你自己去拿一下吧，我要赶去麦田村了！" />
+						<Option Info="嗯" />
+					</Action>
+					<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11302,30012" />
+			</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="礼物被c神秘人c丢在了c勇士大厅c！怎么那么粗心啊…." TargetMap="11302" TargetObj="30012" TargetName="寻找t小咸的礼物t">
+  				<Trigger>
+				     <Item Type="OBJ_CLICK" MapID="11302" ObjID="30012" />
+				</Trigger>
+					<Action Type="MOVIE" Url="task_10058_12013.swf" MapLevel="CONTENT" Pos="-3,-226" />
+					<Action Type="MOVIE" Url="TaskTeacherMovieModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />	
+					<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11302,30012" />
+			</Event>
+		</Step>
+		
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="怎么导师们突然都来了，稀里糊涂的上了一课。\n回c勇敢者旅馆2楼c问问c神秘人c到底怎么一回事！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="礼物哪去了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="礼物？你不已经拿到了吗？" />
+					<Option Info="啊？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="学会了努力值的分配方法，这不是最棒的礼物吗？" />
+					<Msg NpcID="21" ImageID="1" Info="如果不能正确的分配努力值，连城门外的【怪盗迪迪拉】都能欺负你！" />
+					<Option Info="(+﹏+)~" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="哈哈，礼物我是不会私吞的！这瓶“魔鬼的眼泪”是小咸送给你的！" />
+					<Msg NpcID="21" ImageID="1" Info="如果你觉得自己的努力值分配错了就喝了它吧，当然味道还是那么“令人难忘”。" />
+					<Option Info="(+﹏+)谢谢" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

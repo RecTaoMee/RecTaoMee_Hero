@@ -1,0 +1,74 @@
+<!--废弃的土豆村-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-001.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="108,204" targetMapId="21751" targetTransPortId="2"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<!--node id="2" type="TransPort" res="MC_door_1" transPortId="2"/-->	
+	</object>
+	<npc>
+		<node id="61" type="NPC" res="MC_npc_61" action="2$3$4$5"/>
+		<node id="59" type="NPC" res="MC_npc_59" level="downLevel" fun="" need="205" needType="task" needAction="1" taskType="0" action="0" needLevel="" needKind=""/>
+		<node id="62" type="NPC" res="MC_npc_62" action="6$7"/>
+		<node id="63" type="NPC" res="MC_npc_63" action="8$9"/>
+	</npc>
+	<actions>
+<!--不可学技能-->
+		<proAction npcID="59" id="0" type="0" answer="祝你好运！" to="o" >
+			<des>
+				<![CDATA[1#说到做到，就是我的忍道。]]>
+			</des>
+		</proAction>
+		<proAction npcID="61" id="2" type="0" answer="祝你好运！" to="o" >
+			<des>
+				<![CDATA[1#我爱菠萝，所以我的名字叫菠萝。]]>
+			</des>
+		</proAction>
+		<proAction npcID="61" id="3" type="0" answer="祝你好运！" to="o" >
+			<des>
+				<![CDATA[1#你知道伊影吗？曾经我抓到过11个伊影呢！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="61" id="4" type="0" answer="祝你好运！" to="o" >
+			<des>
+				<![CDATA[1#修炼之域？我一个人都可以打到35域！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="61" id="5" type="0" answer="祝你好运！" to="o" >
+			<des>
+				<![CDATA[1#我还有个兄弟叫鸭梨，你见过他吗？]]>
+			</des>
+		</proAction>							
+
+		<proAction npcID="59" id="1" type="0" answer="我要学技能！$祝你好运！" to="b9_59$o" >
+			<des>
+				<![CDATA[1#你已经通过了锁修塔的考验，那么就教给你“二阶段技能”吧！]]>
+			</des>
+		</proAction>
+<!--可学技能-->
+		<proAction npcID="62" id="6" type="0" answer="【精灵学魔法技能】$祝你好运" to="b10_62$o" colorID="1$0">
+			<des>
+				<![CDATA[1#精灵学技能要特别注意自身【属性】！$$]]>
+				<![CDATA[1#火属性的精灵使用火系魔法，能发挥更大的威力。不过与水属性精灵战斗就会被【双倍克制】。]]>
+			</des>
+		</proAction>
+		<proAction npcID="62" id="7" type="0" answer="【精灵学魔法技能】$关于魔法技能$祝你好运" to="b10_62$a6$o" colorID="1$0">
+			<des>
+				<![CDATA[1#风地水火四大元素力量相生相克——\n如此美丽的朴素的宇宙——真是奥妙的世界啊!]]>
+			</des>
+		</proAction>
+		<proAction npcID="63" id="8" type="0" answer="【精灵学物理技能】$关于物理技能$祝你好运" to="b10_63$a9$o" colorID="1$0">
+			<des>
+				<![CDATA[1#脆弱的【魔法系职业】需要擅长物理技能的精灵来保护！]]>
+			</des>
+		</proAction>
+		<proAction npcID="63" id="9" type="0" answer="【精灵学物理技能】$祝你好运" to="b10_63$o" colorID="1$0">
+			<des>
+				<![CDATA[1#最近给精灵学习【护卫技能】的魔法师特别多~关键时刻，精灵伙伴挺身而出的“护卫”——就是伟大的友谊和爱啊！]]>
+			</des>
+		</proAction>
+	</actions>			
+</map>

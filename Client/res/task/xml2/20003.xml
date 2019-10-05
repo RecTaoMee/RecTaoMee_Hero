@@ -1,0 +1,59 @@
+<Task ID="20003" Memo="c公告栏c似乎又多了新的委托，去看看吧" TargetMap="11202">
+<BoardInfo PageType="1" Title="库噜战士的头盔" Content="如果谁能把10个【库噜战士的头盔】送到【贝塔商会装备店】，可以领取丰厚的报酬！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    			<Event Memo="打工时刻又来了！快去勇士广场的c公告栏c看看有什么新任务。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    			</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="180041" Count="10" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="头盔收集完成！快点送到c贝塔商会装备店c！" TargetMap="11209" TargetObj="16" TargetName="和t贝利t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="库噜战士头盔拿来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="7" Info="这就是【库噜战士的头盔】吗？看上去很不错的样子。" />
+					<Msg NpcID="16" ImageID="7" Info="1,2,3....10，正好10个。你挺能干的嘛。赏星已经送到公告栏去了，快去领取吧！" />
+					<Msg NpcID="16" ImageID="7" Info="对了，这条项链送你了，算是额外嘉奖吧。" />
+					<Option Info="谢谢" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="这次的任务是去c下水道c收集10个c库噜战士的头盔c吗？收集了10个就可以送到c装备店c的c贝利c去了！" TargetMap="21202" TargetObj="" TargetName="t库噜战士的头盔t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="库噜战士头盔拿来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="7" Info="现在急需10个头盔！勇士协会的摩尔应该可以办到吧？" />
+					<Option Info="好的" />
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这件事你干的很漂亮嘛！" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+ 

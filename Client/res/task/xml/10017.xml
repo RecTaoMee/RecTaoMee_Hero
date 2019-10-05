@@ -1,0 +1,27 @@
+<task id="10017">
+  <taskDes>
+	<![CDATA[会不会觉得精灵伙伴升级太慢了呢？去请教一下爱精灵协会的莓可吧。$$莓可要求你的等级达到15级，努力吧！]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="20" title="精灵变强的方法？" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11214"/>
+    <pro type="0" parent="0" npcID="20" title="精灵变强的方法？" action="1" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11214"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="20" answer="嗯！" objLevel="" objName="" objType="" objValue="" to="s1">
+      <des>
+		<![CDATA[1#【@nick】，和精灵伙伴们相处的还愉快吗？]]>
+		</des>
+    </proAction>
+    <proAction id="1" type="0" npcID="20" answer="想！！" objLevel="" objName="" objType="" objValue="" to="a2">
+      <des>
+		<![CDATA[1#真是太好了^^，对待精灵应该像朋友一样，让它们感受你的爱。$$]]>
+		<![CDATA[1#想学习让可以精灵伙伴变的更强的方法吗？]]>
+		</des>
+    </proAction>
+    <proAction id="2" type="0" npcID="20" answer="好的" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[1#首先要证明你的实力，如果你的等级达到15级我就把这个技能教给你！]]>
+		</des>
+    </proAction>
+  </actions>
+</task>

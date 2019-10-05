@@ -1,0 +1,24 @@
+<Task ID="36502" Memo="完成全部委托任务，快点找乔依领取奖励吧！" TargetMap="11202">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="完成全部委托任务，快点找乔依领取奖励吧！" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="领取奖励" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="完成全部委托任务，快点找乔依领取奖励吧！" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="领取奖励" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="乐于助鼠的摩尔会受到女神的祝福，这是你今天应该得到的奖励，收下吧！" />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

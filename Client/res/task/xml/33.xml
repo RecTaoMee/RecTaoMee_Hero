@@ -1,0 +1,70 @@
+<task id="33">
+	<taskDes>
+		<![CDATA[莓可好像还有什么事要告诉你，快去问问他。 ☆莓可在爱精灵协会$$]]>
+		<![CDATA[【勇敢者旅馆】在【勇士广场】，去拜访一下蒂蒂拉吧。$$]]>
+		<![CDATA[既然来了，还是去和蒂蒂拉打招呼吧！☆蒂蒂拉在【勇敢者旅馆】1楼。$$]]>
+		<![CDATA[【勇敢者旅馆】的蒂蒂拉原来和琪琪姐姐是同学啊...]]>
+	</taskDes>
+	<taskPro>
+	<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+	<!--type:0任务类型 1:直接接受此任务，2:到达莫个地图时播放,3，加载外部SWF，5：直接执行此动作-->
+		<pro type="0" parent="" npcID="20" title="勇敢者旅店" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11214"/>
+		<pro type="2" parent="0" mapID="11207" action="2" taskDes="1"/>
+		<pro type="0" parent="0" npcID="14" title="初次见面" action="7" needRes="" needResNum="" unResAction="" taskDes="2" mapID="11207"/>
+		<pro type="0" parent="2" npcID="14" title="初次见面" action="7" needRes="" needResNum="" unResAction="" taskDes="2" mapID="11207"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="20" answer="还没有" to="s1">
+			<des>
+				<![CDATA[1#对了，你有去过勇敢者旅馆吗？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="20" answer="记住啦~谢谢^^" to="o">
+			<des>
+				<![CDATA[1#如果以后在旅途中不小心受伤了，你可以去勇敢者旅馆1楼找蒂蒂拉治疗~$$]]>
+				<![CDATA[1#蒂蒂拉的包扎技术可是一流的~而且白魔法也很厉害，当年可是传教士协会的优秀学员呢~]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="14" answer="......" to="a3">
+			<des>
+				<![CDATA[6#大叔！！！我刚拖过的地板又被你踩脏了！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="13" answer="......" to="a4">
+			<des>
+				<![CDATA[1#…对了，蒂蒂拉，周末出去郊游吧?]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="14" answer="......" to="a5">
+			<des>
+				<![CDATA[6#大叔！你别想转移话题，快点去拖地！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="13" answer="......" to="a6">
+			<des>
+				<![CDATA[2#你看，来客人了！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="14" answer="......" to="e2">
+			<des>
+				<![CDATA[1#啊？客人您好^^，欢迎光临勇敢者旅馆！]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="14" answer="我从吉普豆村来的" to="a8">
+			<des>
+				<![CDATA[1#你好，我是护士蒂蒂拉。咦……好像没见过你，请问你是从哪儿来的呢？]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="14" answer="是呀！" to="a9">
+			<des>
+				<![CDATA[2#吉普豆村！那你一定认识琪琪了]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="0" npcID="14" answer="你和琪琪姐姐都好厉害^^。" to="c" nextTask="34_0">
+			<des>
+				<![CDATA[1#我和琪琪是好朋友，曾经一起在传教士协会学习白魔法，如果以后你受伤了也可以来找我^^。$$]]>
+				<![CDATA[1#顺便说一句，我的包扎技巧可绝对不输给琪琪哦^^。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

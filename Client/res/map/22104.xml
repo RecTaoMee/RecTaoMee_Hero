@@ -1,0 +1,30 @@
+<!---->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<process>
+		<node name="SiBaLuMapProcess"/>
+	</process>
+	<transport intPos="165,987">
+		<node id="1" pos="152,1060" targetMapId="11202" targetTransPortId="14" name="勇士广场"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="Object" level="downLevel" res="MC_sign1" name="" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<node id="112" type="NPC" name="斯巴鲁" res="MC_npc_112" action="1" />
+		<node id="113" type="NPC" name="魔法阵" res="circleMC_0" action="" />
+	</npc>
+	<actions>
+		<proAction npcID="112" id="1" type="0" answer="我要挑战你!$我还没有准备好" to="a2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#无知小辈,既然敢闯进我的洞府，不怕我活生生的吞掉你嘛^_^！]]>
+			</des>
+		</proAction>				
+		<proAction id="2" npcID="112" type="5" fightID="3319" />
+		<proAction npcID="104" id="3" type="0" answer="我明白了" to="o" colorID="1">
+			<des>
+				<![CDATA[1#先去勇士广场找多修问问失踪事件吧！^_^！]]>
+			</des>
+		</proAction>		
+	</actions>
+</map>

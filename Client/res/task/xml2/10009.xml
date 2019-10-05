@@ -1,0 +1,136 @@
+<Task ID="10009" Memo="看到听到的不一定是真相，擦亮眼睛，勇士广场的c公告栏c上出现了没有署名的“神秘贴士“，去看看上面写了什么呢？" TargetMap="11202">
+<BoardInfo PageType="1" Title="神秘贴士" Content="想得到最强大的装备吗？我在【勇敢者旅馆二楼】等你。\n\n（未署名）"></BoardInfo>   	
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="看到听到的不一定是真相，擦亮眼睛，勇士广场的c公告栏c上出现了没有署名的“神秘贴士“，去看看上面写了什么呢？" TargetMap="11202" TargetObj="13" TargetName="点击t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="未署名的“神秘人”在c勇敢者旅馆二楼c等你？……真的可以去么？不祥的预感……" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="我的装备很强大？那当然！" />
+					<Option Info="告诉我怎么得到！" NextStep="3" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="也没什么了不起" NextStep="4" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="我找错人了" NextStep="5" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="你有米米号吗？让我玩下" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />															
+				</Action>
+    		</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="说起来太复杂。把密码告诉我，我直接帮你弄吧！" />
+					<Option Info="好吧告诉你密码" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="还是算了吧" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />																				
+				</Action>
+    		</Event>
+		</Step>
+  		<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="唷，口气不小。\n这么说你很厉害？\n要不要跟我换号玩？我可以跟你交换密码。" />
+					<Option Info="好吧告诉你密码" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="还是算了吧" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />																				
+				</Action>
+    		</Event>
+		</Step>
+  		<Step ID="5" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="这样啊...真扫兴。\n不过你是今天第100个跟我说话的人，我可以送你一样礼物。\n不过你得先把密码告诉我。" />
+					<Option Info="好吧告诉你密码" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="还是算了吧" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />																				
+				</Action>
+    		</Event>
+		</Step>
+  		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="既然你诚心诚意地发问了，那我就大发慈悲地告诉你————" />
+					<Msg NpcID="21" ImageID="1" Info="哦不对，这不公平。\n你的密码呢？先让我看看你的诚意！" />					
+					<Option Info="好吧告诉你密码" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="还是算了吧" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />																				
+				</Action>
+    		</Event>
+		</Step>
+
+  		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="啊哈！这么容易密码就到手了，我真佩服自己的演技！100星豆我收下了。在悔恨的泪水中挣扎吧！" />
+					<Option Info="我晕（+_+）" NextStep="2" />																			
+				</Action>
+    		</Event>
+		</Step>
+  		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="我是无所谓的，你不再考虑一下吗？" />
+					<Option Info="好吧告诉你密码" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />																			
+					<Option Info="真的不能告诉你" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+				</Action>
+    		</Event>
+		</Step>		
+		
+  		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="勇敢者旅馆二楼的“神秘人”想和你聊聊。c给他正确的答案吧！c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你是公告栏上的委托人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="4" Info="我看上去那么不可信吗？呵呵，没关系，警惕是应该的。" />
+					<Msg NpcID="21" ImageID="3" Info="实话告诉你，我是【正义的伙伴】，因为不想再看到轻信的摩尔被骗，泄露自己的密码，才想出了这个办法。" />
+					<Option Info="原来如此" />																			
+				</Action>		
+    		</Event>
+		</Step>		
+		
+		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="学到重要的东西了……“正义的伙伴”有趣的家伙。这就去勇士广场c公告栏c领取“赏星”吧！" TargetMap="11202" TargetObj="13" TargetName="点击t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="今天你小心谨慎的执行任务了吗？" />
+					<Option Info="O(∩_∩)O完成啦！" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />					
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Msg NpcID="21" ImageID="3" Info="记住————正义与你同在。" />
+					<Option Info="O(∩-∩)O嗯！" />
+				</Action>				
+			</Event>
+		</Step>			
+
+	</Procedure>
+</Task>
+
+

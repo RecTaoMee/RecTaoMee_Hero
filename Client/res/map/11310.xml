@@ -1,0 +1,35 @@
+<!--训练房-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+
+	<transport intPos="360,308">
+		<node id="1" pos="71,290" targetMapId="11215" targetTransPortId="3"/> 
+	</transport>
+
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="70" type="NPC" res="MC_npc_70" level="contentLevel" fun="" taskType="0" action="1" needLevel="" needKind=""/>
+	</npc>
+	
+	<actions>
+		<proAction npcID="70" id="1" type="0" answer="自习的好处$如何自习$摩尔勇士万岁！" to="a2$a3$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#王国中热爱学习的摩尔越来越多了，怪不得老国王最近高枕无忧啊，哦呵呵呵~]]>
+			</des>
+		</proAction>	
+		<proAction npcID="70" id="2" type="0" answer="如何自习$摩尔勇士万岁！" to="a3$o" colorID="1$0">
+			<des>
+				<![CDATA[1#整天舞刀弄枪得多累啊，安心坐下来自习，【经验】一样滚滚来，升级神马的水到渠成，哦呵呵呵~]]>
+			</des>
+		</proAction>
+		<proAction npcID="70" id="3" type="0" answer="自习的好处$摩尔勇士万岁！" to="a2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#神马？没看到那边坐着认真阅读的摩尔么？乖乖去坐着，别心不在焉的，不然怎能从书本中获得【经验】！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

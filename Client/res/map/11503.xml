@@ -1,0 +1,175 @@
+<!--草木树海-->
+<!--
+	action：未满足限制条件的动作
+	needType：限制的类型（time，时间限制）
+	need：限制的条件
+	needAction：满足限制条件的动作
+	<node id="317" type="NPC" res="MC_natise" action="4" needType="time" need="14-16 19-21" needAction="1"/>
+-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="365,283">
+		<node id="1" pos="1382,1006" targetMapId="21307" targetTransPortId="2"/>
+		<node id="2" pos="365,283" targetMapId="11202" targetTransPortId=""/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="317" type="NPC" res="MC_natise" action="check_is_join_activity" needKind="level" need="22" needAction="1"/>
+		<node id="310" type="NPC" res="MC_kuluking" action="10"/>
+		<node id="60" type="NPC" res="MC_npc_60" action="20"/>
+		<node id="309" type="NPC" res="MC_npc_309" action="50" needType="level_return,beastGroup,beastGroup" need="25,2908,2909" needAction="60,62,63"/>
+<!--奇异之花下架了！（以后可以再开捕捉）
+		<node id="802" name="奇异之花" type="NPC" res="MC_npc_1" action="80" visible="0">
+			<event type="a83" hit="FunctionHit" func="gotoAndStop" params="3"/>
+		</node>
+-->
+
+	</npc>
+	<actions>  
+		<proAction npcID="317" id="1" type="0" answer="我要挑战你$击败你的奖励$好的" to="challenge_boss$a5$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#很高兴又见到你，勇敢的未来勇士。如果想要挑战我就拿霸者证来吧！（22级以上可挑战，组队状态下队长、队员都需要植物系霸者证，每日采集草堆可获植物系霸者证）]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="5" fightID="2907" />
+		<proAction npcID="317" id="3" type="0" answer="好的" to="o" colorID="0">
+			<des>
+				<![CDATA[1#采集草木树海的草，可获得【植物系霸者证】，22级以上勇士可以来挑战我（每次战斗扣除1张霸者证，组队状态下队长、队员都扣除）！]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="4" type="0" answer="击败你的奖励$好的" to="a6$o" colorID="0$0">
+			<des>
+				<![CDATA[1#我现在需要休息，22级以上勇士可以向我挑战！]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="5" type="0" answer="我要挑战你$好的" to="challenge_boss$o" colorID="1$0">
+			<des>
+				<![CDATA[1#如果你将我击败，我会奖励你：\n16000精灵经验、8000摩尔经验、1000技能经验、愤怒萝卜精灵蛋、波波尔精灵蛋其中的一个奖励哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="6" type="0" answer="好的" to="o" colorID="0">
+			<des>
+				<![CDATA[1#如果你将我击败，我会奖励你：\n16000精灵经验、8000摩尔经验、1000技能经验、愤怒萝卜精灵蛋、波波尔精灵蛋其中的一个奖励哦！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="309" id="10" type="0" answer="我们绝不退缩！" to="a12">
+			<des>
+				<![CDATA[1#弱小的鼹鼠们，竟敢来阻止我毁灭【草木树海】，让你们尝尝死亡降临的滋味吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="11" type="0" answer="我们绝不退缩！" to="o">
+			<des>
+				<![CDATA[1#弱小的鼹鼠们，竟敢来阻止我毁灭【草木树海】，让你们尝尝死亡降临的滋味吧！]]>
+			</des>
+		</proAction>
+		<proAction id="12" type="5" fightID="2906" />
+		<proAction npcID="309" id="13" type="0" answer="……" to="a14">
+			<des>
+				<![CDATA[1#哈哈哈！就凭这点实力也敢与我较量，接受我最后的一击吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="14" type="0" answer="……" to="play_battle_movie">
+			<des>
+				<![CDATA[1#黑暗力量胆敢闯入王者所守护的禁地【草木树海】，接受我的审判吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="15" type="0" answer="……" to="a16">
+			<des>
+				<![CDATA[1#娜蒂丝不愧为植物系精灵中的王者，看来我得先撤退了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="16" type="0" answer="那是什么？" to="a17">
+			<des>
+				<![CDATA[1#未来勇士，感谢你们及时赶到，在我沉睡时帮我抵挡住了库噜王的袭击，其实所有的精灵都存在一种神奇的天赋，那就是传说中的“种族技能”。]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="17" type="0" answer="谢谢，还有什么事吗？" to="get_pet_egg">
+			<des>
+				<![CDATA[1#作为感谢，我将第一只拥有种族技能的精灵“波波尔”赠与你，你回摩尔王国找【爱精灵协会】的“莓可”，她会帮助你孵化这个精灵蛋。\n
+				同时我将在9月将野外植物系精灵的种族技能都激发出来！（波波尔精灵蛋将放置于背包“收集品”栏）]]>
+			</des>
+		</proAction>
+		<proAction npcID="317" id="18" type="0" answer="我一定来参加！" to="o">
+			<des>
+				<![CDATA[1#每日采集这里的草，有机会获得植物系霸者证，22级以上勇士可以与我一较高下。$$]]>
+				<![CDATA[1#当然，打赢我我也会准备一份礼物给你，作为你提升后的（每次战斗扣除1张霸者证，组队状态下队长、队员都扣除）。$$]]>
+				<![CDATA[1#采集草木树海内的神草，可获得树系霸者证（普通勇士每天可采8棵，超时空勇士每天可采16棵）。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="60" id="20" type="0" answer="我要兑换奖励$如何学习种族技能$离开" to="f11$a64$o" colorID="0$0">
+			<des>
+				<![CDATA[1#我叫娜莲，是娜蒂丝女王的贴身侍女，你若是高于25级，便可与娜蒂丝大人一较高下！$$]]>
+				<![CDATA[1#都可以挑战库噜王获取“库噜骨头”，在我这里兑换奖励哦！$$]]>
+			</des>
+		</proAction>
+		
+		<proAction actionID="64" type="1" level="taskLevel" name="zhongzujineng" moviepos="0,0" to="o"/>
+		
+		
+		
+		
+<!--常态NPC库噜王-->
+		<proAction id="70" type="5" fightID="2908" />
+		<proAction id="71" type="5" fightID="2909" />
+		<proAction id="72" type="5" fightID="2910" />				
+		<proAction npcID="309" id="50" type="0" answer="战斗规则$懒得理你" to="a51$o" colorID="0$0">
+			<des>
+				<![CDATA[1#植物精灵统统都是废物！只有我库噜家族才是这个大陆的霸者！哈哈哈！库噜王才是最强大的！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="51" type="0" answer="人丑规矩多" to="o" colorID="0">
+			<des>
+				<![CDATA[1#只要你高于25级，都可以挑战本座，本座会给你3次不同的挑战难度：$$]]>
+				<![CDATA[1#你只有赢下第1场，才能挑战第2场，直到3场打完。每场的难度不一样，奖励自然也越来越高，不过本座只尊重胜利者，失败的话，可就什么都得不到）。]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="60" type="0" answer="挑战初级难度$战斗规则$懒得理你" to="a70$a61$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#初级：挑战一群库噜小队长\n中级：挑战库噜王+少量库噜小队长\n高级：挑战库噜王+一群库噜小队长]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="61" type="0" answer="人丑规矩多" to="o" colorID="0">
+			<des>
+				<![CDATA[1#只要你高于25级，都可以挑战本座，本座会给你3次不同的挑战难度：$$]]>
+				<![CDATA[1#你只有赢下第1场，才能挑战第2场，直到3场打完。每场的难度不一样，奖励自然也越来越高，不过本座只尊重胜利者，失败的话，可就什么都得不到）。]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="309" id="62" type="0" answer="挑战中级难度$挑战初级难度$懒得理你" to="a71$a70$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#初级：挑战一群库噜小队长\n中级：挑战库噜王+少量库噜小队长\n高级：挑战库噜王+一群库噜小队长]]>
+			</des>
+		</proAction>
+		<proAction npcID="309" id="63" type="0" answer="挑战高级难度$挑战中级难度$挑战初级难度$懒得理你" to="a72$a71$a70$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#初级：挑战一群库噜小队长\n中级：挑战库噜王+少量库噜小队长\n高级：挑战库噜王+一群库噜小队长]]>
+			</des>
+		</proAction>
+		
+<!--奇异之花下架了！（以后可以再开捕捉）		
+		<proAction npcID="802" id="80" type="0" answer="奇异之花你怎么了？$一会来帮你" to="a81$o" colorID="0$0">
+			<des>
+				<![CDATA[1#我是草木树海特有的奇异之花，只有在【周六、周日的14:50-15:00】期间才会开放，最近那些家伙令我几近枯萎！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="802" id="81" type="0" answer="奇异之花你怎么了" to="a82" colorID="0">
+			<des>
+				<![CDATA[1#亲爱的未来勇士，请帮助我拨开我的花瓣，找出罪魁祸首吧！]]>
+			</des>
+		</proAction>	
+		
+		<proAction actionID="82" type="1" level="taskLevel" name="qiyizhihua" moviepos="0,0" to="a83"/>		
+		
+		<proAction npcID="803" id="83" type="0" answer="捕捉食人樱！$让我准备一下" to="refreshGrp_30$o" colorID="0$0">
+			<des>
+				<![CDATA[1#呜哇呜…奇异之花的花蕊果然是美味无比啊，那香甜的味道是我们食人樱的最爱！]]>
+			</des>
+		</proAction>	
+		<proAction id="84" type="5" fightID="30" />		
+-->
+						
+	</actions>
+</map>

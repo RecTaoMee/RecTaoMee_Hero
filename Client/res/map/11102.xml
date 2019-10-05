@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- map -->
+	<!-- @name 场景名称，在进入场景的时候会显示在平面上 -->
+	<!-- @type 场景类型，0表示普通场景 -->
+	<!-- @comment 场景说明，显示加载场景面板上的关于场景的简单描述 -->
+	<!-- @sound 场景的背景音乐 -->
+	<!-- transport 定义跳转点-->
+		<!-- @intPos 未指定跳转点时进入场景的默认跳转点 -->
+		<!-- node -->
+			<!-- @id 跳转点id -->
+			<!-- @dir 方向dir 0右边， 1 右正面， 2 正面， 3左正面，4 左边，5 左背面，6 背面，7 右背面 -->
+			<!-- @pos 跳转点坐标 -->
+			<!-- @targetMapId 要去的目标场景id -->
+			<!-- @targetTransPortId 要去的目标跳转点id -->
+		<!-- node -->
+	<!-- transport -->
+	<!-- object 定义场景物件-->
+		<!-- node -->
+			<!-- @id 物件id -->
+			<!-- @type 物件类型，“TransPort”表示跳转点，通过transPortId绑定transport节点中定义的具体跳转点 -->
+			<!-- @level 指定加载物件的层，具体见场景资源fla -->
+			<!-- @res 物件资源加载路径，url形式表示从服务器加载资源文件，“MC_XXX”形式表示场景资源swf内部实例名称（注：以“MC_”开头才是有效实例名称） -->
+			<!-- @transPortId 跳转点绑定，transPortId指向具体跳转点id后，为跳转点绑定一个交互实体物件（注：@type=“TransPort”时，此属性才会生效） -->
+			<!-- @name 物件名称 -->
+			<!-- @regPoint 注册点坐标偏移量（注册点相对于资源左上角的坐标偏移，此属性仅对外部加载资源有效） -->
+			<!-- @pos 物件坐标（此属性仅对外部加载资源有效） -->
+			<!-- @tip 提示信息 -->
+			<!-- @depth 此属性可以废除 -->
+			<!-- @visible 是否在场景中可见，0：不可见，1：可见 -->
+		<!-- node -->
+	<!-- object -->
+	<!-- npc 定义场景人物-->
+		<!-- node -->
+			<!-- @id npc id -->
+			<!-- @level 获取npc路径 -->
+			<!-- @des npc对话-->
+		<!-- node -->
+	<!-- object -->
+<!-- map -->
+
+<map name="aaa" type="0" comment="aaa" sound="BGM-001.mp3">
+	<transport intPos="270,380">
+		<!-- compTaskID表示任务限制进入场景，任务ID_节点ID_不满足条件的行为 -->
+		<node id="1" pos="395,320" dir="2" level="" targetMapId="11104" targetTransPortId="1"/>
+		<node id="2" pos="1093,194" dir="2" compTaskID="1_1_a17" level="" targetMapId="11103" targetTransPortId="1"/>
+		<node id="3" pos="240,300" dir="2" level="" targetMapId="11104" targetTransPortId="1"/>
+		<!--<node id="3" pos="102,194" targetMapId="21101" targetTransPortId="2"/>-->
+	</transport>
+	<object>
+		<node id="5" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<!--<node id="3" type="TransPort" level="contentLevel" res="MC_door_2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>-->
+	</object>
+	<!-- 任务物品加载-->
+	<taskSWF>
+		<!-- taskID:在可接摸个任务的时候会加载此资源,level:载入存入层级,存入后的名字-->
+		<node id="1" taskID="1" level="contentLevel" name="task_1_1" />
+	</taskSWF>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="1" type="NPC" res="MC_npc_1" visible="0"/>
+		<node id="4" type="NPC" res="MC_npc_4" action="1"/>
+		<node id="9" type="NPC" res="MC_npc_9" action="6$7$8$9$10"/>
+		<node id="400" type="NPC" res="MC_npc_400" action="11"/>
+		<node id="6" type="NPC" res="MC_npc_6" taskType="0" level="contentLevel" alpTaskID="9_1_0" compTaskID="10_2_1" visible="0" fun=""  action="18" needLevel="" needKind=""/>	
+		<node id="333" type="NPC" res="MC_npc_333" taskType="0" level="contentLevel" alpTaskID="10_1_0" compTaskID="10_2_1" visible="0" fun=""  action="" needLevel="" needKind=""/>				
+		<node id="998" type="NPC" res="MC_npc_998" taskType="0" level="contentLevel" alpTaskID="9_3_0" compTaskID="11_2_1" visible="0" fun=""  action="" needLevel="" needKind=""/>		
+		<node id="343" type="NPC" res="MC_npc_343" taskType="0" level="contentLevel" alpTaskID="9_1_0" compTaskID="9_2_1" visible="0" fun=""  action="" needLevel="" needKind=""/>		
+		<node id="345" type="NPC" res="MC_npc_345" taskType="0" level="contentLevel" alpTaskID="10_2_0" compTaskID="11_2_1" visible="0" fun=""  action="" needLevel="" needKind=""/>		
+		<node id="104" type="NPC" res="MC_npc_104" taskType="0" level="contentLevel" alpTaskID="11_1_0" compTaskID="12_1_1" visible="0" fun=""  action="" needLevel="" needKind=""/>				
+	</npc>
+	<!-- 343绑架 345魔王 333皮克-->
+	
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<!-- colorID:1为商店 ，0为普通-->
+	<actions>	<!-- 
+		<proAction npcID="1" id="0" type="0" answer="……" to="o" >
+			<des>
+				<![CDATA[7#完了完了”悲剧上演了“，这回又要被老姐骂了......]]>
+			</des>
+		</proAction>-->
+		<proAction npcID="6" id="18" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#【@nick】你好啊^_^。\n你需要【恢复体力】吗？]]>
+			</des>
+		</proAction>			
+		<proAction npcID="4" id="1" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_4$b7_4$a5$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会吉普豆村移动分店】。顾客就是我们的上帝。]]>
+			</des>
+		</proAction>
+		<proAction npcID="4" id="2" type="0" answer="我想买东西$我想卖东西$祝你好运" to="b6_4$b7_4$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#【贝塔商会吉普豆村移动分店】。我们收购各种东西，看看你有些什么吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="4" id="3" type="0" answer="我想买东西$我想卖东西$祝你好运" to="b6_4$b7_4$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#【贝塔商会吉普豆村移动分店】。来把没用的星豆变成有用的东西吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="4" id="4" type="0" answer="我想买东西$我想卖东西$祝你好运" to="b6_4$b7_4$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#【贝塔商会吉普豆村移动分店】。我们有您旅行冒险需要的一切！]]>
+			</des>
+		</proAction>
+		<!-- proAction 定义场景行为-->
+			<!-- type==1 放动画 -->
+			<!-- @id 行为ID -->
+			<!-- @level 动画层级 -->
+			<!-- @name 动画swf名称，放在res/task/swf/中 -->
+			<!-- @moviepos 动画位置 -->
+			<!-- @to 播完动画的行动 -->
+		<!-- proAction -->
+		<proAction id="5" type="1" level="taskLevel" name="task_999_1" moviepos="0,0" to="a1"/>
+		<proAction npcID="9" id="6" type="0" answer="这是哪里？$祝你好运" to="a10$o">
+			<des>
+				<![CDATA[1#没有村长的同意不允许进入地道！小心看不见的精灵偷袭你！$$]]>
+				<![CDATA[1#我为啥这么凶？————其实我在笑，我天生就是这个表情！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="9" id="7" type="0" answer="祝你好运" to="o">
+			<des>
+				<![CDATA[1#【恢复生命力】找皮克小屋家的【琪琪】；买东西找【贝吉塔】，摩尔王国那种地方我才不想去呢！$$]]>
+				<![CDATA[1#皮皮克克的东西是我的东西，我的东西还是我的东西！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="9" id="8" type="0" answer="这是哪里？$祝你好运" to="a10$o">
+			<des>
+				<![CDATA[1#最近有没有感觉村里多了很多人......都是哪儿来的？？$$]]>
+				<![CDATA[1#听说“练级”可以变强，我肯定不需要练级，我已经是最强的了！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="9" id="9" type="0" answer="这是哪里？$祝你好运" to="a10$o">
+			<des>
+				<![CDATA[1#我才不相信什么“从未来来的摩尔”呢！$$]]>
+				<![CDATA[1#只有皮皮克克这种笨蛋才会跑去地洞里找什么“未来勇士”~]]>
+			</des>
+		</proAction>
+		<proAction npcID="9" id="10" type="0" answer="祝你好运" to="o">
+			<des>
+				<![CDATA[1#这里是吉普豆村，格历尔大陆最有名的地下村————虽然我也没去过别的地方，我认为我家是格历尔大陆的地下中心！$$]]>
+				<![CDATA[1#最近好像出大事了！————虽然我不知道出了什么事，没有村长的同意不允许进入地道！小心看不见的精灵偷袭你！$$]]>
+				<![CDATA[1#【恢复生命力】找皮克小屋家的【琪琪】；买东西找【贝吉塔】，摩尔王国那种地方我才不想去呢！$$]]>
+				<![CDATA[1#皮皮克克的东西是我的东西，我的东西还是我的东西！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="400" id="11" type="0" answer="关于吉普豆村$怎样去地面$怎样去摩尔王国$祝你好运" to="a12$a13$a15$o" >
+			<des>
+				<![CDATA[2#Hi你在跟我说话吗？我好激动^^！我是第一只受到女神引领，来帮助未来摩尔的蘑菇小精灵momo！$$]]>
+				<![CDATA[3#我会把我知道的情报全部告诉你momo！]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="12" type="0" answer="关于吉普豆村$怎样去地面$怎样去摩尔王国$祝你好运" to="a12$a13$a15$o" >
+			<des>
+				<![CDATA[3#这里是摩尔们古老的地下村庄momo~^_^!$$]]>
+				<![CDATA[9#精灵们被黑化了精神错乱好可怕啊！我觉得它们很可怜，不知道哪天我会不会被黑化……呜呜呜。]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="13" type="0" answer="关于吉普豆村$怎样去地面$怎样去摩尔王国$祝你好运" to="a12$a13$a15$o" >
+			<des>
+				<![CDATA[1#去王国的地道隐藏在【奇普力爷爷的家里】，通过【吉普1号地道】就可以到达地面世界了，你不知道吧momo~^0^]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="14" type="0" answer="地道在哪里？" to="a13" >
+			<des>
+				<![CDATA[9#什么？！你要去地面？这里是地下momo~去地面要通过地道。]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="15" type="0" answer="关于吉普豆村$怎样去地面$怎样去摩尔王国$祝你好运" to="a12$a13$a15$o" >
+			<des>
+				<![CDATA[9#什么？！你要去摩尔王国？去王国的地道在奇普力爷爷家，你不知道吧momo~！$$]]>
+				<![CDATA[6#只有吉普豆村的村长奇普力爷爷点头才可以去地道，因为现在有黑化精灵，$$]]>
+				<![CDATA[6#精神病人攻击人不犯法，被黑化的精灵也是，所以好可怕啊momo！]]>
+			</des>
+		</proAction>
+		<!-- proAction -->
+			<!-- type==4 弹框 -->
+			<!-- @alert 弹框提示内容 -->
+			<!-- @to 点击确定的下一个action -->
+		<!-- proAction -->
+		<proAction id="16" type="4" alert="皮皮克克似乎不敢回家，先去跟他聊聊吧！" to="" />
+		<proAction id="17" type="4" alert="不开不开就不开！想开门要问左边屋子里的【琪琪姐姐】。" to="" />
+	</actions>
+</map>

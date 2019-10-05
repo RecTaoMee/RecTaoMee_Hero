@@ -1,0 +1,269 @@
+<Task ID="39003" Memo="前往c勇士广场c左侧找到神秘的c多修c，他有事找你哦！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="这次的任务是什么呢？快点去勇士广场问问c多修c吧？" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="有新任务吗" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="勇敢者旅馆门口出现了一只怪异的小宅箱，\n他逢人便说，只要谁能救出他的同伴，便可获得宝藏！" />
+					<Option Info="哇！宝藏" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="少年，先别被宝藏冲昏了头脑。虽然大家都不相信小宅箱，我觉得其中定有蹊跷，你可愿意找他探明真相？" />
+					<Option Info="当然愿意" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="隐隐约约的预感告诉我，此事和近期勇士们财宝无故丢失的事件有关，必定凶险，你要多加小心！" />
+					<Option Info="我还有其他事" NextStep="1" />
+					<Option Info="现在就去" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11202,390031" />
+			</Event>
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Event  Memo="继续听c多修c讲述" TargetMap="11202" TargetObj="104" TargetName="跟t多修t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="真相是什么" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="还是让小宅箱来亲口告诉你吧" />
+					<Option Info="小宅箱，你好" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="勇士你好，勇士广场人来人往，你却是第一个向我打招呼的……" />
+					<Option Info="还是聊聊宝藏吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="宝藏？大家都不相信，我也自己想了想，那坏蛋的战斗力实在恐怖，打败了好多反抗的族人，还黑化了他们，变成他的奴仆！" />
+					<Msg NpcID="1013" ImageID="1" Info="呜呜呜呜，我好想念他们，想救出他们，但我实在太弱了……" />
+					<Option Info="那坏蛋是谁呢" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="我看还是不要连累你了，多一个无辜受害的勇士，我会更加不安。" />
+					<Option Info="相信我能救出他们" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="伊影大人被勇士封印后，黑暗魔王基姆就抓走并控制了我的同伴们，把他们变成了看守他宝藏的护卫，你能让他们清醒过来吗？" />
+					<Option Info="他们在哪呢"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="你不害怕黑暗魔王基姆吗？那我应该找对人了。宝库在一个大家都知道却又不知道的地方，正常的路是通不到那里的，幸好我可以带你去……" />
+					<Option Info="这就出发吧"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="黑暗魔王太厉害啦，为了你的安全着想，还是我和小宅箱去吧，哈哈哈哈……" />
+					<Option Info="可恶，给我站住"/>
+				</Action>
+				<Action Type="MOVIE" Url="taskMovie_39003_1.swf"  MapLevel="TASK" Pos="0,0" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11202,390031" />
+			</Event>	
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Event  Memo="怪盗戈戈拉好像进了c勇敢者旅馆c，去问问旅馆老板c路库Kc吧"  TargetMap="11207" TargetObj="13" TargetName="与旅馆老板t路库Kt对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="怪盗在哪" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="年轻人，别这么着急。先坐下来喝杯我最新调制的鸡尾酒。" />
+					<Msg NpcID="13" ImageID="1" Info="他们的去向我知道，如果你能答对我的谜题，我就告诉你。" />
+					<Option Info="时间紧迫啊！" />			
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="他带着小宅箱，跑得肯定不快，你先休息好，待会肯定能追上。" />
+					<Option Info="好像有点道理，出题吧" NextStep="4" SkipTrigger="Y"/>			
+				</Action>
+			</Event>	
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Event  Memo="答对旅馆老板c路库Kc的谜题"  TargetMap="11207" TargetObj="13" TargetName="答对旅馆老板t路库Kt的谜题"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="快快出题" />
+				</Trigger>
+				<Action Type="TALK">
+				   <Msg NpcID="13" ImageID="1" Info="题目你可听好了，答对我才会告诉你他们的去向。" />	
+					<Msg NpcID="13" ImageID="1" Info=" 我有一堆牛奶瓶盖，一半的一半的一半比一半的一半少一个，这堆牛奶瓶盖有多少个呢？" />				
+					<Option Info="16个" NextStep="6" SkipTrigger="Y" />
+					<Option Info="10个" NextStep="6" SkipTrigger="Y" />
+					<Option Info="8个" NextStep="5" SkipTrigger="Y" />	
+					<Option Info="4个" NextStep="6" SkipTrigger="Y" />	
+					<Option Info="2个" NextStep="6" SkipTrigger="Y" />		
+					<Option Info="让我思考一下" NextStep="4" />
+				</Action>	
+			</Event>	
+		</Step>
+		
+		 <Step ID="5" ParentList="4" ParentCost="1"  >
+			<Event Memo="答对旅馆老板c路库Kc的谜题" TargetMap="11202" TargetObj="317" TargetName="答对旅馆老板t路库Kt的谜题">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="恭喜你，答对啦!我这就告诉你他们的去向。" />
+					<Msg NpcID="13" ImageID="1" Info="他跑到2楼去了。" />
+					<Option Info="……" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="怎么还不去？" />
+					<Option Info="早知是2楼我就直接去了" />
+				</Action>
+    		</Event>											
+	    </Step>	
+	    
+  		<Step ID="6" ParentList="4" ParentCost="1"  >
+			<Event Memo="答对旅馆老板c路库Kc的谜题" TargetMap="11202" TargetObj="317" TargetName="答对旅馆老板t路库Kt的谜题">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="哈哈，你答错了，再多陪我会吧。" />
+					<Option Info="我要再试一次" NextStep="4" SkipTrigger="Y"  />
+				</Action>			
+    		</Event>											
+	    </Step>
+	    
+		<Step ID="7" ParentList="5" ParentCost="1" >
+    		<Event Memo="去问问c勇敢者旅馆c2楼的c神秘人c" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="怪盗在哪" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="7" Info="怪盗戈戈拉？我不认识。不过有个比我这神秘人还神秘的人带着一只箱子一样的东西。" />
+					<Msg NpcID="21" ImageID="7" Info="他显然是个路痴，居然问我格历尔平原6区怎么走……" />
+					<Option Info="我这就去" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21306,390032" />
+			</Event>
+		</Step>
+		
+		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Condition>
+				<Battle ID="3320" Count="1" />				
+			</Condition>
+			<Event  ConditionType="IN" Memo="去c格历尔平原6区c找到c怪盗戈戈拉c" TargetMap="21306" TargetObj="314" TargetName="找到t怪盗戈戈拉t"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="果然是他" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="打败戈戈拉啦！小勇士你真厉害！" />
+					<Msg NpcID="314" ImageID="1" Info="我输了，你带走小宅箱吧，宝藏是你们的了。\n（我会告诉你们我要偷偷跟在你们后面么）" />
+					<Msg NpcID="1013" ImageID="1" Info="伙伴们，你们有救了！现在就去黑暗魔王基姆的宝库吧！" />
+					<Option Info="准备一下" NextStep="8" />
+					<Option Info="立刻出发" />
+				</Action>	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21306,390032" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="30301,1" />
+			</Event>	
+			<Event ConditionType="OUT" Memo="去c格历尔平原6区c看看吧！" TargetMap="21306" TargetObj="390032" TargetName="救回t小宅箱t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21306" ObjID="390032"  TaskOption="终于找到你了"/>	
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="小宅箱，你就算是叫破喉咙也不会有人来帮你的，大家都不相信你。" />
+					<Msg NpcID="314" ImageID="1" Info="不如，你带我到黑暗魔王基姆的秘密宝库，我帮你救出伙伴，如何？" />
+					<Msg NpcID="1013" ImageID="1" Info="你真的不怕黑暗魔王吗？你的目的不是帮我，而是宝藏吧！" />
+					<Msg NpcID="314" ImageID="1" Info="对付黑暗魔王，我自有办法，戈戈拉不会拒绝任何宝藏的召唤，你只管带我去就是了。" />
+					<Msg NpcID="314" ImageID="1" Info="如果确实有宝藏，我心情不错，伟大的怪盗戈戈拉会帮你救出伙伴的。\n你现在还有更好的选择吗？" />
+					<Option Info="别相信他"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="又一个送星豆的来了。不对，你怎么知道我会在这里的？" />
+					<Option Info="你真的在这里"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="想不到吧？越危险的地方越安全，谁也不会想到我会在老地方。" />
+					<Option Info="放开小宅箱"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="先打过我们再说吧，我伟大的戈戈拉什么时候在财宝目前退缩过，大家一起上啊！" />
+					<Option Info="准备一下" NextStep="8" />
+					<Option Info="来战"/>
+				</Action>
+        		<Action Type="COMMAND" Command="BATTLE" Params="3320" />					
+  			</Event>
+		</Step>
+		
+		<Step ID="9" ParentList="8" ParentCost="1" TargetMap="30301" TargetObj="51" TargetName="前往c藏宝基地c，解救c鬼脸箱c">
+			<Condition>
+				<Battle ID="3321" Count="1" />				
+			</Condition>
+			<Event ConditionType="IN" Memo="前往c藏宝基地c，解救c鬼脸箱c" TargetMap="30301" TargetObj="51" TargetName="跟t鬼脸箱t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30301" ObjID="51" TaskOption="你们醒醒吧"/>			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="伙伴们，你们醒过来了吗？我是小宅箱啊，一起玩捉迷藏，一起河里摸鱼，一起捣蛋的小宅箱啊！" />
+					<Msg NpcID="1014" ImageID="1" Info="这破箱子谁认识吗？虽然被你们打败了，也不要跟我们装得很熟好吗？" />
+					<Msg NpcID="1014" ImageID="1" Info="黑暗魔王基姆大人就要回来了，你们都等着被魔王大人打败吧，哈哈哈哈……" />
+					<Msg NpcID="104" ImageID="1" Info="看来他们还没有清醒，你们要小心！" />
+					<Option Info="赶紧拿走财宝" />
+				</Action>
+			</Event>
+			<Event ConditionType="OUT" Memo="前往c藏宝基地c，解救c鬼脸箱c" TargetMap="30301" TargetObj="51" TargetName="跟t鬼脸箱t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30301" ObjID="51"  TaskOption="财宝都在这里"/>	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1013" ImageID="1" Info="伙伴们，我带着勇士来解救你们啦，从此不用受黑暗魔王基姆的欺负了！" />
+					<Msg NpcID="1014" ImageID="1" Info="这个箱子和我们长得有点像啊，却又不太像。唉，不想了。" />
+					<Msg NpcID="1014" ImageID="1" Info="凡是潜入黑暗魔王大人宝库的，都是觊觎财宝的坏人！快去禀报魔王大人！" />
+					<Msg NpcID="1014" ImageID="1" Info="黑暗魔王大人让我们守护财宝，要是被你们抢走了，我们就完了……\n消灭他们！" />
+					<Msg NpcID="1013" ImageID="1" Info="你们不认识我了吗？呜呜呜呜，我是小宅箱啊……" />
+					<Option Info="准备一下" NextStep="9"/>
+					<Option Info="小心，我来迎战" />
+				</Action>			
+        		<Action Type="COMMAND" Command="BATTLE" Params="3321" />					
+  			</Event>
+		</Step>
+		
+		<Step ID="10" ParentList="9" ParentCost="1" TargetMap="30301" TargetObj="2" TargetName="打开t宝箱t">
+			<Event Memo="宝藏就在眼前了" TargetMap="30301" TargetObj="2" TargetName="打开t宝箱t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="30301" ObjID="2" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="你们竟敢趁我不在的时候，偷偷潜入了我的藏宝基地！" />
+					<Msg NpcID="1014" ImageID="1" Info="大王，您可算回来了，我们一直拼死守护宝藏。" />
+					<Option Info="看来一战难以避免" />
+				</Action>
+			</Event>
+		</Step>
+
+  		<Step ID="11" ParentList="10" ParentCost="1" >		
+			<Condition>
+				<Battle ID="3322" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="和c基姆c对话" TargetMap="30301" TargetObj="350" TargetName="和t基姆t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="30301" ObjID="350" TaskOption="魔王也不过如此" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="今天就先到这里，下次见面，你们就不会这么走运了！" />	
+					<Msg NpcID="1014" ImageID="1" Info="啊，感觉像是做了一个漫长的梦……" />
+					<Msg NpcID="1014" ImageID="1" Info="这不是小宅箱么，是你带着这位勇士来救我们的么？" />			
+					<Msg NpcID="1013" ImageID="1" Info="是的，他救了我们，以后又能开开心心地过我们的生活了。" />		
+					<Option Info="别再做坏事了" />
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="击败c基姆c" TargetMap="30301" TargetObj="350" TargetName="击败t基姆t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="30301" ObjID="350" TaskOption="交出宝藏" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="最近勇士们财宝无故丢失的案件，都是你做的吧！" />	
+					<Msg NpcID="350" ImageID="1" Info="是又怎么样，现在这些财宝都是我的了。" />	
+					<Msg NpcID="104" ImageID="1" Info="是的话，就交出勇士们的财宝，还勇士王国一个安宁！" />	
+					<Msg NpcID="1013" ImageID="1" Info="还要解救我的伙伴们，让我们回到以前无忧无虑的生活。" />	
+					<Msg NpcID="350" ImageID="1" Info="哈哈哈……笑话，你以为你们能活着回去吗？" />	
+					<Msg NpcID="350" ImageID="1" Info="鬼脸箱们！跟我一起打败他们！" />	
+					<Msg NpcID="1014" ImageID="1" Info="黑暗魔王大人，我们永远追随您！" />	
+					<Option Info="准备一下" NextStep="11" />
+					<Option Info="来战" />	
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3322"/>										
+    		</Event>
+		</Step>				
+	</Procedure>
+</Task>

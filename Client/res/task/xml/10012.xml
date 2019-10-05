@@ -1,0 +1,28 @@
+<task id="10012">
+  <taskDes>
+	<![CDATA[加入剑士协会有一段时间了，有没有遇到什么疑惑呢?和杰森导师聊聊吧。$$]]>
+	<![CDATA[打赢了！快找杰森老师领取奖励吧！]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="26" title="杰森老师好！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11305"/>
+    <pro type="0" parent="0" npcID="26" title="战胜你啦！" action="3" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11305"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="26" answer="没有..." objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[2#【@nick】你加入剑士协会有一段时间了，平时有没有疏于练习啊？]]>
+		</des>
+    </proAction>
+    <proAction id="1" type="0" npcID="26" answer="好的" objLevel="" objName="" objType="" objValue="" to="a2">
+      <des>
+		<![CDATA[2#哈哈，和我对战吧！让我来看看你的实力到底有没有进步！如果战胜我可是有额外奖励的哦。]]>
+		</des>
+    </proAction>
+    <proAction id="2" type="5" fightID="3002" data="1" to="so"/>
+    <proAction id="3" type="0" npcID="26" answer="谢谢杰森老师" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[2#还不错，这把剑作为奖励送给你了。记住！刻苦的修炼才可能成为摩尔勇士，下次挑战我可没那么轻松了！]]>
+		</des>
+    </proAction>
+  </actions>
+</task>

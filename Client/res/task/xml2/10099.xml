@@ -1,0 +1,51 @@
+<Task ID="10099" Memo="好吃的吉普豆料理，那是什么？快去问问c贝多罗大叔c！" TargetMap="11213">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="好吃的吉普豆料理，那是什么？快去问问c贝多罗大叔c！" TargetMap="11213" TargetObj="18" TargetName="和t贝多罗t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="好吃的吉普豆料理？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="哈哈，你也想吃“好吃的吉普豆料理”吗?" />
+						<Msg NpcID="18" ImageID="1" Info="不过现在材料严重不足啊，我需要10份【新鲜的吉普豆】。" />
+						<Option Info="怎么弄到呢？" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="听说修隐岛的【吉普豆3号地道】里有很多【吉普豆花】会掉落。" />
+						<Msg NpcID="18" ImageID="1" Info="你去那里收集10个新鲜的【吉普豆】给我吧！" />
+						<Option Info="好的！" />
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="180056" Count="10" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="收集完成！赶快把吉普豆送给c贝多罗大叔c吧！" TargetMap="11213" TargetObj="18" TargetName="和t贝多罗t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="吉普豆来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="1" Info="让我看看……\n咦，好像和书上不一样啊^" />
+					<Msg NpcID="18" ImageID="1" Info="^弄错了！不是这种吉普豆！！" />
+					<Option Info="……" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="1" Info="算了，你也辛苦了。收下这些星豆吧。" />
+					<Option Info="O(∩_∩)O" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="从c吉普3号地道c的c吉普豆花c那里取得10份c新鲜的吉普豆c吧！" TargetMap="21751" TargetObj="" TargetName="t新鲜的吉普豆t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="1" TaskOption="吉普豆花在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="就在修隐岛上的【吉普3号地道】里。\n黑化的【吉普豆花】可不简单，小心点！" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>
+		</Step>	
+	
+	</Procedure>
+</Task>

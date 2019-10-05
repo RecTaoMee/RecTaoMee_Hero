@@ -1,0 +1,26 @@
+<task id="10022">
+  <taskDes>
+	<![CDATA[祝贺【7级】！*王国西街尽头的勇士斗技场的大门向你打开！$$]]>
+	<![CDATA[酷酷技能等级未知的【圣弗雷德】在勇士斗技场管理处等你，勇士斗技场正门直走。]]>
+  </taskDes>
+  <taskPro>
+		<pro type="0" parent="" npcID="520" title="勇士斗技场？" action="0" bossID="" bossNum="" needRes="" needResNum="" unResAction="2" taskDes="0" mapID="11203"/>
+		<pro type="0" parent="0" npcID="520" title="勇士斗技场？" action="1" bossID="" bossNum="" needRes="" needResNum="" unResAction="2" taskDes="1" mapID="11219"/>
+  </taskPro>
+	<actions>
+    <proAction id="0" type="0" npcID="38" answer="好的！" to="a3">
+       <des>
+		 <![CDATA[6#是你啊，勇士协会的【@nick】，等候你多时了，我是这个【勇士斗技场】的最高指挥官【圣弗雷德】。$$]]>		 
+		 <![CDATA[1#你已经是【7级】的摩尔，是进入斗技场进行日常训练的时候了。$$]]>	
+		 <![CDATA[6#在这之前，关于勇士斗技场的机密内容希望你能了解一下。]]>
+	   </des>
+    </proAction>
+    <proAction id="1" type="0" npcID="38" answer="我这就来！" to="a2">
+       <des>
+		 <![CDATA[1#跟我来吧，我在【斗技场管理处】处等你！大部分时间我都在那里~。]]>
+	   </des> 	
+    </proAction>
+ 	<proAction id="2" type="1" level="contentLevel" name="task_10022_1" moviepos="-875,-375" objLevel="contentLevel" objName="MC_npc_520" objType="visible" objValue="0"  to="c"/>
+	<proAction id="3" type="1" outMap="1" level="taskLevel" name="task_10022_3" moviepos="0,0" to="s1"/>
+	</actions>
+</task>

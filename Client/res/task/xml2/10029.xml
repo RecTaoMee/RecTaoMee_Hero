@@ -1,0 +1,73 @@
+<Task ID="10029" Memo="加入c传教士协会c有一段时间了，有没有遇到什么疑惑呢?和c温蒂c导师聊聊吧。" TargetMap="11217">
+	<Procedure> 
+		<Step ID="4" ParentList="0" ParentCost="0" >
+    		<Event Memo="加入c传教士协会c有一段时间了，有没有遇到什么疑惑呢?和c温蒂c导师聊聊吧。" TargetMap="11217" TargetObj="22" TargetName="和t温蒂t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="信仰的试炼" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="1" ParentList="4" ParentCost="1" >
+    		<Event Memo="加入c传教士协会c有一段时间了，有没有遇到什么疑惑呢?和c温蒂c导师聊聊吧。" TargetMap="11217" TargetObj="22" TargetName="和t温蒂t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="信仰的试炼" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="22" ImageID="1" Info="【@nick】，传教士的生活感觉如何呢？" />
+						<Option Info="很开心" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="22" ImageID="2" Info="很好，传教士最重要的就是在帮助队友的同时要保护好自己。" />
+						<Msg NpcID="22" ImageID="2" Info="只有保护好自己才能帮助队友取得胜利！" />
+						<Option Info="嗯" SkipTrigger="Y"/>
+					</Action>
+			</Event>
+		</Step>
+
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="加入c传教士协会c有一段时间了，有没有遇到什么疑惑呢?和c温蒂c导师聊聊吧。" TargetMap="11217" TargetObj="22" TargetName="和t温蒂t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="导师的考验" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="22" ImageID="2" Info="那么，请接受我的挑战，让我看看你是否真正领会了这一句话。" />
+						<Msg NpcID="23" ImageID="1" Info="还有我！我要和姐姐一起战斗！" />
+						<Option Info="来吧！" />
+						<Option Info="让我再想想..." NextStep="2" />
+					</Action>
+					<Action Type="COMMAND" Command="BATTLE" Params="3004"/>
+			</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="3004" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="打赢了！快找c温蒂c老师领取奖励吧！" TargetMap="11217" TargetObj="22" TargetName="和t温蒂t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="打赢啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="22" ImageID="1" Info="你做的很不错!在我们姐妹的合击下还能取得胜利，看来你平日修炼非常刻苦。" />
+					<Msg NpcID="23" ImageID="1" Info="这是你的奖励，愿女神的祝福与你同在。" />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="快点向c温蒂c老师挑战吧！" TargetMap="11217" TargetObj="22" TargetName="挑战t温蒂t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="信仰的试炼" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="22" ImageID="2" Info="时之女神正看着我们呢，女神可不喜欢胆小鬼哦。" />
+					<Option Info="我要挑战你！" />
+					<Option Info="让我再想想..."  NextStep="3" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3004"/>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

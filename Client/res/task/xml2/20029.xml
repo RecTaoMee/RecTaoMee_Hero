@@ -1,0 +1,61 @@
+<Task ID="20029" Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+	<Procedure>   					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="你好啊^^!" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="可恶！！上次的小鬼又溜进风之洞穴了！\n你能帮我找到他吗？" />	
+					<Option Info="使命必达！" SkipTrigger="Y"/>												
+					<Option Info="咦(⊙o⊙)？" NextStep="2" SkipTrigger="Y"/>							
+					<Option Info="有事先走了" NextStep="1" />																					
+				</Action>																		
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="0" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小鬼？" />									
+				</Trigger> 				
+				<Action Type="TALK">				
+					<Msg NpcID="222" ImageID="1" Info="他说有妮娜团长的签名，\n一听到妮娜的名字我就……\n控制不住走神了。" />	
+					<Msg NpcID="222" ImageID="1" Info="如果遇到黑化精灵可不是开玩笑的!\n你能帮我找到他吗？\n记住，是个戴着“土豆皮帽子”的家伙！" />						
+					<Option Info="使命必达！" SkipTrigger="Y" />																											
+				</Action>
+    		</Event>
+		</Step>		
+  		<Step ID="10" ParentList="1, 2" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小鬼？" />									
+				</Trigger> 				
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>				
+<!-- 节点1↑ -->  
+  		<Step ID="3" ParentList="10" ParentCost="1" >
+    		<Event Memo="戴“土豆皮帽子”的摩尔就在c风之洞穴c，\n快去找找看吧！" TargetMap="21501" TargetObj="61" TargetName="和t菠萝t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21501" ObjID="61" TaskOption="守卫士兵在找你！" />									
+				</Trigger> 						
+				<Action Type="TALK">
+					<Msg NpcID="61" ImageID="1" Info="我正在找六色【宝箱精灵】，\n差一点就能去【G档案】兑换我第12只伊影啦！\n找到我就回去啦！" />				
+					<Msg NpcID="401" ImageID="1" Info="找宝箱上瘾的家伙……\n【@nick】别光顾着聊天，\n快去报告守卫士兵吧！" />																														
+					<Option Info="这就去【平原12区】" />						
+				</Action>					
+			</Event>
+		</Step>				
+  		<Step ID="6" ParentList="3" ParentCost="1" >
+    		<Event Memo="找到菠萝啦↖(^ω^)↗\n快去c平原12区c报告c守卫士兵Wc吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="他马上回来" />									
+				</Trigger> 					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="这次没遇到黑化精灵算他走运。\n我发誓下次再也不让他混进去了！" />																								
+					<Option Info="O(∩_∩)O" />				
+				</Action>		
+    		</Event>
+		</Step>		 		
+	</Procedure>
+</Task>

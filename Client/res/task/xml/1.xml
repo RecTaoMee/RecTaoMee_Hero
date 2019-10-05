@@ -1,0 +1,36 @@
+<task id="1">
+	<taskDes>
+		<![CDATA[吉普豆村？这是怎么回事？！$$]]>
+		<![CDATA[地道冒险？吉普豆村？穿越时空！？这是怎么回事？！【快问问皮皮克克吧！】$$]]>
+		<![CDATA[地道冒险真惊险，就这么跟着皮皮克克回到皮皮克克的家“吉普豆村”。【快和皮皮克克一起回土豆屋休息一下吧！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<!--type:0任务类型 1:直接接受此任务，2:到达莫个地图时播放,3，加载外部SWF，5：直接执行此动作-->
+		<pro type="0" parent="" npcID="1" title="你不回家吗？" action="0" taskDes="1" mapID=""/>
+		<!--<pro type="3" parent="0" mapID="11102" name="task_1_1" level="contentLevel" point="-556,30"/>-->
+		<pro type="0" parent="0" npcID="1" title="你不回家吗？" action="1" needRes="" needResNum="" unResAction="" taskDes="2"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板 3,直接执行to,4,显示面版后带有数据-,5,对战,6,切换地图,-->
+		<proAction id="0" type="0" npcID="1" answer="小问题" to="s1">
+			<des>
+				<![CDATA[5#之前对不起！连累你受伤了……]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="1" answer="嗯^_^！" to="a2">
+			<des>
+				<![CDATA[4#那个………$$]]>
+				<![CDATA[5#嘿嘿，我们算是朋友了吧^3^？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="1" answer="好啊" to="a3">
+			<des>
+				<![CDATA[1#跟我回家吧！我姐的包扎技术全村第一!]]>
+			</des>
+		</proAction>
+		<!--level,name 播放动画的层级和名字,pos动画坐标,action,播放完动画后的动作-->
+		<!--objLevel="" objName="" objType="" objValue="" 地图里面本来就有显示对像的层级，名字，类型，数值 以$格开 在哪都可以用-->
+		<proAction id="3" type="1" level="contentLevel" name="task_1_1" moviepos="-556,30" objLevel="contentLevel" objName="MC_npc_1" objType="visible" objValue="0"  to="c"/>
+	</actions>
+</task>

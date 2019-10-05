@@ -1,0 +1,70 @@
+<Task ID="3" Memo="现在就去c隔壁的土豆屋c找c村长c大人吧！" TargetMap="11103">
+   	<Procedure>
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="现在就去c隔壁的土豆屋c找c村长c大人吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+    	</Step>		
+
+<!--忍者↓-->	
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+			<Condition>
+				<Person Career="5" />
+			</Condition>				  
+    		<Event ConditionType="IN" Memo="现在就去c隔壁的土豆屋c找c村长c大人吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="琪琪让我找您" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="7" Info="喔嚯~你就是那位穿越来的摩尔？\n女神大人有没有告诉你“神魔之战”？" />
+					<Option Info="神魔之战？" />
+				</Action>	
+				<Action Type="MOVIE" Url="task_113_1.swf" MapLevel="TASK" Pos="0,0" />															
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="……这就是你来到荣耀时代的使命——\n寻找“十二勇士”。" />
+					<Option Info="交给我了！" />						
+				</Action>						
+				<Action Type="TALK">					
+					<Msg NpcID="5" ImageID="1" Info="嚯嚯……我开心了。\n给你看样好东西——\n这是超超超重的【紫云十字镖】，\n要是拿得动它我就送给你~" />
+					<Option Info="这是你说的！" SkipTrigger="Y" />					
+				</Action>
+    		</Event>
+		</Step>	                   
+  		<Step ID="3" ParentList="1" ParentCost="1" > 				  
+    		<Event Memo="现在就去c隔壁的土豆屋c找c村长c大人吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="【紫云十字镖】在哪？" />		
+				</Trigger>
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG,130281" />				      
+    		</Event>
+		</Step>	 		
+  		<Step ID="2" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Person Equipment="130281" />	
+			</Condition>
+    		<Event ConditionType="IN" Memo="拿起c旅行箱c里的c紫云十字镖c给村长瞧瞧吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="拿起紫云十字镖了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="（T_T）拿去好好使用吧————！" />
+					<Option Info="^_^多谢" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="拿起c旅行箱c里的c紫云十字镖c给村长瞧瞧吧！" TargetMap="11103" TargetObj="5" TargetName="装备t紫云十字镖t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="【紫云十字镖】在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="嚯嚯嚯……\n它不是已经在你的【旅行箱】里了吗？" />
+					<Msg NpcID="5" ImageID="1" Info="如果是“紫云十字镖”认可的主人，\n【点击】它就能【装备】上它。" />
+					<Option Info="拿给你看！" />
+				</Action>
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG,130281" />				      
+			</Event>			
+		</Step>
+		   
+	</Procedure>
+</Task>
+
+

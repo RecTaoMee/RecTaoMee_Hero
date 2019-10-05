@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map name="aaa" type="0" comment="aaa" sound="BGM-001.mp3">
+	<transport intPos="554,253">
+		<node id="1" pos="554,253" dir="2" targetMapId="11102" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="4" type="TransPort" res="MC_door" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_diaryBtn" module="PipikekeModule"/>
+		<node id="3" type="AppModule" res="MC_magicBtn" module="QiqiModule"/>
+	</object>
+	<npc>
+		<node id="1" type="NPC" res="MC_npc_1" enterMap="f17" alpTaskID="" taskType="0" level="contentLevel" fun=""  action="4" needLevel="" needKind=""/>
+		<node id="6" type="NPC" res="MC_npc_6" taskType="0" level="contentLevel" compTaskID="3_1_0"  alpTaskID="10_1_1" fun=""  action="5$1$2" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction npcID="6" id="0" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0" >
+			<des>
+				<![CDATA[4#【@nick】你好啊^_^。皮皮克克真令我操心……有什么可以帮你的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="6" id="1" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0">
+			<des>
+				<![CDATA[1#皮皮克克这个捣蛋鬼看我不收拾他！有什么可以帮你的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="6" id="2" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0">
+			<des>
+				<![CDATA[1#【@nick】你好啊^_^]]>
+			</des>
+		</proAction>
+		<proAction npcID="6" id="3" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0">
+			<des>
+				<![CDATA[4#【@nick】你好啊……很担心村长爷爷的身体……有什么可以帮你的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="1" id="4" type="0" answer="嗯嗯" to="o" >
+			<des>
+				<![CDATA[7#地道冒险真有意思！]]>
+			</des>
+		</proAction>
+		<proAction npcID="6" id="5" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_6$o" colorID="1$0">
+			<des>
+				<![CDATA[1#上次去传教士协会记的笔记是不是还少了些什么呢……可以帮我看下吗？笔记在我桌上。]]>
+			</des>
+		</proAction>
+	</actions>		
+</map>

@@ -1,0 +1,132 @@
+<!--
+	场景NPC,ID段↓
+	 
+	场景内常驻npc
+	1~9999
+	场景内任务npc↓
+	【10000~15999】
+	10000~11999主线任务特殊npcID段
+	12000~13999支线任务特殊npcID段
+	14000~15999日常任务/特殊任务特殊npcID段）
+	场景内物品↓
+	【16000~49999】
+	16000~29999 主线任务ID段
+	30000~39999 支线任务ID段
+	40000~49999 日常任务/特殊任务ID段
+-->
+	
+<!--Item
+	Task：任务ID
+	Map：地图ID
+	ID：物品ID
+	Level：地图层级，顶层(地图顶层)："TOP"，上层："UP"，内容层："CONTENT"，下层："DOWN"，任务层(地图，UI之上)："TASK"
+	Res：资源路径
+	Pos：资源位置(如果是TASK层，在最外面对坐标；其他的地图层，在层里面对坐标)
+	TriggerType：0表示点击触发，1表示走到注册点触发
+-->	
+<TaskItem>
+	<Item Task="2" Map="11103" ID="16001" Level="CONTENT" Res="task_2_16001.swf" Pos="-645, -200" TriggerType="0" /><!-- 吉普豆村长的神杖 -->
+	<Item Task="66" Map="21301" ID="16002" Level="CONTENT" Res="task_66_16002.swf" Pos="0,-200" TriggerType="0" /><!-- 怪盗 -->	
+	<Item Task="67" Map="11201" ID="16016" Level="CONTENT" Res="task_33_16016.swf" Pos="442,429" TriggerType="1" /><!-- 怪盗主线① -->
+	<Item Task="142" Map="11603" ID="16003" Level="CONTENT" Res="task_25_16003.swf" Pos="-330,-110" TriggerType="1" /><!-- 海湾小战争 -->
+	<Item Task="142" Map="11602" ID="16004" Level="CONTENT" Res="task_25_16004.swf" Pos="900,371" TriggerType="1" /><!-- 海湾小战争 -->
+	<Item Task="142" Map="11605" ID="16005" Level="CONTENT" Res="task_25_16005.swf" Pos="-200,200" TriggerType="1" /><!-- 海湾小战争 -->
+	<Item Task="142" Map="11605" ID="16006" Level="CONTENT" Res="task_25_16006.swf" Pos="-150,150" TriggerType="1" /><!-- 海湾小战争 -->
+	<Item Task="142" Map="11605" ID="16007" Level="CONTENT" Res="task_25_16007.swf" Pos="-50,150" TriggerType="1" /><!-- 海湾小战争 -->
+	<Item Task="143" Map="21305" ID="16010" Level="CONTENT" Res="task_27_16010.swf" Pos="435,-500" TriggerType="1" /><!-- 冒险风龙 -->
+	<Item Task="150" Map="21305" ID="16008" Level="CONTENT" Res="task_27_16008.swf" Pos="0,-300" TriggerType="1" /><!-- 风龙觉醒 -->
+	<Item Task="150" Map="21305" ID="16009" Level="CONTENT" Res="task_27_16009.swf" Pos="330,-450" TriggerType="1" /><!-- 风龙觉醒 -->
+	<Item Task="150" Map="21305" ID="16010" Level="CONTENT" Res="task_27_16010.swf" Pos="435,-500" TriggerType="1" /><!-- 风龙觉醒 -->
+	<Item Task="250" Map="11605" ID="16011" Level="CONTENT" Res="task_250_16011.swf" Pos="-200,200" TriggerType="1" /><!-- 永恒森林 鼬西 -->
+	<Item Task="250" Map="11605" ID="16012" Level="CONTENT" Res="task_250_16012.swf" Pos="0,-300" TriggerType="1" /><!-- 永恒森林 爱丝 -->
+	<Item Task="250" Map="11605" ID="16013" Level="CONTENT" Res="task_250_16013.swf" Pos="-150,150" TriggerType="1" /><!-- 永恒森林 正义伙伴 -->
+	<Item Task="251" Map="11801" ID="16014" Level="CONTENT" Res="task_250_16014.swf" Pos="350,350" TriggerType="1" /><!-- 古镜 围观 -->
+	<!--35级主线-->
+	<Item Task="255" Map="11804" ID="11804" Level="CONTENT" Res="task_11804_11804.swf" Pos="498,99" TriggerType="1" /><!-- 动画1里的4个精灵小弟 -->
+	<Item Task="255" Map="11805" ID="11805" Level="CONTENT" Res="task_11805_11805.swf" Pos="434,240" TriggerType="1" /><!-- 动画2里的几个守护世界树的精灵勇士 -->
+	<Item Task="255" Map="11805" ID="11806" Level="CONTENT" Res="task_11805_11806.swf" Pos="462,370" TriggerType="1" /><!-- 动画3鼬西 -->
+	<Item Task="255" Map="11805" ID="11807" Level="CONTENT" Res="task_11805_11807.swf" Pos="534,421" TriggerType="1" /><!-- 动画4剧毒蜂皇 -->
+	<Item Task="255" Map="11805" ID="11808" Level="CONTENT" Res="task_11805_11808.swf" Pos="646,549" TriggerType="1" /><!-- 世界树入口的村长塔西莉亚 -->
+	<!--40级主线-->
+	<Item Task="256" Map="11805" ID="11810" Level="CONTENT" Res="task_11805_11810.swf" Pos="604,432" TriggerType="1" /><!-- 世界树入口的鼬西 -->
+	<Item Task="256" Map="21804" ID="21804" Level="CONTENT" Res="task_21804_21804.swf" Pos="33,767" TriggerType="1" /><!-- 世界树顶 凯西 -->
+	<Item Task="256" Map="21804" ID="21805" Level="CONTENT" Res="task_21804_21805.swf" Pos="183,695" TriggerType="1" /><!-- 世界树顶 魔王尤利 -->
+	<Item Task="256" Map="21804" ID="21806" Level="CONTENT" Res="task_21804_21806.swf" Pos="43,649" TriggerType="1" /><!-- 世界树顶 妮娜 安德鲁 -->	
+	<Item Task="256" Map="21804" ID="21807" Level="CONTENT" Res="task_21804_21807.swf" Pos="191,627" TriggerType="1" /><!-- 世界树顶 剧毒蜂皇 -->			
+	<Item Task="10002" ID="30001" Level="CONTENT" Res="task_10002_12002.swf" Pos="-672,-680" /><!--贝利的生日蛋糕-->
+	<Item Task="10002" ID="30002" Level="TASK" Res="task_10002_12003.swf" Pos="-672,-680" /><!--贝利的生日蛋糕-->
+	<Item Task="10003" ID="30004" Level="CONTENT" Res="task_10003_30001.swf" Pos="0,0" /><!--电波小队，登场！-->
+	<Item Task="10003" ID="30005" Level="TASK" Res="task_10003_30002.swf" Pos="0,0" /><!--电波小队，登场！-->
+	<Item Task="10003" Map="21302" ID="30006" Level="CONTENT" Res="task_10003_12004.swf" Pos="-644,-417" TriggerType="1" /><!-- 电波小队，登场！ -->
+	<Item Task="10003" Map="21302" ID="30007" Level="CONTENT" Res="task_10003_12007.swf" Pos="-644,-417" TriggerType="1" /><!-- 兔子在场景中 电波小队，登场！ -->
+	<Item Task="10003" Map="21302" ID="30008" Level="CONTENT" Res="task_10003_12008.swf" Pos="-644,-417" TriggerType="1" /><!-- 电波小队，登场！ -->
+	<Item Task="10055" Map="11408" ID="30009" Level="DOWN" Res="task_10055_30003.swf" Pos="2,1" TriggerType="1" /><!-- 黑暗精灵没登场，水井中的精灵 -->
+	<Item Task="10055" Map="11408" ID="30010" Level="DOWN" Res="task_10055_30004.swf" Pos="2,1" TriggerType="1" /><!-- 黑暗精灵悬浮在水里，水井中的精灵 -->
+	<Item Task="10055" Map="11408" ID="30011" Level="DOWN" Res="task_10055_30005.swf" Pos="2,1" TriggerType="1" /><!-- 净化精灵悬浮在水里，水井中的精灵 -->
+	<Item Task="10058" Map="11302" ID="30012" Level="CONTENT" Res="task_10058_30006.swf" Pos="-3,-246" TriggerType="1" /><!-- 净化精灵悬浮在水里，水井中的精灵 -->
+	<Item Task="10066" Map="21401" ID="30022" Level="CONTENT" Res="task_10066_30022.swf" Pos="600,700" TriggerType="1" /><!-- 小宅罐 -->
+	<Item Task="10067" Map="11213" ID="30013" Level="CONTENT" Res="task_10067_30013.swf" Pos="-3,150" TriggerType="1" /><!-- 追踪黑衣人面包店 -->
+	<Item Task="10067" Map="11214" ID="30014" Level="CONTENT" Res="task_10067_30014.swf" Pos="20,-136" TriggerType="1" /><!-- 追踪黑衣人精灵协会 -->
+	<Item Task="10067" Map="11302" ID="30015" Level="UP" Res="task_10067_30015.swf" Pos="600,0" TriggerType="1" /><!-- 追踪黑衣人呈见厅 -->
+	<Item Task="10067" Map="11217" ID="30016" Level="CONTENT" Res="task_10067_30016.swf" Pos="-3,-246" TriggerType="1" /><!-- 追踪黑衣人大圣堂 -->
+	<Item Task="10069" Map="11201" ID="30018" Level="CONTENT" Res="task_10069_30017.swf" Pos="442,429" TriggerType="1" /><!-- 吃饼干 啦啦 -->
+	<Item Task="10072" Map="11406" ID="30020" Level="CONTENT" Res="task_10072_30020.swf" Pos="100,-200" TriggerType="1" /><!-- 3个好朋友，妮娜 -->
+	<Item Task="10072" Map="11406" ID="30021" Level="CONTENT" Res="task_10072_30021.swf" Pos="150,-150" TriggerType="1" /><!-- 3个好朋友，兔子 -->
+	<Item Task="10080" Map="21702" ID="30030" Level="CONTENT" Res="task_10080_30030.swf" Pos="120,275" TriggerType="1" /><!-- 锁修塔2层，水手 -->
+	<Item Task="10081" Map="11602" ID="30031" Level="CONTENT" Res="task_10080_30031.swf" Pos="120,275" TriggerType="1" /><!-- 马沙虾，商会 -->
+	<Item Task="10081" Map="11603" ID="30032" Level="CONTENT" Res="task_10080_30032.swf" Pos="120,400" TriggerType="1" /><!-- 马沙虾，广场 -->
+	<Item Task="10081" Map="11604" ID="30033" Level="CONTENT" Res="task_10080_30033.swf" Pos="120,75" TriggerType="1" /><!-- 马沙虾，码头 -->
+	<Item Task="10083" Map="21501" ID="30034" Level="CONTENT" Res="task_10083_30034.swf" Pos="920,729" TriggerType="1" /><!-- 菠萝，风洞1【改坐标】 -->
+	<Item Task="10086" Map="21307" ID="30035" Level="CONTENT" Res="task_66_16002.swf" Pos="484,-92" TriggerType="1" /><!-- 逃跑的怪盗 -->
+	<Item Task="10093" Map="21701" ID="30036" Level="CONTENT" Res="task_10093_30036.swf" Pos="281,182" TriggerType="1" /><!-- 藤蔓 -->
+	<Item Task="10096" Map="11702" ID="30037" Level="CONTENT" Res="task_10096_30037.swf" Pos="200,50" TriggerType="1" /><!-- 蝙蝠 -->
+	<Item Task="10096" Map="11702" ID="30038" Level="CONTENT" Res="task_10096_30038.swf" Pos="400,50" TriggerType="1" /><!-- 休一 -->
+	<Item Task="36000" Map="11202" ID="30039" Level="CONTENT" Res="task_10097_30039.swf" Pos="1202,471" TriggerType="1" /><!-- 传送入口 -->
+	<Item Task="36000" Map="22104" ID="30040" Level="CONTENT" Res="task_10098_30040.swf" Pos="-483,132" TriggerType="1" /><!-- 小石头怪 -->
+	<Item Task="36000" Map="22104" ID="30041" Level="CONTENT" Res="task_10099_30041.swf" Pos="-483,132" TriggerType="1" /><!-- 斯巴鲁幼兽 -->
+	<!--野兽系场景娜蒂丝出现-->
+	<Item Task="10106" Map="11504" ID="11504" Level="CONTENT" Res="task_11504_11504.swf" Pos="434,193" TriggerType="1" /><!-- 野兽系王 -->
+	<Item Task="10106" Map="11504" ID="11505" Level="CONTENT" Res="task_11504_11505.swf" Pos="203,294" TriggerType="1" /><!-- 蜂皇 -->
+	<Item Task="10106" Map="11504" ID="11506" Level="CONTENT" Res="task_11504_11506.swf" Pos="255,279" TriggerType="1" /><!-- 娜蒂丝 -->	
+	<!--世界树内-->
+	<Item Task="10108" Map="21803" ID="21803" Level="CONTENT" Res="task_21803_21803.swf" Pos="830,520" TriggerType="1" /><!-- 世界树1F 食人樱 -->
+	<Item Task="10108" Map="21805" ID="21808" Level="CONTENT" Res="task_21805_21804.swf" Pos="540,300" TriggerType="1" /><!-- 世界树2F 凯西 -->
+	<Item Task="18002" Map="11205" ID="30017" Level="CONTENT" Res="task_18002_30017.swf" Pos="1365,35" TriggerType="1" /><!-- 迪迪拉阴谋 -->
+	<Item Task="20008" Map="11217" ID="40001" Level="UP" Res="task_20008_1.swf" Pos="3,70" TriggerType="1" /><!-- 女神祈祷 -->
+	<Item Task="28003" Map="11205" ID="30019" Level="CONTENT" Res="task_28003_30019.swf" Pos="1365,35" TriggerType="1" /><!-- 迪迪拉阴谋 -->
+	<Item Task="35000" Map="11207" ID="30023" Level="DOWN" Res="task_35000_hotel.swf" Pos="-37 -12" TriggerType="1" /><!-- 忽悠猫 勇敢者旅店一楼 -->
+	<Item Task="35000" Map="11213" ID="30024" Level="CONTENT" Res="task_35000_bread.swf" Pos="-3,150" TriggerType="1" /><!-- 忽悠猫 面包店 -->
+	<Item Task="35000" Map="11210" ID="30025" Level="CONTENT" Res="task_35000_item.swf" Pos="-20,176" TriggerType="1" /><!-- 忽悠猫 道具店 -->
+	<Item Task="35000" Map="11209" ID="30026" Level="CONTENT" Res="task_35000_equip.swf" Pos="50,-10" TriggerType="1" /><!-- 忽悠猫 装备店 -->
+	<Item Task="35002" Map="21401" ID="30027" Level="UP" Res="task_35002.swf" Pos="147,258" TriggerType="0" /><!--海洋星-->
+	<Item Task="35004" Map="11301" ID="30028" Level="CONTENT" Res="task35004_30028.swf" Pos="-5,-554" TriggerType="1" /><!-- 咕噜蝶皮克斯 -->
+	<Item Task="35004" Map="11301" ID="30029" Level="UP" Res="task35004_30029.swf" Pos="155,-370" TriggerType="1" /><!-- 咕噜蝶 -->	
+	<Item Task="35007" Map="11201" ID="30039" Level="CONTENT" Res="task_35007_30039.swf" Pos="490,429" TriggerType="1" /><!-- 喵斯熊 -->
+	<!--万圣预热打南瓜公爵的任务-->
+	<Item Task="36543" Map="11223" ID="11223" Level="CONTENT" Res="task_11223_11223.swf" Pos="485,387" TriggerType="1" /><!-- 妮娜在祭坛刷出 -->
+	<Item Task="36543" Map="11223" ID="11224" Level="CONTENT" Res="task_11223_11224.swf" Pos="601,387" TriggerType="1" /><!-- 南瓜公爵在祭坛刷出 -->
+	<!--魔王的逆袭-->
+	<Item Task="39001" Map="11205" ID="39001" Level="CONTENT" Res="task_39001_39001.swf" Pos="626,-7" TriggerType="1" /><!-- 金甲剑魂 -->
+	<Item Task="39001" Map="11204" ID="39003" Level="CONTENT" Res="task_39001_39003.swf" Pos="-391,-102" TriggerType="1" /><!-- 土豆泥王 -->
+	<Item Task="39001" Map="11203" ID="39005" Level="CONTENT" Res="task_39001_39005.swf" Pos="454,-42" TriggerType="1" /><!-- 沃特尔王 -->
+	<Item Task="39001" Map="11201" ID="39007" Level="UP" Res="task_39001_39007.swf" Pos="-167,-509" TriggerType="1" /><!-- 法尔王 -->
+	<Item Task="39002" Map="11504" ID="39002" Level="CONTENT" Res="task_39002_39002.swf" Pos="214,443" TriggerType="1" /><!-- 黑暗魔王基姆 -->
+	<Item Task="39002" Map="11505" ID="39004" Level="CONTENT" Res="task_39002_39003.swf" Pos="226,195" TriggerType="1" /><!-- 库洛喵 -->
+	<Item Task="39002" Map="11505" ID="39006" Level="CONTENT" Res="task_39002_39004.swf" Pos="170,261" TriggerType="1" /><!-- 黑暗沃特尔 -->
+	<Item Task="39002" Map="11505" ID="39008" Level="CONTENT" Res="task_39002_39005.swf" Pos="411,286" TriggerType="1" /><!-- 黑暗魔王基姆 -->
+	<Item Task="40002" Map="11202" ID="349" Level="CONTENT" Res="task_11202_349.swf" Pos="110,-440" TriggerType="1" /><!-- 圣诞精灵比安娜刷出 -->
+	
+	<Item Task="31001" Map="11213" ID="31001" Level="CONTENT" Res="task_31001_31001.swf" Pos="110,150" TriggerType="1" /><!-- 面包店 摇铃兔 -->
+	<Item Task="31001" Map="11213" ID="31002" Level="CONTENT" Res="task_31001_31002.swf" Pos="150,120" TriggerType="1" /><!-- 面包店 电波小队 -->
+	<Item Task="31001" Map="11401" ID="31003" Level="CONTENT" Res="task_31001_31001.swf" Pos="-1656,-520" TriggerType="1" /><!-- 麦田村广场 摇铃兔 -->
+	<Item Task="31001" Map="11401" ID="31004" Level="CONTENT" Res="task_31001_31002.swf" Pos="-1594,-536" TriggerType="1" /><!-- 麦田村广场 电波小队 -->
+	
+	<Item Task="206" Map="22204" ID="206" Level="CONTENT" Res="task_206_206.swf" Pos="312,797" TriggerType="1" /><!-- 灭特 -->
+	<Item Task="206" Map="22209" ID="20602" Level="CONTENT" Res="task_22209_206.swf" Pos="543,380" TriggerType="1" /><!-- 菲尔德 -->
+	<!--基姆的秘密-->
+	<Item Task="39003" Map="11202" ID="390031" Level="CONTENT" Res="task_39003_390031.swf" Pos="-950,-600" TriggerType="1" /><!-- 小宝箱 -->
+	<Item Task="39003" Map="21306" ID="390032" Level="CONTENT" Res="task_39003_390032.swf" Pos="-520,-90" TriggerType="1" /><!-- 小宝箱 -->
+	<!--琉璃翼龙的召唤-->
+	<Item Task="39004" Map="30400" ID="390041" Level="CONTENT" Res="task_30400_39004_1.swf" Pos="-717,-505" TriggerType="1" /><!-- 石龙-->
+	<Item Task="39004" Map="30400" ID="390042" Level="CONTENT" Res="task_30400_39004_2.swf" Pos="-523,-558" TriggerType="1" /><!-- 妮娜 -->
+</TaskItem>

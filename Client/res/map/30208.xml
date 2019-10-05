@@ -1,0 +1,36 @@
+<!--卡拉兽净化-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="600,294" targetMapId="11202" targetTransPortId="0" name="打完BOSS离开" confirm="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>	
+	<npc>
+		<node id="2" type="NPC" res="MC_npc_2" action="6" />
+		<node id="756" type="NPC" res="MC_npc_756" action="2" need="1,13_1|13_2" needType="winCount,task" needAction="3,7"/>
+	</npc>
+	<actions>
+		<proAction npcID="756" id="3" type="0" answer="我准备好了来战！$卡拉兽万岁！" to="a4$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#伊恩大魔王的力量——]]>				
+			</des>
+		</proAction>
+		<proAction npcID="756" id="2" type="0" answer="再来一战！$卡拉兽万岁！" to="a4$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#这种感觉，难道我被净化了……]]>
+			</des>
+		</proAction>		
+		<proAction id="4" type="5" fightID="2509" />	
+		<proAction npcID="2" id="6" type="0" answer="我要【恢复HP/MP】$女神万岁！" to="b8_2$o" colorID="1$0" >
+			<des>
+				<![CDATA[10#我将以时间的名义赋予【@nick】力量——]]>
+			</des>
+		</proAction>
+		<proAction npcID="756" id="7" type="0" answer="卡拉兽万岁！" to="o" colorID="0" >
+			<des>
+				<![CDATA[1#伊恩大魔王的力量——]]>				
+			</des>
+		</proAction>
+	</actions>
+</map>

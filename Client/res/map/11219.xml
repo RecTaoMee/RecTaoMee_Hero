@@ -1,0 +1,70 @@
+<!--斗技场管理处-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="440,380">
+		<node id="1" pos="440,380" targetMapId="11218" targetTransPortId="2" name="斗技场大厅"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="38" type="NPC" res="MC_npc_38" level="contentLevel" fun="" taskType="0" action="9" needLevel="" needKind=""/>
+		<node id="44" type="NPC" res="MC_npc_44" level="contentLevel" fun="" taskType="0" action="10" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction id="0" npcID="38"  type="0" answer="荣誉兑换装备$荣誉兑换道具$关于【勇士斗技场】$摩尔勇士万岁！" to="f1$f2$a1$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#在我看来【荣誉】才是真正的勇士实力！]]>
+			</des>
+		</proAction>
+		<proAction id="1" npcID="" type="1" outMap="1" level="taskLevel" name="task_10022_2" moviepos="0,0" to="a0"/>
+		<proAction id="2" npcID="38"  type="0" answer="修行排行榜$荣誉兑换装备$荣誉兑换道具$关于【勇士斗技场】$摩尔勇士万岁！" to="module_HeroPracticeModule$f1$f2$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[6#勋章星豆都不如这个摩尔个人信息版面上的【荣誉】真实可信！]]>
+			</des>
+		</proAction>
+		<proAction id="3" npcID="38"  type="0" answer="修行排行榜$荣誉兑换装备$荣誉兑换道具$关于【勇士斗技场】$摩尔勇士万岁！" to="module_HeroPracticeModule$f1$f2$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[6#【妮娜】现在在做什么呢……]]>
+			</des>
+		</proAction>
+		<proAction id="4" npcID="38"  type="0" answer="修行排行榜$荣誉兑换装备$荣誉兑换道具$关于【勇士斗技场】$摩尔勇士万岁！" to="module_HeroPracticeModule$f1$f2$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[6#也许只有我，才有资格欣赏【妮娜】——]]>
+			</des>
+		</proAction>
+		<proAction id="5" npcID="38"  type="0" answer="修行排行榜$荣誉兑换装备$荣誉兑换道具$关于【勇士斗技场】$摩尔勇士万岁！" to="module_HeroPracticeModule$f1$f2$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[1#【妮娜】的【荣誉】永远是第一的，除我之外……呵呵……]]>
+			</des>
+		</proAction>
+		<proAction id="6" npcID="44"  type="0" answer="转动十字轮盘！$摩尔勇士万岁！" to="a7$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你好，我是负责管理十字轮盘的管理员。勇气与运气是并存的，祝你好运~！]]>
+			</des>
+		</proAction>
+		<proAction id="7" npcID="44"  type="0" answer="交出十字勋章！$摩尔勇士万岁！" to="g22$o" colorID="1$0">
+			<des>
+				<![CDATA[1#请你提供5个象征荣耀的【十字勋章】给我，证明你有转动十字轮盘的力量！]]>
+			</des>
+		</proAction>
+		<proAction id="8" npcID="44"  type="0" answer="我这就去！$摩尔勇士万岁！" event="medal_not_enough" to="o$o" colorID="1$0">
+			<des>
+				<![CDATA[1#证明你力量的【十字勋章】不足5个哦，请去勇士斗技场参加各类竞赛获取荣誉兑换十字勋章吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="38" id="9" type="3" to="o" />
+		<proAction npcID="44" id="10" type="3" to="o" />
+		<proAction id="11" npcID="38"  type="0" answer="修行排行榜$巨石碎片兑换奖励$知道了！" to="module_HeroPracticeModule$f8$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#年轻的摩尔，你的力量还不足以在这里驰骋，等你达到15级后再来找我吧！]]>
+			</des>
+		</proAction>
+		<proAction id="12" npcID="44"  type="0" answer="知道了！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#充满勇气的摩尔才能拉动十字轮盘，将你的等级提升到15级后再来找我吧！]]>
+			</des>
+		</proAction>
+	</actions>		
+</map>

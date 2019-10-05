@@ -1,0 +1,22 @@
+<!--兽王洞穴-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="105,555" targetMapId="11504" targetTransPortId="1" name="兽王峡谷"/>
+	</transport>
+	<object>
+		<node id="2" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="NPC" res="MC_npc_1002" action="0"/>
+
+    </npc>
+    <actions>
+		<proAction npcID="1002" id="1" type="0" answer="...“断角”帕瑞威武!" to="o" colorID="0">
+			<des>
+				<![CDATA[1#嗷...嗷...嗷！【剧毒蜂皇】那只死虫子，你把我彻底激怒了，迟早我会把你撕成粉碎！]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

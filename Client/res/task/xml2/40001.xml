@@ -1,0 +1,133 @@
+<Task ID="40001" Memo="c宾德c大人号召未来勇士们继续追踪怪盗集团，快去c国王呈见厅c看看吧！\n周五~周日：15:00~17:00" TargetMap="11307">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0"  >
+			<Event Memo="c宾德c大人号召未来勇士们继续追踪怪盗集团，快去c国王呈见厅c看看吧！\n周五~周日：15:00~17:00" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >			
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="继续追踪怪盗集团？" />
+				</Trigger>
+				<Action Type="TALK">				
+					<Msg NpcID="25" ImageID="1" Info="刚才守卫士兵报告，\n怪盗集团出现在【东街尽头的大树下】。\n【@nick】前往一战吧！" />			
+					<Option Info="这就去王国【东街】！" SkipTrigger="Y"/>	
+					<Option Info="我很忙，下次再说" NextStep="1" />		
+				</Action>						
+			</Event>
+		</Step>   		
+  		<Step ID="2" ParentList="1" ParentCost="1"  >
+			<Event Memo="c宾德c大人号召未来勇士们继续追踪怪盗集团，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >  	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="继续追踪怪盗集团？" />
+				</Trigger>					
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11205, 30017" />		
+    		</Event>											
+	    </Step>				    
+  		<Step ID="3" ParentList="2" ParentCost="1"  >                                             
+    		<Event Memo="c王国东街c发现怪盗精灵集团联络员c怪盗迪迪拉c！\n代表星豆净化它吧！" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话" >
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30017" /> 					
+				</Trigger>r
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" /> 																	
+    		</Event>											
+	    </Step>	
+  		<Step ID="4" ParentList="3" ParentCost="1"  >
+    		<Event Memo="c王国东街c发现怪盗精灵集团联络员c怪盗迪迪拉c！\n代表星豆净化它吧！" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话" >
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30017" />					
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="2" Info="你竟敢用纸条忽悠我！\n抢了我多少个65星豆的面罩T T~~~\n我...我要你付出代价~~~" />		
+					<Option Info="来战！" />	
+					<Option Info="我很忙，下次再见" NextStep="4" />																																		
+				</Action>	
+                <Action Type="COMMAND" Command="BATTLE" Params="6" SkipTrigger="Y" />																					
+    		</Event>	    														
+	    </Step>
+
+
+
+
+  		<Step ID="5" ParentList="4" ParentCost="1"  >
+			<Condition>
+				<Battle ID="6" Count="1" />				
+			</Condition>
+    		<Event ConditionType="IN" Memo="成功净化迪迪拉↖(^ω^)↗\n咦？怪盗“大哥”c戈戈拉c也来了？" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话">
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30017" /> 						
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="3" Info="哎呀好疼~~大哥快来帮我(T T)!!" />
+					<Option Info="⊙﹏⊙大哥？" SkipTrigger="Y" />																															
+				</Action> 														
+    		</Event> 														
+    		<Event ConditionType="OUT" Memo="c王国东街c发现怪盗精灵集团联络员c怪盗迪迪拉c！\n代表星豆净化它吧！" TargetMap="11205" TargetObj="30017" TargetName="打败t怪盗迪迪拉t">
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30017" /> 						
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="2" Info="嘿嘿，摩尔真好欺负。不服就来打我啊~~" />
+					<Option Info="打就打" />		
+					<Option Info="我很忙，下次再见" NextStep="5" />																				
+				</Action>	
+                <Action Type="COMMAND" Command="BATTLE" Params="6" />																					
+    		</Event> 														
+	    </Step>
+  		<Step ID="6" ParentList="5" ParentCost="1"  >
+    		<Event Memo="成功净化迪迪拉↖(^ω^)↗\n咦？怪盗“大哥”c戈戈拉c也来了。什么情况？" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话" >			
+  				<Trigger>
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30017" /> 		
+				</Trigger>		
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11205, 30017" />		
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11205, 30019" />									
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="你玩完了【@nick】！！！\n我从【1级】带大的迪迪拉只有我可以欺负！\n等着挨揍吧！" />					
+					<Option Info="⊙﹏⊙b汗" SkipTrigger="Y" />																											
+				</Action>								  							
+    		</Event> 														
+	    </Step>	   	     	     	    
+  		<Step ID="9" ParentList="6" ParentCost="1"  >
+			<Condition>
+				<Battle ID="8" Count="1" />				
+			</Condition>
+    		<Event ConditionType="IN" Memo="成功净化c怪盗戈戈拉c，↖(^ω^)↗\n不去看看它怎么说吗？" TargetMap="11205" TargetObj="30019" TargetName="和t怪盗t对话" >	
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30019" />						
+				</Trigger>													
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="胜利“神马”最无聊了，只有星豆才是王道……哈哈哈哈哈哈" />
+					<Msg NpcID="315" ImageID="3" Info="不愧是大哥，输了还能这么乐观\(^o^)/！\n你等着别跑——我们还会回来的！！" />
+					<Option Info="跟我去见宾德！" SkipTrigger="Y" />		
+				</Action>																					
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="咦？怪盗“大哥”c戈戈拉c也在c王国东街c。\n代表星豆净化它吧！" TargetMap="11205" TargetObj="30019" TargetName="打败t怪盗戈戈拉t" >
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30019" />	 						
+				</Trigger>						
+				<Action Type="TALK">			
+					<Msg NpcID="315" ImageID="2" Info="戈戈拉大哥最高最大↖(^ω^)↗！" />
+					<Option Info="来战！" />		
+					<Option Info="忽然肚子痛（我撤）" NextStep="9" />																				
+				</Action>	
+                <Action Type="COMMAND" Command="BATTLE" Params="8" />																					
+    		</Event> 														
+	    </Step>
+		
+  		<Step ID="11" ParentList="9" ParentCost="1"  >
+    		<Event Memo="成功净化c怪盗戈戈拉c，↖(^ω^)↗\n不去看看它怎么说吗？" TargetMap="11205" TargetObj="30019" TargetName="和t怪盗t对话">			
+  				<Trigger>
+ 					<Item Type="NPC_OPTION" MapID="11205" ObjID="30019" /> 		
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="3" Info="不要啊！！那个【“鸡冠士兵长”】……\n你直接净化我吧！" />
+					<Msg NpcID="314" ImageID="1" Info="超级无敌的勇士大人~~我全都坦白（为了骗星豆，我容易吗！）——" />					
+					<Option Info="说来听听" TalkOver="Y"/>																									
+				</Action>									
+    			<Action Type="MOVIE" Url="task_28003_1.swf" MapLevel="TASK" Pos="0,0" />								
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="再给我们一次机会吧（T T）！" />
+					<Option Info="下不为例!" />																									
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11205, 30019" />									  							
+    		</Event>							
+	    </Step>
+  
+	</Procedure>
+</Task>

@@ -1,0 +1,97 @@
+<task id="10019">
+  <taskDes>
+	<![CDATA[来到【麦田村】，怎么能不去【尼康康餐厅】呢？麦婶可是麦田村厨神！$$]]>
+	<![CDATA[卡密尔怎么了呢？帮麦婶问问她。$$]]>
+	<![CDATA[守护精灵失踪了？这可是件大事情，快和【尼康康】村长商量一下。$$]]>
+	<![CDATA[回摩尔王国去找【大祭司•铃】吧。$$]]>
+	<![CDATA[东之时光井………变异的源头？如果发现什么异常现象请立刻回【女神大圣堂】告诉【大祭司•铃】。]]>
+
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="35" title="忙碌的丰收祭" action="0" needLevel="" unLevel="" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11401"/>
+    <pro type="0" parent="0" npcID="34" title="丰收祭的事？" action="2" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="1" mapID="11404"/>
+	<pro type="0" parent="1" npcID="37" title="守护精灵？" action="6" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="2" mapID="11404"/>
+	<pro type="0" parent="2" npcID="102" action="7" title="麦田村的变异" needRes="" needResNum="" unResAction="" taskDes="3"/>
+	<pro type="3" parent="3" mapID="11408" name="task_10020_0" level="downLevel" point="-94,-88" action="13" taskDes="4" />
+	<pro type="0" parent="3" npcID="102" title="东之时光井" action="11" needRes="180042" needResNum="1" unResAction="12" bossID="" bossNum="" taskDes="4" mapID="11408"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="35" answer="卡密尔？" objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[1#丰收祭快到了！卡密尔最近总是发呆！]]>
+		</des>
+    </proAction>
+     <proAction id="1" type="0" npcID="35" answer="好的" objLevel="" objName="" objType="" objValue="" to="so">
+      <des>
+		<![CDATA[1#就是那边的女孩子！你去帮我去问问她，是不是遇到什么心烦的事了。]]>
+		</des>
+    </proAction>
+     <proAction id="2" type="0" npcID="34" answer="你不开心？" objLevel="" objName="" objType="" objValue="" to="a3">
+      <des>
+		<![CDATA[4#……丰收祭……嗯，我知道了。]]>
+		</des>
+    </proAction>
+	  <proAction id="3" type="0" npcID="34" answer="丰收祭的传说？" objLevel="" objName="" objType="" objValue="" to="a4">
+      <des>
+		<![CDATA[1#【@nick】，你听过丰收祭的传说吗？]]>
+		</des>
+    </proAction>
+	<!--下面那个调用漫画，可以参考40.xml的处理方式-->
+	  <proAction id="4" type="1" outMap="1" level="taskLevel" name="task_10019_1" moviepos="0,0" to="a5"/>
+	  <proAction id="5" type="0" npcID="34" answer="好的！" objLevel="" objName="" objType="" objValue="" to="e1">
+      <des>
+		<![CDATA[1#你能帮忙调查一下吗？我想尼康康村长会知道]]>
+		</des>
+    </proAction>
+	  <proAction id="6" type="0" npcID="37" answer="好的……" objLevel="" objName="" objType="" objValue="" to="e2">
+      <des>
+		<![CDATA[1#啊啊啊啊啊啊啊！！！为什么我一当上村长就有这么多烦心事啊！！$$]]>
+		<![CDATA[1#时光井的事我也不清楚啊，你去问一下【女神大圣堂】的【大祭司•铃】吧，黑化精灵什么的她肯定清楚！]]>
+		</des>
+    </proAction>
+	<proAction id="7" type="0" npcID="102" answer="麦田村的时光井" to="a8">
+			<des>
+				<![CDATA[2#未来的小摩尔，我们又见面了。今天是为什么而来呢？]]>
+			</des>
+		</proAction>
+	<proAction id="8" type="0" npcID="102" answer="是黑化精灵吗？" to="a9">
+			<des>
+				<![CDATA[2#麦田村是被水之精灵守护的村落，所以才会年年丰收。我想目前的情况很可能是守护麦田村的精灵产生了某种变异。$$]]>
+				<![CDATA[2#麦田村的【东之时光井】曾经是时之女神用来连接着不同时空碎片的地方，我想那里一定可以发现有变异的原因。]]>
+			</des>
+		</proAction>
+	<proAction id="9" type="0" npcID="102" answer="好的！" to="e3">
+			<des>
+				<![CDATA[2#目前不太清楚，我想你去了【东之时光井】一切都明白了。]]>
+			</des>
+		</proAction>
+	<proAction id="10" type="5" fightID="2003" data="1" to="o"/>
+	<proAction id="11" type="0" npcID="102" answer="…………" to="c" nextTask="10020_0">
+			<des>
+				<![CDATA[2#这块【黑色碎片】似乎是什么东西被污染而变成这样的，让我试着净化它…………]]>
+			</des>
+		</proAction>
+	<proAction id="12" type="0" npcID="102" answer="好的" to="o">
+			<des>
+				<![CDATA[1#东之时光井就在麦田村的村口，如果你在里面发现变异的源头请尽快回来告诉我。]]>
+			</des>
+		</proAction>
+	<proAction id="13" type="0" npcID="308" answer="我要挑战你！$女神!!??$啊…我不灌水了" to="a10$a14$o">
+			<des>
+				<![CDATA[1#灌水什么的最讨厌了……爱灌水的小摩尔要受到惩罚！]]>
+			</des>
+	</proAction>
+	<proAction id="14" type="0" npcID="2" answer="谢谢女神！" to="a15">
+			<des>
+				<![CDATA[1#勇敢的小摩尔，这个精灵也是被黑水晶的力量所影响而黑化的。$$]]>
+				<![CDATA[1#现在的你还无法直接净化它，我感受到它身上的负面能量源自一块【黑色碎片】$$]]>
+				<![CDATA[1#如果你能击败它并且得到【黑色碎片】，就快点回去找【铃】，她会告诉你如何净化这个精灵。]]>
+			</des>
+	</proAction>
+	<proAction id="15" type="0" npcID="308" answer="我要挑战你！$啊…我不灌水了" to="a10$o">
+			<des>
+				<![CDATA[1#灌水什么的最讨厌了……爱灌水的小摩尔要受到惩罚！]]>
+			</des>
+	</proAction>
+	</actions>
+</task>

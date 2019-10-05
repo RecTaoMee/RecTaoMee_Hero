@@ -1,0 +1,28 @@
+<task id="20018">
+	<taskDes>
+		<![CDATA[如果再得到一些【至纯之水】就去格历尔平原1区找坷一特。$$]]>
+		<![CDATA[又要20个棉球果啊(+﹏+)~……努力收集吧。]]>
+	</taskDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="41" action="0" title="至纯之水" needRes="" needResNum="" unResAction="" taskDes="0" mapID="21301"/>
+		<pro type="0" parent="0" npcID="41" action="1" title="棉球果来了" needRes="150003" needResNum="20" unResAction="2" taskDes="1" mapID="21301"/>
+	
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="41" answer="嗯...." to="so">
+			<des>
+				<![CDATA[1#还想要一些【至纯之水】吗？拿棉球果来换吧。20个棉球果换40份至纯之水！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="41" answer="谢谢" to="c">
+			<des>
+				<![CDATA[1#你真是可靠啊，谢谢你的棉球果，这些【至纯之水】拿去吧！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="41" answer="额...." to="o">
+			<des>
+				<![CDATA[1#数量不够哦，没有足够的棉球果我可不和你交换。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

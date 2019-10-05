@@ -1,0 +1,40 @@
+<task id="32">
+	<taskDes>
+		<![CDATA[吃过了超美味的面包料理，去感谢贝多罗大叔的款待吧！$$]]>
+		<![CDATA[【爱精灵协会】在【王国东街】，快点去问问莓可关于精灵的事吧！$$]]>
+		<![CDATA[能够帮助【爱精灵协会】的莓可恢复信心，真是太好了！]]>
+	</taskDes>
+	<taskPro>
+	<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+	<!--type:0任务类型 1:直接接受此任务，2:到达莫个地图时播放,3，加载外部SWF，5：直接执行此动作-->
+		<pro type="0" parent="" npcID="18" title="大叔很了解精灵吗?" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11213"/>
+		<pro type="0" parent="0" npcID="20" title="莓可的烦恼" action="2" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11214"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="18" answer="如何了解精灵的心情呢？" to="s1">
+			<des>
+				<![CDATA[1#哈哈，看到你我不禁想起自己年轻的时候啊！$$]]>
+				<![CDATA[1#不要看我现在那么胖！其实大叔我年轻的时候也是非常厉害的！$$]]>
+				<![CDATA[1#那时候，我也带着精灵伙伴们，以摩尔勇士为目标，四处旅行来磨砺自己！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="18" answer="谢谢大叔" to="o">
+			<des>
+				<![CDATA[5#说到这一点，那你可一定要去见见爱精灵协会的会长【莓可】。$$]]>
+				<![CDATA[5#爱精灵协会在王国东街，记得带上你的精灵伙伴一起去！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="20" answer="当然啦，我们是好朋友！" to="a3">
+			<des>
+				<![CDATA[4#越来越多的精灵受到【黑水晶】力量的影响，行为反常…………该怎么办呢？$$]]>
+				<![CDATA[7#咦？你的精灵看起来很开心的样子，它们一定很喜欢和你在一起吧？]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="20" answer="谢谢" to="c" nextTask="33_0">
+			<des>
+				<![CDATA[1#谢谢【@nick】，你和精灵之间的友谊给了我信心，我相信一定能够帮助那些精灵找回自我。$$]]>
+				<![CDATA[1#对了，这些东西送给你,希望能够对你的有所帮助^^。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,70 @@
+<!--魔法师-->	
+<Task ID="53" Memo="好不容易来到摩尔王国，\nc摩尔王c一定知道摩尔勇士的事情！\n*摩尔城堡·国王呈见厅" TargetMap="11307" >
+ 	<Procedure> 
+  		<Step ID="43" ParentList="0" ParentCost="0" >
+    		<Event Memo="好不容易来到摩尔王国，\nc摩尔王c一定知道摩尔勇士的事情！\n*摩尔城堡·国王呈见厅" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王陛下" />			
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+    		</Event>																									
+		</Step>			
+  		<Step ID="1" ParentList="43" ParentCost="1" >
+    		<Event Memo="好不容易来到摩尔王国，\nc摩尔王c一定知道摩尔勇士的事情！\n*摩尔城堡·国王呈见厅" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王陛下" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="来自未来的摩尔，\n你肯定有很多问题想问我吧——" />		
+					<Option Info="精灵为什么攻击大家？" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="神谕中所说的【黑水晶】飞散到世界各地。\n精灵们是充满灵力的生命体，\n最容易被黑水晶的影响。" />											
+					<Msg NpcID="30" ImageID="2" Info="我们已经在格历尔全大陆实行精灵净化，\n使用“女神泉水”洗礼过的武器与精灵对战，\n就能净化精灵。" />							
+					<Option Info="可以带我见摩尔勇士吗？" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="真正的勇士只和有勇气的人玩儿。\n摩尔城堡下有个古老的【下水道】，\n那可不是胆怯的小鬼头敢去的地方。\n如果你可以去那里证明自己的勇气……" />			
+					<Option Info="( ⊙o⊙ )……" />
+				</Action>								
+     			<Action Type="MOVIE" Url="task_7_1.swf" MapLevel="TASK" Pos="0,0" />	
+     			<Action Type="MOVIE" Url="task_7_2.swf" MapLevel="TASK" Pos="0,0" />								
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="刚才你看到的就是，\n现在的你去下水道挑战的“未来”。\n只有勇气连自己也保护不了。" />				
+					<Msg NpcID="30" ImageID="1" Info="获得更强的力量，\n加入【勇士联盟】，\n这是你希望的吗？" />		
+					<Option Info="不试试看怎么知道" />									
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="哦呵呵——\n右边的这位【执行大臣】会指导你办理报名手续。" />			
+					<Msg NpcID="24" ImageID="1" Info="【摩尔勇士】是我们摩尔界的最高赞誉。\n勇士联盟”下分别存在着各种协会。\n通过联盟各级考试就能成为“摩尔勇士”……" />			
+					<Option Info="OK" />
+				</Action>														
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="总之你可以【加入魔法师协会】接受“勇士评定”。\n详细情况去和协会导师谈谈就明白了!" />	
+					<Msg NpcID="24" ImageID="1" Info="正好我今天有空，\n我为你带路吧。" />	
+					<Option Info="谢谢你带我去！" />
+				</Action>
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11304, 1" />														
+    		</Event>			  
+		</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c魔法师协会c报名吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼得t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="报名【魔法师协会】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="10" Info="啊——不要啊———\n变成兔子的样子被看到了！" />
+					<Msg NpcID="27" ImageID="1" Info="来填写【勇士协会学员报名卡】吧———\n每张报名卡会交给会长审核，\n通过后会马上来信通知你！" />					
+					<Msg NpcID="27" ImageID="2" Info="如果有幸通过会长的审核，\n能把魔法发挥到怎样的程度就看你的了，\n你会爱上魔法的……" />					
+					<Option Info="谢谢彼得老师^^!" />
+				</Action>
+    			<Action Type="MOVIE" Url="Task25Module" MapLevel="TASK" Pos="0,0" IsModule="Y" Params="3" />
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="使用【技能】是提升战斗能力的关键，\n选择一个适合自己的技能修行吧！" />					
+					<Option Info="马上学【技能】" />
+				</Action>				
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="BUY_PERSON_SKILL, 27" />										
+    		</Event>
+		</Step>	   		   
+	</Procedure>
+</Task>

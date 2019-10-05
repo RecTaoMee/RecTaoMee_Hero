@@ -1,0 +1,53 @@
+<!-- 11103 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-001.mp3">
+	<transport intPos="472,235">
+		<node id="1" pos="472,235" targetMapId="11102" targetTransPortId="2"/>
+		<node id="2" pos="540,412" targetMapId="21102" compTaskID="14_1_a6" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="AppModule" res="MC_battleBookBtn" module="BattleBookModule"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="5" type="NPC" res="MC_npc_5" action="0$1$2"/>
+		<node id="305" type="MagicTrans" res="MC_trans_1" action="3$5"/>
+		<node id="2" type="NPC" res="MC_npc_2" taskType="0" level="contentLevel" alpTaskID="13_1_0" compTaskID="13_2_1" visible="0" fun=""  action="" needLevel="" needKind=""/>				
+	</npc>
+	<actions>
+	      <proAction npcID="5" id="0" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[7#勇士的时代啊……啊…啊欠！！]]>
+			</des>
+		  </proAction>
+	      <proAction npcID="5" id="1" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[1#我家里绝对没有“秘密地道”嚯嚯嚯……]]>
+			</des>
+		  </proAction>
+	      <proAction npcID="5" id="2" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[1#真正的勇士将会出现…………啊…啊欠…，吗？]]>
+			</des>
+		  </proAction>
+		  <proAction npcID="305" id="3" type="0" answer="使用魔法传送石$关于魔法传送石$摩尔勇士万岁！" to="d4$a4$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#你成功进行了登记。以后可通过其它魔法传送石传到达这里。]]>
+			</des>
+		  </proAction>
+		  <proAction npcID="305" id="4" type="0" answer="使用魔法传送石$摩尔勇士万岁！" to="d4$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#魔法传送石是摩尔王国心灵手巧的工匠们用勇士们寻找回来的稀有石材打造出来的。$$]]>
+				<![CDATA[1#附上了神奇的空间魔法后，只要出发地与目的地间进行登记就可以通过它自由穿梭两地。]]>
+			</des>
+		  </proAction>
+		   <proAction npcID="305" id="5" type="0" answer="使用魔法传送石$关于魔法传送石$摩尔勇士万岁！" to="d4$a4$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#你想使用魔法传送石吗?]]>
+			</des>
+		  </proAction>
+		  <proAction id="6" type="4" alert="按照【旅行记事本】的提示，通往未来的地道将会打开！" to="" />
+	</actions>
+</map>

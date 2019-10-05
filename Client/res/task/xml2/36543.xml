@@ -1,0 +1,211 @@
+<Task ID="36543" Memo="【南瓜军团】在c南瓜公爵c的率领下，已经进军至摩尔王国东侧，速速前往c王国军营c找到王国卫队长c妮娜c商议抵御方法。\n周6-7：每天13：00-16：00" TargetMap="11222">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="【南瓜军团】在c南瓜公爵c的率领下，已经进军至摩尔王国东侧，速速前往c王国军营c找到王国卫队长c妮娜c商议抵御方法。\n周6-7：每天13：00-16：00" TargetMap="11222" TargetObj="1" TargetName="去王国军营找t妮娜t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="1" TaskOption="发生什么事了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="6" Info="啊，小勇士你终于来了！发生了紧急事态！" />
+					<Option Info="“尤利”又来捣乱？" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="101" ImageID="1" Info="这次应该不是【尤利】捣的鬼。最近万圣夜即将临近，传说中将于万圣节出现的【南瓜公爵】居然提前复苏了！" />
+					<Option Info="这可如何是好？" />																		
+				</Action>	
+				<Action Type="MOVIE" Url="task36543_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />															
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="现在大批【南瓜骑士】与王国士兵正在“万圣古祭坛”处激战，已经殃及了在那边居住的村民了！" />
+					<Option Info="我这就去帮忙！" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="6" Info="小勇士，你千万要小心，【南瓜骑士】的实力不容小觑，他们的头目【电锯小丑】更是厉害，你先去“万圣古祭坛”抵挡一阵，我随后就带着士兵们赶到！" />
+					<Option Info="我这就去！" />						
+				</Action>
+    		</Event>		
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往c史诗战场c协助c王国士兵小队长c抵抗南瓜军团。" TargetMap="11223" TargetObj="1" TargetName="协助t王国士兵小队长t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11223" />
+				</Trigger>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="120, 360" /> 
+                <Action Type="COMMAND" Command="RESTORE_CAMERA" /> 
+    		</Event>		
+		</Step>		
+
+  		<Step ID="9" ParentList="2" ParentCost="1" >		
+    		<Event Memo="前往c史诗战场c向c王国士兵小队长c报道。" TargetMap="11223" TargetObj="1" TargetName="对话t王国士兵小队长t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="1" TaskOption="战况如何了？" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task36543_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="【南瓜军团】这次侵犯摩尔王国，显然是有备而来，摩尔居民深受其害，目前他们已经在【史诗战场】的东侧安营扎寨！" />
+					<Msg NpcID="199" ImageID="1" Info="我们在妮娜大人指挥下，迅速进行反击！未来勇士，南瓜军现在与我们势均力敌，请你协助我们一起击退他们！" />
+					<Option Info="有何破敌计划？" SkipTrigger="Y" />						
+				</Action>							
+    		</Event>					
+		</Step>	
+
+  		<Step ID="3" ParentList="9" ParentCost="1" >
+			<Condition>
+				<Battle ID="31" Count="3" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已击败【第一波】南瓜军团，现在可以与c王国士兵小队长c对话" TargetMap="11223" TargetObj="1" TargetName="和t王国士兵小队长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="1" TaskOption="击破敌军！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="小勇士果然实力不俗！这次总算搓了他们的锐气，但是南瓜军在前方驻扎了军营，凭我们现在的实力根本无法予以击破！" />
+					<Option Info="南瓜军营？！" />
+				</Action>	
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="1143, 335" /> 								
+				<Action Type="MOVIE" Url="task36543_3.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />	
+                <Action Type="COMMAND" Command="RESTORE_CAMERA" /> 																					
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="这卑鄙的南瓜公爵！居然威胁无辜的村民，实在是可恶至极，一些摩尔王国的村民被南瓜军团俘获在南瓜军营中！" />
+					<Msg NpcID="199" ImageID="1" Info="而且据我所知，南瓜公爵给所有被俘村民都戴上了【南瓜帽】，并在其中混杂了他们的奸细，妄图破环我们的计划！" />										
+					<Msg NpcID="199" ImageID="1" Info="身为摩尔勇士绝不能袖手旁观，你速前去南瓜军营，救援被俘的摩尔村民，同时铲除2组混杂在被俘村民中的【南瓜骑士】！敌人很狡猾，千万小心！" />					
+					<Option Info="交给我吧！" />
+				</Action>							
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="击败3组c电锯小丑c，再向c王国士兵小队长c报告" TargetMap="11223" TargetObj="" TargetName="击败3组t电锯小丑t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="1" TaskOption="有何破敌计划" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="目前南瓜军团第一波攻击已经开始，看似气势汹汹，实际并非坚不可摧。" />
+					<Msg NpcID="199" ImageID="1" Info="敌人的先锋部队是以【电锯小丑】为头领，我们只需击败3组【电锯小丑】，即可击破南瓜军团先锋，搓其锐气！！" />
+					<Option Info="我这就去！" />						
+				</Action>				
+    		</Event>					
+		</Step>		
+						
+  		<Step ID="4" ParentList="3" ParentCost="1" >		
+    		<Event>
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="2" TaskOption="摩尔勇士前来相助" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="230" ImageID="1" Info="小勇士，终于等到你了，还有很多被俘的村民被南瓜军团关押这里，你一定要救他们！" />
+					<Msg NpcID="230" ImageID="1" Info="敌军的奸细也伪装成我们的样子，头戴南瓜帽，混杂在俘虏当中，你一定要小心啊！" />										
+					<Option Info="放心吧！" />
+				</Action>							
+    		</Event>					
+		</Step>	
+
+  		<Step ID="5" ParentList="3" ParentCost="1" >		
+    		<Event>
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="2" TaskOption="老乡，受苦了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="230" ImageID="1" Info="哇！呜呜呜，救星终于来了，我们被他们俘虏后，他们整体吓唬我，我…我……我要回家！呜呜呜！" />
+					<Option Info="……" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="230" ImageID="1" Info="这里四周都是南瓜军队，敌人的奸细混在我们之中，英雄你可要千万小心啊！！" />
+					<Option Info="嗯，一定揪出奸细！" />
+				</Action>							
+    		</Event>					
+		</Step>	
+
+  		<Step ID="6" ParentList="3" ParentCost="1" >		
+			<Condition>
+				<Battle ID="33" Count="2" />>				
+			</Condition>
+    		<Event ConditionType="IN" Memo="成功揪出混迹在被俘村民中的【南瓜骑士】，回复c王国士兵小队长c吧" TargetMap="11223" TargetObj="1" TargetName="和t王国士兵小队长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="1" TaskOption="可揪出这帮家伙了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="勇士，干得好！奸细被我们铲除，这下【南瓜公爵的阴谋】终于被瓦解了，该有他们受的了！" />
+					<Option Info="但愿如此…" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="199" ImageID="1" Info="妮娜队长在知道南瓜军队妄图占领“万圣古祭坛”后，便赶赴至祭坛处，小勇士你快去找妮娜队长吧！" />
+					<Option Info="我这就去" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223,11223" />							
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="南瓜军营散布着c被俘的村民c，其中混在着伪装成俘虏的c南瓜骑士c，c与被俘村民一一对话c，找出并击败c2组南瓜骑士c" TargetMap="11223" TargetObj="" TargetName="击败隐藏俘虏中的t南瓜骑士t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="3" TaskOption="摩尔勇士前来相助" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="230" ImageID="1" Info="哈哈哈！摩尔勇士，你上当了！看清楚，我可不是什么被俘的村民，我可是【南瓜公爵】麾下的【南瓜骑士】！" />
+					<Msg NpcID="230" ImageID="1" Info="英明的【南瓜公爵】大人神机妙算，让我们伪装成村民的样子，混在这帮俘虏中，就是守株待兔，等你们自投罗网！" />
+					<Option Info="…可恶！" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="230" ImageID="1" Info="不和你啰嗦了，弟兄们，动刀子！！" />
+					<Option Info="来战吧！！" />				
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="33"/>								
+    		</Event>					
+		</Step>	
+
+
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >		
+    		<Event Memo="前往c万圣古祭坛c与c妮娜c对话" TargetMap="11223" TargetObj="11223" TargetName="找万圣古祭坛处t妮娜t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11223" ObjID="11223" TaskOption="妮娜大人！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="2" Info="小勇士，你做的好，目前我们不仅击退了敌人的先锋部队，更一举铲除了混杂在俘虏中敌人的奸细，你居功至伟！" />
+					<Msg NpcID="101" ImageID="6" Info="相信【南瓜公爵】知道情形后，必定恼羞成怒，倾全力进攻【万圣古祭坛】，因为他知道，只有拿下祭坛，才能吸收祭坛发出的万圣黑暗之力量！" />
+					<Msg NpcID="101" ImageID="1" Info="而我们，只需要潜伏在这里，等待【南瓜公爵】的亲自到来……" />
+					<Option Info="明白了！" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="6" Info="……咦……什么声音……莫非？！" />
+					<Option Info="……" />	
+				</Action>					
+				<Action Type="MOVIE" Url="task36543_4.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11223,11224" />							
+    		</Event>					
+		</Step>	
+
+
+  		<Step ID="8" ParentList="7" ParentCost="1" >		
+			<Condition>
+				<Battle ID="34" Count="1" />>				
+			</Condition>
+    		<Event ConditionType="IN" Memo="击败【南瓜公爵】后，与c妮娜c对话" TargetMap="11223" TargetObj="11223" TargetName="继续与t妮娜t对话">
+  				<Trigger>
+				     <Item Type="OBJ_CLICK" MapID="11223" ObjID="11223" TaskOption="妮娜大人！" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task36543_5.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223,11224" />					
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="6" Info="没想到还是被它骗了，竟然我自己也没有察出其中端倪……【南瓜公爵】困于祭坛底层，【南瓜军团】相比定不会善罢甘休。" />
+					<Msg NpcID="101" ImageID="1" Info="他们定会在【万圣之夜】重新集结疯狂袭击，想必会又有一场更大的恶战！所以小勇士，请务必于【10月28日--11月3日】前来与我一同抵御他们的袭击！" />
+					<Option Info="我一定来！" />
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11222,1" />		
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223,11223" />								
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="前往c万圣古祭坛c与c妮娜c对话" TargetMap="11223" TargetObj="11223" TargetName="继续与t妮娜t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11223" ObjID="11223" TaskOption="妮娜大人！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="760" ImageID="1" Info="哈…哈…哈…哈………！你们谁也无力阻挡我！万圣夜我将获得永生的力量！！！！" />
+					<Msg NpcID="101" ImageID="1" Info="南瓜公爵，休要嚣张！看来我来的正是时候！小勇士，让我们合力击败南瓜公爵吧！" />
+					<Msg NpcID="760" ImageID="1" Info="自不量力，觉悟吧，摩尔勇士们！！" />					
+					<Option Info="来战吧！！" />
+					<Option Info="让我准备一下！" NextStep="8" />					
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="34"/>								
+    		</Event>					
+		</Step>	
+				
+				
+	</Procedure>
+</Task>

@@ -1,0 +1,83 @@
+ <Task ID="10025" Memo="c弗雷基港c的c安德鲁c是格历尔大陆上最厉害的铁匠，去找他学习【装备合成】吧！" TargetMap="11603">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c弗雷基港c的c安德鲁c是格历尔大陆上最厉害的铁匠，去找他学习【装备合成】吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="我想学习装备合成！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="装备合成可不是那么容易学习的！先证明你的实力给我看看！" />
+						<Option Info="怎么证明呢？" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="前几天，摩尔王国的【贝利】托人送来一些装备的设计图，结果在【平原6区】被【迪迪拉10人组】抢走了，你先去把设计图夺回来吧！" />
+						<Option Info="好的！" />
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="260017" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="拿回了设计图快点送给c安德鲁c吧。" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="设计图夺回来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="还不错，那我就把【装备制作】传授给你吧！" />
+					<Option Info="谢谢" SkipTrigger="Y" />
+				</Action><!--提交节点1-->
+    		</Event>
+			<Event ConditionType="OUT" Memo="摩尔王国送来的装备设计图被c迪迪拉十人组c抢走了？！快点去夺回设计图！\n★迪迪拉10人组最近在c平原6区c出没" TargetMap="21306" TargetObj="" TargetName="t夺回设计图t">
+  				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="迪迪拉10人组在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="根据“被害者”的报告，【迪迪拉10人组】目前在平原6区活动。" />
+					<Option Info="明白了！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="学会了c装备制作c！不过c安德鲁c好像还有什么话要和你说。" TargetMap="11217" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="第一次考验" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="学会了【装备制作】是不是很得意？哼哼~考验来了！\n先尝试制作一个【旅行者布帽】，然后戴在头上来找我吧！" />
+						<Msg NpcID="105" ImageID="1" Info="点【精灵背包】右边的【生产制作】打开制作界面，就可以合成【旅行者布帽】了。" />
+						<Msg NpcID="105" ImageID="1" Info="如果不知道怎么合成，可以再来找我查看【怎样合成装备】！" />
+						<Option Info="谢谢！" />
+					</Action><!--提交节点2-->
+					<!--<Action Type="MOVIE" Url="task_10025_1.swf" MapLevel="TASK" Pos="0,0"/>-->
+			</Event>
+		</Step> 
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Person Equipment="140001" />	
+			</Condition>
+    		<Event ConditionType="IN" Memo="自己做的帽子戴起来真舒服，快点给c安德鲁c看看吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="看我做的帽子！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="大小挺合适的嘛，以新手的程度来说，你做的很不错了。\n继续努力吧！" />
+					<Option Info="谢谢" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="自己合成一个c旅行者布帽c，还要戴在头上给c安德鲁c看看，小Case~~" TargetMap="" TargetObj="" TargetName="制作【旅行者布帽】">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="怎么才算通过考验？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="第一步：点【精灵背包】右边的【生产制作】进入制作界面，合成【旅行者布帽】。" />
+					<Msg NpcID="105" ImageID="1" Info="第二步：打开【旅行箱】，戴上【旅行者布帽】，然后来找我。" />
+					<Option Info="知道啦！" />
+				</Action>
+			</Event>			
+		</Step>
+	</Procedure>
+</Task>

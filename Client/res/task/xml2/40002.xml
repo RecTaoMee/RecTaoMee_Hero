@@ -1,0 +1,75 @@
+<Task ID="40002" Memo="精灵c比安c又来圣诞树上午睡了，快去c勇士广场c与她签订契约吧！\n12月30日~1月3日：6:00~24:00" TargetMap="11202">
+	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+			<Event Memo="精灵c比安c又来圣诞树上午睡了，快去c勇士广场c与她签订契约吧！" TargetMap="11202" TargetObj="349" TargetName="和t比安t对话">
+				<Action Type="COMMAND" Command="NOTHING" />
+			</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="精灵c比安c又来圣诞树上午睡了，快去c勇士广场c与她签订契约吧！" TargetMap="11202" TargetObj="349" TargetName="和t比安t对话">
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11202,349" />
+    		</Event>
+    		<Event Memo="精灵c比安c又来圣诞树上午睡了，快去c勇士广场c与她签订契约吧！" TargetMap="11202" TargetObj="349" TargetName="和t比安t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="349" TaskOption="比安！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="好美丽的圣诞树，睡得真舒服。" />
+					<Option Info="好美的精灵！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="哼，那是自然。你就是那个来自未来的勇士？" />
+					<Option Info="是啊" />
+				</Action>
+					<Msg NpcID="349" ImageID="1" Info="看你弱不禁风的样子，不像有什么过人的本事嘛。" />
+					<Option Info="摩尔不可貌相" />
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="是嘛？恩，我想想…… "/>
+					<Msg NpcID="349" ImageID="1" Info="平原1区的怪盗迪迪拉最近抢走了摩尔居民们用来装礼物的圣诞袜，如果你能夺回5个来，我就跟你较量下。"/>
+					<Option Info="一言为定" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21301,1" />
+    		</Event>
+		</Step>
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="180064" Count="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="收集到了足够的c圣诞袜c，快点拿到c勇士广场c给c比安c吧。" TargetMap="11202" TargetObj="349" TargetName="和t比安t对话">
+    			<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="349" TaskOption="圣诞袜拿来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="已经收集到5个圣诞袜了？" />
+					<Option Info="恩，给你。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="1，2，3，4，5，不错嘛。有挑战我的潜力，让我来看看你的实力！" />
+					<Option Info="(看我不收了你)" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="47" RightUp="Y" SkipTrigger="Y"/>
+    		</Event>
+			<Event ConditionType="OUT" Memo="打败c平原1区c的c怪盗迪迪拉c，夺回c5个圣诞袜c交给c勇士广场c的c比安c！" TargetMap="21301" TargetObj="349" TargetName="t夺回5个圣诞袜t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="349" TaskOption="圣诞袜拿来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="我等到花儿也谢了，快去平原1区打败怪盗迪迪拉把圣诞袜夺回来。" />
+					<Option Info="……(回来收拾你)" />
+				</Action>
+			</Event>
+		</Step>
+		<Step ID="4" ParentList="3" ParentCost="1" >	
+			<Event Memo="c比安c非常感谢你的帮助，它还有一些话想跟你说！" TargetMap="11202" TargetObj="349" TargetName="和t比安t对话"> 	
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="349" TaskOption="比安我来了！" />
+				</Trigger>																		
+				<Action Type="TALK">
+					<Msg NpcID="349" ImageID="1" Info="终于能睡个好觉了，下次有需要时我还会请你帮忙的，一定要来哦！" />	
+					<Option Info="没问题！" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11202,349" />
+    		</Event>		
+		</Step>
+	</Procedure>
+</Task>

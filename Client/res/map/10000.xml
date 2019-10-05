@@ -1,0 +1,58 @@
+<!--玩家的小屋--> 
+<map name="aaa" type="1" comment="aaa" sound="BGM-007.mp3">
+
+	<transport intPos="285,470">
+		<node id="1" pos="285,470" targetMapId="11202" targetTransPortId="1" name="勇士广场"/>
+	</transport>
+	
+	<object>
+		<node id="1" type="TransPort"  res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_ItemStorage" module="ItemStorageModuel" toolTip="储物箱"/>
+		<node id="3" type="AppModule" res="MC_PetHouse" module="PetStorehouseShowModule" toolTip="精灵小屋"/>
+		<node id="4" type="AppModule" res="MC_ExpTree" module="ExpTreeModule" toolTip="精灵经验树"/>
+		<node id="5" type="AppModule" res="MC_BookAndNewspaper" module="BookCaseModule" toolTip="书架"/>
+		<!--node id="6" type="AppModule" res="MC_honorBox" module="HonorBoxModule" toolTip="荣誉匣"/-->
+		<node id="7" type="AppModule" res="MC_honorMature" module="MatureExperienceModule" toolTip="勇士协会之章"/>
+		
+	</object>
+	
+	<actions>
+		<proAction npcID="414" id="0" type="0" answer="你们是？" to="a1" >
+			<des>
+				<![CDATA[1#Hi~！欢迎入住！不知道新的小主人会在这里住多久呢（^3^）！]]>
+			</des>
+		</proAction>
+		<proAction npcID="410" id="1" type="0" answer="知道了" to="a2" >
+			<des>
+				<![CDATA[1#我是更多经验更多欢笑的\n【经验树】！$$]]>
+				<![CDATA[1#积累的【经验】可以令我成长，可以将经验分给你契约的【精灵伙伴们】。$$]]>
+				<![CDATA[1#加油完成更多任务吧！您的经验——我来储存！]]>
+			</des>
+		</proAction>
+		<proAction npcID="411" id="2" type="0" answer="知道了" to="a3" >
+			<des>
+				<![CDATA[1#啊~~\nKnowledge（知识）is（就是）EXPerience（经验）——~~$$]]>
+				<![CDATA[1#我们新的小主人是喜欢看书的知识渊博的学者吗？$$]]>
+				<![CDATA[1#为了让您变得更强，\n我会为您提供最IN(新)和最OUT(古老)的信息，\n希望您可以守护我们——]]>
+			</des>
+		</proAction>
+		<proAction npcID="412" id="3" type="0" answer="知道了" to="a4" >
+			<des>
+				<![CDATA[1#你们都闪开！\n没看到小主人的旅行箱满了吗？$$]]>
+				<![CDATA[1#可以把暂时不用的【物品装备】放到我这里，\n食品也不用担心，\n新型Y-001储物箱采用魔法保温。$$]]>
+				<![CDATA[1#我可以用很大很大的胸怀，\n替您储存千奇百怪的收藏^-^b。]]>
+			</des>
+		</proAction>
+		<proAction npcID="413" id="4" type="0" answer="知道了" to="a5" >
+			<des>
+				<![CDATA[1#什么？我闻到了精灵的气息了——\n主人您是有众多精灵盟友的强大盟约者吗？$$]]>
+				<![CDATA[1#外出无法携带的精灵们，\n可以让它们【回家】来我这里休息，\n否则它们会压力过大~~~。]]>
+			</des>
+		</proAction>
+		<proAction npcID="414" id="5" type="0" answer="知道了，你们玩儿去吧！" to="h1" >
+			<des>
+				<![CDATA[1#主人最强主人加油\(^o^)/！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

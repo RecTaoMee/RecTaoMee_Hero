@@ -1,0 +1,23 @@
+<!--修炼之域一层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="400,400">
+	</transport>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="538" type="NPC" res="MC_npc_538" level="contentLevel" fun="" taskType="0" action="x6" needLevel="" needKind=""/>
+    </npc>
+    <actions>
+		<proAction npcID="538" id="0" type="0" answer="我要挑战你！$返回勇士斗技场大厅$摩尔勇士万岁！" to="a1$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#准备好了吗！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="5" fightID="3018" />
+		<proAction npcID="538" id="2" type="0" answer="进入下一域$返回勇士斗技场大厅$摩尔勇士万岁！" to="x2$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#输了……]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

@@ -1,0 +1,57 @@
+<task id="10020">
+	<taskDes>
+		<![CDATA[井底的黑色精灵是？回【女神大圣堂】把这一切告诉【大祭司•铃】，她肯定知道答案。$$]]>
+		<![CDATA[带着【水蓝宝石】去【东之时光井】底吧。$$]]>
+		<![CDATA[净化成功！快把这个好消息告诉【大祭司•铃】。]]>
+	</taskDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="102" action="0" title="黑色碎片?" needRes="" needResNum="" unResAction="" taskDes="0"/>
+		<pro type="3" parent="0" mapID="11408" name="task_10020_0" level="downLevel" point="-94,-88" action="3" taskDes="1"/>
+		<pro type="0" parent="1" npcID="102" action="9" title="净化完毕" needRes="" needResNum="" unResAction="" taskDes="2"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="102" answer="原来如此" to="s1">
+			<des>
+				<![CDATA[2#净化成功！这个【黑色碎片】其实是被黑水晶的力量污染的【水蓝宝石】。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="7" taskResID="260011" taskResNum="1" delTaskResID="" delTaskResNum="" to="a2"/>
+		<proAction id="2" type="0" npcID="102" answer="好的！" to="o">
+			<des>
+				<![CDATA[2#你在井底遇到的黑化精灵应该是麦田村的守护精灵，因为【水蓝宝石】被污染了，所以它也一起被【黑化】了$$]]>
+				<![CDATA[2#你带着这块【水蓝宝石】回到【东之时光井】，我相信依靠宝石的力量一定可以净化被黑化的守护精灵。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" level="downLevel" name="task_10020_1" moviepos="-95,-88" to="a4"/>
+		<proAction id="4" type="0" npcID="308" answer="……" to="a5">
+			<des>
+				<![CDATA[1#谁都别想抢占我的时光井！一切灌水的小摩尔都将接受惩罚！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="308" answer="水蓝宝石" to="a6">
+			<des>
+				<![CDATA[1#还想再打一架吗？这次我可不会手下留情了！$$]]>
+				<![CDATA[1#这个让人讨厌的宝石是什么？啊啊啊啊啊啊啊啊啊……………………]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="1" level="downLevel" name="task_10020_2" moviepos="-22,-125" to="a7" />
+		<proAction id="7" type="0" npcID="307" answer="是的" to="a8">
+			<des>
+				<![CDATA[1#头好疼………………好长一个噩梦…………$$]]>
+				<![CDATA[1#勇敢的小摩尔，谢谢你救了我^^，不过现在我太累了，需要好好休息一下。$$]]>
+				<![CDATA[1#希望有一天我们能再见面，我一定会好好报答你的…………Zzzz…………]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="7" taskResID="" taskResNum="" delTaskResID="260011" delTaskResNum="1" to="e1"/>
+		<proAction id="9" type="0" npcID="102" answer="…………" to="a10">
+			<des>
+				<![CDATA[1#辛苦了，你做的很好^^。守护精灵的灵力比一般精灵强很多，不会被轻易黑化的。]]>
+			</des>
+		</proAction>
+		<proAction id="10" type="0" npcID="102" answer="这是应该的！" to="c">
+			<des>
+				<![CDATA[6#看来，黑暗的力量已经开始行动了，感谢你为我们带来如此重要的讯息。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

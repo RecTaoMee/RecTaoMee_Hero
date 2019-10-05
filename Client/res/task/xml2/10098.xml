@@ -1,0 +1,42 @@
+<Task ID="10098" Memo="“白银导师”c彼兔c在呼叫小主人，\n快去看看吧！" TargetMap="11704">   	
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="“白银导师”c彼兔c在呼叫小主人，\n快去看看吧！" TargetMap="11704" TargetObj="55" TargetName="和t银魂·彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="55" TaskOption="疯狂的石头人" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="55" ImageID="1" Info="【锁修塔4F】的【石头人】原本是这里的守卫，\n负责防止黑化精灵逃出去。" />
+					<Msg NpcID="55" ImageID="1" Info="没想到黑水晶的力量让它们也黑化了……\n为了防止有黑化精灵从这里逃出去，\n我们需要石头人的力量。" />
+					<Msg NpcID="55" ImageID="1" Info="【@nick】请你前往【锁修塔4F】净化【13个石头人】吧。" />
+					<Option Info="好的！" />
+				</Action>			
+    		</Event>
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Battle ID="54" Count="13" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="完成任务↖(^o^)↗！回去报告c银魂·彼兔c吧！" TargetMap="11704" TargetObj="55" TargetName="和t银魂·彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="55" TaskOption="石头人净化完毕！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="55" ImageID="1" Info="辛苦了！不过黑暗力量不会就这么退缩的，\n请随时保持警惕！" />
+					<Option Info="是！" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="到c锁修塔4Fc净化c13个石头人c吧！" TargetMap="21704" TargetObj="" TargetName="净化t石头人t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="55" TaskOption="去净化石头人啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="55" ImageID="1" Info="石头人的物理防御很强，小心了……" />
+					<Option Info="谢谢！" />
+				</Action>
+			</Event>
+		</Step>	
+			
+	</Procedure>
+</Task>

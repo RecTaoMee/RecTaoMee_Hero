@@ -1,0 +1,53 @@
+<Task ID="10092" Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="温蒂我来啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="你知道锁修塔里“水晶柱”的由来吗？" />
+					<Option Info="水晶柱？" SkipTrigger="Y"/>
+					<Option Info="有事先走了" NextStep="1"/>					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="水晶柱？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="神魔之战后，“锁修塔”封印了伊恩手下的黑化精灵。\n为了化解它们的负面情绪,\n女神从风之大陆召唤了“水晶柱”……" />																		
+					<Msg NpcID="338" ImageID="1" Info="我是代表自由的“元素力量”!\n每当“锁修塔1层”的精灵被净化，\n就能感受到自由！" />													
+					<Msg NpcID="56" ImageID="1" Info="【@nick】一定也想帮助精灵吧？\n去【锁修塔1层】净化精灵，\n收集【10个空气结晶】作为凭证怎么样^^！" />							
+					<Option Info="这就去【锁修塔1层】！" />
+				</Action>			
+    		</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="180051" Count="10" />
+			</Condition>				  
+    		<Event ConditionType="IN" Memo="空气结晶收集成功↖(^o^)↗，\n快去c锁修塔底层c告诉c银魂·温蒂c老师吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="【空气结晶】来啦↖(^o^)↗" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="谢谢【@nick】这次的“心灵净化”^^！" />
+					<Option Info="O(∩_∩)O！" />
+				</Action>			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去修隐岛上的c锁修塔1层c收集c10个空气结晶c吧！" TargetMap="21701" TargetName="收集t空气结晶t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="去收集【空气结晶】啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="【@nick】一定也想帮助精灵吧？\n去【锁修塔1层】净化精灵，\n收集【10个空气结晶】吧^^！" />							
+					<Option Info="这就去【锁修塔1层】！" />
+				</Action>			
+    		</Event>			  
+		</Step>		
+	</Procedure>
+</Task>

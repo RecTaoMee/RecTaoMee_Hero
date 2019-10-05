@@ -1,0 +1,82 @@
+<Task ID="10062" Memo="c瑞贝卡姐姐c有事找你，快点去c女神大圣堂c吧。" TargetMap="11217">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c瑞贝卡姐姐c有事找你，快点去c女神大圣堂c吧。" TargetMap="11217">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="我又来啦！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="23" ImageID="1" Info="【@nick】你来太好了！麦田村的【麦婶】生病了！" />
+						<Option Info="啊..." />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="23" ImageID="1" Info="前几天我不是教你【药剂调配】了吗？检验你学习成果的时间到了！快点帮我调配一份【生命之息】！" />
+						<Option Info="生命之息？" SkipTrigger="Y" />
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c瑞贝卡姐姐c有事找你，快点去c女神大圣堂c吧。" TargetMap="11217">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="生命之息……" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="23" ImageID="1" Info="哦，对了，这个给你！【生命之息】的【配方】！还有这些原料，快点调配一瓶【生命之息】！" />
+						<Option Info="好的！" />
+					</Action>
+					<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG" /><!--提交节点1-->
+			</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="210001" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="轻松搞定，快点吧c生命之息c交给c瑞贝卡c姐姐。" TargetMap="11217">
+				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="【生命之息】来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="啊…………挺厉害的嘛！快点给我，我来合成【治愈药水】！" />
+					<Option Info="啊？" />
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260018" SkipTrigger="Y" />
+    		</Event>
+			<Event ConditionType="OUT" Memo="麦婶生病了！？快点尝试用c药剂调配c合成一瓶c生命之息c给c瑞贝卡姐姐c。\n★登录配方以后，和c瑞贝卡c对话选择c我要调配药剂c就可以进行c药剂调配c。" TargetMap="21301">
+  				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="在哪合成生命之息？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="记得先把配方【登录】到图鉴册上，然后和我【对话】，选择【我要调配药剂】\n记住！材料不足是无法调配药剂的！" />
+					<Option Info="好的！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="治愈药水做好了吗？问问c瑞贝卡姐姐c吧。" TargetMap="11217">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="治愈药水" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="23" ImageID="1" Info="【@nick】快点把这瓶【治愈药水】送到麦田村去吧。" />
+						<Option Info="好的！" /> 
+					</Action><!--提交节点2-->
+			</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="及时调配好了c治愈药水c，快点把药水送给c麦田村c的c尼康康餐厅c，c麦婶c一定很着急！" TargetMap="11404">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="治愈药水来了" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="35" ImageID="1" Info="啊，难受好几天了，一直在床上休息，餐厅的生意都停了…………哎…………\n辛苦你啦，记得帮我向瑞贝卡大人道谢！" />
+						<Option Info="好的！" /> 
+					</Action>
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260018" />	<!--提交节点3-->
+			</Event>
+		</Step> 
+	</Procedure>
+</Task>

@@ -1,0 +1,47 @@
+<Task ID="36530" Memo="勇士答题会活动已开启，快去勇士广场找活动引导员c卢西奥c参与答题吧！" TargetMap="11202">
+	<Procedure> 
+		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士答题会活动已开启，快去勇士广场找活动引导员c卢西奥c参与答题吧！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">	
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+    	</Step>
+		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="勇士答题会活动已开启，快去勇士广场找活动引导员c卢西奥c参与答题吧！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="317" TaskOption="请出题吧！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="227" ImageID="1" Info="一支香，地里钻。弯身走，不会断。（打一动物名）" />				
+					<Option Info="A 蛔虫" NextStep="3" SkipTrigger="Y" />		
+					<Option Info="B 吸血虫	" NextStep="3" SkipTrigger="Y" />	
+					<Option Info="C 蚯蚓" NextStep="2" SkipTrigger="Y" />		
+					<Option Info="让我思考一下" NextStep="1" />																																																
+				</Action>	
+			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1"  >
+			<Event Memo="勇士答题会活动已开启，快去勇士广场找活动引导员c卢西奥c参与答题吧！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="317" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="227" ImageID="1" Info="恭喜你，答对啦!这是你的奖励，拿去吧！" />
+					<Option Info="哈哈哈！真开心！" />											
+				</Action>			
+    		</Event>											
+	    </Step>		
+
+  		<Step ID="3" ParentList="1" ParentCost="1"  >
+			<Event Memo="勇士答题会活动已开启，快去勇士广场找活动引导员c卢西奥c参与答题吧！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="317" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="227" ImageID="1" Info="不好意思，你答错了，答错可没有奖励哦！" />
+					<Option Info="真可惜……" />											
+				</Action>			
+    		</Event>											
+	    </Step>			
+	</Procedure>
+</Task>

@@ -1,0 +1,44 @@
+<!--剑 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<transport intPos="145,340">
+		 <node id="1" pos="629,285" targetMapId="11302" targetTransPortId="3"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_swordsmanHandBook" module="SwordsmanBookModule"/>
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="26" type="NPC" res="MC_npc_26" action="0$1$4"/>
+	</npc>
+	<actions>
+		<proAction npcID="26" id="0" type="0" answer="【学习技能】$剑士体验$摩尔勇士万岁！" to="b9_26$a2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#拿剑是为了保护重要的人。]]>
+			</des>
+		</proAction>
+		<proAction npcID="26" id="1" type="0" answer="【学习技能】$剑士体验$摩尔勇士万岁！" to="b9_26$a2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[2#啊~可爱的女孩子们真是抱歉了，我实在太忙了哈哈~]]>
+			</des>
+		</proAction>
+		<proAction npcID="26" id="2" type="0" answer="准备好了！" to="a3" >
+			<des>
+				<![CDATA[2#对于剑术我的要求可是十分严格的，准备好了吗，握紧【练习剑】我们开始吧！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" outMap="1" level="taskLevel" name="skill_2" moviepos="0,0"  to="o"/>
+		<proAction npcID="26" id="4" type="0" answer="【学习技能】$剑士体验$摩尔勇士万岁！" to="b9_26$a2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[2#努力积累战斗【经验】，提升【等级】，获得【努力值】是提高自己实力的基本训练。]]>
+			</des>
+		</proAction>
+		<proAction npcID="26" id="5" type="0" answer="我准备好了拔剑吧！$以后再说吧" to="a7$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#如果我输了，可爱的女孩子们可是会哭泣的！哈哈，当然这是不可能的！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="5" fightID="" />
+		<proAction id="7" npcID="26" type="5" fightID="3002" />
+	</actions>
+</map>

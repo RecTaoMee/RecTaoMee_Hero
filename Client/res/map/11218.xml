@@ -1,0 +1,162 @@
+<!--勇士斗技场-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-010.mp3">
+	<transport intPos="680,280">
+		<node id="1" pos="680,900" targetMapId="11203" targetTransPortId="3" name="西街"/>
+		<node id="2" pos="680,280" targetMapId="11219" targetTransPortId="1" name="斗技场管理处"/>
+		<node id="3" pos="78,539" targetMapId="11221" targetTransPortId="1" name="勇士杯斗技场"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="AppModule" res="MC_ArenaRock" module="ArenaRockModule"/>
+		<node id="4" type="TransPort"  res="MC_door_2" transPortId="3"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="39" type="NPC" res="MC_npc_39" action="22" need="23" needType="level" needAction="5" />
+        <node id="40" type="NPC" res="MC_npc_40" action="23" need="23" needType="level" needAction="6" />
+        <node id="45" type="NPC" res="MC_npc_45" action="24" need="20" needType="level" needAction="7" />
+		<node id="562" type="NPC" res="MC_npc_562" action="32"/>
+		<node id="701" type="NPC" res="MC_npc_701" action="11"/>
+		<node id="702" type="NPC" res="MC_npc_702" action="27"/> 
+	</npc>
+	<actions>
+		<proAction npcID="39" id="0" type="0" answer="组队比试$摩尔勇士万岁！" to="j1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你好，勇敢的摩尔，是要寻找【组队比试】的对手吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="40" id="1" type="0" answer="单人比试$摩尔勇士万岁！" to="j2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#嘻嘻，年轻的摩尔，你是来寻找和你【单人比试】的对手吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="45" id="2" type="0" answer="转动十字轮盘！$选择领域$修炼之域产出投放规则$摩尔勇士万岁！" to="a25$module_boards/PracticePanelModule$module_boards/PracticeAreaAwardModule$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【修炼之域】是训练预备勇士的场所，希望你能和伙伴们一起来冒险哟，会有你意想不到的惊喜哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="45" id="3" type="0" answer="第6域$第11域$第16域$第21域$第26域$第31域$第36域$第41域$摩尔勇士万岁！" to="x4$x4$x4$x4$x4$x4$x4$x4$o" >
+			<des>
+				<![CDATA[1#你想要直接到达哪一域？]]>
+			</des>
+		</proAction>
+		<proAction npcID="45" id="4" type="0" answer="知道了$摩尔勇士万岁！" to="o$o" colorID="0$0">
+			<des>
+				<![CDATA[1#你还没有获得直接到达那里的资格哦!]]>
+			</des>
+		</proAction>
+		<proAction npcID="39" id="5" type="3" to="o" />
+		<proAction npcID="40" id="6" type="3" to="o" />
+		<proAction npcID="45" id="7" type="3" to="o" />
+		<proAction npcID="39" id="8" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#当你的等级达到23级时，就可以参与激动人心的【自由比试】了！！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="40" id="9" type="0" answer="知道了" to="o$o" colorID="0">
+			<des>
+				<![CDATA[1#当你的等级达到23级时，就可以参与激动人心的【单人比试】了！！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="45" id="10" type="0" answer="知道了" to="o$o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到20级，修炼之域的大门会正式向你开启，继续努力吧O(∩_∩)O~~]]>
+			</des>
+		</proAction>
+		<proAction id="11" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="12" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="13" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="14" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="15" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="20" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="21" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>
+		
+		
+		<proAction npcID="39" id="22" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#你好，勇敢的摩尔，等级达到23级才可以参加【组队比试】哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="40" id="23" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#嘻嘻，年轻的摩尔，等级达到23级才可以参加【单人比试】哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="45" id="24" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#【修炼之域】是训练预备勇士的场所，等级达到20级才可以进入【修炼之域】！]]>
+			</des>
+		</proAction>
+		<proAction id="25" npcID="45"  type="0" answer="交出十字勋章！$摩尔勇士万岁！" to="g22$o" colorID="1$0">
+			<des>
+				<![CDATA[1#请你提供5个象征荣耀的【十字勋章】给我，证明你有转动十字轮盘的力量！]]>
+			</des>
+		</proAction>
+		<proAction id="26" npcID="45"  type="0" answer="我这就去！$摩尔勇士万岁！" event="medal_not_enough" to="o$o" colorID="1$0">
+			<des>
+				<![CDATA[1#证明你力量的【十字勋章】不足5个哦，请去勇士斗技场参加各类竞赛获取荣誉兑换十字勋章吧！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="702" id="27" type="0" answer="参加单精灵赛$参加多精灵赛$我要领取奖励$比赛规则介绍" to="module_boards/RoyalGuardEntryModule$module_boards/RoyalGuardMultiEntryModule$module_boards/RoyalGuardExchangeModule$30" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#周日14-15点和19-20点可报名参赛，【单精灵赛】和【多精灵赛】各可参加3次，参加就有机会获得皇家卫队专属称号哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="702" id="28" type="0" answer="好" to="o" colorID="0">
+			<des>
+				<![CDATA[1#本活动适合25级以上的未来勇士，请加油提升自己的等级再来参加！]]>
+			</des>
+		</proAction>
+		<proAction npcID="702" id="29" type="0" answer="好" to="o" colorID="0">
+			<des>
+				<![CDATA[1#本活动只能单人参加，请解散队伍再来报名！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="702" id="30" type="0" answer="参加单精灵赛$参加多精灵赛$我知道了" to="module_boards/RoyalGuardEntryModule$module_boards/RoyalGuardMultiEntryModule$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#报名进入比赛场地后，将于在场地中的其他未来勇士进行角逐，击败任意未来勇士可以获得【战勋】用以兑换绝版称号，最后胜出的未来勇士可以得到【精灵成长重组丸】！$$]]>
+				<![CDATA[1#比赛日有3次参与机会，比赛中失败或离开房间将扣除一次机会，胜利不扣除参与机会，努力吧勇士们！$$]]>
+				<![CDATA[1#称号属性：皇家卫队首席 生命上限+120，魔力上限+50，速度+2，精神力+2，必杀+2；皇家卫队精英 生命上限+110，魔力上限+50，速度+1，精神力+1，必杀+1；$$]]>
+				<![CDATA[1#皇家卫队队员 生命上限+100，魔力上限+50，回避+2；]]> 
+			</des>
+		</proAction>
+		<proAction npcID="702" id="31" type="0" answer="好" to="o" colorID="0">
+			<des>
+				<![CDATA[1#第1期皇家卫队选拔战已结束，请等待第2期的举行！]]>
+			</des>		
+		</proAction>
+		<proAction npcID="562" id="32" type="0" answer="参战天梯擂台赛$摩尔勇士万岁！" to="module_TiantiModule$o" colorID="1$0">
+			<des>
+				<![CDATA[1#我就是传说中百战百胜的天梯擂台赛冠军兼管理员【肖恩】。你也要参加天梯擂台赛，赢取星座套装奖励吗？]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

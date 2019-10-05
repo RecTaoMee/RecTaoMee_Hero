@@ -1,0 +1,38 @@
+<!--克拉斯海滩-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="47,341">
+		<node id="1" pos="47,341" targetMapId="22101" targetTransPortId="1" name="克拉斯海岸"/>
+		<node id="2" pos="231,225" targetMapId="22103" targetTransPortId="2" name="克拉斯外滩Ⅰ"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="2" type="" res="MC_cat">
+			<event type="click" hit="SpeakHit" pos="">
+				<![CDATA[此路是我开，就不让你过！]]>
+			</event>
+		</node>
+	</object>
+
+	<npc>
+		<node id="10" type="NPC" res="MC_npc_1" action="20" name="趴趴贝" visible="0"/>
+	</npc>
+
+	<actions>
+		<proAction npcID="805" id="20" type="0" answer="求助马沙虾$求助蜘蛛炸弹$算了……" to="a21$a22$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#zzz……zzz……]]>
+			</des>
+		</proAction>
+		
+		<proAction actionID="21" type="1" level="taskLevel" name="papabei_1" moviepos="0,0" to="a23"/>
+		<proAction actionID="22" type="1" level="taskLevel" name="papabei_2" moviepos="0,0" to="a23"/>
+		
+		<proAction npcID="805" id="23" type="0" answer="捕捉趴趴贝！$先准备一下" to="refreshGrp_41$o" colorID="0$0">
+			<des>
+				<![CDATA[1#打、打扰我睡觉的人，决不轻饶！]]>
+			</des>
+		</proAction>	
+		<proAction id="24" type="5" fightID="41" />					
+	</actions>
+</map>

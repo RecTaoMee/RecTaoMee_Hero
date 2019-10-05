@@ -1,0 +1,52 @@
+<task id="53">
+	<taskDes>
+		<![CDATA[【下水道】我又来挑战了！【下水道入口的铁门士兵】有可靠的情报，去向他请教吧！$$]]>
+		<![CDATA[【打败吉普豆泥王】“不会呼吸的蛤蟆口中有至关重要的钥匙”不会呼吸的蛤蟆在哪里？只有在下水道里找找看了！$$]]>
+		<![CDATA[“打败泥王了！！和下水道的守门士兵聊聊吧！$$]]>
+		<![CDATA[任务完成了！【快去向杰森老师报告吧^__^！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="207" title="你好守卫士兵！" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="21201"/>
+		<pro type="0" parent="0" npcID="207" title="关于普豆泥王的情报" action="2" bossID="2001" bossNum="1" needRes="" needResNum="" unResAction="" taskDes="1" mapID="21204"/>
+		<pro type="0" parent="1" npcID="207" title="战胜普豆泥王啦！" action="4" needRes="" needResNum="" unResAction="" taskDes="2" mapID="21201"/>
+		<pro type="0" parent="2" npcID="26" title="老师我打败普豆泥王了！" action="3" needRes="" needResNum="" unResAction="" taskDes="3" mapID="11305"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="207" answer="是的，请告诉我情报吧" to="s1">
+			<des>
+				<![CDATA[1#我记得你，上次是我把你从下面抬出来的，……这种事怎么能让【妮娜】大人来做。$$]]>
+				<![CDATA[1#还想进入下水道吗？那是十分危险的。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="207" answer="知道了谢谢" to="o">
+			<des>			
+				<![CDATA[1#好吧，请记住————$$]]>
+				<![CDATA[1#【封印之门】【不会呼吸的蛤蟆嘴里有机会得到解开1号封印门的钥匙。】]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="207" answer="知道了谢谢" to="o">
+			<des>	
+				<![CDATA[1#不敢下去？下面有些黑化精灵没错。要到达【三层】确实有难度。$$]]>
+				<![CDATA[1#【不会呼吸的蛤蟆嘴里有机会得到解开1号封印门的钥匙。】]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="26" answer="谢谢杰森老师^^" to="c">
+			<des>	
+				<![CDATA[2#做的不错！这么快就战胜了普豆泥王，不过这只是刚刚开始。$$]]>				
+				<![CDATA[1#对于某些人来说勇敢也不过是消灭一只蟑螂，但它足以鼓励自己，这是埋藏在我们心底的一种力量，无懈可击的力量——！$$]]>
+				<![CDATA[1#希望你能永远记住这一点^__^。其实我能教你的东西并不多，伟大的人生要你自己去感受啊……。$$]]>
+				<![CDATA[2#根据下水道“挑战传统”，《勇士协会》第一章第1条，我将为你颁发这个【特别称号】——【粘糊糊勇士】。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="207" answer="谢谢【H】回见" to="e2">
+			<des>	
+				<![CDATA[1#按照下水道的“挑战传统”，你的导师会给你第一次的【挑战称号】，$$]]>	
+				<![CDATA[1#从今天以后你可以凭称号在我这里领取【解锁匙I•泥】，按规定我每天只能给你【3把】。$$]]>
+				<![CDATA[1#这个古老的下水道还有很多秘密……$$]]>
+				<![CDATA[1#那么再见了学员班优等生，去向你的导师领取称号吧，那是个“会令你十分难忘的称号”，我还记得我得到它时的心情……。]]>		
+			</des>
+		</proAction>
+	</actions>
+</task>

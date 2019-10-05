@@ -1,0 +1,120 @@
+<Task ID="10070" Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，快去看看吧！" TargetMap="11206">
+   	<Procedure> 
+  	  	<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，快去看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="有事吗？" />			
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="25" ImageID="6" Info="【怪盗集团】最近在王国附近疯狂偷窃星豆。\n我们进行了地毯式搜查，现在它们见到我就逃……" />														
+			        <Msg NpcID="25" ImageID="1" Info="未来的摩尔【@nick】，由你去【封印】一只【怪盗迪迪拉】怎么样？" />														
+					<Option Info="接受委托！" SkipTrigger="Y" />					
+					<Option Info="我很忙，下次吧" NextStep="1" />
+				</Action>
+    		</Event>
+    	</Step>			
+  	  	<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，快去看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="接受委托！" />			
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="25" ImageID="1" Info="有什么不懂的就问我。\n对付怪盗没有谁比我更有经验！" />													
+					<Option Info="封印精灵的秘诀？" SkipTrigger="Y" />					
+				</Action>
+    		</Event>
+    	</Step>		
+   	  	<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，快去看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="封印精灵的秘诀？" />			
+				</Trigger>
+				<Action Type="TALK">		
+			        <Msg NpcID="25" ImageID="1" Info="首先，你要准备好与精灵自身【属性】相同的【闪灵胶片】。\n闪灵胶片在王国【东街的爱精灵协会】就能买到。" />									
+			        <Msg NpcID="25" ImageID="1" Info="比如怪盗迪迪拉，就需要【人形系】或者【万用】型闪灵胶片。" />																	
+			        <Msg NpcID="25" ImageID="1" Info="接下来，攻击精灵到它剩下的【hp】越少越好。\n（精灵hp为零时战斗会直接结束！）" />		
+			        <Msg NpcID="25" ImageID="1" Info="最后，选择【抓捕】命令，对精灵使用闪灵胶片。\n当然，如果你【精灵契约】的技能等级不够高，可能需要多试几次才能成功。" />																	
+			        <Msg NpcID="25" ImageID="6" Info="封印成功后，让它从精灵口袋里【跟随】出来见我吧！" />																																						
+					<Option Info="【怪盗迪迪拉】在哪里？" NextStep="4" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="使命必达！" />													
+				</Action>
+    		</Event>
+    	</Step>			
+  	  	<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，快去看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="【怪盗迪迪拉】在哪里？" />			
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="25" ImageID="1" Info="从王国【南街】出城向下↓走，怪盗迪迪拉就在格历尔【平原1区】出没。" />	
+			        <Msg NpcID="25" ImageID="1" Info="记住一定要走在【草丛】上。\n野生黑化精灵从来不会在【安全道路】上出现！" />																																
+					<Option Info="使命必达！" />					
+				</Action>
+    		</Event>
+    	</Step>			
+
+
+
+
+  	  	<Step ID="5" ParentList="3, 4" ParentCost="1" >
+			<Condition>
+				<Pet Follow="Y" Type="7" Level="0" Grow="0" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="怪盗迪迪拉封印成功↖(^ω^)↗！\n快去c国王呈见厅c报告c宾德c士兵长吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="迪迪拉带来啦！" />			
+				</Trigger>
+				<Action Type="TALK">	
+			        <Msg NpcID="315" ImageID="3" Info="⊙﹏⊙|||\n又是鸡冠头士兵长，不要啊~~~~" />										
+			        <Msg NpcID="25" ImageID="6" Info="哈哈，挣扎无用！\n给你们介绍下，这只【王冠卡西卡】是我的侍卫精灵。有谁敢偷窃星豆，就得尝尝它“铁锤尾巴”的滋味！" />	
+			        <Msg NpcID="25" ImageID="1" Info="【@nick】，你想要这只【王冠卡西卡】成为同伴吗？" />																																
+					<Option Info="我要！" />					
+				</Action>
+				<Action Type="TALK">	
+			        <Msg NpcID="25" ImageID="1" Info="卡西卡是【物理攻击】型精灵，升级时可以多加些【力量】属性。\n祝你们成为最佳拍档！" />																																
+					<Option Info="卡西卡万岁！" />					
+				</Action>				
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="小主人快封印c怪盗迪迪拉c，让它c跟随c在身边吧。\n有什么不明白的就去c国王呈见厅c问c宾德c士兵长！" TargetMap="21301">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="怎么完成委托？" />			
+				</Trigger>
+				<Action Type="TALK">		
+			        <Msg NpcID="25" ImageID="1" Info="【@nick】封印【怪盗迪迪拉】了吗？\n如果它在你的精灵口袋里，就让它【跟随】出来见我吧！" />	
+					<Option Info="封印精灵的秘诀？" NextStep="13" SkipTrigger="Y"  NotUpdateBuffer="Y" />																																												
+					<Option Info="【怪盗迪迪拉】在哪里？" NextStep="14" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="使命必达！" />													
+				</Action>
+    		</Event>			
+    	</Step>	
+   	  	<Step ID="13" ParentList="0" ParentCost="1" >
+    		<Event Memo="小主人快封印c怪盗迪迪拉c，让它c跟随c在身边吧。\n有什么不明白的就去c国王呈见厅c问c宾德c士兵长！" TargetMap="21301">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="封印精灵的秘诀？" />			
+				</Trigger>
+				<Action Type="TALK">		
+			        <Msg NpcID="25" ImageID="1" Info="首先，你要准备好与精灵自身【属性】相同的【闪灵胶片】。\n闪灵胶片在王国【东街的爱精灵协会】就能买到。" />									
+			        <Msg NpcID="25" ImageID="1" Info="比如怪盗迪迪拉，就需要【人形系】或者【万用】型闪灵胶片。" />																	
+			        <Msg NpcID="25" ImageID="1" Info="接下来，攻击精灵到它剩下的【hp】越少越好。\n（精灵hp为零时战斗会直接结束！）" />		
+			        <Msg NpcID="25" ImageID="1" Info="最后，选择【抓捕】命令，对精灵使用闪灵胶片。\n当然，如果你【精灵契约】的技能等级不够高，可能需要多试几次才能成功。" />																						
+					<Option Info="【怪盗迪迪拉】在哪里？" NextStep="14" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="使命必达！" NextStep="5" />													
+				</Action>
+    		</Event>
+    	</Step>			
+  	  	<Step ID="14" ParentList="0" ParentCost="1" >
+    		<Event Memo="小主人快封印c怪盗迪迪拉c，让它c跟随c在身边吧。\n有什么不明白的就去c国王呈见厅c问c宾德c士兵长！" TargetMap="21301">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="怪盗迪迪拉在哪里？" />			
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="25" ImageID="1" Info="从王国【南街】出城向下↓走，怪盗迪迪拉就在格历尔【平原1区】出没。" />	
+			        <Msg NpcID="25" ImageID="1" Info="记住一定要走在【草丛】上。\n野生黑化精灵从来不会在【安全道路】上出现！" />																																
+					<Option Info="封印精灵的秘诀？" NextStep="13" SkipTrigger="Y"  NotUpdateBuffer="Y" />																																												
+					<Option Info="使命必达！" NextStep="5" />					
+				</Action>
+    		</Event>
+    	</Step>	
+	
+</Procedure>
+</Task>

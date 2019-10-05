@@ -1,0 +1,50 @@
+<Task ID="10023" Memo="麦田村的面包为什么那么好吃呢？去请教麦婶吧！" TargetMap="11404">
+	<Procedure> 		 		
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="麦田村的面包为什么那么好吃呢？去请教麦婶吧！" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="黄金麦面包" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="35" ImageID="1" Info="哈哈，黄金麦面包可是全大陆最好吃的面包，你想学习如果做黄金麦面包？" />
+						<Option Info="嗯" SkipTrigger="Y"/> 
+					</Action>
+			</Event>
+		</Step> 
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="麦田村的面包为什么那么好吃呢？去请教麦婶吧！" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="黄金麦面包" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="35" ImageID="1" Info="对了你会不会【料理烹饪】呢？" />
+						<Option Info="额..那是什么？" SkipTrigger="Y"/> 
+					</Action>
+			</Event>
+		</Step>  
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="麦田村的面包为什么那么好吃呢？去请教麦婶吧！" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="黄金麦面包" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="35" ImageID="1" Info="【料理烹饪】居然都不会！！！\n哎..让我教你吧，想不想学呢？" />
+						<Option Info="好的！" /> 
+					</Action>
+			</Event>
+		</Step> 
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="学会了c料理烹饪c，c麦婶c好像还有什么话像说，快问问她。" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="黄金麦面包" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="35" ImageID="1" Info="如果你想制作料理，就来找我或者【贝多罗】，对话选择【我想制作料理】就可以了！记得带好材料！" />
+						<Msg NpcID="35" ImageID="1" Info="至于黄金麦面包的做法...等你能制作10级料理的时候再来找我吧！" />
+						<Option Info="好的！" /> 
+					</Action>
+			</Event>
+		</Step>
+	</Procedure>
+</Task>

@@ -1,0 +1,29 @@
+<!--巨石战场休息室（风）-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-014.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="37,337" targetMapId="" targetTransPortId="" name="传入点"/>
+		<node id="2" pos="755,337" targetMapId="41201" targetTransPortId="1" name="巨石战场"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="2"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="83" type="NPC" res="MC_npc_83" action="0"/>
+    </npc>
+    <actions>
+		<proAction npcID="83" id="0" type="0" answer="我要返回《勇士杯》斗技场大厅$勇士杯规则" to="changeMap_11221$a1" colorID="0$0">
+			<des>
+				<![CDATA[1#与队友们相互合作达到200分，丰厚的奖励等着你！]]>
+			</des>
+		</proAction>
+		<proAction npcID="83" id="0" type="0" answer="我知道了" to="$o" colorID="0">
+			<des>
+				<![CDATA[1#穿过这里的准备室到那边与巨型石头人展开战斗吧！$$]]>
+				<![CDATA[1#记得要充分的利用战场中的巨弩和火炮对巨型石头人展开攻击。当在武器上有其他队伍的队员时，我们可以通过挑战的方式进行抢占。$$]]>
+				<![CDATA[1#到达200伤害，击败巨型石头人后我们将会根据各个队伍的表现颁发丰厚的奖励。但要谨记，中途逃跑的摩尔是不被人尊敬的，不会得到任何的奖励！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

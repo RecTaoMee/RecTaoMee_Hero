@@ -1,0 +1,400 @@
+<week>
+	<Activity
+		id="1"
+	    priorityLevel="20"
+		name="成长环任务"
+		level="12"
+		mainOut="2,2,2"
+		totalOut="0,3,1,0,0"
+		transMapId="11202,1"
+		entery="勇士广场-乔伊"
+		teamType="0"
+		desc="受女神的指引乔依，来到了勇士广场，他每天会发各种各样的任务给勇士王国的孩子们，可以找他领取环任务哦！还有丰富的经验、星豆奖励哦！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity 
+		id="2"
+	    priorityLevel="10"		
+		name="每日答题"
+		level="10"
+		mainOut="1"
+		totalOut="1,0,0,0,0"
+		transMapId="11202,1"
+		entery="勇士广场-卢西奥"
+		teamType="0"
+		desc="10级以上的勇士可以在勇士广场“卢西奥”处参与每日答题哦，游戏学习两不误，奖励会不断更新哦！"
+		timeStr="工作日19-21点；节假日13-15点"
+	>
+			<Time day="1" time="19:00-21:00"/>
+			<Time day="2" time="19:00-21:00"/>
+			<Time day="3" time="19:00-21:00"/>
+			<Time day="4" time="19:00-21:00"/>
+			<Time day="5" time="19:00-21:00"/>
+			<Time day="6" time="13:00-15:00"/>
+			<Time day="0" time="13:00-15:00"/>
+			
+	</Activity>
+
+	<Activity 
+		id="3"
+	    priorityLevel="20"		
+		name="挑战娜蒂丝"
+		level="22"
+		mainOut="2,2,2,2"
+		totalOut="0,4,1,0,0"
+		transMapId="11503,1"
+		entery="草木树海-娜蒂丝"
+		teamType="0"
+		desc="22级以上的勇士可以在从勇士广场“拉尼克斯”处传送至草木树海，再在活动时间内挑战娜蒂丝哦，产出大量人物、精灵与技能经验哦！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity 
+		id="4"
+	    priorityLevel="20"
+		name="挑战库噜王"
+		level="25"
+		mainOut="2,2,5,5"
+		totalOut="0,2,0,0,2"
+		transMapId="11503,1"
+		entery="草木树海-库噜王"
+		teamType="1"
+		desc="25级以上的勇士可以在从勇士广场“拉尼克斯”处传送至草木树海，活动时间内挑战库噜王、获得库噜骨头兑换【种族技能道具】哦（建议组队挑战）！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity 
+		id="5"
+	    priorityLevel="10"
+		name="精灵竞技"
+		level="20"
+		mainOut="2,2"
+		totalOut="0,2,0,0,0"
+		transMapId="11202,1"
+		entery="勇士广场-库噜噜"
+		teamType="0"
+		desc="20级以上的勇士可以在从勇士广场“库噜噜”处参与精灵竞技哦（只有精灵参与战斗哦），出战的精灵可获得丰富的精灵经验哦！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity 
+		id="6"
+	    priorityLevel="10"
+		name="月之宫殿"
+		level="30"
+		mainOut="2,5,5,5"
+		totalOut="0,3,0,0,4"
+		transMapId="11202,1"
+		entery="勇士广场-薇儿"
+		teamType="1"
+		desc="30级以上的勇士可以在从勇士广场副本管理员“薇儿”处【月之宫殿】副本哦，可以获得35、40级的装备合成配方哦（建议组队挑战）！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>	
+
+	<Activity
+		id="6"
+	    priorityLevel="10"
+		name="尤利的逆袭"
+		level="30"
+		mainOut="1,2,3,4"
+		totalOut="2,2,3,2,2"
+		transMapId="11202,1"
+		entery="勇士广场-多修"
+		teamType="1"
+		desc="30级以上的勇士可以在从勇士广场“多修”处参与【魔王的逆袭】任务哦，可以获得水晶在多修处兑换各种道具（建议组队挑战）！"
+		timeStr="每天19-21点"
+	>
+			<Time day="1" time="19:00-21:00"/>
+			<Time day="2" time="19:00-21:00"/>
+			<Time day="3" time="19:00-21:00"/>
+			<Time day="4" time="19:00-21:00"/>
+			<Time day="5" time="19:00-21:00"/>
+			<Time day="6" time="19:00-21:00"/>
+			<Time day="0" time="19:00-21:00"/>
+	</Activity>	
+	
+	<Activity
+		id="7"
+	    priorityLevel="10"
+		name="废弃的勇士国度"
+		level="34"
+		mainOut="5,5,5,5"
+		totalOut="0,0,0,4,5"
+		transMapId="11202,1"
+		entery="勇士广场-薇儿"
+		teamType="1"
+		desc="“占卜师”乔依终于从水晶球中遇见了10年后勇士国度的遭遇，若我们不尽快阻止，勇士国度将成为魔物恒生的一片废墟！！"
+		timeStr="周六周日13-15点"
+	>
+			<Time day="6" time="13:00-15:00"/>
+			<Time day="0" time="13:00-15:00"/>
+	</Activity>	
+	
+	<Activity
+		id="8"
+	    priorityLevel="10"
+		name="挑战修炼之域"
+		level="21"
+		mainOut="4,4,4,4"
+		totalOut="0,0,0,5,5"
+		transMapId="11218,1"
+		entery="斗技场大厅-咚妮"
+		teamType="1"
+		desc="通过修炼之域试炼，获得20-35级紫色装备、十字勋章、合成石、国王卫队时装，快去勇士斗技场证明你们的勇气吧！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>	
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="9"
+	    priorityLevel="20"
+		name="契约咕噜蝶"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="11301,1"
+		entery="皇宫花园-守卫士兵"
+		teamType="1"
+		desc="稀有精灵咕噜蝶每周末都会来皇宫花园采集花粉，赶快与它签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="10"
+	    priorityLevel="20"
+		name="契约海德"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="21302,1"
+		entery="平原2区-树精"
+		teamType="1"
+		desc="给树精浇灌至纯之水，就能引来稀有精灵海德，赶快与它签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="11"
+	    priorityLevel="20"
+		name="契约奇奇帕"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="21303,1"
+		entery="平原3区-土堆"
+		teamType="1"
+		desc="假面奇奇帕总喜欢潜伏在肥沃的土壤中睡觉，赶快与它签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="12"
+	    priorityLevel="20"
+		name="契约哒哒鸟"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="11202,1"
+		entery="勇士广场-哒哒鸟A"
+		teamType="1"
+		desc="广场勇士神像上的哒哒鸟A正在寻找失散的兄弟，帮助它并与它们签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="13"
+	    priorityLevel="20"
+		name="契约海神马"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="21401,1"
+		entery="海底洞穴1层-海神马"
+		teamType="1"
+		desc="不知道海神马究竟是不是被时空乱流卷来的外太空精灵呢，赶快与它签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="14"
+	    priorityLevel="20"
+		name="契约忽悠喵"
+		level="1"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="11207,1"
+		entery="勇敢者旅馆2楼-神秘人"
+		teamType="1"
+		desc="忽悠喵总喜欢伪装成王国中的居民捣乱，揭穿它的真面目并与它签订伙伴契约吧！"
+		timeStr="周六周日全天"
+	>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+
+	<Activity
+		id="15"
+	    priorityLevel="10"
+		name="怪盗星豆争夺战"
+		level="10"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="21302,1"
+		entery="平原2区-怪盗迪迪拉"
+		teamType="1"
+		desc="怪盗集团又开始兴风作浪了，20级以下的勇士们请立即赶往平原2区清理它们！"
+		timeStr="周五~周日15-17点"
+	>
+			<Time day="5" time="15:00-17:00"/>
+			<Time day="6" time="15:00-17:00"/>
+			<Time day="0" time="15:00-17:00"/>
+	</Activity>
+
+	<Activity
+		id="16"
+	    priorityLevel="10"
+		name="怪盗集团"
+		level="10"
+		mainOut="3,3,3,3"
+		totalOut="0,0,5,0,0"
+		transMapId="11307,1"
+		entery="国王呈见厅-宾德"
+		teamType="1"
+		desc="怪盗集团居然藏身于摩尔王国中，20级以上的勇士们请前往国王呈见厅找宾德了解情况！"
+		timeStr="周五~周日15-17点"
+	>
+			<Time day="5" time="15:00-17:00"/>
+			<Time day="6" time="15:00-17:00"/>
+			<Time day="0" time="15:00-17:00"/>
+	</Activity>
+
+	<Activity
+		id="17"
+	    priorityLevel="10"
+		name="未来勇士成长修行"
+		level="10"
+		mainOut="2,2,2,2"
+		totalOut="0,5,0,0,0"
+		transMapId="11219,1"
+		entery="斗技场管理处-圣弗雷德"
+		teamType="1"
+		desc="敢于挑战自我的勇士才是真正的勇士，快去斗技场管理处找圣弗雷德接受考验吧！"
+		timeStr="周五~周日19-21点，周六周日13-15点"
+	>
+			<Time day="5" time="19:00-21:00"/>
+			<Time day="6" time="13:00-15:00"/>
+			<Time day="6" time="19:00-21:00"/>
+			<Time day="0" time="13:00-15:00"/>
+			<Time day="0" time="19:00-21:00"/>
+	</Activity>
+
+<!-- 
+	<Activity
+		  id="18"
+	      priorityLevel="1"
+		  name="皇家卫队选拔战"
+		  level="25"
+		  mainOut="5,5,5,5"
+		  totalOut="0,0,5,0,5"
+		  transMapId="11218,1"
+		  entery="斗技场大厅-卡莉尔"
+		  teamType="0"
+		  desc="群雄激战脱颖而出，赢取“属性称号”、“精灵成长重组丸”！两类赛事各可参加3次。"
+		  timeStr="周日14-15点/19-20点"
+		  >
+		  <Time day="1" time=""/>
+		  <Time day="2" time=""/>
+		  <Time day="3" time=""/>	
+		  <Time day="4" time=""/>
+		  <Time day="5" time=""/>
+		  <Time day="6" time=""/>
+		   <Time day="0" time="14:00-15:00"/>		
+		   <Time day="0" time="19:00-20:00"/>	
+	</Activity>
+ -->
+
+	 <Activity
+		id="19"
+	    priorityLevel="1"
+		name="基姆的侵袭"
+		level="25"
+		mainOut="1,2,3,5"
+		totalOut="2,3,5,0,4"
+		transMapId="11202,1"
+		entery="勇士广场-多修"
+		teamType="1"
+		desc="25级以上的勇士，快前往勇士广场“多修”处参与【基姆的逆袭】任务吧，可以获得大量经验、星豆和道具奖励哦（建议组队挑战）！"
+		timeStr="无时间限制"
+	>
+			<Time day="1" time=""/>
+			<Time day="2" time=""/>
+			<Time day="3" time=""/>
+			<Time day="4" time=""/>
+			<Time day="5" time=""/>
+			<Time day="6" time=""/>
+			<Time day="0" time=""/>
+	</Activity>
+</week>

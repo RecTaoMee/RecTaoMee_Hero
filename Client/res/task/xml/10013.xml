@@ -1,0 +1,28 @@
+<task id="10013">
+  <taskDes>
+	<![CDATA[加入弓箭手协会有一段时间了，有没有遇到什么疑惑呢?和瑞凌导师聊聊吧。$$]]>
+	<![CDATA[打赢了！快找瑞凌老师领取奖励吧！]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="28" title="瑞凌老师好！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11303"/>
+    <pro type="0" parent="0" npcID="28" title="战胜你啦！" action="3" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11303"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="28" answer="没有..." objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[2#【@nick】你加入弓箭手协会有一段时间了，平时有没有疏于练习啊？]]>
+		</des>
+    </proAction>
+    <proAction id="1" type="0" npcID="28" answer="好的" objLevel="" objName="" objType="" objValue="" to="a2">
+      <des>
+		<![CDATA[2#不错，来和我对战吧，让我看看你的弓术技巧吧，战胜我可是有额外的奖励的！]]>
+		</des>
+    </proAction>
+    <proAction id="2" type="5" fightID="3003" data="1" to="so"/>
+    <proAction id="3" type="0" npcID="28" answer="谢谢瑞凌老师" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[2#你进步很快嘛，这把弓送给你吧！下次我可不会手下留情了。]]>
+		</des>
+    </proAction>
+  </actions>
+</task>

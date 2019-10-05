@@ -1,0 +1,71 @@
+<Task ID="20004" Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202">
+<BoardInfo PageType="1" Title="王国悬赏令②" Content="【麦田村•海底洞穴】出现大量黑化的【钢姆】，给村民生活带来很多困扰。谁能前去净化10只【钢姆】，摩尔王将给予500星豆奖励"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    			<Event Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+    				<Action Type="COMMAND" Command="NOTHING" /> 
+    			</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    			<Event Memo="c传教士协会c派出了c塞莲c去麦田村帮助治疗受伤的村民。先去麦田村向c塞莲c了解一下情况。" TargetMap="11401" TargetObj="510" TargetName="和t塞莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="510" TaskOption="黑化的钢姆" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="510" ImageID="1" Info="你是勇士协会的【@nick】？听说你曾经挑战过下水道的【普豆泥王】！你能来帮忙，真是太好了。" />
+					<Msg NpcID="510" ImageID="1" Info="钢姆是生活在村子北边【海底洞穴】的精灵，最近很多钢姆被【黑化】了，进入【海底洞穴】的村民都被【钢姆】打伤。" />
+					<Msg NpcID="510" ImageID="1" Info="请你去海底洞穴净化10只钢姆吧！如果你体力不支，记得到我这里，我会帮你治疗，千万不要勉强^^。" />
+					<Option Info="好的！" />
+				</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="21" Count="10" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="成功净化10只c钢姆c！把这个好消息告诉c塞莲c姐姐。" TargetMap="11401" TargetObj="510" TargetName="和t塞莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="510" TaskOption="已经净化完毕" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="510" ImageID="1" Info="辛苦你了，不愧是勇士协会的摩尔，这么快就净化了10只黑化【钢姆】。\n快点回【公告栏】领取奖励吧！" />
+					<Option Info="嘿嘿" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="任务目标是在海底洞穴净化10只c钢姆c。" TargetMap="21401" TargetObj="" TargetName="击败t钢姆t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="510" TaskOption="黑化的【钢姆】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="510" ImageID="1" Info="【@nick】，拜托你了……" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>
+		</Step>
+			
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这件事你干的很漂亮嘛！" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+ 

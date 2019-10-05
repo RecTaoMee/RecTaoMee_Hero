@@ -1,0 +1,102 @@
+<!--乔村-->
+<map name="麦田村" type="0" comment="aaa" sound="BGM-006.mp3">
+	<transport intPos="228,894"> 
+		<node id="1" pos="228,894" targetMapId="21303" targetTransPortId="2" name="平原三区"/>
+		<node id="2" pos="434,221" targetMapId="21401" targetTransPortId="1" name="海地洞穴"/>
+		<node id="3" pos="1171,321" targetMapId="11404" targetTransPortId="1" name="平原二区"/>
+		<node id="4" pos="1414,260" targetMapId="11405" targetTransPortId="1" name="平原二区"/>
+		<node id="5" pos="1810,122" targetMapId="11402" targetTransPortId="1" name="平原二区"/>
+		<node id="6" pos="1649,783" targetMapId="11403" targetTransPortId="1" name="平原二区"/>
+		<node id="7" pos="822,491" targetMapId="11408" targetTransPortId="1" name="枯井"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_enter0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_enter1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="TransPort" level="contentLevel" res="MC_enter2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="4" type="TransPort" level="contentLevel" res="MC_enter3" name="bbb" transPortId="4" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="5" type="TransPort" level="contentLevel" res="MC_enter4" name="bbb" transPortId="5" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="6" type="TransPort" level="contentLevel" res="MC_enter5" name="bbb" transPortId="6" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="7" type="TransPort" level="contentLevel" res="MC_enter6" name="bbb" transPortId="7" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="5111" type="Object" level="contentLevel" res="MC_bird1" />			
+		<node id="5112" type="Object" level="contentLevel" res="MC_bird2" />	
+		<node id="5113" type="Object" level="contentLevel" res="MC_bird3" />
+		<node id="5114" type="Object" level="contentLevel" res="MC_bird4" />
+		<node id="5115" type="Object" level="contentLevel" res="MC_bird5" />
+		<node id="5116" type="Object" level="contentLevel" res="MC_bird6" />
+		<node id="5117" type="Object" level="contentLevel" res="MC_bird7" />
+		<node id="5118" type="Object" level="contentLevel" res="MC_bird9" />
+		<node id="5119" type="Object" level="contentLevel" res="MC_bird10" />																	
+	</object>
+	<npc>
+		<node id="366" type="NPC" res="MC_npc_366" taskShowSteps="20_5|6|7"  level="contentLevel" fun="" taskType="0" action="" needLevel="" needKind=""/>		
+		<node id="7" type="NPC" res="MC_npc_7" level="contentLevel" fun="" taskType="0" action="0" needLevel="" needKind=""/>
+		<node id="32" type="NPC" res="MC_npc_32" level="contentLevel" fun="" taskType="0" action="5$6" needLevel="" needKind=""/>
+		<node id="501" type="NPC" res="MC_npc_501" level="contentLevel" fun="" taskType="0" action="7" needLevel="" needKind=""/>
+		<node id="510" type="NPC" res="MC_npc_510" level="contentLevel" fun="" taskType="0" action="8" needLevel="" needKind=""/>
+		<node id="326" type="NPC" res="bird_3" level="contentLevel" fun="" taskType="0" action="" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction npcID="7" id="0" type="0" answer="（\乘坐陆行鸟/)$关于陆行鸟$摩尔勇士万岁！" to="d1$a2$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#你想乘坐陆行鸟旅行吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="1" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[2#【陆行鸟们】还在紧张的训练中，为了保障大家的乘坐安全暂时不开放陆行鸟乘坐，请大家期待一下哈哈^^！]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="2" type="0" answer="（\乘坐陆行鸟/)$摩尔勇士万岁！" to="d1$o" >
+			<des>
+				<![CDATA[1#你可以看到在我右边的这只就是负责王国区域的【陆行鸟·古力】，它们是目标明确善于奔跑的鸟类精灵。$$]]>
+				<![CDATA[2#从古老的时代开始，陆行鸟就是摩尔们远行的最佳拍档，$$]]>
+				<![CDATA[1#古力是骑乘经验丰富的老手，我从古力小时候开始训练它了。$$]]>				
+				<![CDATA[7#我们一起去过世界的许多地方，看到过许多美好的事情————$$]]>
+				<![CDATA[1#————所以为了让更多的人看到那些美好的景色，我成为了【职业陆行鸟训练师】，为王国里的大家提供陆行鸟服务。]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="3" type="0" answer="我要登记$让我再想想" to="d2$o" >
+			<des>
+				<![CDATA[2#只有在@area登记过，才能使用陆行鸟，现在是否需要进行登记呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="4" type="0" answer="我要使用$不需要，谢谢" to="d3$o" >
+			<des>
+				<![CDATA[2#已经为你登记了@area的陆行鸟传送点，现在需要使用陆行鸟吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="32" id="5" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[2#随着时间的流逝就会有有趣的事情发生...]]>
+			</des>
+		</proAction>	
+		<proAction npcID="32" id="6" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[1#不要总是很忙的样子嘛，偶尔看看天空也不错。]]>
+			</des>
+		</proAction>	
+		<proAction npcID="501" id="7" type="0" answer="我想买装备$我想买道具$我想卖东西$关于《贝塔商会》$祝你好运" to="b2_501$b6_501$b7_501$a9$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="510" id="8" type="0" answer="我要【恢复HP/MP】$祝你好运" to="b8_510$o" colorID="1$0">
+			<des>
+				<![CDATA[1#协会服务，请问有什么可以帮你的吗？]]>
+			</des>
+		</proAction>
+		<proAction actionID="9" type="1" outMap="1" level="taskLevel" name="task_999_1" moviepos="0,0" to="a7"/>
+		<proAction npcID="326" id="10" type="0" answer="恩，继续找哒哒鸟！" to="o" colorID="1">
+			<des>
+			   	<![CDATA[2#哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）$$]]>
+				<![CDATA[1#哒哒哒……\n（不太喜欢啊……）$$]]>
+				<![CDATA[2#不行不行！爱好不一样。\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="326" id="11" type="0" answer="恩，继续找哒哒鸟！" to="o" colorID="1">
+			<des>
+				<![CDATA[1#快去找第三个【哒哒鸟·C型】，\n完成最终的“哒哒鸟三兄弟”合体吧！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

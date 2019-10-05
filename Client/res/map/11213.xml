@@ -1,0 +1,48 @@
+<!--面店-->
+<!--
+ 制作料理 b13_NPC的ID号 
+-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="352,247" targetMapId="11201" targetTransPortId="3" name="南街"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+ 		<node id="2" type="InterClass" res="MC_breadCooker" class="CookInterClass" toolTip="料理烹饪"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="18" type="NPC" res="MC_npc_18" level="downLevel" fun="" taskType="0" action="3" need="7" needType="level" needAction="0"/>
+		<node id="349" type="NPC" res="MC_npc_349" action=""  taskShowSteps="35000_33|333|6" />								
+	</npc>
+	<actions>
+		<proAction npcID="18" id="0" type="0" answer="我想买东西$我想卖东西$我想做料理$面包的秘密$摩尔勇士万岁！" to="b4_18$b5_npc18$b13_18$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[5#【贝多罗面包店】。食物就是爱就是魔力啊~~]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="18" id="1" type="0" answer="我想买东西$我想做料理$摩尔勇士万岁！" to="b4_18$b13_18$o" >
+			<des>
+				<![CDATA[1#要记住，食物就是爱就是魔力！只要有好吃的就一定有解决问题的办法。$$]]>
+                <![CDATA[5#所以我们一直在努力做出充满爱和力量的面包！让所有人看看面包的厉害！$$]]>
+				<![CDATA[5#你只需要带上经久不衰的【食谱配方】、合适的【食材】、熟练的【烹饪经验】、想要做出料理与别人【分享的心情】，$$]]>
+				<![CDATA[5#还有一点点【成本费】，（=▽=）来我这里，就能帮你做出感动的面包料理！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="18" id="2" type="0" answer="我有兑换码$摩尔勇士万岁！"  to="p$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你有看过《中国少年儿童》或《童趣摩尔庄园》么？购买贝塔商会推荐的这两本杂志才能获得组合便当。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="18" id="3" type="0" answer="我想买东西$我想卖东西$摩尔勇士万岁！" to="b4_18$b5_npc18$o" colorID="1$1$0">
+			<des>
+				<![CDATA[5#【贝多罗面包店】。食物就是爱就是魔力啊~~]]>
+			</des>
+		</proAction>
+				
+	</actions>
+</map>

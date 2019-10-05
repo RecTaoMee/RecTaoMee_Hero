@@ -1,0 +1,15 @@
+<!--月光湖-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="93,197" targetMapId="21308" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="345" type="NPC" res="MC_npc_345" action="" taskShowSteps="250_4|5|6"/>
+		<node id="998" type="NPC" res="MC_npc_998" action="" taskShowSteps="250_4|5|6|7"/>
+		<node id="51" type="NPC" res="MC_npc_51" action="" taskShowSteps="251_3|4"/>
+		<node id="307" type="NPC" res="MC_npc_307" action="" taskShowSteps="251_4|50"/>		
+	</npc>	
+</map>

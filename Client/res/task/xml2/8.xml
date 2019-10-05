@@ -1,0 +1,40 @@
+ <!-- 忍者 -->
+<Task ID="8" Memo="拿起了亚力山大之剑，\nc村长c爷爷有话要说。" TargetMap="11103">
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="拿起了亚力山大之剑，\nc村长c爷爷有话要说。" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+    		</Event>
+    	</Step>	  		
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="拿起了亚力山大之剑，\nc村长c爷爷有话要说。" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="村长爷爷^^" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="想不想学只有村长才会的【厉害技能】？" />
+					<Option Info="想!" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="看看我有什么可以教给你的吧——" />
+					<Option Info="准备好了！" />
+				</Action> 
+				<Action Type="MOVIE" Url="Task11Module" MapLevel="TASK" Pos="0,0" IsModule="Y" SkipTrigger="Y" />																										
+    		</Event>
+		</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="学会了c新技能c，\nc村长c爷爷有话要说。" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+  				<Trigger>
+				 	<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="谢谢村长爷爷^^" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="6" ImageID="9" Info="【@nick】！！！——\n它它它它绑架了精灵【吉普豆叶】！！" />
+					<Msg NpcID="5" ImageID="1" Info="快用我教你的【技能】帮助琪琪吧——！" />
+					<Msg NpcID="6" ImageID="7" Info="【吉普豆叶】就在门外！\n拜托你了！" />
+					<Option Info="这就去救【吉普豆叶】！" />							
+				</Action>																			  				
+    		</Event>
+		</Step>	
+	</Procedure>
+</Task>
+

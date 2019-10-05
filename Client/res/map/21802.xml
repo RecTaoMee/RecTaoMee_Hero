@@ -1,0 +1,13 @@
+<!--永恒森林-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="167,284" targetMapId="21801" targetTransPortId="2"/> 
+		<node id="2" pos="720,365" targetMapId="11801" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+	</object>
+	<npc>
+	</npc>
+</map>

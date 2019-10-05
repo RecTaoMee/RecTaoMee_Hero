@@ -1,0 +1,136 @@
+<Task ID="151" Memo="c25级c的摩尔们，c摩尔王c召见。\n快去c国王呈见厅c吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c25级c的摩尔们，c摩尔王c召见。\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11307" />						
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王召见我？" />									
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="400, 200" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="800" /> 				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="【@nick】你来了，\n请到我身边来——" />								
+					<Option Info="（⊙⊙）嗯" />
+				</Action>
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />																		
+    		</Event>
+		</Step>								
+  		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="c25级c的摩尔们，c摩尔王c召见。\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王召见我？" />									
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【@nick】，25级\n——根据“勇士协会”的传统——\n你已经具备接受【风龙试炼】的资格。" />								
+					<Option Info="接受【风龙的试炼】" SkipTrigger="Y" />
+					<Option Info="还要准备一下……" NextStep="3" SkipTrigger="Y" />
+				</Action>														
+    		</Event>						
+		</Step>
+  		<Step ID="3" ParentList="0" ParentCost="1" >			
+    		<Event Memo="c25级c的摩尔们，c摩尔王c召见。\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="让我准备下" />									
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="好吧，准备好了再来找我。\n提升自己和精灵的等级吧——！\n枯燥的每日修行为了精彩人生准备——！" />								
+					<Option Info="摩尔勇士万岁！" NextStep="2" />
+				</Action>														
+    		</Event>						
+		</Step>
+  		<Step ID="4" ParentList="2" ParentCost="1" >			
+    		<Event Memo="c25级c的摩尔们，c摩尔王c召见。\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王召见我？" />									
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="格历尔平原西面的【风之洞穴】你应该很熟悉了。" />		
+					<Msg NpcID="30" ImageID="1" Info="记住，告诉风之龙——【勇 士 试 炼 之 约】，\n龙之试炼就会开始。" />		
+					<Msg NpcID="222" ImageID="1" Info="【风之龙】就在风之洞穴的深处。\n不过洞穴里有很多危险的黑化精灵，\n需要我为你直接【传送】吗？" />
+					<Option Info="多谢^_^" />
+				</Action>	
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503, 2" />  												
+    		</Event>						
+		</Step> 		
+		
+<!--  风龙-->		
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="向格历尔平原西面的c风之洞穴c出发，\n接受c风龙的试炼c！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>	
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【勇士试炼之约】！" />																						
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="终于又有摩尔来接受试炼了……" />					
+					<Msg NpcID="329" ImageID="1" Info="脚踩【@nick】之名的摩尔————\n你是否值得我记住 汝 之 名—————" />
+					<Option Info="我准备下" />					
+				</Action>	  													
+    		</Event>
+		</Step>
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+			<Condition>
+				<Battle ID="3102" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="试炼成功~\(≧▽≦)/~！\n咦~c风之龙c在呼叫小主人，\n不去看看吗？" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="试炼成功↖(^ω^)↗" />																			
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="你的战斗实力已经达到25级的真正实力。\n按照《龙与摩尔族的约定》，\n我将给予你【风的鉴证】。" />					
+					<Msg NpcID="329" ImageID="1" Info="希望有一天可以看到你成为摩尔勇士……" />
+					<Option Info="我会继续努力的！" />					
+				</Action>	  													
+    		</Event>						
+    		<Event ConditionType="OUT" Memo="向格历尔平原西面的c风之洞穴c出发，\n接受c风龙的试炼c！" TargetMap="21503" TargetObj="329" TargetName="打败t风之龙t"> 
+  				<Trigger>		
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【勇士试炼之约】" />																						
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="脚踩【@nick】之名的摩尔————你准备好了吗？" />					
+					<Option Info="来战吧！" />
+					<Option Info="我准备下" NextStep="6" />					
+				</Action>	
+    			<Action Type="COMMAND" Command="BATTLE" Params="3102" />  													
+    		</Event>			
+		</Step>
+
+<!--  国王-->
+
+
+
+  		<Step ID="13" ParentList="6" ParentCost="1" >
+    		<Event Memo="战胜了风龙\(≧▽≦)/，\n快回c国王呈见厅c告诉c摩尔王c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11307" />						
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="风之龙挑战成功！" />									
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="400, 200" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="800" /> 				
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="我觉得它无法战胜风之龙·威恩德。\n看它去挑战风龙时的“装备”就知道……" />					
+					<Msg NpcID="24" ImageID="2" Info="我觉很有希望哈……我赌【@nick】赢哦^^。" />								
+					<Msg NpcID="30" ImageID="1" Info="很难决定啊……\n好吧——我决定了——\n我也赌它赢……" />
+					<Option Info="嗯哼……我回来了" />
+				</Action>
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />																		
+    		</Event>
+		</Step>
+		
+  		<Step ID="8" ParentList="13" ParentCost="1" >	<!-- 剑士 -->		
+			<Condition>
+				<Person Career="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了风龙\(≧▽≦)/，\n快回c国王呈见厅c告诉c摩尔王c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="风之龙挑战成功！" />									
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="呵呵，【@nick】的小宇宙终于爆发了！" />								
+					<Msg NpcID="30" ImageID="1" Info="我————摩尔王·詹姆斯————\n正式授予你————【剑士】称号。" />
+					<Option Info="摩尔勇士万岁！" />
+				</Action>		
+    			<Action Type="MOVIE" Url="task_28_1.swf" MapLevel="TASK" Pos="0,0" />																			
+    		</Event>						
+		</Step>		
+
+</Procedure>
+</Task>

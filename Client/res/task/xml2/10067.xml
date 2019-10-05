@@ -1,0 +1,134 @@
+<Task ID="10067" Memo="勇士广场的c公告栏c上出现了署名为“神秘人”的贴士。快去看看吧^^！" TargetMap="11202">
+<BoardInfo PageType="1" Title="神秘贴士" Content="\n想当侦查员吗？\n我在【勇敢者旅馆】二楼等你\n \n——神秘人"></BoardInfo>   	
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c公告栏c上出现了署名为“神秘人”的贴士。快去看看吧^^！" TargetMap="11202">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="神秘贴士说：c神秘人c在c勇敢者旅馆·二楼c\n快去勇士广场左侧的勇敢者旅馆二楼看看吧！" TargetMap="11208">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="侦查员？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="嘘————不要问我是谁。\n现在正在进行的是:\n“【勇士协会】秘密任务”。\n你是新的协会成员有资格协助我侦查。" />								
+					<Option Info="接受侦查任务" SkipTrigger="Y" />
+					<Option Info="我很忙，下次吧。" NextStep="2" />					
+				</Action>												
+    		</Event>
+		</Step>		
+   		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="神秘贴士说：c神秘人c在c勇敢者旅馆·二楼c\n快去勇士广场左侧的勇敢者旅馆二楼看看吧！" TargetMap="11208">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="侦查任务？" />
+				</Trigger>				                                                     
+				<Action Type="MOVIE" Url="task_10067_1.swf" MapLevel="TASK" Pos="0,0" />	       
+				<Action Type="TALK">											
+					<Msg NpcID="21" ImageID="1" Info="根据《旅行记事本》里的【事件侦查放大镜】寻找【黑衣人】。\n明白了吗？" />									
+					<Option Info="现在就看【放大镜】"  />					
+					<Option Info="再说一遍" SkipTrigger="Y" NextStep="3" />
+				</Action>
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11213, 30013" />														
+    		</Event>
+		</Step>	 	
+ <!--开始找人↓ -->		
+    	<Step ID="10" ParentList="3" ParentCost="1" >
+    		<Event Memo="" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="侦查任务？" />
+				</Trigger>				                                                     
+				<Action Type="MOVIE" Url="task_10067_1.swf" MapLevel="TASK" Pos="0,0" />	       
+				<Action Type="TALK">											
+					<Msg NpcID="21" ImageID="1" Info="根据《旅行记事本》里的【事件侦查放大镜】寻找【黑衣人】。\n明白了吗？" />									
+					<Option Info="现在就看【放大镜】"  />					
+					<Option Info="再说一遍" SkipTrigger="Y" NextStep="10" />
+				</Action>										
+    		</Event>
+		</Step>		
+ <!--面包店↓ -->  	
+    	<Step ID="5" ParentList="3" ParentCost="1" >
+    		<Event Memo="神秘贴士说：c神秘人c在c勇敢者旅馆·二楼c\n快去勇士广场左侧的勇敢者旅馆二楼看看吧！" TargetMap="11213">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11213" ObjID="30013" />
+				</Trigger>				                                                  
+				<Action Type="TALK">											
+					<Msg NpcID="15" ImageID="3" Info="\n（今天的时间甜甜圈是巧克力味的唔……咦，被发现了啊——闪~）" />									
+					<Option Info="⊙0⊙继续追踪"  />					
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11213, 30013" /> 
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11214, 30014" />															
+    		</Event>
+		</Step>	 	<!--提交节点1↑-->		
+
+ <!--精灵协会↓ -->  	
+    	<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="《旅行记事本》里的c事件侦查放大镜c是寻找黑衣人的唯一线索。继续根据它指示的地点找到c黑衣人c吧！" TargetMap="11214">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11214" ObjID="30014" />
+				</Trigger>				                                                  
+				<Action Type="TALK">											
+					<Msg NpcID="15" ImageID="3" Info="\n(小莓可~~给我只1级的星锤兔~~我拿它送女孩子~~）\n咦，又被发现了啊——let me go~" />									
+					<Option Info="⊙0⊙接着追踪！"  />					
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11214, 30014" /> 	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11302, 30015" />															
+    		</Event>
+		</Step>	 <!--提交节点2↑-->
+		  	
+ <!--勇士协会↓ -->  	
+    	<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="《旅行记事本》里的c事件侦查放大镜c是寻找黑衣人的唯一线索。继续根据它指示的地点找到c黑衣人c吧！" TargetMap="11302">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11302" ObjID="30015" />
+				</Trigger>				                                                  
+				<Action Type="TALK">											
+					<Msg NpcID="15" ImageID="3" Info="\n啊哦~ 早知道躲在女神像后面了~\n（囧 好吧……——go go go~)" />									
+					<Option Info="⊙_⊙继续追踪!!!"  />					
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11302, 30015" /> 											
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11217, 30016" />
+    		</Event>
+		</Step>	 	 <!--提交节点3↑-->	
+
+ <!--大圣堂↓ -->  	
+    	<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="《旅行记事本》里的c事件侦查放大镜c是寻找黑衣人的唯一线索。继续根据它指示的地点找到c黑衣人c吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11217" ObjID="30016" />
+				</Trigger>				                                                  
+				<Action Type="TALK">											
+					<Msg NpcID="15" ImageID="2" Info="来找“小【铃】”被你发现了！\n~不许说出去！" />									
+					<Option Info="（=_=）||继续追踪！" />					
+				</Action>											
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 30016" />
+    		</Event>
+		</Step>		 <!--提交节点4↑-->	
+		
+
+
+		
+ <!--旅馆2楼↓ -->  	
+    	<Step ID="9" ParentList="8, 3" ParentCost="1" SkipList="3" >
+    		<Event Memo="《旅行记事本》里的c事件侦查放大镜c是寻找黑衣人的唯一线索。继续根据它指示的地点找到c黑衣人c吧！" TargetMap="11202">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />					
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="21" TaskOption="追踪黑衣人" />
+				</Trigger>				                                                  
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="啊你回来啦，这次追踪侦查圆满完成^__^！\n看来你已经可以熟练的用【事件放大镜】侦查了。" />								
+					<Msg NpcID="21" ImageID="1" Info="★在以后的任务中好好使用它吧！" />	
+					<Option Info="了解！" />		
+				</Action>
+    		</Event>
+		</Step>	 <!--提交节点5↑-->
+		
+
+
+	</Procedure>
+</Task>
+
+

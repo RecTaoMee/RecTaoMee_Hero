@@ -1,0 +1,41 @@
+<task id="23">
+	<taskDes>
+		<![CDATA[哪里来的黄鼠狼！？！十二勇士是两个女孩子！？摩尔王陛下这是怎么回事？！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="30" action="0" title="那个下水道试胆……" needRes="" needResNum="" unResAction="" mapID="11307"/>
+		<pro type="0" parent="0" npcID="30" title="那个下水道试胆……" action="1"  unResAction="" mapID="11307"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="30" answer="嗯。" to="s1">
+			<des>
+                <![CDATA[1#年轻人，我欣赏你的勇气。可是光有勇气不能守护重要的人的，连自己都保护不了。$$]]>
+                <![CDATA[1#相信奇普力也明白这个道理，所以指引你来我这里。$$]]>
+                <![CDATA[1#获得更强的力量，担负更大的责任，加入【勇士联盟】，成为摩尔勇士，这是你希望的吗？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="30" answer="我想成为摩尔勇士！！$不试试看怎么知道$让我再想想……" to="a2$a3$a4">
+			<des>
+                <![CDATA[2#成为摩尔勇士的道路绝不会比成为摩尔勇士简单！做好觉悟了吗？回答我————]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="30" answer="好的" to="c">
+			<des>
+                <![CDATA[2#哦呵呵————【奇普力】的选择不会错的。我右边的这位【执行大臣】会指导你办理报名手续，去和他聊聊吧。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="30" answer="好的" to="c">
+			<des>
+                <![CDATA[2#很不错的态度，年轻人我越来越喜欢你了。我右边的这位【执行大臣】会指导你办理报名手续，去和他聊聊吧。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="30" answer="非常抱歉" to="o">
+			<des>
+                <![CDATA[2#我不会让你看到我失落的表情，因为我是摩尔王。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="3"  to="s0" />
+	</actions>
+</task>

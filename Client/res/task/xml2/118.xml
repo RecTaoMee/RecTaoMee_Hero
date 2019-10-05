@@ -1,0 +1,161 @@
+<Task ID="118" Memo="来到c麦田村c，怎么能不去c尼康康餐厅c呢？快去品尝只有丰收祭才提供的美食吧！" TargetMap="11404">
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="来到c麦田村c，怎么能不去c尼康康餐厅c呢？快去品尝只有丰收祭才提供的美食吧！" TargetMap="11404" TargetObj="35" TargetName="和t麦婶t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="麦田村的美食" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="6" Info="什么美食呀，忙死了！忙死了！再不下雨麦子都要枯死了，还庆祝什么丰收祭啊！" />
+					<Option Info="啊？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="6" Info="我还要忙着储备水呢！去问问那边的女孩子吧！对，就是那个叫卡密尔的！" />
+					<Option Info="好的" />
+				</Action>	
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    			<Event Memo="卡密尔怎么了呢？帮麦婶问问她。" TargetMap="11404" TargetObj="34" TargetName="和t卡密尔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="34" TaskOption="发生了什么事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="4" Info="……丰收祭……嗯，我知道了。" />
+					<Option Info="你不高兴吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="1" Info="【@nick】，你听过丰收祭的传说吗？" />
+					<Option Info="丰收祭？" />
+				</Action>
+				<Action Type="MOVIE" Url="task_10055_12009.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="1" Info="你能帮忙调查一下吗？我想你可以先去问问尼康康村长。" />
+					<Option Info="好的" />
+				</Action>
+    			</Event>
+		</Step>		
+  		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    			<Event Memo="守护精灵失踪了？这可是件大事情，快和c尼康康c村长商量一下。" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="守护精灵？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="啊啊啊啊啊啊啊！！！为什么我一当上村长就有这么多烦心事啊！！" />
+					<Msg NpcID="37" ImageID="1" Info="时光井的事我也不清楚啊，想知道出了什么事就自己下去一趟吧！！！！" />
+					<Option Info="好的……" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11408,30009" />
+    			</Event>
+		</Step>		
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Item ID="180042" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="这块c黑色碎片c是？拿回去给卡密尔看看吧。" TargetMap="11404" TargetObj="34" TargetName="和t卡密尔t对话">
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11408,30009" />
+    			</Event>
+			<Event ConditionType="OUT" Memo="还是去c东之时光井c看一看吧，时光井就位于c麦田村广场c。" TargetMap="11408" TargetObj="30009" TargetName="调查t时光井t">
+  				<Trigger>
+				     <Item Type="OBJ_CLICK" MapID="11408" ObjID="30009" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task_10055_12010.swf"  MapLevel="DOWN" Pos="2,1" />
+				<Action Type="COMMAND" Command="BATTLE" Params="2003"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="这块c黑色碎片c是？拿回去给卡密尔看看吧。" TargetMap="11404" TargetObj="34" TargetName="和t卡密尔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="34" TaskOption="黑色碎片" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="4" Info="从这块【黑色碎片】上我能感受到黑暗力量的涌动....你把这个碎片带去【女神大圣堂】给【铃大人】看看吧。" />
+					<Option Info="嗯" />
+				</Action>
+    		</Event>
+		</Step>		
+		
+		<Step ID="6" ParentList="5" ParentCost="1" >
+    			<Event Memo="快点回c女神大圣堂c问问c大祭司•铃c吧。" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="黑色碎片" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="这是那个精灵掉落的东西吗？让我看看…………" />
+					<Msg NpcID="102" ImageID="2" Info="这块【黑色碎片】看上去似乎被黑暗的力量侵蚀而变成这样的，让我尝试净化它…………" />
+					<Option Info="嗯" SkipTrigger="Y"/>
+				</Action>
+    			</Event>
+		</Step>
+		
+		<Step ID="7" ParentList="6" ParentCost="1" >
+    			<Event Memo="净化成功了吗？快点去问问c大祭司·铃c。" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="净化【黑色碎片】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="净化成功！这个【黑色碎片】其实是被黑水晶的力量污染的【水蓝宝石】。" />
+					<Msg NpcID="102" ImageID="2" Info="你在井底遇到的黑化精灵应该是麦田村的守护精灵，因为【水蓝宝石】被污染了，所以它也一起被【黑化】了。" />
+					<Msg NpcID="102" ImageID="2" Info="带着这块【水蓝宝石】回到【东之时光井】，我相信依靠宝石的力量一定可以净化被黑化的守护精灵。" />
+					<Option Info="好的！" />
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_2" Params="260011" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11408,30010" />
+    			</Event>
+		</Step>
+		
+		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Event  Memo="带着c水蓝宝石c去c东之时光井c净化守护精灵！" TargetMap="11408" TargetObj="30010" TargetName="净化t时光井t">
+  				<Trigger>
+				     <Item Type="OBJ_CLICK" MapID="11408" ObjID="30010" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="308" ImageID="1" Info="灌水什么的最讨厌了……爱灌水的小摩尔要受到惩罚！\n还想再打一架吗？这次我可不会手下留情了！ " />
+					<Option Info="怎么办呢..." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="勇敢的小摩尔，这个精灵也是被黑水晶的力量污染而黑化的。 " />
+					<Msg NpcID="2" ImageID="1" Info="快使用你手里的那块【水蓝宝石】，把这个可怜的孩子从噩梦中解救出来。" />
+					<Option Info="看我的！" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11408,30010" />
+				<Action Type="MOVIE" Url="task_10055_12011.swf"  MapLevel="DOWN" Pos="2,1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11408,30011" />
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260011" SkipTrigger="Y" NextStep="9" />
+    		</Event>
+		</Step>
+		
+		<Step ID="9" ParentList="8" ParentCost="1" >
+			<Event  Memo="净化成功！原来守护精灵是这么可爱的样子^^，快和它打个招呼。" TargetMap="11408" TargetObj="30011" TargetName="净化t时光井t">
+  				<Trigger>
+				     <Item Type="OBJ_CLICK" MapID="11408" ObjID="30011" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="307" ImageID="1" Info="头好疼………………好长一个噩梦…………\n是你救了我吗？ " />
+					<Msg NpcID="307" ImageID="1" Info="谢谢你，勇敢的小摩尔…………好累啊……我需要好好休息一下。 " />
+					<Msg NpcID="307" ImageID="1" Info="下次见面的时候……我一定会好好报答你的…………Zzzz………… " />
+					<Option Info="嗯！" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11408,30011" />
+				<Action Type="MOVIE" Url="task_10055_12012.swf" MapLevel="DOWN" Pos="2,1" /> 
+    		</Event>
+		</Step>
+		
+		<Step ID="10" ParentList="9" ParentCost="1" >
+			<Event  Memo="净化成功！快把这个好消息告诉c卡密尔c。" TargetMap="11404" TargetObj="34" TargetName="和t卡密尔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11404" ObjID="34" TaskOption="净化成功！"/>
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="2" Info="真的吗！谢谢你啊~这下次可以准备丰收祭了！ " />
+					<Option Info="不客气" />
+				</Action>
+    		</Event>
+		</Step>
+				
+	</Procedure>
+</Task>

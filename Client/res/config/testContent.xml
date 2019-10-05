@@ -1,0 +1,103 @@
+<!--
+id 题目的id
+name 题目的名字
+randID 答题获得奖励
+isSingleSelect 是否是单选题 1，单选；2，多选
+awswerID 答案
+selectID 选项0,1,2,3；
+answerDes 答案描述
+isRight 是否正确 0，不正确；1，正确
+-->
+
+<tests >	
+	<test 
+		  id="0"
+		  name="万圣节是每年的几月几日？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="0"
+		  >	
+		  <asswer selectID="0" answerDes="11月1日" isRight="1"/>
+		  <asswer selectID="1" answerDes="10月31日" isRight="0"/>
+	</test>	
+	<test 
+		  id="1"
+		  name="万圣节又被称作？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="1"
+		  >	
+		  <asswer selectID="0" answerDes="搞怪节" isRight="0"/>
+		  <asswer selectID="1" answerDes="鬼节" isRight="1"/>
+	</test>
+	<test 
+		  id="2"
+		  name="万圣节最广为人知的象征是？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="0"
+		  >	
+		  <asswer selectID="0" answerDes="南瓜" isRight="1"/>
+		  <asswer selectID="1" answerDes="西瓜" isRight="0"/>
+	</test>
+	<test 
+		  id="3"
+		  name="万圣节和万圣夜是同一天吗？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="1"
+		  >	
+		  <asswer selectID="0" answerDes="是" isRight="0"/>
+		  <asswer selectID="1" answerDes="不是" isRight="1"/>
+	</test>
+	<test 
+		  id="4"
+		  name="万圣夜晚上小孩子和青少年都会化妆成鬼怪沿街要糖果，较受欢迎的鬼怪造型的糖是什么颜色？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="0"
+		  >	
+		  <asswer selectID="0" answerDes="橘色。" isRight="1"/>
+		  <asswer selectID="1" answerDes="白色。" isRight="0"/>
+	</test>
+	<test 
+		  id="5"
+		  name="西方万圣节最常食用的食物是？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="1"
+		  >	
+		  <asswer selectID="0" answerDes="烤鸭" isRight="0"/>
+		  <asswer selectID="1" answerDes="火鸡" isRight="1"/>
+	</test>
+	<test 
+		  id="6"
+		  name="在万圣节大家乔装打扮是为了躲开哪只动物？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="0"
+		  >	
+		  <asswer selectID="0" answerDes="黑猫" isRight="1"/>
+		  <asswer selectID="1" answerDes="白熊" isRight="0"/>
+	</test>
+	<test 
+		  id="7"
+		  name="万圣节是西方一个欢乐的节庆，许多人都会提着【南瓜灯笼】，请问这个【灯笼】又被称作？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="1"
+		  >	
+		  <asswer selectID="0" answerDes="麦克灯笼" isRight="0"/>
+		  <asswer selectID="1" answerDes="杰克灯笼" isRight="1"/>
+	</test>
+	<test 
+		  id="8"
+		  name="在万圣节前夕，人们最喜欢玩的游戏之一是？" 
+		  randID="719"
+		  isSingleSelect="1"
+		  awswerID="0"
+		  >	
+		  <asswer selectID="0" answerDes="咬苹果游戏" isRight="1"/>
+		  <asswer selectID="1" answerDes="吃生梨游戏" isRight="0"/>
+	</test>
+</tests>

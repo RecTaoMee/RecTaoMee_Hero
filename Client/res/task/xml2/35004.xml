@@ -1,0 +1,338 @@
+<Task ID="35004" Memo="咕噜蝶在皇宫花园出现了？快去看看吧！\n周六~周日：6:00~24:00" TargetMap="11301">
+   	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" ><!-- 进地图接任务 -->
+    		<Event Memo="快去c皇宫花园c看看吧！\n周六~周日：6:00~24:00" TargetMap="11301" TargetObj="" TargetName="去t皇宫花园t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11301"/>
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING"  /> 
+    		</Event>
+		</Step>   	<!--
+		<Step ID="21" ParentList="1" ParentCost="1" > 和士兵对话 
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="200" TargetName="和t守卫士兵At对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="200" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="刚刚看到一个影子飘到某个【小鸟植物雕塑】里，忘记是哪个了，你自己去找找吧。" />	
+					<Option Info="恩，好" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step> 
+		<Step ID="22" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="201" TargetName="和t守卫士兵Bt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="201" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="201" ImageID="1" Info="……这个我不记得了，你去看看会不会在【小鸟植物雕塑】里面呢？" />	
+					<Option Info="恩，我去草丛找找。" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step> -->
+		<Step ID="23" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="202" TargetName="和t守卫士兵Ct对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="202" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="202" ImageID="1" Info="我刚刚把一个看着有点晕晕忽忽的蝴蝶跑到【小鸟植物雕塑】里了。说不定现在还在里面。" />	
+					<Option Info="恩，我去草丛找找。" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step> 
+		<Step ID="24" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="203" TargetName="和t守卫士兵Dt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="203" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="203" ImageID="1" Info="他们躲在附件某一个【小鸟植物雕塑】里。" />	
+					<Option Info="恩，我去草丛找找" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step> 	<!--
+		<Step ID="25" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="205" TargetName="和t守卫士兵Ft对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="205" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="205" ImageID="1" Info="他们躲在附件某一个【小鸟植物雕塑】里。" />	
+					<Option Info="恩，我去草丛找找" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step> 
+		<Step ID="26" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="206" TargetName="和t守卫士兵Gt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="206" TaskOption="有见过咕噜蝶吗?" />
+				</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="206" ImageID="1" Info="他们躲在附件某一个【小鸟植物雕塑】里。" />	
+					<Option Info="我去找【小鸟植物雕塑】!" SkipTrigger="Y"  />
+				</Action>
+    		</Event>
+		</Step>  -->
+		<Step ID="3" ParentList="21,22,23,24,25,26" ParentCost="1" > <!-- 随机状态3-->
+    		<Event Memo="快去c皇宫花园c，和c守卫士兵c聊聊吧！" TargetMap="11301" TargetObj="206" TargetName="和t守卫士兵Gt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="206" TaskOption="我去找【小鸟植物雕塑】!" />
+				</Trigger>
+				<Action Type="COMMAND" Command="SET_STA_RANGE" Params="1, 31, 36" /> 		
+    		</Event>
+		</Step> 
+
+		   
+		   
+		   
+		<Step ID="31" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="31" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="91" TargetName="点击t小鸟植物雕塑At">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="91" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+			</Event>
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="91" TargetName="点击t小鸟植物雕塑At">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="91" />	
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>				
+		</Step> 
+		<Step ID="32" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="32" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="92" TargetName="点击t小鸟植物雕塑Bt">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="92" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="92" TargetName="点击t小鸟植物雕塑Bt">	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="92" />	
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>				
+		</Step> 
+		<Step ID="33" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="33" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="93" TargetName="点击t小鸟植物雕塑Ct">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="93" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="93" TargetName="点击t小鸟植物雕塑Ct">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="93" />	
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>						
+		</Step> 
+		<Step ID="34" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="34" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="94" TargetName="点击t小鸟植物雕塑Dt">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="94" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+			</Event>
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="94" TargetName="点击t小鸟植物雕塑Dt">		
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="94" />	
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>				
+		</Step> 
+		<Step ID="35" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="35" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="95" TargetName="点击t小鸟植物雕塑Et">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="95" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+			</Event>
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="95" TargetName="点击t小鸟植物雕塑Et">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="95" />	
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>				
+		</Step> 
+		<Step ID="36" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="36" /> 
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="96" TargetName="点击t小鸟植物雕塑Ft">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="96" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="等下，别动！！！" />	
+					<Option Info="出什么事情了？" />
+				</Action>		   
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="还好赶上了，现在的咕噜蝶已经被黑化了。\n必须得用花把它们引出来，看我的。" />	
+					<Option Info="神马？" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="795, 494" /> 
+    			<Action Type="MOVIE" Url="task35004_30030.swf" MapLevel="CONTENT" Pos="-397,-758" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 30028" /> 
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11301, 30029" /> 		
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 	   
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c皇宫花园c，找到咕噜蝶躲藏的c小鸟植物雕塑c吧！" TargetMap="11301" TargetObj="96" TargetName="点击t小鸟植物雕塑Ft">		
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="96" />	
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="它们貌似不在这个【小鸟植物雕塑】里，去搜索下别的【小鸟植物雕塑】吧。" />	
+					<Option Info="明白了"  />
+				</Action>
+			</Event>				
+		</Step> 		
+
+
+
+		<Step ID="41" ParentList="31,32,33,34,35,36" ParentCost="1" > <!-- 皮克斯对话 -->
+			<Event Memo="快去c皇宫花园c，和c皮克司c聊聊吧！" TargetMap="11301" TargetObj="30028" TargetName="和t皮克司t对话">
+		  		<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="30028" />	
+				</Trigger>
+				 <Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="哎，曾经的咕噜蝶有着一双多么美丽的眼睛啊，可惜现在黑化后眼神变的浑浊不堪。" />	
+					<Msg NpcID="12" ImageID="4" Info="可惜了这美丽的生物，我多么想看看它们飞舞的样子啊。" />	
+					<Msg NpcID="12" ImageID="1" Info="【咕噜蝶】为了寻找各种花粉，喜欢迁徙飞行。" />	
+					<Msg NpcID="12" ImageID="1" Info="我见过“咕噜蝶雪”的自然奇景，那时漫天飞雪般的蝴蝶铺天盖地，紫色、黄色、蓝色布满天空，非常的漂亮。" />	
+					<Option Info="这个和黑化有什么关系呢？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="真是灾难，它们迁徙的路上正好经过一片被黑化水晶力量影响的地区，被黑化后，它们就忘记了自己是谁，自己要去哪里，自己从哪里来。" />	
+					<Option Info="那它们为什么回来皇宫花园？" />			
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="很难说，这里是咕噜蝶小时候常常呆着玩耍的地方，也许它们对这里还有印象。去净化它们的灵魂吧，未来勇士！" />	
+					<Option Info="使命必达！" />			
+				</Action>
+			</Event>
+		</Step>
+		<Step ID="5" ParentList="31,32,33,34,35,36" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c咕噜蝶c聊聊吧！" TargetMap="11301" TargetObj="30029" TargetName="和t咕噜蝶t对话">
+  			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="30029" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="336" ImageID="1" Info="我是谁……我是谁……我是摩尔吗？" />	
+					<Msg NpcID="336" ImageID="1" Info="你是谁……你是谁……你是大魔王……" />	
+					<Option Info="接受净化吧——！" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="15" RightUp="Y" SkipTrigger="Y" />	
+    		</Event>				
+		</Step>				
+		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="快去c皇宫花园c，和c咕噜蝶c聊聊吧！" TargetMap="11301" TargetObj="30029" TargetName="和t咕噜蝶t对话">
+  			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11301" ObjID="30029" />	
+				</Trigger>							
+				 <Action Type="TALK">
+					<Msg NpcID="336" ImageID="2" Info="好痛啊，晕，我在哪里啊，皇宫花园？\n我不是在飞往永恒森林的路上啊。" />
+					<Msg NpcID="336" ImageID="3" Info="对不起，我刚刚被黑暗的力量控制了，\n谢谢你救了我。" />	
+					<Option Info="没事就好^^"  />					
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11301, 30029" />  
+			    <Action Type="TALK">
+				<Msg NpcID="12" ImageID="2" Info="黑化的咕噜蝶不会再给花园带来污染了。\n我也可以欣赏下它们美丽的舞姿了，哈哈~" />	
+					<Option Info="太好了！"  />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11301, 30028" />  
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

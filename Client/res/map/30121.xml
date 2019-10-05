@@ -1,0 +1,43 @@
+<!--随机迷宫A层30121-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="528,609" targetMapId="21310" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="2" pos="1371,457" targetMapId="21312" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="3" pos="901,367" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="4" pos="213,263" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>		
+	</transport>
+	<object>
+		<node id="1" type="MazeTrans" level="downLevel" res="MC_door_0"/>
+		<node id="2" type="MazeTrans" level="downLevel" res="MC_door_1"/>
+		<node id="3" type="MazeTrans" level="downLevel" res="MC_door_2"/>
+		<node id="4" type="MazeTrans" level="downLevel" res="MC_door_3"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="502" type="NPC" res="MC_npc_502" level="contentLevel" fun="" taskType="0" action="0$1" needLevel="" needKind="">
+			<point x="-585" y="-166" />
+			<point x="127" y="-104" />
+		</node>
+    </npc>		
+	<actions>
+		<proAction npcID="502" id="0" type="0" answer="我想买东西$我想卖东西$《贝塔黑市商会》？$祝你好运" to="b6_502$b7_502$a2$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔黑市商会】地下交易点欢迎您。★这里有平时市场不便出售的高级物品，请问你需要什么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="502" id="1" type="0" answer="我想买东西$我想卖东西$《贝塔黑市商会》？$祝你好运" to="b6_502$b7_502$a2$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔黑市商会】地下交易点欢迎您。★这里有平时市场不便出售的高级物品，您的好运气来了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="502" id="2" type="0" answer="我想买东西$我想卖东西$《贝塔黑市商会》？$祝你好运" to="b6_502$b7_502$a2$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔黑市商会】会出现在各种隐蔽的地下交易场所——比如“时间缝隙”就是隐蔽的好地方。$$]]>
+				<![CDATA[1#我们出售各种平时市场上不方便出售的“高级物品”。$$]]>
+				<![CDATA[1#找到隐蔽的交易点就是你的好运气，听到了吗？你的【星豆】们兴奋的“bing·bing”响，赶快买点什么吧——]]>
+			</des>
+		</proAction>				
+	</actions>	
+		
+</map>

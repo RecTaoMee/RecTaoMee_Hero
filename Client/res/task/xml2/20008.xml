@@ -1,0 +1,148 @@
+<Task ID="20008" Memo="你的心里装着秘密的小愿望吗？\n前往王国的c女神大圣堂c祈祷吧，让女神的智慧指引你^_^。" TargetMap="11217">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+			<Event Memo="得到c女神大圣堂c大祭司c铃c的允许就可以向女神祈祷了。" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="我想祈祷" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="祈祷是让心情平静的好方式，\n记得常来祈祷^_^。\n那么请站在彩色窗前我们一起用共鸣召唤女神的意志————" />
+					<Option Info="好的" />
+				</Action>		
+    		</Event>
+    	</Step>
+  		<Step ID="12" ParentList="1" ParentCost="1" >
+			<Event Memo="得到c女神大圣堂c大祭司c铃c的允许就可以向女神祈祷了。" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话" >			
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11217, 40001" />				
+    		</Event>
+    	</Step>
+  		<Step ID="2" ParentList="12" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11217" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="在我听过的无数个愿望里，\n人们最想要的是时间。\n那么，你——亲爱的摩尔，\n什么是你真正的愿望？" />
+					<Option Info="成为最强的摩尔勇士" NextStep="4" SkipTrigger="Y"  NotUpdateBuffer="Y" />
+					<Option Info="每次战斗都能胜利" NextStep="5" SkipTrigger="Y"  NotUpdateBuffer="Y" />					
+					<Option Info="知道世界上所有的事" NextStep="6" SkipTrigger="Y"  NotUpdateBuffer="Y" />
+					<Option Info="可以让小精灵更喜欢我吗" NextStep="7" SkipTrigger="Y"  NotUpdateBuffer="Y" />
+					<Option Info="请让大家都幸福" NextStep="8" SkipTrigger="Y"  NotUpdateBuffer="Y" />
+					<Option Info="得到很多星豆" NextStep="9" SkipTrigger="Y"  NotUpdateBuffer="Y" />					
+					<Option Info="我想毁灭世界" NextStep="10" SkipTrigger="Y"  NotUpdateBuffer="Y" />	
+					<Option Info="我只想告诉你，我喜欢你" SkipTrigger="Y"  NotUpdateBuffer="Y" />									
+				</Action>
+    		</Event>
+    	</Step>
+<!--
+  		<Step ID="3" ParentList="12" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="怎样祈祷" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="祈祷是让心情平静的好方式，\n记得常来祈祷啊^_^。\n那么请站在彩色窗前我们一起用共鸣召唤女神的意志————" />
+					<Option Info="好的" NotUpdateBuffer="Y" />							
+				</Action>
+    		</Event>
+    	</Step> -->
+  		<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="有志气是一个不错的开始。" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />
+    		</Event>
+    	</Step>
+  		<Step ID="5" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="成为真正令人尊敬的对手——\n要比获得胜利的荣誉更值得骄傲，不是吗^^？" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />
+    		</Event>
+    	</Step>
+  		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="虽然无穷无尽的知识让人着迷——\n但亲身经历的那些不可替代的感受才真的更可贵。\n请用心去享受属于你的独一无二的冒险————" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />	
+    		</Event>
+    	</Step>		
+  		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="请原谅，即使是神也必须尊重精灵自己的心意——不过你可以相信，\n真心喜欢精灵的人一定也会被精灵们喜欢的^^————" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />
+    		</Event>
+    	</Step>	
+  		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="这也是我的愿望呢。\n不过人们对幸福的期望各不相同，\n即使是我也没有办法猜想到……" />
+					<Msg NpcID="2" ImageID="2" Info="但我可以告诉你，\n真正的幸福可以通过自己的双手去创造，\n请把这个转告给大家————" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />	
+    		</Event>
+    	</Step>				
+  		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="只要向女神祈祷也可以获得☆星豆☆，跟我一起说——" />
+					<Msg NpcID="2" ImageID="2" Info="一闪一闪 亮 晶 晶——" />
+					<Option Info="满眼 都是 小 星 星" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />	
+    		</Event>
+    	</Step>			
+  		<Step ID="10" ParentList="0" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="10" Info="……【伊恩大魔王】……不要……" />
+					<Option Info="……" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />	
+    		</Event>
+    	</Step>			
+  		<Step ID="11" ParentList="2" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="谢谢你的鼓励^_^，\n人和神都需要来自别人的鼓励，\n无论听多少次都觉得很开心^^……" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />					
+    		</Event>
+    	</Step>		
+	</Procedure>
+</Task>

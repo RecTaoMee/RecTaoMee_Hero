@@ -1,0 +1,35 @@
+<Task ID="20027" Memo="c守卫士兵Wc在找未来摩尔c清洁蜘蛛网c？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔c清洁蜘蛛网c？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="蜘蛛网？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="【@nick】打算去【风之洞穴】吗？\n最近【迷唇爱丝】来过，\n留下那些“难缠的蜘蛛网”真令人头疼啊……" />					
+					<Option Info="这就去清洁【蜘蛛网】！" />		
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>			   							
+  		<Step ID="3" ParentList="1" ParentCost="1" >			
+    		<Event Memo="快去c风之洞穴2层c清洁c蜘蛛网c吧！" TargetMap="21502" TargetObj="5132" TargetName="点击t蜘蛛网t" TargetPos="903,211">
+  				<Trigger>				
+					<Item Type="OBJ_CLICK" MapID="21502" ObjID="5132" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" /> 	
+    		</Event>		
+    	</Step> 			    
+  		<Step ID="4" ParentList="3" ParentCost="1" >						  
+    		<Event Memo="蜘蛛网清洁完毕↖(^ω^)↗\n快去c平原12区c报告c守卫士兵Wc吧!" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >				
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="清洁蜘蛛网了！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="呵呵，【@nick】办事，我表示非常放心！" />				
+					<Option Info="O(∩_∩)O" />
+				</Action>				
+    		</Event>			
+    	</Step>  			
+	</Procedure>
+</Task>

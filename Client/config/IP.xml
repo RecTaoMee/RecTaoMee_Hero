@@ -1,0 +1,24 @@
+﻿<config>
+	<!--服务器配置-->
+	<httpConfig>
+		<http url="http://122.114.228.60/ip.txt"/>
+	</httpConfig>
+
+	<ipConfig>
+		<Email ip="122.114.228.60" port="1800"/>
+		<DirSer ip="122.114.228.60" port="1800"/>
+		<SubServer ip="122.114.228.60" port="1800"/>
+		
+		<RegistSer ip="10.1.1.5" port="3200"/>
+		<http url="http://122.114.228.60/ip.txt"/>
+	</ipConfig>
+
+	<ipConfig2>
+		<Email ip="122.114.228.60" port="1800"/>
+		<DirSer ip="122.114.228.60" port="1800"/>
+		<SubServer ip="122.114.228.60" port="1800"/>
+		
+		<RegistSer ip="10.1.1.5" port="3200"/>
+		<http url="http://122.114.228.60/ip.txt"/>
+	</ipConfig2>
+</config>

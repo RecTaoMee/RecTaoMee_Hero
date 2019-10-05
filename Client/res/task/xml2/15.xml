@@ -1,0 +1,75 @@
+<Task ID="15" Memo="c摩尔王c在→摩尔城堡→勇士大厅→国王呈见厅c，\n快去看看吧！" TargetMap="11307">
+   	<Procedure> 	   
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="c摩尔王c在→摩尔城堡→勇士大厅→国王呈见厅c，\n快去看看吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王你好^^！" />					
+				</Trigger>
+				<Action Type="TALK">		
+					<Msg NpcID="30" ImageID="1" Info="欢迎你，来自未来的摩尔。\n你看到那座“女神石像”了吗？" />											
+					<Option Info="（⊙⊙）？" />					
+				</Action>		
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11302, 1" SkipTrigger="Y" />
+    		</Event>
+		</Step>	
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="c女神石像c在→摩尔城堡→勇士大厅，\n快去看看吧！" TargetMap="11302" TargetName="去t勇士大厅t"> 	
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11302" />	
+				</Trigger>										
+     			<Action Type="MOVIE" Url="task_26_1.swf" MapLevel="CONTENT" Pos="0,0" />							
+				<Action Type="TALK">				
+					<Msg NpcID="30" ImageID="1" Info="这就是传说中的【女神圣衣】。\n自从“神魔之战”女神负伤后，“圣衣”也破碎成十二枚【符文】，\n由【十二勇士】共同守护。" />																																																																																												
+					<Option Info="【十二勇士】？" />
+				</Action>
+     			<Action Type="MOVIE" Url="task_26_3.swf" MapLevel="TASK" Pos="0,0" />		
+				<Action Type="TALK">					
+					<Msg NpcID="30" ImageID="1" Info="现在只有【圣衣】能抗衡“黑水晶力量”。\n但是，守护“符文”的【后代勇士们】已经分散到世界各地……" />	
+					<Msg NpcID="30" ImageID="1" Info="你愿意接受寻找【十二勇士】，\n拯救勇士国度的使命吗？" />
+					<Option Info="当然！" />											
+				</Action>	
+				<Action Type="TALK">					
+					<Msg NpcID="30" ImageID="2" Info="请记住你的承诺。\n十二勇士之一的【铃】大人，\n就住在【女神大圣堂】……" />						
+					<Option Info="这就去找【铃】！" />
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11217,1" />						
+    		</Event>
+		</Step>						
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="十二勇士之一的c铃c大人就在c女神大圣堂c，\n快去看看吧！" TargetMap="11217" TargetName="去t女神大圣堂t" TargetObj="102"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="请给我你的【符文】" />					
+				</Trigger>	
+				<Action Type="TALK">					
+					<Msg NpcID="102" ImageID="1" Info="我的【勇士符文】代表着“善良”——" />																																					
+					<Msg NpcID="102" ImageID="3" Info="现在把它交给【@nick】，愿“善良”永远与你同在。" />
+					<Msg NpcID="102" ImageID="1" Info="把它刻印在【圣衣】上，女神的力量就能恢复了^_^!" />									
+					<Option Info="交给我了！" />
+				</Action>	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260022" /> 	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11302,1" />																									
+    		</Event>
+		</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="获得了铃的c符文c↖(^o^)↗，\n快把它镶嵌到c勇士大厅c的c女神圣衣c上吧！" TargetMap="11302" TargetName="点击t女神石像t" TargetPos="783,917"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11302" ObjID="5200" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="2" ImageID="2" Info="谢谢你，让我感受到了新的活力。" />							
+					<Msg NpcID="2" ImageID="1" Info="【命运轮盘】是刻印着【勇士符文】的圣器。\n请戴上它继续寻找十二勇士……" />												
+					<Option Info="摩尔勇士万岁！" />
+				</Action>		
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260024" /> 																													
+    		</Event>
+		</Step>			   
+</Procedure>
+</Task>
+
+
+
+
+			
+
+
+

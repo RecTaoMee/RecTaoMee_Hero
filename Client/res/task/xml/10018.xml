@@ -1,0 +1,26 @@
+<task id="10018">
+  <taskDes>
+	<![CDATA[你的等级达到15级莓可才教你【精灵培育】，加油练级吧^^]]>
+  </taskDes>
+  <taskPro>
+    <pro type="0" parent="" npcID="20" title="我达到15级了！" action="0" needLevel="15" unLevel="2" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11214"/>
+    <pro type="0" parent="0" npcID="20" title="我达到15级了！" action="1" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11214"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="20" answer="嗯！" objLevel="" objName="" objType="" objValue="" to="s1">
+      <des>
+		<![CDATA[1#【@nick】，你的等级达到15级了吗?]]>
+		</des>
+    </proAction>
+     <proAction id="1" type="0" npcID="20" answer="谢谢你" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[1#你真的很努力^^，这个技能就传授给你吧！请记住精灵的能力因为摩尔的爱而强大！]]>
+		</des>
+    </proAction>
+    <proAction id="0" type="0" npcID="20" answer="嗯！" objLevel="" objName="" objType="" objValue="" to="o">
+      <des>
+		<![CDATA[1#【@nick】，你还没有达到15级，没有一定的实力是无法掌握【精灵培育】这个技能！]]>
+		</des>
+    </proAction>
+</actions>
+</task>

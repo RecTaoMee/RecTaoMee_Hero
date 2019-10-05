@@ -1,0 +1,37 @@
+<!--废弃的勇士广场-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="414,522" targetMapId="11202" targetTransPortId="11" name="传入点"/>
+		<node id="2" pos="337,997" targetMapId="51201" targetTransPortId="1" name="废弃的王国南街"/>
+		<node id="3" pos="60,442" targetMapId="51203" targetTransPortId="1" name="废弃的王国西街"/>
+		<node id="4" pos="1861,432" targetMapId="51205" targetTransPortId="1" name="废弃的王国东街"/>
+		<node id="5" pos="926,54" targetMapId="51301" targetTransPortId="1" name="废弃的皇宫花园"/>
+	</transport>
+	<object>
+		<node id="3" type="TransPort" res="MC_door_0" transPortId="2"/>
+		<node id="4" type="TransPort" res="MC_door_1" transPortId="5"/>
+		<node id="5" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="6" type="TransPort" res="MC_door_3" transPortId="4"/>
+		<node id="11" type="AppModule" res="MC_roadSign" module="boards/LostKingdomBoardModule"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="NPC" res="MC_npc_25" action="1"/>
+		<node id="2" type="NPC" res="MC_npc_319" action="2"/>
+    </npc>
+    <actions>
+		<proAction npcID="25" id="1" type="0" answer="我知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#这里充满了危险的黑化精灵，王宫卫队已经对这个平行世界展开调查了，请一定要注意安全！]]>
+			</des>
+		</proAction>			
+	</actions>
+    <actions>
+		<proAction npcID="1001" id="2" type="0" answer="我要回到勇士广场$我知道了" to="changeMap_11202$o" colorID="1">
+			<des>
+				<![CDATA[1#我会帮助你们自由穿梭在现实世界与平行世界之中。为了保证你们的安全，请35级以上的未来勇士到勇士广场找我！]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

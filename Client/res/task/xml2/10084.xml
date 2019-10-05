@@ -1,0 +1,50 @@
+<Task ID="10084" Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="喵斯熊？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="你有没有发现最近平原上的“时间缝隙”变多了？\n黑水晶力量正在变强！" />					
+					<Option Info="(⊙o⊙)哦？"  SkipTrigger="Y" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="喵斯熊？" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="【@nick】是勇士协会的成员，\n去【风之洞穴】净化15只【喵斯熊】不难吧？" />	
+					<Option Info="这就去【风之洞穴】！" />
+				</Action>								
+    		</Event>
+    	</Step>			
+  		<Step ID="3" ParentList="2" ParentCost="1" >	
+			<Condition>
+				<Battle ID="24" Count="15" />
+			</Condition>				  	
+    		<Event ConditionType="IN" Memo="快去c平原12区c报告c守卫士兵Wc吧!" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">			
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="净化喵斯熊了↖(^ω^)↗！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="嘿嘿，净化后的喵斯熊脾气温和多了，\n真想马上靠在它软绵绵的肚子上睡一觉！" />
+					<Option Info="O(∩_∩)O" />
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c风之洞穴c净化c15只喵斯熊c吧!" TargetMap="21501" TargetName="净化t喵斯熊t">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="喵斯熊在哪里？" />											
+				</Trigger>		
+				<Action Type="TALK">									
+					<Msg NpcID="222" ImageID="1" Info="就在【风之洞穴】，去净化15只【喵斯熊】吧！" />
+					<Option Info="这就去【风之洞穴】！" />						
+				</Action>													
+    		</Event>			  			
+    	</Step>  			
+	</Procedure>
+</Task>

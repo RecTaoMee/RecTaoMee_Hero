@@ -1,0 +1,28 @@
+<!--修隐岛海岸-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="442,335" targetMapId="11701" targetTransPortId="1"/>
+		<node id="2" pos="442,335" targetMapId="11604" targetTransPortId="3"/>
+		<node id="3" pos="309,210" targetMapId="" targetTransPortId=""/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId=""/>
+		<!--node id="2" type="TransPort" res="MC_door_1" transPortId="2"/-->	
+	</object>
+	<npc>
+		<node id="58" type="NPC" res="MC_npc_58" action="0$1"/>
+	</npc>
+	<actions>
+		<proAction npcID="58" id="0" type="0" answer="一路顺风！" to="o" >
+			<des>
+				<![CDATA[1#已经抵达目的地了，你感觉还舒适吗？对我们的服务还满意吗？\n下船请走那边的绳梯，谢谢乘坐。]]>
+			</des>
+		</proAction>	
+		<proAction npcID="58" id="1" type="0" answer="一路顺风！" to="o" >
+			<des>
+				<![CDATA[1#已经抵达目的地了，你感觉还舒适吗？对我们的服务还满意吗？\n下船请走那边的绳梯，谢谢乘坐。]]>
+			</des>
+		</proAction>
+		<proAction npcID="58" id="2" type="6" event="ship_change_map"/>				
+	</actions>
+</map>

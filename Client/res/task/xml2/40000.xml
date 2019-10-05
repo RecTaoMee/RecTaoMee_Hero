@@ -1,0 +1,21 @@
+<Task ID="40000" Memo="c怪盗集团c开始打劫了，\n快去c平原2区c阻止它们吧！\n任务开启时间：15点~17点" TargetMap="21302">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c怪盗集团c开始打劫了，\n快去c平原2区c阻止它们吧！\n任务开启时间：15点~17点" TargetMap="21302" TargetPos="" TargetName="去t平原2区t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21302" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="314" ImageID="1" Info="YOU（你） YOU（你） YOU（你） ！\n想过去的都把星豆留下！" />					
+					<Msg NpcID="315" ImageID="1" Info="不服气就来比试比试呀，\n怪盗集团专制不服~╭(╯▽╰)╯" />
+					<Option Info="代表星豆消灭你们！" SkipTrigger="Y"/>
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c怪盗集团c开始打劫了，快去c平原2区c看看吧！" TargetMap="21302" TargetPos="" TargetName="去t平原2区t">
+    			<Action Type="COMMAND" Command="STOP_STEP" />
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

@@ -1,0 +1,84 @@
+<Task ID="10003" Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克司的精灵研究" Content="皮克司精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+    				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【吉普豆泥】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="今天，哪位幸运儿将得到我签名呢？" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="【@nick】你来的正好！今天的研究课题是【吉普豆泥】！" />
+					<Option Info="吉普豆泥？" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="【吉普豆泥】是生活在下水道区域的一种精灵，它身上总是不断的流出土豆泥....." />
+					<Msg NpcID="12" ImageID="1" Info="【@nick】去一次下水道吧，看能不能通过击败【吉普豆泥】，得到一些它身上的土豆泥" />
+					<Option Info="好的" />
+				</Action>
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="260013" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="好臭的啊....这东西真的能用吗？还是送给c皮克司c教授吧。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="吉普豆泥" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="好臭啊....." />
+					<Option Info="【泥浆】来了！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="和书里说完全不一样啊.....太臭了T T" />
+					<Msg NpcID="12" ImageID="7" Info="你的报酬已经送到公告栏了...啊！！受不了了！我要去洗澡了！" />
+					<Option Info="......" />
+				</Action>	
+    		</Event>
+			<Event ConditionType="OUT" Memo="击败c下水道c的c吉普豆泥c就可以得到皮克司教授要的东西了。" TargetMap="21202" TargetObj="" TargetName="打t吉普豆泥t得到泥浆">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="吉普豆泥" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="6" Info="啊啊啊......研究所的屋顶又漏雨了，急需一些【吉普豆泥】来修补啊........." />
+					<Option Info="......." />
+				</Action>
+			</Event>
+		</Step>	
+		
+			<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这件事你干的很漂亮嘛！" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+

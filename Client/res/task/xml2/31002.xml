@@ -1,0 +1,57 @@
+<Task ID="31002" Memo="皮皮克克和琪琪姐姐来摩尔王国过封印节啦！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮皮克克和琪琪姐姐来摩尔王国过封印节啦！" TargetMap="11202" TargetObj="1" TargetName="和t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="1" TaskOption="皮皮克克" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="哇！[@nick]，好久不见啦！今年封印节的魔法烟花是什么样的呢？真想看看啊。每年这个时候爸爸都在忙，好郁闷。" />
+					<Msg NpcID="6" ImageID="1" Info="[@nick]，今年的魔法烟花在王国商会里也买不到呢……你知道为什么吗？" />
+					<Option Info="黑化精灵抢走了" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="6" ImageID="1" Info="怪不得最近平原1区、2区、5区、10区的黑化龙系精灵很活跃，这可怎么办……" />
+					<Msg NpcID="6" ImageID="1" Info="听说封印节的烟花具有特别的力量，心地善良的人们燃放它们，会强化女神的封印，让大魔王伊恩无法脱困，这是真的么？" />
+					<Option Info="兔铃也这么说" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="魔法烟花原来这么重要啊，那你一定要帮忙夺回这些烟花！" />
+					<Msg NpcID="1" ImageID="1" Info="记得也给我留一支，好想看美丽的烟花！" />
+					<Option Info="包在我身上" />						
+				</Action>			
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21301,1" />
+			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="320001" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="拿到了魔法烟花，该回去找c皮皮克克c了。" TargetMap="11202" TargetObj="1" TargetName="和t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="1" TaskOption="烟花来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="哇，[@nick]太厉害了！快，快放烟花吧，我们一起来放！" />
+					<Option Info="（点燃烟花）" />					
+				</Action>
+  				<Action Type="MOVIE" Url="task_28001_1.swf" MapLevel="CONTENT" Pos="-1043,-916" CloseBGM="1"/>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="今年的烟花也好漂亮！[@nick]，明天也一起来放烟花吧！" />
+					<Option Info="一言为定！" />					
+				</Action>
+			</Event>
+			<Event ConditionType="OUT" Memo="前往c格历尔平原1区c击败龙系精灵，夺回c魔法烟花c。" TargetMap="21301" TargetObj="" TargetName="夺回1支魔法烟花">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="1" TaskOption="皮皮克克" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="o(︶︿︶)o 唉，你也没有魔法烟花吗？" />
+					<Option Info="我去找找。" />					
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21301,1" />
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

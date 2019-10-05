@@ -1,0 +1,85 @@
+<!--学馆-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+
+	<transport intPos="360,308">
+		<node id="1" pos="396,469" targetMapId="11205" targetTransPortId="3" name="西街"/>
+		<node id="2" pos="214,211" targetMapId="11309" targetTransPortId="1" name="自习室"/>
+		<node id="3" pos="570,216" targetMapId="11310" targetTransPortId="1" name="训练房"/>
+		<node id="4" pos="397,188" targetMapId="11311" targetTransPortId="1" name="精灵坊"/>
+	</transport>
+
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4"/>
+	</object>
+
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="69" type="NPC" res="MC_npc_69" level="contentLevel" fun="" taskType="0" action="0$1" needLevel="" needKind=""/>
+		<node id="73" type="NPC" res="MC_npc_73" level="contentLevel" fun="" taskType="0" action="5$6" needLevel="" needKind=""/>
+	</npc>
+	
+	<actions>
+		<proAction npcID="69" id="0" type="0" answer="自习室$训练场$培育室$摩尔勇士万岁！" to="a2$a3$a4$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#欢迎来到勇士学院，今天准备参加什么课程呢？复兴版勇士学院还支持离线挂机哦~VIP等级越高，经验越多！]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="1" type="0" answer="自习室$训练房$培育室$摩尔勇士万岁！" to="a2$a3$a4$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#勇士学院正式开院了，记得要经常来学习哦。复兴版勇士学院还支持离线挂机哦~VIP等级越高，经验越多！]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="2" type="0" answer="训练房$培育室$摩尔勇士万岁！" to="a3$a4$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#左上方的通道可以前往自习室，想要提升自己的学识和能力，那就去自习室好好温习吧。$$]]>
+				<![CDATA[1#每小时可获得当前等级2%的经验，单次最多24小时 VIP等级加成：每级多0.3%经验和1小时挂机时长。]]>
+				
+			</des>
+		</proAction>
+		<proAction npcID="69" id="3" type="0" answer="自习室$培育室$摩尔勇士万岁！" to="a2$a4$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#右上方的通道可以前往训练房，气蓄丹田，神往心驰，谈吐间坐拥海量技能升级经验！$$]]>
+				<![CDATA[1#每小时技能经验树可获得1000经验，单次最多24小时 VIP等级加成：每级多200经验，1小时挂机时长。]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="4" type="0" answer="自习室$训练房$摩尔勇士万岁！" to="a2$a3$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#正上方的通道可以前往精灵坊，在那你能获得更多精灵培育的心得。$$]]>
+				<![CDATA[1#每小时精灵经验树增加人物当前等级经验1%，单次最多24小时 VIP等级加成：每级多0.3%经验和1小时挂机时长。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="73" id="5" type="0" answer="如何自习$如何训练$如何培育$摩尔勇士万岁！" to="a7$a8$a9$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#怎么变得更强？这可不是仅仅从野外历练中能找到答案的。复兴版勇士学院还支持离线挂机哦~VIP等级越高，经验越多！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="6" type="0" answer="如何自习$如何训练$如何培育$摩尔勇士万岁！" to="a7$a8$a9$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#学习、训练、培育，任何一门课程都不能落下！复兴版勇士学院还支持离线挂机哦~VIP等级越高，经验越多！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="7" type="0" answer="如何训练$如何培育$摩尔勇士万岁！" to="a8$a9$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#从左上方的通道去自习室，找个空位坐下耐心阅读。$$]]>
+				<![CDATA[1#每小时可获得当前等级2%的经验，单次最多24小时 VIP等级加成：每级多0.3%经验和1小时挂机时长。]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="8" type="0" answer="如何自习$如何培育$摩尔勇士万岁！" to="a7$a9$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#训练房已经开放，找个空位坐下耐心修炼吧（超时空勇士可以获得更多的技能经验哦）！$$]]>
+				<![CDATA[1#每小时技能经验树可获得1000经验，单次最多24小时 VIP等级加成：每级多200经验，1小时挂机时长。]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="9" type="0" answer="如何自习$如何训练$摩尔勇士万岁！" to="a7$a8$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#精灵坊正在打扫，找个空位坐下耐心修炼吧（超时空勇士可以获得更多的技能经验哦）！$$]]>
+				<![CDATA[1#每小时精灵经验树增加人物当前等级经验1%，单次最多24小时 VIP等级加成：每级多0.3%经验和1小时挂机时长。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

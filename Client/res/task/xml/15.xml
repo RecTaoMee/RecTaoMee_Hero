@@ -1,0 +1,54 @@
+<task id="15">
+	<taskDes>
+		<![CDATA[莫名其妙完成使命背包满满，那么再去找村长聊聊天吧！$$]]>
+		<![CDATA[吉普豆村到底发生了什么？【神秘的奇普力村长一定有隐情！】——你的智商非常高的《旅行记事本》]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="5" title="村长爷爷好" action="0" needRes="" needResNum="" unResAction=""  taskDes="1" />
+		<pro type="0" parent="0" npcID="5" title="村长爷爷" action="7" needRes="" needResNum="" unResAction=""  taskDes="1" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="5" answer="咦？琪琪姐姐来了" to="a1">
+			<des>
+				<![CDATA[1#喔嚯嚯————年轻人你又来了。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="6" answer="？？？" to="a2">
+			<des>
+				<![CDATA[7#奇普力爷爷你怎么让【@nick】做杂务呢，【@nick】是来自未来的摩尔！女神的神谕您忘记了吗？奇普力爷爷！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="5" answer="@〇@不是吧——" to="a3">
+			<des>
+				<![CDATA[2#喔嚯嚯————从看到他第一眼我就知道他来自未来。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="6" answer="？？？" to="a4">
+			<des>
+				<![CDATA[7#可是您是怎么知道的？]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="5" answer="（@__+）啊？" to="a5">
+			<des>
+				<![CDATA[2#嚯嚯嚯，你看，我们的名字【都在头上】，只有他的名字是【在脚下】喔嚯嚯嚯……$$]]>
+				<![CDATA[2#它还需要更多磨练，才能成为那个传说中的勇士。所以我以看似简单的任务锻炼它的意志。喔嚯嚯————]]>
+			</des>
+		</proAction>	
+		<proAction id="5" type="0" npcID="5" answer="我会努力的！$让我再想想……" to="s6$o">
+			<des>
+				<![CDATA[2#【@nick】，我现在将遵从女神的旨意把【希望之坠】给你，等你更有实力的时候就能戴上它。$$]]>
+				<![CDATA[2#带着它去见摩尔城堡里的【摩尔王】，如果神谕是真的，如果你真的来自未来                  ——你就是这片大地和我们摩尔族的希望。$$]]>
+                <![CDATA[2#未来的摩尔，                                               你愿意接受【拯救荣耀时代】的使命吗？]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="1" level="upLevel" name="task_15_1" moviepos="-194,-356" to="a7"/>
+		<proAction id="7" type="0" npcID="5" answer="现在就看旅行记事本！" to="c">
+			<des>
+				<![CDATA[2#【摩尔王】在东南方【摩尔王国】的【摩尔城堡】里，“吉普地道”是前往王国的唯一通道，你只要通过这两段危险的通道，就可以到达摩尔王国。$$]]>
+				<![CDATA[2#“地道入口”就在我的屋子里，最后一个考验————【完成《旅行记事本》的提示】，我就为你开启地道入口。]]>				
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,32 @@
+<task id="10009">
+	<taskDes>
+		<![CDATA[摩尔王沉浸在失去相册的悲伤中，还是去问问近卫士兵长【宾德】到底发生了什么吧。$$]]>
+		<![CDATA[从摩尔王的寝宫发现的线索表明，失窃案很可能是某种精灵的恶作剧。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+			<pro type="0" parent="" npcID="25" action="0" title="发生了什么事？" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11307"/>
+			<pro type="0" parent="0" npcID="25" action="1" title="发生了什么事？" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11307"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="25" answer="一本相册？" to="s1">
+			<des>
+				<![CDATA[1#【@nick】，感谢你能来帮忙！小偷从城堡里偷走的东西是一本相册。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="25" answer="绝对没问题！" to="a2">
+			<des>
+				<![CDATA[9#是的，在别人看来只是一本普通的相册，但是对于詹姆斯国王来说，却是非常重要的东西。$$]]>
+				<![CDATA[9#皇后很早以前就去世了，这本相册可以说是摩尔王对皇后思念的寄托，现在被偷了，对他的打击非常大。$$]]>
+				<![CDATA[9#但是，随着黑水晶泄漏，黑暗的力量开始蠢蠢欲动，国王不愿因为私事而调动皇家骑士团。$$]]>
+				<![CDATA[1#所以【@nick】来帮忙解决这件事吧。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="25" answer="好的" to="c">
+			<des>
+				<![CDATA[1#在寝宫里发现了一些精灵的脚印，你去请皮克司教授过来看一下吧。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

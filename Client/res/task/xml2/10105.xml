@@ -1,0 +1,42 @@
+<Task ID="10105" Memo="勇士广场的占卜师c乔依c在水晶球之中看到了摩尔王国未来会发生的变故，快去找他了解情况！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的占卜师c乔依c在水晶球之中看到了摩尔王国未来会发生的变故，快去找他了解情况！" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="发生什么事了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="伟大的勇士，通过水晶球的魔力，我终于在时间的长河中看到了未来的勇士国度正在发生的变故……" />
+					<Option Info="未来的勇士国度？" />
+				</Action>
+				<Action Type="MOVIE" Url="task10105_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="我们的时间不多了，大批35级以上的未来勇士已经前往了毁坏的勇士国度！" />
+					<Option Info="我也要去探查真相！" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="我把通往那里的入口在副本管理员薇尔那里打开了，十二黄金勇士中的几位也已经出发那里查明真相，相信他们能给你不少帮助！" />
+					<Option Info="我这就去！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="安德鲁、妮娜、路西欧他们已经率先前往那里了，你也赶紧去看看吧，千万要小心！" />
+					<Option Info="我知道了！" />
+				</Action>			
+			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="从勇士广场c薇尔c处，进入未来的勇士王国查探究竟！" TargetMap="11202" TargetObj="319" TargetName="和t薇尔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="319" TaskOption="我想去未来的…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1001" ImageID="1" Info="我全都已经知道了，占卜师乔依已经运营水晶球的法力，让我拥有传送未来的能力，你可以从我这里出发去未来的勇士王国！" />
+					<Msg NpcID="1001" ImageID="1" Info="小勇士！十二勇士的安德鲁、妮娜、路西欧他们已经率先前往那里了，你也赶紧去看看吧，千万要小心！" />
+					<Option Info="我这就去！" />
+				</Action>				
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

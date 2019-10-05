@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>摩尔勇士复兴版</title>
+        <link rel="Shortcut Icon" href="WebCommon/favicon.ico?v=0929" />
+        <meta name="keywords" content="摩尔勇士复兴版" />
+        <meta name="description" content="" />
+
+
+
+        <style type="text/css">
+		body{margin:0;
+		padding:0;
+		background-color: #c07f28;
+
+		}
+		
+/*            #flashcontent	{margin:0 auto;overflow:hidden;width:990px;height:560px;}*/
+            /*#flashTextContent {visibility:hidden;padding-top:210px;overflow:hidden;height:100px;text-align:center;}*/
+        </style>
+        <script type="text/javascript">
+            function addBookmark(title,url) {
+                if(window.sidebar) {
+                    window.sidebar.addPanel(title, url,"");
+                }else if(window.external && ('AddFavorite' in window.external)) {
+                    window.external.AddFavorite(url, title);
+                }else {
+                    alert('请使用 Ctrl+D 添加到收藏夹');
+                }
+            }
+            function getSessionID() {
+                var params = getUrlParams() ;
+                var sid = params['sid'] ;
+                return sid;
+            }
+            function getSign() {
+                var params = getUrlParams() ;
+                var sign = params['sign'] ;
+                return sign;
+            }
+            function getUrlParams() {
+                var args = new Object();
+                var query = location.search.substring(1);
+                var pairs = query.split("&");
+
+                for(var i = 0; i < pairs.length; i++) {
+                    var pos = pairs[i].indexOf('=');
+                    if(pos == -1) {
+                        continue;
+                    }
+
+                    var argname = pairs[i].substring(0,pos);
+                    var value = pairs[i].substring(pos + 1);
+                    args[argname] = unescape(value);
+                }
+                if(window.session) {
+                    args['sid'] = window.session;
+                }
+                return args;
+            }
+            function getHostname(){
+                if(self != top){
+                    var tmp = document.createElement('a');
+                    tmp.href = document.referrer;
+                    return tmp.hostname;
+                }else{
+                    return location.hostname;
+                }
+            }
+        </script>
+        <base target="_blank" />
+        
+    </head>
+    <body>
+
+        <div class="container">
+            <div id="myFlashBox" class="flash_main">
+                <div id="flashcontent" class="flash_content">     
+                   
+					 <div id="flashTextContent">
+                        请安装最新版Flash Player<br>
+                        <script type="text/javascript"> 
+                            var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://"); 
+                            document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
+                                            + pageHost + "wwwimages.adobe.com/www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='点击安装最新版Flash Player' /></a>" ); 
+                        </script>
+                    </div>
+                </div>
+            </div>
+
+
+
+<script src="WebCommon/jquery-1.11.1.min.js"></script>
+        <script src="WebCommon/asRelated.js"></script>
+        <script src="WebCommon/swfobject.js"></script>
+        <script src="WebCommon/topbarEvents.js"></script>
+
+        <script type="text/javascript">
+            if(navigator.appName.indexOf("Microsoft") != -1) {
+                var swfVersionStr = "8.0.0";
+                var xiSwfUrlStr = "Client.swf";
+                var flashvars = {};
+                var params = {};
+                params.quality = "high";
+                params.bgcolor = "#ffffff";
+                params.allowscriptaccess = "always";
+                params.allowfullscreen = "true";
+                params.movie = "Client.swf";
+                var attributes = {};
+                attributes.id = "mymovie";
+                attributes.name = "mymovie";
+                attributes.classid = "clsid:D27CDB6E-AE6D-11cf-96B8-444553540000";
+                attributes.codebase = "http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab#version=11,3,0,0";
+                swfobject.embedSWF(
+                    "Client.swf", "flashTextContent", 
+                    "990", "560", 
+                    swfVersionStr, xiSwfUrlStr, 
+                    flashvars, params, attributes);
+                }
+            else{
+                var str="";
+                str+="<object>";
+                str+="<embed type='application/x-shockwave-flash' allowFullScreen='true' quality='high' width='990' height='560' allowScriptAccess='always' id='mymovie_em' name='mymovie_em' src='Client.swf'></embed>";
+                str+="</object>";
+                str+='<div id="innerPopIframe" style="display:none;">';
+                str+='</div>';
+                document.getElementById('flashcontent').innerHTML=str;
+            }
+        </script>
+        
+				<script type="text/javascript" src="//js.users.51.la/19813161.js"></script>
+    </body>
+</html>
+

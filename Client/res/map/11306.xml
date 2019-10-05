@@ -1,0 +1,45 @@
+<!--忍-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<transport intPos="145,340">
+		 <node id="1" pos="174,283" targetMapId="11302" targetTransPortId="6"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="" res="MC_magicHandBook" module="MagicBookModule"/>
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="29" type="NPC" res="MC_npc_29" action="0$4$3"/>
+	</npc>
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<actions>
+		<proAction npcID="29" id="0" type="0" answer="【学习技能】$摩尔勇士万岁！" to="b9_29$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#人在为了保护对自己重要的东西的时候，会变得非常坚强……]]>
+			</des>
+		</proAction>
+		<proAction npcID="29" id="1" type="0" answer="准备好了！" to="a2" >
+			<des>
+				<![CDATA[2#忍者——放弃就代表了结束……做好心理准备了吗，拿上【十字标】我们开始吧！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="1" outMap="1" level="taskLevel" name="skill_3" moviepos="0,0"  to="o"/>
+		<proAction npcID="29" id="3" type="0" answer="【学习技能】$摩尔勇士万岁！" to="b9_29$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#努力积累战斗【经验】，提升【等级】————是提高自己实力的修炼之路。]]>
+			</des>
+		</proAction>
+		<proAction npcID="29" id="4" type="0" answer="【学习技能】$摩尔勇士万岁！" to="b9_29$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#说到做到，就是我的忍道————每个忍者都有自己的忍道！]]>
+			</des>
+		</proAction>
+		<proAction npcID="29" id="5" type="0" answer="我准备好了！$以后再说吧。" to="a6$o" colorID="0$0" >
+			<des>
+				<![CDATA[2#让我看看你的实力吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="29" id="6" type="5" fightID="3001" />
+	</actions>
+</map>

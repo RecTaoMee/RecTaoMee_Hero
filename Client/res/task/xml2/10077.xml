@@ -1,0 +1,91 @@
+﻿<Task ID="10077" Memo="c杰森c邀请未来勇士参加一个很重要的课程，快去c剑士协会c看看吧" TargetMap="11305">
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c杰森c邀请未来勇士参加一个很重要的课程，快去c剑士协会c看看吧" TargetMap="11305">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="关于重要的课程。" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="1" Info="哈哈，是【@nick】啊，没想到一向那么繁忙的你， 竟然特地来到这里。 " />	
+					<Msg NpcID="26" ImageID="3" Info="莫非你也是被我的魅力吸引而来的吗？ " />	
+					<Option Info="你在装什么傻…" />	
+					<Option Info="不是你叫我来的吗？" />
+				</Action>
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="1" Info="夏天的飞鸟……\n\n\n" />	
+					<Msg NpcID="26" ImageID="5" Info="飞到我的窗前唱歌……\n\n\n" />	
+					<Msg NpcID="26" ImageID="1" Info="又飞去了……\n\n\n" />	
+					<Option Info="打扰一下。" />																
+				</Action>	
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="1" Info="秋天的黄叶……\n\n\n" />	
+					<Msg NpcID="26" ImageID="5" Info="它们没有什么可唱……\n\n\n" />	
+					<Msg NpcID="26" ImageID="1" Info="飞落在那里。\n\n\n" />	
+					<Option Info="打扰一下！！" />																
+				</Action>	
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="5" Info="世界上最宝贵最重要的东西——爱，用时髦的话说，就是Love。" />	
+					<Msg NpcID="26" ImageID="5" Info="我身为王国里最有魅力的人之一，即使是悠闲的在深邃的夜晚散步的时候，也会收到很多少女的飞吻。" />	
+					<Msg NpcID="26" ImageID="3" Info="如果不能一一回应的话实在是太伤她们的心了。" />	
+					<Option Info="打扰一下！！！！" />																
+				</Action>	
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="2" Info="所以今天我要传授一门很重要的本事给你。" />		
+					<Option Info="他在自言自语?" />	
+					<Option Info="终于到正题了。" />
+				</Action>	
+
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="5" Info="叫躲避飞吻的艺术。" />	
+					<Option Info="……" />																
+				</Action>
+				<Action Type="TALK">					
+					<Msg NpcID="26" ImageID="1" Info="秘诀是时刻保持清醒，只有这样才能躲开她们满溢着的爱啊。" />	
+					<Msg NpcID="26" ImageID="5" Info="这个可不是一般人能够领会的美丽的艺术啊，哈，不管在哪个时代，天才都是孤独的啊…… " />	
+					<Msg NpcID="26" ImageID="1" Info="格力尔平原5区有一群可爱的喜欢飞吻的小生物，叫迷唇爱丝。" />	
+					<Msg NpcID="26" ImageID="1" Info="躲避它们的飞吻，在战斗中保持清醒，把它们打晕。来证明你的实力吧。" />	
+					<Msg NpcID="26" ImageID="3" Info="嘻嘻……，为了让你熟练，2只可是必要的数目。" />	
+					<Option Info="我这就去。" SkipTrigger="Y"/>		
+					<Option Info="我现在忙。" NextStep="1"/>	
+				</Action>			
+    		</Event>
+		</Step>			
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c" TargetMap="11305">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="怎么回事？" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" /> 			
+    		</Event>
+		</Step>
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="10" Count="2" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="成功的躲避了2只迷唇爱丝的飞吻，去向c杰森c领取奖励吧！" TargetMap="11305">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="使命完成！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="2" Info="亲爱的【@nick】啊，我就知道你一定不会辜负我所望，受崇拜憧憬可是我们这些优秀的人的宿命。以后用这个方法淡定的对待吧。" />
+					<Option Info="O(∩_∩)O哈！" />
+				</Action>	
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c格历尔平原5区c找2只c迷唇爱丝c完成训练吧。" TargetMap="21305">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="迷唇爱丝在哪里?" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="5" Info="啊啊，太残忍了……  刚刚我才告诉过你，你就忘记了，你竟然会如此冷淡薄情？" />
+					<Option Info="我只是确认下。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="1" Info="好吧，亲爱的【@nick】，我这次就原谅你了，记住啦，在格历尔平原5区，你可以看到那群可爱的小生物在欢快的奔跑着。" />
+					<Option Info="我这就去。" />
+				</Action>
+			</Event>
+		</Step>																  		
+	</Procedure>
+</Task>
+
+

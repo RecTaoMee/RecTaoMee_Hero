@@ -1,0 +1,112 @@
+<Task ID="67" Memo="c宾德c大人号召未来勇士们追踪怪盗集团，\n快去c国王呈见厅c看看吧！" TargetMap="11307">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0"  >
+			<Event Memo="c宾德c大人号召未来勇士们追踪怪盗集团，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="追踪怪盗集团？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="最近【怪盗集团】潜入了摩尔王国。\n这本来是打入它们内部的好机会，\n可惜怪盗精灵熟悉我的气息……" />			
+					<Msg NpcID="25" ImageID="6" Info="由你来执行调查怎么样？" />
+					<Option Info="接受调查任务" SkipTrigger="Y" />	
+					<Option Info="我很忙，下次再说" NextStep="1" />																
+				</Action>						
+    		</Event>											
+	    </Step>		
+  		<Step ID="2" ParentList="1" ParentCost="1"  >
+			<Event Memo="c宾德c大人号召未来勇士们追踪怪盗集团，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="追踪怪盗集团？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="有可靠消息，\n它们这次会用【纸条】做联络凭证。" />			
+					<Msg NpcID="25" ImageID="1" Info="纸条就在你的【旅行箱→收集品】里，自己看吧。" />
+					<Option Info="这就看【纸条】!" />						
+				</Action>		
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201, 16016" SkipTrigger="Y" />																		
+    		</Event>											
+	    </Step> 
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Event Memo="c宾德c大人号召未来勇士们追踪怪盗集团，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="16016" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="追踪怪盗集团？" />
+				</Trigger>					    
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11205, 30017" />	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11205,1" />					
+    		</Event>											
+	    </Step>		     
+  		<Step ID="4" ParentList="3" ParentCost="1"  > 
+    		<Event Memo="纸条上说c怪盗迪迪拉c在c东街尽头树下c，\n上面还有怪盗集团的联络c暗号c，\n试试有没有用吧。" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话">   <!-- 总表不判断纸条 -->
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11205" ObjID="30017" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="2" Info="蹲太久脚好酸~~\n(⊙“⊙)摩尔？……找我有事嘛？\n身上有没有带星豆啊~~呜哈哈~~~" />
+					<Option Info="我要加入你们（做卧底）" SkipTrigger="Y" />															
+				</Action>						
+    		</Event>					
+	    </Step>		
+		 			    
+  		<Step ID="5" ParentList="4" ParentCost="1"  >
+			<Event Memo="c王国东街c发现怪盗迪迪拉↖(^ω^)↗。\nc纸条c上有怪盗集团的联络c暗号c，\n试试有没有用吧。" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话">
+  				<Trigger>
+ 					<Item Type="OBJ_CLICK" MapID="11205" ObjID="30017" />   				
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="2" Info="你必须先获得戈戈拉大人的认可。\n知道联络暗号吗？" />				
+					<Msg NpcID="315" ImageID="2" Info="我开始说暗号了，\n你只要回答最后一句。\n千万别说错啦：" />					
+					<Msg NpcID="315" ImageID="2" Info="爱抢劫，爱星豆，爱星豆袋，\n爱特大星豆袋，也爱65星豆的面罩，\n我们不是强盗，不是盗贼——" />
+					<Option Info="我们都一样，我是盗贼" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="我们都一样，我是强盗" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="你和我一样，我是怪盗" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="我和你一样，我是怪盗" SkipTrigger="Y" />		
+					<Option Info="我们都一样，我是强贼" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="让我看下暗号纸条" NextStep="5" />																																																
+				</Action>			
+    		</Event>											
+	    </Step>			
+  		<Step ID="6" ParentList="0" ParentCost="1"  >
+			<Event Memo="c王国东街c发现怪盗迪迪拉↖(^ω^)↗。\nc纸条c上有怪盗集团的联络c暗号c，\n试试有没有用吧。" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11205" ObjID="30017" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="1" Info="不对不对，你也太不敬业了吧！\n拿出点怪盗专业精神！\n你说错了我还要重说啊T T崩溃~~" />
+					<Option Info="囧再答一次！" NextStep="5" SkipTrigger="Y" />	
+					<Option Info="我很忙，下次再说" NextStep="5" />											
+				</Action>			
+    		</Event>											
+	    </Step>			
+  		<Step ID="7" ParentList="5" ParentCost="1" >
+			<Event Memo="c王国东街c发现怪盗迪迪拉↖(^ω^)↗。\nc纸条c上有怪盗集团的联络c暗号c，\n试试有没有用吧。" TargetMap="11205" TargetObj="30017" TargetName="和t怪盗t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11205" ObjID="30017" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="315" ImageID="2" Info="暗号正确。\n以后我们都是怪盗了！\n【鼻涕和口水味的面罩】就是怪盗的象征！" />
+					<Msg NpcID="315" ImageID="2" Info="我最爱的面罩送给你了T T\n——我保证我从来没洗过！" />
+					<Msg NpcID="315" ImageID="2" Info="你戴上面罩千万小心，你太胖了!\n木桶我看你也钻不进去啊悲剧!\n别让【“鸡冠士兵长”】抓住了！" />					
+					<Option Info="（赶紧向宾德汇报吧……）" />											
+				</Action>		
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11205, 30017" />  		
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307,1" />			
+    		</Event>											
+	    </Step>		
+	
+		 <!-- 节点2↑ -->
+		
+				
+  		<Step ID="8" ParentList="7" ParentCost="1"  >
+			<Event Memo="获得了怪盗集团的信任，\n快去告诉c国王呈见厅c的c宾德c大人吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="怪盗调查成功！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="6" Info="【@nick】没有让我失望！\n继续追查【怪盗集团】的任务就交给你了。" />
+					<Option Info="使命必达-做到最好！" />						
+				</Action>			
+    		</Event>											
+	    </Step>				
+	</Procedure>
+</Task>

@@ -1,0 +1,105 @@
+<Task ID="103" Memo="正式协会职业者的考验！准备好了就去导师c彼兔c那里接受挑战吧！" TargetMap="11304">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="正式协会职业者的考验！准备好了就去导师c彼兔c那里接受挑战吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="彼兔老师好！！！" />			
+				</Trigger>				
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />						
+    		</Event>
+		</Step>	
+			
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="正式协会职业者的考验！准备好了就去导师c彼兔c那里接受挑战吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="彼兔老师好！！！" />			
+				</Trigger>				
+				<Action Type="TALK">	
+					<Msg NpcID="27" ImageID="2" Info="成为正式协会职业者会负责更重要的使命，并且传授你【更高级的技能】。\n女孩子们最喜欢华丽的技能了哈哈！" />
+					<Msg NpcID="27" ImageID="1" Info="准备好了吗？\n——来听听考试内容吧！" />		
+					<Msg NpcID="27" ImageID="2" Info="拉拉美是一种美味的精灵\n——其实这只是个传说——\n因为谁也没有真正尝过拉拉美的味道。" />
+					<Option Info="（⊙ω⊙）" TalkOver="Y" />
+				</Action>
+    			<Action Type="MOVIE" Url="task_16_1.swf" MapLevel="TASK" Pos="0,0" />								
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="2" Info="啊哈~不好意思，我想象力太丰富了嘿嘿。我想你也猜到了，\n这次的考题就是挑战格历尔平原上的拉拉美王联军！" />		
+					<Msg NpcID="27" ImageID="1" Info="为了证明你战胜了拉拉美王，这次的任务要求是：\n★打败拉拉美王并记住联军的人数，回来告诉我。" />
+					<Option Info="使命必达！" />
+				</Action>		
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21303,1" />						
+    		</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2 
+			" ParentCost="1" >
+			<Condition>
+				<Battle ID="2002" Count="1" />				
+			</Condition>
+    		<Event ConditionType="OUT" Memo="c平原三区c是c拉拉美王c带领“拉拉美素食主义联军”的巡逻区，★c打败拉拉美王c并c记住联军的人数c告诉老师吧！" TargetMap="21303" TargetObj="" TargetName="击败t拉拉美王t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="打败拉拉美王了！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="你遇到“拉拉美素食主义联盟”并且打败【拉拉美王】了吗？" />
+					<Option Info="还没有..." />
+				</Action>			
+    		</Event>
+    		<Event ConditionType="IN" Memo="击败了c拉拉美王c，回去向c彼兔c老师报告吧。" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="打败拉拉美王了！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="你遇到“拉拉美素食主义联盟”并且打败【拉拉美王】了吗？" />
+					<Option Info="打败了！" SkipTrigger="Y" />		
+				</Action>									
+    		</Event>			
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >		
+    		<Event Memo="击败了c拉拉美王c，回去向c彼兔c老师报告吧。" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="彼兔老师好！！！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="那么告诉我——\n“拉拉美素食主义联军”（☆除拉拉美王）共有几个精灵？" />		
+					<Option Info="1个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="2个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="3个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="4个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="5个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="6个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />	
+					<Option Info="7个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="8个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />
+					<Option Info="9个" SkipTrigger="Y" />
+					<Option Info="10个" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="6" />															
+				</Action>
+    		</Event>
+		</Step>		
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="通过考验！快点找c彼兔c老师拿毕业证书吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="彼兔老师好！！！" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="非常好，\n诚实并且勇敢的你通过了我的考试，这是你的毕业证书！" />		
+					<Msg NpcID="27" ImageID="1" Info="想要更轻松的通过考试，\n平时就要多多练习，\n比如【平原】和【下水道】，\n去更深处探索吧！" />									
+					<Option Info="谢谢彼兔老师！" />												
+				</Action>				
+    		</Event>
+    	</Step>
+		
+		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="c平原三区c是c拉拉美王c带领“拉拉美素食主义联军”的巡逻区，★c打败拉拉美王c并c记住联军的人数c告诉老师吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="彼兔老师好！！！" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="很遗憾回答错误。\n再回忆下吧，或者再去【平原三区】挑战拉拉美王确定人数？" />																		
+					<Option Info="让我再想想..." NextStep="4" />
+				</Action>				
+    		</Event>
+		</Step>
+
+	</Procedure>
+</Task>

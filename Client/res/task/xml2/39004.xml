@@ -1,0 +1,241 @@
+<Task ID="39004" Memo="任务说明：琉璃翼龙的召唤" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="多么美好的清晨，去找c路库Kc买份早餐吧" TargetMap="11207" TargetObj="13" TargetName="与旅馆老板t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="老板您好！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="8" Info="勇士好啊！哈哈，多么美好的一个清晨！很高兴为你服务！" />
+					<Option Info="老板，有吃的吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="7" Info="（微笑）勇士你好，小店有各种美食，这是菜谱，看看你想吃什么吧！" />
+					<Option Info="我要曲奇饼干" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="5" Info="（微笑）呃，不好意思，没有饼干和曲奇了。" />
+					<Option Info="那来份曲奇蛋糕" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="5" Info="（汗）很不好意思，没有曲奇了..." />
+					<Option Info="换布丁饼干吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（冷汗）非常不好意思，没有饼干..." />
+					<Option Info="那要曲奇吐司" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（热汗）没有曲奇..." />
+					<Option Info="怎么什么都没有啊" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="2" Info="（擦汗状）除了饼干和曲奇都有的，你再看看吧。" />
+					<Option Info="那要巧克力饼干" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（狂汗）没有饼干..." />
+					<Option Info="都卖完了？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（汗如雨下）除了饼干和曲奇都有的..." />
+					<Option Info="来份曲奇披萨" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="天啊，我实在受不了了，本店的曲奇跟饼干都卖光了，就是所有跟曲奇和饼干的配搭都没了！ " />
+					<Option Info="哦！没有那些搭配啊" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="5" Info="（终于不流汗了）是的。" />
+					<Option Info="麻烦你只要曲奇" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（跌倒）没有曲奇。" />
+					<Option Info="那饼干呢？ " />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="（吐血）没有饼干。" />
+					<Option Info="怎么什么都没有啊" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="2" Info="……（咋就这么费劲呢）要不来份巧克力蛋糕？" />
+					<Option Info="我要减肥，先走了" />
+				</Action>
+				<Action Type="COMMAND" Command="STAGE_SHOCK" Params="map,5" />
+				<!-- 突然大地猛烈摇晃起来，将玩家传送到勇士广场 	 -->		
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Event  Memo="正要转身离开，旅馆突然猛烈摇晃起来，问问旅店老板c路库Kc发生了什么吧！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="老板我头好晕啊" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="小勇士，应该是地震了，旅馆可能要塌了，现在非常危险，我们快到外面去躲躲吧！" />
+					<Option Info="好的，赶紧跑" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="30400,1" />
+				<Action Type="MOVIE" Url="taskMovie_39004_1.swf"  MapLevel="TASK" Pos="0,0" />	<!-- 【播放动画1 石龙正从大地的裂缝中爬出来，】  -->		
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="30400,390041" />	<!--  添加NPC石龙  -->
+			</Event>	
+		</Step>
+		<Step ID="3" ParentList="2" ParentCost="1" TargetMap="30400" TargetObj="390041" TargetName="和t石龙t对话">
+			<Condition>
+				<Battle ID="3324" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="前往c勇士广场c，打败c石龙c" TargetMap="30400" TargetObj="390041" TargetName="跟t石龙t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30400" ObjID="390041" TaskOption="又有新精灵啦！"/>			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="刚刚发生了什么啊？不对，好像我妈妈叫我回家吃饭了，我是个听话的好孩子，得走了。" />
+					<Option Info="说好做我的精灵呢" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="看，灰机灰过去了……" />
+					<Option Info="没看见灰机啊" />
+				</Action>
+				<Action Type="MOVIE" Url="taskMovie_39004_3.swf"  MapLevel="TASK" Pos="0,0" />	<!-- 【播放动画3 龙从裂缝逃走消失】 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="30400,390041" />	<!-- 移除NPC石龙  -->
+			</Event>
+			<Event ConditionType="OUT" Memo="前往c勇士广场c，打败c石龙c" TargetMap="30400" TargetObj="390041" TargetName="跟t石龙t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30400" ObjID="390041"  TaskOption="你怎么从地底出来的"/>	
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="是谁，一直在燃放我最喜欢的烟花，把我从睡梦中惊醒……" />
+					<Option Info="清早能看见烟花么" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="是谁在说话！怎么突然出现一只摩尔，真是吓死龙了，好怕怕……" />
+					<Option Info="龙也会害怕吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="我就是龙啊，怎么不会害怕。上次我害怕的时候，可严重了，整个山峰的没了。哈哈，我现在不怕了。" />
+					<Option Info="刚刚地震是怎么回事" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="地震？地震是什么？唉，挖了这么久的洞，可累死龙了，让我休息会儿。" />
+					<Option Info="你破坏了勇士广场" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="勇士广场是什么？这里的石头好可口啊，我琉璃翼龙特别喜欢在这样美丽的烟花下吃点心……" />
+					<Option Info="原来你叫琉璃翼龙" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="怎么，你要咬我？" />
+					<Option Info="不，做我的精灵吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="嗷~~~我们龙可是很暴躁的生物，怎么会屈服于你，先打败我再说吧！" />
+					<Option Info="可不要赖皮哦" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1015" ImageID="1" Info="想我琉璃翼龙上天入地，无所不能，颤抖吧，渺小的摩尔！" />
+					<Option Info="准备一下" NextStep="3" />
+					<Option Info="来战"/>
+				</Action>		
+        		<Action Type="COMMAND" Command="BATTLE" Params="3324" />
+  			</Event>
+		</Step>
+		<Step ID="4" ParentList="3" ParentCost="1" TargetMap="30400" TargetObj="25" TargetName="跟t宾德t对话">
+			<Condition>
+				<Battle ID="3325" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="前往c勇士广场c，打败c宾德c" TargetMap="30400" TargetObj="25" TargetName="跟t宾德t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30400" ObjID="25" TaskOption="哈哈，烟花是我的了"/>			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="自古英雄出少年啊，看你这么厉害，这只梦幻烟花我就给你了。" />
+					<Msg NpcID="25" ImageID="1" Info="记住，燃放烟花出现珍稀精灵，一定要使用无敌万用闪灵胶片封印，确保万无一失。曾经有一只非常珍稀的精灵，就在我的眼前，我却没有珍惜……" />
+					<Option Info="我记住了" />
+				</Action>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="972,486" />	 <!-- 移动镜头到指定位置  -->
+				<Action Type="COMMAND" Command="DELAY" Params="200" />
+				<Action Type="MOVIE" Url="taskMovie_39004_4.swf"  MapLevel="TASK" Pos="0,0" />		<!-- 【播放动画4 地图上从西向东出现妮娜】 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="30400,390042" />		<!-- 添加npc妮娜  -->
+<!-- 				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 												 镜头回到主角 -->
+			</Event>
+			<Event ConditionType="OUT" Memo="前往c勇士广场c，与c宾德c对话" TargetMap="30400" TargetObj="25" TargetName="与t宾德t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30400" ObjID="25"  TaskOption="大叔，看见一只龙了吗"/>	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哎呀呀，你这个捣蛋的家伙，竟然打跑了我千辛万苦召唤来的非常珍贵的琉璃翼龙……" />
+					<Option Info="琉璃翼龙可以召唤么" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="当然可以了，这可是我多年的研究成果。说到吸引珍稀精灵，身为王国近卫士兵长，我宾德可是有一套的。" />
+					<Msg NpcID="25" ImageID="1" Info="只要燃放我这梦幻烟花，再配上那无敌万用闪灵胶片，什么样的极品精灵都轻松拿下……" />
+					<Option Info="梦幻烟花？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="愚昧小辈，我怎么会告诉你这其中的奥秘。想要梦幻烟花吗？想要你就说啊！你不说，我怎么知道你想要呢？" />
+					<Option Info="我也要梦幻烟花" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="梦幻烟花的原材料可是非常难得的，只有像我这样强大的摩尔才配拥有，想要先经得起我的考验再说！" />
+					<Option Info="准备一下" NextStep="4" />
+					<Option Info="来战"/>
+				</Action>		
+        		<Action Type="COMMAND" Command="BATTLE" Params="3325" />
+  			</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Event  Memo="和妮娜说话" TargetMap="30400" TargetObj="390042" TargetName="跟t妮娜t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30400" ObjID="390042" TaskOption="妮娜大人你好" />
+				</Trigger>
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" /> 										<!-- 		 镜头回到主角 -->
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="对不起，我来晚了！勇士广场已经被破坏成这样了！你们快住手！" />
+					<Msg NpcID="101" ImageID="1" Info="原来是近卫士兵长大人，刚刚收到报告，勇士广场发生了剧烈地震，并出现了凶残野兽，我就立即赶过来了。" />
+					<Option Info="是他燃放的烟花..." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哈哈，童言无忌啊。妮娜大人，是这样的，我奉摩尔王陛下之命，准备在此封印珍稀精灵之琉璃翼龙。" />
+					<Msg NpcID="101" ImageID="1" Info="什么？摩尔王陛下？为什么要选在勇士广场，就算是付出破坏勇士广场的代价，也要封印一只精灵吗？" />
+					<Msg NpcID="25" ImageID="1" Info="这就是妮娜大人有所不知了，此琉璃翼龙乃特别珍稀的精灵，摩尔王陛下至今仍然没有。拥有一只琉璃翼龙，成为了他多年的心愿。" />
+					<Msg NpcID="25" ImageID="1" Info="这四位长老运用高强的魔法，经过周密的计划，勇士广场正是封印琉璃翼龙的最佳地方。" />
+					<Msg NpcID="25" ImageID="1" Info="为了避免引起摩尔王国不必要的恐慌和走漏消息，事先没有通知大家。至于勇士广场，你们去面见摩尔王陛下，自然就知道了。" />
+					<Option Info="原来如此" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="王国各地的安宁还需要我的守护，我得回军营了。" />
+					<Msg NpcID="101" ImageID="1" Info="就有劳宾德大人带这位小勇士前往国王呈见厅，向陛下了解前因后果。" />
+					<Option Info="正有此意" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="30400,390042" />	<!-- 移除NPC妮娜  -->
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307,1" />	<!-- 【将玩家传送到勇士广场摩尔王处 】 -->
+			</Event>	
+		</Step>
+		
+		<Step ID="6" ParentList="5" ParentCost="1" >
+			<Event  Memo="前往c国王呈见厅c，面见c摩尔王c" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="陛下万福金安" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="禀告我王陛下，正是这位小勇士打跑了琉璃翼龙，保护勇士广场不受进一步的破坏。" />
+					<Msg NpcID="30" ImageID="1" Info="小勇士你好，真了不起，是我王国的大英雄啊！" />
+					<Option Info="可是破坏了您的计划" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="计划？什么计划？哦，宾德，我的琉璃翼龙抓到了吗？" />
+					<Msg NpcID="25" ImageID="1" Info="禀告陛下，目前尚未抓捕到。不过我们可以利用四位长老的力量，将重要的勇士广场封印为副本。" />
+					<Msg NpcID="25" ImageID="1" Info="这样我们可以随时从副本引导员薇儿处前往。王国的勇士也都可以各显神通，封印琉璃翼龙，得偿所愿。" />
+					<Msg NpcID="30" ImageID="1" Info="那就有劳各位长老了。" />
+					<Msg NpcID="30" ImageID="1" Info="哈哈，本王不禁想起了多年前在格历尔平原上封印各种精灵的场景，那些快乐和艰辛都还历历在目，仿佛就在昨天。" />
+					<Msg NpcID="30" ImageID="1" Info="吉普豆叶、吉普豆花、拉拉美、小石怪、王冠卡西卡、鬼脸箱们……你们都还好吗？" />
+					<Msg NpcID="25" ImageID="1" Info="陛下不要再感伤了，如今我们研制出了梦幻烟花吸引各种珍稀精灵，还有无敌万用闪灵胶片确保精灵无处可逃。您就放心吧， 琉璃翼龙就包在我身上了。" />
+					<Msg NpcID="30" ImageID="1" Info="哈哈，那本王就放心了。" />
+					<Msg NpcID="30" ImageID="1" Info="这位勇士保护勇士广场有功，再赏赐他一只梦幻烟花。咦，为什么我要说再呢……" />
+					<Option Info="谢谢摩尔王陛下" />
+				</Action>
+			</Event>	
+		</Step>	
+	</Procedure>
+</Task>

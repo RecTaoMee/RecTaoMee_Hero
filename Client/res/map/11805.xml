@@ -1,0 +1,14 @@
+<!--世界之树入口-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="492,650" targetMapId="11804" targetTransPortId="2"/> 
+		<node id="2" pos="497,299" targetMapId="21803" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_1" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_0" transPortId="2" alpTaskID="10108_2" visible="0"/>
+		<node id="3" type="" res="MC_jiejie" compTaskID="10108_2"/>
+	</object>
+	<npc>
+	</npc>
+</map>

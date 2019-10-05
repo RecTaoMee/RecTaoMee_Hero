@@ -1,0 +1,92 @@
+<Task ID="10078" Memo="勇士广场的c公告栏c上出现了“c美食家詹姆斯c”的小贴士。\n快去看看吧^^！" TargetMap="11202">
+<BoardInfo PageType="1" Title="寻找料理大师" Content="如果你是超级“料理大师”，\n请来【国王呈见厅】一见。\n\n      ——摩尔王·美食家·詹姆斯"></BoardInfo>   		
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c公告栏c上出现了“c美食家詹姆斯c”的小贴士。\n快去看看吧^^！" TargetMap="11202">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>					
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="小主人是c摩尔王c寻找的“料理大师”吗？\n快去c国王呈见厅c试试吧^—^！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【手指饼干】？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="越简单的料理越能考验厨师，\n把普通食材变成让人流口水的美味\n——这就是专业。\n你有信心做出超一流的【手指饼干】吗？" />																					
+					<Option Info="现在就做【手指饼干】！" />
+					<Option Info="怎么做【手指饼干】？" NextStep="3" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+					<Option Info="有事先走了"  NextStep="2" />										
+				</Action>								
+    		</Event>
+    	</Step>		
+  		<Step ID="3" ParentList="0" ParentCost="1" >
+    		<Event Memo="小主人是c摩尔王c寻找的“料理大师”吗？\n快去c国王呈见厅c试试吧^—^！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="怎么做【手指饼干】？" />													
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【贝多罗】是“站在王国美食界顶点的男人”，如果得到他的传授，你就成功了一半。" />	
+					<Msg NpcID="25" ImageID="1" Info="友情提醒——【下水道第3层】的【吉普豆泥王】守护着【手指饼干配方】。\n最快得到“配方”的放法就是重复挑战它。" />																															
+					<Option Info="现在就去！" />				
+					<Option Info="有事先走了"  NextStep="2" />										
+				</Action>								
+    		</Event>
+    	</Step>			
+		
+		
+<!-- 节点2↓ -->		
+  		<Step ID="5" ParentList="2, 3" ParentCost="1" >
+			<Condition>
+				<Item ID="230001" Count="1" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="c手指饼干c制作成功↖(^ω^)↗\n快去c国王呈见厅c交给c摩尔王·詹姆斯c吧！" TargetMap="11307">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="【手指饼干】做好啦！" />													
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="1" Info="多多练习做出更美味的料理吧！\n——记住，食物是有魔力的！" />		
+					<Option Info="(*^__^*) " />
+				</Action>									
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="小主人还没做出c手指饼干c？\n快去c王国南街·贝多罗面包店c试试吧！" TargetMap="11213">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="怎么做【手指饼干】？" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="5" Info="你需要先得到【配方】，\n使用【手指饼干配方】就可以把它登录到你的【图鉴册】中！" />
+					<Msg NpcID="18" ImageID="5" Info="当你要做的时候，\n和我对话选择【我想做料理】或者【点击】对面的【壁炉】。" />
+					<Msg NpcID="18" ImageID="5" Info="记住！\n原料不足可是无法制作料理的！\n需要的材料可以通过【购买】和【采集】获得！" />				
+					<Option Info="现在就做【手指饼干】！" />
+				</Action>				
+    		</Event>			
+    	</Step>					
+  		<Step ID="4" ParentList="2, 3, 5" ParentCost="1" >
+			<Condition>
+				<Item ID="230001" Count="1" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="c手指饼干c制作成功↖(^ω^)↗\n快去c国王呈见厅c交给c摩尔王·詹姆斯c吧！" TargetMap="11307">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【手指饼干】来啦！" />													
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="…… …… ……" />		
+					<Msg NpcID="30" ImageID="2" Info="这种奇妙的口感……\n我满足了（T T）……" />							
+					<Option Info="美食万岁\(≧▽≦)/" />
+				</Action>											
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="小主人还没做出c手指饼干c？\n快去c王国南街·贝多罗面包店c试试吧！" TargetMap="11213">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="怎么做【手指饼干】？" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【贝多罗】是“站在王国美食界顶点的男人”，如果得到他的传授，你就成功了一半。" />	
+					<Msg NpcID="25" ImageID="1" Info="友情提醒——【下水道第3层】的【吉普豆泥王】守护着【手指饼干配方】。\n最快得到“配方”的放法就是重复挑战它。" />											
+					<Option Info="现在就做【手指饼干】！" />
+				</Action>				
+    		</Event>			
+    	</Step>  
+	</Procedure>
+</Task>

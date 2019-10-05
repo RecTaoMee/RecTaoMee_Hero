@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activities>
+	<!--线上的活动-->
+	<activity id="4" name="敬请期待" moduleName="" begin_time="2012/10/11 00:00:00" end_time="2099/02/28 00:00:00" miscId="0x0B800057">		
+	</activity>	
+
+	<!--已下架的活动-->
+	<!--
+		<activity id="1" name="幸运大抽奖" moduleName="ActivitySpringFestival2013Module" begin_time="2012/12/31 00:00:00" end_time="2099/02/28 00:00:00" isNew="1" miscId="0x0B800055">
+	</activity>
+	<activity id="3" name="得稀有精灵蛋" moduleName="ActivityPetExchange2013Module" begin_time="2012/10/11 00:00:00" end_time="2099/03/28 00:00:00"isNew="1" >		
+	</activity>
+
+	<activity id="4" name="疯狂冲级" moduleName="ActivityLevelRushModule2013" begin_time="2012/10/11 00:00:00" end_time="2099/02/28 00:00:00"isNew="1" miscId="0x0B800057">		
+	</activity>	
+		<activity id="2" name="VIP绝版大礼" moduleName="ActivityVipGiftModule" begin_time="2012/10/11 00:00:00" end_time="2099/04/30 23:59:00"isNew="1" miscId="0x0B800050">		
+	</activity>	
+	-->
+
+</activities>
+<!--
+	activity.@isNew:是否显示new标签
+-->

@@ -1,0 +1,21 @@
+<!--下水道七层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="200,130" targetMapId="21209" targetTransPortId="2" name="下水道六层"/>
+		<node id="2" pos="802,211" targetMapId="21211" targetTransPortId="1" name="下水道八层"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+		<node id="3" type="" res="MC_key_0">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[能来到这里……别拿法尔烤青蛙啊]]>
+			</event>
+		</node>
+		<node id="4" type="" res="MC_key_1">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[门？爬楼梯……↑→]]>
+			</event>
+		</node>
+	</object>
+</map>

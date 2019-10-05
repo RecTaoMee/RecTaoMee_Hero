@@ -1,0 +1,190 @@
+<Task ID="35007" Memo="c王国南街c发现一只c喵斯熊c(⊙o⊙)，快去看看吧！\n周日：12:00~13:00" TargetMap="11201">
+	<Procedure> 
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="c王国南街c发现一只c喵斯熊c(⊙o⊙)，快去看看吧！\n周日：12:00~13:00" TargetMap="11201" TargetObj="" TargetName="去t王国南街t"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11201" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" /> 		
+    		</Event>
+		</Step>		
+  		<Step ID="1" ParentList="50" ParentCost="1" >
+    		<Event Memo="c王国南街c发现一只c喵斯熊c(⊙o⊙)，快去看看吧！\n周日：12:00~13:00" TargetMap="11201" TargetObj="" TargetName="去t王国南街t"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11201" />
+				</Trigger>
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201, 30039" />	
+    		</Event>
+		</Step>				
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c王国南街c发现一只c喵斯熊c(⊙o⊙)，快去看看吧！\n周日：12:00~13:00" TargetMap="11201" TargetObj="30039" TargetName="和t喵斯熊t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="30039" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="359" ImageID="3" Info="天气不错，正好酿造【蜂蜜】~~" />	
+					<Option Info="酿蜂蜜？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="359" ImageID="3" Info="把蜂蜜涂在身上，混合着汗水刮下来，\n就会留下我特别的“体香”。" />	
+					<Msg NpcID="359" ImageID="2" Info="嘿嘿~你去【平原3区】，\n帮我把它送给“小喵喵”（喵斯熊·改）吧！" />									
+					<Option Info="不自己去送吗？" SkipTrigger="Y" />
+					<Option Info="有事先走了" NextStep="2"/>					
+				</Action>										
+    		</Event>
+		</Step>
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="c王国南街c发现一只c喵斯熊c(⊙o⊙)，快去看看吧！\n周日：12:00~13:00" TargetMap="11201" TargetObj="30039" TargetName="和t喵斯熊t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="30039" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="359" ImageID="1" Info="采蜂蜜的时候被蛰得“破相”啦，\n如果“小喵喵”看到我现在的样子，\n会讨厌我的（T_T）~" /> 	
+					<Option Info="这就去【平原3区】！" />
+				</Action>	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260035" /> 		
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11201, 30039" /> 								
+    		</Event>
+		</Step>		
+		
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >		  
+    		<Event Memo="快去c平原3区c,\n帮喵斯熊把“爱心”蜂蜜送给c喵斯熊·改c吧！" TargetMap="21303" TargetObj="703" TargetName="和t喵斯熊·改t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21303" ObjID="703" TaskOption="喵斯熊送你的蜂蜜^^!" /><!-- 喵斯改出现 -->
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="703" ImageID="3" Info="呼——呼呼~~\n【喵斯熊大人】的“体香”太重口味了，\n我快不行啦（°ο°）~喵\n……" /> 	
+					<Msg NpcID="703" ImageID="2" Info="真想吃一根新鲜的【竹子】清清口啊~" />	
+					<Option Info="竹子？" />			
+				</Action>							
+				<Action Type="TALK">
+					<Msg NpcID="703" ImageID="2" Info="【平原上】有很多小竹林，\n我只要一小根就够啦~" /> 					
+					<Option Info="这就去找【竹子】！" />
+				</Action>
+				<Action Type="COMMAND" Command="SET_STA_RANGE" Params="1, 5, 8" /> 		
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260035" /> 											
+    		</Event>			  
+		</Step>			
+			
+  		<Step ID="5" ParentList="4" ParentCost="1" >                                     
+			<Condition>
+				<Buffer Sta1="5" /> 
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21311" TargetObj="360" TargetName="点击t竹子At">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="360" TaskOption="竹子竹子我来啦" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260034" /> 			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21311" TargetObj="360" TargetName="点击t竹子At">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="360" TaskOption="竹子竹子我来啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="9" Info="这棵竹子还没成熟，不能采来吃~~\n还是去别处看看吧！" /> 
+					<Option Info="这就去找【竹子】！" />
+				</Action>			
+    		</Event>			  
+		</Step>
+  		<Step ID="6" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="6" /> 
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21302" TargetObj="361" TargetName="点击t竹子Bt">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21302" ObjID="361" TaskOption="竹子竹子我来啦" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260034" /> 			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21302" TargetObj="361" TargetName="点击t竹子Bt">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21302" ObjID="361" TaskOption="竹子竹子我来啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="9" Info="这棵竹子还没成熟，不能采来吃~~\n还是去别处看看吧！" /> 
+					<Option Info="这就去找【竹子】！" />
+				</Action>			
+    		</Event>			  
+		</Step>
+  		<Step ID="7" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="7" /> 
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21305" TargetObj="362" TargetName="点击t竹子Ct">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21305" ObjID="362" TaskOption="竹子竹子我来啦" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260034" /> 			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21305" TargetObj="362" TargetName="点击t竹子Ct">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21305" ObjID="362" TaskOption="竹子竹子我来啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="9" Info="这棵竹子还没成熟，不能采来吃~~\n还是去别处看看吧！" /> 
+					<Option Info="这就去找【竹子】！" />
+				</Action>			
+    		</Event>			  
+		</Step>
+  		<Step ID="8" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="8" /> 
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21304" TargetObj="363" TargetName="点击t竹子Dt">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21304" ObjID="363" TaskOption="竹子竹子我来啦" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260034" /> 			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c平原2区、4区、5区、11区c，采一根c竹子c吧！" TargetMap="21304" TargetObj="363" TargetName="点击t竹子Dt">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21304" ObjID="363" TaskOption="竹子竹子我来啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="9" Info="这棵竹子还没成熟，不能采来吃~~\n还是去别处看看吧！" /> 
+					<Option Info="这就去找【竹子】！" />
+				</Action>			
+    		</Event>			  
+		</Step>			
+			
+  		<Step ID="9" ParentList="5, 6, 7, 8" ParentCost="1" >
+    		<Event Memo="采集到c竹子c啦\(≧▽≦)/，\n快去c平原3区c交给c喵斯熊·改c吧！" TargetMap="21303" TargetObj="703" TargetName="和t喵斯熊·改t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21303" ObjID="703" TaskOption="采到【竹子】啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="703" ImageID="2" Info="nia~nia~nia~nia~\n真好吃，心情好好~喵" /> 
+					<Option Info="嘿嘿" />
+				</Action>	
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260034" SkipTrigger="Y" /> 																								
+    		</Event>
+		</Step>		
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="快去c平原3区c和c喵斯熊·改c聊聊吧！" TargetMap="21303" TargetObj="703" TargetName="和t喵斯熊·改t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21303" ObjID="703" TaskOption="你很喜欢竹子啊" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="703" ImageID="2" Info="你能每天采竹子给我吃吗？" /> 	
+					<Option Info="当然啦！" SkipTrigger="Y" />						
+					<Option Info="考虑考虑~" NextStep="10" />						
+				</Action>																													
+    		</Event>
+		</Step>		
+  		<Step ID="11" ParentList="10" ParentCost="1" >
+    		<Event Memo="快去c平原3区c和c喵斯熊·改c聊聊吧！" TargetMap="21303" TargetObj="703" TargetName="和t喵斯熊·改t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21303" ObjID="703" TaskOption="每天采竹子给你^^！" />
+				</Trigger>						
+				<Action Type="TALK">	
+					<Msg NpcID="703" ImageID="4" Info="\(0^◇^0)/求领养求契约~喵！\n我们来一场“契约战斗”吧，\n请一定契约我啊~" /> 														
+					<Option Info="123准备下" NextStep="11" />
+					<Option Info="这就【契约】你！" />					
+				</Action>	
+    			<Action Type="COMMAND" Command="BATTLE" Params="23" RightUp="Y" /> 																									
+    		</Event>
+		</Step>									
+<!-- 喵斯改出现 节点2-->				
+	</Procedure>
+</Task>

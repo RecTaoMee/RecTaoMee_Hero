@@ -1,0 +1,41 @@
+<!--废弃的皇宫花园-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="805,1031">
+		<node id="1" dir="" pos="805,1031" targetMapId="51202" targetTransPortId="5" name="废弃的勇士广场"/>
+	</transport>
+	<object>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="NPC" res="MC_npc_758" action="1" name="魔蛇"/>
+		<node id="2" type="NPC" res="MC_npc_106" action="4" name="路西欧"/>
+		<node id="3" type="TransPort" res="MC_door_1" transPortId="1"/>
+
+    </npc>
+    <actions>
+		<proAction npcID="758" id="1" type="0" answer="离开" to="o" colorID="0">
+			<des>
+				<![CDATA[1#哈哈，摩尔王国将沦为黑暗势力的附庸！只有黑暗势力才是天下的共主！路西欧，觉悟吧！]]>
+			</des>
+		</proAction>
+		
+<!-- 国庆后挑战魔蛇下架	
+		<proAction npcID="758" id="2" type="0" answer="我要挑战你$我知道了" to="a5$o" colorID="1$0">
+			<des>
+				<![CDATA[1#如果你能击败我，就有机会获得【种族技能灵药】、【修理模具（中级）】、【合成石（高级）】！让我看看你的实力吧！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="5" fightID="2623" />
+-->		
+		
+			
+		<proAction npcID="106" id="4" type="0" answer="我知道了！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#这个领主异常强大，能力绝不在尤利之下，如今只能每日的13:00-15:00将他封印，才能防止这个世界被彻底毁灭！$$]]>
+				<![CDATA[1#（35级以上的勇士可以每天13-15点在【废墟的勇士广场】“宾得”处接取“无尽的战斗”任务，与黄金勇士一同挑战魔蛇！）]]>
+			</des>
+		</proAction>			
+
+	</actions>
+</map>

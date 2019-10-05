@@ -1,0 +1,248 @@
+<Task ID="35000" Memo="G档案·忽悠喵\n周六~周日：6:00~24:00" TargetMap="11208">
+   	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+			<Event Memo="去c勇敢者旅馆二楼c的c神秘人c那里看一看吧！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="听说你找我有事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="【@nick】来了啊。最近听说它又出现在王国里了。" />
+					<Option Info="它？？？"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="【忽悠喵】，喜欢伪装成摩尔骗取星豆的精灵。听说最近它骗了不少摩尔了！" />
+					<Msg NpcID="21" ImageID="1" Info="据我调查，它每周六6:00-24:00和周日6:00-24:00会在【勇敢者旅馆1楼】【贝多罗面包店】【贝塔商会道具店】【贝塔商会装备店】伪装出现！" />
+					<Option Info="那该怎么办？"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="记得把迷眼蝠和怪盗迪迪拉带在身边，他们可是看穿谎言的高手！" />
+					<Msg NpcID="21" ImageID="1" Info="像这样把它们设置成【辅助】，可以提高捕获它的几率哦！" />
+					<Option Info="哦？"/>
+				</Action>
+				<Action Type="MOVIE" Url="task_35000_pet.swf" MapLevel="TASK" Pos="0,0" Params="abc"  />
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="嘿嘿，看明白了就去行动吧。" />
+					<Option Info="使命必达！" SkipTrigger="Y" />
+				</Action>
+    		</Event><!--
+			<Event ConditionType="OUT" Memo="去神秘人那里看一看吧" TargetMap="11208"> 	
+			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="你知道忽悠喵吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="【@nick】，你也听说了忽悠喵的事情吗？" />
+					<Option Info="哦？"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="【忽悠喵】是喜欢伪装成摩尔模样的骗子精灵！听说它骗了不少摩尔了！你可千万不要被骗了。" />
+					<Msg NpcID="21" ImageID="1" Info="据我调查，它每周六6:00-24:00和周日6:00-24:00会在【勇敢者旅馆1楼】【贝多罗面包店】【贝塔商会道具店】【贝塔商会装备店】伪装成摩尔出现！" />
+					<Option Info="知道了。" />
+				</Action>
+			</Event>-->
+		</Step>  
+		
+		<Step ID="9" ParentList="1" ParentCost="1">
+			<Event Memo="去c勇敢者旅馆二楼c的c神秘人c那里看一看吧！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话"> 	
+			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="去找忽悠喵↖(^ω^)↗" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="SET_STA_RANGE" Params="1, 2, 4" SkipTrigger="Y" /> 
+			</Event>
+		</Step>
+
+
+		<Step ID="2" ParentList="9" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="2"/>	
+			</Condition>
+    		<Event ConditionType="IN" Memo="去c勇敢者旅店一楼c看看有没有c忽悠喵c吧！" TargetMap="11207" TargetObj="350" TargetName="和t忽悠喵At对话">				
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+			</Event>
+		</Step>
+		<Step ID="22" ParentList="2" ParentCost="1" >
+			 <Condition>
+				<Pet Follow="Y" Type="7"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="去c勇敢者旅店一楼c看看有没有c忽悠喵c吧！" TargetMap="11207" TargetObj="350" TargetName="和t忽悠喵At对话"> 		
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="350" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="3" Info="喵呜…喵呜…我是蒂蒂拉…\n要恢复力量吗？给星豆！" />				
+					<Option Info="…真可疑…" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="3" Info="【蒂蒂拉】是给大家恢复HP&amp;MP的！不会恢复力量！刚刚不小心口误了~喵呜~" />	
+					<Option Info="你有猫耳朵哦！" NextStep="222" SkipTrigger="Y" />
+				</Action>	
+			</Event>
+			<Event ConditionType="OUT" Memo="去c勇敢者旅店一楼c看看有没有c忽悠喵c吧！" TargetMap="11207" TargetObj="350" TargetName="和t忽悠喵At对话"> 
+			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="350" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="3" Info="我是蒂蒂拉…\n要恢复力量吗？给星豆！" />				
+					<Option Info="让怪盗迪迪拉【跟随】试试。"/>
+				</Action>
+    		</Event> 
+		</Step>		
+		<Step ID="222" ParentList="22" ParentCost="1" >
+			<Event Memo="去c勇敢者旅店一楼c看看有没有c忽悠喵c吧！" TargetMap="11207" TargetObj="350" TargetName="和t忽悠喵At对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="350" TaskOption="你是忽悠喵!" />
+				</Trigger>			<!--	
+    			<Action Type="COMMAND" Command="NOTHING" NextStep="6" SkipTrigger="Y" /> 	-->
+				<Action Type="COMMAND" Command="BATTLE" Params="12"  RightUp="Y"/>								
+			</Event>
+		</Step>	
+		   		
+
+		<Step ID="3" ParentList="9" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="3"/>
+			</Condition>		
+    		<Event ConditionType="IN" Memo="去c贝多罗面包店c看看有没有c忽悠喵c吧！" TargetMap="11213" TargetObj="349" TargetName="和t忽悠喵Bt对话">					
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+		
+		<Step ID="33" ParentList="3" ParentCost="1" >
+			<Condition>
+					<Pet Follow="Y" Type="15"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="去c贝多罗面包店c看看有没有c忽悠喵c吧！" TargetMap="11213" TargetObj="349" TargetName="和t忽悠喵Bt对话"> 	
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="349" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="2" Info="喵呜…喵呜…我是贝多罗…\n要酷炫的装备吗？给星豆！" />				
+					<Option Info="…真可疑…" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="2" Info="【贝多罗】是做面包的，【贝多罗】能做出最好吃的面包。刚刚不小心口误了~喵呜~" NextStep="333"  />				
+					<Option Info="你有猫尾巴哦！" SkipTrigger="Y"/>					
+				</Action>	
+			</Event>
+			<Event ConditionType="OUT" Memo="去c贝多罗面包店c看看有没有c忽悠喵c吧！" TargetMap="11213" TargetObj="349" TargetName="和t忽悠喵Bt对话"> 
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="349" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="2" Info="我是贝多罗…\n要酷炫的装备吗？给星豆！" />				
+					<Option Info="让迷眼蝠【跟随】试试。"/>
+				</Action>
+    		</Event> 
+		</Step>		
+		<Step ID="333" ParentList="33" ParentCost="1" >
+			<Event Memo="去c贝多罗面包店c看看有没有c忽悠喵c吧！" TargetMap="11213" TargetObj="349" TargetName="和t忽悠喵Bt对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="349" TaskOption="你是忽悠喵!" />
+				</Trigger>				
+				<Action Type="COMMAND" Command="BATTLE" Params="12"  RightUp="Y"/>	
+			</Event>
+		</Step>
+
+
+		<Step ID="4" ParentList="9" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="4"/>
+			</Condition>		
+     		<Event ConditionType="IN" Memo="去c道具店c看看有没有c忽悠喵c吧！" TargetMap="11210" TargetObj="347" TargetName="和t忽悠喵Ct对话">					 	
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+		<Step ID="44" ParentList="4" ParentCost="1" >
+			<Condition>
+					<Pet Follow="Y" Type="7"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="去c道具店c看看有没有c忽悠喵c吧！" TargetMap="11210" TargetObj="347" TargetName="和t忽悠喵Ct对话"> 	
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="347" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="17" ImageID="3" Info="喵呜…喵呜…我是贝蒂…\n要买面包吗？给星豆！" />				
+					<Option Info="…真可疑…" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="17" ImageID="3" Info="喵呜……【贝蒂】卖的是道具！不卖面包！刚刚不小心口误了~喵呜~" />				
+					<Option Info="你头上有角哦！" NextStep="444" SkipTrigger="Y" />
+				</Action>	
+			</Event>
+			<Event ConditionType="OUT" Memo="去c道具店c看看有没有c忽悠喵c吧！" TargetMap="11210" TargetObj="347" TargetName="和t忽悠喵Ct对话"> 
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="347" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="17" ImageID="3" Info="我是贝蒂…\n要买面包吗？给星豆！" />				
+					<Option Info="让怪盗迪迪拉【跟随】试试."/>
+				</Action>
+    		</Event>
+		</Step>	
+		<Step ID="444" ParentList="44" ParentCost="1" >
+			<Event Memo="去c道具店c看看有没有c忽悠喵c吧！" TargetMap="11210" TargetObj="347" TargetName="和t忽悠喵Ct对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="347" TaskOption="你是忽悠喵!" />
+				</Trigger>			
+				<Action Type="COMMAND" Command="BATTLE" Params="12"  RightUp="Y"/>			
+			</Event>
+		</Step>	
+		
+<!--
+		<Step ID="5" ParentList="9" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="5"/>
+			</Condition>		
+     		<Event ConditionType="IN" Memo="装备店" TargetMap="11209">	
+			  	<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="去找忽悠喵↖(^ω^)↗" />
+				</Trigger>				 		
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+		<Step ID="55" ParentList="5" ParentCost="1" >
+			<Condition>
+					<Pet Follow="Y" Type="15"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="任务提示段3/dexo" TargetMap="11401"> 	
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="348" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="2" Info="喵呜…喵呜…我是贝利…\n要买精灵吗？给星豆！" />				
+					<Option Info="…真可疑…" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="2" Info="喵呜…【贝利】是买卖装备的！刚刚不小心口误了~喵呜~" />				
+					<Option Info="你有猫胡子！" NextStep="555" SkipTrigger="Y" />
+				</Action>	
+			</Event>
+			<Event ConditionType="OUT" Memo="任务提示段3/dexo" TargetMap="11401"> 
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="348" TaskOption="你好啊^^!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="2" Info="我是贝利…\n要买精灵吗？给星豆！" />				
+					<Option Info="让迷眼蝠【跟随】试试。"/>
+				</Action>
+    		</Event>
+		</Step>		
+		<Step ID="555" ParentList="55" ParentCost="1" >
+			<Event Memo="移除" TargetMap="">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="348" TaskOption="你是忽悠喵!" />
+				</Trigger>				
+    			<Action Type="COMMAND" Command="NOTHING" NextStep="6" SkipTrigger="Y" /> 									
+			</Event>
+		</Step>	 
+	  <Step ID="6" ParentList="222,333,444" ParentCost="1" >				
+			 <Event  Memo="快战胜假扮摩尔的c忽悠喵c吧!" TargetMap="" TargetName="击败t忽悠喵t"> 
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="347" TaskOption="你是忽悠喵!" />
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="349" TaskOption="你是忽悠喵!" />
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="350" TaskOption="你是忽悠喵!" />
+				</Trigger>					 
+				<Action Type="COMMAND" Command="BATTLE" Params="12"  RightUp="Y"/>	
+    		</Event> 
+	  </Step>-->
+	</Procedure>
+</Task>

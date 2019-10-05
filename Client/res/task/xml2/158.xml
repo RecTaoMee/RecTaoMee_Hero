@@ -1,0 +1,66 @@
+<Task ID="158" Memo="可恶的章鱼王，“勇士号”飘到了无名的海岛，到底怎么回事呢？问一问c水手c吧。" TargetMap="11701">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >			
+    		<Event Memo="可恶的章鱼王，“勇士号”飘到了无名的海岛，到底怎么回事呢？问一问c水手c吧。" TargetMap="11701" TargetObj="60" TargetName="和t勇士号水手t对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="勇士号怎样了？" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="3" Info="这里是哪里呢....我们也不知道....." />	
+					<Msg NpcID="58" ImageID="4" Info="对了！【@nick】，刚才我在岛中间发现一个神秘的地道，可以拜托你去看看吗？说不定里面可以发现什么大宝藏呢！" />
+					<Option Info="好的！" />
+				</Action>																					
+    		</Event>						
+		</Step>	
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="前进！前进！神秘海岛大冒险，地道的尽头是什么呢？" TargetMap="11709" TargetObj="" TargetName="探索t神秘地道t">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="这是哪里？" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="这里是废弃的土豆村。原本是和吉普豆村相通的村落，但是后来因为地道塌陷的原因，这里逐渐被废弃了。" />
+					<Msg NpcID="59" ImageID="1" Info="很久没见过外来的摩尔了，你是也是勇士协会的吗？" />							
+					<Option Info="是的！" SkipTrigger="Y"/>
+				</Action>																				
+    		</Event>									
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >			
+    		<Event Memo="前进！前进！神秘海岛大冒险，地道的尽头是什么呢？" TargetMap="11709" TargetObj="" TargetName="和t休一t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="你是？" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="太好了，最近这里也被黑水晶的力量影响了，很多吉普豆精灵都被黑化了。你到外面的地道净化5只【吉普豆叶】吧" />							
+					<Option Info="好！" />
+				</Action>																				
+    		</Event>									
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="1" Count="5" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="净化完毕！回去把这个好消息告诉c银魂·休一c吧！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="净化完毕！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="可以稍微松一口气了，最近大量精灵被黑化真让人头痛！" />
+					<Option Info="..." />
+				</Action>	
+    		</Event>
+			<Event ConditionType="OUT" Memo="c银魂·休一c要求在旁边的地道里净化5只c吉普豆叶c" TargetMap="21751" TargetObj="" TargetName="击败t吉普豆叶t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="...." />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="这里的吉普豆可真多·····" />
+					<Option Info="......." />
+				</Action>
+			</Event>
+		</Step>	
+
+</Procedure>
+</Task>

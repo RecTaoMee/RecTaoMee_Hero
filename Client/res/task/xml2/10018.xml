@@ -1,0 +1,101 @@
+ <Task ID="10018" Memo="c女神大圣堂c的c瑞贝卡c是摩尔王国最出色的药剂师，如果想学习c药剂调配c，可以去找她。" TargetMap="11217">
+	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0">
+			<Event Memo="c女神大圣堂c的c瑞贝卡c是摩尔王国最出色的药剂师，如果想学习c药剂调配c，可以去找她。" TargetMap="11217">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="我想学习【药剂调配】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="【药剂调配】？这可不是轻易能掌握的技能！不过一旦掌握了这个技能，那可是有很多好处的。" />
+					<Msg NpcID="23" ImageID="1" Info="最重要的一点是：很多稀有药剂是无法在商店中买到，只有通过【药剂调配】才可以得到！" />
+					<Option Info="真好！"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="让我教你【药剂调配】当然可以，不过你要先帮我一个小忙^^。" />
+					<Msg NpcID="23" ImageID="1" Info="你知道摩尔王国有很多士兵吧，他们的名字都是【守卫士兵】然后加上【字母】。" />
+					<Msg NpcID="23" ImageID="1" Info="昨天不小心把一张重要的【药剂配方】弄丢了，我想一定被某个【守卫士兵】捡到了，你去帮我找找吧。" />
+					<Option Info="你昨天去哪了呢？"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="应该是在【摩尔城堡】附近，昨天有好几个士兵被下水道的黑化精灵袭击受伤，我和姐姐一起去摩尔城堡帮助治疗那些士兵。" />
+					<Option Info="我去看看！"/>
+				</Action>
+
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1">
+			<Event Memo="c瑞贝卡c姐姐弄丢了重要的配方，快点去c摩尔城堡c里帮她找找。到底是哪个c守卫士兵c拾到了配方呢？每一个士兵都问问吧" TargetMap="11302">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11302" ObjID="214" TaskOption="丢失的配方" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="214" ImageID="1" Info="配方？你是说的这个吗？这个是昨天在这边地上捡到的，原来是很重要的配方。" />
+					<Msg NpcID="214" ImageID="1" Info="配方给你，快点把它还给瑞贝卡大人吧。" />
+					<Option Info="好的！"/>
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260014" />
+			</Event>
+		</Step>
+		
+		
+		<Step ID="3" ParentList="2" ParentCost="1">
+			<Event Memo="找到了重要的配方，快点回去c女神大圣堂c交给c瑞贝卡c姐姐。" TargetMap="11217">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="配方找到了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="配方你找到啦？太好了^^，如果被温蒂姐姐知道了一定会被骂的？" />
+					<Msg NpcID="22" ImageID="2" Info="配方？你在说什么呀，瑞贝卡？" />
+					<Msg NpcID="23" ImageID="1" Info="…………咳咳…………没有啦，姐姐你听错了。" />
+					<Option Info="......" NextStep="4" SkipTrigger="Y"/>
+				</Action>
+				
+			</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1">
+			<Event Memo="找c瑞贝卡c姐姐学习c药剂调配c吧。" TargetMap="11217">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="最后的考验" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="(小声说)谢谢你啦【@nick】。不过还有最后一道考验哦，对于一个药剂师，观察力和记忆力是非常重要的！" />
+					<Msg NpcID="23" ImageID="1" Info="请问：在【摩尔城堡•皇宫花园】一共有几个【守卫士兵】呢？" />
+					<Option Info="2个" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					<Option Info="4个" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					<Option Info="6个" SkipTrigger="Y"/>
+					<Option Info="10个" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+				</Action>
+			</Event>
+		</Step>
+		
+		
+		<Step ID="5" ParentList="4" ParentCost="1">
+			<Event Memo="回答了问题，到底对不对呢？快问问c瑞贝卡c姐姐答案吧。" TargetMap="11217">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="回答对了吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="恭喜答对！看来你很有潜质嘛，【药剂调配】就教给你吧，还有这种配方，一起送给你吧。" />
+					<Option Info="谢谢"/>
+				</Action>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260014" />
+			</Event>
+		</Step>
+		
+		<Step ID="6" ParentList="0" ParentCost="1">
+			<Event Memo="回答了问题，到底对不对呢？快问问c瑞贝卡c姐姐答案吧。" TargetMap="11217">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="回答对了吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="不对！再想一想，然后告诉我答案" />
+					<Option Info="嗯..." TalkOver="Y" NextStep="4"/>
+				</Action>
+			</Event>
+		</Step>
+	
+		
+	</Procedure>
+</Task>

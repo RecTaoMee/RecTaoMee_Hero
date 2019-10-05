@@ -1,0 +1,69 @@
+<Task ID="10010" Memo="加入c剑士协会c有一段时间了，有没有遇到什么疑惑呢?和c杰森c导师聊聊吧。" TargetMap="11305">
+	<Procedure> 
+		<Step ID="4" ParentList="0" ParentCost="0" >
+    		<Event Memo="加入c剑士协会c有一段时间了，有没有遇到什么疑惑呢?和c杰森c导师聊聊吧。" TargetMap="11305">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="杰森老师好！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="1" ParentList="4" ParentCost="1" >
+    		<Event Memo="加入c剑士协会c有一段时间了，有没有遇到什么疑惑呢?和c杰森c导师聊聊吧。" TargetMap="11305">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="杰森老师好！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="2" Info="【@nick】你加入剑士协会有一段时间了，平时有没有疏于练习啊？" />
+					<Msg NpcID="26" ImageID="1" Info="哈哈，要是偷懒可是要被打屁股的！来和我对战吧！" />
+					<Option Info="对战？" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="加入c剑士协会c有一段时间了，有没有遇到什么疑惑呢?和c杰森c导师聊聊吧。" TargetMap="11305">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="杰森老师好！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="26" ImageID="1" Info="这是勇士协会的传统！协会学员每隔一段时间都要和他的导师进行对战来检测学习成果！" />
+					<Msg NpcID="26" ImageID="1" Info="哈哈，打赢我可是有奖励的哦。放心，我可是会手下留情的！" />
+					<Option Info="好的！" />
+					<Option Info="老师！我肚子突然很痛..." NextStep="2" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3002"/>
+    		</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="3002" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="打赢了！快找c杰森c老师领取奖励吧！" TargetMap="11305">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="打赢啦！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="还不错，看来你平时练习还是很刻苦的。这把剑作为奖励送给你了。" />
+						<Msg NpcID="26" ImageID="1" Info="记住！刻苦的修炼才可能成为摩尔勇士，下次挑战我可没那么轻松了！" />
+						<Option Info="谢谢杰森老师！" />
+					</Action>
+				</Event>
+				<Event ConditionType="OUT" Memo="快去挑战c杰森c老师吧！" TargetMap="11305">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="再次挑战" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="害怕了吗？胆小鬼可是成为不了摩尔勇士的。" />
+						<Option Info="我可不是胆小鬼！" />
+						<Option Info="老师！我肚子又痛了..." NextStep="3" />
+					</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3002"/>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

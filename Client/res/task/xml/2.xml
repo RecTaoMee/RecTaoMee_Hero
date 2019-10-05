@@ -1,0 +1,27 @@
+<task id="2">
+	<taskDes>
+		<![CDATA[我是你的《旅行记事本》成为你的记事本我太兴奋了！原来皮皮克克调皮离家出走，【快让琪琪姐姐帮忙恢复体力】吧！]]>
+	</taskDes>
+	<taskPro>
+		<pro type="2" parent="" mapID="11104" action="3" />
+		<pro type="0" parent="0" npcID="6" title="皮皮克克？" action="0" needRes="" needResNum="" unResAction="" taskDes="0" />
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="6" answer="......" to="a1">
+			<des>
+				<![CDATA[7#这两天你到哪儿去了，大家多担心你！这次真是太过分了！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="1" answer="没关系，我们是好朋友嘛！" to="a2">
+			<des>
+				<![CDATA[4#对不起……$$]]>
+				<![CDATA[1#对了这是我的好朋友【@nick】，在地道里迷路的时候幸好有他和我在一起。$$]]>
+				<![CDATA[4#不过因为我……害他受伤了……$$]]>
+				<![CDATA[1#姐姐快帮他治疗吧!$$]]>
+				<![CDATA[10#真是谢谢你！皮皮克克给你添麻烦了！不用担心，我这就给你进行【恢复】，治疗后你的体力就会完全恢复了！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="1" outMap="1" level="taskLevel" name="task_2_0" moviepos="0,0" to="c" nextTask="3_0"/>
+		<proAction id="3" type="3"  to="s0"/>
+	</actions>
+</task>

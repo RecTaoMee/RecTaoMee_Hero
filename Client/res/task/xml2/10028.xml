@@ -1,0 +1,72 @@
+<Task ID="10010" Memo="加入c魔法师协会c有一段时间了，有没有遇到什么疑惑呢?和c彼兔c导师聊聊吧。" TargetMap="11304">
+	<Procedure> 
+		<Step ID="4" ParentList="0" ParentCost="0" >
+    		<Event Memo="加入c魔法师协会c有一段时间了，有没有遇到什么疑惑呢?和c彼兔c导师聊聊吧。" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="魔法的试炼" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="1" ParentList="4" ParentCost="1" >
+    		<Event Memo="加入c魔法师协会c有一段时间了，有没有遇到什么疑惑呢?和c彼兔c导师聊聊吧。" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="魔法的试炼" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="27" ImageID="2" Info="【@nick】你加入魔术师协会有一段时间了，觉得自己有变得更强吗？" />
+						<Option Info="有！" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="27" ImageID="2" Info="很好，但是魔法可不是轻易能够掌握的力量，让我见识一下你对魔法的理解到达了什么境界吧！" />
+						<Option Info="啊？"  SkipTrigger="Y"/>
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="加入c魔法师协会c有一段时间了，有没有遇到什么疑惑呢?和c彼兔c导师聊聊吧。" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="导师的考验" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="27" ImageID="2" Info="和导师对战可是协会学员必备课程之一，用来检验协会学员修习成果" />
+						<Msg NpcID="27" ImageID="2" Info="偷懒的小摩尔是要被变成兔子！" />
+						<Option Info="我不要变兔子！" />
+						<Option Info="彼兔老师，我有事先走了！" NextStep="2" />
+					</Action>
+					<Action Type="COMMAND" Command="BATTLE" Params="3001"/>
+			</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="3001" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="打赢了！快找c彼兔c老师领取奖励吧！" TargetMap="11304" TargetObj="27" TargetName="和t彼兔t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="打赢啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="很不错，看来你对魔法很有天赋。" />
+					<Msg NpcID="27" ImageID="1" Info="这是你的奖励给，下次我可不会手下留情了。" />
+					<Option Info="谢谢彼兔老师！" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="快点向c彼兔c老师挑战吧！" TargetMap="11304" TargetObj="27" TargetName="挑战t彼兔t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="魔法的试炼" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="2" Info="胆小鬼都要被变成兔子！再犹豫不决的话...哼哼。" />
+					<Option Info="我要挑战你！" />
+					<Option Info="彼兔老师，我又有事了！" NextStep="3"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3001"/>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

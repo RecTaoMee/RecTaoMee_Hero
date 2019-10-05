@@ -1,0 +1,31 @@
+<Task ID="30005" Memo="【海德】在【格历尔平原·二区】出现了？快去看看吧！\n周六~周日：6:00~24:00" TargetMap="21302">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="【海德】在【格历尔平原·二区】出现了？快去看看吧！\n周六~周日：6:00~24:00" TargetMap="21302" TargetObj="" TargetName="去t格历尔平原·二区t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21302" />								
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="【海德】是【G·档案】要调查的第一个传说中的精灵！太让人兴奋了！我希望今天起床就能见到它啊~~！！" />						
+					<Msg NpcID="12" ImageID="2" Info="英文“Hide”——就是隐藏的意思。\n这就是“海德”精灵的由来。\n——你见过它就知道为什么是“隐藏”了……" />								
+					<Msg NpcID="12" ImageID="1" Info="【格历尔平原·二区】有棵【智慧之树】，\n那是植物系精灵海德诞生的地方，\n需要1瓶【至纯之水】浇灌大树，就能诞生一个【海德】！" />	
+					<Msg NpcID="12" ImageID="1" Info="【G·档案】的记录不会错的。带上【万能闪灵胶片】、【至纯之水】，现在就去【格历尔平原·二区】找【智慧之树】吧！" />
+					<Option Info="现在就去【平原二区】" SkipTrigger="Y"/>
+					</Action>												
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="【海德】在【格历尔平原·二区】出现了？快去看看吧！\n周六6:00-24:00\n周日6:00-24:00" TargetMap="21302" >
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21302" />														
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="324" ImageID="1" Info="好想喝——【至纯之水】，\n【海德】们期待着新生——" />								
+					<Option Info="【至纯之水】来啦！" />
+				</Action>		
+    		</Event>
+		</Step>
+
+</Procedure>
+</Task>

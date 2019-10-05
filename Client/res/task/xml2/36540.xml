@@ -1,0 +1,41 @@
+<Task ID="36540" Memo="前往10年后废墟的勇士王国西街找到c安德鲁c" TargetMap="51203">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="前往10年后废墟的勇士王国的广场找到c宾得c" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="有什么事？" />
+				</Trigger>						
+				<Action Type="TALK">			
+					<Msg NpcID="105" ImageID="1" Info="这里太危险了，你帮我清除20个这里的吉吉帕·改黑化精灵吧？" />
+					<Option Info="我这就去！" />																		
+				</Action>												
+    		</Event>		
+		</Step>			
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >		
+			<Condition>
+				<Battle ID="101008" Count="20" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="击杀20个的吉吉帕·改后，与c安德鲁c对话" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="完成了！" />
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="你真了不起，英雄！这下黑化精灵的力量进一步受到削弱了！" />				
+					<Option Info="没错！" />
+				</Action>							
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="击杀20个吉吉帕·改" TargetMap="51203" TargetObj="1" TargetName="击杀20个吉吉帕·改">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="吉吉帕·改在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="2" Info="吉吉帕·改就在西街游荡！" />								
+					<Option Info="好的！" />
+				</Action>										
+    		</Event>
+		</Step>		
+				
+	</Procedure>
+</Task>

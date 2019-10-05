@@ -1,0 +1,34 @@
+<Task ID="36537" Memo="c嫦娥c需要你的帮忙，快去看下吧！" TargetMap="11202">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c嫦娥c需要你的帮忙，快去看下吧！" TargetMap="11202" TargetObj="318" TargetName="和t嫦娥t对话">	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="318" TaskOption="嫦娥姐姐需要帮忙？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="320" ImageID="1" Info="勇敢的未来勇士！我的宠物“雪绒草”误入【月之宫殿】被邪恶的“邪风月轮”给抓走了！“十二勇士”之一的“铃”已经前往救援了，你能帮我救援雪绒草吗？" />				
+					<Option Info="包在我身上！"  />																																																		
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="320" ImageID="1" Info="但是小勇士，你要注意哦，月之宫殿的开启时间为：周1-周5每天12-13/19-21点，周日6-周日每天13-15点/20-21点，“雪绒草”被困在月之宫殿的密室，需要通过前殿、正殿、后殿才能到达密室哦！" />				
+					<Option Info="清楚啦姐姐！"  />																																																		
+				</Action>						
+    		</Event>
+    	</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="到达月之宫殿密室，找到c雪绒草c！" TargetMap="41211" TargetObj="" TargetName="去t月宫前殿t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="41214" ObjID="318" TaskOption="（…一团白绒绒的小草…）！" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="723" ImageID="1" Info="咦？你是谁？哦？是嫦娥姐姐让你来解救我的吗？真是太好了，嫦娥姐姐我爱你！" />				
+					<Option Info="你还好吗？"  />																																																		
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="723" ImageID="1" Info="谢谢你击败了“邪风月轮”，【铃】大人已经来为我治愈过了，下次我保证不会再调皮啦！这是【铃】大人临走前让我给你的礼物！" />				
+					<Option Info="小东西，下次小心点哦！"  />																																																		
+				</Action>
+			</Event>
+		</Step>		
+	</Procedure>
+</Task>

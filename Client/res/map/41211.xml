@@ -1,0 +1,24 @@
+<!--月宫前殿-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="399,906" targetMapId="11202" targetTransPortId="10" name="传入点"/>
+		<node id="2" pos="393,282" targetMapId="41212" targetTransPortId="1" name="月宫正殿"/>
+	</transport>
+	<object>
+		<node id="1" type="" res="MC_door_0" pods="WalkToTransPortPod,TransTipPod" transPortId="2"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="83" type="NPC" res="MC_npc_83" action="0"/>
+		<node id="1" type="NPC" res="MC_npc_102" action="1" />		
+    </npc>
+    <actions>
+		<proAction npcID="102" id="1" type="0" answer="我这就去！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#小勇士，你来的正及时，我是“十二勇士”之一的玲，受飞行系嫦娥支托，协助救援“雪绒草”。“雪绒草”是嫦娥心爱之宠物，是植物系女王娜蒂丝送与飞行系的礼物。$$]]>
+				<![CDATA[1#现在“雪绒草”因一时贪玩跑进了月之宫殿，被“邪风月轮”抓走了，情况十分危急！那扇门只有用这里星锤兔和电波兔掉落的“兔尾巴”才能打开，赶快去收集20个吧！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

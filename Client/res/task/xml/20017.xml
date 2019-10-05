@@ -1,0 +1,27 @@
+<task id="20017">
+	<taskDes>
+		<![CDATA[打工时刻又来了！快去【勇士广场•公告栏】看看有什么新任务。$$]]>
+		<![CDATA[这次的任务是去下水道收集10个【库噜战士的头盔】吗？收集了10个就可以送到【装备店·贝利】去了！$$]]>
+		<![CDATA[去公告栏领取奖赏吧！]]>
+	</taskDes>
+	<laterDes>
+		<![CDATA[如果谁能把10个【库噜战士的头盔】送到【贝塔商会装备店】，可以领取丰厚的报酬！]]>
+	</laterDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="300" title="库噜战士的头盔" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11202"/>
+		<pro type="0" parent="0" npcID="16" title="库噜战士头盔拿来了！" action="0" needRes="180041" needResNum="10" unResAction="1" taskDes="1" mapID="11209"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="16" answer="O(⊙_⊙)O嗯"  to="c">
+			<des>
+				<![CDATA[7#这就是【库噜战士的头盔】吗？看上去很不错的样子，你的奖赏，拿着吧。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="16" answer="现在就去下水道!" to="o">
+			<des>
+				<![CDATA[7#现在急需10个头盔！勇士协会的摩尔应该可以办到吧？$$]]>
+				<![CDATA[7#别忘了【下水道】在城堡吊桥边。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

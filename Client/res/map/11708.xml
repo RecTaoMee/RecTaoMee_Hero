@@ -1,0 +1,26 @@
+<!--修隐岛海岸-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="747,259" targetMapId="11707" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<!--node id="2" type="TransPort" res="MC_door_1" transPortId="2"/-->	
+	</object>
+	<npc>
+		<node id="58" type="NPC" res="MC_npc_58" action="0$1"/>
+	</npc>
+	<actions>
+		<proAction npcID="58" id="0" type="0" answer="一路顺风！" to="o" >
+			<des>
+				<![CDATA[2#【钓鱼】是消磨航海时光的好方式，\n有兴趣尝试下么？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="58" id="1" type="0" answer="一路顺风！" to="o" >
+			<des>
+				<![CDATA[2#那边的椅子是“钓鱼专座，\n钓竿和鱼饵都已经准备好了^_^！”]]>
+			</des>
+		</proAction>
+		<proAction npcID="58" id="2" type="6" event="ship_change_map"/>				
+	</actions>
+</map>

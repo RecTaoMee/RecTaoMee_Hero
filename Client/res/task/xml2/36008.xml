@@ -1,0 +1,44 @@
+<Task ID="36008" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="这个是国王表彰麦田村村长尼康康的奖状，送信的信使出了点突发状况，所以只能委托小勇士你送下了。" />
+					<Option Info="村长会开心死的。" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="把国王颁发的奖状送去给c尼康康c，让他高兴下。" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="我是来送奖状的！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="2" Info="国王？奖状？哇哈哈哈……我我太兴奋啦！！！" />
+					<Option Info="村长，你别太激动啊。" />
+					<Msg NpcID="37" ImageID="2" Info="咳咳，让我冷静下……国王认同了我的表现啊，小宇宙，燃烧吧！！！" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+				
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

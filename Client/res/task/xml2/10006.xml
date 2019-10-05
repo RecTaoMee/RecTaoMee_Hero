@@ -1,0 +1,114 @@
+<Task ID="10006" Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克司的精灵研究" Content="皮克司精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究工作" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="今天的研究课题很有爱……" />
+					<Msg NpcID="12" ImageID="7" Info="迷唇爱丝！这个名字很可爱吧！" />
+					<Option Info="....." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="平原5区和平原6区分布了很多迷唇爱丝，我一直对于这种有着美丽名字的精灵非常感兴趣！" />
+					<Msg NpcID="12" ImageID="5" Info="所以今天的任务就是和【5只迷唇爱丝战斗】，并且回来告诉我，它们的特征！" />
+					<Option Info="好的！" />
+				</Action>			
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="10" Count="5" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="完成任务！回去找c皮克司教授c吧！" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="完成任务！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="你击败了迷唇爱丝？" />
+					<Option Info="是的!" SkipTrigger="Y"/>
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="前往c平原5区c或c平原6区c挑战迷唇爱丝吧！" TargetMap="21305" TargetObj="" TargetName="击败t迷唇爱丝t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="迷唇爱丝在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="迷唇爱丝主要分布在平原5区和平原6区，你可以去那边看看。" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>
+		</Step>	
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务！回去找c皮克司教授c吧！" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="皮克司的问题" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="迷唇爱丝有几条腿呢？" />
+					<Option Info="2条！" NextStep="7" SkipTrigger="y" NotUpdateBuffer="Y"/>
+					<Option Info="3条！" NextStep="7" SkipTrigger="y" NotUpdateBuffer="Y"/>
+					<Option Info="4条！" SkipTrigger="y" />
+					<Option Info="10条！" NextStep="7" SkipTrigger="y" NotUpdateBuffer="Y"/>
+				</Action>			
+    		</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="完成任务！回去找c皮克司教授c吧！" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="皮克司的问题" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="哈哈！看来你果然有好好研究！\n好的，快去公告栏领取奖励吧！" />
+					<Option Info="谢谢！" />
+				</Action>			
+    		</Event>
+		</Step>							
+											
+		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="我每天都很忙，就不表扬你了。" />
+					<Option Info="（-_-）||" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，拿去吧。" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+		
+		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究工作" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="好像不对吧?" />
+					<Option Info="让我再想想.." NextStep="4" />
+				</Action>		
+    		</Event>
+		</Step>
+			
+	</Procedure>
+</Task>

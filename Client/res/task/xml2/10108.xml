@@ -1,0 +1,148 @@
+<Task ID="10108" Memo="c草木树海c的植物精灵王c娜蒂丝c需求你的协助\n（若任务中途中断，可从勇士广场“拉尼克斯”处传送至【草木树海】）" TargetMap="11503">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c草木树海c的植物精灵王c娜蒂丝c需求你的协助\n（若任务中途中断，可从勇士广场“拉尼克斯”处传送至【草木树海】）" TargetMap="11503" TargetObj="317" TargetName="和t娜蒂丝t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="317" TaskOption="娜蒂丝我来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="小勇士，你来了，有件事希望你能帮我调查一下。"/>
+					<Option Info="什么事啊？" />
+				</Action>
+				<Action Type="MOVIE" Url="task10108_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="前不久我用“王者之力”感应其他种族精灵王，在永恒之森似乎有一股熟悉的波动。" />
+					<Msg NpcID="317" ImageID="1" Info="我的能力尚未恢复，也担忧库噜王再次来袭无法离开，你能帮我去永恒之森调查一下么？" />
+					<Msg NpcID="317" ImageID="1" Info="希望那位精灵王也能加入我们的队伍，一同抵御黑暗势力的进攻。" />
+					<Option Info="包在我身上！" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11804,1" />
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往c永夜村村长家c找村长c塔希里亚c" TargetMap="11804" TargetObj="74" TargetName="和t塔希里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="塔希里亚村长！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="年轻的未来勇士，这次来找我有什么事？" />
+					<Option Info="向您打听个消息" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="什么？你说永恒之森有精灵王？我在这居住了那么多年，但一直从未见过啊。" />
+					<Msg NpcID="74" ImageID="1" Info="莫非……前阵子剧毒蜂皇入侵世界树失败，灰头土脸地逃出世界树，难不成精灵王就在世界树内？" />
+					<Option Info="请让我去调查一下" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="等等年轻人，这段时间我也在历代长老的笔录中找到了进入世界树结界的方法，让我助你一臂之力吧。" />
+					<Option Info="谢谢村长" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11805,1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11805,11808" />
+			</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="询问c塔希里亚c破解世界树结界的办法" TargetMap="11805" TargetObj="11808" TargetName="和t塔希里亚t对话">
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="准备好了吗？我现在就为你打开结界！" />
+					<Option Info="准备好了" />
+				</Action>
+				<Action Type="MOVIE" Url="task10108_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="结界很快就会关闭，快进去吧，愿女神祝福你。" />
+					<Option Info="村长我去了" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11808" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21803,21803" />
+    		</Event>
+		</Step>
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="45" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="击败了拦路的c食人樱c，询问它关于精灵王的信息" TargetMap="21803" TargetObj="21803" TargetName="和t食人樱t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21803" ObjID="21803" TaskOption="且慢动手！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="344" ImageID="1" Info="别以为击败我就能通行世界树，心术不正之人是无法度过下一重禁界的！" />
+					<Option Info="……" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21803,21803" />																							
+    		</Event>
+																								
+    		<Event ConditionType="OUT" Memo="前往c世界树1层c调查" TargetMap="21803" TargetObj="21803" TargetName="前往t世界树1层t调查">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21803" ObjID="21803" TaskOption="（…好大的食人樱…）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="344" ImageID="1" Info="闯入禁界的入侵者将会全部被消灭掉！" />
+					<Option Info="来吧！" />
+					<Option Info="准备一下" NextStep="4" />			
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="45"/>											
+    		</Event>
+		</Step>
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="46" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="总算抵住了曼提斯的攻击，快向c曼提斯c解释来由" TargetMap="21805" TargetObj="348" TargetName="和t曼提斯t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21805" ObjID="348" TaskOption="请听我解释！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="有两手嘛，好久没活动了，看来得拿出点真实实力来了。" />				
+					<Option Info="我……" />
+				</Action>
+				<Action Type="MOVIE" Url="task10108_3.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21805,21808" />
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="曼提斯你误会了，他们是摩尔族的同伴，是神谕里提到的来自未来的勇士，不是魔王尤利的手下。" />
+					<Option Info="凯西大人!" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="别以为精灵王都是好忽悠的，有什么证据能证明你的身份？" />				
+					<Option Info="请看，命运之轮" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="果然是女神的力量，好吧，你进入世界树有什么事？" />				
+					<Option Info="（转达娜蒂丝的话）" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="原来如此，怪不得魔王尤利会有所行动。但是它在神魔之战中不是完全被击溃了么，怎么又复活了？" />
+					<Option Info="黑水晶泄漏了" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="没错！魔王尤利就是感受到泄漏出来的黑水晶能量而复活的，而且他还把生命之根破坏了！" />	
+					<Msg NpcID="107" ImageID="1" Info="更想不到的是黑龙卡尔加布在最后一刻居然把尤利救走了。" />														
+					<Msg NpcID="348" ImageID="1" Info="什么？生命之根被破坏了！？难怪我最近感受不到神物的能量了。" />
+					<Msg NpcID="348" ImageID="1" Info="而且黑龙居然与魔族联手了，情况越来越糟糕了。恩……看来有必要再次组成精灵联盟啊。" />
+					<Option Info="娜蒂丝也这么说" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="未来勇士，感谢你特地来告诉我这个消息，之前的事都是误会，稍后我会用“王者之力”与娜蒂丝联系。" />					
+					<Msg NpcID="348" ImageID="1" Info="作为答谢，让我族出色的战士梦幻瓢虫协助你，请一定要挫败黑暗势力的阴谋。" />
+					<Option Info="不会让你失望的" />
+				</Action>
+    		</Event>
+
+    		<Event ConditionType="OUT" Memo="与精灵王c曼提斯c对话" TargetMap="21805" TargetObj="348" TargetName="和t曼提斯t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21805" ObjID="348" TaskOption="曼提斯大人…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="我曼提斯镇守世界树数年，现在居然被魔王尤利小看了！" />
+					<Msg NpcID="348" ImageID="1" Info="一个剧毒蜂皇不行又换一个，哼哼很好，闯入禁界那就接受我的审判吧！" />
+					<Option Info="准备战斗" />
+					<Option Info="还没准备好" NextStep="5" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="46"/>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

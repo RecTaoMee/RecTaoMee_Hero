@@ -1,0 +1,58 @@
+<Task ID="10068" Memo="令人颤抖的c法尔王c在c下水道第8层c等待你的挑战！\n请向下水道的c守卫士兵•Hc了解情况！" TargetMap="11220">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="令人颤抖的c法尔王c在c下水道第8层c等待你的挑战！\n请向下水道的c守卫士兵•Hc了解情况！" TargetMap="11220">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="参加下水道挑战" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="嘿~~我们又见面啦！“爱啃骨头”的小摩尔！" />
+					<Msg NpcID="207" ImageID="1" Info="几天不见，你似乎又变强了嘛！你是来挑战【法尔王】的吧？" />							
+					<Option Info="是的！" SkipTrigger="Y" />
+					<Option Info="我是过路的……" TalkOver="Y" />
+				</Action>										
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="令人颤抖的c法尔王c在c下水道第8层c等待你的挑战！\n请向下水道的c守卫士兵•Hc了解情况！" TargetMap="11220">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="参加下水道挑战" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="好的，接受你的挑战申请！本次的挑战是位于下水道【第8层的法尔王】！" />
+					<Msg NpcID="207" ImageID="1" Info="法尔王的炙热火焰等待着你！\n小心你的裤子和木质武器！不要被【法尔王】的热情所感染！" />	
+					<Msg NpcID="207" ImageID="1" Info="★记得只有【法尔】精灵【跟随】身边，才能点亮【打开前进之路的火把】。\n没有法尔建议带上【特殊系闪灵胶片】现场契约一只！" />														
+					<Option Info="我会带上【法尔】的！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="对了，如果你已经在下水道里记录了【魔法传送石】，我可以帮你使用魔法传送。" />																		
+					<Option Info="明白！" />
+				</Action>					
+    		</Event>
+    	</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+ 			<Condition>
+				<Battle ID="2005" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="第8层挑战成功了！\n快向c守卫士兵·Hc领取特别称号吧！" TargetMap="11220" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="战胜法尔王了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="根据《勇士协会》第一章第2条\n授予王国【特别称号】——" />						
+					<Option Info="摩尔勇士万岁！" />
+				</Action>											
+    		</Event>
+    		<Event ConditionType="OUT" Memo="挑战目标：下水道8层c法尔王c，★一定要让c法尔c精灵c跟随c身边才能点亮c火把c！解锁钥匙这次再问问“不会说话的蛤蟆”吧！" TargetMap="21212" >			
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="关于法尔王的情报" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="207" ImageID="1" Info="和以前一样，进入精灵挑战领域需要打开封印之门。\n获得钥匙的方法去问问【不会呼吸的蛤蟆】们了，这次的谜题和【火把】有关！" />
+					<Msg NpcID="207" ImageID="1" Info="友情提示：请佩戴含有【水属性】的水晶挑战法尔王！" />						
+					<Option Info="知道了！" />
+				</Action>							
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

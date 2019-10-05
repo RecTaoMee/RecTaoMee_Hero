@@ -1,0 +1,65 @@
+<task id="20004">
+	<taskDes>
+		<![CDATA[请向【王国南门外的守城士兵】了解今天怪盗迪迪拉的最新动向。$$]]>
+		<![CDATA[【10个黑化精灵怪盗迪迪拉】，预备勇士们，代表正义将它净化吧！☆【出没地区，王国南门外平原】。$$]]>
+		<![CDATA[怪盗十人组解决了！【快去向南门口的士兵们汇报吧！】。$$]]>
+		<![CDATA[做的不错！这就去【勇士广场公告栏】领取赏星吧！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="217" title="怪盗迪迪拉赏星任务" action="7"  taskDes="0" mapID="21301"/>
+		<pro type="0" parent="" npcID="210" title="怪盗迪迪拉赏星任务" action="8"  taskDes="0" mapID="21301"/>
+		<pro type="0" parent="0" npcID="217" title="10个怪盗迪迪拉……" action="2" taskDes="1" mapID="21301"/>
+		<pro type="0" parent="0" npcID="210" title="10个怪盗迪迪拉……" action="3" bossID="7" bossNum="10" taskDes="1" mapID="21301"/>
+		<pro type="0" parent="3" npcID="217" title="怪盗迪迪拉" action="0" bossID="" bossNum="" taskDes="2" unResAction="2" mapID="21301"/>
+		<pro type="0" parent="3" npcID="210" title="怪盗迪迪拉" action="1" bossID="" bossNum="" taskDes="2" unResAction="3" mapID="21301"/>
+	    <pro type="0" parent="5" npcID="300" action="4" needRes="" needResNum="" unResAction="" taskDes="3" mapID="11202"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="217" answer="好嘞！" to="e5">
+			<des>
+				<![CDATA[1#伙计你可以啊！最近为了怪盗迪迪拉的事情，我和【K】简直心神不宁！妮娜团长听到这个消息一定会高兴的!$$]]>
+				<![CDATA[1#请去【勇士广场公告栏】领取您应得的赏星吧。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="210" answer="好嘞！" to="e5">
+			<des>
+				<![CDATA[1#泪流满面！有你在我和【R】真是轻松了不少！妮娜团长听到这个消息一定会高兴的!$$]]>
+				<![CDATA[1#请去【勇士广场公告栏】领取您应得的赏星吧。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="217" answer="这就去净化怪盗迪迪拉" to="o">
+			<des>
+				<![CDATA[1#12345……让我数一数……，好像并没有【10个怪盗迪迪拉】，我可是一直站在这里好好数着呢，不信你问【K】。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="210" answer="这就去净化怪盗迪迪拉" to="o">
+			<des>
+				<![CDATA[1#12345……让我数一数……，好像并没有【10个怪盗迪迪拉】，我可是一直站在这里好好数着呢，【R】可以给我作证。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="15" answer="O(∩_∩)O完成啦！" to="a5">
+			<des>
+				<![CDATA[1#今天你小心谨慎的执行任务了吗？]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="2" panel="PublicShouLiModule" data="20004_6" to="" />
+		<proAction id="6" type="0" npcID="15" answer="O(∩_∩)O哈哈！" to="c">
+			<des>
+				<![CDATA[1#怪盗迪迪拉自从黑化后本性暴发，抢了不少王国居民的星豆，比起那些这些赏星算不了什么……$$]]>
+				<![CDATA[1#……………………可恶果然还是太令人羡慕了！……都拿去吧拿去吧！记得好好使用啊！]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="217" answer="交给我吧！" to="so">
+			<des>
+				<![CDATA[1#我和【K】需要守卫城门，惩治怪盗就拜托你了！请小心！]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="210" answer="交给我吧！" to="so">
+			<des>
+				<![CDATA[1#我和【R】需要守卫城门，惩治怪盗就拜托你了！请小心！]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

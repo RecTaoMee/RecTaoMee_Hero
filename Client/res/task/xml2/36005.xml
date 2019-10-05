@@ -1,0 +1,41 @@
+<Task ID="36005" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="这个是TA在哩咕商城定的新书，帮我送去弗雷基商会吧，他真是学习赚钱两不误啊。" />
+					<Option Info="TA叔叔真厉害。" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="去弗雷基商会把cTAc定的书交给他。" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="叔叔很努力啊" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="这可是限量版的书啊！终于到货了，我要好好钻研，把生意做得更大。" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

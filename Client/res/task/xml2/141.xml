@@ -1,0 +1,84 @@
+<Task ID="141" Memo="cTAc在招呼小主人过去，\n快去c弗雷基商会c看看吧！" TargetMap="11602">
+   	<Procedure>  
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="cTAc在招呼小主人过去，\n快去c弗雷基商会c看看吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="TA怎么啦？" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="以前没听TB提过你？" />	
+					<Option Info="我是未来摩尔" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="……\n哈，和小TB一样异想天开。" />	
+					<Option Info="不骗你" />
+				</Action>					
+				<Action Type="TALK">	
+					<Msg NpcID="48" ImageID="1" Info="好吧，如果你有【命运轮盘】，我就相信你。" />																														
+					<Option Info="马上戴【命运轮盘】！" />
+				</Action>																							
+    		</Event>
+		</Step>	
+  		<Step ID="3" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Person Equipment="110028" />	
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="装备好了“命运轮盘”，\n快去c弗雷基商会c告诉cTAc吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="装备【命运轮盘】了！" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="ok我相信你。" />	
+					<Option Info="你怎么知道命运轮盘？" />
+				</Action>	
+				<Action Type="TALK">	
+					<Msg NpcID="48" ImageID="1" Info="别忘了我是商人，消息灵通是必须的b。" />																		
+					<Msg NpcID="48" ImageID="1" Info="除了命运轮盘，我还知道“十二勇士”之一的【安德鲁】大人正在【弗雷基广场】铸造武器……" />						
+					<Option Info="谢谢你告诉我！" />
+				</Action>											
+    		</Event>
+    		<Event ConditionType="OUT" Memo="小主人快装备“命运轮盘”吧！" TargetMap="11602" TargetName="装备t命运轮盘t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="【命运轮盘】？" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="如果你有【命运轮盘】，我就相信你是未来摩尔。" />	
+					<Option Info="马上戴【命运轮盘】！" />
+				</Action>	
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG,110028" />				      														
+    		</Event>			  
+		</Step>	
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="快去c弗雷基广场c找到“十二勇士”之一的c安德鲁c吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="请给我你的【符文】" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="符文是代表“勇士信念”的圣器！\n我们好像不熟，抱歉不能给你。" />						
+					<Option Info="我有命运轮盘！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="呵呵，有意思。\n原来你就是神谕中提到的那位摩尔。" />					
+					<Msg NpcID="105" ImageID="1" Info="我的【勇士符文】代表“坚定”，看看我的刀疤就能知道！" />
+					<Msg NpcID="105" ImageID="1" Info="符文交给你，希望你能恢复女神的力量!" />		
+					<Msg NpcID="401" ImageID="1" Info="（摩尔王让我提醒【@nick】，记得把它刻印在【圣衣】上~~）" />																																
+					<Option Info="这就回【勇士大厅】！" />
+				</Action>
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260024" /> 																																																						
+    		</Event>
+		</Step>	
+  		<Step ID="2" ParentList="4" ParentCost="1" >
+    		<Event Memo="获得了安德鲁的符文↖(^o^)↗，\n快把它镶嵌到c勇士大厅c的c女神圣衣c上吧！" TargetMap="11302" TargetName="点击t女神石像t" TargetPos="783,917"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11302" ObjID="5200" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="2" ImageID="2" Info="谢谢你，让我感受到了新的活力。" />	
+					<Msg NpcID="401" ImageID="1" Info="（记得继续找齐【十二勇士】，恢复“女神圣衣”的力量唷~~）" />							
+					<Option Info="摩尔勇士万岁！" />					
+				</Action>	
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260024" /> 															
+    		</Event>
+		</Step>			   		   
+</Procedure>
+</Task>

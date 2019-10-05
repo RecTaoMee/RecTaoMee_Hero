@@ -1,0 +1,40 @@
+<Task ID="10091" Memo="c安德鲁c在呼叫小主人，快点去看看吧！" TargetMap="11603">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c安德鲁c在呼叫小主人，快点去看看吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="有委托任务吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="哈哈，又见面了！\n今天找你来是想请你帮忙净化【盯眼蝠】。" />
+					<Option Info="盯眼蝠？"  />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="最近【平原8区】有很多黑化盯眼蝠在攻击路人。\n未来勇士，去清理【15只盯眼蝠】，锻炼下自己如何？" />
+					<Option Info="这就去净化【盯眼蝠】！" />
+				</Action>
+			</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Battle ID="13" Count="15" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="盯眼蝠净化成功↖(^o^)↗，快去把这个好消息告诉TA吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+				    <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="盯眼蝠净化成功↖(^o^)↗" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="辛苦你了，未来勇士。\n这是你的报酬！" />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c平原8区c净化15只c盯眼蝠c吧！" TargetMap="21308" TargetName="净化t盯眼蝠t">
+  				<Trigger>
+				    <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="这就去净化【盯眼蝠】！" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />  
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

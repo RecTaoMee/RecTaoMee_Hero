@@ -1,0 +1,173 @@
+<!--勇士杯斗技场--> 
+<map name="aaa" type="0" comment="aaa" sound="BGM-010.mp3">
+	<transport intPos="1092,417">
+		<node id="1" pos="796,270" targetMapId="11218" targetTransPortId="3" name="斗技场大厅"/>
+		<node id="2" pos="1092,417" targetMapId="" targetTransPortId="" name="竞技之塔返回点"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_team_rank" module="TeamRankingModule" toolTip="队伍排行榜"/>
+		<node id="3" type="AppModule" res="MC_person_rank" module="RoleRankingModule" toolTip="个人排行榜"/>
+	</object>
+	<npc>
+		<node id="70" type="NPC" res="MC_npc_70" action="0" name="自由比试管理员" needType="heroCupNotSign" needAction="27"/>
+        <node id="69" type="NPC" res="MC_npc_69" action="1" name="单人比试管理员" needType="heroCupNotSign" needAction="27"/>
+        <node id="72" type="NPC" res="MC_npc_72" action="25" name="运动竞赛管理员" needType="heroCupNotSign" needAction="27"/>
+		<node id="73" type="NPC" res="MC_npc_73" action="2" name="竞技之塔管理员" needType="heroCupNotSign" needAction="27"/>
+		<node id="71" type="NPC" res="MC_npc_71" action="26" name="精灵比试管理员" needType="heroCupNotSign" needAction="27"/>
+		<node id="701" type="NPC" res="MC_npc_701" action="11"/>
+		<node id="81" type="NPC" res="MC_npc_81" name="队员募集官" action="28" interval="20">
+			<event type="enter_map" hit="RepeatSpeakHit" pos="" endEvent="">
+				<![CDATA[勇士杯最后冲刺阶段，3月3日（周日）下午3点正式截止。$$]]>
+				<![CDATA[勇士杯期间，每队排名前100勇士，每天都可领取星豆经验奖励！$$]]>
+				<![CDATA[最后的冠军队，会得神秘装备奖励，更有专属雪米菈精灵蛋！$$]]>
+				<![CDATA[其它参与队伍，也有丰厚奖励等着你们，抓紧时间为队伍冲刺吧！]]>
+			</event>
+		</node>
+		<node id="38" type="NPC" res="MC_npc_38" name="圣弗雷德" action="30" interval="12">
+			<event type="enter_map" hit="RepeatSpeakHit" pos="" endEvent="">
+				<![CDATA[7月15日【巨石战场】震撼开启！]]>
+			</event>
+		</node>
+	</npc>
+	<actions>
+		<proAction npcID="70" id="0" type="0" answer="组队比试$查看队伍排行榜$查看个人排行榜$摩尔勇士万岁！" to="j1$module_TeamRankingModule$module_RoleRankingModule$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#你好，勇敢的摩尔，是要寻找【组队比试】的对手吗？胜利就可获得【勇士杯奖牌】，获得的奖牌会自动累计到你的队伍中，加油哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="1" type="0" answer="单人比试$查看队伍排行榜$查看个人排行榜$摩尔勇士万岁！" to="j2$module_TeamRankingModule$module_RoleRankingModule$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#嘻嘻，年轻的摩尔，你是来寻找和你【单人比试】的对手吗？胜利后就可以获得【勇士杯奖牌】，获得的奖牌会自动累计到你的队伍中，加油哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="2" type="0" answer="进入竞技之塔$选择领域$去交勇士杯奖牌$摩尔勇士万岁！" to="enter_tower$a3$go_hero_cup_sign$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#【竞技之塔】拥有许多强大的精灵，希望你能和伙伴们一起来冒险哟，会有你意想不到的惊喜哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="3" type="0" answer="第6层$第11层$第16层$第21层$第26层$摩尔勇士万岁！" to="trans_31206$trans_31211$trans_31216$trans_31221$trans_31226$o" >
+			<des>
+				<![CDATA[1#你想要直接到达哪一层？]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="4" type="0" answer="知道了$摩尔勇士万岁！" event="not_registered_map" to="o$o" colorID="0$0">
+			<des>
+				<![CDATA[1#你还没有获得直接到达那里的资格哦!]]>
+			</des>
+		</proAction>
+		<proAction npcID="70" id="5" type="3" to="o" />
+		<proAction npcID="69" id="6" type="3" to="o" />
+		<proAction npcID="73" id="7" type="3" to="o" />
+		<proAction npcID="70" id="8" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#当你的等级达到15级时，就可以参与激动人心的【自由比试】了！！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="9" type="0" answer="知道了" to="o$o" colorID="0">
+			<des>
+				<![CDATA[1#当你的等级达到15级时，就可以参与激动人心的【单人比试】了！！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="10" type="0" answer="知道了" to="o$o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到15级，修炼之域的大门会正式向你开启，继续努力吧O(∩_∩)O~~]]>
+			</des>
+		</proAction>
+		<proAction id="11" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="12" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="13" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="14" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="15" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="20" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="21" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>
+		
+		
+		<proAction npcID="70" id="22" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#你好，勇敢的摩尔，等级达到23级才可以参加【组队比试】哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="69" id="23" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#嘻嘻，年轻的摩尔，等级达到23级才可以参加【单人比试】哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="73" id="24" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#【修炼之域】是训练预备勇士的场所，等级达到23级才可以进入【修炼之域】！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="72" id="25" type="0" answer="飞镖比赛$钓鱼比赛$射箭比赛$去交勇士杯奖牌$摩尔勇士万岁！" to="play_boomerang_game$play_fishing_game$play_bow_game$go_hero_cup_sign$o" colorID="1$1$1$1$0">
+			<des>
+				<![CDATA[1#你好，勇敢的摩尔，是要参加运动竞赛吗？比赛后有机会可以获得【勇士杯奖牌】，记得拿到长老处为你的队伍加分哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="71" id="26" type="0" answer="精灵比试$去交勇士杯奖牌$摩尔勇士万岁！" to="j3$go_hero_cup_sign$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#嘻嘻，年轻的摩尔，你是来寻找和你【精灵比试】的对手吗？比赛后有机会可以获得【勇士杯奖牌】，记得拿到长老处为你的队伍加分哦！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="" id="27" type="0" answer="我这就报名！$摩尔勇士万岁！" to="module_boards$o" colorID="1$0">
+			<des>
+				<![CDATA[1#想要参加《勇士杯》的比赛，需要选择一个队伍，报名成为正式选手！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="81" id="28" type="0" answer="我要报名$奖牌兑换奖品$了解《勇士杯》规则$摩尔勇士万岁！" to="module_boards/HeroCupRegisterPanelModule$module_boards/HeroCupExchangePanelModule$a29$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#本届勇士杯截止3月3日15:00，未来的勇士们，去参加【单人比试】和【多人比试】，比赛胜利赢得【勇士杯奖牌】，为自己的队伍冲刺吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="81" id="29" type="0" answer="我要报名$我知道了" to="module_boards$o" colorID="0$0">
+			<des>
+				<![CDATA[1#《勇士杯》是在勇士国度中一年举行一次的比赛，本届比赛由【单人比试】、【多人比试】两个比赛项目组成。$$]]>
+				<![CDATA[1#参加【单人比试】或【多人比试】比赛胜利，就可以获得【勇士杯奖牌】。$$]]>
+				<![CDATA[1#每天每个队伍奖牌累积前100名勇士，可以每天领取一次星豆和经验奖励。$$]]>
+				<![CDATA[1#所有比赛项目中获得的奖牌，都会自动累积到你所在的队伍里面！$$]]>
+				<![CDATA[1#最后的勇士杯冠军队，会获得【冠军队神秘装备】，更有冠军队专属【雪米菈精灵蛋】！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="38" id="30" type="0" answer="我要报名$巨石碎片兑换奖励$巨石战场规则" to="j4$f8$a31" colorID="1$1$0">
+			<des>
+				<![CDATA[1#未来勇士们，勇士杯—巨石战场已经正式开启了，相约上你们的队友与挚友，前来挑战巨型石头人，捍卫你们的荣誉吧！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="38" id="31" type="0" answer="我要报名$我知道了" to="j4$o" colorID="1$0">
+			<des>
+				<![CDATA[1#报名参加勇士杯的选手都可以到我这里来报名参加巨石战场的比赛，进入战场穿过各自队伍的准备室后就可以与巨型石头人展开战斗。$$]]>
+				<![CDATA[1#让我们充分的利用战场中的巨弩和火炮对巨型石头人展开攻击吧！当在武器上有其他队伍的队员时，我们可以通过挑战的方式进行抢占。$$]]>
+				<![CDATA[1#到达200伤害，击败巨型石头人后我们将会根据各个队伍的表现颁发丰厚的奖励。但要谨记，中途逃跑的摩尔是不被人尊敬的，不会得到任何的奖励！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

@@ -1,0 +1,55 @@
+<Task ID="10015" Memo="恐怖的库噜王在下水道5层等待勇敢者的挑战！\n请向下水道的c守卫士兵•Hc了解情况！" TargetMap="11220">
+   	<Procedure> 
+  		<Step ID="1" ParentList="" ParentCost="0" >
+    		<Event Memo="恐怖的库噜王在下水道5层等待勇敢者的挑战！\n请向下水道的c守卫士兵•Hc了解情况！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="参加下水道挑战" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="【@nick】你好啊！" />
+					<Msg NpcID="207" ImageID="1" Info="为了帮助这些“心灵扭曲”的精灵，\n锻炼摩尔，训练勇气和力量，\n自从勇士时代开始，\n“下水道挑战”成为了勇士协会的传统。" />					
+					<Msg NpcID="207" ImageID="1" Info="你已经是14级有能力挑战下水道的摩尔了！\n挑战成功将得到——\n【下水道“特别称号”】" />
+					<Msg NpcID="207" ImageID="1" Info="顺便说一下我已经有很多称号了哈哈——\n准备好接受挑战了吗？" />					
+					<Option Info="接受挑战！" SkipTrigger="Y" />
+					<Option Info="等我再变强些……" TalkOver="Y" />
+				</Action>										
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="14级！c下水道挑战c正式向您开放！\n请前往负责守卫下水道的c守卫士兵•Hc了解情况！\n*古老下水道入口•城堡吊桥边。" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="参加下水道挑战" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="本次的挑战是位于【第五层的库噜王】，\n愿黑暗和潮湿不会拖垮你的意志，\n愿胜利与您同在。" />
+					<Msg NpcID="207" ImageID="1" Info="对了，\n如果你已经在下水道里记录了【魔法传送石】，\n我可以帮你使用魔法传送。" />									
+					<Option Info="知道了！" />
+				</Action>					
+    		</Event>
+    	</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+ 			<Condition>
+				<Battle ID="2004" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="第五层挑战成功了！\n快向c守卫士兵·Hc领取特别称号吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="战胜库噜王了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="根据《勇士协会》第一章第2条\n授予王国【特别称号】——" />						
+					<Option Info="摩尔勇士万岁！" SkipTrigger="Y" />
+				</Action>											
+    		</Event>
+    		<Event ConditionType="OUT" Memo="挑战目标——下水道五层c库噜王c，\n关于解锁钥匙这次再问问“不会说话的蛤蟆”吧！" TargetMap="21207" TargetObj="" TargetName="击败t库噜王t">			
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="关于库噜王的情报" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="进入精灵领域挑战需要打开封印之门\n每个封印之门都有钥匙\n获得钥匙的方法就要问【不会呼吸的蛤蟆】们了。" />
+					<Msg NpcID="207" ImageID="1" Info="注意一些不知是谁留下的【魔法罐子】可以帮助你~~一些个人经验\n祝你好运了！" />						
+					<Option Info="知道了！注意【罐子】！" />
+				</Action>							
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

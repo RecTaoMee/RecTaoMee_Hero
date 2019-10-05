@@ -1,0 +1,204 @@
+<Task ID="254" Memo="去草木树海找c娜莲c，她似乎需要帮助" TargetMap="11503">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="去草木树海找c娜莲c，她似乎需要帮助" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="小娜莲，你找我？" />
+				</Trigger>								
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="小勇士，这次紧急找你来实在是迫不得已，还记得曾经见过那调皮的“雪绒草”吗？" />
+					<Option Info="当然记得啊？" />					
+				</Action>				
+				<Action Type="TALK">			
+					<Msg NpcID="60" ImageID="1" Info="呜呜呜呜……雪绒草就快要绝迹了……" />
+					<Option Info="发生什么事了？" />																		
+				</Action>					
+				<Action Type="MOVIE" Url="task254_1.swf" MapLevel="TASK" Pos="0,0" />								
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="如果我们再不行动，【草木树海】仅剩下几株的“介茸草”在不久之后也将会枯萎了……" />
+					<Option Info="如何才能帮助它们呢？" />						
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="能够使得“介茸草”焕然一新的唯独是格历尔大陆特有的“苦苦草”，你赶快去【格历尔平原2区】看看，采集10株苦苦草来！" />
+					<Option Info="我这就去！" />						
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21302,1" />				
+			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >		
+			<Condition>
+				<Item ID="150005" Count="10" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快从勇士广场与c拉尼克斯c对话，选择“c传送到草木树海c”回到草木树海找c娜莲c！" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="苦苦草采回来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="苦苦草？好，让我试一试……" />
+					<Option Info="加油，一定成功！" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="…………" />
+					<Msg NpcID="60" ImageID="1" Info="……………………" />
+					<Msg NpcID="60" ImageID="1" Info="………………………………" />
+					<Msg NpcID="60" ImageID="1" Info="……………………………………………………" />
+					<Msg NpcID="60" ImageID="1" Info="…竟然失败了，苦苦草与介茸草无法完全融合" />
+					<Option Info="…怎么办！" />
+				</Action>								
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="未来勇士，赶快去【格历尔平原5区】采集10株抱抱叶来，让我以生命之力让这三株植物合为一体吧……" />
+					<Option Info="绝不放弃，我去去就来！" />
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21305,1" />								
+    		</Event>
+			<Event ConditionType="OUT" Memo="c苦苦草c可以在c格历尔平原2区c采集到，去看看吧！" TargetMap="21302" TargetObj="" TargetName="采集t苦苦草t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11202" ObjID="112" TaskOption="苦苦草哪里有？" /><!--无法触发-->
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="能够使得“介茸草”焕然一新的唯独是格历尔大陆特有的“苦苦草”，你赶快去【格历尔平原2区】看看，采集10株苦苦草来！" />
+					<Option Info="我这就去！" />
+				</Action>
+    		</Event>		
+		</Step>	
+			
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="150007" Count="10" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快从勇士广场与c拉尼克斯c对话，选择“c传送到草木树海c”回到草木树海找c娜莲c！" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="抱抱叶采回来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="娜蒂丝大人，抱抱叶已经带来了，请拯救介茸草吧！" />
+					<Option Info="……" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="以吾之生命之力起誓，苦苦草、抱抱叶请与介茸草三位一体吧！" />
+					<Option Info="……" />
+				</Action>
+				<Action Type="MOVIE" Url="task254_2.swf" MapLevel="TASK" Pos="0,0" />				
+				<Action Type="TALK">
+					<Msg NpcID="60" ImageID="1" Info="娜蒂丝大人！你醒醒！" />
+					<Option Info="……" />
+				</Action>	
+				<Action Type="MOVIE" Url="task254_3.swf" MapLevel="TASK" Pos="0,0" />		
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="娜蒂丝，为了拯救介茸草，你愿意牺牲自己的生命之力！" />
+					<Option Info="……" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="介茸草焕然一新之后，到了冬天就会孕育出千千万万的雪绒草了，那是千千万万植物系精灵的生命，这么做非常值得！" />
+					<Option Info="……" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="1" Info="娜蒂丝，希望你可以尽快恢复，黑暗的力量越来越强大了，勇士的世界还需要你的帮助，那不仅仅是以千万记的生命了！" />
+					<Option Info="……" />
+				</Action>
+    		</Event>		
+			<Event ConditionType="OUT" Memo="c抱抱叶c可以在c格历尔平原5区c采集到，去看看吧！" TargetMap="21305" TargetObj="" TargetName="t抱抱叶t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="抱抱叶哪里有？" /><!--无法触发-->
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="未来勇士，赶快去【格历尔平原5区】采集10株抱抱叶来，让我以生命之力让这三株植物合为一体吧……" />
+					<Option Info="绝不放弃，我去去就来！" />
+				</Action>
+    		</Event>		
+		</Step>					
+															
+				
+ 		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="2916" Count="1" />
+			</Condition>
+	     	<Event ConditionType="IN" Memo="继续在草木树海与c娜莲c交谈" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">	
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="娜蒂丝大人，你没事吧" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="……我没事，只是三位一体耗费我不少的体力，刚刚又在抗击库噜王与金甲剑魂的联合进攻中，耗尽了剩下的力气……" />
+					<Option Info="娜蒂丝大人……" />														
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="哈哈哈！娜蒂丝，听说你的草木树海屡攻不破，还将库噜王打败，看来我黑暗势力不能小瞧你，来吧，让我魔王尤利领教你的力量吧！" />
+					<Option Info="魔王尤利！可恶！" />														
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="黑暗魔王尤利！就算你们一起上，也别想占领草木树海一寸土地！我纵使魂飞魄散，也绝不会让你们得逞！！！" />
+					<Msg NpcID="309" ImageID="1" Info="跟着尤利魔王，杀杀杀！" />
+					<Msg NpcID="721" ImageID="1" Info="跟着尤利魔王，冲冲冲！" />					
+					<Option Info="可恶，娜蒂丝大人，让我来迎战他们！" SkipTrigger="Y" />														
+				</Action>					
+											
+	    	</Event>						
+    		<Event ConditionType="OUT" Memo="继续在草木树海与c娜莲c交谈" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="娜蒂丝大人请千万保重！" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="未来勇士，你放心，为对抗黑暗势力的侵袭，为维护植物系精灵的安危，我娜蒂丝绝不会就此倒下……" />
+					<Option Info="（…似乎很压抑的声音…）" />
+				</Action>
+				<Action Type="MOVIE" Url="task254_4.swf" MapLevel="TASK" Pos="0,0" />			
+				<Action Type="TALK">
+					<Msg NpcID="309" ImageID="1" Info="哇哈哈哈，娜蒂丝，我库噜王又回来啦！！！" />
+					<Msg NpcID="721" ImageID="1" Info="娜蒂丝，你竟然冒犯我黑暗势力的权威，受死吧！" />
+					<Option Info="娜蒂丝大人，我来帮你" />
+					<Option Info="让我准备一下！" NextStep="4" />	
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2916"/>									
+			</Event>
+		</Step>							
+
+
+ 		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="2917" Count="1" />
+			</Condition>
+	     	<Event ConditionType="IN" Memo="继续在草木树海与c娜莲c交谈" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">	
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="魔王尤利，你失败了！" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="娜蒂丝，这次有未来勇士帮你忙，我会记住这笔帐，迟早我还会来草木树海的！" />
+					<Msg NpcID="317" ImageID="1" Info="尤利，草木树海随时恭候！" />					
+					<Option Info="打输了还这么嚣张…" SkipTrigger="Y" />	
+				</Action>																										
+	    	</Event>						
+    		<Event ConditionType="OUT" Memo="继续在草木树海与c娜莲c交谈" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="娜蒂丝大人千万保重！" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="小勇士，你不是他们的对手，这次尤利亲自来袭，必定会有殊死一战！" />
+					<Option Info="放心吧，娜蒂丝大人！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="啰啰嗦嗦半天，是惧怕我恐惧魔王了吧！哈哈哈！库噜王，金甲剑魂，还不动手！" />
+					<Option Info="来战吧！" />				
+					<Option Info="让我准备一下！" NextStep="5" />	
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2917"/>									
+			</Event>
+		</Step>	
+		
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="去草木树海找c娜莲c，她似乎需要帮助" TargetMap="11503" TargetObj="60" TargetName="和t娜莲t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="60" TaskOption="娜蒂丝大人你没事吧" />
+				</Trigger>								
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="未来勇士，谢谢你的及时帮助，这次才能抵抗住魔王尤利的亲自来袭，与再一次拯救草木树海，娜蒂丝记住你对草木树海的恩泽。" />
+					<Msg NpcID="317" ImageID="1" Info="现在我很虚弱，我要进生命花朵中休养生息了。这个珍贵的植物系精灵雪绒草送给你，希望你可以和他成为好朋友……" />					
+					<Option Info="谢谢娜蒂丝大人……" />	
+				</Action>		
+			</Event>
+		</Step>		
+		
+			
+	</Procedure>
+</Task>

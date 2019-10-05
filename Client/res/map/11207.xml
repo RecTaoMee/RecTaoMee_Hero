@@ -1,0 +1,160 @@
+<!--旅馆1楼-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<process>
+		<node name="ActivityLoopLeters"/>
+	</process>
+	<transport intPos="400,450">
+		<node id="1" pos="1380,345" targetMapId="11202" targetTransPortId="5" name="王国广场"/>
+		<node id="2" pos="216,139" targetMapId="11208" targetTransPortId="1" name="旅馆2楼"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="AppModule" res="MC_noteBoard" module="boards/HotelNoteBoardModule"/>
+		<node id="4" type="" res="MC_shuangHuang">
+			<event type="enter_map" hit="SpeakHit" pos="96,-39" endEvent="speak1End">
+				<![CDATA[听说过神秘箱子吗？]]>
+			</event>
+			<event type="speak1End" hit="SpeakHit" pos="-107,-39" endEvent="speak2End">
+				<![CDATA[神秘箱子？]]>
+			</event>
+			<event type="speak2End" hit="SpeakHit" pos="96,-39" endEvent="speak3End">
+				<![CDATA[会突然出现在某个角落的迷之箱子，$$]]>
+				<![CDATA[击败守护箱子的精灵们就可以得到箱子中的物品。]]>
+			</event>
+			<event type="speak3End" hit="TimeOutHit" time="4000" endEvent="enter_map"/>
+		</node>
+  		<node id="5101" type="Object" res="MC_shuilongtou"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="13" type="NPC" res="MC_npc_13" action="1"/>
+		<node id="14" type="NPC" res="MC_npc_14" action="0$4$5$8"/>
+		<node id="302" type="NPC"  res="MC_npc_302" action="9"/>
+		<node id="350" type="NPC" res="MC_npc_350" action=""  taskShowSteps="35000_22|222|6" />		
+	</npc>
+	<actions>
+		<proAction npcID="14" id="0" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#啾啾~请问有什么可以帮你的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="1" type="0" answer="信送了几次了？$和你玩游戏$旅馆聊天$摩尔勇士万岁！" to="letter_times$g11$a6$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【勇敢者旅馆】，几个人？几个房间？几张床位？]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="2" type="0" answer="和你玩游戏$旅馆聊天$摩尔勇士万岁！" to="g11$a6$o" colorID="1$0$0">
+			<des>
+				<![CDATA[5#啊哈~勇士的事情永远是王国里最热门的话题~~$$]]>
+				<![CDATA[1#说出来你也一定不相信~$$]]>
+				<![CDATA[5#我可是摩尔勇士之一【银犬】的表叔~！$$]]>
+				<![CDATA[1#【银犬】这家伙可以算是最潇洒的摩尔勇士啦~，我是看着他怎样打碎店里的各种盘子，最后竟然考上了摩尔勇士————$$]]>
+				<![CDATA[5#没有我哪有他的今天~~]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="3" type="0" answer="和你玩游戏$旅馆聊天$摩尔勇士万岁！" to="g11$a6$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#酒喝多了伤身体，我已经很久不喝酒了~~$$]]>
+				<![CDATA[2#我们推荐喝牛奶——！$$]]>
+				<![CDATA[2#当然我的话更喜欢喝酸奶~~$$]]>
+				<![CDATA[1#酒瓶收藏已经作为爱好啦~~]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="4" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+			<des>
+				<![CDATA[2#看到你总有一种很熟悉的感觉，啾啾~]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="5" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#今天来往的客人真多呢，啾啾~]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="6" type="0" answer="和你玩游戏$谈论酒$关于勇士$怎样变强$摩尔勇士万岁！" to="g11$a3$a2$a7$o" colorID="1$0$0$0$0">
+			<des>
+				<![CDATA[2#在旅馆里没有什么比聊天更重要的啦~~你的兴趣爱好是？]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="7" type="0" answer="和你玩游戏$旅馆聊天$摩尔勇士万岁！" to="g11$a6$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#来旅馆住宿的家伙里，各种想变强的家伙我见的多了~，$$]]>
+				<![CDATA[1#正统的勇士协会出身，经过勇士考试试炼的家伙确实有两把刷子，$$]]>
+				<![CDATA[1#经常有无聊的人讨论哪个协会更强什么的~$$]]>
+			    <![CDATA[2#没有弱的协会和技能，只有软弱的技能运用者~$$]]>
+			    <![CDATA[5#我可亲眼见过【头顶高级称号】的家伙，是怎样把一个不起眼的技能魔法发挥的强而有力~！]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="8" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+			<des>
+				<![CDATA[2#看到你总有一种很熟悉的感觉，啾啾~]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="9" type="0" answer="【试胆奖】$【挑战奖】$【勇气奖】$不用了谢谢" to="g2$g3$g4$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[2#啊——您想参加【预言球摇奖】吗？我们现在有三种奖项——]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="10" type="0" answer="【是】$【否】" to="g5$g6" >
+			<des>
+				<![CDATA[2#你是Lv15（15级）以下的冒险者呢！我们勇敢者旅馆最喜欢你这样年轻的冒险家了。每天可以有【3次免费摇奖！】。现在开始吗？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="14" id="11" type="0" answer="【是】$【否】" to="g5$g6" >
+			<des>
+				<![CDATA[2#【试胆奖】需要【5个牛奶瓶盖】。 现在开始吗？     ~]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="12" type="0" answer="【知道了】" to="g6" >
+			<des>
+				<![CDATA[9#【试胆奖】需要【5个牛奶瓶盖】。十分抱歉你没有【5个牛奶瓶盖】不能启动预言魔球，欢迎下次光临^^!]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="13" type="0" answer="【是】$【否】" to="g5$g6" >
+			<des>
+				<![CDATA[2#【挑战奖】需要【10个牛奶瓶盖】。 现在开始吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="14" type="0" answer="【知道了】" to="g6" >
+			<des>
+				<![CDATA[9#【挑战奖】需要【10个牛奶瓶盖】。十分抱歉你没有【10个牛奶瓶盖】不能启动预言魔球，欢迎下次光临^^!]]>
+			</des>
+		</proAction>	
+		<proAction npcID="14" id="15" type="0" answer="【是】$【否】" to="g5$g6" >
+			<des>
+				<![CDATA[2#【勇气奖】需要【30个牛奶瓶盖】。 现在开始吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="16" type="0" answer="【知道了】" to="g6" >
+			<des>
+				<![CDATA[9#【勇气奖】需要【30个牛奶瓶盖】。十分抱歉你没有【30个牛奶瓶盖】不能启动预言魔球，欢迎下次光临^^!]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="17" type="0" answer="【瓶盖】猜大小游戏$【练习】猜大小游戏 " to="g13$g12" colorID="1$0">
+			<des>
+				<![CDATA[2#我最喜欢跟人玩儿游戏了，你要用1个【牛奶瓶盖】玩儿还是做练习？]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="18" type="0" answer="【开始】$【不跟你玩儿了】" to="g14$g15" >
+			<des>
+				<![CDATA[5#练习啊……那就陪你玩儿玩儿吧~]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="19" type="0" answer="【开始】$【不跟你玩儿了】" to="g16$g15" >
+			<des>
+				<![CDATA[2#你的1个瓶盖我就拿走了，那么我们开始吧？]]>
+			</des>
+		</proAction>
+		<proAction npcID="13" id="20" type="0" answer="【知道了】" to="g15" >
+			<des>
+				<![CDATA[5#“瓶盖的赌注”我的原则是一天不超过【10次】，有趣的家伙明天再跟你玩儿哈哈~]]>
+			</des>
+		</proAction>		
+		<proAction npcID="13" id="21" type="0" answer="【知道了】" to="g15" >
+			<des>
+				<![CDATA[1#“你没有【牛奶瓶盖】我不跟你玩儿【瓶盖】游戏，快去寻找你命运中的牛奶瓶盖吧~！]]>
+			</des>
+		</proAction>	
+	</actions>		
+</map>

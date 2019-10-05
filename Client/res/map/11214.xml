@@ -1,0 +1,72 @@
+<!--精灵-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="351,131" targetMapId="11205" targetTransPortId="2" name="研究所"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="20" type="NPC" res="MC_npc_20" level="contentLevel" fun="" taskType="0" action="10" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction npcID="20" id="0" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0" >
+			<des>
+				<![CDATA[1#如果你的精灵更强一些，我就可以教给它更强的技能]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="1" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#黑水晶所影响的范围越来越大，如果我们不快点采取行动，被【黑化】的精灵就会越来越多T T]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="2" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#你见过【吉普豆花】吗？那种精灵只生活在吉普豆村附近，虽然样子有点笨，但是在魔法方面很有天赋呢！]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="3" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#【小石怪】的外壳非常坚硬，如果你注重培养小石怪的耐性，它可以在适当的时候帮你抵挡攻击。]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="4" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#嗨，最近我这真热闹，每天都有很多人来这里孵化【摇铃兔的精灵蛋】呢！你也是来问这事的么？？]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="5" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#你了解精灵的天赋吗？种族不同的精灵资质也不同，选择适当的培养路线才能发挥精灵伙伴的力量。]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="8" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="c2$a13$b0_20$o" colorID="0$1$1$1$0">
+			<des>
+				<![CDATA[1#我把你的【波波尔精灵蛋】放在左侧栏子里了，每天来摸摸它，一共7次，它就会乖乖跟你回家咯！一共7次，要牢记！]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="9" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="c3$a13$b0_20$o" colorID="0$1$1$1$0">
+			<des>
+				<![CDATA[1#你已经孵化出【波波尔】宝宝了，好好培养它吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="10" type="3" to="o" />
+		<proAction npcID="20" id="11" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="o$a13$b0_20$o" colorID="0$1$1$0">
+			<des>
+				<![CDATA[1#我把你的【波波尔精灵蛋】放在左侧栏子里了，每天来摸摸它，一共7次，它就会乖乖跟你回家咯！一共7次，要牢记！]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="12" type="0" answer="给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a13$b0_20$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#你了解精灵的天赋吗？种族不同的精灵资质也不同，选择适当的培养路线才能发挥精灵伙伴的力量。]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="13" type="0" answer="我想买【闪灵胶片】$摩尔勇士万岁！" to="b0_20$o" colorID="1$0">
+			<des>
+				<![CDATA[1#为了方便未来勇士们为精灵们学习技能，所有的魔法课程也已经托付给【皮克司】教授了，快去【皮克司研究所】找他吧。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

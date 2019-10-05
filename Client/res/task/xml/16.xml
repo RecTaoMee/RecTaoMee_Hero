@@ -1,0 +1,13 @@
+<task id="16">
+	<taskDes>
+		<![CDATA[就这样要离开吉普豆村了！★可是有【另一本本子】跟我说它有【重要的事情】想告诉你！它在【皮皮克克的床上】等你！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="" mapID="" name="" level="" point="" action="" />
+		<pro type="0" parent="" npcID="" action="0" title="皮皮克克的日记" needRes="" needResNum="" unResAction="" mapID="11104" objLevel="upLevel" objName="MC_diaryBtn" objType="visible" objValue="0"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+	</actions>
+</task>

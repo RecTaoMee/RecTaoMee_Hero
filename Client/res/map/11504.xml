@@ -1,0 +1,40 @@
+<!--兽王峡谷-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="50,1000">
+		<node id="1" pos="474,204" targetMapId="11505" targetTransPortId="1" name="兽王洞穴"/>
+		<node id="2" pos="50,1000" targetMapId="21312" targetTransPortId="3" name="平原12区"/>
+	</transport>
+	<object>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="NPC" res="MC_npc_41" action="1" name="柯特"/>
+		<node id="2" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="3" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="4" type="NPC" res="MC_npc_1" action="2" name="金羊狼" visible="0" needType="isTeam" needAction="3"/>
+
+    </npc>
+    <actions>
+		<proAction npcID="41" id="1" type="0" answer="柯特回去要小心哦！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#这里怎么这么多野兽系精灵呀，早知道当初悔不该来这里采集药材啊，吓死人了！！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="801" id="2" type="0" answer="我来帮助你！$一会来帮你" to="a3$o" colorID="1">
+			<des>
+				<![CDATA[1#精灵和摩尔神马的都很讨厌，说我们是“披着羊皮的狼”，害我们无处安家，四处流浪！]]>
+			</des>
+		</proAction>
+		<proAction npcID="801" id="3" type="0" answer="请你相信我！" to="refreshGrp_27" colorID="1">
+			<des>
+				<![CDATA[1#摩尔们总说我们是“披着羊皮的狼”，将我们遗弃，你居然敢叫我信你？！如果你能“捕捉”到我，那我就信任你！]]>
+			</des>
+		</proAction>
+		<proAction npcID="801" id="4" type="0" answer="单独见【金羊狼】试试" to="o" colorID="1">
+			<des>
+				<![CDATA[1#怎么突然出现这么多摩尔！一定是想来害我的，快走开！]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

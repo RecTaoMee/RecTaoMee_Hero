@@ -1,0 +1,41 @@
+<Task ID="36002" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="皮克司的精灵摇铃兔最近老是不肯吃东西，愁啊。你帮他送信给爱精灵协会的莓可问问怎么回事吧。" />
+					<Option Info="难道是想减肥？" />
+				</Action>
+			</Event>
+		</Step>
+		
+ 
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="去c莓可c那里问问精灵的情况，摇铃兔这样下去可不行啊。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="摇铃兔生病了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="7" Info="这个问题，让我先查下资料吧，摇铃兔可是一种很情绪化的精灵哦。" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

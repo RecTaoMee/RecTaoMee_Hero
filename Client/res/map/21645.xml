@@ -1,0 +1,36 @@
+<!--修炼之域四十层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="400,400">
+	</transport>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="24" type="NPC" res="MC_npc_24" level="contentLevel" fun="" taskType="0" action="x6" needLevel="" needKind=""/>
+		<node id="516" type="NPC" res="MC_npc_516" level="contentLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
+		<node id="526" type="NPC" res="MC_npc_526" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
+    </npc>
+    <actions>
+		<proAction npcID="24" id="0" type="0" answer="我要挑战你！$返回勇士斗技场大厅$摩尔勇士万岁！" to="a1$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#来吧，让我亲眼见证你们的能力！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="5" fightID="3055" />
+		<proAction npcID="24" id="2" type="0" answer="进入下一域$返回勇士斗技场大厅$摩尔勇士万岁！" to="x2$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#你们的成长速度真让我惊讶，相信你们能肩负起保卫摩尔王国的责任！]]>
+			</des>
+		</proAction>
+		<proAction npcID="516" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_516$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#他们出手是不是太重了？]]>
+			</des>
+		</proAction>
+		<proAction npcID="526" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_526$b7_526$a5$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
+			</des>
+		</proAction>
+		<proAction actionID="5" type="1" outMap="1" level="taskLevel" name="task_9_1" moviepos="0,0" to="a4"/>
+	</actions>
+</map>

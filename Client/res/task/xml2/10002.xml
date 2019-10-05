@@ -1,0 +1,82 @@
+<Task ID="10002" Memo="听说c格历尔平原1区c来了一个奇怪的人，去看看吧？" TargetMap="21301">
+	<Procedure> 
+		<Step ID="4" ParentList="0" ParentCost="0" >
+    		<Event Memo="听说c格历尔平原1区c来了一个奇怪的人，去看看吧？" TargetMap="21301" TargetObj="41" TargetName="和t柯特t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21301" ObjID="41" TaskOption="你好" />			
+				</Trigger>				
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />						
+    		</Event>
+		</Step>	
+		
+  		<Step ID="1" ParentList="4" ParentCost="1" >
+    		<Event Memo="听说c格历尔平原1区c来了一个奇怪的人，去看看吧？" TargetMap="21301" TargetObj="41" TargetName="和t柯特t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21301" ObjID="41" TaskOption="你好" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="哈哈，你就是【@nick】？皮皮克克那小子经常提起你！\n看你一表人才的样子，比皮皮克克强多了，想不想学【采集】呢？" />
+					<Option Info="采集是什么？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="听好了！只有“肚子的独立”才能“精神独立”！美味的料理需要的食材，药剂调配需要的原料，装备需要的矿石都可以通过【采集】获得！" />
+					<Msg NpcID="41" ImageID="1" Info="想象一下——不会采集的摩尔的一生，简直是无法想象！我就把这个至关生死存亡的重要【技能】教给你！" />
+					<Option Info="谢谢！" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    			<Event Memo="学会了c采集c，c柯特c好像还有什么要告诉你，快和他对话！" TargetMap="21301" TargetObj="41" TargetName="和t柯特t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21301" ObjID="41" TaskOption="怎么采集呢？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="刚学会新技能可不要太得意了，让我考考你！" />
+					<Option Info="嗯？" />
+				</Action>
+				<Action Type="MOVIE" Url="task_10015_12013.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="你看那边！" />
+					<Option Info="啊？" />
+				</Action>
+				<Action Type="COMMAND" Command="REGISTER_SELF_POS" /> 
+     			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="398,541" />  		
+				<Action Type="MOVIE" Url="task_10015_12014.swf" MapLevel="TASK" Pos="0,0" />	
+    			<Action Type="COMMAND" Command="RESTORE_SELF_POS" />	
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="去尝试采集那棵树上的【棉球果】吧！【采集】5个【棉球果】就可以了！\n小提示：【棉球果】别地方也可以【采集】到！细心探索吧！" />
+					<Option Info="我去找棉球果啦！" />
+				</Action>
+    			</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="150003" Count="5" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="考验的内容是收集5个c棉球果c，太简单了" TargetMap="21301" TargetObj="41" TargetName="和t柯特t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21301" ObjID="41" TaskOption="轻松搞定！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="1,2,3,……5！嗯，不错不错，你很有采集的天赋！格历尔棉球果的滋味真是太棒了！" />
+					<Msg NpcID="41" ImageID="1" Info="这些【至纯之水】收下吧，这可是很少见的材料哦！" />
+					<Option Info="谢谢柯特^^" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="尝试着去c采集c吧，c柯特c需要5个棉球果，在c格历尔平原1区c好好寻找一下吧！" TargetMap="21301" TargetPos="411,698" TargetName="采集t棉球果t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21301" ObjID="41" TaskOption="棉球果来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="41" ImageID="1" Info="如果你能在格里尔平原采集【5个棉球果】给我，就有神秘奖励！" />
+					<Msg NpcID="41" ImageID="1" Info="采集需要耐心的探索精神！请拿出你的耐心和探索之魂吧！不放过每一寸格里尔平原的角落！！" />
+					<Option Info="加油⊙﹏⊙" />
+				</Action>
+    			</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

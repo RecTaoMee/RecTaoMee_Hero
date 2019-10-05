@@ -1,0 +1,29 @@
+<Task ID="10104" Memo="勇士广场的c卢西奥c发布“合成石（初级）”的奖励啦，快去领呀！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c卢西奥c发布“合成石（初级）”的奖励啦，快去领呀！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="317" TaskOption="什么是合成石？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/> 		
+			</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="勇士广场的c卢西奥c发布“合成石（初级）”的奖励啦，快去领呀！" TargetMap="11202" TargetObj="317" TargetName="和t卢西奥t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="317" TaskOption="什么是合成石" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="227" ImageID="1" Info="你已到达20级，我可以免费赠送你一个“合成石（初级）”。" />
+					<Option Info="什么是合成石？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="227" ImageID="1" Info="“合成石”是【生产制造】里【装备合成】功能中的特殊材料，共有初级、中级、高级三档，9月30号起，可以从修炼之域开宝箱获得。" />
+					<Msg NpcID="227" ImageID="1" Info="在正常合成装备中，加入合成石，即有机会合成蓝装、紫装、甚至金装哦（修炼之域产出合成石，商城也可以买“合成锤”哦）！" />
+					<Option Info="我明白啦！" />
+				</Action>				
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

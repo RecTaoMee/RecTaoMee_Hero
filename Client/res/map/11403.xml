@@ -1,0 +1,33 @@
+<!--麦兜仓库-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-006.mp3">
+	<transport intPos="360,308"> 
+		<node id="1" pos="193,338" targetMapId="11401" targetTransPortId="6" name="南街"/>
+		
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="33" type="NPC" res="MC_npc_33" level="contentLevel" fun="" taskType="0" action="0$1$2" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction npcID="33" id="0" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[1#劳动！制造！战斗！与自然搏斗！这是男人的职责！]]>
+			</des>
+		</proAction>
+		<proAction npcID="33" id="1" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[6#不努力工作的摩尔不可原谅！]]>
+			</des>
+		</proAction>
+		<proAction npcID="33" id="2" type="0" answer="祝你好运" to="o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[6#游手好闲的“鼹鼠”不是摩尔！是“鼠辈”啊！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

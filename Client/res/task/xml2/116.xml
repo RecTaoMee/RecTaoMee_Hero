@@ -1,0 +1,44 @@
+<Task ID="116" Memo="c摩尔王c大人有请,\n快去c国王呈见厅c看看吧！" TargetMap="11307">
+   	<Procedure> 	                                                            
+  		<Step ID="1" ParentList="0" ParentCost="0" >                     
+    		<Event Memo="c摩尔王c大人有请,\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="您有事找我？" />					
+				</Trigger>
+				<Action Type="TALK">		
+					<Msg NpcID="30" ImageID="1" Info="还记得“铃”交给你的“命运轮盘”吗？\n想不想知道其它“摩尔勇士”的线索？" />											
+					<Option Info="想！" SkipTrigger="Y"/>					
+				</Action>																
+    		</Event>
+		</Step>	
+  		<Step ID="3" ParentList="1" ParentCost="1" >                     
+    		<Event Memo="c摩尔王c大人有请,\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="30" TargetName="去t麦田村t"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王陛下！" />					
+				</Trigger>	
+				<Action Type="TALK">		
+					<Msg NpcID="30" ImageID="1" Info="伟大的摩尔勇士【瑞恩】住在麦田村。" />		
+					<Msg NpcID="30" ImageID="1" Info="从南街出城，\n一直往右走就能找到【麦田村】。\n呵呵，寻找瑞恩的【勇士符文】就靠你了。" />		
+					<Option Info="这就去【麦田村】！" />					
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21303,1" />																
+    		</Event>
+		</Step>	
+  		<Step ID="2" ParentList="3" ParentCost="1" >                     
+    		<Event Memo="快去c麦田村c看看吧！" TargetMap="11401" TargetName="去t麦田村t"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11401" />
+				</Trigger>	
+    			<Action Type="COMMAND" Command="NOTHING" /> 															
+    		</Event>
+		</Step>			   		   
+</Procedure>
+</Task>
+
+
+
+
+			
+
+
+

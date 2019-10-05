@@ -1,0 +1,50 @@
+<task id="37">
+	<taskDes>
+		<![CDATA[学院向学员班学员提供免费的“学习用品兑换券”【请向导师索取】$$]]>
+		<![CDATA[“学习用品兑换券”☆王国广场东侧【贝塔商会装备店】指定使用。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="26" title="杰森老师好" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11305"/>
+		<pro type="0" parent="0" npcID="16" title="兑换学习用具" action="1" taskResID="260005" taskResNum="1" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11209"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="26" answer="好的" to="s6">
+			<des>
+				<![CDATA[1#摩尔王每年会发放大量星豆作为协会补贴，专门用于优秀学员培养。$$]]>
+				<![CDATA[1#各协会学员班学员可以得到免费优质的“学习用具”。$$]]>
+				<![CDATA[1#拿着“学习用具兑换券”到勇士广场东侧的【贝塔商会装备店】就可以领取了。现在就去领取专属武器吧！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="16" answer="嘿嘿是的！" to="a2">
+			<des>
+				<![CDATA[7#什么？你是协会新学员？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="16" answer="飞镖$锅盖$弓箭$剑$法杖$锤子$扫把" to="a3$a3$a3$a4$a3$a3$a3">
+			<des>
+				<![CDATA[7#摩尔王为了你们可给贝塔商会付了不少星豆。$$]]>
+				<![CDATA[7#知道你所属的协会专属的【特性武器】是什么吗？连这个都不知道武器会哭的，即使收了星豆也别想得到~]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="16" answer="(+__+)" to="a2">
+			<des>
+				<![CDATA[7#开什么玩笑？该用怎样的【特性武器】都不知道？给我认真点！重选————！]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="16" answer="O(∩_∩)O谢谢贝利" to="a7">
+			<des>
+				<![CDATA[1#哦……。这是你的武器————拿走拿走。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="16" answer="嗯！" to="c">
+			<des>
+				<![CDATA[5#好好运用它们吧————，不能被好好使用，武器会哭的。]]>
+			</des>
+		</proAction>		
+		<proAction id="6" type="7" taskResID="260005" taskResNum="1" delTaskResID="" delTaskResNum="" to="o"/>
+		<proAction id="7" type="7" taskResID="" taskResNum="" delTaskResID="260005" delTaskResNum="1" to="a5"/>
+	</actions>
+</task>
+				

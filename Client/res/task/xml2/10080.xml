@@ -1,0 +1,94 @@
+<Task ID="10080" Memo="c勇士号水手c紧急呼叫小主人，\n快去c修隐岛海岸c看看吧！" TargetMap="11701">
+	<Procedure>   					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c勇士号水手c紧急呼叫小主人，\n快去c修隐岛海岸c看看吧！" TargetMap="11701" TargetObj="60" TargetName="和t水手t对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="大家怎么啦？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="今天天气不错，\n我们像平常一样在甲板上一起洗澡，\n还唱着歌，" />	
+					<Msg NpcID="58" ImageID="1" Info="忽然发现有少了一个【水手】（+_+）！" />						
+					<Option Info="咦(⊙o⊙)？" SkipTrigger="Y"/>							
+					<Option Info="有事先走了" NextStep="1" />																					
+				</Action>																		
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c勇士号水手c紧急呼叫小主人，\n快去c修隐岛海岸c看看吧！" TargetMap="11701" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="【水手】不见了？" TargetObj="60" TargetName="和t水手t对话" />									
+				</Trigger> 				
+				<Action Type="TALK">				
+					<Msg NpcID="58" ImageID="1" Info="现在只有【锁修塔】没找过……\n穿“银铠甲”的摩尔守在门口，\n不让我们进去……" />	
+					<Msg NpcID="58" ImageID="2" Info="【@nick】战胜过一整~~条风之龙，\n去【锁修塔】里找找他吧~~" />																	
+					<Option Info="使命必达！" />																											
+				</Action>			
+    		</Event>
+		</Step>		
+			
+<!-- 节点1↑ -->                                                                              <!-- 补水手单人表情 -->  
+  		<Step ID="7" ParentList="2" ParentCost="1" >
+    		<Event Memo="不见了的c水手c一定在c锁修塔c上，\n快去找找看吧！" TargetMap="21701" TargetName="去t锁修塔1层t">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="21701" />	
+				</Trigger> 						
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="1" Info="咦，锁修塔【2层】有水流声，\n还有轻轻的歌声……" />																		
+					<Option Info="马上去【2层】！" />				
+				</Action>					
+    		</Event>
+		</Step>	
+  		<Step ID="4" ParentList="7" ParentCost="1" >
+    		<Event Memo="不见了的c水手c一定在c锁修塔c上，\n快去找找看吧！" TargetMap="21702" TargetName="去t锁修塔2层t">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="21702" />	
+					<Item Type="NPC_OPTION" MapID="21702" ObjID="30030" />											  
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="3" Info="！！##@%\n别过来！" />													
+					<Option Info="(⊙o⊙)？" />				
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="1" Info="（倒数3……\n2……\n1……）" />																		
+					<Msg NpcID="58" ImageID="4" Info="美少女水手~——变——身——\n你过来吧^口^p。" />													
+					<Option Info="╰(￣▽￣)我来也" />				
+				</Action>					
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21702, 30030" /> 																																												
+    		</Event>
+		</Step>		
+  		<Step ID="6" ParentList="4" ParentCost="1" >
+    		<Event Memo="不见了的c水手c就在c锁修塔2层c，\n快去找找看吧！" TargetMap="21702" TargetObj="30030" TargetName="和t失踪水手t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21702" ObjID="30030" />						
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="3" Info="【@nick】为什么会来这里？\n你也是爬墙上来的吗？" />													
+					<Option Info="大家在找你！" />				
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="4" Info="我溜出来这么久了？\n嘻嘻~每次洗澡都会忘记时间。" />													
+					<Msg NpcID="58" ImageID="4" Info="阳光海岸和清凉的泉水，\n真是完美的享受啊~~" />	
+					<Msg NpcID="401" ImageID="2" Info="每天洗澡1小时，\n美白又健康~~" />																														
+					<Msg NpcID="58" ImageID="4" Info="告诉你一个小秘密——\n其实，我是女孩子 (*^__^*) 。\n不能和大家一起洗澡很困扰啊……" />													
+					<Msg NpcID="58" ImageID="4" Info="我从小就想坐大海船周游世界！\n我想搭“免费”的海船，\n就假扮男孩子混进来了。\n现在，我喜欢上了水手的生活！" />													
+					<Msg NpcID="58" ImageID="4" Info="【@nick】要替我保密唷~\n我马上就回去^o^！" />													
+					<Option Info="O(∩_∩)O哈！" />				
+				</Action>		
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21702, 30030" /> 																												
+    		</Event>
+		</Step>		 <!-- 
+  		<Step ID="6" ParentList="5, 3" ParentCost="1" SkipList="3" >
+    		<Event Memo="不见了的水手找到啦↖(^ω^)↗\n好消息快告诉c修隐岛海岸c的c勇士号水手c吧！" TargetMap="11701" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="水手找到啦！" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="谢谢【@nick】，\n他已经回来啦！" />		
+					<Msg NpcID="58" ImageID="2" Info="以后我们要一起行动，\n谁也不能少~~" />							
+					<Msg NpcID="58" ImageID="3" Info="……" />																													
+					<Option Info="O(∩_∩)O哈！" />					
+				</Action>																		
+    		</Event>
+		</Step>		打开面板 -->				
+	</Procedure>
+</Task>

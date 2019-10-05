@@ -1,0 +1,62 @@
+<!--研究所-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="660,399" targetMapId="21102" targetTransPortId="2"/>
+		<!--node id="2" pos="145,340" compTaskID="6_3" targetMapId="11201" targetTransPortId="1"/-->
+		<node id="2" pos="145,340" targetMapId="11201" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="MapLib" res="MC_book" event="event_open_lib" lib="RES_PipikekePaper"/>
+		<node id="4" type="MapLib" res="MC_DDLPaper" lib="RES_DDLPaper"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<!--node id="12" type="NPC" res="MC_npc_12" action="0$5$6$7" needType="level" need="15" needAction="8$9$10$11"/-->
+		<node id="12" type="NPC" res="MC_npc_12" action="0" />
+	</npc>
+	<actions>
+		<proAction npcID="12" id="0" type="0" answer="精灵学技能$关于精灵的事$摩尔勇士万岁！" to="a5$a1$o" colorID="1$0$0">
+			<des>
+				<![CDATA[7#有关于精灵的有趣事情一定要告诉我。]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="1" type="0" answer="怎样有自己的精灵伙伴？$关于精灵战斗$精灵怎样学技能？$知道了谢谢！" to="a4$a2$a3$o" >
+			<des>
+				<![CDATA[2#关于哪方面？]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="2" type="0" answer="怎样有自己的精灵伙伴？$关于精灵战斗$精灵怎样学技能？$知道了谢谢！" to="a4$a2$a3$o" >
+			<des>
+				<![CDATA[7#闪灵胶片的封印能力有限，因此随身可最多携带【6只精灵】。$$]]>
+				<![CDATA[7#可以将其中【3只】设定为【待命状态】，在战斗中通过召唤。设定为【战斗状态】的精灵在进入战斗时可以自动解开封印参与战斗。$$]]>
+				<![CDATA[7#怎样让精灵在战斗中发挥自己更大的潜力一直是我探索的终极奥义啊————]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="3" type="0" answer="怎样有自己的精灵伙伴？$关于精灵战斗$精灵怎样学技能$摩尔勇士万岁！" to="a4$a2$a3$o" >
+			<des>
+				<![CDATA[1#你养过狼吗？精灵和狼一样，需要通过专业的“宠物训练师”进行技能训练，$$]]>
+				<![CDATA[2#比如我就是个专业的宠物训练师。不过这个过程需要消耗大量的星豆进行等价交换。$$]]>
+				<![CDATA[2#精灵等级越高的精灵灵力越强，可以学会更高等级的技能，不然付出再多的星豆也没用$$]]>
+				<![CDATA[7#精灵学习【技能等级】越强，需要消耗的星豆也随之增加，让你的精灵宠物学会技能是非常不容易的事情，它更像一个神圣的仪式啊。]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="4" type="0" answer="怎样有自己的精灵伙伴？$关于精灵战斗$精灵怎样学技能$摩尔勇士万岁！" to="a4$a2$a3$o" >
+			<des>
+				<![CDATA[5#这就要从我第一次发现【四维相机】说起了————$$]]>
+				<![CDATA[7#女神的“神谕”中提到：来自未来的摩尔会带来”神奇的照相机“，在那之后我遇到了你——也就是“未来摩尔”。$$]]>
+				<![CDATA[7#正如女神大人所预言，你从未来带来的【四维相机】竟然对黑化的精灵有反应，$$]]>
+				<![CDATA[2#所以我就发明了【闪灵胶片】，配合【四维相机】就可以起到封印黑化精灵，同时净化它们的效果。$$]]>
+				<![CDATA[1#使用精灵对应【系别】的【闪灵胶片】会起到更好的作用。☆所以在战斗中选择适合的闪灵胶片会大大提高封印成功率！$$]]>
+				<![CDATA[1#被净化的精灵将会认可它的封印者，它会成为你的战斗伙伴，你可以从闪灵胶片中召唤它们。]]>			
+			</des>
+		</proAction>
+		<proAction npcID="12" id="5" type="0" answer="1级技能$2级技能$3级技能$4级技能$5级技能$6级技能$7级技能$8级技能$摩尔勇士万岁！" to="b10_1201$b10_1202$b10_1203$b10_1204$b10_1205$b10_1206$b10_1207$b10_1208$o" colorID="1$1$1$1$1$1$1$1$0">
+			<des>
+				<![CDATA[7#10级以上的精灵可以学习2级技能，20级以上的精灵可以学习3级技能，依此类推。]]>
+			</des>
+		</proAction>
+	 </actions>
+</map>

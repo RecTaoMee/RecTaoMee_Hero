@@ -1,0 +1,141 @@
+<task id="25">
+	<taskDes>
+		<![CDATA[获得报名卡了！【快去协会导师那里报名吧！】☆《协会指南》——你的右上角。选什么协会好呢>3<]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="26" title="报名剑士协会" action="0" needRes="" needResNum="" unResAction="" taskDes="0"/>
+		<pro type="0" parent="" npcID="27" title="报名魔法师协会" action="7"  unResAction="" taskDes="0"/>
+		<pro type="0" parent="" npcID="28" title="报名弓箭手协会" action="14"  unResAction="" taskDes="0"/>
+		<pro type="0" parent="" npcID="22" title="报名传教士协会" action="21"  unResAction="" taskDes="0"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板   1，剑士 2弓箭手 3魔法师 4 传教士-->
+		<proAction id="0" type="0" npcID="26" answer="我想体验剑士的感觉$我决定加入剑士协会" to="a1$a5">
+			<des>
+                <![CDATA[2#王宫里听说了你拿到【希望之坠】和【报名卡】的消息。可看上去没想象中那么强壮嘛。$$]]>
+                <![CDATA[2#不过你只能加入一个协会，我的要求是很严格的，你确定加入【剑士协会】么？还是先体验下真正的剑士是什么感觉？]]>				
+			</des> 
+		</proAction>
+		<proAction id="1" type="0" npcID="26" answer="好的" to="a2">
+			<des>
+                <![CDATA[2#呵呵，让你瞧瞧剑之魂的实力！ 拿好【练习剑】我们开始吧！]]>
+			</des> 
+		</proAction>
+		<proAction id="2" type="1" outMap="1" level="taskLevel" name="skill_2" moviepos="0,0"  to="a3"/>
+		<proAction id="3" type="0" npcID="26" answer="我决定加入剑士协会$我再考虑一下" to="a5$a4">
+			<des>
+                <![CDATA[2#强而有力吧？加入【剑士协会】吧！]]>
+			</des> 
+		</proAction>
+		<proAction id="4" type="0" npcID="26" answer="好的" to="o">
+			<des>
+                <![CDATA[1#适合自己的才是最好的，去别的协会看看吧!]]>
+			</des> 
+		</proAction>
+		<proAction id="5" type="0" npcID="26" answer="好的" to="a6">
+			<des>
+                <![CDATA[1#那么就来填写【勇士协会学员报名卡】吧————每张报名卡会交给会长审核，通过后会马上来信通知你！]]>
+			</des> 
+		</proAction>
+		<proAction id="6" type="2" panel="Task25Module" data="1" to="o"/>
+		<proAction id="7" type="0" npcID="27" answer="我想体验魔法师的感觉$我决定加入魔法师协会" to="a8$a12">
+			<des>
+                <![CDATA[10#啊——不要啊———变成兔子的样子被看到了！$$]]>
+                <![CDATA[2#咳咳………王宫里已经听说了你拿到【希望之坠】和【报名卡】的消息。大家在讨论你会加入哪个协会。$$]]>
+                <![CDATA[1#不过你只能加入一个协会，魔法可不是那么容易掌控的，你有把握么？还是先体验下使用魔法是什么感觉？]]>				
+			</des> 
+		</proAction>
+		<proAction id="8" type="0" npcID="27" answer="好的" to="a9">
+			<des>
+                <![CDATA[2#让你感受下魔法的强大魔力。握紧【练习法杖】我们开始吧！]]>
+			</des> 
+		</proAction>
+		<proAction id="9" type="1" outMap="1" level="taskLevel" name="skill_3" moviepos="0,0"  to="a10"/>
+		<proAction id="10" type="0" npcID="27" answer="我决定加入魔法师协会$我再考虑一下" to="a12$a11">
+			<des>
+                <![CDATA[2#魔法很神奇吧，考虑的如何了？]]>
+			</des> 
+		</proAction>
+		<proAction id="11" type="0" npcID="27" answer="好的" to="o">
+			<des>
+                <![CDATA[1#适合自己的才是最好的，去别的协会看看吧!]]>
+			</des> 
+		</proAction>
+		<proAction id="12" type="0" npcID="27" answer="好的" to="a13">
+			<des>
+                <![CDATA[1#那么就来填写【勇士协会学员报名卡】吧————每张报名卡会交给会长审核，通过后会马上来信通知你！$$]]>
+                <![CDATA[2#如果有幸通过会长的审核，能把魔法发挥到怎样的程度就看你的了，你会爱上魔法的……]]>
+			</des> 
+		</proAction>
+		<proAction id="13" type="2" panel="Task25Module" data="3" to="o"/>
+		<proAction id="14" type="0" npcID="28" answer="我想体验弓箭手的感觉$我决定加入弓箭手协会" to="a15$a19">
+			<des>
+                <![CDATA[2#王宫里已经听说过你拿到【希望之坠】和【报名卡】的消息。不过我没有想过你会来这里。$$]]>
+                <![CDATA[1#那些外行是不会了解弓术的魅力。$$]]>
+                <![CDATA[1#不过你只能加入一个协会，弓箭手需要很高的天资，你确定加入？还是先体验下“手持弓箭”是什么样的感觉？]]>				
+			</des> 
+		</proAction>
+		<proAction id="15" type="0" npcID="28" answer="好的" to="a16">
+			<des>
+                <![CDATA[2#让你感受下弓箭的魅力~~。拿上【练习弓箭】我们开始吧！]]>
+			</des> 
+		</proAction>
+		<proAction id="16" type="1" outMap="1" level="taskLevel" name="skill_1" moviepos="0,0"  to="a17"/>
+		<proAction id="17" type="0" npcID="28" answer="我决定加入弓箭手协会$我再考虑一下" to="a19$a18">
+			<des>
+                <![CDATA[2#手持弓箭的感觉不错吧，目标明确了吗？]]>
+			</des> 
+		</proAction>
+		<proAction id="18" type="0" npcID="28" answer="好的" to="o">
+			<des>
+                <![CDATA[1#追求自己最渴望的目标才能贯彻始终，去别的协会看看吧。]]>
+			</des> 
+		</proAction>
+		<proAction id="19" type="0" npcID="28" answer="好的" to="a20">
+			<des>
+                <![CDATA[1#那么就来填写【勇士协会学员报名卡】吧————每张报名卡会交给会长审核，通过后会马上来信通知你！$$]]>
+                <![CDATA[2#如果通过尊贵的会长大人的审核，做个自由的弓箭手吧，我对你很期待哦。]]>
+			</des> 
+		</proAction>
+		<proAction id="20" type="2" panel="Task25Module" data="2" to="o"/>
+		
+		
+		
+		
+		
+		<proAction id="21" type="0" npcID="22" answer="我想体验传教士的感觉$我决定加入传教士协会" to="a22$a26">
+			<des>
+                <![CDATA[1#听王宫里的人说你拿到【希望之坠】和【报名卡】，神的信念向你敞开。$$]]>
+                <![CDATA[2#不过你只能加入一个协会，传教士需要无私的奉献，你准备好加入了吗？还是先体验下作为传教士是什么样的感觉呢？]]>				
+			</des> 
+		</proAction>
+		<proAction id="22" type="0" npcID="22" answer="好的" to="a23">
+			<des>
+                <![CDATA[2#好的，让我们来练习一下如何用爱帮助你的队友，好【练习法杖】我们开始吧。]]>
+			</des> 
+		</proAction>
+		<proAction id="23" type="1" outMap="1" level="taskLevel" name="skill_4" moviepos="0,0"  to="a24"/>
+		<proAction id="24" type="0" npcID="22" answer="我决定加入传教士协会$我再考虑一下" to="a26$a25">
+			<des>
+                <![CDATA[1#即使是【魔法稻草人】得到关怀也会有幸福的感觉，你感受到了吗^_^？【@nick】会加入我们一起传播白魔法吗？]]>
+			</des> 
+		</proAction>
+		<proAction id="25" type="0" npcID="22" answer="好的" to="o">
+			<des>
+                <![CDATA[1#适合自己的才是最好的，去别的协会看看吧！愿女神祝福你^_^]]>
+			</des> 
+		</proAction>
+		<proAction id="26" type="0" npcID="22" answer="好的" to="a27">
+			<des>
+                <![CDATA[1#那么就来填写【勇士协会学员报名卡】吧————每张报名卡会交给会长审核，通过后会马上来信通知你！]]>
+			</des> 
+		</proAction>
+		<proAction id="27" type="2" panel="Task25Module" data="4" to="o"/>
+		<proAction id="28" type="0" npcID="26" answer="谢谢温蒂老师！" to="o">
+			<des>
+                <![CDATA[2#如果通过了会长审核，让我们一同继承神的意志吧，女神与我们同在。]]>
+			</des> 
+		</proAction>
+	</actions>	
+</task>

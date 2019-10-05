@@ -1,0 +1,135 @@
+<Task ID="20020" Memo="c鹦鹉“TT”c在呼叫小主人，\n快去c弗雷基港码头c看看吧！" TargetMap="11604">
+	<Procedure>   					
+  		<Step ID="51" ParentList="0" ParentCost="0" >
+    		<Event Memo="c鹦鹉“TT”c在呼叫小主人，\n快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="TT我来啦" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="TT想做“海鲜汤”（T__T）~~~\n“原料”(【马沙虾】)再不来，\n我的“海鲜汤”就泡汤啦~~" />						
+					<Option Info="我帮你找【马沙虾】！" SkipTrigger="Y"/>						
+					<Option Info="海鲜汤？" NextStep="1" SkipTrigger="Y"/>							
+					<Option Info="有事先走了" NextStep="51" />																					
+				</Action>																		
+    		</Event>
+		</Step>	
+  		<Step ID="1" ParentList="0" ParentCost="1" >
+    		<Event Memo="c鹦鹉“TT”c在呼叫小主人，\n快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话" >
+  				<Trigger>										  
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="海鲜汤？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="弗雷基港专出美味的“海产”——\n章界王、雪蛤蜊、马沙虾……\n（¯﹃¯）口水。" />	
+					<Msg NpcID="52" ImageID="1" Info="如果把大家的“洗澡水”做成“海鲜汤”，\n一定大卖\(^o^)/！" />																								
+					<Msg NpcID="52" ImageID="1" Info="可是——命运总是捉弄“鸟”T_T！\n【马沙虾】害怕洗澡，\n一看到我就逃T_T~！" />						
+					<Msg NpcID="342" ImageID="1" Info="mo~fa\n（情况就是这样子╮(╯▽╰)╭）" />																
+					<Msg NpcID="52" ImageID="1" Info="TT想要【马沙虾】（T__T）~！" />																										
+					<Option Info="我帮你找【马沙虾】！" SkipTrigger="Y" />	
+					<Option Info="有事先走了" NextStep="1" />																										
+				</Action>		
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="51, 1" ParentCost="1" >
+    		<Event Memo="c鹦鹉“TT”c在呼叫小主人，\n快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话" >
+  				<Trigger>										  
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="我帮你找【马沙虾】！" />									
+				</Trigger> 		
+				<Action Type="TALK">		
+					<Msg NpcID="52" ImageID="1" Info="友情提醒：找【马沙虾】请认准——\n红色、有角、★逃跑三倍速！" />	
+					<Msg NpcID="58" ImageID="2" Info="马沙虾刚才“光速”往【弗雷基商会】方向逃跑了~~" />											
+					<Option Info="马上去【弗雷基商会】！" />																															
+				</Action>		
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11602, 30031" /> 																																																																
+    		</Event>
+		</Step>		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="勇士号水手说c马沙虾c往c弗雷基商会c方向逃跑了，\n快去找找看吧！" TargetMap="11602" TargetObj="52" TargetName="和t鹦鹉TTt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="找不到【马沙虾】啊" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="友情提醒：找【马沙虾】请认准——\n红色、有角、★逃跑三倍速！" />	
+					<Msg NpcID="58" ImageID="1" Info="马沙虾刚才“光速”往【弗雷基商会】方向逃跑了~~" />																	
+					<Option Info="马上去【弗雷基商会】！" NextStep="3" />																					
+				</Action>																		
+    		</Event>
+		</Step>		
+		
+		
+				
+<!-- 节点2↓ -->    
+  		<Step ID="4" ParentList="2" ParentCost="1" >
+    		<Event Memo="勇士号水手说c马沙虾c往c弗雷基商会c方向逃跑了，\n快去找找看吧！" TargetMap="11602" TargetObj="30031" TargetName="点击t马沙虾t">
+  				<Trigger>			
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="30031" />											  
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="341" ImageID="1" Info="123，看谁逃得快(■_,■)~~" />	
+					<Msg NpcID="342" ImageID="1" Info="mo~~fa\n（让人为难啊╮(╯▽╰)╭）" />																					
+					<Option Info="……" />																					
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11602, 30031" /> 																																
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11603, 30032" SkipTrigger="Y" /> 																																																																																					
+    		</Event>
+		</Step>		
+  		<Step ID="5" ParentList="4, 3" ParentCost="1" SkipList="3" >
+    		<Event Memo="c马沙虾c逃跑了，\n快去c弗雷基商会c问问c萨克斯c吧！" TargetMap="11603" TargetObj="49" TargetName="和t萨克斯t对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="49" TaskOption="【马沙虾】在哪？" />							  							
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="49" ImageID="1" Info="【马沙虾】又往【弗雷基广场】方向逃跑了！！" />	
+					<Option Info="马上去【弗雷基广场】！"/>																					
+				</Action>																		
+    		</Event>
+		</Step>			
+		
+				                                                                           
+ 
+<!-- 节点3↓ -->    		
+  		<Step ID="8" ParentList="5" ParentCost="1" >
+    		<Event Memo="萨克斯说c马沙虾c往c弗雷基广场c方向逃跑了，\n快去找找看吧！" TargetMap="11603" TargetObj="30032" TargetName="点击t马沙虾t">
+  				<Trigger>			
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="30032" />											  
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="341" ImageID="1" Info="123，看谁逃得快(■_,■)~~" />	
+					<Msg NpcID="342" ImageID="1" Info="mo~~fa\n（让人为难啊╮(╯▽╰)╭）" />	
+					<Option Info="……" />																					
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11603, 30032" /> 																																				
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11604, 30033" SkipTrigger="Y" /> 																																																																																					
+    		</Event>
+		</Step>				
+  		<Step ID="9" ParentList="8, 7" ParentCost="1" SkipList="7" >
+    		<Event Memo="c马沙虾c逃跑了，\n快去c弗雷基码头c问问c蟹娜c吧！" TargetMap="11604" TargetObj="51" TargetName="和t蟹娜t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="51" TaskOption="【马沙虾】在哪？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="【@nick】快追！！\n【马沙虾】往【弗雷基码头】方向逃跑了！" />	
+					<Option Info="马上去【弗雷基码头】！" />																					
+				</Action>																		
+    		</Event>
+		</Step>		
+	
+		
+
+<!-- 节点4↓ -->    		
+  		<Step ID="11" ParentList="9,10" ParentCost="1" SkipList="10" >
+    		<Event Memo="蟹娜说c马沙虾c往c弗雷基码头c方向逃跑了，\n快去找找看吧！" TargetMap="11604" TargetObj="30033" TargetName="点击t马沙虾t" >
+  				<Trigger>			
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="30033" />											  
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="马沙虾！！！！！！！\n洗澡用的浴盆、热水、香薰，全~~都为你准备好啦，\n挣扎无用哦也~~" />	
+					<Msg NpcID="341" ImageID="1" Info="不——要——( ˉ▽ˉ；) " />
+					<Msg NpcID="327" ImageID="1" Info="海鲜汤“神马”的，\n全部送给蟹娜哈哈！" />																
+					<Msg NpcID="401" ImageID="3" Info="大家要记得经常洗澡哟~~" />											
+					<Option Info="O(∩_∩)O！" />																					
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11604, 30033" /> 																																								
+    		</Event>
+		</Step>					 		
+	</Procedure>
+</Task>

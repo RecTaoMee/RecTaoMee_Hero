@@ -1,0 +1,28 @@
+<Task ID="36012" Memo="送信满10次啦，可以领取奖励的哦！" TargetMap="11207">  
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="送信满10次啦，可以领取奖励的哦！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="领取奖励!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="呵呵，你今天已经送信满10次了，大叔有奖励给你哦！" />
+					<Option Info="哇！" SkipTrigger="Y"/>
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="送信满10次啦，可以领取奖励的哦！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="领取奖励!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="这是你的奖励，拿好吧！" />
+					<Option Info="谢谢！" />
+				</Action>
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

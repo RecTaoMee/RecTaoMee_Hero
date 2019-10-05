@@ -1,0 +1,21 @@
+<!--月宫后殿-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="414,522" targetMapId="" targetTransPortId="" name="传入点"/>
+	</transport>
+	<object>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="318" type="NPC" res="MC_npc_318" action="0"/>
+
+    </npc>
+    <actions>
+		<proAction npcID="723" id="1" type="0" answer="我要出副本" to="changeMap_11202" colorID="0">
+			<des>
+				<![CDATA[1#我好怕怕哦……]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

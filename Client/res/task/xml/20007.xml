@@ -1,0 +1,65 @@
+<task id="20007">
+	<taskDes>
+        <![CDATA[新的一天又开始了，去公告栏看看有什么委托任务吧！$$]]>
+        <![CDATA[研究所的委托信，任务的内容是什么呢？先去【精灵研究所】确认一下！$$]]>
+		<![CDATA[【假面吉吉帕】喜欢在【格历尔平原2区】出没。☆战斗胜利取得了【吉吉粉】，就回去给皮克司教授吧！$$]]>
+		<![CDATA[任务完成，去公告栏领取奖励吧！]]>
+	</taskDes>
+	<laterDes>
+		<![CDATA[摩尔王国精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！]]>
+	</laterDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="300" action="0" title="皮克司的精灵研究" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11202"/>
+		<pro type="0" parent="0" npcID="12" action="0" title="工作内容？" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11206"/>
+		<pro type="0" parent="1" npcID="12" action="3" title="【吉吉粉】" needRes="260009" needResNum="1" unResAction="4" taskDes="2" mapID="11206"/>
+		<pro type="0" parent="2" npcID="300" action="6" title="皮克司的精灵研究" needRes="" needResNum="" unResAction="" taskDes="3" mapID="11202"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="12" answer="......." to="a1">
+			<des>
+				<![CDATA[5#【@nick】你也被我的魅力吸引过来了吗？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="12" answer="假面吉吉帕？" to="a2">
+			<des>
+				<![CDATA[2#哈哈，看来我还是有搞笑天赋！说正事吧，今天的研究课题是【假面吉吉帕】！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="12" answer="绝对没问题！" to="e1">
+			<des>
+				<![CDATA[1#【假面吉吉帕】外形很类似蘑菇，它们擅长使用魔法，这似乎和一种叫【吉吉粉】的魔法原料有关。$$]]>
+				<![CDATA[1#你去【格历尔平原2区】应该会很容易碰到它们，和它们战斗胜利有可能会得到这种粉末。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="12" answer="嗯，好痒啊..." to="a5">
+			<des>
+				<![CDATA[2#【@nick】你拿到了吗？]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="12" answer="立刻！" to="o">
+			<des>
+				<![CDATA[2#假面吉吉帕们常在【格历尔平原2区】出现！和它们战斗胜利有可能得到一种叫【吉吉粉】的魔法原料。$$]]>
+				<![CDATA[2#太想要一个【吉吉粉】了————神啊给我一个【吉吉粉】吧！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="12" answer="嗯T T" to="e2">
+			<des>
+				<![CDATA[2#忘记给你说了...这个粉末千万不能弄到身上，不然会很痒的...总之，谢谢你啦！$$]]>
+				<![CDATA[2#你的报酬已经送到公告栏了，快去领取吧！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="15" answer="嘿嘿(^-^)！" to="a7">
+			<des>
+				<![CDATA[1#这件事你干的很漂亮嘛！]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="2" panel="PublicShouLiModule" data="20007_8" to=""/>
+		<proAction id="8" type="0" npcID="15" answer="嗯！" to="c">
+			<des>
+				<![CDATA[1#这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

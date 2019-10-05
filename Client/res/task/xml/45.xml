@@ -1,0 +1,37 @@
+<task id="45">
+	<taskDes>
+		<![CDATA[“特性武器”入手！【去向“彼兔”老师汇报吧！】$$]]>
+		<![CDATA[【5个黑化精灵怪盗迪迪拉】，代表正义将它净化吧！☆【出没地区：王国城门外格历尔平原】*注意指南针地图$$]]>
+		<![CDATA[怪盗5人组解决了！真是激动人心啊，【快去向彼兔老师汇报吧！】。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="27" title="拿到榆木短杖了！" action="0" needRes="" needResNum="" unResAction="" mapID="11304"/>
+		<pro type="0" parent="0" npcID="27" title="5个怪盗迪迪拉……" action="1" bossID="7" bossNum="5" taskDes="1" mapID="21301"/>
+		<pro type="0" parent="1" npcID="27" title="5个怪盗迪迪拉净化完毕" action="2" bossID="" bossNum="" taskDes="2" mapID="11304"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="27" answer="保证完成任务！" to="so">
+			<des>
+				<![CDATA[1#这样好多了，起码看上去才像一位神秘的魔法师了！$$]]>
+				<![CDATA[1#自从“黑化事件”之后，精灵【怪盗迪迪拉】在王国城门口大量出现，王国公民出城受到很大影响。$$]]>
+				<![CDATA[1#勇士协会和王国共同商议决定将这一使命交给各协会共同完成。$$]]>
+				<![CDATA[1#“最好的课堂在野外”，这对你们是十分有效的锻炼。$$]]>
+			    <![CDATA[1#这是你加入魔法师协会学员班的第一个任务————解救被黑化的精灵【怪盗迪迪拉5个】。$$]]>
+				<![CDATA[1#熟练的借助【地图指南针】和【旅行记事本】完成任务吧！完成后记得回来交付使命。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="27" answer="知道了" to="o">
+			<des>
+				<![CDATA[1#打不过回来向我哭诉了吗？拿出摩尔勇士的勇气！多复习下要领吧。以你现在的能力相信你可以做到！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="27" answer="加油\(^〇^)/！" to="co">
+			<des>
+				<![CDATA[2#做的不错，有些我的风范了，魔法师协会一直是高端专业的领袖组织。$$]]>
+				<![CDATA[2#祝贺你【@nick】，出色的完成了第一个学员班任务！考验才刚刚开始，继续加油吧！（`_^)v！]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

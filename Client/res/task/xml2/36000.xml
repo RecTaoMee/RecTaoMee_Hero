@@ -1,0 +1,155 @@
+<Task ID="36000" Memo="前往c勇士广场c左侧找到神秘的c多修c，他有事找你哦！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="这次的任务是什么呢？快点去勇士广场问问神秘的c多修c吧？" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="失踪事件?" />
+				</Trigger>
+				<!--  <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11202,30039" /> --> <!-- 添加场景临时物品1 -->
+     		<Action Type="COMMAND" Command="ROLL_CAMERA" Params="1205,467" />
+     		<Action Type="COMMAND" Command="DELAY" Params="800" />
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="城堡花坛处出现了一个空间裂缝，\n附近的精灵频繁神秘失踪！" />
+					<Msg NpcID="104" ImageID="1" Info="我想去这个时空裂缝调查一番。\n少年，你可愿意和我一起同去嘛？" />
+					<Option Info="当然愿意！" />					
+				</Action>		
+    		<Action Type="COMMAND" Command="RESTORE_CAMERA" />
+    		<!--<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11202,30039"/>-->
+			</Event>
+		</Step>
+
+	<Step ID="2" ParentList="1" ParentCost="1" >
+			 <Event  Memo="去c空间裂缝c看看吧！" TargetMap="22104" TargetObj="" TargetName="去t空间裂缝t"> 
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="22104" />
+				</Trigger>
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="1112, 704" />  <!-- 移动镜头到指定位置 -->
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="封印大门挡住了去路消灭,\n从洞穴怪物身上获取10个紫焰水晶就可以破开封印了！" />
+					<Option Info="我这就行动(⊙o⊙)！"/>
+				</Action>
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" />  <!-- 镜头回到主角 -->
+			</Event>	
+	</Step>	
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+		<Condition>
+			<Item ID="180066" Count="10" />
+		</Condition>
+  			<Event ConditionType="IN" Memo="这么快凑齐十个紫焰水晶啦？马上前往c魔法阵c解开封印吧。" TargetMap="22104" TargetObj="113" TargetName="解印t魔法阵t">
+				<Trigger>
+				<Item Type="NPC_OPTION" MapID="22104" ObjID="113" TaskOption="破除魔法封印" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="104" ImageID="1" Info="太好了，凑齐了十个紫焰水晶，我这就破开这魔法阵的封印！" />
+				<Option Info="哇，激动啊！" />
+			</Action>	
+			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="22104, 30040" />
+  		</Event>
+		<Event ConditionType="OUT" Memo="消灭c斯巴鲁洞穴c的c噬魂鬼c就可以得到紫焰水晶了，凑齐十个回来这里开启魔法阵！" TargetMap="22104" TargetObj="" TargetName="t收集10个紫焰水晶t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="22104" ObjID="113" TaskOption="破除魔法封印" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="104" ImageID="1" Info="你身上的紫焰水晶不足十个，在噬魂鬼身上多取些来给我！" />
+				<Option Info="好的" />
+			</Action>
+		</Event>
+	</Step>	
+	
+
+		<Step ID="4" ParentList="3" ParentCost="1" >
+		<Condition>
+			<Battle ID="3318" Count="1" />				
+		</Condition>
+		<Event ConditionType="IN" Memo="哈哈，真是不堪一击，快逼问c小石怪c真相！" TargetMap="22104" TargetObj="30040" TargetName="逼问t小石怪t">
+				<Trigger>
+				<Item Type="NPC_OPTION" MapID="22104" ObjID="30040" TaskOption="快说"/>			
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="332" ImageID="1" Info="我是斯巴鲁大人最厉害的部下，\n伟大的斯巴鲁大人不会放过你的！" />
+				<Option Info="我才不怕" />										
+			</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="22104, 30040" />		
+				<Action Type="MOVIE" Url="task3600_1.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="22104, 30041" SkipTrigger="Y" />							
+  		</Event>
+  		<Event ConditionType="OUT" Memo="继续前进，调查c神秘洞穴c" TargetMap="22104" TargetObj="30040" TargetName="调查t神秘洞穴t">
+				<Trigger>
+				<Item Type="NPC_OPTION" MapID="22104" ObjID="30040" TaskOption="你是？"/>	
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="332" ImageID="1" Info="魔法阵被破除了？大事不好，快报告斯巴鲁大人！" />
+				<Option Info="休想" />
+				<Option Info="让我准备一下！" NextStep="4" />											
+			</Action>			
+       <Action Type="COMMAND" Command="BATTLE" Params="3318" />												
+  		</Event>
+		</Step>		
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >		
+			<Condition>
+				<Battle ID="3317" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜c斯巴鲁幼兽c,和他对话" TargetMap="22104" TargetObj="30041" TargetName="和t斯巴鲁幼兽t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="22104" ObjID="30041" TaskOption="服不服？！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="368" ImageID="1" Info="5555555，你既然敢欺负我，我父王一定会撕碎你，准备哭泣吧！" />
+					<Msg NpcID="112" ImageID="1" Info="是谁，谁欺负我斯巴鲁的儿子，活的的不耐烦了嘛！" />	
+					<Msg NpcID="368" ImageID="1" Info="我父王来了！你准备受死吧！" />								
+					<Option Info="……好强的戾气"/>
+				</Action>
+				<Action Type="MOVIE" Url="task3600_2.swf" MapLevel="TASK" Pos="0,0" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="22104, 30041" />	
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="击败c斯巴鲁幼兽c" TargetMap="22104" TargetObj="30041" TargetName="击败t斯巴鲁幼兽t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="22104" ObjID="30041" TaskOption="（…小家伙…）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="368" ImageID="1" Info="可恶，既然敢小看我，看我怎么收拾你！" />
+					<Msg NpcID="104" ImageID="1" Info="少年，魔龙斯巴鲁可不是好惹的家伙，怕的话就闪一边吧。" />
+					<Msg NpcID="101" ImageID="1" Info="这么危险的任务，你们需要我这样的强力后援，让我祝你一臂之力吧。" />
+					<Msg NpcID="368" ImageID="1" Info="可恶，你以为多了个帮手就能打赢我吗？这些省事了，一起把你们收拾掉！" />
+					<Option Info="开战吧！" />
+					<Option Info="先准备一下" NextStep="5" />	
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3317"/>										
+    		</Event>
+		</Step>
+	
+  		<Step ID="6" ParentList="5" ParentCost="1" >		
+			<Condition>
+				<Battle ID="3316" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜c斯巴鲁c,和他对话" TargetMap="22104" TargetObj="112" TargetName="和t斯巴鲁t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="22104" ObjID="112" TaskOption="打？！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="112" ImageID="1" Info="别打，疼，疼！我上有老，下还有小，\n你们就大发慈悲放过我吧！" />	
+					<Msg NpcID="112" ImageID="1" Info="我保证以后再也不乱杀无辜了，我改吃素还不行嘛！" />	
+					<Msg NpcID="104" ImageID="1" Info="不要在有下次，否则定斩不饶！" />				
+					<Option Info="好自为之" />
+				</Action>	
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="击败c斯巴鲁c" TargetMap="22104" TargetObj="112" TargetName="击败t斯巴鲁t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="22104" ObjID="112" TaskOption="质问" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="斯巴鲁，最近失踪的动物是不是和你有关系！" />
+					<Msg NpcID="112" ImageID="1" Info="呵呵！不错，他们都是我的食物，你们现在也是啦！" />	
+					<Msg NpcID="104" ImageID="1" Info="可恶，我们一起上，消灭它！" />
+					<Option Info="好，冲啊！" />
+					<Option Info="先准备一下" NextStep="6" />	
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3316"/>										
+    		</Event>
+		</Step>			
+	</Procedure>
+</Task>

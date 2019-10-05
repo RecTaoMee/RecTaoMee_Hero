@@ -1,0 +1,37 @@
+<Task ID="10081" Memo="c守卫士兵Zc在找未来摩尔？\n快去c平原11区c看看吧！" TargetMap="21311">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔？\n快去c平原11区c看看吧！" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="你好啊^^！" />	
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="hi【@nick】，第一次见到我吧？" />					
+					<Option Info="嗯！"  SkipTrigger="Y" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="你好啊^^！" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="最近平原地区的黑化更严重了……\n即使是执行简单的站岗任务，\n也必须不断提升自己的实力啊！" />				
+					<Msg NpcID="225" ImageID="1" Info="——我是负责安排大家军训的【Z教官】。" />						
+					<Option Info="教官好！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="没有参加过军训的摩尔都不是好鼹鼠！\n你打算参加军训吗？" />	
+					<Msg NpcID="401" ImageID="2" Info="（友情提醒：拒绝教官大人，后果会很严重的唷~~）" />																
+					<Option Info="我要参加军训！" />
+				</Action>									
+				<Action Type="TALK">												
+					<Msg NpcID="225" ImageID="1" Info="OK，营地刚刚建成，正好有不少扫清道路和运送材料的工作——\n以后就作为你的“特别军训”吧。" />	
+					<Option Info="军训万岁↖(^o^)↗" />
+				</Action>								
+    		</Event>
+    	</Step>										
+	</Procedure>
+</Task>

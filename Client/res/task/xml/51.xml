@@ -1,0 +1,70 @@
+<task id="51">
+	<taskDes>
+		<![CDATA[怪异研究员皮克司到底获得了怎样的大发现？“本世纪最伟大的发明”——【赶快问问皮克司吧！】☆皮克司研究所。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="12" title="封印小石怪了！" action="1" needRes="" needResNum="" unResAction="" taskDes="0"/>
+		<pro type="0" parent="0" npcID="12" title="封印小石怪了！" action="2" needRes="" needResNum="" unResAction="" taskDes="0"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="3"  to="s0"/>
+		<proAction id="1" type="0" npcID="12" answer="真为你高兴！" to="s2">
+			<des>
+				<![CDATA[2#我成功了！我们成功了！！“废柴精灵研究员”的称号终于可以解除了！$$]]>
+				<![CDATA[1#小石怪应该已经在你的【宠物口袋】里了！$$]]>				
+				<![CDATA[7#看来封印魔法只对认可封印者实力的精灵有效，今后它会成为你忠实的战斗伙伴，你可以尝试在战斗中从“魔法封印卡片”中召唤它们。$$]]>
+				<![CDATA[5#这真是本世纪最伟大的发明啊(⊙▽⊙)它一定可以拯救摩尔王国，哦不，甚至整个大陆，我的努力没有白费————太令人感动了！！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="12" answer="闪光灯……精灵……胶片？" to="a3">
+			<des>			
+				<![CDATA[5#对了这么伟大的发明一定要取个闪亮的名字！————这种“魔法封印卡片”叫什么好啊啊啊啊……$$]]>
+				<![CDATA[2#(⊙▽⊙)！从“未来”来的摩尔，你帮我想想吧？？]]>			
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="12" answer="你认识皮皮克克？" to="a4">
+			<des>	
+				<![CDATA[7#【闪】光灯……精【灵】……【胶片】……………………$$]]>	
+				<![CDATA[1#就是它了！————【闪灵胶片】————超级完美又有趣的名字（⊙▽⊙）！$$]]>				
+				<![CDATA[1#皮皮琪琪知道了也一定非常开心！！好想告诉他们啊！$$]]>
+				<![CDATA[7#……以前这里是连接吉普豆村和摩尔王国的秘密地道，自从“黑化事件”后，吉普地道里的精灵都变得十分危险，$$]]>
+				<![CDATA[7#来往秘密通道的人也少了，因为这个原因我也很久没回吉普豆村了……不知道皮皮克克和琪琪怎样了……]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="12" answer="挺像的$不太像$有点像" to="a5$a6$a7">
+			<des>					
+				<![CDATA[5#我是他们的爸爸……嘿嘿……不像吗？]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="12" answer="哈哈" to="a8">
+			<des>					
+				<![CDATA[4#皮皮克克这小子捣蛋鬼————绝对不是我生的……]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="12" answer="嘿嘿" to="a8">
+			<des>					
+				<![CDATA[2#哦？是吗哈哈，可能孩子们比较像他们的妈妈…………]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="12" answer="唔…………" to="a8">
+			<des>					
+				<![CDATA[4#从他们小时候开始，我就经常四处旅行研究精灵不在他们身边，难道因为长久不见面没参照我的样子长？……*&%？@#…！]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="12" answer="我要找【摩尔王】" to="a9">
+			<des>					
+				<![CDATA[1#对了，你从吉普豆村穿过危险的地道来摩尔王国做什么？]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="0" npcID="12" answer="谢谢你！" to="a10">
+			<des>					
+				<![CDATA[1#那真是辛苦了，不过现在你的旅行生活将变得很轻松了！$$]]>
+				<![CDATA[5#【摩尔王国】是个魔法强盛的地方，整个王国覆盖了强大的【魔法阵】，可以通过“魔法指南针”直接传送到王国内各个区域。$$]]>
+				<![CDATA[8#我就把它钉在【左下角】了。通过它直接去王国北面的【摩尔城堡】晋见伟大的【摩尔王】吧！]]>	
+			</des>
+		</proAction>
+		<proAction id="10" type="1" outMap="1" level="taskLevel" name="task_49_4" moviepos="0,0" to="c"/>
+	</actions>
+</task>

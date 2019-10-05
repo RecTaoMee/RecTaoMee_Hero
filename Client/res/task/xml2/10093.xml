@@ -1,0 +1,77 @@
+<Task ID="10093" Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704">
+	<Procedure> 
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="温蒂好啊！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="“藤蔓君”好久没来祈祷了呢……\n你有空去【锁修塔1层】帮我看看它吗？" />
+					<Option Info="这就去【锁修塔1层】！" SkipTrigger="Y" />										
+					<Option Info="有事先走了" NextStep="50"/>					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="1" ParentList="50" ParentCost="1" >
+    		<Event Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c看看吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="温蒂好啊！" />
+				</Trigger>
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21701, 30036" /> 		
+    		</Event>
+		</Step>				
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c锁修塔1层c看看c藤蔓c怎么样了吧！" TargetMap="21701" TargetName="和t藤蔓t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21701" ObjID="30036" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="340" ImageID="1" Info="你你你就是你！\n上次派幽光战士拿剑砍我，害我跌下深渊的家伙！" />		
+					<Option Info="Sorry" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="340" ImageID="1" Info="我从下面爬上来腰酸腿疼，\n很口渴！\n你去【锁修塔桥两旁的瀑布】找一瓶【怪味之水】给我吧！" />																																
+					<Option Info="使命必达！" />
+				</Action>							
+    		</Event>
+		</Step>				
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="快去c锁修塔桥两旁的瀑布c采集一瓶c怪味之水c吧！" TargetMap="11703" TargetPos="5170" TargetName="采集t怪味之水t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11703" ObjID="5170" />
+					<Item Type="OBJ_CLICK" MapID="11703" ObjID="5171" />					  
+				</Trigger>	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260030" /> 			 <!-- 节点1 -->				
+    		</Event>
+		</Step>			
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="找到怪味之水了↖(^o^)↗，\n快去c锁修塔1层c送给c藤蔓c吧！" TargetMap="21701"  TargetName="和t藤蔓t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21701" ObjID="30036" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="340" ImageID="1" Info="“怪味之水”来了！咕嘟咕嘟——" />	
+					<Msg NpcID="401" ImageID="3" Info="（这是让人说出【心里话】的奇特饮料唷~）" />											
+					<Msg NpcID="340" ImageID="1" Info="为什么我要出生在“堵住道路”的地方，\n被大家讨厌？" />
+					<Msg NpcID="340" ImageID="1" Info="如果能【自由选择】，\n真想和“其它藤蔓”一样长在阳光下，\n每天看风景啊(T_T)~！" />					
+					<Msg NpcID="401" ImageID="2" Info="（原来这就是【藤蔓】不祈祷的原因，\n快去告诉【银魂·温蒂】老师吧！）" />	
+					<Option Info="藤蔓再见^^！" />
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21701, 30036" /> 									
+    		</Event>
+		</Step>										
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="终于听到了c藤蔓c的心声，\n快去c锁修塔底层c告诉c银魂·温蒂c老师吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="藤蔓不喜欢住在塔里" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="56" ImageID="1" Info="其实长在路中央，受到大家的注意，\n也是种很特别的体验啊。" />
+					<Msg NpcID="56" ImageID="1" Info="我相信“藤蔓君”比大家多付出的辛苦，\n正在让它变得更【坚韧】^^！" />					
+					<Option Info="O(∩_∩)O" />
+				</Action>			
+    		</Event>
+		</Step>		
+				
+	</Procedure>
+</Task>

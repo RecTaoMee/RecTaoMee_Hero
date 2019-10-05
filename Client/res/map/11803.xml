@@ -1,0 +1,19 @@
+<!--永恒之森民宅-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="610,237" targetMapId="11801" targetTransPortId="3"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="78" type="NPC" res="MC_npc_78" action="0" />								
+	</npc>
+	<actions>
+		<proAction npcID="78" id="0" type="0" answer="祝你好运！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#感谢世界之树，赋予精灵族永恒的青春……]]>				
+			</des>
+		</proAction>		
+	</actions>	
+</map>

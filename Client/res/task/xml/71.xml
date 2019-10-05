@@ -1,0 +1,84 @@
+<task id="71">
+	<taskDes>
+		<![CDATA[抢回毕业证书的消息告诉【情报员】吧！*尼康康餐厅$$]]>
+		<![CDATA[赶快回摩尔王国把【大家的毕业证书】交给协会导师吧！——可乘村口“艾比的陆行鸟”快速回国哦^^!]]>
+	</taskDes>
+<taskPro>
+    <pro type="0" parent="" npcID="15" title="证书抢回来了！" action="1" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11407"/>
+    <pro type="0" parent="0" npcID="15" title="你不回王国吗？" action="8" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="1" mapID="11407"/>
+    <pro type="0" parent="0" npcID="26" title="证书抢回来了！" action="7" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="1" mapID="11305"/>
+  </taskPro>
+  <actions>	
+   <proAction id="0" type="0" npcID="15" answer="————————" to="a1">
+      <des>
+		<![CDATA[1#————————]]>
+	  </des>
+	</proAction> 
+    <proAction id="1" type="0" npcID="37" answer="哈哈" to="s2">
+      <des>
+		<![CDATA[1#太好了我可以继续当村长了（T T），我的人生得救了！！感谢女神————（T T）！！]]>
+	  </des>
+	</proAction> 
+    <proAction id="2" type="0" npcID="15" answer="使命必达！$有我在怎么可能（■w■）" to="o$a3">
+      <des>
+		<![CDATA[1#其实是你的指导老师【杰森】拜托我“根据情况协助你”…你懂吗？$$]]>
+		<![CDATA[1#天真的年轻人啊——$$]]>
+		<![CDATA[1#带着毕业证书赶紧回去吧！可以找麦田村村口亲爱的【陆行鸟训练师·艾比】乘陆行鸟回摩尔王国。快捷舒适安全^~$$]]>
+		<![CDATA[1#天黑后平原上的【黑化精灵】会增多，自己小心了~！这回可要看好了别被抢了哦^~]]>
+	  </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="15" answer="（+__,+）" to="a4">
+      <des>
+		<![CDATA[1#哈？你说的！那我就抢了——！]]>
+	  </des>
+	</proAction>
+    <proAction id="4" type="0" npcID="15" answer="再见(^_^)！$正义的伙伴再见！$你不回去吗？" to="o$a6$a5">
+      <des>
+		<![CDATA[1#哈哈~开玩笑的，再见了！]]>
+	  </des>
+	</proAction>
+    <proAction id="5" type="0" npcID="15" answer="哈哈再见了(^_^)！" to="o">
+      <des>
+		<![CDATA[1#哈哈~麦田阳光餐厅和美丽的农家女孩~不享受下再走真是浪费人生啊~$$]]>
+		<![CDATA[1#可爱的年轻人~勇士广场见~]]>
+	  </des>
+	</proAction>
+    <proAction id="6" type="0" npcID="15" answer="嗯！再见了(^_^)！" to="o">
+      <des>
+		<![CDATA[1#嘘~~我的身份是我们之间的小 秘 密~]]>
+	  </des>
+	</proAction>
+    <proAction id="7" type="0" npcID="26" answer="谢谢杰森老师(^_^)!" to="c">
+      <des>
+		<![CDATA[1#哈哈，【达达信鸽】已经通知我了，$$]]>
+		<![CDATA[1#让我看看...一张两张二十张...$$]]>
+		<![CDATA[2#咦？！你的【毕业证书】怎么没了？$$]]>
+		<![CDATA[1#哈哈~开玩笑的~！这是你的【毕业证书】。放到你的【荣誉匣】里的，这是至高的荣誉，请好好保存。$$]]>
+		<![CDATA[1#现在你可以有使用更高的技能等级的权限了，快去好好练习提升【技能等级】吧！接下来能不能成为一名【职业剑士】我们都很期待啊~]]>
+	  </des>
+	</proAction>
+    <proAction id="8" type="0" npcID="15" answer="再见(^_^)！" to="o">
+      <des>
+		<![CDATA[1#哈哈~麦田阳光餐厅和美丽的农家女孩~不享受下再走真是浪费人生啊~$$]]>
+		<![CDATA[1#带着毕业证书赶紧回去吧！可以找麦田村村口亲爱的【陆行鸟训练师·艾比】乘陆行鸟回摩尔王国。快捷舒适安全^~$$]]>
+		<![CDATA[1#可爱的年轻人~勇士广场见~]]>
+	  </des>
+	</proAction>
+  </actions>
+</task>
+
+
+
+
+
+
+
+
+
+ 
+
+ 
+
+
+
+

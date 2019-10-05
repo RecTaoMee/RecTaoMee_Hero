@@ -1,0 +1,41 @@
+<!--下水道五层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="797,214" targetMapId="21206" targetTransPortId="1" name="下水道四层"/>
+		<node id="2" pos="798,870" targetMapId="21208" targetTransPortId="2" name="进入库噜王领域"/>
+		<node id="3" pos="789,436" targetMapId="" targetTransPortId="" name="离开库噜王领域"/>
+		<node id="4" pos="1081,556" targetMapId="21209" targetTransPortId="1" name="下水道六层"/>
+		<node id="5" pos="488,561" targetMapId="11220" targetTransPortId="2" name="下水道入口"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="UnderKeyTrans" res="MC_door_1" transPortId="2" keyID="280002">
+			<!--event type="under_no_key" hit="InfoBoxHit"-->
+			<event type="under_no_key" hit="NPCDialogHit" id="0">
+				<![CDATA[你没有钥匙]]>
+			</event>
+		</node>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="4"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="5"/>			
+		<node id="5" type="" res="MC_key_0">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[钥匙被骨头战士抢走了呱呱...]]>
+			</event>		
+		</node>
+		<node id="6" type="" res="MC_key_1">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[钥匙被骨头战士抢走了呱呱...]]>
+			</event>		
+		</node>
+	</object>
+	<npc>
+		<node id="226" type="NPC" res="MC_npc_226" action="0"/>
+	</npc>
+	<actions>
+		<proAction npcID="226" id="0" type="0" answer="哦~" to="o" >
+			<des>
+				<![CDATA[1#钥匙被库噜战士们抢走了……]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

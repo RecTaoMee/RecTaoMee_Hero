@@ -1,0 +1,11 @@
+<!--皮皮克克2段地道-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-009.mp3">
+	<transport intPos="112,207">
+		<!--<node id="1" pos="112,207" targetMapId="11101" targetTransPortId="1" name="出生地"/>-->
+		<node id="2" pos="643,1016" targetMapId="11102" targetTransPortId="3" name="其普里村"/>
+	</transport>
+	<object>
+		<!--<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>-->
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+</map>

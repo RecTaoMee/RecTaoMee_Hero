@@ -1,0 +1,105 @@
+<Task ID="10096" Memo="c拉克斯c在呼叫小主人，\n快去c废弃的土豆村c看看吧！" TargetMap="11709">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c拉克斯c在呼叫小主人，\n快去c废弃的土豆村c看看吧！" TargetMap="11709" TargetObj="62" TargetName="和t拉克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="62" TaskOption="你好啊^^！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="62" ImageID="1" Info="啊啊啊这噪音太刺耳了，\n我的耳朵要崩溃啦！" />
+					<Msg NpcID="59" ImageID="1" Info="【@nick】看上去很淡定，\n没听到噪音吗？\n不如你去【吉普3号地道】调查一下吧！" />					
+					<Option Info="这就去【吉普3号地道】！" />
+					<Option Info="有事先走了" NextStep="1"/>						
+				</Action>			
+    		</Event>
+		</Step>                       
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c吉普3号地道c发生了什么？\n快去看看吧！" TargetMap="21751" TargetObj="355" TargetName="和t撒旦蝠t对话">                <!-- 加蝙蝠 -->		
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21751" ObjID="355" TaskOption="是你在发出噪音吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="355" ImageID="3" Info="@%#*%#*呲呲呲呲呲呲呲呲呲——" />
+					<Msg NpcID="355" ImageID="3" Info="吉普地道是我的，谁敢入侵必须挨揍╰_╯！" />					
+					<Option Info="（只能应战了）" SkipTrigger="Y" />
+				</Action>	
+    		</Event>
+		</Step>
+  		<Step ID="50" ParentList="2" ParentCost="1" >
+    		<Event Memo="c吉普3号地道c发生了什么？\n快去看看吧！" TargetMap="21751" TargetObj="355" TargetName="和t撒旦蝠t对话">                <!-- 加蝙蝠 -->		
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21751" ObjID="355" TaskOption="来战吧！" />
+				</Trigger>	
+    			<Action Type="MOVIE" Url="task_10096_1.swf" MapLevel="DOWN" Pos="668,351" SkipTrigger="Y" />									
+    		</Event>
+		</Step>		
+  		<Step ID="3" ParentList="50" ParentCost="1" >
+    		<Event Memo="快去c吉普3号地道c，\n和c撒旦蝠c聊聊吧！" TargetMap="21751" TargetObj="59" TargetName="和t银魂·休一t对话">              <!-- 加休一 -->		
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21751" ObjID="59" TaskOption="来战吧！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="慢着，这只撒旦蝠已经受伤了。\n先听我念一段治愈咒。" />
+					<Option Info="治愈咒？" />
+				</Action>	
+    			<Action Type="MOVIE" Url="task_10096_2.swf" MapLevel="DOWN" Pos="668,351" />
+    			<Action Type="COMMAND" Command="BGM_NORMAL" />  <!-- 背景音乐正常播放 -->									
+				<Action Type="TALK">					
+					<Msg NpcID="355" ImageID="3" Info="咳咳咳——\n血不流伤口也不疼了，好诶！" />	
+					<Msg NpcID="62" ImageID="1" Info="可怕的噪音终于停下来了（T_T）！" />	
+					<Msg NpcID="62" ImageID="1" Info="刚才一定是【撒旦蝠】在制造噪音，\n【休一】快净化它！" />																										
+					<Msg NpcID="59" ImageID="1" Info="别激动，它只是太疼了。\n不过这噪音……我还是护送它回去吧。" />					
+					<Msg NpcID="355" ImageID="3" Info="少管闲事，\n反正我也回不去（ˇ＾ˇ）。" />		
+					<Option Info="(⊙o⊙)咦？" />
+				</Action>	
+				<Action Type="TALK">									
+					<Msg NpcID="355" ImageID="3" Info="呲呲~~【眼蝙蝠】们为了一点小事，\n聚集在【修隐岛中心地带】围攻我。" />	
+					<Msg NpcID="59" ImageID="1" Info="我们去【修隐岛上】看看吧！" />																	
+					<Option Info="使命必达-做到最好！" />
+				</Action>		
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11702, 30037" /> 			 <!-- 加群蝙蝠 -->			
+    		</Event>
+		</Step>	
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="快去c修隐岛中心地带c看看情况吧！" TargetMap="11702" TargetObj="30037" TargetName="和t眼蝙蝠t对话">               
+  				<Trigger>					  
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="30037" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="356" ImageID="1" Info="【撒旦蝠】趁我们睡着偷走了所有好吃的！" />		
+					<Msg NpcID="356" ImageID="2" Info="那是大家存了好几个月的食物啊（T_T）~！" />							
+					<Option Info="啊偶" />
+				</Action>		
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11702, 30038" SkipTrigger="Y" /> 										
+    		</Event>
+		</Step>							
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="快去c修隐岛中心地带c，\n和c眼蝙蝠c聊聊吧！" TargetMap="11702" TargetObj="30038" TargetName="和t银魂·休一t对话">  <!-- 加休一 -->	
+  				<Trigger>					  
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="30038" />					  
+				</Trigger>										
+				<Action Type="TALK">					
+					<Msg NpcID="59" ImageID="1" Info="【撒旦蝠】已经受了重伤，到此为止吧。" />
+					<Msg NpcID="356" ImageID="1" Info="我们只想“吓唬”它一下，怎么会……" />	
+					<Msg NpcID="356" ImageID="2" Info="这次玩得有点过分了(⊙_⊙)！" />						
+					<Msg NpcID="59" ImageID="1" Info="呵呵，误会解除！\n【撒旦蝠】可以安心回家了。\n走，我们告诉它去！" />											
+					<Option Info="使命必达-做到最好！" />
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11702, 30038" /> 													
+    		</Event>
+		</Step>	
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="快去c吉普3号地道c和c撒旦蝠c聊聊吧！" TargetMap="21751" TargetObj="355" TargetName="和t撒旦蝠t对话">               
+  				<Trigger>					  
+					<Item Type="NPC_OPTION" MapID="21751" ObjID="355" TaskOption="放心回去吧！" />
+				</Trigger>										
+				<Action Type="TALK">					
+					<Msg NpcID="355" ImageID="3" Info="告诉你们1个好消息和1个坏消息：\n好消息是我又能回去“欺负”蝙蝠们了^o^y！" />	
+					<Msg NpcID="355" ImageID="3" Info="坏消息是，我的【伤痕】是假的呲呲呲~\n化这个妆真有点麻烦啊\(╯-╰)/ ~" />																								
+					<Option Info="(ˉ▽ˉ；)！" />
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11702, 30037" /> 						
+    		</Event>
+		</Step>						
+	</Procedure>
+</Task>

@@ -1,0 +1,94 @@
+<Task ID="142" Memo="c安德鲁c在招呼小主人过去，\n快去c弗雷基广场c看看吧！" TargetMap="11603">
+   	<Procedure> 
+
+<!--TA↓-->
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c安德鲁c在招呼小主人过去，\n快去c弗雷基广场c看看吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="怎么啦？" />			
+				</Trigger>
+				<Action Type="TALK">				
+					<Msg NpcID="105" ImageID="1" Info="有件事需要【@nick】帮忙。\n最近海船停航，制造高级装备的宝石都运输中断了。" />
+					<Msg NpcID="51" ImageID="1" Info="风突然停止，\n船只都无法航行，\n船员们被困在了海中囧。" />					
+					<Msg NpcID="105" ImageID="1" Info="我有预感，与【码头】有关的地点会有线索……" />					
+					<Option Info="（=”=）这就去找线索！" />
+				</Action>				
+    		</Event>
+		</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c安德鲁c在招呼小主人过去，\n快去c弗雷基广场c看看吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11605, 16005" />																															
+    		</Event>
+		</Step>			
+		   
+<!--鼬西船厂↓-->			
+	
+  		<Step ID="14" ParentList="2" ParentCost="1" >
+    		<Event Memo="c码头c和c船只有关的地点c会有线索……？去港口继续搜查吧！" TargetMap="11605" TargetObj="16005" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16005" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="7" Info="怎么又是你！你想吓死狐狸啊咩！\n——上次在海底洞就是被你打飞的……" />
+					<Msg NpcID="998" ImageID="1" Info="小耗子你——\n——使（死） 定  乐（了）——！" />
+					<Option Info="我升级了我怕谁" SkipTrigger="Y" />	
+					<Option Info="数到3我准备一下" />										
+				</Action>																	
+    		</Event>
+		</Step>
+  		<Step ID="15" ParentList="14" ParentCost="1" >
+			<Condition>
+				<Battle ID="3007" Count="1" />				
+			</Condition>
+			<Event ConditionType="IN" Memo="c鼬西c被打败了！让它说出所有“阴谋阳谋”嗯嗯……" TargetMap="11605" TargetObj="16005" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16005" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="为……为什么……\n每次我要成功的时候，就会出现什么什么勇士……T T~~~！" />
+					<Option Info="(*^__^*) " SkipTrigger="Y" />											
+				</Action>										
+    		</Event>
+    		<Event ConditionType="OUT" Memo="cT商会造船厂c发现宿敌c鼬西c，真正的“背水一战”开始！" TargetMap="11605" TargetObj="16005" TargetName="打败t鼬西t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11605" ObjID="16005" />		
+				</Trigger>
+                <Action Type="COMMAND" Command="BATTLE" Params="3007" />												
+    		</Event>			
+		</Step>
+  		<Step ID="16" ParentList="15" ParentCost="1" >
+			<Event Memo="c鼬西c被打败了！让它说出所有“阴谋阳谋”嗯嗯……" TargetMap="11605" TargetObj="16005" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16005" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="每次只要我阻碍摩尔与黄金龙，\n尤利老大就会高兴……" />
+					<Option Info="哇你怎么来了——" />											
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11605, 16006" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11605, 16007" SkipTrigger="Y" />																					
+    		</Event>			
+		</Step>
+  		<Step ID="17" ParentList="16" ParentCost="1" >
+    		<Event Memo="安德鲁正义的伙伴戈戈拉迪迪拉……大家都赶来cT商会造船厂c了。" TargetMap="11605" TargetObj="16005" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16005" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="我听到了交战声和魔法光效赶来的。" />
+					<Msg NpcID="998" ImageID="7" Info="勇士的黄金圣衣……\n救……救命——逃不掉啦——！" />					
+					<Option Info="大家看！弗雷基！" />
+				</Action>																				
+				<Action Type="TALK">	
+					<Msg NpcID="314" ImageID="1" Info="哪里有弗雷基？？" />
+					<Msg NpcID="998" ImageID="7" Info="谢了鼹鼠！——我会记得你的——！" />														
+					<Msg NpcID="315" ImageID="1" Info="啊，逃掉了……" />
+					<Option Info="要好好活下去啊！" />					
+				</Action>								
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16006" />																				
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16007"  />
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16005" />				
+    		</Event>
+		</Step>			
+</Procedure>
+</Task>

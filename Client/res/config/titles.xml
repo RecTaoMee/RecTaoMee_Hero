@@ -1,0 +1,182 @@
+<!-- 
+    FunType：称号标记【0普通称号，1改变角色二级属性，未配置默认为0】
+    Prof：职业【2剑，4弓，8魔，16传，32忍，未配置默认为全职业】
+    ProfLv：职业阶段【1学员，2见习，3正职，4导师，5王国，6传说，未配置默认不限定职业阶段】
+    HpMax：最大体力
+    MpMax：最大魔力
+    Atk：物攻
+    Def：物防
+    Mdef：抗魔
+    Speed：速度
+    Spirit：精神
+    Resume：回复
+    Hit：命中
+    Dodge：回避
+    Crit：必杀
+    FightBack：反击
+	
+-->
+
+<Titles>
+<!--职业称号-->
+ 	<Title ID="1" Name="剑术学员" Prof="2" ProfLv="0" FunType="1" HpMax="30" Atk="1" Def="1" Desc="生命上限+30，物攻+1，防御+1"/>
+ 	<Title ID="2" Name="见习剑士" Prof="2" ProfLv="1" FunType="1" HpMax="50" Atk="2" Def="2" Desc="生命上限+50，物攻+2，防御+2"/>
+ 	<Title ID="3" Name="剑士" Prof="2" ProfLv="2" FunType="1" HpMax="70" Atk="3" Def="3" Desc="生命上限+70，物攻+3，防御+3"/>
+ 	<Title ID="4" Name="剑术导师" Prof="2" />
+ 	<Title ID="5" Name="王国剑客" Prof="2" />
+ 	<Title ID="6" Name="天空剑士" Prof="2" />
+ 	<Title ID="7" Name="弓术学员" Prof="4" ProfLv="0" FunType="1" HpMax="30" Atk="1" Speed="1" Desc="生命上限+30，物攻+1，速度+1"/>
+ 	<Title ID="8" Name="见习弓箭手" Prof="4" ProfLv="1" FunType="1" HpMax="50" Atk="2" Speed="2" Desc="生命上限+50，物攻+2，速度+2"/>
+ 	<Title ID="9" Name="弓箭手" Prof="4" ProfLv="2" FunType="1" HpMax="70" Atk="3" Speed="3" Desc="生命上限+70，物攻+3，速度+3"/>
+ 	<Title ID="10" Name="弓术导师" Prof="4" />
+ 	<Title ID="11" Name="王国弓箭手" Prof="4" />
+ 	<Title ID="12" Name="精灵神射手" Prof="4" />
+ 	<Title ID="13" Name="魔法学员" Prof="8" ProfLv="0" FunType="1" HpMax="30" Spirit="1" Def="1" Desc="生命上限+30，精神力+1，防御+1"/>
+ 	<Title ID="14" Name="见习魔法师" Prof="8" ProfLv="1" FunType="1" HpMax="50" Spirit="2" Def="2" Desc="生命上限+50，精神力+2，防御+2"/>
+ 	<Title ID="15" Name="魔法师" Prof="8" ProfLv="2" FunType="1" HpMax="70" Spirit="3" Def="3" Desc="生命上限+70，精神力+3，防御+3"/>
+ 	<Title ID="16" Name="魔法导师" Prof="8" />
+ 	<Title ID="17" Name="王国魔导士" Prof="8" />
+ 	<Title ID="18" Name="暗夜魔导士" Prof="8" />
+ 	<Title ID="19" Name="圣堂信徒" Prof="16" ProfLv="0" FunType="1" HpMax="30" Resume="1" Speed="1" Desc="生命上限+30，回复力+1，速度+1"/>
+ 	<Title ID="20" Name="见习传教士" Prof="16" ProfLv="1" FunType="1" HpMax="50" Resume="2" Speed="2" Desc="生命上限+50，回复力+2，速度+2"/>
+ 	<Title ID="21" Name="传教士" Prof="16" ProfLv="2" FunType="1" HpMax="70" Resume="3" Speed="3" Desc="生命上限+70，回复力+3，速度+3"/>
+ 	<Title ID="22" Name="圣堂祭祀" Prof="16" />
+ 	<Title ID="23" Name="主教" Prof="16" />
+ 	<Title ID="24" Name="光明圣使" Prof="16" />
+ 	<Title ID="25" Name="忍术学员" Prof="32" ProfLv="0" FunType="1" HpMax="30" Speed="1" Dodge="1" Desc="生命上限+30，速度+1，回避+1"/>
+ 	<Title ID="26" Name="见习忍者" Prof="32" ProfLv="1" FunType="1" HpMax="50" Speed="2" Dodge="2" Desc="生命上限+50，速度+2，回避+2"/>
+ 	<Title ID="27" Name="下忍" Prof="32" ProfLv="2" FunType="1" HpMax="70" Speed="3" Dodge="3" Desc="生命上限+70，速度+3，回避+3"/>
+ 	<Title ID="28" Name="中忍" Prof="32" />
+ 	<Title ID="29" Name="上忍" Prof="32" />
+ 	<Title ID="30" Name="影忍" Prof="32" />
+ 	<Title ID="31" Name="狂战学员" Prof="64" ProfLv="0" FunType="1" HpMax="150" Atk="5" Mdef="5" Desc="生命上限+150，物攻+5，抗魔+5"/>
+ 	<Title ID="32" Name="见习狂战士" Prof="64" ProfLv="1" FunType="1" HpMax="250" Atk="10" Mdef="10" Desc="生命上限+250，物攻+10，抗魔+10"/>
+ 	<Title ID="33" Name="狂战士" Prof="64" ProfLv="2" FunType="1" HpMax="350" Atk="15" Mdef="15" Desc="生命上限+350，物攻+15，抗魔+15"/>
+ 	<Title ID="34" Name="圣战士" Prof="64" ProfLv="3" FunType="1" HpMax="450" Atk="20" Mdef="20" Desc="生命上限+450，物攻+20，抗魔+20"/>
+ 	<Title ID="35" Name="王国战士" Prof="64" ProfLv="4" FunType="1" HpMax="550" Atk="25" Mdef="25" Desc="生命上限+550，物攻+25，抗魔+25"/>
+ 	<Title ID="36" Name="战圣" Prof="64" ProfLv="5" FunType="1" HpMax="650" Atk="30" Mdef="30" Desc="生命上限+650，物攻+30，抗魔+30"/>
+ 	<Title ID="37" Name="黑魔导学员" Prof="128" ProfLv="0" FunType="1" HpMax="150" Matk="5" Def="5" Desc="生命上限+150，魔攻+5，防御+5"/>
+ 	<Title ID="38" Name="见习黑魔导士" Prof="128" ProfLv="1" FunType="1" HpMax="250" Matk="10" Def="10" Desc="生命上限+250，魔攻+10，防御+10"/>
+ 	<Title ID="39" Name="黑魔导士" Prof="128" ProfLv="2" FunType="1" HpMax="350" Matk="15" Def="15" Desc="生命上限+350，魔攻+15，防御+15"/>
+ 	<Title ID="40" Name="黑魔导师" Prof="128" ProfLv="3" FunType="1" HpMax="450" Matk="20" Def="20" Desc="生命上限+450，魔攻+20，防御+20"/>
+ 	<Title ID="41" Name="王国黑魔导师" Prof="128" ProfLv="4" FunType="1" HpMax="550" Matk="25" Def="25" Desc="生命上限+550，魔攻+25，防御+25"/>
+ 	<Title ID="42" Name="暗夜魔导师" Prof="128" ProfLv="5" FunType="1" HpMax="650" Matk="30" Def="30" Desc="生命上限+650，魔攻+30，防御+30"/>
+ 	<Title ID="43" Name="圣言学员" Prof="256" ProfLv="0" FunType="1" HpMax="150" Spirit="5" Matk="5" Desc="生命上限+150，精神力+5，魔攻+5"/>
+ 	<Title ID="44" Name="见习圣言使" Prof="256" ProfLv="1" FunType="1" HpMax="250" Spirit="10" Matk="10" Desc="生命上限+250，精神力+10，魔攻+10"/>
+ 	<Title ID="45" Name="圣言使" Prof="256" ProfLv="2" FunType="1" HpMax="350" Spirit="15" Matk="15" Desc="生命上限+350，精神力+15，魔攻+15"/>
+ 	<Title ID="46" Name="圣言导师" Prof="256" ProfLv="3" FunType="1" HpMax="450" Spirit="20" Matk="20" Desc="生命上限+450，精神力+20，魔攻+20"/>
+ 	<Title ID="47" Name="王国圣言使" Prof="256" ProfLv="4" FunType="1" HpMax="550" Spirit="25" Matk="25" Desc="生命上限+550，精神力+25，魔攻+25"/>
+ 	<Title ID="48" Name="光明圣使" Prof="256" ProfLv="5" FunType="1" HpMax="650" Spirit="30" Matk="30" Desc="生命上限+650，精神力+30，魔攻+30"/>
+ 	<Title ID="49" Name="巫术学员" Prof="512" ProfLv="0" FunType="1" HpMax="150" Atk="5" Speed="5" Desc="生命上限+150，物攻+5，速度+5"/>
+ 	<Title ID="50" Name="见习巫术士" Prof="512" ProfLv="1" FunType="1" HpMax="250" Atk="10" Speed="10" Desc="生命上限+250，物攻+10，速度+10"/>
+ 	<Title ID="51" Name="巫术士" Prof="512" ProfLv="2" FunType="1" HpMax="350" Atk="15" Speed="15" Desc="生命上限+350，物攻+15，速度+15"/>
+ 	<Title ID="52" Name="巫术大师" Prof="512" ProfLv="3" FunType="1" HpMax="450" Atk="20" Speed="20" Desc="生命上限+450，物攻+20，速度+20"/>
+ 	<Title ID="53" Name="王国巫师" Prof="512" ProfLv="4" FunType="1" HpMax="550" Atk="25" Speed="25" Desc="生命上限+550，物攻+25，速度+25"/>
+ 	<Title ID="54" Name="巫王" Prof="512" ProfLv="5" FunType="1" HpMax="650" Atk="30" Speed="30" Desc="生命上限+650，物攻+30，速度+30"/>
+<!--旅程称号-->
+ 	<Title ID="1001" Name="粘糊糊勇士" Desc="战胜下水道三层【普豆泥王】获得" />  <!--下水道称号-->
+ 	<Title ID="1002" Name="啃骨头勇士" FunType="1" Atk="3" Desc="物理攻击+3" />
+ 	<Title ID="1003" Name="爱玩火勇士" FunType="1" Spirit="5" Desc="精神+5" />
+ 	<Title ID="1004" Name="" />
+ 	<Title ID="1005" Name="" />
+ 	<Title ID="1006" Name="" />
+ 	<Title ID="1007" Name="" />
+ 	<Title ID="1008" Name="" />
+ 	<Title ID="1009" Name="" />
+ 	<Title ID="1010" Name="" />
+ 	<Title ID="1011" Name="" />
+ 	<Title ID="1012" Name="" />
+ 	<Title ID="1013" Name="" />
+ 	<Title ID="1014" Name="" />
+ 	<Title ID="1015" Name="" />
+ 	<Title ID="1016" Name="" />
+ 	<Title ID="1017" Name="" />
+ 	<Title ID="1018" Name="" />
+ 	<Title ID="1019" Name="" />
+ 	<Title ID="1020" Name="" />
+ 	<Title ID="1021" Name="" />
+ 	<Title ID="1022" Name="" />
+ 	<Title ID="1023" Name="" />
+ 	<Title ID="1024" Name="" />
+ 	<Title ID="1025" Name="" />
+ 	<Title ID="1026" Name="50级达人" FunType="1" HpMax="100" Mdef="10" Dodge="5" Desc="生命上限+100，抗魔+10，回避+5"/>
+ 	<Title ID="1027" Name="时空守护者" FunType="1" HpMax="50" Def="3" Mdef="3" Desc="生命上限+50，防御+3，抗魔+3"/>
+ 	<Title ID="1028" Name="时空罹难者" FunType="1" HpMax="30" Desc="生命上限+30"/>
+ 	<Title ID="1029" Name="精灵勇士" FunType="1" HpMax="50" Atk="2" Spirit="1" Def="1" Speed="3" Desc="生命上限+50，攻击+2，精神+1，防御+1，速度+3"/><!--4399活动-->
+ 	<Title ID="1030" Name="封印节烟花使者" FunType="1" Def="2" Mdef="2" Desc="燃放20次烟花的证明"/><!--封印节的纪念-->
+ 	<Title ID="1031" Name="多吃蔬菜更健康" FunType="1" HpMax="50" Desc="生命上限+50"/> <!--任务挑战拉拉美王-->
+ 	<Title ID="1032" Name="小鸡中的战斗机" FunType="1" Speed="3" Desc="完成【小鸡快挥！】任务获得"/> <!--任务小鸡快挥-->
+ 	<Title ID="1033" Name="TB的好朋友" FunType="0" Desc="解开麦田村【TB】的忧郁获得"/> <!--任务TB的忧郁-->
+ 	<Title ID="1034" Name="真·TB的好朋友" FunType="0" Desc="没有收【TB】的“零用钱委托星豆”完成委托任务获得"/> <!--24任务--> 
+ 	<Title ID="1035" Name="想出名勇士" FunType="0" Desc="封印节向女神许下“特殊愿望”获得"/> <!--节日任务-->  
+ 	<Title ID="1036" Name="名侦探" Desc="调查出【偷蟹角】事件的嫌疑人获得"/>  <!--10064任务-->  
+ 	<Title ID="1037" Name="鼬西的救命恩人" Desc="在“让鼬西小小感动”的弗雷基镇海湾边获得"/>  <!--25任务--> 
+ 	<Title ID="1038" Name="未来勇士" Desc="来自未来，未来可能成为【摩尔勇士】的摩尔"/>  <!--25任务-->  
+ 	<Title ID="1039" Name="精灵研究员" Desc="加入【精灵G档案】调查计划获得"/>  <!--25任务-->  
+ 	<Title ID="1040" Name="不开玩笑勇士" Desc="愚人节向女神许下“特殊愿望”获得"/> <!--节日任务-->    
+<!--其它称号（装备专用称号）↓-->
+ 	<Title ID="2001" Name="希望之星" Desc="佩戴护身项链【希望之坠】时获得"/>
+ 	<Title ID="2002" Name="我是摩尔♂" Desc="佩戴项链【男生项链】获得"/>
+ 	<Title ID="2003" Name="我是摩尔♀" Desc="佩戴项链【女生项链】获得"/>
+ 	<Title ID="2004" Name="守护妮娜团长" Desc="佩戴项链【守护臂章】获得"/>
+ 	<Title ID="2005" Name="PK达人" Desc="佩戴项链【斗士项链】获得"/>
+ 	<Title ID="2006" Name="摩尔勇士万岁" Desc="佩戴项链【信仰臂章】获得"/>
+ 	<Title ID="2007" Name="超时空勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
+ 	<Title ID="2008" Name="复兴版拓荒者" FunType="1" HpMax="500" MpMax="200" Dodge="10" Desc="复兴版高端众筹用户  生命上限+500，魔法上限+200，回避+10" />
+ 	<Title ID="2009" Name="" />
+ 	<Title ID="2010" Name="" />
+ 	<Title ID="2011" Name="" />
+ 	<Title ID="2012" Name="" />
+ 	<Title ID="2013" Name="" />
+ 	<Title ID="2014" Name="" />
+ 	<Title ID="2015" Name="" />
+ 	<Title ID="2016" Name="" />
+ 	<Title ID="2017" Name="" />
+ 	<Title ID="2018" Name="" />
+ 	<Title ID="2019" Name="" />
+ 	<Title ID="2020" Name="" />
+	<Title ID="2100" Name="复兴版牛逼" FunType="1" HpMax="9999" MpMax="9999" Atk="9999" Def="9999" Mdef="9999" Speed="9999" Spirit="9999" Resume="9999" Hit="9999" Dodge="9999" Crit="9999" FightBack="9999" Desc="复兴版作者专用称号"/>
+	
+<!--战斗称号-->
+ 	<Title ID="3001" Name="修炼30域击破" FunType="1" HpMax="50" Def="3" Mdef="3" Speed="2" Desc="生命上限+50，防御+3，抗魔+3，速度+2"/>
+ 	<Title ID="3002" Name="修炼35域击破" FunType="1" HpMax="70" Def="4" Mdef="4" Speed="3" Desc="生命上限+70，防御+4，抗魔+4，速度+3"/>
+ 	<Title ID="3003" Name="修炼40域击破" FunType="1" HpMax="90" Def="5" Mdef="5" Speed="4" Desc="生命上限+90，防御+5，抗魔+5，速度+4"/>
+ 	<Title ID="3004" Name="修炼45域击破" FunType="1" HpMax="110" Def="6" Mdef="6" Speed="5" Desc="生命上限+110，防御+6，抗魔+6，速度+5"/>
+ 	<Title ID="3005" Name="" />
+ 	<Title ID="3006" Name="" />
+ 	<Title ID="3007" Name="" />
+ 	<Title ID="3008" Name="" />
+ 	<Title ID="3009" Name="" />
+ 	<Title ID="3010" Name="" />
+ 	<Title ID="3011" Name="" />
+ 	<Title ID="3012" Name="" />
+ 	<Title ID="3013" Name="" />
+ 	<Title ID="3014" Name="" />
+ 	<Title ID="3015" Name="" />
+ 	<Title ID="3016" Name="" />
+ 	<Title ID="3017" Name="" />
+ 	<Title ID="3018" Name="" />
+ 	<Title ID="3019" Name="" />
+ 	<Title ID="3020" Name="" />
+ 	<Title ID="3021" Name="初为人师" FunType="1" Dodge="1" Spirit="1" Resume="1" Desc="回避+1，精神力+1，回复力+1"/>
+ 	<Title ID="3022" Name="博学多才" FunType="1" Dodge="1" Spirit="2" Resume="2" Desc="回避+1，精神力+2，回复力+2"/>
+ 	<Title ID="3023" Name="良师益友" FunType="1" Dodge="2" Spirit="3" Resume="3" Desc="回避+2，精神力+3，回复力+3"/>
+ 	<Title ID="3024" Name="学富五车" FunType="1" Dodge="2" Spirit="4" Resume="4" Desc="回避+2，精神力+4，回复力+4"/>
+ 	<Title ID="3025" Name="为人师表" FunType="1" Dodge="3" Spirit="5" Resume="5" Desc="回避+3，精神力+5，回复力+5"/>
+ 	<Title ID="3026" Name="满腹经纶" FunType="1" Dodge="3" Spirit="6" Resume="6" Desc="回避+3，精神力+6，回复力+6"/>
+ 	<Title ID="3027" Name="授业大师" FunType="1" Dodge="4" Spirit="7" Resume="7" Desc="回避+4，精神力+7，回复力+7"/>
+ 	<Title ID="3028" Name="博古通今" FunType="1" Dodge="4" Spirit="8" Resume="8" Desc="回避+4，精神力+8，回复力+8"/>
+ 	<Title ID="3029" Name="万世之师" FunType="1" Dodge="5" Spirit="9" Resume="9" Desc="回避+5，精神力+9，回复力+9"/>
+ 	<Title ID="3030" Name="桃李天下" FunType="1" Dodge="5" Spirit="10" Resume="10" Desc="回避+5，精神力+10，回复力+10"/>
+ 	<Title ID="3031" Name="威震八方" FunType="1" HpMax="100" MpMax="100" Desc="生命上限+100，魔力上限+100"/>
+ 	<Title ID="3032" Name="声名远播" FunType="1" HpMax="90" MpMax="90" Desc="生命上限+90，魔力上限+90"/>
+ 	<Title ID="3033" Name="鹤立鸡群" FunType="1" HpMax="80" MpMax="80" Desc="生命上限+80，魔力上限+80"/>
+ 	<Title ID="3034" Name="出类拔萃" FunType="1" HpMax="70" MpMax="70" Desc="生命上限+70，魔力上限+70"/>
+ 	<Title ID="3035" Name="声名鹊起" FunType="1" HpMax="60" MpMax="60" Desc="生命上限+60，魔力上限+60"/>
+ 	<Title ID="3036" Name="卫队见习队员" BlackFilter="1" FunType="1" ClearType="1" Desc="皇家卫队选拔赛参赛荣誉证明"/>
+ 	<Title ID="3037" Name="皇家卫队队员" BlackFilter="1" FunType="1" ClearType="1" HpMax="100" MpMax="50" Dodge="2" Desc="生命上限+100，魔力上限+50，回避+2"/>
+ 	<Title ID="3038" Name="皇家卫队精英" BlackFilter="1" FunType="1" ClearType="1" HpMax="110" MpMax="50" Speed="1" Spirit="1" Crit="1" Desc="生命上限+110，魔力上限+50，速度+1，精神力+1，必杀+1"/>
+ 	<Title ID="3039" Name="皇家卫队首席" BlackFilter="1" FunType="1" ClearType="1" HpMax="120" MpMax="50" Speed="2" Spirit="2" Crit="2" Desc="生命上限+120，魔力上限+50，速度+2，精神力+2，必杀+2"/>
+ 	<Title ID="3040" Name="花好月圆" FunType="1" HpMax="100" MpMax="100" Desc="生命上限+100，魔力上限+100 中秋节活动参赛荣誉证明"/>
+
+</Titles>

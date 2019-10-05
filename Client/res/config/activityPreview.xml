@@ -1,0 +1,18 @@
+<!-- 勇士活动预告 -->
+<Activities>
+	<Activity id="1" title="毁坏的勇士国度" res="res/activity/preview/3.jpg">
+		<desc>
+			<![CDATA[平行世界——毁坏的勇士国度，35级以上未来勇士整装待发！10年后被毁坏的勇士国度，究竟真相如何？！谜底由你揭开！]]>
+		</desc>
+	</Activity>
+	<Activity id="2" title="【修炼之域】挑战你的底线" res="res/activity/preview/1.jpg">
+		<desc>
+			<![CDATA[修炼之域开启新一轮的挑战！修炼45域等你来闯！更高难度的挑战，更丰厚的奖励，你hold住吗？！]]>
+		</desc>
+	</Activity>
+	<Activity id="3" title="野兽系之王的暴走！" res="res/activity/preview/2.jpg">
+		<desc>
+			<![CDATA[应广大未来勇士的要求，野兽系种族技能探险队成立！野兽系之王的暴走？！让我们探险小队前去一探究竟!]]>
+		</desc>
+	</Activity>
+</Activities>

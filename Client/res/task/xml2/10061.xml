@@ -1,0 +1,101 @@
+<Task ID="10061" Memo="得到了c勇敢米饭团c的贝多罗大叔为什么还不开心呢？快去问问他吧！" TargetMap="11213">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="得到了c勇敢米饭团c的贝多罗大叔为什么还不开心呢？快去问问他吧！" TargetMap="11213">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="我又来啦！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="哎…………" />
+						<Option Info="怎么了？" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="太失败了！我居然尝不出【勇敢米饭团】到底是怎么做的……" />
+						<Option Info="......" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="【@nick】可以去【路库K】那边打听一下【勇敢米饭团】的原料吗？千万别说是我让你去的！" />
+						<Option Info="好的！" />
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="去找c勇敢者旅馆c的c路库Kc吧！勇敢米饭团到底是怎么做的呢？" TargetMap="11207">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你好，我想..." />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="5" Info="你想知道【勇敢米饭团】是怎么做的，对吧？" />
+						<Msg NpcID="13" ImageID="5" Info="【勇敢米饭团】是用10份【苦苦草】，10份【面粉】和10份【糖】做成的。\n记好了！下次可不告诉你了…………嘿嘿…………" />
+						<Option Info="额……谢谢" />
+					</Action>
+			</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="这么简单就问到了配方，快点告诉c贝多罗c大叔吧。" TargetMap="11213">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="拿到配方了！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="这么快就问到配方了？【路库K】没有问你什么吗？" />
+						<Option Info="没有~" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="太好了！【勇敢米饭团】是用什么做的？" />
+						<Option Info="是....." />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="10份【苦苦草】，10份【面粉】，10份【糖】……好奇怪的原料？【勇敢米饭团】为什么用【面粉】做原料呢？" />
+						<Msg NpcID="18" ImageID="5" Info="算了，先让我抄下来…………\n好了！【@nick】这是我记下来的配方和制作一份【勇敢米饭团】的材料，你尝试制作一个吧！" />
+						<Option Info="好的" SkipTrigger="Y" />
+					</Action><!--提交节点1-->
+			</Event>
+		</Step>
+		
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="这么简单就问到了配方，快点告诉c贝多罗c大叔吧。" TargetMap="11213">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="怎么做料理？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="5" Info="记住！要把配方【登录】到你的【图鉴册】中，才可以制作料理！" />
+					<Option Info="明白了" />
+				</Action>
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG" />
+    		</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Item ID="230023" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="这个好像不是“勇敢米饭团”………看上去怪怪的…………\n算了，拿给c贝多罗c大叔吧。" TargetMap="11213">
+				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="”饭团“做好了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="5" Info="样子有点奇怪啊……算了，让我先尝尝…………" />
+					<Msg NpcID="18" ImageID="5" Info="*@#￥%!@##$%@!…………(+﹏+)~狂晕……………\n我的舌头呦…………难吃死了！可恶的【路库K】又被他骗了！" />
+					<Option Info="啊？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="5" Info="可恶…………\n【@nick】辛苦了，这张【手指饼干配方】送给你吧，记住来历不明的配方千万不要收(+﹏+)~，哎呦~我的舌头呦..." />
+					<Option Info="嗯...." />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="得到了  “勇敢米饭团”的配方，快点快点按照c贝多罗c大叔的要求制作去试着制作一个“勇敢米饭团”。" TargetMap="11213">
+  				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="料理在哪做？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="5" Info="制作料理需要先得到【配方】，【配方】记录了制作对应料理需要的原料。" />
+					<Msg NpcID="18" ImageID="5" Info="使用【配方】就可以把它登录到你的【图鉴册】中！\n当你要做料理的时候，和我对话选择【我想做料理】或者【点击】对面的【壁炉】。" />
+					<Msg NpcID="18" ImageID="5" Info="记住！\n原料不足可是无法制作料理的！制作料理需要的材料可以通过【购买】和【采集】获得！" />
+					<Option Info="明白了" />
+				</Action>
+    		</Event>
+		</Step> 
+	</Procedure>
+</Task>

@@ -1,0 +1,231 @@
+<Task ID="36544" Memo="黑化魔物开始频繁活动，王国重臣商讨后决定加速未来勇士的磨练。\n周五：19:00~21:00\n周六~周日：13:00~15:00、19:00~21:00" TargetMap="11219">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="黑化魔物开始频繁活动，王国重臣商讨后决定加速未来勇士的磨练。\n周五：19:00~21:00\n周六~周日：13:00~15:00、19:00~21:00" TargetMap="11219" TargetObj="38" TargetName="去找t圣弗雷德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="圣弗雷德大人？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="你来了，最近一向平静的格历尔大陆近期也开始频繁出现黑化魔物活动的迹象，詹姆斯国王对此很担忧。" />
+					<Msg NpcID="38" ImageID="1" Info="经过考虑后，国王陛下决定要加速未来勇士们的成长，所以特命我来负责此次【未来勇士修行计划】。" />
+					<Option Info="未来勇士修行计划？" />					
+				</Action>	
+				<Action Type="MOVIE" Url="task36544_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />							
+				<Action Type="TALK">			
+					<Msg NpcID="38" ImageID="1" Info="顺利通过修行考验的勇士，将会得到巨量的能力提升！不过…………" />
+					<Option Info="不过什么？" />																		
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="不过考验不是那么简单，你需要回头重新接受陪伴你一路走过的各位摩尔居民的考验！" />
+					<Msg NpcID="38" ImageID="1" Info="而且，从你接受考研的一刻起，我们将会统计你通过考验的总时长，如果足够迅速的话，是可以进入考验排行榜的！" />					
+					<Option Info="现在就开始吧！" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="好，【未来勇士修行】第一战：【吉普豆村】的皮皮克克！快去找他接受考验吧！ " />
+					<Option Info="我这就去！" />						
+				</Action>
+    		</Event>		
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Battle ID="2921" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了c皮皮克克c，你赢得了第一战。" TargetMap="11104" TargetObj="1" TargetName="和t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="哈哈，我胜利了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="5" Info="嗯嗯嗯！小勇士你真棒！我佩服死你啦！！" />
+					<Msg NpcID="1" ImageID="1" Info="第二战是爱精灵协会的【莓可】哦，你要快去哦，时间不等人的！" />
+					<Option Info="好的，这就去！" />
+				</Action>						
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="前往c吉普豆村c的皮克小屋找c皮皮克克c" TargetMap="11104" TargetObj="1" TargetName="与t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="皮皮克克~~~" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="7" Info="你来啦小勇士！你要在我这里接受【未来勇士修行】第一战啦，你准备好了木有哇？" />
+					<Msg NpcID="1" ImageID="5" Info="小勇士，不是我想的哦，实在是上头有令，不得不这么做呀！你莫怨我哦~~~~OK，are you ready？！" />
+					<Option Info="Get ready！" />	
+					<Option Info="让我准备一下！" NextStep="2" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2921"/>													
+    		</Event>					
+		</Step>		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="2922" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了c莓可c，你赢得了第二战。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="好像不难哦…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="哇哇哇哇，你们这些小家伙，亏我平时那么疼你们，关键时刻，你们也太不给力了！" />
+					<Option Info="莓可你不要气馁嘛！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="哇哇哇哇，你这个时候安慰我，是想看我笑话吗？呜呜呜，我不和你玩了！我要找“六毛”玩！" />
+					<Option Info="六毛？是谁呀？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="六毛就是六毛，六毛脑袋上有六搓头发，和六毛玩才最开心！" />
+					<Option Info="咳，那我去六毛吧…" />
+				</Action>														
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="速去c爱精灵协会c找c莓可c接受【未来勇士修行】第二战" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="莓可我来接受考验啦！" />
+				</Trigger>
+				<Action Type="TALK">			
+					<Msg NpcID="20" ImageID="1" Info="每一个精灵，都是万物的子女，我们应该无微不至的爱护他们……" />
+					<Option Info="那个……" />																		
+				</Action>	
+				<Action Type="TALK">			
+					<Msg NpcID="20" ImageID="4" Info="同样作为造物主的子女的我们，应当把这些小家伙门当成自己的兄弟姐们对待……" />
+					<Option Info="喂！！！" />																		
+				</Action>							
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="啊~~~真是不好意思，刚刚我太陶醉了，没有察觉到你在旁边哦……哎这些小精灵实在是太可爱了o(∩_∩)o ！" />
+					<Msg NpcID="20" ImageID="7" Info="啊欧~又跑题了，小勇士，你是来参加考验的吧，【未来勇士修行】第二战可不会有皮皮克克那么容易的考验哦！" />
+					<Option Info="开始考验吧！" />	
+					<Option Info="让我准备一下！" NextStep="3" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2922"/>											
+    		</Event>					
+		</Step>		
+						
+  		<Step ID="4" ParentList="3" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2923" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了c路伊c，你赢得了第三战。" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="六毛也没啥嘛……" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="6" Info="让你不要叫我六毛，你还叫！！！" />
+					<Option Info="好了好了不叫了（偷笑）" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="6" Info="哼！你别高兴得太早了，后面还有让你受的，你能通过我弗雷基广场“蟹娜”姐姐的考验才真服你！" />
+					<Option Info="我去证明给你看" />
+				</Action>														
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="速去c麦田村广场c找c路伊c接受【未来勇士修行】第三战" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="六毛，我找六毛！" />
+				</Trigger>
+				<Action Type="TALK">			
+					<Msg NpcID="32" ImageID="6" Info="叫啥呢！叫啥呢！瞎嚷嚷啥！叫谁六毛呢？！" />
+					<Option Info="咦，你就是六毛吧~~" />																		
+				</Action>	
+				<Action Type="TALK">			
+					<Msg NpcID="32" ImageID="3" Info="嘘…你就不能小声点儿？！公开场合，不要叫我艺名，成不？直接叫我路伊！" />
+					<Option Info="哦，好的，六毛。" />																		
+				</Action>
+				<Action Type="TALK">			
+					<Msg NpcID="32" ImageID="6" Info="气死我了！不是和你说了。不要叫我艺名吗！" />
+					<Msg NpcID="32" ImageID="6" Info="听好！叫——我——路——伊！勒物“路” 一伊“伊”，路伊！~~" />
+					<Option Info="路——伊——" />																		
+				</Action>						
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="6" Info="嗯，这还差不多……对了，你有啥事呀！打扰我晒太阳~~哦，你这家伙，好像是来参加【未来勇士修行】第三战的吧~~~" />
+					<Msg NpcID="32" ImageID="6" Info="我这关可没那么容易，我可不会对你客气的哦！！！" />
+					<Option Info="来战吧！" />	
+					<Option Info="让我准备一下！" NextStep="4" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2923"/>												
+    		</Event>					
+		</Step>	
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2924" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了c蟹娜c，你赢得了第四战。" TargetMap="11603" TargetObj="51" TargetName="和t蟹娜t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="51" TaskOption="承让了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="小勇士，你的确比以前提高了不少，后面请继续加油哦！！" />
+					<Option Info="嗯，我会的！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="嗯，你现在已经联系通过前四关的考验，下面便是最后一战——【未来勇士修行】第五战！" />
+					<Msg NpcID="51" ImageID="1" Info="你现在去【锁修塔桥】找银魂.杰森，他会发布最后一战考验！" />
+					<Option Info="现在就去！" />
+				</Action>														
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="速去c弗雷基广场c找c蟹娜c接受【未来勇士修行】第四战" TargetMap="11603" TargetObj="51" TargetName="和t蟹娜t对话">
+  				<Trigger>  
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="51" TaskOption="蟹娜姐~~" />
+				</Trigger>
+				<Action Type="TALK">			
+					<Msg NpcID="51" ImageID="1" Info="在叫我吗？噢？小勇士，你是来接受考验的吧？" />
+					<Option Info="嗯，是的~" />																		
+				</Action>						
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="嗯！那好，那就来接受【未来勇士修行】第四战的考验吧！" />
+					<Option Info="来战吧！" />	
+					<Option Info="让我准备一下！" NextStep="5" />
+					</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2924"/>								
+    		</Event>				
+		</Step>	
+
+  		<Step ID="6" ParentList="5" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2925" Count="1" />>				
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜了c银魂.杰森c，你赢得了第五战。" TargetMap="11703" TargetObj="53" TargetName="和t银魂.杰森t对话">
+  				<Trigger>
+					
+					<Item Type="NPC_OPTION" MapID="11703" ObjID="53" TaskOption="哦也！赢了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="53" ImageID="1" Info="小勇士，你能够赢得我的考验，的确增进了不少！" />
+					<Option Info="嘿嘿，那是当然！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="53" ImageID="1" Info="嗯，【未来勇士修行】五战都已结束，你现在可以回去找【圣弗雷德】交付了！" />
+					<Option Info="先走一步啦！" />
+				</Action>														
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="速去c锁修塔桥c找c银魂.杰森c接受【未来勇士修行】第五战" TargetMap="11703" TargetObj="53" TargetName="和t银魂.杰森t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11703" ObjID="53" TaskOption="银魂.杰森导师！~~" />
+				</Trigger>
+				<Action Type="TALK">			
+					<Msg NpcID="53" ImageID="1" Info="嗯，你终于来了，小勇士，下面你将要接受【未来勇士修行】第五战的终极考验。" />
+					<Msg NpcID="53" ImageID="1" Info="你——准备好了吗？" />
+					<Option Info="准备好了！" />		
+					<Option Info="让我准备一下！" NextStep="6" />																
+				</Action>						
+				<Action Type="COMMAND" Command="BATTLE" Params="2925"/>													
+    		</Event>						
+		</Step>	
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >		
+    		<Event Memo="前往c斗技场管理处c与c圣弗雷德c对话" TargetMap="11219" TargetObj="38" TargetName="与t圣弗雷德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="承让了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="小勇士，你做的好，你已经成功通过【未来勇士修行】全部的五轮挑战！" />
+					<Msg NpcID="38" ImageID="1" Info="这是对你卓越能力的奖励，希望你再接再厉，取得更好的成绩！" />
+					<Option Info="明白了！" />						
+				</Action>										
+    		</Event>					
+		</Step>	
+				
+	</Procedure>
+</Task>

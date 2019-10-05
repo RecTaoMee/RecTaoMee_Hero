@@ -1,0 +1,416 @@
+<Task ID="10056" Memo="c麦田村*尼康康餐厅c的c麦婶c最近很焦虑，不去“管闲事”看看吗^0^?" TargetMap="11404">
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c麦田村*尼康康餐厅c的c麦婶c最近很焦虑，不去“管闲事”看看吗^0^?" TargetMap="11404">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="麦婶麦婶怎么了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="7" Info="【TB】这孩子整天胡思乱想，\n整天说什么“语咒摩尔”“炒能力摩尔”“未来摩尔”，什么“语咒”“炒能力”啊...TB他爸又在弗雷基港整天不知道干什么..." />
+					<Msg NpcID="35" ImageID="6" Info="@#真是令我担心啊~~！" />				
+					<Msg NpcID="35" ImageID="1" Info="【@nick】有空的话去劝劝他，多出去玩儿玩儿，别天天看书。" />
+					<Msg NpcID="35" ImageID="1" Info="如果是带着【勇士协会称号】的协会职业者，TB也许会听你的话。\nTB就住在隔壁，\n常来麦田村玩儿啊^^~。 " />						
+					<Option Info="这就去找TB" SkipTrigger="Y" />
+					<Option Info="我很忙，下次吧。" NextStep="1" />					
+				</Action>							
+    		</Event>
+		</Step>		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c麦田村*尼康康餐厅c的c麦婶c最近很焦虑，不去“管闲事”看看吗^0^?" TargetMap="11404">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="这就去找TB" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	
+  		<Step ID="23" ParentList="2" ParentCost="1" >
+    		<Event Memo="c麦田村*尼康康餐厅c的c麦婶c最近很焦虑，不去“管闲事”看看吗^0^?" TargetMap="11404">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="35" TaskOption="【TB】怎样了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="7" Info="【TB】这孩子整天胡思乱想，\n整天说什么“语咒摩尔”“炒能力摩尔”“未来摩尔”，什么“语咒”“炒能力”啊...真是令我担心啊~~！" />			
+					<Msg NpcID="35" ImageID="1" Info="【@nick】有空的话去劝劝他，多出去玩儿玩儿，别天天看书。\n【@nick】是修行旅行中的勇士协会成员，TB也许会听你的话。" />
+					<Msg NpcID="35" ImageID="1" Info="TB就住在隔壁，\n常来麦田村玩儿啊^^~。 " />						
+					<Option Info="这就去找TB" NextStep="23" />				
+				</Action>							
+    		</Event>
+		</Step>	
+  		<Step ID="24" ParentList="2, 23" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />				
+    		</Event>
+		</Step>				
+  		<Step ID="3" ParentList="24" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="……。" />					
+					<Option Info="TB怎么了？" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="TB不开心吗？" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+					<Option Info="... ...。" NextStep="3" />
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="……。\n你相不相信有从未来来的摩尔？\n如果让我见到它，好想问问它关于未来的事情……" />					
+					<Option Info="你想问它什么呢" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="我不相信哈哈" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+					<Option Info="我就是未来摩尔！" SkipTrigger="Y" NotUpdateBuffer="Y" />
+				</Action>			
+    		</Event>
+		</Step>						
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="我就是未来摩尔哦！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="我是认真的……，\n你不会像【路伊】老师一样和我开我玩笑吧……\n路伊就总是说他是未来摩尔……" />					
+					<Option Info="我是真的(■_,■)" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="你有什么证据吗？" />					
+					<Option Info="我认识么么公主！" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="时之女神邀请我来的！" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="我有神奇照相机！" TalkOver="Y" />					
+				</Action>						
+    			<Action Type="MOVIE" Url="task_10056_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />				
+    		</Event>
+		</Step>										
+  		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="我们的公主不叫“嚒 嚒”啊。\n你也小说看多了吧……哎……。" />					
+					<Option Info="很难证明啊……" NextStep="4" />
+					<Option Info="时之女神邀请我来的！" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="我有神奇照相机！" TalkOver="Y" />					
+				</Action>			
+    			<Action Type="MOVIE" Url="task_10056_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y"/>				
+    		</Event>
+		</Step>				
+
+  		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="我……我不告诉你……。" />					
+					<Option Info="（只能换种说法试试了..）" NextStep="3" />
+				</Action>			
+    		</Event>
+		</Step>		
+  		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="……。\n我……我一直相信的……\n（很难过的样子啊@_@）。" />					
+					<Option Info="（只能换种说法试试了..）" NextStep="3" />
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="你是说那位神圣的时间女神“贝尔丹蒂”吗？？" />					
+					<Option Info="嗯^^" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="这也太幸运了！\n像冒险故事的主角一样啊——\n女神大人邀请你是有什么特殊原因吗？\n是有什么重要的使命吗？" />					
+					<Option Info="我也不太清楚" NextStep="5" SkipTrigger="Y" />
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="10" ParentList="5, 6" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="(⊙o⊙)……。这……这是炼金术制造的魔法武器吗？有什么东西藏在这里面吗？这是干什么用的啊？" />					
+					<Option Info="拍照片" NextStep="11" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="帮助记忆" NextStep="12" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="瞬间画画" NextStep="13" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="封印精灵" NextStep="14" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+					<Option Info="你猜猜看^^" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+				</Action>			
+    		</Event>
+		</Step>		
+  		<Step ID="11" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="什么是照片(⊙_⊙)？……我不太明白……。" />					
+					<Option Info="帮助记忆" NextStep="12" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="瞬间画画" NextStep="13" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="封印精灵" NextStep="14" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="12" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="是不是就像我每天写日记一样。\n那它就是我的亲密伙伴了(^-^)。" />					
+					<Option Info="TB很聪明啊^_^b" NextStep="40" SkipTrigger="Y" />						
+				</Action>			
+    		</Event>
+		</Step>				
+  		<Step ID="13" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="虽然不太明白，但感觉好…好强大！\n【路伊】老师布置的画画写生作业是不是一瞬间就可以完成了？" />					
+					<Option Info="^_^#差不多吧..." NextStep="40" SkipTrigger="Y" />						
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="14" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="那里面一定有魔法！\n小精灵不会轻易和摩尔签订契约的。" />					
+					<Option Info="这是皮克司的改造" NextStep="40" SkipTrigger="Y" />						
+				</Action>			
+    		</Event>
+		</Step>		
+  		<Step ID="40" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="那……你可以帮我“拍照片”吗？" />					
+					<Option Info="我试试吧^—^！" TalkOver="Y" />						
+					<Option Info="不行，浪费我的胶片" NextStep="17" SkipTrigger="Y" />
+				</Action>
+				<Action Type="MOVIE" Url="task_10056_2.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y"/>									
+    		</Event>
+		</Step>			
+    				
+		
+		
+		
+  		<Step ID="15" ParentList="10" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="4" Info="我猜是可以发动3级以上魔法的魔器……\n书上有类似的记载……。" />					
+					<Option Info="×哔哔猜错了" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="我猜不出……\n看来我书看的还太少了啊……\n你可以告诉我吗？" />					
+					<Option Info="拍照片" NextStep="11" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="帮助记忆" NextStep="12" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="瞬间画画" NextStep="13" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="封印精灵" NextStep="14" SkipTrigger="Y" NotUpdateBuffer="Y" />						
+				</Action>						
+    		</Event>
+		</Step>		
+  		<Step ID="16" ParentList="40" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="“照相机”的用途" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="我相信你是来自未来的摩尔！真的！\n可以告诉我更多一些未来的事情吗？\n后来我们摩尔的世界还有什么厉害的东西吗？" />					
+					<Option Info="有美好的摩尔庄园" NextStep="18" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="有可爱的拉姆" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="有伟大的瑞琪" NextStep="20" SkipTrigger="Y" NotUpdateBuffer="Y" />						
+					<Option Info="我不告诉你" NextStep="17" SkipTrigger="Y" NotUpdateBuffer="Y" />
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="17" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="（TB很难过的样子）" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="对不起……我说的太多了……。\n（很难过的样子。）" />					
+					<Option Info="... ..." />						
+				</Action>			
+    		</Event>
+		</Step>	
+				
+  		<Step ID="18" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="摩尔——庄 园……听上去就是很美好的世界^-^。" />					
+					<Option Info="嗯^^" SkipTrigger="Y" />					
+				</Action>			
+    		</Event>
+		</Step>	
+  		<Step ID="19" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="“啦 母”？\n【la mu】在我们的本地语的意思是\n【希望】，\n《维尔百科全书》里是这样说的！" />					
+					<Option Info="(⊙o⊙)原来如此" SkipTrigger="Y" />					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="20" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="哈！\n我们村里以前也有个超级厉害的摩尔，\n【瑞恩】哥哥。" />					
+					<Option Info="(⊙o⊙)瑞恩啊..." SkipTrigger="Y" />					
+				</Action>			
+    		</Event>
+		</Step>		
+	
+		
+  		<Step ID="21" ParentList="18, 19, 20" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">			
+					<Msg NpcID="36" ImageID="2" Info="未来还有什么呢？" />
+					<Option Info="有美好的摩尔庄园" NextStep="18" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+					<Option Info="有可爱的拉姆" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="有伟大的瑞琪" NextStep="20" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					<Option Info="有厉害的电脑" NextStep="22" SkipTrigger="Y" NotUpdateBuffer="Y" />						
+					<Option Info="我不告诉你" NextStep="17" SkipTrigger="Y" NotUpdateBuffer="Y" />						
+				</Action>			
+    		</Event>
+		</Step>	
+		
+  		<Step ID="22" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="“店脑”是什么？\n有多厉害？" />					
+					<Option Info="(^0^)可以玩儿摩尔勇士！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="4" Info="……￥@%◎☉⊙¤の…\n（完全无法理解的样子）" />					
+					<Msg NpcID="36" ImageID="1" Info="等等…我好像想到了什么重要的事…" />
+					<Msg NpcID="36" ImageID="4" Info="☆如果你的到来改变了历史，那么未来会从此不一样吗？\n摩尔庄园、瑞琪、拉姆、么么公主……" />
+					<Option Info="当然啦！" NextStep="25" SkipTrigger="Y" />
+					<Option Info="不会吧..." SkipTrigger="Y" />										
+				</Action>							
+    		</Event>
+		</Step>		
+  		<Step ID="25" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="哈哈，说不定未来的那个【@nick】就不存在了啊……。" />
+					<Msg NpcID="36" ImageID="2" Info="能选择属于自己的时代留下来，超级自由的感觉^-^！\n【@nick】以后像小说里一样完成了自己的使命。会继续留下来，还是回到未来？" />											
+					<Option Info="留下来" SkipTrigger="Y" />		
+					<Option Info="回到未来" SkipTrigger="Y" />										
+				</Action>							
+    		</Event>
+		</Step>						
+  		<Step ID="26" ParentList="22" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="唔…也可能从前有另一个穿越时空的摩尔，已经改变了你生活的时代。" />					
+					<Msg NpcID="36" ImageID="2" Info="能选择属于自己的时代留下来，真是超级自由的感觉^-^。\n【@nick】以后像书里一样完成了自己的使命，会继续留下来，还是回到未来？" />	
+					<Option Info="留下来" SkipTrigger="Y" />		
+					<Option Info="回到未来" SkipTrigger="Y" />								
+				</Action>							
+    		</Event>
+		</Step>					
+  		<Step ID="27" ParentList="26, 25" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="TB希望【@nick】能留下来……，\nTB好喜欢【@nick】^_^。" />	
+					<Msg NpcID="36" ImageID="2" Info="今天真是值得纪念的一天！好高兴啊，\n“★TB遇到了未来摩尔【@nick】★”！\n谢谢你能来找我玩儿^—^!" />					
+					<Msg NpcID="36" ImageID="2" Info="TB的爸爸是【弗雷基港】的大商人，每天乘大船航海经商，TB总是一个人在家……\n但爸爸希望TB读很多书成为有学问的摩尔学者。" />	
+					<Msg NpcID="36" ImageID="2" Info="我这里有很多爸爸临走时候给我的多东西，我可以送给你吗？\n希望可以帮到你的忙^-^！\n需要什么尽管说吧——！" />
+					<Option Info="给相机补充【闪灵胶片】" NextStep="28" SkipTrigger="Y" />					
+					<Option Info="想要【面包】补充MP" NextStep="29" SkipTrigger="Y" />
+					<Option Info="想要【生命之息】补充HP" NextStep="30" SkipTrigger="Y" />					
+					<Option Info="想要【变色果实】改变肤色" NextStep="31" SkipTrigger="Y" />						
+					<Option Info="我需要些【星豆】去旅行" />					
+				</Action>						
+    		</Event>
+		</Step>		
+  		<Step ID="28" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>		
+  		<Step ID="29" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	
+  		<Step ID="30" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	
+  		<Step ID="31" ParentList="0" ParentCost="1" >
+    		<Event Memo="cTBc在等待着未来的摩尔到来。\n——咦？小主人不就是来自未来的摩尔咩（@w@）？" TargetMap="11405">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="未来的世界" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	
+
+
+
+	</Procedure>
+</Task>
+
+

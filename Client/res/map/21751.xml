@@ -1,0 +1,15 @@
+<!-- 21103吉普2号地道 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-002.mp3">
+	<transport intPos="172,207">
+		<node id="1" pos="136,241" targetMapId="11702" targetTransPortId="3"/>
+		<node id="2" pos="1454,802" targetMapId="11709" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+	</object>
+	<npc>
+		<node id="355" type="NPC" res="MC_npc_355" action=""  taskShowSteps="10096_2|3|4|5|6" />	
+		<node id="59" type="NPC" res="MC_npc_59" action=""  taskShowSteps="10096_2|3|4|5|6" />																	
+	</npc>	
+</map>

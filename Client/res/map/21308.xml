@@ -1,0 +1,24 @@
+<!--平原八区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="104,298" targetMapId="21306" targetTransPortId="3" name="平原六区"/>
+		<node id="2" pos="674,321" targetMapId="11502" targetTransPortId="1" name="月光湖"/>
+		<node id="3" pos="1250,281" targetMapId="21801" targetTransPortId="1" name="永恒森林入口1" level="30_a0"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+	</object>
+	<npc>
+		<node id="753" type="NPC" res="MC_npc_753" action="" taskShowSteps="251_9"/>
+		<node id="51" type="NPC" res="MC_npc_51" action="" taskShowSteps="251_9"/>
+	</npc>		
+	<actions>
+		<proAction npcID="226" id="0" type="0" answer="我要努力成长！" to="o" >
+			<des>
+				<![CDATA[1#永恒之森很危险，30级以前不能通行!]]>
+			</des>
+		</proAction>			
+	</actions>	
+</map>

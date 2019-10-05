@@ -1,0 +1,46 @@
+<task id="24">
+	<taskDes>
+		<![CDATA[真的可以成为摩尔勇士吗……？【先问问执行大臣吧!】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="24" title="怎样成为摩尔勇士？" action="0" needRes="" needResNum="" unResAction=""  mapID="11307"/>
+		<pro type="0" parent="0" npcID="24" title="那个下水道试胆……" action="1"  unResAction=""  mapID="11307"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="24" answer="!@_@" to="s1">
+			<des>
+                <![CDATA[2#你可以得到奇普力大人交付的希望之坠，相信摩尔王大人一定也像我一样对你充满期待吧。加油！我会为你详细说明。$$]]>
+                <![CDATA[2#“摩尔勇士”是我们摩尔界的最高赞誉。是我们摩尔族的希望。勇士们用各自的方式战斗、体现着自己的勇士精神。$$]]>
+                <![CDATA[2#因此“勇士联盟”下分别存在着各种协会，目前在招收学员的协会有：【剑士协会】【魔法师协会】【弓箭手协会】【传教士协会】。$$]]>
+                <![CDATA[2#它们建立的目的都是为了培养和选拔摩尔勇士。通过勇士联盟各级考试的摩尔最终会被认可成为“摩尔勇士”！不过那是相当困难的！$$]]>
+                <![CDATA[2#啊……太激动人心了！！！！说起“勇士考试”的传统，由来已久……$$]]>
+                <![CDATA[1#………………………………………(说了1小时)$$]]>
+                <![CDATA[2#……十二勇士真是一段传奇般的历史啊！]]>				
+			</des> 
+		</proAction>
+		<proAction id="1" type="0" npcID="24" answer="谢谢你带我去！$我自己去找传教士协会" to="a2$a3">
+			<des>
+                <![CDATA[1#啊————失礼了，不过感谢你认真的听我说完！$$]]>
+                <![CDATA[2#总之你可以【选择加入其中一个协会】接受“勇士评定”。具体是怎样的协会，去和所属协会的导师谈谈就非常明白了!$$]]>
+                <![CDATA[1#你可以查看右上角的【摩尔王国协会指南】$$]]>
+                <![CDATA[2#【剑士】【魔法师】【弓箭手】三大王室协会就在王宫大厅的附属房间内，正好我今天有空，需要我为你带路吗？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="24" answer="当然是【剑士协会】！$当然是【魔法师协会】！$当然是【弓箭手协会】！" to="a6$a5$a4">
+			<des>
+                <![CDATA[2#想先去哪个协会看看呢？]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="24" answer="好的" to="c">
+			<des>
+                <![CDATA[1#OK。请拿好这张【勇士协会学员报名卡】。前往协会导师那儿报名吧！]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="6" mapID="11303" to="c"/>
+		<proAction id="5" type="6" mapID="11304" to="c"/>
+		<proAction id="6" type="6" mapID="11305" to="c"/>
+		<proAction id="7" type="6" mapID="11217" to="c"/>
+	</actions>
+</task>

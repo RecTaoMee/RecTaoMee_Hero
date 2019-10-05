@@ -1,0 +1,19 @@
+<task id="19">
+	<taskDes>
+		<![CDATA[【摩尔王】在摩尔王国*摩尔城堡【村长家的吉普地道】是唯一通道，我会一路陪伴你勇敢的孩子！——你的《旅行记事本》]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="30" title="终于见到您了！" action="0" needRes="" needResNum="" unResAction="" mapID="11307"/>
+		<pro type="0" parent="0" npcID="30" title="终于见到您了！" action="1" needRes="" needResNum="" unResAction="" mapID="11307"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="3" to="sn" />
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="1" type="0" npcID="30" answer="吉普豆村长让我来的" to="c">
+			<des>
+				<![CDATA[1#哦呵呵呵………见到你也很高兴。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,10 @@
+<!--T商会造船厂-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="133,139" targetMapId="11604" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
+	</object>
+
+</map>

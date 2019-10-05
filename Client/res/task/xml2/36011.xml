@@ -1,0 +1,41 @@
+<Task ID="36011" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="嘘，小声点，这是麦田村餐厅的卡密尔在我这里定的神秘礼物，说是要送给麦婶的，你偷偷送去给她，别被麦婶发现哦。" />
+					<Option Info="卡密尔真好。" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="小心把秘密礼物交给c卡密尔c。" TargetMap="11404" TargetObj="34" TargetName="和t卡密尔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11404" ObjID="34" TaskOption="大叔让我来的" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="34" ImageID="2" Info="谢谢你啦，我准备给麦婶一个小惊喜呢~O(∩_∩)O~" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

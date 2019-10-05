@@ -1,0 +1,165 @@
+<Task ID="10203" Memo="永夜村的曼克斯好像正为他的新研究发愁呢，看看能不能帮到他。" TargetMap="11801">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="永夜村的曼克斯好像正为他的新研究发愁呢，看看能不能帮到他。" TargetMap="11801" TargetObj="79" TargetName="和精灵学者t曼克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11801" ObjID="79" TaskOption="在找东西？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info=
+					"找找找。。怎么找不到了。。。。" />
+					<Option Info="在找什么？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="不。。不能说。。。。。。我才不会告诉你我把研究配方纸弄丢了呢。。。。。。" />
+					<Option Info="配方？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="啊！小声点。。。。不要让其他学者听到。我的一张重要精灵研究配方不见了，能帮我找找吗？" />
+					<Option Info="配方可能在哪 ？"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="让我回想一下，起床时配方还在的，然后。。。。。。上午在皮克斯研究所探讨问题之后，配方好像就不见了，应该是忘在了研究所。。。。。" />
+					<Option Info="我还有其他事" NextStep="1" />
+					<Option Info="我去看看！ "/>
+				</Action>
+			</Event>
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Event  Memo="去研究所问问皮克斯吧" TargetMap="11206" TargetObj="12" TargetName="跟t皮克斯t对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="见过配方吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="曼克斯的配方？在我这没错，他上午不小心忘在桌上啦，我吃午饭时看到就顺手把它夹到旅馆的外卖菜单里了，等我找找。" />
+					<Msg NpcID="12" ImageID="1" Info="（翻箱倒柜~找找找~）" />
+					<Option Info="找到吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="2" Info="不好意思，菜单好像又被路库K擅自拿回去了，真是的，虽然外卖味道不错，可服务也太差了。你再去找找路库K吧。" />
+					<Option Info="没问题！" />
+				</Action>
+				
+			</Event>	
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Event  Memo="好像配方又到了旅馆的路库K手上，再去问问他吧"  TargetMap="11207" TargetObj="13" TargetName="与旅馆老板t路库Kt对话"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="见过菜单吗" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="皮克斯那拿回来的外卖菜单？我已经把菜单发给下午另一个叫外卖的客人了。" />
+					
+					<Option Info="可以告诉我是谁吗" />			
+				</Action>				
+				
+				<Action Type="TALK">
+				   <Msg NpcID="13" ImageID="1" Info="我们旅馆可不会把客户信息随便透露给其他人~不如你来回答我个问题，答上来我就告诉你。" />	
+					<Msg NpcID="13" ImageID="1" Info=" 问~~十二勇士中，我的侄子，也就是银犬，是什么职业呢？" />				
+					<Option Info="厨师" NextStep="5" SkipTrigger="Y" />
+					<Option Info="刺客" NextStep="5" SkipTrigger="Y" />
+					<Option Info="剑士" NextStep="4" SkipTrigger="Y" />	
+					<Option Info="法师" NextStep="5" SkipTrigger="Y" />	
+					
+					
+				</Action>	
+			</Event>	
+		</Step>
+		
+		
+		 <Step ID="4" ParentList="3" ParentCost="1"  >
+			<Event Memo="答对旅馆老板c路库Kc的谜题" TargetMap="11202" TargetObj="317" TargetName="答对t路库Kt的谜题">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="8" Info="哈哈，你答对啦！菜单在永夜村的曼克斯那边，这些研究员，总是沉迷研究没时间自己做饭。" />
+					<Msg NpcID="13" ImageID="8" Info="他最近好像研究出了能改变精灵基因的方法，如果成功的话，真想银犬他也能用的上。" />
+					<Option Info="谢谢大叔！" />
+				</Action>
+				
+    		</Event>											
+	    </Step>	
+	    
+  		<Step ID="5" ParentList="3" ParentCost="1"  >
+			<Event Memo="答对旅馆老板c路库Kc的谜题" TargetMap="11202" TargetObj="317" TargetName="答对旅馆t路库Kt的谜题">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="哈哈，你答错了，看来对勇士们还不够熟悉哦。" />
+					<Option Info="我要再试一次" NextStep="3" SkipTrigger="Y"  />
+				</Action>			
+    		</Event>											
+	    </Step>
+	    
+		<Step ID="6" ParentList="4" ParentCost="1" >
+    		<Event Memo="绕了一圈原来夹着配方的菜单回到了c曼克斯c的手上，再去找他吧" TargetMap="11801" TargetObj="79" TargetName="和t曼克斯t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11801" ObjID="79" TaskOption="看看下午的外卖单" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="我现在哪还吃得下饭啊！" />
+					<Option Info="看一下吧" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="（翻开菜单）" />
+					<Msg NpcID="79" ImageID="1" Info="这不是我的配方吗？!怎么会在旅馆下午送来的菜单里！" />
+					<Option Info="说来话长" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="太谢谢你了！我就让你成为我研究的第一批使用者吧！放心~绝对没有危险~" />
+					<Option Info="什么研究？" />
+				</Action>			
+
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="众所周知，精灵是由风地水火四种属性中诞生的，我研究出只要将这些属性元素进行基因重组就能使精灵获得新生！并且新生精灵的成长空间会比原先有很大的提高！" />
+					<Option Info="我要学！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="可惜，转生的实验还缺最后最关键的一项材料，这个材料普通摩尔是无法得到的，只有不属于这个时代的摩尔才能采集到。" />
+					<Option Info="交给我吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="真的吗！那请你打败寄居在超时空世界树底的剧毒蜂皇，然后收集一枚他的毒针。剧毒蜂皇只能通过净化之路才能遇到。" />
+					<Option Info="没问题！" />
+					</Action>
+					</Event>
+		</Step>
+		<Step ID="7" ParentList="6" ParentCost="1" >					
+			<Condition>
+			        <Battle ID="2511" Count="1" />
+		    </Condition>
+			<Event ConditionType="IN" Memo="快把毒针给曼克斯吧" TargetMap="11801" TargetObj="79" TargetName="去找t曼克斯t">
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="啊。。。。好痛！！" />
+					<Option Info="得到蜂针！" />
+				</Action>
+			</Event>
+			<Event  ConditionType="OUT" Memo="去超时空净化之路的c世界树底c" TargetMap="30210" TargetObj="96" TargetName="击败t新生剧毒蜂皇t"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11801" ObjID="79" TaskOption="蜂皇在哪" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="剧毒蜂皇在超时空净化之路上，建议组队前往。" />
+					<Option Info="现在就去" />
+				</Action>		
+			</Event>				
+		</Step>
+		
+		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Event Memo="快把毒针给曼克斯吧" TargetMap="11801" TargetObj="79" TargetName="去找t曼克斯t"> 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11801" ObjID="79" TaskOption="毒针入手" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="材料齐了————现在我就传授你让精灵转生的神奇方法！等我一下~\n（转身配药水）" />
+					<Msg NpcID="79" ImageID="1" Info="搞定！要注意，这种研究虽然能让精灵成长值变高，但精灵会丧失现有的等级，并且只能对高于50级的精灵使用！祝你好运！" />
+					<Option Info="谢谢！" />
+				</Action>							
+    		</Event>			
+		</Step>
+
+	</Procedure>
+</Task>

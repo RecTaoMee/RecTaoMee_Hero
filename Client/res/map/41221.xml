@@ -1,0 +1,26 @@
+<!--皇家卫队赛场PVP-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-014.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="604,663" targetMapId="" targetTransPortId="" name="传入点"/>
+	</transport>
+	<object>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="702" type="NPC" res="MC_npc_702" action="1"/> 
+
+    </npc>
+    <actions>
+		<proAction npcID="702" id="1" type="0" answer="我要继续比赛$我要离开比赛" to="o$leave_map" colorID="0">
+			<des>
+				<![CDATA[1#在比赛中你的目标是讲其他未来勇士都击败，去努力吧，相信你一定可以！]]>
+			</des>
+		</proAction>
+		<proAction npcID="702" id="2" type="0" answer="我要继续比赛$我要退出比赛" to="o$lose_game" colorID="0$0">
+			<des>
+				<![CDATA[1#比赛已经开始，如果离开会扣除一次挑战机会，请慎重选择！]]>
+			</des>
+		</proAction>	
+	</actions>
+</map>

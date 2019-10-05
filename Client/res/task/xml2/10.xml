@@ -1,0 +1,57 @@
+<Task ID="10" Memo="咦？“狐狸型精灵”c鼬西c要挑战小主人？\n快去c土豆屋外c看看吧！" TargetMap="11102"> 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>	
+  		<Step ID="1" ParentList="9" ParentCost="1" >		  
+    		<Event Memo="咦？“狐狸型精灵”c鼬西c要挑战小主人？\n快去c土豆屋外c看看吧！" TargetMap="11102" TargetObj="998" TargetName="和t鼬西t对话" >  					
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="998" TaskOption="请问是你找我？" />					  					  						  		
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="嘿嘿…小呆鼹鼠看我怎么报复你！~" />	
+					<Option Info="来战！" />
+				</Action>	
+    			<Action Type="MOVIE" Url="task_10_1.swf" MapLevel="TASK" Pos="0,0"/>		
+ 				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="【@nick】别怕——！！\n我带“吉普豆三兄弟”来帮你了！" />	
+					<Option Info="好诶^^!" />
+				</Action>			
+    			<Action Type="MOVIE" Url="task_10_2.swf" MapLevel="TASK" Pos="0,0"/>					
+    		</Event>			  
+		</Step>		                              <!-- 节点得宠物↑ -->		    
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+ 			<Condition>
+				<Battle ID="3008" Count="1" />
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="战胜“狐狸”↖(^ω^)↗c鼬西c，\n看它怎么说！" TargetMap="11102" TargetObj="998" TargetName="和t鼬西t对话" >  					
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="998" TaskOption="打败【鼬西】啦！" />					  					  						  		
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="妈 妈 妈 妈妈呀！\n【恐惧魔王】大人救我——" />	
+					<Option Info="⊙o⊙？" />
+				</Action>				
+    			<Action Type="MOVIE" Url="task_10_3.swf" MapLevel="TASK" Pos="0,0"/>	
+ 				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="是   谁   召   唤   我——" />	
+					<Option Info="【恐惧魔王】？" />
+				</Action>																	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="皮皮克克带着“吉普豆3兄弟”来助阵，\n这次不怕c鼬西c了嗯嗯！" TargetMap="11102" TargetObj="333" TargetName="和t皮皮克克t对话" >  					
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="333" TaskOption="皮皮克克！！" />					  					  						  							  						  				  					  						  							  	
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="好朋友讲义气，大家一起上啊！" />						 
+					<Msg NpcID="998" ImageID="1" Info="啊哟？那就再打一次，\n看你们怎么折腾——" />	
+					<Option Info="来战！" />
+				</Action>	
+                <Action Type="COMMAND" Command="BATTLE" Params="3008" />																	
+    		</Event>			  
+		</Step>			   		     		
+</Procedure>
+</Task>
+

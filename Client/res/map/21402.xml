@@ -1,0 +1,69 @@
+<!--海地洞穴深处-->
+<map name="海地洞穴深处" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="387,590">
+		<node id="1" pos="58,470" targetMapId="21401" targetTransPortId="2" name="研究所"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<node id="998" type="NPC" taskShowSteps="120_3|4|5,121_3|4|5,122_3|4|5,123_3|4|5,124_3|4|5" visible="0" res="MC_npc_998" taskType="0" level="contentLevel" fun="" action="0" compTaskID="" needLevel="" needKind=""/>					
+		<node id="311" type="NPC" taskShowSteps="120_7|8,121_7|8,122_7|8,123_7|8,124_7|8" visible="0" res="MC_npc_311" taskType="0" level="downLevel" fun="" action="1" compTaskID="" needLevel="" needKind=""/>		
+		<node id="310" type="NPC" res="MC_npc_310" taskType="0" level="downLevel" fun="" taskHideSteps="120_6|7|8,121_6|7|8,122_6|7|8,123_6|7|8,124_6|7|8" action="2"  needLevel="" needKind=""/>		
+		<node id="701" type="NPC" res="MC_npc_701" action="3"/>
+	</npc>
+	<actions>
+		<proAction npcID="998" id="0" type="0" answer="……" to="o" >
+			<des>
+				<![CDATA[5#一二三四......]]>
+			</des>
+		</proAction>
+	</actions>
+	<actions>
+		<proAction npcID="310" id="1" type="0" answer="……" to="o" >
+			<des>
+				<![CDATA[1#ju（拒）————shi（食）————蟹——~——~（咔咔）]]>
+			</des>
+		</proAction>
+	</actions>	
+	<actions>
+		<proAction npcID="310" id="2" type="0" answer="……" to="o" >
+			<des>
+				<![CDATA[1#ju（拒）————shi（食）————蟹——~——~（咔咔咔）]]>
+			</des>
+		</proAction>
+	<proAction id="3" type="3" to="o" >
+		</proAction>
+	<proAction npcID="701" id="4" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+	</proAction>
+	<proAction npcID="701" id="5" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+	</proAction>
+	<proAction npcID="701" id="6" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+	</proAction>
+	<proAction npcID="701" id="7" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+	</proAction>
+	<proAction npcID="701" id="8" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+	</proAction>
+	<proAction npcID="701" id="9" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+	</proAction>
+	</actions>			
+</map>
+

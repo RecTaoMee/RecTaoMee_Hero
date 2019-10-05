@@ -1,0 +1,31 @@
+<task id="14">
+	<taskDes>
+		<![CDATA[战胜星锤兔抢回棉球果了，【快去把棉球果给琪琪姐姐吧！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="6" title="我战胜星锤兔了！" action="0" needRes="" needResNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="6" title="我战胜星锤兔了！" action="3" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="6" answer="给你棉球果！" to="a1">
+			<des>
+				<![CDATA[7#那你拿到棉球果了？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="6" answer="嗯^_^！" to="s3">
+			<des>
+				<![CDATA[1#真是太谢谢你了，爸爸的研究成功了！他知道的话一定也很开心^_^！$$]]>
+				<![CDATA[1#其它材料都准备好了，现在棉球果也有了，我这就来合成【生命之息】！请稍等……]]>	
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="6" answer="不客气！" to="c">
+			<des>
+				<![CDATA[2#成功了！这次的白魔法合成非常成功，合成了很多呢！$$]]>
+				<![CDATA[2#这些【生命之息】是送给你的，没有你的帮助我不可能完成它！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" level="topLevel" name="task_14_1" moviepos="-1245,-901" to="a2"/>
+	</actions>
+</task>

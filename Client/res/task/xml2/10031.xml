@@ -1,0 +1,40 @@
+<Task ID="10031" Memo="王国c贝塔商会装备店c的c贝利c似乎找你有事，莫非又有大礼相送？" TargetMap="11209">
+	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="王国c贝塔商会装备店c的c贝利c似乎找你有事，莫非又有大礼相送？" TargetMap="11209" TargetObj="16" TargetName="和t贝利t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="贝利我来了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="咳咳……这次我叫你过来，是因为有件严肃的事情必须要告诉你。" />
+					<Option Info="神马事这么严肃" SkipTrigger="Y"/>
+				</Action>
+			</Event>
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="王国c贝塔商会装备店c的c贝利c有严肃的事情要告诉你，快去找他吧！" TargetMap="11209" TargetObj="16" TargetName="和t贝利t对话">
+    			<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="贝利我来了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="这个……你来王国也有一段日子了，总是穿着职业装不觉得难受么？" />
+					<Msg NpcID="16" ImageID="1" Info="这还是小事，你可知道最近有很多居民跟我反应“未来勇士一点没审美感”？" />
+					<Option Info="(我咋没听说)" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="这我可不能当做没听见，作为引领时尚潮流的贝塔商会造型师，我感到责任重大！" />
+					<Msg NpcID="16" ImageID="1" Info="于是乎，我特地为你量身订制了一套符合潮流美的时装！" />
+					<Option Info="(莫非要坑我？)" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="小家伙，别以为我不知道你在想啥，这可是我特地送你的，满怀感激地收下吧！" />
+					<Option Info="真的？太感谢了" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="嘿嘿，等你有了审美感，别忘了去勇士商城购买更多漂亮的时装，我会不定期上架新货的！" />
+					<Option Info="……就知道" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

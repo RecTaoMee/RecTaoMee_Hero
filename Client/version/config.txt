@@ -1,0 +1,5 @@
+[Config]
+DataVer=1570201841
+#BaseUrlWithout/
+DownLoadBaseUrl=http://122.114.228.60
+ConfigBaseUrl=http://122.114.228.60

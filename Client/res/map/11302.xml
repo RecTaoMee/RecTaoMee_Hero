@@ -1,0 +1,368 @@
+<!--勇士大厅-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<process>
+		<!--
+		<node name="ActivityHeroCupMovie"/>
+		-->
+	</process>
+	<transport intPos="360,308">
+		<node id="1" pos="800,1021" targetMapId="11301" targetTransPortId="1" name="皇宫花园"/>
+		<node id="2" pos="214,518" targetMapId="11303" targetTransPortId="1" name="弓"/>
+		<node id="3" pos="490,403" targetMapId="11305" targetTransPortId="1" name="剑"/>
+		<node id="4" pos="1111,416" targetMapId="11304" targetTransPortId="1" name="魔"/>
+		<node id="5" pos="786,260" targetMapId="11307" targetTransPortId="1" name="皇宫内厅"/>
+		<node id="6" pos="1398,525" targetMapId="11306" targetTransPortId="1" name="忍"/>
+	</transport>
+	<object>              
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4"/>
+		<node id="5" type="TransPort" res="MC_door_4" transPortId="5"/>
+		<node id="7" type="TransPort" res="MC_door_5" transPortId="6"/>
+		<node id="6" type="AppModule" res="MC_mature" module="boards/MatureExperiencePanelModule"/>
+		<node id="5200" res="MC_clock"/>		
+	</object>
+	<npc>
+		<node id="401" type="NPC" res="MC_npc_401" name="味神蘑·小甜" action="0"/>
+		<node id="402" type="NPC" res="MC_npc_402" name="味神蘑·小咸" action="11"/>
+		<node id="212" type="NPC" res="MC_npc_212" action="16"/>
+		<node id="214" type="NPC" res="MC_npc_214" action="18"/>
+		<node id="211" type="NPC" res="MC_npc_211" action="20"/>
+		<node id="204" type="NPC" res="MC_npc_204" action="22"/>
+	</npc>
+	<actions>
+		<proAction npcID="401" id="0" type="0" answer="关于勇士协会$甜甜的蘑菇很好吃吗？$摩尔勇士万岁！" to="a1$a2$o" >
+			<des>
+				<![CDATA[1#嘿嘿，你好呀，我是【味神蘑·小甜】！关于【职业】的事情都可以问我哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="1" type="0" answer="剑士协会$弓箭手协会$传教士协会$魔法师协会$摩尔勇士万岁！"  to="a3$a7$a9$a10$o">
+			<des>
+				<![CDATA[2#目前，勇士联盟内有4个协会正在招收学员，你想了解哪一个呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="2" type="0" answer="嗯..还是问问协会的事吧..$摩尔勇士万岁！"  to="a1$o">
+			<des>
+				<![CDATA[6#我很认真的告诉你，甜甜的蘑菇非常非常难吃...千万别去尝试！]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="3" type="0" answer="好帅气！"  to="a4">
+			<des>
+				<![CDATA[1#剑士是很帅气的职业！在战场上，剑士们经常扮演在最前方冲锋陷阵，扭转战局的英雄！]]>
+			</des>
+		</proAction>
+		<proAction npcID="26" id="4" type="0" answer="...."  to="a5">
+			<des>
+				<![CDATA[1#哈哈，过奖过奖。英雄谈不上，帅气这一点我还是很自信的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="5" type="0" answer="进阶之路$我还想了解其他协会$摩尔勇士万岁！"  to="a6$a1$o">
+			<des>
+				<![CDATA[6#你可千万不要学那个轻浮的大叔，优秀的剑士一定要有一个冷静的头脑！剑士的攻击大部分属于近身攻击哦。$$]]>
+				<![CDATA[6#近身攻击就很有可能会遭到敌人的【反击】，所以一定要根据战斗的情况在攻击和防御之间做出一个正确的选择！]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="6" type="0" answer="我还想了解其他协会$摩尔勇士万岁！"  to="a1$o">
+			<des>
+				<![CDATA[3#勇士联盟的下属协会都有很严格的进阶规定，$$]]>
+				<![CDATA[2#把你的【职业“特技”】修习到规定的级别，$$]]>
+				<![CDATA[3#最后完成协会委派的任务才可以获得【进阶资格】。$$]]>
+				<![CDATA[2#进阶的好处？那可多了！不但可以得到更高的【职业称号】认可，还能使用更强力的【武器】和【防具】！$$]]>
+				<![CDATA[3#更重要的是，只有进阶以后，才能把【技能】修习到更高等级！变得更强保护我们哦也！$$]]>
+				<![CDATA[2#心动了吧！那就快点努力吧！我看好你哦^^]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="7" type="0" answer="这个..."  to="a8">
+			<des>
+				<![CDATA[6#想成为弓箭手啊...起码需要2.0的视力！你符合条件么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="8" type="0" answer="进阶之路$我还想了解其他协会$摩尔勇士万岁！"  to="a6$a1$o">
+			<des>
+				<![CDATA[3#哈哈，说笑而已，别当真了^^，弓箭手擅长远程攻击和同时攻击多个目标，可是相当受欢迎的同伴呢！$$]]>
+				<![CDATA[1#当然弓箭手也有自己的弱点：防御力相对于剑士要低了很多，很容易因为攻击而受伤。]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="9" type="0" answer="进阶之路$我还想了解其他协会$摩尔勇士万岁！"  to="a6$a1$o">
+			<des>
+				<![CDATA[2#传教士是非常神圣的职业，他们可以借助女神的力量治愈受伤的同伴。队伍里如果有一个传教士，那么旅行会变得轻松很多！$$]]>
+				<![CDATA[2#作为一名传教士，你在关注队友的同时也要注意自己哦！只有保证自己的安全才有能力去帮助队友！]]>
+			</des>
+		</proAction>
+		<proAction npcID="401" id="10" type="0" answer="进阶之路$我还想了解其他协会$摩尔勇士万岁！"  to="a6$a1$o">
+			<des>
+				<![CDATA[3#地震，暴雨都是自然之力的体现，魔法师正是可以驾驭自然之力的职业！$$]]>
+				<![CDATA[6#利用元素的力量给予敌人沉重的打击，真是太厉害了！但是魔法师自身非常脆弱，常常需要依靠队友和精灵伙伴们的保护。]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="11" type="0" answer="好呀！$蘑菇为什么是咸咸的呢？$摩尔勇士万岁！"  to="a12$a15$o">
+			<des>
+				<![CDATA[2#我是帅气的【味神蘑·小咸】！你可以叫我【小咸老师】！要不要我教你一些小技巧呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="12" type="0" answer="职业配点$成长路线$关于战斗$摩尔勇士万岁！"  to="t8$a13$a14$o">
+			<des>
+				<![CDATA[3#既然你诚心的问了，我就大发慈悲的告诉你吧！不过...你可以先告诉我你的问题吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="13" type="0" answer="我还想问其他问题$摩尔勇士万岁！"  to="a12$o">
+			<des>
+				<![CDATA[3#成长路线可是一门很深奥的学问！不过有【小咸老师】在，一切就很简单了！好好听课吧！$$]]>
+				<![CDATA[3#随着经验的积累，人物等级也会不断的提升。每次升级都会获得4点努力值，可以分配到不同的努力方向上。$$]]>
+				<![CDATA[3#不同职业的努力值分配方式是不一样的！一般来说剑士和弓箭手会很注重力量的培养，传教士和法师更倾向智力的提升，合理的分配方式可以让你的潜力充分发挥哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="14" type="0" answer="我还想问其他问题$摩尔勇士万岁！"  to="a12$o">
+			<des>
+				<![CDATA[6#战斗的最佳方式是【组队战斗】，当你独自面对多个敌人，会经常受到敌人的【合击】，注意【合击】是无法闪避的！$$]]>
+				<![CDATA[3#如果你是个【摩尔勇士】，也许你能够独当一面...很明显，你不是...为什么？哈哈，如果你是【摩尔勇士】也不会来请教我啦！$$]]>
+				<![CDATA[3#古老的东方有一句话叫【三十六计，走为上计】！记住哦，在被围攻的时候，情况不妙就一定要记得逃跑！$$]]>
+				<![CDATA[3#所以说，碰到困难就找朋友帮忙！就算是【摩尔勇士】也要通过合作才能发挥彼此的全部实力！]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="15" type="0" answer="额 ...好的$摩尔勇士万岁！"  to="a12$o">
+			<des>
+				<![CDATA[6#其实甜甜的蘑菇才好吃呢！不信你问问隔壁那位！不过，我们还是不要讨论这个吧><...]]>
+			</des>
+		</proAction>
+		<proAction npcID="212" id="16" type="0" answer="了解情况$摩尔勇士万岁！"  to="a17$o">
+			<des>
+				<![CDATA[1#您好啊。偶尔有人过来和我说说话这真令我高兴。站在角落容易被人遗忘。]]>
+			</des>
+		</proAction>
+		<proAction npcID="212" id="17" type="0" answer="了解情况$摩尔勇士万岁！"  to="a17$o">
+			<des>
+				<![CDATA[1#【妮娜】小姐是士兵长美丽的独生女儿。嘘————我就知道这么多了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="214" id="18" type="0" answer="了解情况$摩尔勇士万岁！"  to="a19$o">
+			<des>
+				<![CDATA[1#大家都期待着新的勇士的诞生。]]>
+			</des>
+		</proAction>
+		<proAction npcID="214" id="19" type="0" answer="了解情况$摩尔勇士万岁！"  to="a19$o">
+			<des>
+				<![CDATA[1#大厅中央扶手上的【味神蘑】，这些小家伙最喜欢问“为什么”，所以它们知道了很多事情。$$]]>
+				<![CDATA[1#你有什么不明白的可以问问他们。]]>
+			</des>
+		</proAction>
+		<proAction npcID="211" id="20" type="0" answer="了解情况$摩尔勇士万岁！"  to="a21$o">
+			<des>
+				<![CDATA[1#你是来加入勇士联盟下的职业协会的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="211" id="21" type="0" answer="了解情况$摩尔勇士万岁！"  to="a21$o">
+			<des>
+				<![CDATA[1#虽然【莱卡】大人说“未来的摩尔”能带来希望。不过我觉得这真太令人难以置信了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="204" id="22" type="0" answer="了解情况$摩尔勇士万岁！"  to="a22$o">
+			<des>
+				<![CDATA[1#导师们看上去很辛苦。]]>
+			</des>
+		</proAction>
+		<proAction npcID="204" id="23" type="0" answer="了解情况$摩尔勇士万岁！"  to="a22$o">
+			<des>
+				<![CDATA[1#我本来应该在皇宫花园左边守卫的，因为我的排名是【E】……所以被调职到这里……你可以问。$$]]>
+				<![CDATA[1#哎我多想像【ABCDGF】一样在花园里呼吸新鲜空气啊……具体原因我不想多说……你可以问外面花园左边的【E】。]]>
+			</des>
+		</proAction>
+		<!--杰森开场白-->
+		<proAction npcID="26" id="24" type="0" answer="看我的！"  to="t0">
+			<des>
+				<![CDATA[1#身为一名剑士，还不明白自己的努力方向，简直就是悲剧！让我来考考你！$$]]>
+				<![CDATA[1#假如你有10点努力值，你会如何分配努力值呢？]]>
+			</des>
+		</proAction>
+		<!--智力大于等1-->
+		<proAction npcID="26" id="25" type="0" answer="重新分配"  to="t0">
+			<des>
+				<![CDATA[1#在智力上分配努力值？难道你想加入魔法师协会吗！]]>
+			</des>
+		</proAction>
+		<!--智力=0，力量不是最高-->
+		<proAction npcID="26" id="26" type="0" answer="我明白了$再试试"  to="a28$t0">
+			<des>
+				<![CDATA[1#这样分配倒是没有错，不过如果力量上分配的努力值不够的，攻击可会是软绵绵的哦！]]>
+			</des>
+		</proAction>
+		<!--智力=0，力量是最高-->
+		<proAction npcID="26" id="27" type="0" answer="我明白了"  to="a28">
+			<des>
+				<![CDATA[1#不错！有我的风范！剑士就应该把最多的努力值分配在力量上！]]>
+			</des>
+		</proAction>
+		<!--杰森结束对白-->
+		<proAction npcID="26" id="28" type="0" answer="想$不想"  to="a29$a30">
+			<des>
+				<![CDATA[1#记住了剑士应该把最多努力值分配在力量上！不要加智力！$$]]>
+				<![CDATA[1#想听听其他导师上的课吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="26" id="29" type="0" answer="彼兔$温蒂$瑞凌$不想听了.."  to="a38$a45$a31$a30">
+			<des>
+				<![CDATA[1#你想听哪个导师讲课呢？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="26" id="30" type="0" answer="记住啦！"  to="t1">
+			<des>
+				<![CDATA[1#今天学到的东西要牢牢记住了！如果不能正确分配努力值，以后可是会哭的哦！]]>
+			</des>
+		</proAction>
+		
+		
+		<!--瑞凌开场白-->
+		<proAction npcID="28" id="31" type="0" answer="看我的！"  to="t2">
+			<des>
+				<![CDATA[1#看来你还没有体会到弓箭手这个职业的精髓，让我来考考你吧。$$]]>
+				<![CDATA[1#假如你有10点努力值，你会如何分配努力值呢？]]>
+			</des>
+		</proAction>
+		<!--智力大于等1-->
+		<proAction npcID="28" id="32" type="0" answer="重新分配"  to="t2">
+			<des>
+				<![CDATA[1#在智力上分配努力值？我和彼兔很熟，要不要我介绍你加入魔法师协会？]]>
+			</des>
+		</proAction>
+		<!--智力=0，力量不是最高-->
+		<proAction npcID="28" id="33" type="0" answer="我明白了$再试试"  to="a35$t2">
+			<des>
+				<![CDATA[1#虽然弓箭手不像剑士那样，是一群四肢发达的家伙，但是力量还是必须被注意的努力方向！你应该分配更多的努力值在力量上！]]>
+			</des>
+		</proAction>
+		<!--智力=0，力量是最高-->
+		<proAction npcID="28" id="34" type="0" answer="我明白了"  to="a35">
+			<des>
+				<![CDATA[1#这种加点方式还不错，在力量上分配了足够努力值，这样你的对手会因为你而头疼的呦~]]>
+			</des>
+		</proAction>
+		<!--瑞凌结束对白-->
+		<proAction npcID="28" id="35" type="0" answer="想$不想"  to="a36$a37">
+			<des>
+				<![CDATA[1#弓箭手不仅仅要注重【力量】，同时也要关注【敏捷】！最先出手给予敌人致命一击，这就是弓箭手！$$]]>
+				<![CDATA[1#想听听其他导师上的课吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="28" id="36" type="0" answer="彼兔$温蒂$杰森$不想听了.."  to="a38$a45$a24$a37">
+			<des>
+				<![CDATA[1#你想听哪个导师讲课呢？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="28" id="37" type="0" answer="记住啦！"  to="t3">
+			<des>
+				<![CDATA[1#今天学到的东西要牢牢记住了！如果不能正确分配努力值，以后可是会哭的哦！]]>
+			</des>
+		</proAction>
+		
+		<!--彼兔开场白-->
+		<proAction npcID="27" id="38" type="0" answer="看我的！"  to="t4">
+			<des>
+				<![CDATA[1#不好好听课我就把你变成兔子！$$]]>
+				<![CDATA[1#注意了！假如你有10点努力值，你会如何分配努力值呢？]]>
+			</des>
+		</proAction>
+		<!--力量大于等1-->
+		<proAction npcID="27" id="39" type="0" answer="重新分配"  to="t4">
+			<des>
+				<![CDATA[1#你在【力量】上分配努力值？难道你想加入剑士协会？那我帮你和杰森说一下吧？]]>
+			</des>
+		</proAction>
+		<!--力量=0，智力不是最高-->
+		<proAction npcID="27" id="40" type="0" answer="我明白了$再试试"  to="a42$t4">
+			<des>
+				<![CDATA[1#魔法的力量可不是头脑简单的家伙能掌握的！你在【智力】上分配那么点努力值，怎么能发挥出那些魔法的最大威力！]]>
+			</des>
+		</proAction>
+		<!--力量=0，智力是最高-->
+		<proAction npcID="27" id="41" type="0" answer="我明白了"  to="a42">
+			<des>
+				<![CDATA[1#不错！在【智力】上分配最多的努力值，才能发挥魔法的最大威力！]]>
+			</des>
+		</proAction>
+		<!--彼兔结束对白-->
+		<proAction npcID="27" id="42" type="0" answer="想$不想"  to="a43$a44">
+			<des>
+				<![CDATA[1#魔法之路可不是那么简单的，不动点脑子可是不行的！$$]]>
+				<![CDATA[1#记住在智力上分配最多的努力值！然后根据自己的需要把其他努力值分配在体力，耐力和敏捷上！$$]]>
+				<![CDATA[1#想听听其他导师上的课吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="27" id="43" type="0" answer="瑞凌$温蒂$杰森$不想听了.."  to="a31$a45$a24$a44">
+			<des>
+				<![CDATA[1#你想听哪个导师讲课呢？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="27" id="44" type="0" answer="记住啦！"  to="t5">
+			<des>
+				<![CDATA[1#今天学到的东西要牢牢记住了！如果不能正确分配努力值，以后可是会哭的哦！]]>
+			</des>
+		</proAction>
+		
+		<!--温蒂开场白-->
+		<proAction npcID="22" id="45" type="0" answer="看我的！"  to="t6">
+			<des>
+				<![CDATA[1#让我来指导你一下^^，不过先要考一考你！$$]]>
+				<![CDATA[1#假如你有10点努力值，你会如何分配努力值呢？]]>
+			</des>
+		</proAction>
+		<!--力量大于等1-->
+		<proAction npcID="22" id="46" type="0" answer="重新分配"  to="t6">
+			<des>
+				<![CDATA[1#作为侍奉女神的信徒可不能那么暴力！记住，不要在【力量】上分配努力值。]]>
+			</des>
+		</proAction>
+		<!--力量=0，智力不是最高-->
+		<proAction npcID="22" id="47" type="0" answer="我明白了$再试试"  to="a49$t6">
+			<des>
+				<![CDATA[1#传教士和魔法师不一样，【智力】上不需要分配那么多努力值。$$]]>
+				<![CDATA[1#但是适当多分配一些也是有好处的，【智力】高的话，魔力值会比较高，白魔法可是非常消耗魔力值的！]]>
+			</des>
+		</proAction>
+		<!--力量=0，智力是最高-->
+		<proAction npcID="22" id="48" type="0" answer="我明白了"  to="a49">
+			<des>
+				<![CDATA[1#这样也不错^^，【智力】上分配那么多努力值，魔力值也会变的很多，战斗中可以使用更多的白魔法]]>
+			</des>
+		</proAction>
+		<!--彼兔结束对白-->
+		<proAction npcID="22" id="49" type="0" answer="想$不想"  to="a50$a51">
+			<des>
+				<![CDATA[1#记住了！传教士在战斗中最重要的生存力，所以需要在【体力】和【耐力】上分配一定的努力值。$$]]>
+				<![CDATA[1#白魔法非常消耗魔力，所以【智力】也必须分配较多的努力值，才能有足够的魔力！$$]]>
+				<![CDATA[1#想听听其他导师上的课吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="22" id="50" type="0" answer="瑞凌$彼兔$杰森$不想听了.."  to="a31$a38$a24$a51">
+			<des>
+				<![CDATA[1#你想听哪个导师讲课呢？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="22" id="51" type="0" answer="记住啦！"  to="t7">
+			<des>
+				<![CDATA[1#今天学到的东西要牢牢记住了！如果不能正确分配努力值，以后可是会哭的哦！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="2" id="52" type="0" answer="(⊙o⊙)~?" event="god_talk" to="play_movie" colorID="0" >
+			<des>
+				<![CDATA[1#我在这等你很久了.......]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="2" id="53" type="0" answer="记住啦！" event="movie_end" to="get_proof" colorID="0" >
+			<des>
+				<![CDATA[1#不要忘记了你的使命...你已得到我的祝福，6月24日开始就可以找长老兑换你的队服了，愿胜利与你同在！]]>
+			</des>
+		</proAction>
+		
+	</actions>
+</map>

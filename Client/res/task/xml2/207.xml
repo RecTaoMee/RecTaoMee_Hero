@@ -1,0 +1,120 @@
+<Task ID="207" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307">
+   	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+  			<Condition>
+				<Item ID="290024" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您找我？" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="怎么样？选好自己的进阶之路了吗？" />	
+					<Option Info="转职狂战士" NextStep="11" />		
+					<Option Info="转职黑魔导士" NextStep="12" />	
+					<Option Info="转职圣言使" NextStep="13" />	
+					<Option Info="转职巫术士" NextStep="14" />	
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您找我？" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="准备好踏上进阶之路了吗？请出示你的【职业进阶证明】。" />	
+					<Option Info="对不起我没带" />
+				</Action>
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="是不是存放在小屋仓库中了，带上它再来找找吧！" />	
+					<Option Info="好的" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+   			<Event Memo="与詹姆斯国王对话" TargetMap="11307" TargetName="与t詹姆斯t对话"> 	
+ 				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="0" MapLevel="TASK" Pos="0,0" IsModule="Y" NextStep="1" />									
+				<Action Type="COMMAND" Command="NOTHING"/>
+    		</Event>
+		</Step>
+					
+		<Step ID="11" ParentList="0" ParentCost="1" >
+   			<Event Memo="与詹姆斯国王对话" TargetMap="11307" TargetName="与t詹姆斯国王t对话"> 	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="确定要进阶为【狂战士】吗？" />	
+					<Option Info="是的" />		
+					<Option Info="再想想" NextStep="1" />		
+				</Action>	
+    		</Event>
+		</Step>
+					
+		<Step ID="12" ParentList="0" ParentCost="1" >
+   			<Event Memo="与詹姆斯国王对话" TargetMap="11307" TargetName="与t詹姆斯国王t对话"> 	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="确定要进阶为【黑魔导士】吗？" />	
+					<Option Info="是的" />		
+					<Option Info="再想想" NextStep="1" />		
+				</Action>	
+    		</Event>
+		</Step>
+					
+		<Step ID="13" ParentList="0" ParentCost="1" >
+   			<Event Memo="与詹姆斯国王对话" TargetMap="11307" TargetName="与t詹姆斯国王t对话"> 	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="确定要进阶为【圣言使】吗？" />	
+					<Option Info="是的" />		
+					<Option Info="再想想" NextStep="1" />		
+				</Action>	
+    		</Event>
+		</Step>
+					
+		<Step ID="14" ParentList="0" ParentCost="1" >
+   			<Event Memo="与詹姆斯国王对话" TargetMap="11307" TargetName="与t詹姆斯国王t对话"> 	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="确定要进阶为【巫术士】吗？" />	
+					<Option Info="是的" />		
+					<Option Info="再想想" NextStep="1" />		
+				</Action>	
+    		</Event>
+		</Step>
+		
+ 		<Step ID="21" ParentList="11" ParentCost="1" >
+   			<Event Memo="转职中" TargetMap="11307" TargetName=""> 	
+ 				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="1" MapLevel="TASK" Pos="0,0" IsModule="Y" SkipTrigger="Y" />	
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+ 		<Step ID="22" ParentList="12" ParentCost="1" >
+   			<Event Memo="转职中" TargetMap="11307" TargetName=""> 	
+ 				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="2" MapLevel="TASK" Pos="0,0" IsModule="Y" SkipTrigger="Y" />	
+<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>				
+    		</Event>
+		</Step>
+ 		<Step ID="23" ParentList="13" ParentCost="1" >
+    		<Event Memo="转职中" TargetMap="11307" TargetName=""> 	
+				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="3" MapLevel="TASK" Pos="0,0" IsModule="Y" SkipTrigger="Y" />	
+<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>				
+    		</Event>
+		</Step>
+		
+ 		<Step ID="24" ParentList="14" ParentCost="1" >
+   			<Event Memo="转职中" TargetMap="11307" TargetName=""> 	
+ 				<Action Type="MOVIE" Url="ProfessionInstructionModule" Params="4" MapLevel="TASK" Pos="0,0" IsModule="Y" SkipTrigger="Y" />	
+<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>				
+    		</Event>
+		</Step>
+ 		
+		<Step ID="50" ParentList="21,22,23,24" ParentCost="1" >
+    		<Event Memo="告诉c詹姆斯c国王自己所选的进阶方向。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您有什么嘱咐？" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="30" ImageID="1" Info="恭喜你进阶成功！你的能力已随着职业进阶再一步得到提升，并领悟了新的职业技能。" />	
+					<Msg NpcID="30" ImageID="1" Info="新的修行之路开启了，请继续努力吧！" />	
+					<Option Info="不负所望" />		
+				</Action>	
+    		</Event>
+		</Step>	
+	</Procedure>
+</Task>

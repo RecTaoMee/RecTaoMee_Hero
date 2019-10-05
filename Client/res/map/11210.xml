@@ -1,0 +1,38 @@
+<!--道具店-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="240,380">
+		 <node id="1" pos="505,217" targetMapId="11202" targetTransPortId="7"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="17" type="NPC" res="MC_npc_17" level="downLevel" fun="" taskType="0" action="0$1$2" needLevel="" needKind=""/>
+		<node id="84" type="NPC" res="MC_npc_84" level="downLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
+		<node id="347" type="NPC" res="MC_npc_347" action=""  taskShowSteps="35000_44|444|6" />						
+	</npc>
+	<actions>
+		<proAction npcID="17" id="0" type="0" answer="我想买道具$我想卖东西$关于道具的问题$摩尔勇士万岁！" to="b0_17$b1_17$a1$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[1#欢迎光临【贝塔商会王国道具店】。来把没用的星豆变成有用的东西吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="17" id="1" type="0" answer="我想买道具$我想卖东西$摩尔勇士万岁！"  to="b0_17$b1_17$o" colorID="1$1">
+			<des>
+				<![CDATA[2#欢迎光临【贝塔商会王国道具店】。道具可是非常实用的。]]>
+			</des>
+		</proAction>
+		<proAction npcID="17" id="2" type="0" answer="我想买道具$我想卖东西$摩尔勇士万岁！"  to="b0_17$b1_17$o" colorID="1$1">
+			<des>
+				<![CDATA[1#欢迎光临【贝塔商会王国道具店】。你知道旅行不带道具有多糟糕吗，那就等于下雨天不带伞！]]>
+			</des>
+		</proAction>
+		<proAction npcID="84" id="3" type="0" answer="我想兑换头饰$摩尔勇士万岁！" to="f9$o" colorID="1$0">
+			<des>
+				<![CDATA[1#欢迎光临【头饰专卖店】，这里有王国最可爱的头饰，总有一款是你喜欢的。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

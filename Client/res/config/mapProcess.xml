@@ -1,0 +1,32 @@
+<mapProcess>
+	<process>
+		<node name="ActivityHeroFirework" randomID="10001">
+			<item id="320001" groupID="52"/>
+			<item id="320002" groupID="20"/>
+			<item id="320003" groupID="25"/>
+			<item id="320004" groupID="26"/>
+			<item id="320005" groupID="55"/>
+			<item id="320006" groupID="55"/>
+		</node>
+		<!--
+		<node name="ActivityStrangeDoctor" npcURL="res/mapObj/npc/dakela.swf" infoType="6" info="古怪的精灵研究员·达克拉在%MAP%出现了！" randomID="10002" npcID="352">
+			<map id="11201" pos="716,629"/>
+			<map id="11301" pos="443,579"/>
+			<map id="11203" pos="755,321"/>
+			<map id="11205" pos="105,490"/>
+			<map id="11202" pos="1605,816"/>
+			<proAction npcID="352" id="55" type="0" answer="谢谢你的粽子。$谢谢不用了!" to="get_mizong$o" >
+				<des>
+					<![CDATA[1#6.4-6.6日14：00~16：00由我达克拉独家研制的“柠檬蜜粽”免费派送，要不要让你的精灵尝尝呢？]]>
+				</des>
+			</proAction>
+			<proAction npcID="352" id="56" type="0" answer="好的，明天再来。" to="o" >
+				<des>
+					<![CDATA[1#我研制的美味柠檬蜜粽可是限量放送，想要明天再来找我吧！]]>
+				</des>
+			</proAction>
+		</node>
+		-->
+		<node name="PotMapProcess"/>
+	</process>
+</mapProcess>

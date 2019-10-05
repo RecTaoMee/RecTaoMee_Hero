@@ -1,0 +1,101 @@
+<Task ID="10086" Memo="怪盗集团起内讧了，这是怎么回事？快去c平原6区c看看吧！" TargetMap="21306">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="怪盗集团起内讧了，这是怎么回事？快去c平原6区c看看吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="起内讧了？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="怪盗集团起内讧了，这是怎么回事？快去c平原6区c看看吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="起内讧了？" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="嘿！那边的摩尔！\n对，就是你，过来一下！" />
+						<Option Info="怎么了！" />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="我有一个迪迪拉小弟前几天跑了，你去帮我找回来吧！\n如果你找回来了！我就把我最珍藏的星豆袋送给你！" />
+						<Option Info="一言为定！" />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="好像他跑向平原7区了，你去那边看看吧！" />
+						<Option Info="好的" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21307, 30035" />
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="逃跑的迪迪拉在哪呢？去平原7区找找看！" TargetMap="21307" TargetObj="30035" TargetName="和t怪盗迪迪拉t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21307" ObjID="30035" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="315" ImageID="3" Info="你···你也是老大派来找我的吗！\n哼！你...你回去告诉老大，我再也不会回去了" />
+						<Option Info="为什么?" />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="315" ImageID="2" Info="上次老大趁我不在，偷偷把我攒了很久的【荣誉兑换券】全部用掉了！气死我了！" />
+						<Option Info="让我回去问问" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="回去问问c怪盗头目c到底是怎么回事吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="【荣誉兑换券】？" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="哼！才用了他几张【荣誉兑换券】就生气了，太小气了！" />
+						<Option Info="为什么用别人的东西？" />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="你没当过怪盗当然不知道我们的苦了！\n现在的摩尔们装备都越来越好了！我当然要弄点荣誉去斗技场兑换一套好装备了！" />
+						<Msg NpcID="314" ImageID="1" Info="你看平原1区那群迪迪拉，天天被人欺负！没有好装备的怪盗就是那副下场！" />
+						<Option Info="....." />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="这事说起来也是我不对，算啦。我那个小弟最喜欢吃【贝多罗面包店】出售的【手指饼干】。" />
+						<Msg NpcID="314" ImageID="1" Info="你去帮我买一份【手指饼干】送给它吧！" />
+						<Option Info="好的！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Item ID="230001" Count="1" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="把带有“老大歉意”的手指饼干送给怪盗迪迪拉吧！" TargetMap="21307" TargetObj="30035" TargetName="和t怪盗迪迪拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21307" ObjID="30035" />			
+				</Trigger>
+				<Action Type="TALK">	
+			        <Msg NpcID="315" ImageID="3" Info="⊙﹏⊙|||手指饼干！！！！！" />																																									
+					<Option Info="老大给你的！" />					
+				</Action>	
+				<Action Type="TALK">	
+			        <Msg NpcID="315" ImageID="3" Info="戈戈拉老大果然是最棒的！谢谢你了，我一会就回去了！" />
+					<Msg NpcID="315" ImageID="3" Info="这是老大珍藏的【星豆袋】，送给你吧~我出来的时候顺手把这个也拿跑了^^。" />																																										
+					<Option Info="......" />					
+				</Action>	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21307,30035" />	
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="去【贝多罗面包店】帮怪盗老大买一份手指饼干吧！" TargetMap="11213" TargetObj="" TargetName="t手指饼干t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21307" ObjID="30035" />		
+				</Trigger>
+					<Action Type="TALK">	
+						<Msg NpcID="315" ImageID="3" Info="就不回去~哼！" />																																										
+						<Option Info="老大给你的！" />					
+					</Action>									
+    		</Event>			
+    	</Step>
+	</Procedure>
+</Task>

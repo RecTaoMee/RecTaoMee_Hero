@@ -1,0 +1,171 @@
+<Task ID="250" Memo="c勇士号水手c好像遇到了麻烦，快去c弗雷基码头c看看吧！" TargetMap="11604">  
+	<Procedure>   				
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="c勇士号水手c好像遇到了麻烦，快去c弗雷基码头c看看吧！" TargetMap="11604" TargetObj="58" TargetName="和t勇士号水手t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="出什么事啦？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="早上去【T商会造船厂】搬运材料的时候，发现门被锁住了。\n你能帮我们看看吗？" />
+					<Option Info="这就去【造船厂】!" SkipTrigger="Y" />
+					<Option Info="有事先走了" NextStep="50" />					
+				</Action>											
+    		</Event>
+		</Step>		
+  		<Step ID="59" ParentList="50" ParentCost="1" >
+    		<Event Memo="c勇士号水手c好像遇到了麻烦，快去c弗雷基码头c看看吧！" TargetMap="11604" TargetObj="58" TargetName="和t勇士号水手t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="这就去【造船厂】!" />
+				</Trigger>			
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11605, 16011" />  	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11605, 16012" />  
+    		</Event>
+		</Step>			
+  		<Step ID="2" ParentList="59" ParentCost="1" >			
+    		<Event Memo="cT商会造船厂c的门锁住了？快去瞧瞧吧！" TargetMap="11605" TargetObj="16011" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11605" />					  					  
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16011" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="啊唷？是【@nick】，进来吧!" />
+					<Option Info="你怎么在这？" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="……\n这次被你害惨啦！\n你知道为了“不让海船出航”【尤利】老大费了多少心血吗！\n你竟然解除了【风之龙】的封印！" />	
+					<Msg NpcID="998" ImageID="1" Info="就算是“未来勇士”也不用这么给力吧~\n我还以为你和“正义的伙伴”一样没用，\n才把“封印风龙”这个秘密告诉你的。" />		
+					<Msg NpcID="15" ImageID="1" Info="……" />															
+					<Option Info="你来啦？" />																
+				</Action>
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11605, 16013" SkipTrigger="Y" />  					
+    		</Event>			
+		</Step>					
+  		<Step ID="51" ParentList="2" ParentCost="1" >			
+    		<Event Memo="快去cT商会造船厂c和c正义的伙伴c聊聊吧！" TargetMap="11605" TargetObj="16013" TargetName="和t正义的伙伴t对话">      
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16013" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="一听到“正义的伙伴”五个字，就会以光速赶到现场——\n这就是侦查员的实力啊！" />
+					<Msg NpcID="15" ImageID="2" Info="狐狸，跟我去见摩尔王吧~" />					
+					<Msg NpcID="998" ImageID="7" Info="不要啊~~！我闪~" />
+					<Option Info="……" />
+				</Action>			
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16011" /> 				
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16012" SkipTrigger="Y"/> 								
+    		</Event>			
+		</Step>		
+  		<Step ID="52" ParentList="51" ParentCost="1" >			
+    		<Event Memo="快去cT商会造船厂c和c正义的伙伴c聊聊吧！" TargetMap="11605" TargetObj="16013" TargetName="和t正义的伙伴t对话">      
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11605" ObjID="16013" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="2" Info="哈，鼬西果然逃跑了。\n我跟踪它，也许能追查到恐惧魔王。" />	
+					<Msg NpcID="15" ImageID="2" Info="你先把这件事报告【莱卡】大人吧，\n分头行动gogogo！" />																																												
+					<Option Info="这就去找【莱卡】" />
+				</Action>										
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11605, 16013" /> 				
+    		</Event>			
+		</Step>						
+  		<Step ID="3" ParentList="52" ParentCost="1" >			
+    		<Event Memo="c莱卡c大人紧急召见，快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="弗雷基港发现鼬西！" />         
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="正义的伙伴刚才飞鸽传书：\n他跟踪鼬西到【月光湖】后，\n就失去了线索。\n【@nick】能去协助追查吗？" />					
+					<Option Info="这就去【月光湖】" />
+				</Action>			                                           
+    		</Event>			                                             <!-- 加鼬西、魔王 -->
+		</Step>		                                                           <!--节点2↓-->				
+  		<Step ID="5" ParentList="3" ParentCost="1" >			
+    		<Event Memo="c鼬西c可能在c月光湖c，快去看看有什么线索吧！" TargetMap="11502" TargetObj="998" TargetName="和t鼬西t对话">  
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="998" TaskOption="找到你啦！" />
+				</Trigger>											
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="什——么——\n封印风之龙的计划你都告诉摩尔了？" />										
+					<Msg NpcID="998" ImageID="6" Info="我我我不是故意的，\n我只想和鼹鼠交个朋友，我也没想到……" />		
+					<Msg NpcID="345" ImageID="1" Info="背叛我者，就要有接受惩罚的觉悟——" />								
+					<Option Info="啊？!" />
+				</Action> 
+    			<Action Type="MOVIE" Url="task_250_1.swf" MapLevel="TASK" Pos="0,0"/> 	 <!--  魔王战	-->	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="【@nick】救我！！！\n尤利大人怒了，真的会要狐狸命的（T_T）!" />													
+					<Option Info="123让我准备下" />
+				</Action>										
+    		</Event>			
+		</Step>
+  		<Step ID="6" ParentList="5" ParentCost="1" >	
+			<Condition>
+				<Battle ID="3103" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="终于战胜了恐惧魔王↖(^o^)↗，快让它放了鼬西吧！" TargetMap="11502" TargetObj="345" TargetName="和t恐惧魔王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="345" TaskOption="放了鼬西吧！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="珍惜你们最后的时间吧，\n我们很快会再见面的——" />										
+					<Option Info="后会有期" />
+				</Action> 
+    			<Action Type="MOVIE" Url="task_250_2.swf" MapLevel="TASK" Pos="0,0"/>      <!--  魔王离场	-->																			
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="快去c月光湖c打败c恐惧魔王c,救出鼬西吧！" TargetMap="11502" TargetObj="345" TargetName="打败t恐惧魔王t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="345" TaskOption="我要挑战你！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="违抗吾之意志的摩尔，\n你有必死的觉悟吗——" />		
+					<Option Info="来战！" />
+					<Option Info="忽然肚子痛" NextStep="6" />					
+				</Action>
+    			<Action Type="COMMAND" Command="BATTLE" Params="3103" /> 									
+    		</Event>				  		
+		</Step>		
+  		<Step ID="7" ParentList="6" ParentCost="1" >				  		
+    		<Event Memo="终于战胜了恐惧魔王↖(^o^)↗，快去c月光湖c和c鼬西c聊聊吧！" TargetMap="11502" ObjID="998" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="998" TaskOption="不用害怕啦" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="呼——得救的感觉真好！\n尤利大人太冷酷无情了（T_T），\n我决定投奔【@nick】。" />	
+					<Option Info="以后不许搞破坏了^^" />
+				</Action> 					
+				<Action Type="TALK">							
+					<Msg NpcID="998" ImageID="1" Info="嘿嘿，这么说你答应啦！\n以后我会努力为“新老大”打听情报，\n消灭坏人的~" />	
+					<Msg NpcID="998" ImageID="5" Info="对啦，我刚才在“平原8区”看到一个尖耳朵摩尔飘~~进了森林。" />										
+					<Option Info="尖耳朵？" />
+				</Action>  
+    			<Action Type="MOVIE" Url="task_250_3.swf" MapLevel="TASK" Pos="0,0"/>  <!--  凯茜	-->		
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="很像摩尔，但是又大大不同的“怪人”。\n老大你有什么想法和意见咩？" />		
+					<Option Info="灰常可疑……" />
+				</Action>   					
+				<Action Type="TALK">	
+					<Msg NpcID="998" ImageID="1" Info="解决老大的的疑惑就是我的使命！\n【@nick】稍等，我这就去调查她！" />												
+					<Option Info="好好干^^" />
+				</Action>   
+				<Action Type="TALK">	
+					<Msg NpcID="401" ImageID="3" Info="（【莱卡】大人还在等【@nick】的最新情报~\n不去告诉他吗？）" />												
+					<Option Info="这就去找【莱卡】！" />
+				</Action>  				
+    		</Event>				  						
+		</Step>			
+  		<Step ID="8" ParentList="7" ParentCost="1" >			
+    		<Event Memo="战胜了恐惧魔王，快去c国王呈见厅c报告c莱卡c大人吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="打败魔王尤利了！" />         
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="【尤利】一直是笼罩整个大陆的“恐怖”，\n这次竟然被打败……\n有点不可思议啊。" />
+					<Msg NpcID="25" ImageID="1" Info="呵呵，你就是想太多。\n这难道不是让人激动的胜利吗！" />		
+					<Msg NpcID="25" ImageID="1" Info="请【@nick】收下我们的小小谢礼吧！" />																																	
+					<Option Info="摩尔勇士万岁！" />
+				</Action>			
+    		</Event>			
+		</Step>			
+ <!-- 节点2↓ -->
+	
+</Procedure>
+</Task>

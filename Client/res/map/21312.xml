@@ -1,0 +1,81 @@
+<!--平原12区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="759,303" targetMapId="21501" targetTransPortId="2" name="神秘地道"/>
+		<node id="2" pos="1536,483" targetMapId="21311" targetTransPortId="2" name="神秘地道"/>
+		<node id="3" pos="1288,215" targetMapId="11504" targetTransPortId="2" name="兽王峡谷"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="TransPort" level="downLevel" res="MC_door_2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="701" type="NPC" res="MC_npc_701" action="5"/>
+		<node id="512" type="NPC" res="MC_npc_512" level="contentLevel" fun="" taskType="0" action="16" needLevel="" needKind=""/>
+		<node id="222" type="NPC" res="MC_npc_222" action="17"/>
+		<node id="7" type="NPC" res="MC_npc_7" action="0"/>	
+	</npc>
+	<actions>
+		<proAction npcID="7" id="0" type="0" answer="（\乘坐陆行鸟/)$摩尔勇士万岁！" to="d1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你想乘坐陆行鸟旅行吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="3" type="0" answer="我要登记$让我再想想" to="d2$o" >
+			<des>
+				<![CDATA[2#只有在风之洞穴登记过，才能使用陆行鸟，现在是否需要进行登记呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="4" type="0" answer="我要使用$不需要，谢谢" to="d3$o" >
+			<des>
+				<![CDATA[2#已经为你登记了风之洞穴的陆行鸟传送点，现在需要使用陆行鸟吗？]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="6" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="7" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="8" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="9" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="14" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="15" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="512" id="16" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_512$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#受了伤记得来我这里治疗！]]>
+			</des>
+		</proAction>
+		<proAction npcID="222" id="17" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#……]]>
+			</des>
+		</proAction>
+		
+	</actions>
+</map>

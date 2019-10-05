@@ -1,0 +1,33 @@
+<!--平原三区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308"> 
+		<node id="1" pos="79,518" targetMapId="21302" targetTransPortId="2" name="平原二区"/>
+		<node id="2" pos="1522,485" targetMapId="11401" targetTransPortId="1" name="麦田村"/>
+		<node id="3" pos="470,113" targetMapId="21304" targetTransPortId="1" name="平原四区"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_enter0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_enter1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="TransPort" level="contentLevel" res="MC_enter2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>		
+		<node id="703" type="NPC" res="MC_npc_703" action=""  taskShowSteps="35007_4|5|6|7|8|9|10|11" />				
+	</npc>		
+	<actions>
+		<proAction npcID="12" id="0" type="0" answer="假面奇奇帕？" to="a1" colorID="1">
+			<des>
+				<![CDATA[6#啊哈哈哈哈……笑死我了哈哈……\n那些调皮的哈哈哈【假面“奇奇”帕】哈哈……\n我我我笑得肚子疼……哈哈哈……]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="1" type="0" answer="……" to="a2" colorID="1">
+			<des>
+				<![CDATA[5#快去找这里的【红色土堆】，它们躲在里面。\n用基本“刨土”动作，像你平时刨土堆那样。\n小心吸入奇奇帕粉，3小时笑不停哈哈哈哈……]]>
+			</des>
+		</proAction>
+		<proAction npcID="12" id="2" type="0" answer="我这就去" to="E0" colorID="1">
+			<des>
+				<![CDATA[2#啊哈哈笑得我想哭……为了G档案补完计划是值得的T_T……\n和【假面奇奇帕】签订契约速速带来我的研究所。\n【G档案】里一定要记录它们的详细资料哈哈哈……！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

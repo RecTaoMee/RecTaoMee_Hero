@@ -1,0 +1,138 @@
+<Task ID="14" Memo="c卡拉兽c挑战成功！\n快告诉c村长c大人吧！" TargetMap="11103">
+   	<Procedure>
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="c卡拉兽c挑战成功！\n快告诉c村长c大人吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+    	</Step>			   
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="c卡拉兽c挑战成功！\n快告诉c村长c大人吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="【卡拉兽】挑战成功↖(^o^)↗" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="喔嚯嚯——我教你的技能厉害吧？" />
+					<Msg NpcID="334" ImageID="2" Info="（报告“小主人”，必须说“厉害”~）" />										
+					<Msg NpcID="5" ImageID="1" Info="“吉普豆泥”看起来不太精神啊~~" />		
+					<Msg NpcID="5" ImageID="1" Info="“照顾精灵”方面你可以请教【皮克司】。\n他就住在【皮克司研究所】，\n从【我屋里的梯子】就能前往。" />																															
+					<Option Info="这就去见【皮克司】！" />											
+				</Action>	
+    			<Action Type="MOVIE" Url="task_5_2.swf" MapLevel="UP" Pos="-194,-356" />																
+    		</Event>
+		</Step>	             <!-- 
+  		<Step ID="12" ParentList="1" ParentCost="1" >
+    		<Event Memo="c地道c终点站——c王国南街*皮克司研究所c" TargetMap="21102" TargetName="去t吉普地道t"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21102" />	
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="950, 800" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="2000" /> 							
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />				
+    		</Event>			
+		</Step>
+  		<Step ID="13" ParentList="12" ParentCost="1" >
+    		<Event Memo="c地道c终点站——c王国南街*皮克司研究所c" TargetMap="21103" TargetName="去t吉普地道t"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21103" />	
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="950, 1200" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="2000" /> 							
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />				
+    		</Event>			
+		</Step>			 
+  		<Step ID="21" ParentList="1" ParentCost="1" >
+    		<Event Memo="c地道c终点站——c王国南街*皮克司研究所c" TargetMap="21103" TargetName="去吉普地道"> 
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11103" />					  					  					  					  
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="找不到【皮克司】" />		
+				</Trigger>
+				<Action Type="TALK">														
+					<Msg NpcID="5" ImageID="2" Info="【皮克司】就在【摩尔王国·皮克司研究所】里，\n从【我屋里的梯子】下去，穿过“吉普地道”就到了。" />		
+					<Msg NpcID="5" ImageID="2" Info="快去吧，勇敢的孩子——！" />																				
+					<Option Info="这就去见【皮克司】！" NextStep="21" />											
+				</Action>				
+    		</Event>			
+		</Step>				     	-->			
+  		<Step ID="11" ParentList="1" ParentCost="1">
+    		<Event Memo="地道终点站——王国南街*c皮克司研究所c，\n研究所里住着苦恼的研究员·c皮克司c" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="你好啊" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="4" Info="Hi早上好啊~，\n你从吉普豆村来吗？" />		
+					<Option Info="我来自【未来】" />
+				</Action>							
+				<Action Type="TALK">	
+					<Msg NpcID="12" ImageID="6" Info="什么！！！！！！！！！！！\n——来自未来？！" />	
+					<Option Info="呀什么从【旅行箱】跳出来了" TalkOver="Y" />
+				</Action>													
+    			<Action Type="MOVIE" Url="task_6_1.swf" MapLevel="TASK" Pos="-3,0" />				
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="2" Info="刚才那个是啥？" />							
+					<Option Info="照相机" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="4" Info="请等一下......我......感受到了...\n这一定将成为本 世 纪 最 伟 大 发 明——！" />							
+					<Option Info="（⊙_⊙？）啊" />
+				</Action>
+     			<Action Type="MOVIE" Url="task_6_2.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />		
+    		</Event>		<!--提交节点1-->																							
+		</Step>
+  		<Step ID="2" ParentList="11" ParentCost="1" >
+    		<Event Memo="最伟大的发明？\n——赶快去c王国南街*皮克司研究所c问问c皮克司c吧！c" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="关于照相机" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="刚才你看到的是带有“契约魔法”的卡片，\n可以封印黑化精灵！" />						
+					<Msg NpcID="12" ImageID="1" Info="地道里正好有很多【黑化精灵】，\n我们赶紧去试试吧！" />		
+					<Option Info="好嘞！" />
+				</Action>																													
+    			<Action Type="MOVIE" Url="task_6_3.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />	
+    		</Event>
+		</Step>
+  		<Step ID="5" ParentList="2" ParentCost="1" >
+    		<Event Memo="小石怪竟然被封印了？！\n——赶快去c王国南街*皮克司研究所c问问c皮克司c吧！c" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="封印小石怪了！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="2" Info="小石怪应该已经在你的【精灵背包】里了！\n今后它会成为你忠实的【战斗伙伴】！" />		
+					<Option Info="好诶^^！" SkipTrigger="Y" />
+				</Action>	
+    		</Event>
+		</Step>				<!--提交节点1-->	
+  		<Step ID="3" ParentList="5" ParentCost="1" >
+    		<Event Memo="小石怪竟然被封印了？！\n——赶快去c王国南街*皮克司研究所c问问c皮克司c吧！c" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="封印小石怪了！" />			
+				</Trigger>					 												
+     			<Action Type="MOVIE" Url="task_10074_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />							
+				<Action Type="TALK">	
+					<Msg NpcID="12" ImageID="1" Info="【精灵研究所】正在研究稀有精灵，\n秘密制定了【G 档 案】。\n【改造精灵】成为可能——！！" />						
+					<Option Info="\(^o^)/！" SkipTrigger="Y" />
+				</Action>								
+    		</Event>
+		</Step>
+  		<Step ID="10" ParentList="3" ParentCost="1" >
+    		<Event Memo="远古精灵们的秘密……！\n快去c王国南街*皮克司研究所c问问c皮克司c吧。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【G档案】万岁！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="对了，这是【@nick】第一次来【摩尔王国】吧？" />					
+					<Option Info="【摩尔王国】？" />						
+				</Action>	
+    			<Action Type="COMMAND" Command="BGM_MUTE" />  <!-- 背景音乐静音 -->								
+    			<Action Type="MOVIE" Url="task_114_4.swf" MapLevel="TASK" Pos="0,0" />		
+    			<Action Type="COMMAND" Command="BGM_NORMAL" />  <!-- 背景音乐正常播放 -->													
+				<Action Type="TALK">		
+					<Msg NpcID="12" ImageID="1" Info="这个“魔法指南针”可以把你传送到王国各地。\n我把它钉在【左下角】。\n通过它可以去拜见伟大的【摩尔王】！\n旅途愉快！" />												
+					<Option Info="这就去见【摩尔王】！" />
+				</Action>		
+    			<Action Type="MOVIE" Url="task_6_4.swf" MapLevel="TASK" Pos="0,0" />								
+    		</Event><!--提交节点3-->	
+		</Step>	
+</Procedure>
+</Task>
+

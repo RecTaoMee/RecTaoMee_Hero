@@ -1,0 +1,27 @@
+<!-- 
+	1、TypeList,CntList: 用于交换的宠物类型与数量列表，两个列表的数量必须对应
+		TypeList配置的项不能超过6个
+		CntList中的配置项的数量以及数值相加不能超过6
+	2、GetTypeList,GetCntList: 获得的宠物类型与数量列表，两个列表的数量必须对应
+		GetTypeList配置的项不能超过6个
+		GetCntList中的配置项的数量以及数值相加不能超过6,其中和必须小于CntList的和
+	3、用于交换的宠物除类型外没有其他限制
+	4、获得的宠物都是1级
+	5、对于第3、4项有其他需求的需要提前提出
+	exchangeType:宠物兑换类型，1表示G档案中多宠物兑换类型
+举例：
+<PetExchanges>
+	<PetExchange ID="1" TypeList="1 2 3" CntList="1 1 1" GetTypeList="4 5" GetCntList="1 1" />
+</PetExchanges>
+
+-->
+
+
+ 
+<PetExchanges>
+	<PetExchange ID="1" exchangeType="1" TypeList="3 4 6 8 9 10" CntList="1 1 1 1 1 1" GetTypeList="20" GetCntList="1" />
+	<PetExchange ID="2" TypeList="6" CntList="3" GetTypeList="1" GetCntList="1" />
+	<PetExchange ID="3" TypeList="6" CntList="3" GetTypeList="2" GetCntList="1" />
+		
+	<PetExchange ID="4" exchangeType="1" TypeList="25 26 28 29 30 31" CntList="1 1 1 1 1 1" GetTypeList="1801" GetCntList="1" Name="伊影" /> 
+</PetExchanges>

@@ -1,0 +1,521 @@
+<Task ID="35003" Memo="G档案·哒哒鸟\n周六~周日：6:00~24:00" TargetMap="11202">
+   	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="快去c勇士广场c，找出c哒哒鸟A型c吧！" TargetMap="11202" TargetObj="869,370" TargetName="点击t哒哒鸟A型t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11202" ObjID="12" />	
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>   	
+  		<Step ID="10" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c勇士广场c，找出c哒哒鸟A型c吧！" TargetMap="11202" TargetObj="869,370" TargetName="和t哒哒鸟A型t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11202" ObjID="12" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒！我是【哒哒鸟·A型】\n我感受到了！\n我已经到了该合体的时候了——！" />				
+					<Msg NpcID="326" ImageID="1" Info="我有个害羞的请求……\n可以帮我找到“另外两个”和我合体的哒哒鸟吗？\n我们去【麦田村】找它们吧！" />
+					<Option Info="现在就去麦田村！" />
+				</Action>	
+				<Action Type="COMMAND" Command="SET_STA_RANGE" Params="1, 11, 19" /> 		
+    		</Event>
+		</Step>
+		<Step ID="12" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="12"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5112" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5112" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5112" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5112" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>			
+		</Step>				
+		<Step ID="11" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="11"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5111" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5111" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5111" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5111" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>		
+		<Step ID="13" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="13"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5113" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5113" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5113" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5113" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>	
+		<Step ID="14" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="14"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5114" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5114" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5114" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11404" ObjID="5114" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>	
+		<Step ID="15" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="15"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5115" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5115" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟B型c吧！" TargetMap="11401" TargetObj="5115" TargetName="和t哒哒鸟B型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5115" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>
+		<Step ID="16" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="16"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5116" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5116" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5116" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5116" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>
+		<Step ID="17" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="17"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5117" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5117" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5117" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5117" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>
+		<Step ID="18" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="18"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5118" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5118" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5118" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5118" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>
+		<Step ID="19" ParentList="10" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="19"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5119" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5119" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="1" Info="哒！哒！哒！（就！是！它！）\n我感受到了！\n只有它才可以！" />	
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒^^^我是【哒哒鸟·B型】。\n我也很喜欢你！\n我们合体吧！" />	
+					<Msg NpcID="326" ImageID="2" Info="我们快去找【哒哒鸟·C型】完成最终的“哒哒鸟三兄弟”合体吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>			
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="5119" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5119" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒……\n哒哒哒……………………\n我和它没有“合体感应”……\n再找找看吧！" />				
+					<Option Info="好吧……" />
+				</Action>			
+    		</Event>	
+		</Step>																				
+		<Step ID="3" ParentList="11, 12, 13, 14, 15, 16, 17, 18, 19" ParentCost="1" >		
+			<Event Memo="快去c麦田村广场c，找出c哒哒鸟C型c吧！" TargetMap="11401" TargetObj="" TargetName="和t哒哒鸟C型t对话"> 							
+				<Action Type="COMMAND" Command="SET_STA_RANGE" Params="1, 21, 29" /> 			
+    		</Event> 
+		</Step>		
+		
+<!-- 哒哒鸟C↓ -->		
+		<Step ID="24" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="24"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5114" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5114" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />			
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />															
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5114" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5114" />																																						
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />		
+				</Action>								
+    		</Event>			
+		</Step>				
+		<Step ID="21" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="21"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5111" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5111" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />										
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5111" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5111" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>				
+		</Step>		
+		<Step ID="22" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="22"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5112" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5112" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />										
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5112" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5112" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>	
+		</Step>			
+		<Step ID="23" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="23"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5113" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5113" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />										
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5113" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5113" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>	
+		</Step>	
+		<Step ID="25" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="25"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5115" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5115" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />											
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5115" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5115" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>				
+		</Step>
+		<Step ID="26" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="26"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5116" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5116" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />												
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5116" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5116" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>				
+		</Step>
+		<Step ID="27" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="27"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5117" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5117" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />										
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5117" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5117" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>		
+		</Step>
+		<Step ID="28" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="28"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5118" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5118" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />										
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5118" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5118" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>		
+		</Step>
+		<Step ID="29" ParentList="3" ParentCost="1" >
+    		<Condition>
+				<Buffer Sta1="29"/>	
+			</Condition>		
+			<Event ConditionType="IN" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5119" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5119" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n它就是【哒哒鸟·C型】！" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒^^^…我好想你们啊~" />	
+					<Msg NpcID="326" ImageID="2" Info="谢谢你，合体成功！\n我们3个的组合太完美了！\n现在让我们看看你的实力吧哒哒！╰⊙▽⊙╯" />	
+					<Option Info="战斗开始！" />	
+				</Action>		
+				<Action Type="COMMAND" Command="BATTLE" Params="11" RightUp="Y" SkipTrigger="Y" />						
+    		</Event>
+			<Event ConditionType="OUT" Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="5119" TargetName="和t哒哒鸟C型t对话"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11401" ObjID="5119" />																																							
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒哒哒…哒哒哒…？\n（你喜欢看“柯南”吗…？）" />	
+					<Msg NpcID="326" ImageID="1" Info="哒哒哒……\n（不太喜欢啊……）" />	
+					<Msg NpcID="326" ImageID="2" Info="不行啊！！爱好不一样！\n勉强没幸福！\n我和它没有“合体感应”。\n再找找看吧！" />	
+					<Option Info="恩，继续找哒哒鸟！" />
+				</Action>		
+    		</Event>			
+		</Step>		 
+		<Step ID="5" ParentList="21, 22, 23, 24, 25, 26, 27, 28, 29" ParentCost="1" >	
+			<Event Memo="快去c麦田村广场c，和c哒哒鸟C型c聊聊吧！" TargetMap="11401" TargetObj="" TargetName="去t麦田村广场t"> 	
+  				<Trigger>				
+					<Item Type="ENTER_MAP" MapID="11401" />		
+				</Trigger>																		
+				<Action Type="TALK">
+					<Msg NpcID="326" ImageID="2" Info="哒！哒！哒！\n我有一个请求……\n很多哒哒鸟每天都期待合体！\n【明天】能继续帮它们吗？" />	
+					<Option Info="一言为定！" />
+				</Action>	
+    		</Event>		
+		</Step>			
+	</Procedure>
+</Task>
+

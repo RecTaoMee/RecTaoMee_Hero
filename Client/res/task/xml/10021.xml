@@ -1,0 +1,40 @@
+<task id="10021">
+  <taskDes>
+	<![CDATA[12级！【下水道挑战】正式向您开放！请前往负责守卫下水道的【守卫士兵•H】了解情况！*古老下水道入口•城堡吊桥边。$$]]>
+	<![CDATA[挑战目标——下水道五层【库噜王】，关于解锁钥匙这次再问问“不会说话的蛤蟆”吧！$$]]>
+	<![CDATA[第五层挑战成功了！快向【守卫士兵·H】领取特别称号吧！]]>	
+  </taskDes>
+  <taskPro>
+		<pro type="0" parent="" npcID="207" title="参加下水道挑战" action="0" bossID="" bossNum="" needRes="" needResNum="" unResAction="2" taskDes="1" mapID="11220"/>
+		<pro type="0" parent="0" npcID="207" title="关于库噜王的情报" action="2" bossID="2004" bossNum="1" needRes="" needResNum="" unResAction="2" taskDes="1" mapID="21207"/>
+		<pro type="0" parent="1" npcID="207" title="战胜库噜王了！" action="3" needRes="" needResNum="" unResAction="" taskDes="2" mapID="11220"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="207" answer="接受挑战！$等我再变强些……" to="s1$o">
+       <des>
+		 <![CDATA[1#【@nick】你好啊！$$]]>
+		 <![CDATA[1#为了帮助这些“心灵扭曲”的精灵，锻炼摩尔，训练勇气和力量，自从勇士时代开始，“下水道挑战”成为了勇士协会的传统。$$]]>
+		 <![CDATA[1#你已经是【Lv12】（12级）有能力挑战下水道的摩尔了！挑战成功将得到【下水道“特别称号”】$$]]>	
+		 <![CDATA[1#顺便说一下我已经有很多称号了哈哈————准备好接受挑战了吗？]]>		 
+	   </des>
+    </proAction>
+    <proAction id="1" type="0" npcID="207" answer="知道了！" to="o">
+       <des>
+		 <![CDATA[1#本次的挑战是位于【第五层的库噜王】，愿黑暗和潮湿不会拖垮你的意志，愿胜利与你同在。$$]]>	
+		 <![CDATA[1#对了，如果你已经在下水道里记录了【魔法传送石】，我可以帮你使用魔法传送。]]>
+	   </des>
+    </proAction>
+    <proAction id="2" type="0" npcID="207" answer="知道了！" to="o">
+       <des>
+		 <![CDATA[1#进入精灵领域挑战需要打开封印之门，每个封印之门都有钥匙，获得钥匙的方法就要问【不会呼吸的蛤蟆】们了。$$]]>
+		 <![CDATA[1#注意一些不知是谁留下的【魔法罐子】可以帮助你——~~一些个人经验。祝你好运了！]]>
+	   </des>
+    </proAction>
+    <proAction id="3" type="0" npcID="207" answer="摩尔勇士万岁！" to="c">
+       <des>
+		 <![CDATA[1#根据《勇士协会》第一章第2条，$$]]>
+		 <![CDATA[1#授予王国【特别称号】——]]>
+	   </des>
+    </proAction>
+</actions>
+</task>

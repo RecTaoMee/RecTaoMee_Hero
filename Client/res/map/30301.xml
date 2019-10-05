@@ -1,0 +1,29 @@
+<map name="基姆的秘密宝库" type="0" comment="基姆的秘密宝库" sound="BGM-201.mp3">
+	<process>
+		<node name="Map_30301"/>
+	</process>
+	<transport intPos="90,398">
+		<node id="1" pos="403,756" targetMapId="21306" targetTransPortId="2" name="格历尔平原6区"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="Object"  res="MC_treasure"  tip="黑暗魔王基姆的财宝"/>
+	</object>
+	<npc>
+		<node id="51" type="NPC" name="鬼脸箱" res="MC_npc_1" action="" />
+		<node id="350" type="NPC" name="基姆" res="boss_mc" action="1" needType="task" need="39003" needAction="2"/>
+	</npc>
+	<actions>
+		<proAction id="1" npcID="350" type="0" answer="准备一下" to="o" colorID="0">
+			<des>
+				<![CDATA[1#胆敢闯进我的秘密宝库，你们休想再活着回去！]]>
+			</des>
+		</proAction>	
+		<proAction id="2" npcID="350" type="0" answer="我要为民除害!$准备一下" to="a3$o" colorID="1$0">
+			<des>
+				<![CDATA[1#胆敢闯进我的秘密宝库，你们休想再活着回去！]]>
+			</des>
+		</proAction>	
+		<proAction id="3" npcID="350" type="5" fightID="3323" />
+	</actions>
+</map>

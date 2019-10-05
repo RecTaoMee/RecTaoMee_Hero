@@ -1,0 +1,50 @@
+<!--修炼之域一层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="224,306" targetMapId="21637" targetTransPortId="0" name="弓术试炼之间"/>
+		<node id="2" pos="300,213" targetMapId="21636" targetTransPortId="0" name="剑术试炼之间"/>
+		<node id="3" pos="405,194" targetMapId="21639" targetTransPortId="0" name="信仰试炼之间"/>
+		<node id="4" pos="509,211" targetMapId="21638" targetTransPortId="0" name="魔法试炼之间"/>
+		<node id="5" pos="584,301" targetMapId="21640" targetTransPortId="0" name="忍术试炼之间"/>
+	</transport>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="TransPort" res="MC_door_1" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_2" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_3" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_4" transPortId="4"/>
+		<node id="5" type="TransPort" res="MC_door_5" transPortId="5"/>
+		<node id="22" type="NPC" res="MC_npc_22" action="x6"/>
+		<node id="26" type="NPC" res="MC_npc_26" action="x6"/>
+		<node id="27" type="NPC" res="MC_npc_27" action="x6"/>
+		<node id="28" type="NPC" res="MC_npc_28" action="x6"/>
+		<node id="29" type="NPC" res="MC_npc_29" action="x6"/>
+		<node id="14" type="NPC" res="MC_npc_14" action="3"/>
+		<node id="526" type="NPC" res="MC_npc_526" action="4"/>
+    </npc>
+    <actions>
+		<proAction npcID="" id="0" type="0" answer="老师请指教！$返回勇士斗技场大厅$摩尔勇士万岁！" to="a1$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#果然没有让我们失望，今天就让你见识一下我们五位导师联手的实力！！！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="5" fightID="3045" />
+		<proAction npcID="" id="2" type="0" answer="进入下一域$返回勇士斗技场大厅$摩尔勇士万岁！" to="x2$x1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#你的强大已经超乎了我们的想象，但对付“它们”还不够，希望你继续潜心修炼，继续守卫勇士的国度！]]>
+			</des>
+		</proAction>
+		<proAction npcID="14" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_14$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#他们出手是不是太重了？]]>
+			</des>
+		</proAction>
+		<proAction npcID="526" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_526$b7_526$a5$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
+			</des>
+		</proAction>
+		<proAction actionID="5" type="1" outMap="1" level="taskLevel" name="task_9_1" moviepos="0,0" to="a4"/>
+	</actions>
+</map>

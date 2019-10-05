@@ -1,0 +1,23 @@
+<task id="10008">
+	<taskDes>
+		<![CDATA[摩尔王发出赏星令了，去公告栏看看吧。$$]]>
+		<![CDATA[神奇的失窃事件？快去【摩尔城堡】问问摩尔王到底怎么回事！$$]]>
+		<![CDATA[神秘小偷从城堡中偷走了相册，摩尔王因此非常悲伤。]]>
+	</taskDes>
+	<laterDes>
+		<![CDATA[昨天摩尔城堡里发生了一起盗窃案，小偷从城堡偷走了很重要的东西。谁能找回失窃物品，摩尔王将给予重赏。]]>
+	</laterDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+			<pro type="0" parent="" npcID="300" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11202"/>
+			<pro type="0" parent="0" npcID="30" action="0" title="摩尔城堡失窃了？" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11307"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="30" answer="嗯..." to="c">
+			<des>
+				<![CDATA[1#.......【@nick】，我需要一点时间来平复心情。关于这件事的具体情况你可以向【宾德】了解。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

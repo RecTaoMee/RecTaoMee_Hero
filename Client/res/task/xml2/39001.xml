@@ -1,0 +1,342 @@
+<Task ID="39001" Memo="魔王尤利计划通过【四属性之阵】彻底破坏摩尔王国，请前往勇士广场向c多修c了解详细！\n周一~周日：19:00~21:00" TargetMap="11202">
+<Procedure>
+	<Step ID="1" ParentList="0" ParentCost="0" >
+    	<Event Memo="魔王尤利计划通过【四属性之阵】彻底破坏摩尔王国，请前往勇士广场向c多修c了解详细！\n周一~周日：19:00~21:00" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="开始调查!" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+		</Event>
+	</Step>
+	
+	<Step ID="2" ParentList="1" ParentCost="1" >
+    	<Event Memo="魔王尤利计划通过【四属性之阵】彻底破坏摩尔王国，请前往勇士广场向c多修c了解详细！\n周一~周日：19:00~21:00" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="开始调查" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="104" ImageID="1" Info="根据王国图书馆的记载，必须按照【风地水火的顺序】来破坏4个法阵才有可能阻止魔王的计划。" />
+				<Msg NpcID="104" ImageID="1" Info="我发现【金甲剑魂】在王国南街那里，我现在把你送过去！" />
+				<Option Info="好的！"/>
+			</Action>
+			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11205,39001" />
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="11205,1" />
+		</Event>
+	</Step>
+	
+<!--金甲剑魂-->	
+	<Step ID="3" ParentList="2" ParentCost="1" >
+		<Condition>
+			<Buffer Sta1="s1"/>
+		</Condition>			
+    	<Event ConditionType="IN" Memo="" TargetMap="11205" TargetObj="39001" TargetName="">
+  			<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11205,39001,2"  /><!--跳帧-->	
+			<Action Type="COMMAND" Command="DELAY" Params="1500" SkipTrigger="Y" NotUpdateBuffer="Y"/>																
+    	</Event>
+    	<Event ConditionType="OUT" Memo="快点想办法破坏c金甲剑魂c守护的法阵！" TargetMap="11205" TargetObj="39001" TargetName="和t金甲剑魂t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11205" ObjID="39001" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="721" ImageID="1" Info="哼！作为无畏的战魂，没有了等同于自己生命的武器是不会再与任何人战斗的！" />
+					<Msg NpcID="2" ImageID="1" Info="未来勇士，我感受到———————\n      上方悬浮的宝剑是破坏法阵的关键，利用宝剑破坏保护法阵的光柱！" />
+					<Option Info="好的！"/>
+				</Action>																
+    	</Event>
+	</Step>	
+		
+	<Step ID="4" ParentList="3" ParentCost="1" >
+		<Event Memo="成功破坏了保护法阵的光柱，只要再c击败金甲剑魂c就可以破坏法阵！" TargetMap="11205" TargetObj="39001" TargetName="和t金甲剑魂t对话">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11205" ObjID="39001" />
+			</Trigger>
+				<Action Type="TALK">
+				<Msg NpcID="721" ImageID="1" Info="看来你还有点意思，想破坏我的法阵就击败我吧！" />
+					<Option Info="来吧！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					<Option Info="让我准备一下！" NextStep="4"/>
+				</Action>
+		</Event>
+	</Step>
+	
+	<Step ID="5" ParentList="4" ParentCost="1" >
+		<Condition>
+			<Battle ID="2901" Count="1" />
+		</Condition>			
+    	<Event ConditionType="OUT" Memo="成功破坏了保护法阵的光柱，只要再c击败金甲剑魂c就可以破坏法阵！" TargetMap="11205" TargetObj="39001" TargetName="战胜t金甲剑魂t">
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11205" ObjID="39001" />		
+			</Trigger>
+  			<Action Type="COMMAND" Command="BATTLE" Params="2901"/>																	
+    	</Event>
+    	<Event ConditionType="IN" Memo="把战败的金甲剑魂封印起来，这样魔王就没办法修复风之法阵了！" TargetMap="11205" TargetObj="39001" TargetName="和t金甲剑魂t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11205" ObjID="39001" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="721" ImageID="1" Info="可恶，果然是传说中的…但是破坏了我的法阵不足以拯救你们的王国！" />
+					<Msg NpcID="721" ImageID="1" Info="摩尔城堡吊桥的普豆泥王想必已经发动了它的法阵了吧！" />
+					<Option Info="立刻前往！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+				</Action>																
+    	</Event>
+	</Step>
+		
+	<Step ID="6" ParentList="5" ParentCost="1" >
+		<Event Memo="" TargetMap="11204" TargetObj="39001" TargetName="寻找t普豆泥王t">
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11205,39001" />
+				<Action Type="MOVIE" Url="task_39001_39002.swf" MapLevel="CONTENT" Pos="534,-450" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11204,39003" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11204,1" />
+		</Event>
+	</Step>
+
+<!--普豆泥王-->
+	<Step ID="7" ParentList="6" ParentCost="1" >
+		<Event Memo="c普豆泥王c在c摩尔城堡吊桥c那里！快点去阻止他！" TargetMap="11204" TargetObj="39003" TargetName="寻找t普豆泥王t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11204" ObjID="39003" />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="500" ImageID="1" Info="我是没有存在感的普豆泥王，我没有存在感…我要毁灭一切…" />
+					<Option Info="你有存在感！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="500" ImageID="1" Info="是吗？不要骗我，回答我，我最害怕什么？" />
+					<Option Info="龙卷风" />
+					<Option Info="地震" NextStep="71" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+					<Option Info="火灾" NextStep="71" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+					<Option Info="水灾" NextStep="71" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+				</Action>
+		</Event>
+	</Step>
+	
+	<Step ID="71" ParentList="0" ParentCost="1" >
+		<Event Memo="c普豆泥王c在c摩尔城堡吊桥c那里！快点去阻止他！" TargetMap="11204" TargetObj="39003" TargetName="寻找t普豆泥王t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11204" ObjID="39003" />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="500" ImageID="1" Info="连我最害怕什么都不知道，回去好好复习精灵图鉴册去吧！" />
+					<Option Info="......" NextStep="7"/>
+				</Action>
+		</Event>
+	</Step>
+	
+	
+	<Step ID="8" ParentList="7" ParentCost="1" >
+		<Event Memo="" TargetMap="11204" TargetObj="39003" TargetName="和t普豆泥王t对话">
+				<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11204,39003,2"  /><!--跳帧-->
+				<Action Type="COMMAND" Command="DELAY" Params="1500" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+		</Event>
+	</Step>
+	
+	<Step ID="9" ParentList="8" ParentCost="1" >
+		<Condition>
+			<Battle ID="2902" Count="1" />
+		</Condition>			
+    	<Event ConditionType="OUT" Memo="只有击败c普豆泥王c才能破坏法阵！" TargetMap="11204" TargetObj="39003" TargetName="和t普豆泥王t对话">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11204" ObjID="39003" />		
+			</Trigger>
+			<Action Type="TALK">
+					<Msg NpcID="500" ImageID="1" Info="感动啊……终于有存在感了，哇哈哈！\n让我好好“感谢”你吧！" />
+					<Option Info="看我的！" />
+					<Option Info="快跑！" NextStep="9"/>
+				</Action>
+  			<Action Type="COMMAND" Command="BATTLE" Params="2902"/>																	
+    	</Event>
+    	<Event ConditionType="IN" Memo="把普豆泥王封印起来，这样魔王就没办法修复地之法阵了！" TargetMap="11204" TargetObj="39003" TargetName="和t普豆泥王t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11204" ObjID="39003" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="500" ImageID="1" Info=".....居然击败了强大的我！\n...我们不会失败的...\n...沃特尔王...【王国西街】..." />
+					<Option Info="立刻前往！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+				</Action>																
+    	</Event>
+	</Step>
+		
+	<Step ID="10" ParentList="9" ParentCost="1" >
+		<Event Memo="" TargetMap="11204" TargetObj="39003" TargetName="">
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11204,39003" />
+				<Action Type="MOVIE" Url="task_39001_39004.swf" MapLevel="CONTENT" Pos="-555,-706" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11203,39005" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11203,1" />
+		</Event>
+	</Step>
+
+<!--沃特尔王-->
+	<Step ID="11" ParentList="10" ParentCost="1" >
+    	<Event Memo="快点前往c王国东街c阻止c沃特尔王c！" TargetMap="11203" TargetObj="39005" TargetName="寻找t沃特尔王t">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11203" ObjID="39005" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="躲在水里看你拿我怎么样！世界即将毁灭，魔王即将统治一切！" />
+					<Msg NpcID="2" ImageID="9" Info="未来勇士，截住雕像那里的水源，水池中的水就会流光。这样才能把沃特尔王引出来！" />
+					<Option Info="好的！" NotUpdateBuffer="Y"/>
+				</Action>															
+    	</Event>
+	</Step>	
+	
+	<Step ID="12" ParentList="11" ParentCost="1" >
+    	<Event Memo="" TargetMap="11203" TargetObj="39005" TargetName="和t沃特尔王t对话">
+				<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11203,39005,2" NotUpdateBuffer="Y" /><!--跳帧-->																
+    	</Event>
+	</Step>	
+	
+	<Step ID="13" ParentList="12" ParentCost="1" >
+		<Condition>
+			<Buffer Sta2="s3"/>
+		</Condition>			
+    	<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+  			<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11203,39005,4" NotUpdateBuffer="Y" SkipTrigger="Y"/><!--跳帧-->																	
+    	</Event>
+    	<Event ConditionType="OUT" Memo="想办法截住水源，只有这样才能把沃特尔王引出来。" TargetMap="11203" TargetObj="39005" TargetName="截住水源">
+  			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11203" ObjID="39" /><!--无法触发-->		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="......" />
+					<Option Info="好的！"/>
+				</Action>																
+    	</Event>
+	</Step>
+	
+	<Step ID="14" ParentList="13" ParentCost="1" >
+		<Event Memo="快点击败c沃特尔王c，封印法阵吧！" TargetMap="11203" TargetObj="39005" TargetName="和t沃特尔王t对话">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11203" ObjID="39005" />
+			</Trigger>
+				<Action Type="TALK">
+				<Msg NpcID="753" ImageID="1" Info="可恶的摩尔！让你感受黑暗的力量吧！哇呀呀！" />
+					<Option Info="让我净化你吧！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					<Option Info="让我准备一下！" TalkOver="Y"/>
+				</Action>
+		</Event>
+	</Step>
+	
+	<Step ID="15" ParentList="14" ParentCost="1" >
+		<Condition>
+			<Battle ID="2903" Count="1" />
+		</Condition>			
+    	<Event ConditionType="OUT" Memo="快点击败c沃特尔王c，封印法阵吧！" TargetMap="11203" TargetObj="39005" TargetName="净化t沃特尔王t">
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11203" ObjID="39005" />		
+			</Trigger>
+  			<Action Type="COMMAND" Command="BATTLE" Params="2903"/>																	
+    	</Event>
+    	<Event ConditionType="IN" Memo="把沃特尔王封印起来，这样魔王就没办法修复水之法阵了！" TargetMap="11203" TargetObj="39005" TargetName="和t沃特尔王t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11203" ObjID="39005" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="谢谢你再次净化了我，不知道我还能清醒多久，赶快去【王国南街】击败法尔王吧！" />
+					<Option Info="好的！" NotUpdateBuffer="Y"/>
+				</Action>																
+    	</Event>
+	</Step>
+		
+	<Step ID="16" ParentList="15" ParentCost="1" >
+		<Event Memo="" TargetMap="11205" TargetObj="39005" TargetName="和t沃特尔王t对话">
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11203,39005" />
+				<Action Type="MOVIE" Url="task_39001_39006.swf" MapLevel="CONTENT" Pos="364,-457" SkipTrigger="Y"/>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201,39007" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11201,1" />
+		</Event>
+	</Step>
+
+<!--法尔王-->
+	
+		
+	<Step ID="17" ParentList="16" ParentCost="1" >
+		<Event Memo="只剩c法尔王c了，小主人快点赶去王国南街吧！" TargetMap="11201" TargetObj="39007" TargetName="寻找t法尔王t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11201" ObjID="39007" />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="322" ImageID="1" Info="居然被你发现了，有本事先破了我的火之魔法阵再说吧！" />
+					<Option Info="就让我来试试！" NotUpdateBuffer="Y"/>
+				</Action>
+		</Event>
+	</Step>
+	
+	<Step ID="18" ParentList="17" ParentCost="1" >
+    	<Event Memo="" TargetMap="11201" TargetObj="39007" TargetName="和t法尔王t对话">
+				<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11201,39007,2" NotUpdateBuffer="Y"/><!--跳帧-->																
+    	</Event>
+	</Step>	
+	
+	<Step ID="19" ParentList="18" ParentCost="1" >
+		<Condition>
+			<Buffer Sta3="s1"/>
+		</Condition>			
+    	<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+  			<Action Type="COMMAND" Command="GOTO_AND_STOP" Params="11201,39007,3"  /><!--跳帧-->
+			<Action Type="COMMAND" Command="DELAY" Params="1500" SkipTrigger="Y" NotUpdateBuffer="Y"/>																	
+    	</Event>
+    	<Event ConditionType="OUT" Memo="看来只有破坏火之魔法阵才能引出法尔王！那些火苗似乎是破阵的关键！" TargetMap="21301" TargetObj="210" TargetName="破坏火之魔法阵">
+  			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11201" ObjID="390" /><!--无法触发-->		
+			</Trigger>
+				<Action Type="COMMAND" Command="NOTHING"/>														
+    	</Event>
+	</Step>	
+	
+	<Step ID="20" ParentList="19" ParentCost="1" >
+		<Condition>
+			<Battle ID="2904" Count="1" />
+		</Condition>			
+    	<Event ConditionType="OUT" Memo="快点击败法尔王，破坏法阵吧！" TargetMap="11201" TargetObj="39007" TargetName="和t法尔王t对话">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11201" ObjID="39007" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="322" ImageID="1" Info="哼！居然破了法阵！让你感受全身被火灼烧的感觉，好像试试烤摩尔的滋味啊！！！" />
+					<Option Info="我才不怕你！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					<Option Info="让我准备一下" NextStep="20"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2904"/>																	
+    	</Event>
+    	<Event ConditionType="IN" Memo="把法尔王封印起来，这样魔王就无法修复火之法阵了" TargetMap="11201" TargetObj="39007" TargetName="和t法尔王t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11201" ObjID="39007" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="322" ImageID="1" Info="你虽然强大，但是很不幸......." />
+					<Msg NpcID="322" ImageID="1" Info="现在能阻止发动魔法阵的唯一办法就是击败已经入倾【皇宫花园】的魔王尤利了，只可惜你没有这样的实力！" />
+					<Option Info="！！！" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+				</Action>																
+    	</Event>
+	</Step>
+		
+	<Step ID="21" ParentList="20" ParentCost="1" >
+		<Event Memo="" TargetMap="11201" TargetObj="39007" TargetName="与t法尔王t对话">
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11201,39007" />
+				<Action Type="MOVIE" Url="task_39001_39008.swf" MapLevel="UP" Pos="-281,-932" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11301,1" />
+		</Event>
+	</Step>
+	
+<!--尤利-->	
+	<Step ID="22" ParentList="21" ParentCost="1" >
+		<Condition>
+			<Battle ID="2905" Count="1" />
+		</Condition>			
+    	<Event ConditionType="OUT" Memo="最后的魔王————————尤利！\n前进吧，小主人！皇宫花园！" TargetMap="11301" TargetObj="345" TargetName="击败t魔王尤利t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11301" ObjID="345" TaskOption="轮到你了，尤利！" />		
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="又是来坏我好事的摩尔，看我不把你打成灰烬，让你好好感受黑暗降临的恐怖力量！！！" />
+					<Option Info="看我的厉害！" />
+					<Option Info="让我准备一下" NextStep="22"/>
+				</Action>
+				<Action Type="MOVIE" Url="task_39001_39009.swf" MapLevel="TASK" Pos="0,0"/>
+				<Action Type="COMMAND" Command="BATTLE" Params="2905"/>																	
+    	</Event>
+    	<Event ConditionType="IN" Memo="成功击败了尤利！看魔王这次哪里跑！" TargetMap="11301" TargetObj="345" TargetName="和t魔王尤利t对话">
+  				<Action Type="COMMAND" Command="NOTHING"/>																	
+    	</Event>
+	</Step>
+	</Procedure>
+</Task>

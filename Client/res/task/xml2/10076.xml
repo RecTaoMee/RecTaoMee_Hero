@@ -1,0 +1,67 @@
+<Task ID="10076" Memo="勇士广场的c公告栏c上出现了小贴士：c“黑暗中的侦查员”c。\n快去看看吧^^！" TargetMap="11202">
+<BoardInfo PageType="1" Title="C级任务" Content="想接受勇士协会【C级任务】吗？\n我在【勇敢者旅馆】二楼等你。\n\n                  ——神秘人"></BoardInfo>   			
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c公告栏c上出现了小贴士：c“黑暗中的侦查员”c。\n快去看看吧^^！" TargetMap="11202" TargetObj="13" TargetName="点击t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>			
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="小贴士说：c神秘人c在c勇敢者旅馆·二楼c\n快去勇士广场左侧的勇敢者旅馆看看吧！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="C级任务？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="3" Info="嗯哼，这次的“C级任务”目标是：\n至少净化【15只迷眼蝠】。" />
+					<Option Info="使命必达！" />
+					<Option Info="(⊙o⊙)什么情况？" NextStep="3" SkipTrigger="Y" NotUpdateBuffer="Y" />				
+					<Option Info="让我再想想" NextStep="2" />
+				</Action>		
+    		</Event>
+		</Step>
+  		<Step ID="3" ParentList="0" ParentCost="1" >
+    		<Event Memo="小贴士说：c神秘人c在c勇敢者旅馆·二楼c\n快去勇士广场左侧的勇敢者旅馆看看吧！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="净化【迷眼蝠】？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="1" Info="【迷眼蝠】的大眼睛不会放过任何细节，\n在黑夜中也能视如白昼——\n天生就是“勇士协会”的侦查员。" />	
+					<Msg NpcID="21" ImageID="1" Info="黑化后的【迷眼蝠】浪费了自己的天赋，\n整天在【平原12区】游荡，\n攻击无辜路人。\n勇士协会决不允许这种事发生！" />																																					
+					<Option Info="马上净化【迷眼蝠】！" />			
+					<Option Info="让我再想想" NextStep="2"/>		
+				</Action>			
+    		</Event>
+		</Step>		
+		
+<!-- 节点2↓ -->						
+  		<Step ID="4" ParentList="2, 3" ParentCost="1" >
+			<Condition>
+				<Battle ID="15" Count="15" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="c迷眼蝠c净化成功↖(^ω^)↗\n快去c勇敢者旅馆2楼c报告c神秘人c吧！" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="【迷眼蝠】净化成功！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="21" ImageID="3" Info="这么快就完成了任务，\n看来★【平原12区】很适合你修行。\n多多锻炼自己的实力吧！" />
+					<Option Info="\(^o^)/OK！" />
+				</Action>	
+    		</Event>
+			<Event ConditionType="OUT" Memo="神秘人说：c迷眼蝠c在c平原12区c出没，\n小主人快去净化c15只c迷眼蝠吧！" TargetMap="21312" TargetName="净化t迷眼蝠t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="找不到【迷眼蝠】（T T）" />
+				</Trigger>
+				<Action Type="TALK">																					
+					<Msg NpcID="21" ImageID="1" Info="黑化后的【迷眼蝠】浪费了自己的天赋，\n整天在【平原12区】游荡，\n攻击无辜路人。\n勇士协会决不允许这种事发生！" />																																					
+					<Msg NpcID="21" ImageID="1" Info="作为“未来勇士”，\n至少净化15只【迷眼蝠】再来报告！\n友情提醒：打不赢就和伙伴组队去。" />								
+					<Option Info="使命必达！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+

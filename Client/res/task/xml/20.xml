@@ -1,0 +1,45 @@
+<task id="20">
+	<taskDes>
+		<![CDATA[学会了技能【追击】，村长爷爷有话要说。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="5" title="村长爷爷" action="0" needRes="" needResNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="5" title="村长爷爷" action="2" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="5" answer="皮皮克克来" to="a1">
+			<des>
+				<![CDATA[1#现在我将传授你刚才你学会的技能【追击】该如何使用。$$]]>
+				<![CDATA[1#皮皮克克过来一下——]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="1" answer="......" to="s2">
+			<des>
+				<![CDATA[7#啊？！我只是路过的！]]>
+			</des>
+		</proAction>			
+		<proAction id="2" type="0" npcID="5" answer="......" to="a3">
+			<des>
+				<![CDATA[1#【@nick】不是你的死党好朋友吗？一起修炼理所当然。]]>
+			</des>
+		</proAction>		
+		<proAction id="3" type="0" npcID="1" answer="O(∩_∩)O哈！" to="a4">
+			<des>
+				<![CDATA[5#是啊是啊我们是死党啊哈哈~~]]>
+			</des>
+		</proAction>			
+		<proAction id="4" type="1" outMap="1" level="taskLevel" name="task_20_1" moviepos="0,0" to="a5"/>
+		<proAction id="5" type="0" npcID="6" answer="啊？？？" to="a6">
+			<des>
+				<![CDATA[9#姐姐————它它它它把你的棉球果抢走了！！]]>
+			</des>
+		</proAction>		
+		<proAction id="6" type="0" npcID="5" answer="这就去找琪琪！" to="c">
+			<des>
+				<![CDATA[1#快用我教你的技能帮助琪琪吧————]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,41 @@
+<Task ID="10202" Memo="去爱精灵协会找到会长莓可，询问神秘之卡的情况。" TargetMap="11214">
+   	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="与c莓可c对话" TargetMap="11214" TargetObj="20" TargetName="与t莓可t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="我学会百变之术了！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+    		
+    	<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="与c莓可c对话" TargetMap="11214" TargetObj="20" TargetName="与t莓可t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="我学会百变之术了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="什么？你已经学会百变之术了？看来你也是被选中的勇敢之士。"/>
+					<Option Info="过奖了。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="众所周知有了精灵的协助，摩尔勇士们力量今非昔比。但是黑暗力量十分强大，摩尔们需要不断修炼自己的实力才能与之抗衡。"/>
+					<Option Info="我要怎么做？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="我最近研究出一种新型的宝贝。只要使用它就能吸取到身边万物精灵们的神秘力量，甚至变化成精灵的样子，实力非同一般！"/>
+					<Option Info="这是什么卡片？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="它叫变身卡，我这里正好有一张，送给你吧。希望你利用它来变得强大，保卫家园！"/>
+					<Option Info="谢谢。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="送你的卡片已经放入旅行箱的消耗品栏中。\n好了，现在快快使用感受下变身的快乐吧。"/>
+					<Option Info="好的。" />
+				</Action>
+    		</Event>
+		</Step>
+    	
+	</Procedure>
+</Task>

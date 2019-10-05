@@ -1,0 +1,343 @@
+<Task ID="10013" Memo="会不会觉得精灵伙伴升级太慢了呢？去请教一下c爱精灵协会c的c莓可c吧。" TargetMap="11214">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="会不会觉得精灵伙伴升级太慢了呢？去请教一下c爱精灵协会c的c莓可c吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵培育" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="【@nick】，和精灵伙伴们相处的还愉快吗？" />
+					<Option Info="嗯！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="真是太好了^^，对待精灵应该像朋友一样，让它们感受你的爱。" />
+					<Msg NpcID="20" ImageID="1" Info="想学习让可以精灵伙伴变的更强的方法吗？" />
+					<Option Info="想！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="呵呵，在这之前，首先要证明你的实力！不了解精灵的人无法真心对待精灵的！" />
+					<Msg NpcID="20" ImageID="1" Info="我会问你4个和精灵相关的问题，准备好了吗？" />
+					<Option Info="准备好了！" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第一题：\n小石怪是什么系的精灵呢？" />
+						<Option Info="外语系" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />
+						<Option Info="超能系" NextStep="6" SkipTrigger="Y" NotUpdateBuffer="Y" />
+						<Option Info="金属系" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="恭喜答对！知道某种精灵的种族是很重要的，你曾经遇到过的精灵可是都被记录在图鉴册中^^" />
+						<Msg NpcID="20" ImageID="1" Info="如果忘记了记得查看你的图鉴册^^" />
+						<Option Info="嗯" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第二题：\n在野外遇到【植物系】的【假面吉吉帕】，对它使用一张【特殊系闪灵胶片】，会怎么样呢？" />
+						<Option Info="无法签订契约啦！" />
+						<Option Info="有我亲笔签名肯定成功！" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />
+						<Option Info="向女神祈祷成功吧T T" NextStep="7" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="恭喜答对！要和【植物系】的精灵签订契约就一定要使用【植物系闪灵胶片】。" />
+						<Msg NpcID="20" ImageID="1" Info="如果使用的闪灵胶片和精灵的种族不对应，那可是浪费星豆的行为^^。" />
+						<Option Info="原来如此" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    			<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+					<Trigger>
+						<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第三题：\n【吉普豆泥】和【草莓蜂】谁更擅长使用魔法呢？" />
+						<Option Info="吉普豆泥！" />
+						<Option Info="草莓蜂！" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="它们都没我擅长使用魔法！" NextStep="8" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="恭喜答对！精灵和摩尔一样，也是有努力方向的!每种精灵都有自己独特的【先天优势】！" />
+						<Msg NpcID="20" ImageID="1" Info="吉普豆泥是智力成长较高，而草莓蜂则是敏捷和力量成长较高。我们训练精灵伙伴的时候一定要注意培养【先天优势】哦^^" />
+						<Option Info="嗯~~" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第四题：\n人物的技能可以升级，精灵的技能也可以升级吗？" />
+						<Option Info="不可以升级" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="有的可以升级" />
+						<Option Info="我教它！" NextStep="9" SkipTrigger="Y" NotUpdateBuffer="Y" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="恭喜答对！精灵的【天赋技能】可是会随着精灵等级而自动升级的！当然，如果想让精灵的【普通技能】升级就要去找【精灵研究员】！" />
+						<Msg NpcID="20" ImageID="1" Info="当然，有些不是【精灵研究员】的也会传授精灵技能，比如我啦^^" />
+						<Option Info="明白啦！" NextStep="10" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+			
+		
+
+			
+  		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="不对哦！小石怪是金属系的精灵！知道精灵的种族是很重要的，你曾经遇到过的精灵可是都被记录在图鉴册中^^" />
+						<Msg NpcID="20" ImageID="1" Info="如果忘记了记得查看你的图鉴册^^" />
+						<Option Info="好的" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="还要继续答题吗？" />
+						<Option Info="继续答题！" NextStep="3" SkipTrigger="Y"/>
+						<Option Info="算啦..." NextStep="3"/>
+					</Action>
+    		</Event>
+		</Step>
+
+			
+
+		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="不对！要和【植物系】的精灵签订契约就一定要使用【植物系闪灵胶片】。" />
+						<Msg NpcID="20" ImageID="1" Info="如果使用的闪灵胶片和精灵的种族不对应，那可是浪费星豆的行为^^。" />
+						<Option Info="原来如此" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="还要继续答题吗？" />
+						<Option Info="继续答题！" NextStep="4" SkipTrigger="Y"/>
+						<Option Info="算啦..." NextStep="4"/>
+					</Action>
+    		</Event>
+		</Step>	
+
+			
+		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="不对！精灵和摩尔一样，吉普豆泥是智力成长较高，而草莓蜂则是敏捷和力量成长较高！" />
+						<Msg NpcID="20" ImageID="1" Info="每种精灵都有自己独特的【先天优势】，我们训练精灵伙伴的时候一定要注意培养【先天优势】哦^^" />
+						<Option Info="嗯~~" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="还要继续答题吗？" />
+						<Option Info="继续答题" NextStep="5" SkipTrigger="Y"/>
+						<Option Info="算啦" NextStep="5"/>
+					</Action>
+    		</Event>
+		</Step>
+
+			
+		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="不对！技能是可以升级的。精灵的【天赋技能】可自动升级，而如果想让精灵的【普通技能】升级就要去找【精灵研究员】！" />
+						<Option Info="明白啦！" NextStep="10" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+
+
+		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="测试完成！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="这些问题都是培养精灵的基本知识，一定要牢牢记住^^" />
+						<Msg NpcID="20" ImageID="1" Info="【@nick】去修炼吧！和精灵伙伴一起，在旅行中体会这些知识的重要性！" />
+						<Msg NpcID="20" ImageID="1" Info="当你的等级达到15级，我再把【精灵培育】这个技能传授给你。" />
+						<Option Info="明白啦" />
+					</Action>
+    		</Event>
+		</Step>
+
+
+		<Step ID="11" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Person Level="15"/>
+			</Condition>
+    		<Event ConditionType="IN" Memo="终于15级了，回去找c莓可c吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="已经15级了！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="【@nick】你这么快就到15级了，精灵培育的技能就传授给你吧！" />
+						<Msg NpcID="20" ImageID="1" Info="学会了技能可别得意！我还有几个问题要问问你。" />
+						<Option Info="啊..." />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="不要紧张，这些都是之前问过你的问题，看你有没有用心记住！" />
+						<Option Info="好的！" SkipTrigger="Y"/>
+					</Action>
+    				</Event>
+			<Event ConditionType="OUT" Memo="你的等级达到15级莓可才教你c精灵培育c，加油练级吧^^" TargetMap="" TargetObj="" TargetName="等级提升到15级">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="练级好难..." />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="没有一定的实力是无法掌握【精灵培育】这个技能，加油！" />
+						<Option Info="嗯！" />
+					</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="12" ParentList="11" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第一题：\n人物的技能可以升级，精灵的技能也可以升级吗？" />
+						<Option Info="不可以升级" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="有的可以升级" SkipTrigger="Y"/>
+						<Option Info="我教它！" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+		
+		
+
+		<Step ID="13" ParentList="12" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第二题：\n小石怪是什么系的精灵呢？" />
+						<Option Info="外语系" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="超能系" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="金属系" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+
+		<Step ID="14" ParentList="13" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第三题：\n【吉普豆泥】和【草莓蜂】谁更擅长使用魔法呢？" />
+						<Option Info="吉普豆泥！" SkipTrigger="Y"/>
+						<Option Info="草莓蜂！" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="它们都没我擅长使用魔法！" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+
+
+		<Step ID="15" ParentList="14" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第四题：\n在野外遇到【植物系】的【假面吉吉帕】，对它使用一张【特殊系闪灵胶片】，会怎么样呢？" />
+						<Option Info="无法签订契约啦！" SkipTrigger="Y"/>
+						<Option Info="有我亲笔签名肯定成功！" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+						<Option Info="向女神祈祷成功吧T T" NextStep="19" SkipTrigger="Y" NotUpdateBuffer="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="16" ParentList="15" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="第五题：\n如果你的精灵伙伴很弱，你会抛弃它吗？" />
+						<Option Info="会" SkipTrigger="Y"/>
+						<Option Info="不会" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+		<Step ID="17" ParentList="16" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="这道问题没有正确答案，我希望你明白，也许有一天，我们不得不和精灵伙伴分开。" />
+						<Msg NpcID="20" ImageID="1" Info="无论因为何种原因，请在心里感谢精灵伙伴，感谢它们陪你度过的快乐时光。" />
+						<Option Info="嗯！" SkipTrigger="Y"/>
+					</Action>
+    		</Event>
+		</Step>
+
+
+
+		<Step ID="18" ParentList="17" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="你通过了全部测试！这份额外的礼物是我送给你的，希望你能喜欢。" />
+						<Option Info="谢谢" />
+					</Action>
+    		</Event>
+    				
+		</Step>
+		
+		<Step ID="19" ParentList="0" ParentCost="1" >
+    		<Event Memo="第二次精灵知识小测试，快点回答c莓可c提出的问题吧。" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="精灵知识测试" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="20" ImageID="1" Info="回答错了！再仔细想想！" />
+						<Option Info="T T" NextStep="12" SkipTrigger="Y"/>
+					</Action>
+    		</Event>		
+		</Step>
+	</Procedure>
+</Task> 
+
+
+
+			
+
+
+
+

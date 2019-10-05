@@ -1,0 +1,121 @@
+<Task ID="10071" Memo="大规模的精灵迁徙？\n快去c爱精灵协会c问问莓可吧！" TargetMap="11214">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0"  >
+			<Event Memo="大规模的精灵迁徙？\n快去c爱精灵协会c问问莓可吧！" TargetMap="11214">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="小精灵迁徙？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="是【@nick】啊^^。志愿者们最近带回来好多【1级的“弗雷基宝宝”】。\n真是一群活泼的小家伙~为了让它们安静下来，我就手忙脚乱啦。" />
+					<Option Info="⊙ｏ⊙发生了什么？" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>
+		<Step ID="2" ParentList="1" ParentCost="1"  >
+			<Event Memo="大规模的精灵迁徙？\n快去c爱精灵协会c问问莓可吧！" TargetMap="11214">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="⊙ｏ⊙发生了什么？？" />
+				</Trigger>
+				<Action Type="TALK">					
+					<Msg NpcID="20" ImageID="1" Info="格历尔大陆南部的【弗雷基港】受到强烈的黑水晶力量影响。生活在那里的小精灵\n【弗雷基】们纷纷向摩尔王国方向迁徙。" />
+					<Msg NpcID="20" ImageID="2" Info="这些【1级弗雷基宝宝】就是这样“蛋”生的。" />
+					<Msg NpcID="20" ImageID="2" Info="★【1级】小精灵有很强的潜力(^-^)！\n可以从小制定最适合的培养计划!" />
+					<Msg NpcID="20" ImageID="4" Info="可是低等级的精灵宝宝还不够强大... ...\n一定要有可靠的盟约者来守护它们啊。" />
+				    <Option Info="╰(￣▽￣)交给我吧！" />			  
+				</Action>			        
+				<Action Type="TALK">			        
+			        <Msg NpcID="20" ImageID="1" Info="在广阔的格历尔大陆有6种我最喜欢的精灵，\n成功和它们签订契约就可以证明你的实力了！" />
+					<Msg NpcID="20" ImageID="2" Info="【假面吉吉帕】【小石怪】【草莓蜂】\n【迷唇爱丝】【吉普豆泥】【法尔】\n带着它们来见我吧——！" />
+				    <Option Info="没问题！"  NextStep="4" />			    
+				    <Option Info="好难...让我再想想" NextStep="3" />
+				</Action>
+    		</Event>
+    	</Step>
+  		<Step ID="3" ParentList="0" ParentCost="1" >
+			<Event Memo="大规模的精灵迁徙？\n快去c爱精灵协会c问问莓可吧！" TargetMap="11214">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="我要接受考验！" />
+				</Trigger>
+				<Action Type="TALK">
+			        <Msg NpcID="20" ImageID="1" Info="在广阔的格历尔大陆有6种我最喜欢的精灵，\n成功和它们签订契约就可以证明你的实力了！" />
+					<Msg NpcID="20" ImageID="2" Info="【假面吉吉帕】【小石怪】【草莓蜂】\n【迷唇爱丝】【吉普豆泥】【法尔】\n带着它们来见我吧——！" />
+				    <Option Info="没问题！" />			    				    
+				    <Option Info="好难...让我再想想" NextStep="3" />
+ 				</Action>
+    		</Event>
+		</Step>
+		
+  		<Step ID="4" ParentList="2, 3" ParentCost="1" >
+    		<Event Memo="大规模的精灵迁徙？\n快去c爱精灵协会c问问莓可吧！" TargetMap="11214">			
+    			<Action Type="COMMAND" Command="NOTHING" />						
+    		</Event>
+		</Step>			
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="c吉普豆泥、法尔、小石怪、草莓蜂、迷唇爱丝、假面吉吉帕c\n——用闪灵胶片和大家签订契约，就能从c莓可c那儿拿到弗雷基宝宝的“监护权”！" TargetMap="11214">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="找过6只小精灵啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="我感受到【@nick】有种和小精灵们\n心灵相通的能力(^-^)v。" />
+					<Msg NpcID="20" ImageID="2" Info="不过——还记得我们上次说过的吗，也许有一天会不得不和精灵伙伴们分开。\n就像现在，弗雷基宝宝需要【@nick】的重点培养！" />
+					<Msg NpcID="20" ImageID="1" Info="请放心的把它们交给我吧！6种小精灵【@nick】都带来了吗？" />
+ 					<Option Info="在我的精灵口袋里" TalkOver="Y" />
+				    <Option Info="怎样签订契约？"  NextStep="7" NotUpdateBuffer="Y" SkipTrigger="Y" />	
+				    <Option Info="小精灵们在哪？" NextStep="8" NotUpdateBuffer="Y" SkipTrigger="Y" /> 					
+				</Action>
+				<Action Type="MOVIE" Url="PetCollectModule" MapLevel="TOP" Pos="0,0" IsModule="Y" SkipTrigger="Y" /> 				
+    		</Event>
+    	</Step>		
+		
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="c吉普豆泥、法尔、小石怪、草莓蜂、迷唇爱丝、假面吉吉帕c\n——用闪灵胶片和大家签订契约，就能从c莓可c那儿拿到弗雷基宝宝的“监护权”！" TargetMap="11214">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="照顾弗雷基宝宝" />
+				</Trigger>
+				<Action Type="TALK">	  
+					<Msg NpcID="20" ImageID="1" Info="和你的精灵伙伴们说再见吧！" />
+					<Option Info="格历尔大陆后会有期！" TalkOver="Y" />
+				</Action>				
+    			<Action Type="MOVIE" Url="task_10071_1.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">	
+					<Msg NpcID="312" ImageID="1" Info="*咕？咕##@%？\n(嗯？开饭啦？）" />					
+					<Msg NpcID="20" ImageID="1" Info="弗雷基宝宝也很高兴呢^^。\n【@nick】要好好照顾它啊！\n希望这只弗雷基宝宝有一天能成为弗雷基中的“战斗机”^0^！" />
+					<Msg NpcID="312" ImageID="1" Info="*嘎嘎叽嘎咕#~\n（不知道是谁照顾谁呢~）" />
+					<Msg NpcID="20" ImageID="1" Info="哈^【@nick】还不知道这只弗雷基宝宝的【成长和能力】吧。\n记得要好好了解一下喔~ " />						
+				    <Option Info="p( ^ O ^ )q "/>
+ 				</Action>				
+    		</Event>
+    	</Step>		
+ 
+ 
+  		<Step ID="7" ParentList="0" ParentCost="1" >
+    		<Event Memo="c吉普豆泥、法尔、小石怪、草莓蜂、迷唇爱丝、假面吉吉帕c\n——用闪灵胶片和大家签订契约，就能从c莓可c那儿拿到弗雷基宝宝的“监护权”！" TargetMap="11214">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="怎样签订契约？" />
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="20" ImageID="1" Info="在野外的战斗中，对小精灵使用【闪灵胶片】就行。\n记得一定要用和精灵【属性相同】或者【万用】的闪灵胶片才有效！" />					
+					<Msg NpcID="20" ImageID="1" Info="还有一个秘诀——精灵hp还剩一点点的时候，是使用【闪灵胶片】的最好时机。\n因为这时它们身心都很脆弱~" />	
+					<Msg NpcID="20" ImageID="1" Info="需要【闪灵胶片】，就来【爱精灵协会】找我买吧。" />					
+				    <Option Info="明白了^" NextStep="5" />
+ 				</Action>				
+    		</Event>
+    	</Step>	    	
+   		<Step ID="8" ParentList="0" ParentCost="1" >
+    		<Event Memo="c吉普豆泥、法尔、小石怪、草莓蜂、迷唇爱丝、假面吉吉帕c\n——用闪灵胶片和大家签订契约，就能从c莓可c那儿拿到弗雷基宝宝的“监护权”！" TargetMap="11214">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="小精灵们在哪里？" />
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="20" ImageID="1" Info="【吉普豆泥】在下水道1层和2层，【法尔和小石怪】都在吉普地道里。" />					
+					<Msg NpcID="20" ImageID="1" Info="【草莓蜂、迷唇爱丝、假面吉吉帕】分别在格历尔平原3区4区、5区6区、2区3区4区。" />	
+					<Msg NpcID="20" ImageID="1" Info="我相信【@nick】能找到它们的^^！" />					
+				    <Option Info="马上去契约精灵" NextStep="5" />
+ 				</Action>				
+    		</Event>
+    	</Step>	   		
+
+
+	</Procedure>
+</Task>

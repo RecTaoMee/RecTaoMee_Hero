@@ -1,0 +1,63 @@
+<Task ID="1" Memo="地道冒险？穿越时空！？\n快问问c皮皮克克吧c！" TargetMap="11102">
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="地道冒险？穿越时空！？\n快问问c皮皮克克吧c！" TargetMap="11102" TargetObj="1" TargetName="和t皮皮克克t对话">		
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+    	</Step>	
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+			<Event Memo="地道冒险？穿越时空！？\n快问问c皮皮克克c吧！" TargetMap="11102" TargetObj="1" TargetName="和t皮皮克克t对话">
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11102, 1" />		
+    		</Event>
+    		<Event Memo="地道冒险？穿越时空！？\n快问问c皮皮克克c吧！" TargetMap="11102" TargetObj="1" TargetName="和t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11102" />					  
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="1" TaskOption="不回家吗？" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="400, 200" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="500" /> 				
+				<Action Type="TALK">
+            		<Msg NpcID="1" ImageID="5" Info="嘿嘿，我们算朋友了吧(^3^)？\n跟我一起回家吧！" />
+					<Option Info="好啊！" TalkOver="Y" />
+				</Action>	
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11102, 1" />				
+    			<Action Type="MOVIE" Url="task_1_1.swf" MapLevel="CONTENT" Pos="-556,30"/>
+    		</Event>
+    	</Step>   <!-- 节点2↓ -->
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c快去c皮克小屋c休息一下吧！" TargetMap="11104" TargetObj="1" TargetName="和t皮皮克克t对话">				
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="皮皮克克!" />					  
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="这是我的好朋友【@nick】，\n我在“土豆地道”冒险时遇到的！" />
+					<Msg NpcID="6" ImageID="1" Info="皮皮克克给你添麻烦了^^！" />					
+					<Option Info="哈！" />
+				</Action>
+				<Action Type="TALK">
+            		<Msg NpcID="6" ImageID="1" Info="你是哪里的摩尔？\n好像不是我们村的人呢。" />
+					<Option Info="我来自未来" />
+				</Action>
+				<Action Type="TALK">
+            		<Msg NpcID="6" ImageID="9" Info="来自未来？！！！" />
+            		<Msg NpcID="6" ImageID="7" Info="【神谕】说的没错呢……\n你一定可以帮助我们吉普豆村！\n请先去见见我们的【村长】吧！" />
+					<Option Info="好的！" SkipTrigger="Y"  NotUpdateBuffer="Y" />
+				</Action>				
+    		</Event>
+    	</Step>				
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="体力恢复咯！\nc琪琪姐姐c好像有话要说呢！" TargetMap="11104" TargetObj="6" TargetName="和t琪琪t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="6" TaskOption="关于【旅行记事本】" />
+				</Trigger>	
+     			<Action Type="MOVIE" Url="task_1_6.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+            		<Msg NpcID="6" ImageID="7" Info="【村长】就在【隔壁的土豆屋】，\n请快去见见他吧!" />
+					<Option Info="马上去见【村长】！" />
+				</Action>		
+    		</Event>
+    	</Step>			   						  		
+	</Procedure>
+</Task>
+
+

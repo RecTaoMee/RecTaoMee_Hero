@@ -1,0 +1,39 @@
+<task id="10023">
+  <taskDes>
+	<![CDATA[勇士斗技场的试炼，穿过【斗技场大厅】到【斗技场管理处】找圣弗雷德吧！$$]]>
+	<![CDATA[前往参加【单人比试】获得人生中第一个【十字勋章】吧！*勇士斗技场大厅左侧【管理员莉依】$$]]>
+	<![CDATA[获得【十字勋章】了，快去【斗技场管理处】交给【圣弗雷德】审核吧！]]>
+  </taskDes>
+  <taskPro>
+		<pro type="0" parent="" npcID="38" title="参加斗技场试炼！" action="0" bossID="" bossNum="" needRes="" needResNum="" unResAction="2" taskDes="0" mapID="11218"/>
+		<pro type="0" parent="0" npcID="38" title="【单人比试】完成！" action="3" bossID="" bossNum="" needRes="290002" needResNum="1" unResAction="4" taskDes="1" mapID="11219"/>
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="38" answer="使命必达！" to="so">
+       <des>
+		 <![CDATA[1#我接到了摩尔王的命令，你以后可以在这里进行更多的训练，但在那之前你必须完成我交给你的任务。$$]]>		 
+		 <![CDATA[1#去“勇者斗技场管理员【莉依】”处报名参加一次比试，将比试获得的【十字勋章】拿来给我，证明你有这个实力踏入这个神圣的殿堂！]]>	
+	   </des>
+    </proAction>
+    <proAction id="1" type="0" npcID="38" answer="……o(╯□╰)o" to="a4" >
+       <des>
+		 <![CDATA[1#干得不错。但我认为你的潜力远不止这点！]]>	
+	   </des> 
+    </proAction>
+    <proAction id="2" type="0" npcID="38" answer="囧，我这就去！" to="o">
+       <des>
+		 <![CDATA[1#接下来去“勇者斗技场管理员潘妮”处，找几个伙伴一起参加1场【多人比试】，再回来找我吧！]]>
+	   </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="38" answer="谢谢您！" to="c" nextTask="10024_0" >
+       <des>
+		 <![CDATA[1#果然没有令我失望。这是给你的奖励——勇士斗技场【新人奖励】！希望你好好使用它。]]>
+	   </des> 
+	</proAction>	
+	<proAction id="4" type="0" npcID="38" answer="恩，我再去试试！" to="o" >
+       <des>
+		 <![CDATA[1#你还没有完成我布置给你的任务，在勇士斗技场仔细找一下，一个真正的勇士不会惧怕任何困难！]]>
+	   </des>
+	</proAction>	 
+  </actions>
+</task>

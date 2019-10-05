@@ -1,0 +1,30 @@
+<Task ID="36001" Memo="c公告栏c又有了新的任务，快去c勇士广场c看看。" TargetMap="11202">
+<BoardInfo PageType="1" Title="送信任务" Content="【勇敢者旅馆】的路库K好像有任务要交给你呢，还不快去看看？"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c公告栏c又有了新的任务，快去c勇士广场c看看。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c路库Kc大叔那里有什么事需要帮忙呢。" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="送信任务，使命必达！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="2" Info="是来接任务的未来摩尔么？" />
+					<Msg NpcID="14" ImageID="6" Info="大叔，不是有旅客委托了送信任务么，你怎么还在这里？" />
+					<Msg NpcID="13" ImageID="5" Info="那个……送信这种任务就交给未来摩尔去做吧，还可以顺便磨练他们呢，嘿嘿，你看我想得多周到。" />
+					<Msg NpcID="14" ImageID="6" Info="哼哼，我看你就是想偷懒吧。" />
+					<Msg NpcID="13" ImageID="1" Info="谁……谁说的，我的出发点肯定是好的，你千万别听她乱说啊。" />
+					<Option Info="哦……" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

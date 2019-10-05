@@ -1,0 +1,10 @@
+<!--出生地皮皮克克1段地道--> 
+<map name="aaa" type="0" comment="aaa" sound="BGM-009.mp3">
+	<transport intPos="351,335">
+		<!-- <node id="1" pos="1454,248" targetMapId="21101" targetTransPortId="1" name="神秘地道"/> -->
+		<node id="1" pos="1454,248" targetMapId="11102" targetTransPortId="3" name="其普里村"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+</map>

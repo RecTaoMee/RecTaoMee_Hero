@@ -1,0 +1,22 @@
+<!--永夜村村长家-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="740,585" targetMapId="11801" targetTransPortId="4"/> 
+		<node id="2" pos="202, 508" targetMapId="11805" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+	</object>
+	<npc>
+		<node id="74" type="NPC" res="MC_npc_74" action="1"/>
+	</npc>
+	
+	<actions>
+		<proAction npcID="74" id="1" type="0" answer="你好" to="o" colorID="0">
+			<des>
+				<![CDATA[1#我是精灵族长塔西里亚，世世代代守卫这世界之树……]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

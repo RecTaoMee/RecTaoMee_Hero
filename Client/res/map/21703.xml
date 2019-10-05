@@ -1,0 +1,43 @@
+<!-- 锁修塔三层 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+    <transport intPos="223,314">
+        <node id="1" pos="754,1004" targetMapId="21702" targetTransPortId="2"/>
+        <node id="2" pos="420,190" targetMapId="21704" targetTransPortId="1"/>
+    </transport>
+    <object>
+        <node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+        <node id="2" type="TowerTrans" res="MC_door_1" transPortId="2" speakID="3"/>
+        <node id="5181" type="TowerCrystal" res="MC_crystal"
+            bufferID="21703" bufferIndex="0" itemID="180050" itemCount="30"
+            passSpeakID="4" failSpeakID="2"/>
+    </object>
+	<npc>
+		<node id="353" type="NPC" res="MC_npc_353" level="contentLevel" action=""  taskShowSteps="10095_3|6" />		
+	</npc>		
+	<actions>
+		<proAction npcID="339" id="1" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#【上方】折断的道路移动了！]]>
+			</des>
+		</proAction>
+        
+        <proAction npcID="339" id="2" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">			
+            <des> <![CDATA[1#点亮【水晶柱】需要从黑化精灵身上收集【30个海洋结晶】！]]>
+            </des>
+        </proAction>
+        <proAction npcID="339" id="3" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+            <des> <![CDATA[1#【第4层】还未开启！\n请先从黑化精灵身上收集【30个海洋结晶】，\n“点亮”【水晶柱】！]]>
+            </des>
+        </proAction>
+		<proAction npcID="339" id="4" type="0" answer="我要填充！$我再想想。" to="a5$o" colorID="0">
+            <des> <![CDATA[1#确定要使用海洋结晶填充海之水晶柱吗？]]>
+            </des>
+        </proAction>
+		<proAction npcID="339" id="5" type="6" event="sure_light_crystal"/>
+		
+		<proAction npcID="339" id="6" type="0" answer="摩尔勇士万岁！" event="is_open_talk" to="o" colorID="0">
+            <des> <![CDATA[1#“锁修塔第4层”已经开启↖(^o^)↗!]]>
+            </des>
+        </proAction>
+	</actions>
+</map>

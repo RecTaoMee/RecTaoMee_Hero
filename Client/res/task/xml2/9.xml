@@ -1,0 +1,89 @@
+<Task ID="9" Memo="快去c土豆屋c外打败c神秘绑架者c，\n救出“吉普豆叶”吧！" TargetMap="11102" TargetObj="16011" TargetName="打败t神秘绑架者t" > 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="快去c土豆屋c外打败c神秘神秘绑架者c，\n救出“吉普豆叶”吧！" TargetMap="11102" TargetObj="16011" TargetName="打败t神秘绑架者t" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>	 
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="快去c土豆屋c外打败c神秘神秘绑架者c，\n救出“吉普豆叶”吧！" TargetMap="11102" TargetObj="16011" TargetName="打败t神秘绑架者t" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>	 		 <!-- 节点1 -->  
+  		<Step ID="5" ParentList="10" ParentCost="1" >
+    		<Event Memo="快去c土豆屋c外打败c神秘绑架者c，\n救出“吉普豆叶”吧！" TargetMap="11102" TargetObj="343" TargetName="打败t神秘绑架者t" >																								
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="343" TaskOption="吉普豆叶了我来了！" />					  					  	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="343" ImageID="1" Info="“小叶叶”我来啦~~\n——飞——吻——攻——击——\n（mua♡~~）" />										
+					<Msg NpcID="333" ImageID="3" Info="你你你你\n——别逼我变身——" />					
+					<Option Info="(⊙o⊙）？" />					
+				</Action>	
+				<Action Type="MOVIE" Url="task_9_1.swf" MapLevel="TASK" Pos="0,0" /> 	
+				<Action Type="TALK">
+					<Msg NpcID="334" ImageID="2" Info="不好，变身【吉普豆泥】战斗力更弱了！" />	
+					<Option Info="我来保护你！" SkipTrigger="Y"/>					
+				</Action>																												
+    		</Event>								
+		</Step>			     
+  		<Step ID="2" ParentList="5" ParentCost="1" >
+ 			<Condition>
+				<Battle ID="19" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="打败了c神秘绑架者c，\n快让它们放开c吉普豆泥c吧↖(^o^)↗！" TargetMap="11102" TargetObj="343" TargetName="和t神秘绑架者t对话" >																								
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="343" TaskOption="你们败啦！" />					  					  	
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="343" ImageID="1" Info="勇士大人，以后我们再也不敢了……\n（疼疼疼疼疼~~（＞﹏＜）" />
+					<Msg NpcID="6" ImageID="1" Info="啊【@nick】受伤了，\n我这就为你【恢复hp】^^！" />										
+					<Option Info="嗯！" />					
+				</Action>		
+    			<Action Type="MOVIE" Url="task_1_2.swf" MapLevel="TASK" Pos="-50,0" />		
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="RECOVER, 6" />																					
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c土豆屋c外打败c神秘绑架者c，\n救出“吉普豆泥”吧！" TargetMap="11102" TargetObj="343" TargetName="打败t神秘绑架者t" >																								
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="343" TaskOption="别欺负【吉普豆泥】了！" />					  					  	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="343" ImageID="1" Info="嘿嘿，赢了我们才放它走~~" />
+					<Option Info="来战吧！" />
+				</Action>				
+                <Action Type="COMMAND" Command="BATTLE" Params="19" />					
+    		</Event>								 <!-- 节点2 -->  
+		</Step>	
+  		<Step ID="4" ParentList="2" ParentCost="1" >
+    		<Event Memo="成功救出“吉普豆泥”↖(^o^)↗，\n去和c琪琪姐姐c聊聊吧！" TargetMap="11102" TargetObj="6" TargetName="和t琪琪t对话" >																								
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="6" TaskOption="救出【吉普豆泥】啦↖(^ω^)↗" />					  					  	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="6" ImageID="1" Info="村长爷爷该担心了，\n快把好消息告诉他吧！" />														
+					<Option Info="马上告诉【村长】！" />					
+				</Action>																												
+    		</Event>								
+		</Step>			   
+  		<Step ID="3" ParentList="4" ParentCost="1" >
+    		<Event Memo="成功救出“吉普豆泥”↖(^o^)↗，\n快把好消息告诉c村长c吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >																								
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="救出【吉普豆泥】啦↖(^ω^)↗" />					  					  	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="喔嚯嚯——\n吉普豆村的治安就交给你了。" />	
+					<Msg NpcID="998" ImageID="7" Info="哪只鼹鼠打了我兄弟？！！！！" />	
+					<Option Info="(⊙o⊙）？" />																							
+				</Action>		
+    			<Action Type="MOVIE" Url="task_9_2.swf" MapLevel="TASK" Pos="0,0"/>											
+				<Action Type="TALK">		
+					<Msg NpcID="5" ImageID="7" Info="【神秘绑架者】的同伴来了！！！" />											
+					<Msg NpcID="334" ImageID="2" Info="我……想跟随【@nick】一起冒险……\n（不要无视我不要无视我……）" /> 
+					<Option Info="一起去【门外】看看吧！" /> 
+				</Action>																																																								
+    		</Event>								
+		</Step>			   		      		   				   	   
+</Procedure>
+</Task>
+
+

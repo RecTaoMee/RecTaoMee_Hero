@@ -1,0 +1,119 @@
+<Task ID="135" Memo="c麦田村*民宅c的cTBc最近很焦虑，\n不去“管闲事”看看吗^0^?" TargetMap="11405"> <!--TB邮件删掉-->		
+   	<Procedure> 	
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c麦田村*民宅c的cTBc最近很焦虑，\n不去“管闲事”看看吗^0^?" TargetMap="11405" TargetObj="36" TargetName="和tTBt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="TB你好啊^_^" />			
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="……\nTB可以跟你说件事吗……？" />		
+					<Option Info="嗯，说吧！" SkipTrigger="Y" />
+					<Option Info="我很忙，下次吧" NextStep="1" />
+				</Action>
+    		</Event>
+		</Step>
+  		<Step ID="3" ParentList="1" ParentCost="1" >
+    		<Event Memo="c麦田村*民宅c的cTBc最近很焦虑，\n不去“管闲事”看看吗^0^?" TargetMap="11405" TargetObj="36" TargetName="和tTBt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="什么事？" />			
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="1" Info="TB的爸爸是【弗雷基港】【T•商会】的“掌舵人”。" />		
+					<Msg NpcID="36" ImageID="1" Info="爸爸最近可能遇上了麻烦，\n这几个月的家长会都没来参加……" />		
+					<Msg NpcID="36" ImageID="1" Info="TB希望用【所有的零用钱】，\n委托【@nick】请爸爸回来。" />																							
+					<Option Info="一言为定！" NextStep="5" SkipTrigger="Y" />
+					<Option Info="朋友不收你钱^^" NextStep="6" SkipTrigger="Y" />										
+				</Action>
+    		</Event>
+		</Step>		
+  		<Step ID="5" ParentList="0" ParentCost="1" >
+    		<Event Memo="c麦田村*民宅c的cTBc最近很焦虑，\n不去“管闲事”看看吗^0^?" TargetMap="11405" TargetObj="36" TargetName="和tTBt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="一言为定！" />			
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="真的吗？！太好了！\n爸爸一定在【弗雷基商会】里。\n指南针地图里东→南↓方的海港就是弗雷基港。" />		
+					<Msg NpcID="36" ImageID="2" Info="【@nick】加油！" />	
+					<Option Info="等我好消息！" />									
+				</Action>								
+     			<Action Type="COMMAND" Command="SET_STA_1" Params="a1" />
+    		</Event>
+		</Step>   <!--5输出TB的零用钱↓--><!--  提交节点1  -->
+				
+  		<Step ID="6" ParentList="0" ParentCost="1" >
+    		<Event Memo="c麦田村*民宅c的cTBc最近很焦虑，\n不去“管闲事”看看吗^0^?" TargetMap="11405" TargetObj="36" TargetName="和tTBt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11405" ObjID="36" TaskOption="朋友不收钱^^" />			
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="36" ImageID="2" Info="真的吗？！太好了！\n爸爸一定在【弗雷基商会】里。\n指南针地图里东→南↓方的海港就是弗雷基港。" />		
+					<Msg NpcID="36" ImageID="2" Info="【@nick】加油！" />	
+					<Option Info="等我好消息！" />									
+				</Action>							
+    		</Event>
+		</Step>	<!--6不输出TB的零用钱↓-->	
+		   
+
+  		<Step ID="15" ParentList="5, 6" ParentCost="1" >
+    		<Event Memo="快去c弗雷基商会c问问TB的爸爸去不去开家长会吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="请问您是TB的爸爸？" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="你说我是TB的爸爸？给个理由先。" />																											
+					<Option Info="看名字" />	
+					<Option Info="看长相" />										
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="嗯哼答对了。\n对了，看你的样子是【勇士协会】的。" />	
+					<Option Info="TB让我来找你" SkipTrigger="Y" />					
+				</Action>								
+    		</Event>			
+		</Step>		   
+  		<Step ID="16" ParentList="15" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="a1" /> 			
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去c弗雷基商会c问问TB的爸爸去不去开家长会吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="关于TB的委托" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="TB又委托了有趣的家伙啊~！" />	
+					<Msg NpcID="48" ImageID="1" Info="你鼓鼓的星豆袋里装的是TB的零用钱吧？\n之前的委托人都收了TB的零用钱，\n不能成为他【真正的朋友】。" />																											
+					<Msg NpcID="48" ImageID="1" Info="既然TB已经支付给你委托金了，\n我就不给了，这就是“做买卖的规矩”。" />
+					<Option Info="对了【TB的家长会】" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="商会太忙，差点忘了。\n这几天我就回去~" />	
+					<Option Info="OK" />					
+				</Action>									
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c弗雷基商会c问问TB的爸爸去不去开家长会吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="关于TB的委托" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="TB又委托了有趣的家伙啊~！" />	
+					<Msg NpcID="48" ImageID="1" Info="看你的星豆袋瘪瘪的，\n没有收TB的零用钱吧？\n之前的委托人都收了TB的零用钱，\n不能成为他【真正的朋友】。" />																											
+					<Msg NpcID="48" ImageID="1" Info="看来小tb很幸运——\n终于找到了真正的好朋友——哈哈！" />
+					<Msg NpcID="48" ImageID="1" Info="你的【委托星豆】就由我来支付给你吧。" />
+					<Option Info="对了【TB的家长会】" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="48" ImageID="1" Info="商会太忙，差点忘了。\n这几天我就回去~" />	
+					<Option Info="OK" NextStep="17" SkipTrigger="Y" />					
+				</Action>										
+    		</Event>											
+		</Step>		   
+  		<Step ID="17" ParentList="0" ParentCost="1" >			  
+    		<Event Memo="快去c弗雷基商会c问问TB的爸爸去不去开家长会吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话"> <!--没拿TB的零用钱↓-->	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="关于TB的委托" />							
+				</Trigger>					
+    			<Action Type="COMMAND" Command="NOTHING" />										
+    		</Event>
+		</Step>		
+		
+	</Procedure>
+</Task>

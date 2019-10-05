@@ -1,0 +1,31 @@
+<task id="10002">
+	<taskDes>
+		<![CDATA[勇敢者旅馆二楼的“神秘人”想和你聊聊。$$]]>
+		<![CDATA[学到重要的东西了……“正义的伙伴”有趣的家伙。这就去公告栏领取奖励吧！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+	    <pro type="0" parent="" npcID="21" title="原来你是正义的伙伴" action="0" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11208"/>
+		<pro type="0" parent="0" npcID="300" action="1" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11202"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="21" answer="好的！" to="so" >
+			<des>
+				<![CDATA[1#你通过了我的考验！快去公告栏领取赏星吧，这是你坚守原则的奖励！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="15" answer="嘿嘿(^-^)！" to="a2">
+			<des>
+				<![CDATA[1#今天你小心谨慎的执行任务了吗？挺厉害的嘛，这次算你运气好。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="2" panel="PublicShouLiModule" data="10002_3" to="a3"/>
+		<proAction id="3" type="0" npcID="15" answer="嗯！" to="c">
+			<des>
+				<![CDATA[1#这些是你的赏金奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！$$]]>
+				<![CDATA[1#记住————正义与你同在。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

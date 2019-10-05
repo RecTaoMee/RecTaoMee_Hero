@@ -1,0 +1,76 @@
+<task id="63">
+	<taskDes>
+		<![CDATA[完成导师的3个协会学员班任务就可以成为【正式的协会职业者】！准备好了就去导师【瑞凌】那接受挑战吧！$$]]>
+		<![CDATA[【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，★打败拉拉美王【并记住联军的人数】告诉老师吧！]]>
+	</taskDes>
+	<taskPro>
+    <pro type="0" parent="" npcID="28" title="瑞凌老师好！！！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11303"/>
+	<pro type="2" parent="0" mapID="21303" action="8" taskDes="1"/>
+    <pro type="0" parent="1" npcID="28" title="打败拉拉美王了！" action="3" needRes="" needResNum="" unResAction="" bossID="2002" bossNum="1" taskDes="1" mapID="21303"/>
+    <pro type="5" parent="2" npcID="28" title="（自动完成）" action="9" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="1" mapID="21303"/>		
+  </taskPro>
+  <actions>
+    <proAction id="0" type="0" npcID="28" answer="（⊙ω⊙）" objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[1#通过“①②③学员班考试”就可以成为正式协会职业者。$$]]>
+		<![CDATA[2#【那时我会让你负责更重要的使命，并且传授你更高级的技能。】弓箭手需要高超的技能。$$]]>
+		<![CDATA[1#准备好了吗？————来听听3号考试内容吧！$$]]>
+		<![CDATA[1#拉拉美是一种美味的精灵——其实这只是个传说——因为谁也没有真正尝过拉拉美的味道。]]>
+	  </des>
+	</proAction>
+  <proAction id="1" type="1" level="taskLevel" outMap="1" name="task_61_1" moviepos="0,0" objLevel="" objName="" objType="" objValue="" to="a2"/> 
+    <proAction id="2" type="0" npcID="28" answer="使命必达！" objLevel="" objName="" objType="" objValue="" to="so">
+      <des>
+		<![CDATA[2#啊哈~不好意思，我想象力太丰富了嘿嘿。$$]]>
+		<![CDATA[1#在广阔的格历尔平原上，驰骋着一位【拉拉美王】——格历尔平原之王。$$]]>
+		<![CDATA[2#【拉拉美王】有着惊人的奔跑速度和冲撞能力，还有令人口水直流的香味。$$]]>
+		<![CDATA[1#【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”巡逻的区域！$$]]>
+		<![CDATA[2#为了证明你打败了拉拉美王，这次的任务要求是：★打败拉拉美王并记住联军的人数，回来告诉我。]]>
+	  </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="28" answer="打败了！$没有打败......" objLevel="" objName="" objType="" objValue="" to="a4$a10">
+      <des>
+		<![CDATA[1#你遇到“拉拉美素食主义联盟”并且打败【拉拉美王】了吗？]]>
+	  </des>
+	</proAction>
+    <proAction id="4" type="0" npcID="28" answer="1个$2个$3个$4个$5个$6个$7个$8个$9个$10个" objLevel="" objName="" objType="" objValue="" to="a5$a5$a5$a5$a5$a5$a5$a5$a6$a5">
+      <des>
+		<![CDATA[1#那么告诉我——“拉拉美素食主义联军”（☆除拉拉美王）共有几个精灵？]]>
+	  </des>
+	</proAction>
+    <proAction id="5" type="0" npcID="28" answer="使命必达！" objLevel="" objName="" objType="" objValue="" to="o">
+      <des>
+		<![CDATA[1#很遗憾回答错误。$$]]>
+		<![CDATA[1#在广阔的格历尔平原【第三区】可以遇到【拉拉美王】，★打败拉拉美王并记住联军的人数，回来告诉我。$$]]>
+		<![CDATA[2#熟练的借助【地图指南针】和【旅行记事本】在草原上迎着夕阳奔跑吧！]]>
+	  </des>
+	</proAction>
+    <proAction id="6" type="0" npcID="28" answer="你怎么知道？" objLevel="" objName="" objType="" objValue="" to="a7">
+      <des>
+		<![CDATA[1#诚实，是【摩尔勇士】最基本的品质。$$]]>
+		<![CDATA[1#只是打听了联军数量说明你有很好的探查能力，但你并没有打败拉拉美王。]]>
+	  </des>
+	</proAction>
+    <proAction id="7" type="0" npcID="28" answer="使命必达！" objLevel="" objName="" objType="" objValue="" to="o">
+      <des>
+		<![CDATA[2#跟踪一个“敏捷＜80”的摩尔太简单了，我是你的老师我会对你负责的。$$]]>
+		<![CDATA[1#在广阔的格历尔平原【第三区】可以遇到【拉拉美王】，去堂堂正正的决一胜负，熟练的借助【地图指南针】和【旅行记事本】完成任务吧！]]>
+	  </des>
+	</proAction>
+    <proAction id="8" type="0" npcID="304" answer="哪里跑！" objLevel="" objName="" objType="" objValue="" to="e1">
+      <des>
+		<![CDATA[1#美——味！谁说我是美味之王哼？！！！！$$]]>
+		<![CDATA[2#格历尔平原是我们的哼！——来—追—我—啊———哼哼哼哼哼！   我跑哼~——！]]>
+	  </des>
+	</proAction>
+	<proAction id="9" type="3" to="c"/>
+    <proAction id="10" type="0" npcID="28" answer="使命必达！" objLevel="" objName="" objType="" objValue="" to="o">
+      <des>
+		<![CDATA[1#在格历尔平原【第三区】可以遇到【拉拉美王】，记住这次的任务要求：★战胜拉拉美王并记住联军的人数，回来告诉我。$$]]>
+		<![CDATA[2#熟练的借助【地图指南针】和【旅行记事本】在草原上迎着夕阳奔跑吧！]]>
+	  </des>
+	</proAction>
+  </actions>
+</task>
+
+

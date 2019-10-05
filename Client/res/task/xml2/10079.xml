@@ -1,0 +1,179 @@
+<Task ID="10079" Memo="c银魂·休一c的“精灵传说”？\n快去c废弃的土豆村c看看吧！" TargetMap="11709">
+   	<Procedure> 		 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c银魂·休一c的“精灵传说”？\n快去c废弃的土豆村c看看吧！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="【精灵传说】？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="我保证这个“传说”绝对真实。\n你还可以自己续写一个“完美结局”。" />
+					<Option Info="快告诉我！" SkipTrigger="Y" />
+					<Option Info="有事先走了" NextStep="1" />					
+				</Action>	
+    		</Event>
+    	</Step>		
+  		<Step ID="4" ParentList="1" ParentCost="1" >
+    		<Event Memo="c银魂·休一c的“精灵传说”？\n快去c废弃的土豆村c看看吧！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="告诉我【精灵传说】！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="坐下喝杯茶，“精灵传说”马上开始……" />					
+					<Option Info="↖(^ω^)↗" />			
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="那是“黑水晶”力量刚开始蔓延的时候\n……………………………………" />										
+					<Msg NpcID="335" ImageID="1" Info="嘿咻嘿咻~~\n（一只“吉普土豆”从远处小跑过来……）" />
+					<Msg NpcID="333" ImageID="2" Info="咦，这不是隔壁的“秃头”君吗~~" />
+					<Msg NpcID="335" ImageID="1" Info="不是“秃头”！\n是“土豆”！！！！！！！！" />									
+					<Msg NpcID="335" ImageID="1" Info="哼…………告诉你们1个 大 新 闻——\n把我们【吉普精灵】做成“土豆火锅”吃掉，\n摩尔就有力量能对付黑水晶了！" />
+					<Msg NpcID="333" ImageID="3" Info="额，大家一直瞒着我们，\n一定是害怕我们受到刺激。" />
+					<Msg NpcID="335" ImageID="1" Info="为了吉普豆村，就算被做成料理也没话说！" />
+					<Msg NpcID="335" ImageID="1" Info="对了，吉普豆花，你会魔法！\n在“锅”里如果觉得热，还可以发动“霜冻术”。" />					
+					<Msg NpcID="333" ImageID="2" Info="不要啊~~\n被摩尔的大板牙碰到，\n我会变成臭哄哄的（T—T）……\n哥哥快救我！" />					
+					<Msg NpcID="333" ImageID="3" Info="“小发发”别怕！\n我来保护你，\n——吉 普 豆 叶 变 身——	" />					
+					<Option Info="⊙o⊙？" TalkOver="Y" />			
+				</Action>														
+				<Action Type="MOVIE" Url="task_10079_1.swf" MapLevel="TASK" Pos="0,0" /> 
+				<Action Type="TALK">
+					<Msg NpcID="333" ImageID="2" Info="！！！！！！\n你们是——？？" />
+					<Msg NpcID="334" ImageID="1" Info="相信你的直觉，“小发发”。\n“哥哥”就是在关键时刻必须站出来——\n这样的存在啊（T—T）……" />	
+					<Msg NpcID="59" ImageID="7" Info="——刚才谁在惨叫？？" />
+					<Msg NpcID="335" ImageID="1" Info="*##%@\n【吉普豆叶】变成了“3堆泥”……\n（以下省略500字）" />
+					<Msg NpcID="59" ImageID="1" Info="喔！大家误会了，\n没有什么“吉普豆精灵料理”，\n你们听到的是恢复Mp专用“吉普豆”\n——用精灵洗澡后的“遗留物”做成。" />						
+					<Msg NpcID="334" ImageID="1" Info="（泪流满面）\n我是谁，\n为什么存在在这个世界上？？？？？" />					
+					<Msg NpcID="401" ImageID="3" Info="原来每只【吉普豆泥】都曾经是一只勇敢的【吉普豆叶】！\n（“传说”故事结束，谢谢欣赏。）" />									
+					<Option Info="……" SkipTrigger="Y" />			
+				</Action>	
+    		</Event>
+    	</Step>			
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="c银魂·休一c的“精灵传说”？\n快去c废弃的土豆村c看看吧！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="5" TaskOption="“精灵传说”讲完啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="61" ImageID="1" Info="唔，这就是【吉普豆泥】的诞生。\n后来，它们一直找不到存在的意义……" />
+					<Msg NpcID="59" ImageID="1" Info="对【吉普豆泥】连说【10次】“吉普豆泥加油！”的“鼓励咒语”，\n它们就能找到自信。" />
+					<Msg NpcID="59" ImageID="1" Info="准备好了吗？" />
+					<Option Info="交给我了！" SkipTrigger="Y" />	
+					<Option Info="让我准备下" NextStep="5" />												
+				</Action>	
+    		</Event>
+    	</Step>					
+  		<Step ID="9" ParentList="5" ParentCost="1" >
+    		<Event Memo="c废弃的土豆村c的c银魂·休一c在叫小主人，\n拯救c吉普豆泥c靠你了！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="准备好啦！" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="123开始，跟我说——“吉普豆泥加油！”——" />
+					<Option Info="吉普豆泥加油！" />							
+				</Action>						
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！" />							
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！！！！！" />							
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="吉普豆泥——" />
+					<Option Info="加油！！！！！！！！！！" />							
+				</Action>																																						
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="【吉普豆泥】渐渐兴奋起来了！\n你——作为它的守护者，\n希望它“变身”【吉普豆花】？还是【吉普豆叶】？" />				
+					<Msg NpcID="59" ImageID="1" Info="★【吉普豆花】擅长魔法，\n【吉普豆叶】擅长物理攻击\n——这是它们兄妹最大的差别。" />				
+					<Msg NpcID="59" ImageID="1" Info="好好考虑一下再告诉我。" />				
+					<Option Info="OK！" />								
+				</Action>					
+    		</Event>
+    	</Step>		
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="c废弃的土豆村c的c银魂·休一c在叫小主人，\n拯救c吉普豆泥c靠你了！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="变身【吉普豆花】！" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="你确定吗？" />
+					<Msg NpcID="59" ImageID="1" Info="★【吉普豆花】擅长魔法，\n【吉普豆叶】擅长物理攻击\n——这是它们兄妹最大的差别。" />									
+					<Option Info="★让我再想想" NextStep="10" />										
+					<Option Info="变身【吉普豆花】" NextStep="12" SkipTrigger="Y" />												
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="11" ParentList="9" ParentCost="1" >
+    		<Event Memo="c废弃的土豆村c的c银魂·休一c在叫小主人，\n拯救c吉普豆泥c靠你了！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="变身【吉普豆叶】！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="你确定吗？" />
+					<Msg NpcID="59" ImageID="1" Info="★【吉普豆花】擅长魔法，\n【吉普豆叶】擅长物理攻击\n——这是它们兄妹最大的差别。" />									
+					<Option Info="★让我再想想" NextStep="11" />									
+					<Option Info="变身【吉普豆叶】" NextStep="13" SkipTrigger="Y" />								
+				</Action>						
+    		</Event>
+    	</Step>		
+  		<Step ID="12" ParentList="0" ParentCost="1" >
+    		<Event Memo="c废弃的土豆村c的c银魂·休一c在叫小主人，\n拯救c吉普豆泥c靠你了！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="变身【吉普豆花】！" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="很好，\n吉 普 豆 泥 变 身 【吉普豆花】——" />		
+					<Option Info="★让我再想想" NextStep="12" />																		
+					<Option Info="【吉普豆花】万岁！" />												
+				</Action>	
+    		</Event>
+    	</Step>	
+  		<Step ID="13" ParentList="0" ParentCost="1" >
+    		<Event Memo="c废弃的土豆村c的c银魂·休一c在叫小主人，\n拯救c吉普豆泥c靠你了！" TargetMap="11709" TargetObj="59" TargetName="和t银魂·休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="变身【吉普豆叶】！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="很好，\n吉 普 豆 泥 变 身 【吉普豆叶】——" />	
+					<Option Info="★让我再想想" NextStep="13" />													
+					<Option Info="【吉普豆叶】万岁！" />								
+				</Action>		
+    		</Event>
+    	</Step>	
+  		<Step ID="14" ParentList="12, 13" ParentCost="1" >
+    		<Event Memo="c吉普豆泥c变身成功↖(^ω^)↗\n咦，c废弃的土豆村c的c银魂·休一c在叫小主人，快去看看吧！" TargetMap="11709">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="59" TaskOption="变身万岁↖(^ω^)↗" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="59" ImageID="1" Info="嚯嚯，记得“精灵伙伴”需要鼓励，\n祝你早日成为“摩尔勇士”！" />								
+					<Option Info="O(∩_∩)O！" />								
+				</Action>				
+    		</Event>
+    	</Step>											
+	</Procedure>
+</Task>

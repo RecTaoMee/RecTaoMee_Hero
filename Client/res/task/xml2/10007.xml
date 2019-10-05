@@ -1,0 +1,83 @@
+<Task ID="10007" Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克司的精灵研究" Content="皮克司精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究工作" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="今天的研究课题是在修隐岛区域，具体情况请前往废弃的土豆村向我的同事【拉克斯】了解吧！" />
+					<Option Info="好的！" />
+				</Action>			
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="穿过c修隐岛c的c吉普3号地道c就可以到达c废弃的土豆村c，c拉克斯c在那里等着小主人！" TargetMap="11709" TargetObj="62" TargetName="和t拉克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="62" TaskOption="精灵研究工作" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="62" ImageID="1" Info="很高兴你能来帮助我。\n我本来想研究这里的吉普豆精灵，\n但是黑水晶导致了很多【吉普豆花】被黑化了。" />
+					<Msg NpcID="62" ImageID="1" Info="麻烦你去旁边的【吉普3号地道】净化【15只吉普豆花】吧，\n我想这样研究应该能顺利一些了。" />
+					<Option Info="好的！" />
+				</Action>			
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="2" Count="15" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="完成任务！回去找c拉克斯教授c吧！" TargetMap="11709" TargetObj="62" TargetName="和t拉克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="62" TaskOption="净化吉普豆花了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="62" ImageID="1" Info="不愧是皮克司推荐的人，相当可靠啊。\n我想你的奖励应该送到公告栏了，快点回去领取吧。" />
+					<Option Info="谢谢!" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="到c吉普3号地道c净化c15只吉普豆花c吧！" TargetMap="21751" TargetObj="" TargetName="净化t吉普豆花t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11709" ObjID="62" TaskOption="吉普豆花在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="62" ImageID="1" Info="就在旁边的【吉普3号地道】里。\n黑化的【吉普豆花】可不简单，小心点！" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>
+		</Step>	
+		
+													
+		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="任务完成↖(^o^)↗，快去c公告栏c领取奖赏吧！" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="我每天都很忙，就不表扬你了。" />
+					<Option Info="（-_-）||" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，拿去吧。" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+			
+	</Procedure>
+</Task>

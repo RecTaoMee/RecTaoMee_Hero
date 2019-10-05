@@ -1,0 +1,40 @@
+<task id="17">
+	<taskDes>
+		<![CDATA[《皮皮克克的日记》是我的“本子”朋友，还在犹豫什么？——【现在正是皮皮克克需要你的时候！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="1" action="0" title="Hi~皮皮克克！" needRes="" needResNum="" unResAction=""  />
+		<pro type="0" parent="0" npcID="1" action="4" title="皮皮克克皮皮克克" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="1" answer="我已经答应村长了" to="a1">
+			<des>
+				<![CDATA[7#【@nick】你要去摩尔王国了吗？！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="1" answer="保证不说" to="a2">
+			<des>
+				<![CDATA[4#我想拜托你一件事！答应我不要告诉老姐和土豆老爷子还有在摩尔王国的老爸！这是我们的秘密————]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="1" answer="好的！$让我再想想……" to="s3$o">
+			<des>
+				<![CDATA[5#等你到了摩尔王国，也许能遇到【摩尔勇士】，可以帮我向【摩尔勇士】要签名吗！？]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="1" answer="我以战友的名义保证！" to="a4">
+			<des>
+				<![CDATA[7#你以战友的名义保证！我在这里等你啊！]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="1" answer="⊙0⊙精灵伙伴？" to="a5">
+			<des>
+				<![CDATA[1#通往王国的地道在奇普力爷爷家，快去找村长爷爷吧！！！！$$]]>
+				<![CDATA[1#对了！带上我的【精灵伙伴】一起上路吧！虽然它们很小，但是它们很强！]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="2" panel="Task17Module" to=""/>
+	</actions>
+</task>

@@ -1,0 +1,41 @@
+<!--武器店铺-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="270,400">
+		 <node id="1" pos="657,334" targetMapId="11202" targetTransPortId="6"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="MapLib" res="MC_PriceBoard" event="click" lib="RES_PriceBoard" />
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="16" type="NPC" res="MC_npc_16" level="downLevel" fun="" taskType="0" action="0" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction npcID="16" id="0" type="0" answer="我想修装备$我想买装备$我想卖东西$关于【武器装备】$摩尔勇士万岁！"  to="b12_16$b2_16$b3_16$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会摩尔王国店】。快把没用的星豆变成有用的装备吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="16" id="1" type="0" answer="武器$防具" to="a2$a3">
+			<des>
+				<![CDATA[7#武器防具的事你问对人了，想知道什么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="16" id="2" type="0" answer="我想修装备$我想买装备$我想卖东西$关于【武器装备】$摩尔勇士万岁！" to="b12_16$b2_16$b3_16$a1$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[7#【武器】可是好东西！我们的武器都是“女神之泪”净化过的，没被净化过的武器会伤害精灵，非常危险！$$]]>
+				<![CDATA[5#所以一定要买正规商店出售的武器知道吗，便宜没好货！$$]]>
+				<![CDATA[5#自从出现“黑化精灵”，我的武器最好卖了。绝对比隔壁道具店那种没用的玩意儿实用。$$]]>
+				<![CDATA[1#拿着星豆等着被盗贼抢，不如换成净化黑化精灵的武器！这就是我的生存之道哈哈————！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="16" id="3" type="0" answer="我想修装备$我想买装备$我想卖东西$关于【武器装备】$摩尔勇士万岁！"  to="b12_16$b2_16$b3_16$a1$o" colorID="1$1$1$0$0" >
+			<des>
+				<![CDATA[7#【防具】可是比武器更好的东西。遇到危险最好的办法就是逃跑，逃不掉的时候就会挨打，即使被打，也能撑到厉害的伙伴来救你！$$]]>
+				<![CDATA[1#拿着星豆等着被盗贼抢劫，不如换成防身的家伙！这就是我的生存之道哈哈————！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

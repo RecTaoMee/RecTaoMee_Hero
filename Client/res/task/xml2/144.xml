@@ -1,0 +1,48 @@
+<Task ID="144" Memo="前往c勇士广场c左侧找到神秘的c多修c，他有事找你哦！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="这次的试炼任务是什么呢？快点去勇士广场问问神秘的c多修c吧？" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="多修的试炼" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="请你把这封信送给勇敢者旅馆的【蒂蒂拉】吧！这封信非常重要，因为里面寄宿着1个需要帮助的灵魂。" />
+					<Option Info="好，我这就去" />
+				</Action>
+			</Event>
+		</Step>
+
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="这次的试炼任务是什么呢？快点去勇士广场问问神秘的c多修c吧？" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260036" />
+			</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="寄宿灵魂的信件？还是快点把信送给c蒂蒂拉c吧。" TargetMap="11207" TargetObj="14" TargetName="和t蒂蒂拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="14" TaskOption="蒂蒂拉，你的信!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="给我的信吗？嗯...让我看看...." />
+					<Msg NpcID="14" ImageID="6" Info="这个多修终于直接把账单付了吗！下次再敢拖那么久我就不客气了！" />
+					<Option Info="…回去告诉多修吧…" />
+				</Action>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260036" /> 
+			</Event>
+		</Step>
+		 
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="把蒂蒂拉的回复告诉c多修c吧！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="蒂蒂拉的回复" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="...哈哈，原来是这样，辛苦你啦！我的也是需要帮助的灵魂啊~~\(≧▽≦)/" />
+					<Option Info="....." />
+				</Action>
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

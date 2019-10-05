@@ -1,0 +1,92 @@
+<!--普豆泥王净化-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="600,294" targetMapId="11202" targetTransPortId="0" name="打完BOSS离开" confirm="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>	
+	<npc>
+		<node id="701" type="NPC" res="MC_npc_701" action="6"/>
+		<node id="500" type="NPC" res="MC_npc_500"/>
+	</npc>
+	<actions>
+		<proAction npcID="500" id="1" type="0" answer="先和女神一起【加油】吧" to="jiayou" >
+			<des>
+				<![CDATA[1#如果我被彻底净化了————【我的重生】将和你签订契约跟随你…………]]>
+			</des>
+		</proAction>
+		<proAction npcID="500" id="2" type="0" answer="我准备好了来战！$普豆泥万岁！" to="a4$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#如果我被彻底净化了————【我的重生】将和你签订契约跟随你…………]]>
+			</des>
+		</proAction>
+		<proAction npcID="500" id="3" type="0" answer="我准备好了来战！$普豆泥万岁！" to="a4$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#记得经常来找我玩儿啊^____^吼……吼………吼…\n我可以陪你训练让你变得更强……\n草原之王猪头【拉拉美王】等着你去净化……]]>
+			</des>
+		</proAction>		
+		<proAction id="4" type="5" fightID="2501" />
+		<proAction npcID="2" id="5" type="0" answer="我明白了！" to="o" >
+			<des>
+				<![CDATA[1#请快和我一起用【表情】为普豆泥王【加油】吧^^！]]>
+			</des>
+		</proAction>
+
+		<proAction id="6" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="7" type="0" answer="我要登记冒险小队$我要寻找冒险小队$你是谁？$摩尔勇士万岁！" to="m1$m2$a11$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="8" type="0" answer="我要登记冒险小队$你是谁？$摩尔勇士万岁！" to="m1$a11$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="9" type="0" answer="我要寻找冒险小队$你是谁？$摩尔勇士万岁！" to="m2$a11$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="10" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="11" type="0" answer="什么是队伍名字？$什么是登记冒险小队$怎么寻找冒险小队$摩尔勇士万岁！" to="a14$a12$a13$o" >
+			<des>
+				<![CDATA[1#我是穿越时空的【组队集结员——啦啦】!我的任务就是帮助你寻找的志同道合的队友！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="12" type="0" answer="什么是队伍名字？$怎么寻找冒险小队$摩尔勇士万岁！" to="a14$a13$o" >
+			<des>
+				<![CDATA[1#这个超简单~~和我【对话】，告诉我你的队伍名字就可以啦！看到我背后的喇叭了吗？我会让周围的人都知道你的小队！$$]]>
+				<![CDATA[1#爱心小提示：一个合适的小队名字可以让你更快的找到志同道合的伙伴！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="13" type="0" answer="什么是队伍名字？$什么是登记冒险小队$摩尔勇士万岁！" to="a14$a12$o" >
+			<des>
+				<![CDATA[1#这个超~超简单！想要你就说！我会告诉你附近有哪些摩尔在寻找伙伴！$$]]>
+				<![CDATA[1#只要他们的队伍没有满员，你就能加入^^。]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="14" type="0" answer="什么是登记冒险小队$怎么寻找冒险小队$摩尔勇士万岁！" to="a12$a13$o" >
+			<des>
+				<![CDATA[1#【队伍名字】可是很重要的！比如你的队伍名字是“打拉拉美王”，想一起去的小摩尔看到了，肯定会加入你的队伍~。$$]]>
+				<![CDATA[1#修改队伍名字也很简单，如果你是队长，你看你头像那只【黄色的铅笔】了吗？点击它就可以给队伍重新起个名字了^^。]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="15" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="16" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

@@ -1,0 +1,52 @@
+<Task ID="10085" Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小宅箱？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="等你很久啦【@nick】！\n这次的悬赏任务是——净化8只小宅箱。" />					
+					<Option Info="(⊙o⊙)哦？"  SkipTrigger="Y" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="222" TaskOption="小宅箱？" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="小宅箱们喜欢住在干净的家里。\n风之洞穴充满了喵斯熊刺鼻的“体香”，\n被困在那简直是精灵的恶梦啊！" />
+					<Msg NpcID="222" ImageID="1" Info="请去风之洞穴净化15只【小宅箱】吧！" />						
+					<Option Info="这就去【风之洞穴】！" />
+				</Action>								
+    		</Event>
+    	</Step>			
+  		<Step ID="3" ParentList="2" ParentCost="1" >	
+			<Condition>
+				<Battle ID="23" Count="15" />
+			</Condition>				  	
+    		<Event ConditionType="IN" Memo="快去c平原12区c报告c守卫士兵Wc吧!" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">			
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="净化小宅箱了↖(^ω^)↗！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="啊哈太好啦，我马上收拾房间接小宅箱回家住。" />
+					<Option Info="O(∩_∩)O" />
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c风之洞穴c净化c15只小宅箱c吧!" TargetMap="21501" TargetName="净化t小宅箱t">			
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小宅箱在哪里？" />											
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="小宅箱们喜欢住在干净的家里。\n风之洞穴充满了喵斯熊刺鼻的“体香”，\n被困在那简直是精灵的恶梦啊！" />
+					<Msg NpcID="222" ImageID="1" Info="快去【风之洞穴】净化15只【小宅箱】吧！" />						
+					<Option Info="这就去【风之洞穴】！" />
+				</Action>				
+    		</Event>			  			
+    	</Step>  			
+	</Procedure>
+</Task>

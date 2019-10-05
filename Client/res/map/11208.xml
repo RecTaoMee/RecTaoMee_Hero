@@ -1,0 +1,34 @@
+<!--旅馆2楼-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="250,390">
+		 <node id="1" pos="429,281" targetMapId="11207" targetTransPortId="2" name="旅馆1楼"/>
+		 <node id="2" pos="1430,327" targetMapId="11202" targetTransPortId="8" name="王国广场"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="AppModule" res="MC_noteBoard2" module="boards/HotelNoteBoard2Module" />
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="21" type="NPC" res="MC_npc_21" level="contentLevel" fun="" taskType="0" action="0$2" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+		<proAction npcID="21" id="0" type="0" answer="我想举报坏蛋！$摩尔勇士万岁！" to="a1$o" >
+			<des>
+				<![CDATA[1#什么，我的米米号密码？开玩笑，那是一级机密！]]>
+			</des>
+		</proAction>
+	    <proAction npcID="21" id="1" type="0" answer="我想举报坏蛋！$摩尔勇士万岁！" to="a1$o" >
+			<des>
+				<![CDATA[3#公正伟大的王国信箱举报系统即将开放。我热爱低调的维护正义。]]>
+			</des>
+		</proAction>
+		<proAction npcID="21" id="2" type="0" answer="我想举报坏蛋！$摩尔勇士万岁！" to="a1$o" >
+			<des>
+				<![CDATA[3#想要做正义的伙伴吗？该出手时绝不能退缩！到了解决不了的时候也可以告诉我-_~b]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

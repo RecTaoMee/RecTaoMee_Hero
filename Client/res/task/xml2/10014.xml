@@ -1,0 +1,57 @@
+<Task ID="10014" Memo="c下水道挑战c正式开放！请前往负责守卫下水道的c守卫士兵•Hc了解情况！" TargetMap="11220">
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c下水道挑战c正式开放！请前往负责守卫下水道的c守卫士兵•Hc了解情况！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="你好守卫士兵！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="您好，有事么。" />
+					<Option Info="请告诉我普豆泥王的情报" SkipTrigger="Y" />
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c下水道挑战c正式开放！请前往负责守卫下水道的c守卫士兵•Hc了解情况！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="你好守卫士兵！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="我记得你，上次是我把你从下面抬出来的，\n……这种事怎么能让【妮娜】大人来做。" />
+					<Msg NpcID="207" ImageID="1" Info="还想进入下水道吗？\n那是十分危险的。" />
+					<Option Info="是的，请告诉我情报吧！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="好吧，请记住————\n普豆泥王在第三层的【封印之门】门后，\n【不会呼吸的蛤蟆嘴里有机会得到解开1号封印门的钥匙】。" />
+					<Option Info="知道了谢谢！" />
+				</Action>				
+    		</Event>
+		</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="2001" Count="1" />				
+			</Condition>
+    		<Event ConditionType="IN" Memo="打败吉普豆泥王了！！和下水道c守卫士兵·Hc聊聊吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵·Ht对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="战胜普豆泥王啦！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="做的不错！\n这么快就战胜了普豆泥王，\n不过这只是刚刚开始。" />
+					<Msg NpcID="207" ImageID="1" Info="对于某些人来说，\n勇敢不过是消灭一只蟑螂，但它足以鼓励自己，\n这是埋藏在我们心底的一种力量，无懈可击的力量——！" />
+					<Msg NpcID="207" ImageID="1" Info="根据下水道“挑战传统”，\n《勇士协会》第一章第1条，\n我将为你颁发这个【特别称号】——\n【粘糊糊勇士】。" />
+					<Option Info="谢谢【H】回见" />
+				</Action>			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="要打败c吉普豆泥王c，“不会呼吸的蛤蟆”口中有至关重要的钥匙。" TargetMap="21204" TargetObj="" TargetName="击败t吉普豆泥王t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="关于普豆泥王的情报" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="207" ImageID="1" Info="不敢下去？\n下面有些黑化精灵没错。\n要到达【三层】确实有难度。" />
+					<Msg NpcID="207" ImageID="1" Info="请记住————\n普豆泥王在第三层的【封印之门】门后，\n【不会呼吸的蛤蟆嘴里有机会得到解开1号封印门的钥匙】。" />
+					<Option Info="知道了" />
+				</Action>			
+    		</Event>			
+		</Step>
+</Procedure>
+</Task>

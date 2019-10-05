@@ -1,0 +1,187 @@
+<!--国王呈见厅-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<process>
+		<node name="ActivityHeroCupSign" medalID="290006"/>
+		<node name="ActiveHeroEndAward"/>
+		<!--
+		<node name="ActivityHeroCupReward"/>
+		-->
+	</process>
+	<transport intPos="407,676">
+		<node id="1" pos="404,754" targetMapId="11302" targetTransPortId="5" name=""/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_heroBook" module="MoleHeroBookModule"/>
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="24" type="NPC" res="MC_npc_24" action="0" need="19999" needType="task" needAction="10" />
+		<node id="25" type="NPC" res="MC_npc_25" action="7$8$9"/>
+		<node id="30" type="NPC" res="MC_npc_30" action="5$6" name="摩尔王"/>
+		<node id="65" type="NPC" res="MC_npc_65" action="11" teamID="1" needType="heroCupHaveSign,heroCupIsYourTeam,heroCupExchangeDress,heroCupPlayMovie" needAction="21,22,20,15"/>
+		<node id="66" type="NPC" res="MC_npc_66" action="12" teamID="2" needType="heroCupHaveSign,heroCupIsYourTeam,heroCupExchangeDress,heroCupPlayMovie" needAction="21,22,20,15"/>
+		<node id="67" type="NPC" res="MC_npc_67" action="13" teamID="3" needType="heroCupHaveSign,heroCupIsYourTeam,heroCupExchangeDress,heroCupPlayMovie" needAction="21,22,20,15"/>
+		<node id="68" type="NPC" res="MC_npc_68" action="14" teamID="4" needType="heroCupHaveSign,heroCupIsYourTeam,heroCupExchangeDress,heroCupPlayMovie" needAction="21,22,20,15"/>
+		<!--
+		<node id="65" type="NPC" res="MC_npc_65" action="11" teamID="1" needType="heroCupHaveSign,heroCupIsYourTeam" needAction="21,22"/>
+		<node id="66" type="NPC" res="MC_npc_66" action="12" teamID="2" needType="heroCupHaveSign,heroCupIsYourTeam" needAction="21,22"/>
+		<node id="67" type="NPC" res="MC_npc_67" action="13" teamID="3" needType="heroCupHaveSign,heroCupIsYourTeam" needAction="21,22"/>
+		<node id="68" type="NPC" res="MC_npc_68" action="14" teamID="4" needType="heroCupHaveSign,heroCupIsYourTeam" needAction="21,22"/>
+		-->
+	</npc>
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<actions>
+		<proAction npcID="24" id="0" type="0" answer="关于【摩尔王国】$摩尔勇士万岁！" to="a1$o" >
+			<des>
+				<![CDATA[1#像我这般优雅又不失亲切的贵族可并不常见。]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="1" type="0" answer="关于摩尔王詹姆斯$关于勇士联盟$维护和平与正义$摩尔勇士万岁！" to="a2$a3$a4$o">
+			<des>
+				<![CDATA[2#——欢迎来到摩尔王国——       异地的摩尔，你想了解摩尔王国的哪些信息呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="2" type="0" answer="关于摩尔王詹姆斯$关于勇士联盟$维护和平与正义$摩尔勇士万岁！" to="a2$a3$a4$o">
+			<des>
+				<![CDATA[2#即使是伟大的国王也有很多的烦恼，詹姆斯是一个好国王，希望能为他做些什么，这也是我每天站在这里的原因。$$]]>
+				<![CDATA[2#你可以得到奇普力大人交付的希望之坠，相信摩尔王大人一定也像我一样，对你充满期待吧。加油！]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="3" type="0" answer="关于摩尔王詹姆斯$关于勇士联盟$维护和平与正义$摩尔勇士万岁！" to="a2$a3$a4$o">
+			<des>
+				<![CDATA[2#“摩尔勇士”是我们摩尔界的最高赞誉。是摩尔族的希望。勇士们用各自的方式战斗、体现着自己的勇士精神。$$]]>
+				<![CDATA[1#“勇士联盟”下分别存在着【剑士协会】【魔法师协会】【弓箭手协会】【传教士协会】……等各种协会。$$]]>
+				<![CDATA[2#它们建立的目的都是为了培养和选拔摩尔勇士。通过勇士联盟各级考试的摩尔最终会被认可成为“摩尔勇士”！不过那是相当困难的！！$$]]>
+				<![CDATA[1#说起“勇士考试”的传统，由来已久……【剑士S】【魔法师M】【弓箭手A】，【传教士协会】特设在【王国西街的*女神大圣堂】。]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="4" type="0" answer="关于摩尔王詹姆斯$关于勇士联盟$维护和平与正义$摩尔勇士万岁！" to="a2$a3$a4$o">
+			<des>
+				<![CDATA[2#摩尔王国的和平与正义是因为大家共同的守护。有空的时候去看看广场上的【公告栏】吧！$$]]>
+				<![CDATA[1#勇士精神——为了维护和平与正义拿出勇气！]]>
+			</des>
+		</proAction>
+		<proAction npcID="30" id="5" type="0" answer="兑换被夺走的宝物$摩尔勇士万岁！" to="f15$o" colorID="1$0">
+			<des>
+				<![CDATA[1#勇士们和未来的勇士们，我相信你们。]]>
+			</des>
+		</proAction>
+		<proAction npcID="30" id="6" type="0" answer="兑换被夺走的宝物$摩尔勇士万岁！" to="f15$o" colorID="1$0">
+			<des>
+				<![CDATA[1#我相信勇气会带给我们力量。]]>
+			</des>
+		</proAction>
+		<proAction npcID="25" id="7" type="0" answer="摩尔勇士万岁！" to="o">
+			<des>
+				<![CDATA[6#跟着我说！1 2 3————绝不轻言放弃！]]>
+			</des>
+		</proAction>
+		<proAction npcID="25" id="8" type="0" answer="摩尔勇士万岁！" to="o">
+			<des>
+				<![CDATA[9#这些年轻人把勇士考试想得太简单了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="25" id="9" type="0" answer="摩尔勇士万岁！" to="o">
+			<des>
+				<![CDATA[6#跟着我说！1 2 3————勇气给我力量！]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="24" id="10" type="0" answer="关于【摩尔王国】$摩尔勇士万岁！" to="a1$o">
+			<des>
+				<![CDATA[2#感谢你们为了保卫【勇士的国度】做出的努力！]]>
+			</des>
+		</proAction>
+		<proAction npcID="65" id="11" type="0" answer="我要报名$《勇士杯》介绍$摩尔勇士万岁！" to="I_want_sign$a16$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#我是风之大陆的长老【韦恩】，想要感受风之大陆的气息吗？加入风之队吧！请谨慎选择你的队伍，选择之后无法更改！]]>
+			</des>
+		</proAction>
+		<proAction npcID="65" id="16" type="0" answer="我要报名$摩尔勇士万岁！" to="I_want_sign$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#本届《勇士杯》时间为2月22日-3月3日，由单人比试、多人比试两个竞技项目，选一个长老报名后，可去斗技场参加比赛，为队伍争取【勇士杯奖牌】！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="66" id="12" type="0" answer="我要报名$《勇士杯》介绍$摩尔勇士万岁！" to="I_want_sign$a17$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#我是地之大陆的长老【岚德】，想要感受地之大陆的气息吗？加入地之队吧！请谨慎选择你的队伍，选择之后无法更改！]]>
+			</des>
+		</proAction>
+		<proAction npcID="66" id="17" type="0" answer="我要报名$摩尔勇士万岁！" to="I_want_sign$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#本届《勇士杯》时间为2月22日-3月3日，由单人比试、多人比试两个竞技项目，选一个长老报名后，可去斗技场参加比赛，为队伍争取【勇士杯奖牌】！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="67" id="13" type="0" answer="我要报名$《勇士杯》介绍$摩尔勇士万岁！" to="I_want_sign$a18$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#我是水之大陆的长老【霍特】，想要感受水之大陆的气息吗？加入水之队吧！请谨慎选择你的队伍，选择之后无法更改！]]>
+			</des>
+		</proAction>
+		<proAction npcID="67" id="18" type="0" answer="我要报名$摩尔勇士万岁！" to="I_want_sign$o" colorID="1$0">
+			<des>
+				<![CDATA[1#本届《勇士杯》时间为2月22日-3月3日，由单人比试、多人比试两个竞技项目，选一个长老报名后，可去斗技场参加比赛，为队伍争取【勇士杯奖牌】！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="68" id="14" type="0" answer="我要报名$《勇士杯》介绍$摩尔勇士万岁！" to="I_want_sign$a19$o" colorID="1$0$0" >
+			<des>
+				<![CDATA[1#我是火之大陆的长老【范尔】，想要感受火之大陆的气息吗？加入火之队吧！请谨慎选择你的队伍，选择之后无法更改！]]>
+			</des>
+		</proAction>
+		<proAction npcID="68" id="19" type="0" answer="我要报名$摩尔勇士万岁！" to="I_want_sign$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#本届《勇士杯》时间为2月22日-3月3日，由单人比试、多人比试两个竞技项目，选一个长老报名后，可去斗技场参加比赛，为队伍争取【勇士杯奖牌】！]]>
+			</des>
+		</proAction>		
+		
+		<proAction npcID="" id="15" event="sign_complete" type="0" answer="马上就去！" to="change_map" colorID="0" >
+			<des>
+				<![CDATA[1#果然是勇敢无比的勇士，准备好了，就可以马上去斗技场大厅【皇家卫队校场】参加【单人比试】或【多人比试】啦，希望你获得好成绩！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="" id="16" type="0" answer="摩尔勇士万岁！" to="o" colorID="0" >
+			<des>
+				<![CDATA[1#首届《勇士杯》已经圆满结束，领取队伍奖励请找国王【詹姆斯】。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="" id="20" type="0" answer="我要兑换队服$摩尔勇士万岁！" to="exchange_dress$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#亲爱的摩尔，想要用女神的祝福兑换比赛队服吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="" id="21" type="0" answer="摩尔勇士万岁！" to="o" colorID="0" >
+			<des>
+				<![CDATA[1#你没有选择本队，请去找你本队的长老吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="" id="22" type="0" answer="马上去比赛$查看队伍排行榜$查看个人排行榜$摩尔勇士万岁！" to="change_map$module_TeamRankingModule$module_RoleRankingModule$o" colorID="1$1$1$0" >
+			<des>
+				<![CDATA[1#未来勇士，相信女神的力量一直在引导你勇往直前，本届勇士杯截止日期是3月3日15:00，为自己的队伍继续冲刺吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="" id="23" type="0" answer="领取队伍奖励$摩尔勇士万岁！" event="no_medal" to="a16$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#你身上没有勇士奖牌了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="" id="24" type="0" answer="领取队伍奖励$查看队伍排行榜$查看个人排行榜$摩尔勇士万岁！" event="donate_comp" to="a16$module_TeamRankingModule$module_RoleRankingModule$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[1#你本次捐献了@medal个勇士奖牌，请继续努力，愿冠军常与你相伴！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="" id="25" type="0" answer="领取奖励$摩尔勇士万岁！" event="have_rank" to="send_get_reward$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#在勇士杯第一阶段个人排行榜中，你排名第@heroCupRank位，因为你的英勇表现，特颁发给你称号及奖励。]]>
+			</des>
+		</proAction>
+		<proAction npcID="" id="26" type="0" answer="领取奖励$摩尔勇士万岁！" event="no_rank" to="send_get_reward$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#勇士杯第一阶段结束，鉴于你的参赛热情，热颁发给你奖励，希望你能够再接再厉，为队伍荣誉添砖加瓦。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

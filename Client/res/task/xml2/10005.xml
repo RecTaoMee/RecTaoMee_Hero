@@ -1,0 +1,78 @@
+<Task ID="10005" Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克司的精灵研究" Content="皮克司精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="精灵研究工作" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="今天的研究课题非常特殊……" />
+					<Msg NpcID="12" ImageID="7" Info="带着诱人的香味，疯狂奔跑的草原之王——\n		拉拉美王！" />
+					<Option Info="拉拉美王？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="记得当初和拉拉美王的第一次相遇————\n她的热情让我从麦田村一路狂奔到摩尔王国，创造了摩尔界的长跑传说……" />
+					<Msg NpcID="12" ImageID="5" Info="如今这个艰巨的任务交给你了，请去取回拉拉美王皇冠上的【神秘花朵】" />
+					<Msg NpcID="12" ImageID="1" Info="听说【拉拉美王】最近在格历尔平原三区游荡，不过你最好和几个伙伴一起去挑战它。" />	
+					<Option Info="好的！" />
+				</Action>			
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="180045" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="拿到c神秘的花c了，回去交给c皮克司c教授吧。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="拿到【花】了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="7" Info="看到这朵花，不禁我想起了一段伤心往事…………" />
+					<Msg NpcID="12" ImageID="7" Info="哎……谢谢你了，赏星已经送到公告栏去了。" />
+					<Option Info="谢谢" />
+				</Action>
+    			</Event>
+			<Event ConditionType="OUT" Memo="c拉拉美王c在c格历尔平原3区c出没，组队前去挑战它吧！" TargetMap="21303" TargetObj="" TargetName="打t拉拉美王t得到花">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="打不赢拉拉美王啊！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="团结才是力量，记得要组队去挑战拉拉美王！" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>
+		</Step>	
+		
+			<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="我每天都很忙，就不表扬你了。" />
+					<Option Info="（-_-）||" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，拿去吧。" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+

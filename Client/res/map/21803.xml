@@ -1,0 +1,13 @@
+<!--世界树1F-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-002.mp3">
+	<transport intPos="131,1058">
+		<node id="1" pos="131,1058" targetMapId="11805" targetTransPortId="2"/>
+		<node id="2" pos="268,197" targetMapId="21804" targetTransPortId="1"/>
+		<node id="3" pos="828,519" targetMapId="21805" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2" alpTaskID="10108_4" visible="0"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3" alpTaskID="10108_3" visible="0"/>
+	</object>
+</map>

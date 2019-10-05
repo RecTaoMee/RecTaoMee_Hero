@@ -1,0 +1,17 @@
+<!--随机迷宫3层30141-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="299,202" targetMapId="21310" targetTransPortId="2" name="迷宫出现点"/>			
+	</transport>
+	<object>
+		<node id="1" type="MazeTrans" level="downLevel" res="MC_door_0"/>
+		<node id="2" type="MazeTrans" level="downLevel" res="MC_door_1"/>
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<!-- <node id="7" type="NPC" res="MC_npc_9" taskType="0" level="_contentLevel" action="0" needLevel="" needKind=""/> -->
+	</npc>	
+	<actions>
+			
+	</actions>	
+</map>

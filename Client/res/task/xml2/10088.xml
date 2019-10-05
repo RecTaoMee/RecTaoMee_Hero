@@ -1,0 +1,52 @@
+<Task ID="10088" Memo="" TargetMap="21306">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="怪盗集团发来紧急求助信，小主人快去看看吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="被打劫了？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="怪盗集团发来紧急求助信，小主人快去看看吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="被打劫了？" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="那个，勇士的协会的摩尔，交给你一个神圣而光荣的任务！" />
+						<Msg NpcID="314" ImageID="1" Info="最近...咳咳...\n我不小心在平原7区被几个黑化的戈戈拉打劫了，你去帮我把被抢走的星豆袋取回来吧！" />
+						<Option Info="...." />
+				</Action>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="看什么啊！怪盗也会被抢劫啊！快点去帮我抢回星豆袋吧！" />
+						<Option Info="好的" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="260029" Count="1" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="拿回星豆袋了，快送给怪盗头目吧！" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="给你！" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="314" ImageID="1" Info="我心爱的星豆袋啊！\n现在黑化精灵太厉害，伤不起啊，有木有....." />
+						<Option Info="...." />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="打败c平原7区c的c怪盗戈戈拉c就可以拿回c被抢走的星豆袋c了。" TargetMap="21307" TargetObj="" TargetName="t被抢走的星豆袋t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21306" ObjID="1" TaskOption="给你！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />
+			</Event>
+		</Step>	
+		
+		
+	</Procedure>
+</Task>

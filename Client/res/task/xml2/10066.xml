@@ -1,0 +1,193 @@
+<Task ID="10066" Memo="勇士广场的c公告栏c上出现了c皮皮克克c的小贴士。\n小主人快去看看吧^^！" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克小贴士" Content="我给你的【吉普豆精灵】，\n有没有好好照顾？\n有空带它来见我！\n——皮皮克克"></BoardInfo>   		
+   	<Procedure> 
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c公告栏c上出现了c皮皮克克c的小贴士。\n小主人快去看看吧^^！" TargetMap="11202">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>			
+  		<Step ID="1" ParentList="50" ParentCost="1"  >
+			<Event Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="皮皮克克！！！！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="【@nick】！\n你上次要去摩尔王国，我给你的【吉普豆精灵】，\n你有没有好好照顾？" />					
+					<Msg NpcID="1" ImageID="1" Info="【吉普豆叶】、【吉普豆花】现在多少级了？\n有没有学会厉害的新技能？\n快把它【跟随】出来让我看看！" />
+					<Option Info="^_^马上给你看看！" />		
+					<Option Info="有事先走了" NextStep="1" />					
+				</Action> 				
+    		</Event>											
+	    </Step>					    
+		
+				
+<!-- 土豆叶↓ -->		
+  		<Step ID="2" ParentList="1, 12" ParentCost="1" SkipList="12" >
+			<Condition>			
+				<Pet Follow="Y" Type="1" Level="0" />					
+			</Condition>
+        	<Event ConditionType="IN" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="★【吉普豆叶】带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="1" ImageID="5" Info="哈哈，我们“吉普豆村”专出优秀的“吉普豆精灵”！" />			
+            		<Option Info="嘿嘿" SkipTrigger="Y" />				
+    			</Action>  			    			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="没有【吉普豆叶】" />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="你把它藏哪儿了？\n如果在精灵口袋里就让它【跟随】出来吧~！" />
+            		<Option Info="(⊙o⊙)马上带它来！ " />
+            		<Option Info="我和【吉普豆叶】解约了" NextStep="3" SkipTrigger="Y" />						
+            		<Option Info="我和【吉普豆花】解约了" NextStep="3" SkipTrigger="Y" />										
+    			</Action>	    						
+    		</Event>											
+	    </Step>				    
+  		<Step ID="14" ParentList="2" ParentCost="1"  >
+			<Condition>			
+				<Pet Follow="Y" Type="1" Level="10" />					
+			</Condition>
+        	<Event ConditionType="IN" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="★【吉普豆叶】带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="1" ImageID="1" Info="想我吗，小吉普豆叶？\n不过我的吉普豆花也不赖！\n它们以后一定会像我们一样，\n变成好朋友！" />							
+					<Msg NpcID="1" ImageID="1" Info="我从家里带了好多好吃的给你和【吉普豆叶】。" />	
+					<Msg NpcID="1" ImageID="5" Info="把它送给你真是个聪明的主意~哈哈。\n我们以后就是“最佳拍档4人组”，厉害吧？\n【@nick】也一起加油！！" />		
+            		<Option Info="一言为定！" />				
+    			</Action>    			    			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="没有10级【吉普豆叶】" />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="想我吗，小吉普豆叶？\n咦？！怎么还是我的吉普豆花比较强！！" />				
+					<Msg NpcID="1" ImageID="1" Info="【@nick】你这家伙没好好训练【吉普豆叶】？\n起码训练到【10级】吧——10级10级！\n再让它【跟随】出来~！" />
+					<Option Info="^-^马上开始训练！" NextStep="2" />		
+					<Option Info="不想训练了……放弃了" NextStep="5" SkipTrigger="Y" />											
+				</Action>     						
+    		</Event>											
+	    </Step>		    
+  		<Step ID="3" ParentList="0" ParentCost="1"  >
+			<Event Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="我和【吉普豆叶】解约了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="7" Info="你不能这样！！！\n我要把它找回来啊可恶！" />					
+					<Msg NpcID="1" ImageID="7" Info="小精灵也像朋友一样，是重要的伙伴。\n你如果不喜欢它们就不该随便契约！！" />
+					<Option Info="对不起我错了" />							
+				</Action> 	
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="下次不能再这样了一言为定！" />					
+					<Option Info="一言为定^_^！" />							
+				</Action> 											
+    		</Event>											
+	    </Step>	
+  		<Step ID="5" ParentList="0" ParentCost="1"  >
+			<Event Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="放弃【吉普豆叶】了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="7" Info="…………！！" />					
+					<Msg NpcID="1" ImageID="7" Info="小精灵也像朋友一样，是重要的伙伴。\n如果不打算好好训练，\n就应该解除封印！" />
+					<Msg NpcID="1" ImageID="1" Info="下次不能再这样了！" />					
+					<Option Info="下不为例！" />							
+				</Action> 											
+    		</Event>											
+	    </Step>		    
+		
+<!-- 土豆花↓ -->
+  		<Step ID="12" ParentList="1, 2" ParentCost="1" SkipList="2" >
+			<Condition>			
+				<Pet Follow="Y" Type="2" Level="0" />					
+			</Condition>
+        	<Event ConditionType="IN" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="★【吉普豆花】带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="1" ImageID="5" Info="哈哈，我们“吉普豆村”专出优秀的“吉普豆精灵”！" />			
+            		<Option Info="嘿嘿" SkipTrigger="Y" />				
+    			</Action>  			    			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="没有【吉普豆花】" />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="你把它藏哪儿了？\n如果在精灵口袋里就让它【跟随】出来吧~！ " />
+            		<Option Info="(⊙o⊙)马上带它来！ " />
+            		<Option Info="我和【吉普豆叶】解约了" NextStep="13" SkipTrigger="Y" />						
+            		<Option Info="我和【吉普豆花】解约了" NextStep="13" SkipTrigger="Y" />				
+    			</Action>	    						
+    		</Event>											
+	    </Step>			    	    
+  		<Step ID="4" ParentList="12" ParentCost="1"  >
+			<Condition>			
+				<Pet Follow="Y" Type="2" Level="10" />					
+			</Condition>
+        	<Event ConditionType="IN" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="【吉普豆花】带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="1" ImageID="1" Info="想我吗，小吉普豆花？\n不过我的吉普豆叶也不赖！\n它们以后一定会像我们一样，\n变成好朋友！" />							
+					<Msg NpcID="1" ImageID="1" Info="我从家里带了好多好吃的给你和【吉普豆花】。" />	
+					<Msg NpcID="1" ImageID="5" Info="把它送给你真是个聪明的主意~哈哈。\n我们以后就是“最佳拍档4人组”，厉害吧？\n【@nick】也一起加油！！" />		
+            		<Option Info="一言为定！" />																
+    			</Action>    			    			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="没有10级【吉普豆花】" />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="想我吗，小吉普豆花？\n咦？！怎么还是我的吉普豆叶比较强！！" />				
+					<Msg NpcID="1" ImageID="1" Info="【@nick】你这家伙没好好训练【吉普豆花】？\n起码训练到【10级】吧——10级10级！\n再让它【跟随】出来~！" />
+					<Option Info="^-^马上开始训练！" NextStep="12" />		
+					<Option Info="不想训练了……放弃了" NextStep="15" SkipTrigger="Y" />													
+				</Action>     						
+    		</Event>											
+	    </Step>	
+  		<Step ID="13" ParentList="0" ParentCost="1"  >
+			<Event Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="我和【吉普豆花】解约了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="7" Info="你不能这样！！！\n我要把它找回来啊可恶！" />					
+					<Msg NpcID="1" ImageID="7" Info="小精灵也像朋友一样，是重要的伙伴。\n你如果不喜欢它们就不该随便契约！！" />
+					<Option Info="对不起我错了" />							
+				</Action> 	
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="下次不能再这样了一言为定！" />					
+					<Option Info="一言为定^_^！" />							
+				</Action> 											
+    		</Event>											
+	    </Step>	
+  		<Step ID="15" ParentList="0" ParentCost="1"  >
+			<Event Memo="皮皮克克想见自己送小主人的c吉普豆精灵c，\n快把它带到c吉普豆村•皮克小屋c去吧！" TargetMap="11104">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="放弃【吉普豆花】了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="7" Info="…………！！" />					
+					<Msg NpcID="1" ImageID="7" Info="小精灵也像朋友一样，是重要的伙伴。\n如果不打算好好训练，\n就应该解除封印！" />
+					<Msg NpcID="1" ImageID="1" Info="下次不能再这样了！" />					
+					<Option Info="下不为例！" />											
+				</Action> 											
+    		</Event>											
+	    </Step>				    
+	</Procedure>
+</Task>	    

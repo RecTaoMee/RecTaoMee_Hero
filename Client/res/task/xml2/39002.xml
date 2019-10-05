@@ -1,0 +1,137 @@
+<Task ID="39002" Memo="黑暗魔王基姆侵入兽王峡谷了，快找勇士广场的c多修c询问详情！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="黑暗魔王基姆侵入兽王峡谷了，快找勇士广场的c多修c询问详情！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="黑暗魔王？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="连黑暗魔王也出动了，看来各大陆的形势都不容乐观啊……" />
+					<Option Info="出了什么状况？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="经过调查，原来巴布迁徙的祸根来自于伊恩大魔王手下五天王之一的黑暗魔王。" />
+					<Msg NpcID="104" ImageID="1" Info="它现在正率军向兽王峡谷的方向移动，看来是想要破坏精灵联盟的组建。情况紧急，勇士们赶紧出发！" />
+					<Option Info="收到！" />						
+				</Action>				
+			</Event>
+		</Step>
+		
+     	<Step ID="2" ParentList="1" ParentCost="1" >
+	     	<Event Memo="" TargetMap="11504" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11504,39002" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11504,39002" />
+	    	</Event>
+	    </Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="2926" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="击败了喽啰，接下来该收拾黑暗魔王c基姆c了。" TargetMap="11504" TargetObj="39002" TargetName="和t基姆t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11504" ObjID="39002" TaskOption="黑暗魔王！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="别以为这样就结束了，哈哈，帕瑞已经不行了，你还想在这里浪费时间么？" />
+					<Option Info="(糟糕！)" />					
+				</Action>
+  				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11504,39002" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11505,1" />
+			</Event>
+			<Event ConditionType="OUT" Memo="前往兽王峡谷揪出黑暗魔王c基姆c。" TargetMap="11504" TargetObj="39002" TargetName="和t基姆t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11504" ObjID="39002" TaskOption="黑暗魔王！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="黑暗，将随着冬季笼罩整个世界，哈哈哈！" />
+					<Option Info="黑暗魔王！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="就知道你会来坏我的好事，可恶的未来勇士，可惜你已经没有时间了！" />
+					<Msg NpcID="350" ImageID="1" Info="巴布军团，给我拖住他！" />
+					<Option Info="别想阻我" />	
+					<Option Info="准备一下" NextStep="3" />						
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2926"/>
+    		</Event>
+		</Step>
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="c帕瑞c似乎遇到了围攻，快去协助他！" TargetMap="11505" TargetObj="1" TargetName="和t帕瑞t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11505" ObjID="1" TaskOption="帕瑞我来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="兽王峡谷突然被一群可恶的毛绒雪人入侵，我族被人形精灵克制，这必将是一场苦战！" />
+					<Option Info="我来协助你！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="黑暗沃特尔的力量不断侵蚀着我族，库洛喵正在那边苦战，我这里还顶得住，先去支援它吧。" />
+					<Option Info="交给我了" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11505,39004" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11505,39006" />
+			</Event>
+		</Step>
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="2927" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="击败了c黑暗沃特尔c，先把它撵走。" TargetMap="11505" TargetObj="39006" TargetName="和t黑暗沃特尔t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11505" ObjID="39006" TaskOption="我来了！" />
+				</Trigger>
+  				<Action Type="TALK">
+					<Msg NpcID="308" ImageID="1" Info="我们的老大是不会放过你的！" />
+					<Msg NpcID="1012" ImageID="1" Info="哼，大言不惭！这里交给我了，快去协助帕瑞大王吧！" />
+					<Option Info="好！" />					
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11505,39008" />
+			</Event>
+    		<Event ConditionType="OUT" Memo="c库洛喵c陷入了苦战，先去解救它！" TargetMap="11505" TargetObj="39004" TargetName="和t库洛喵t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11505" ObjID="39004" TaskOption="我来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1012" ImageID="1" Info="未来勇士，黑暗沃特尔就交给你了，它的魔力压制了我的力量！" />
+					<Msg NpcID="308" ImageID="1" Info="谁也不能阻挡我们的进攻！" />
+					<Option Info="来战！" />	
+					<Option Info="准备一下" NextStep="5" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2927"/>
+			</Event>
+		</Step>
+		<Step ID="6" ParentList="5" ParentCost="1" >
+			<Condition>
+				<Battle ID="2928" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="击败了c黑暗魔王基姆c，把他赶出兽王峡谷吧！" TargetMap="11505" TargetObj="39008" TargetName="和t基姆t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11505" ObjID="39008" TaskOption="我回来了！" />
+				</Trigger>
+  				<Action Type="TALK">
+					<Msg NpcID="350" ImageID="1" Info="可恶的鼹鼠，今天是你们运气好，别得意，我还会再来的！" />
+					<Option Info="绝对阻止你！" />					
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11505,39008" />
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="未来勇士们，感谢你们的帮助！我一定会抓紧时间组建精灵联盟的。" />
+					<Option Info="帕瑞加油！" />					
+				</Action>
+			</Event>
+    		<Event ConditionType="OUT" Memo="库洛喵的危机解决了，现在返回c帕瑞c那一起击败黑暗魔王吧！" TargetMap="11505" TargetObj="1" TargetName="和t帕瑞t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11505" ObjID="1" TaskOption="我回来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1002" ImageID="1" Info="黑暗魔王恼羞成怒，看来要提前发动总攻击了。" />
+					<Msg NpcID="1002" ImageID="1" Info="他的力量尚未积蓄满，现在正是击败他的好机会，我们一起上！" />
+					<Msg NpcID="350" ImageID="1" Info="我不会让你们精灵王组成联盟的！竟敢阻拦我们的计划？消失吧！鼹鼠！" />
+					<Option Info="全力迎战！" />	
+					<Option Info="准备一下" NextStep="6" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2928"/>
+			</Event>
+		</Step>
+	</Procedure>
+</Task>

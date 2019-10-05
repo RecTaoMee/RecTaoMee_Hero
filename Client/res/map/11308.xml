@@ -1,0 +1,39 @@
+<!--时空俱乐部-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-004.mp3">
+
+	<transport intPos="334,374">
+		<node id="1" pos="664,374" targetMapId="11202" targetTransPortId="9"/> 
+	</transport>
+	
+	<npc>
+		<node id="57" type="NPC" res="MC_npc_57" taskType="0" level="contentLevel" fun="" action="1$2$3" compTaskID="" needLevel="" needKind=""/>
+	</npc>
+	
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
+	</object>
+	
+	<actions>
+		<proAction npcID="57" id="1" type="0" answer="神奇密码兑换$时空密码兑换$魔鬼眼泪礼包$摩尔勇士万岁！" to="p2_1$p3_1$a4$o" >
+			<des>
+				<![CDATA[1#我是美丽的维维克克，有什么可以帮忙的吗？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="57" id="2" type="0" answer="神奇密码兑换$时空密码兑换$魔鬼眼泪礼包$摩尔勇士万岁！" to="p2_1$p3_1$a4$o" >
+			<des>
+				<![CDATA[1#我是美丽的维维克克，你知道时空密码吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="57" id="3" type="0" answer="神奇密码兑换$时空密码兑换$魔鬼眼泪礼包$摩尔勇士万岁！" to="p2_1$p3_1$a4$o" >
+			<des>
+				<![CDATA[1#我是美丽的维维克克，今天又是美丽的一天啊，不是吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="57" id="4" type="0" answer="我有兑换码$摩尔勇士万岁！" to="p0_1008$o" >
+			<des>
+				<![CDATA[1#你有看过《中国少年儿童》么？购买贝塔商会推荐的《中国少年儿童》才有机会获得【魔鬼眼泪礼包】的兑换码哦。]]>
+			</des>
+		</proAction>
+	</actions>
+	
+</map>

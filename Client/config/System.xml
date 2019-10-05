@@ -1,0 +1,63 @@
+<!--内网-->
+<config>
+	<!--客户端资源配置-->
+	<Path>
+		<MainSite path="http://hero.61.com" />
+		<Config path="config/" />
+		<AppConfig path="res/config/" /> 
+		
+		<Map path="res/map/" />
+		<MapObj path="res/mapObj/" />
+		<Role path="res/role/" />
+		<Suit path="res/items/cloth/" />
+		<Item path="res/items/collection/icon/" />
+		<UI path="res/UI/" />
+		<Sound path="res/sound/" />
+		<BGM path="res/bgm/" />
+		<Battle path="res/battle/" />
+		<BattleFiled path="res/battle/bg/" />
+		<AppModule path="module/com/mole2/module/" />
+		<TaskSwf path="res/task/swf/" />
+		<Task path="res/task/" />
+		<Fitment path="res/house/" />
+		<NPC path="res/mapObj/npc/" />
+		<MapAll path="res/mapAll/" />
+	</Path>
+	
+	<!--版本配置-->
+	<Version>
+		<news ver="16" />
+		<reg  ver="1" />
+		<ui  ver="1" />
+		<client  ver="1" />
+		<battle  ver="1" />
+	</Version>
+	
+	<ServerList max="300" maxVIP="500">
+		<server id="1" name="恐恐鸟(1-10级)"/>
+		<server id="2" name="哒哒鸟(1-10级)"/>
+		<server id="3" name="星锤兔(1-10级)"/>
+		<server id="4" name="电波兔(1-10级)"/>
+		<server id="5" name="【摩尔勇士】"/>
+		<server id="6" name="【复兴服务器】"/>
+		<server id="7" name="都是一个服"/>
+		<server id="8" name="随便点一个吧"/>
+		<server id="9" name="显示这么多"/>
+		<server id="10" name="就是为了好看的"/>
+
+	</ServerList>
+	
+	<suit>
+		<resources>
+			<dressConfig path="res/suit/actionDress.xml" />
+			<src path="res/role/role1.swf" />
+			<src path="res/suit/head/0.swf" /> 
+			<src path="res/suit/coat/3.swf" /> 
+			<src path="res/suit/hands/4.swf" />
+			<src path="res/suit/feet/6.swf" />
+			<src path="res/suit/weapon0/8.swf" />  
+			<src path="res/suit/weapon1/10.swf" />
+		</resources>
+	</suit>
+	
+</config>

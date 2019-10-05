@@ -1,0 +1,9 @@
+<!--旅馆2楼-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="250,390">
+		 <node id="1" pos="503,289" targetMapId="11402" targetTransPortId="3" name="旅馆1楼"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+</map>

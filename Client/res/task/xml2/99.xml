@@ -1,0 +1,108 @@
+<Task ID="99" Memo="祝贺c23级c！c王国西街c尽头的c勇士斗技场c的大门向你打开！" TargetMap="11203">
+	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0">
+			<Event Memo="祝贺c23级c！c王国西街c尽头的c勇士斗技场c的大门向你打开！" TargetMap="11203" TargetObj="38" TargetName="和t圣弗雷德t对话">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11203,38" />
+			</Event>
+			<Event Memo="祝贺c23级c！c王国西街c尽头的c勇士斗技场c的大门向你打开！" TargetMap="11203" TargetObj="38" TargetName="和t圣弗雷德t对话">
+
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11203" ObjID="38" TaskOption="勇士斗技场？" />
+				</Trigger>
+
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="6" Info="是你啊，勇士协会的【@nick】，等候你多时了，我是这个【勇士斗技场】的最高指挥官【圣弗雷德】。" />
+					<Msg NpcID="38" ImageID="1" Info="你已经是【23级】的摩尔，是进入斗技场进行日常训练的时候了。" />
+					<Msg NpcID="38" ImageID="6" Info="在这之前，关于勇士斗技场的机密内容希望你能了解一下。" />
+					<Option Info="好的！" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="task_10017_3.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="6" Info="跟我来吧，我在【斗技场管理处】处等你！大部分时间我都在那里~。" />
+					<Option Info="好的！" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11203,38" />
+				<Action Type="MOVIE" Url="task_10017_1.swf" MapLevel="CONTENT" Pos="-875,-425" />
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1">
+			<Event Memo="请找→★c圣弗雷德c\n     斗技场管理处\n       斗技场大厅\n       斗技场大门" TargetMap="11219" TargetObj="38" TargetName="和t圣弗雷德t对话">
+	
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="参加斗技场试炼！"/>
+				</Trigger>
+
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="我接到了摩尔王的命令，你以后可以在这里进行更多的训练，但在那之前你必须完成我交给你的任务。" />
+					<Msg NpcID="38" ImageID="1" Info="去“勇士斗技场管理员【莉依】”处报名参加一次比试，将比试获得的【十字勋章】拿来给我，证明你有这个实力踏入这个神圣的殿堂！" />
+					<Option Info="囧，我这就去！" />
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1">
+			<Condition>
+				<Item ID="290002" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="获得c十字勋章c了，快去c斗技场管理处c交给c圣弗雷德c审核吧！" TargetMap="11219" TargetObj="38" TargetName="和t圣弗雷德t对话">
+
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="【单人比试】完成"/>
+				</Trigger>
+
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="果然没有令我失望。这是给你的奖励——勇士斗技场【新人奖励】！希望你好好使用它。" />
+					<Msg NpcID="38" ImageID="1" Info="接下来去“勇士斗技场管理员潘妮”处，找几个伙伴一起参加1场【多人比试】，再回来找我吧！你挑战的勇气，将以比试获得的【十字勋章】为证！" />
+					<Option Info="囧，我这就去！" />
+				</Action>
+			</Event>
+			<Event ConditionType="OUT" Memo="前往参加c单人比试c获得人生中第一个c十字勋章c吧！*勇士斗技场大厅左侧【管理员莉依】" TargetMap="11218" TargetPos="357,375" TargetName="进行t单人比试t">
+				<!--
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="【单人比试】完成" />
+				</Trigger>
+				-->
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11218" />			
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="你还没有完成我布置给你的任务，在勇士斗技场仔细找一下，一个真正的勇士不会惧怕任何困难！" />
+					<Option Info="恩，我再去试试！" />
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1">
+			<Condition>
+				<Item ID="290002" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="得到c多人比试c的c十字勋章c了！快去c斗技场管理处c交给c圣弗雷德c审核吧！" TargetMap="11219" TargetObj="38" TargetName="和t圣弗雷德t对话">
+				<!--
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="【多人比试】完成"/>
+				</Trigger>
+					-->
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="果然没有令我失望。这是给你的奖励，希望你好好使用它！" />
+					<Option Info="谢谢您！" />
+				</Action>
+			</Event>
+			<Event ConditionType="OUT" Memo="参照c多人比试c去勇士斗技场大厅右侧c管理员潘妮c" TargetMap="11218" TargetPos="966,379" TargetName="进行t多人比试t">
+				<!--
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="【多人比试】完成"/>
+				</Trigger>
+				-->
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11219" />			
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="你还没有完成我布置给你的任务，在勇士斗技场仔细找一下，一个真正的勇士不会惧怕任何困难！" />
+					<Option Info="恩，这就去找【潘妮】报名！" />
+				</Action>
+			</Event>
+		</Step>
+		
+	</Procedure>
+</Task>

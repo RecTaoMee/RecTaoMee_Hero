@@ -1,0 +1,39 @@
+<Task ID="20024" Memo="c守卫士兵Wc在找未来摩尔净化小宅箱？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔净化小宅箱？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小宅箱？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="这次的悬赏任务是——\n去【风之洞穴】收集【6个小宅箱的黑水晶碎片】。\n友情建议你佩戴【水火晶石】。" />					
+					<Option Info="使命必达！" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>							
+  		<Step ID="3" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="180055" Count="6" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="使命完成↖(^ω^)↗\n快去c平原12区c报告c守卫士兵Wc吧!" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="使命完成！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="谢谢【@nick】！\n我相信只要每天多努力一点，\n最终一定能拯救格历尔大陆！" />
+					<Option Info="O(∩_∩)O" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="快去c风之洞穴c净化c小宅箱c，收集6个c小宅箱的黑水晶碎片c吧！" TargetMap="21501" TargetName="收集t黑水晶碎片t" >
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="小宅箱在哪？" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="去【风之洞穴】收集【6个小宅箱的黑水晶碎片】吧。\n友情建议你佩戴【水火晶石】。" />					
+					<Option Info="O(∩_∩)O" />
+				</Action>								
+    		</Event>			
+    	</Step>  			
+	</Procedure>
+</Task>

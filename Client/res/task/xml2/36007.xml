@@ -1,0 +1,41 @@
+<Task ID="36007" Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路库Kc大叔这次安排的什么任务给我呢？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="找我接任务肯定没错!" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="最新一期的鹦鹉服装杂志册（竟然还有这种杂志……），你应该知道是弗雷基码头的TT要的了吧。" />
+					<Option Info="TT的生活真丰富！" />
+				</Action>
+			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="把鹦鹉服装杂志册送给c弗雷基码头c的cTTc。" TargetMap="11604" TargetObj="52" TargetName="和tTTt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="最新的杂志" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="~\(≧▽≦)/~好多可爱的衣服啊，我要好好挑选下~" />
+					<Option Info="好的，我先去回复了。" />
+				</Action>	
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="任务完成啦，领取奖励去喽！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="你那么快就回来啦。" />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="13" ImageID="1" Info="你做得很好，这是给你的奖励，以后要多多来做送信任务，大叔需要你帮助呢！" />
+						<Option Info="好的，没问题！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

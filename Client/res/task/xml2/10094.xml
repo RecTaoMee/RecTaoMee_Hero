@@ -1,0 +1,49 @@
+<Task ID="10094" Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c告诉c银魂·温蒂c老师吧！" TargetMap="11704">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c银魂·温蒂c老师在呼叫小主人，\n快去c锁修塔底层c告诉c银魂·温蒂c老师吧！" TargetMap="11704" TargetObj="56" TargetName="和t银魂·温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11704" ObjID="56" TaskOption="温蒂怎么了？" />  
+				</Trigger>
+				<Action Type="TALK">				
+					<Msg NpcID="56" ImageID="1" Info="【藤蔓君】喝了“怪味之水”后晕过去了！" />		
+					<Msg NpcID="338" ImageID="1" Info="掌管修隐岛水源的一直是【海之水晶柱】大人。\n水出了问题，很可能是它的心情不好——\n我太了解他了。" />		
+					<Msg NpcID="338" ImageID="1" Info="【海之水晶柱】怎么了(T_T)~……" />		
+					<Option Info="这就去【锁修塔3层】看看！" />
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >			  
+    		<Event Memo="快去c锁修塔3层c看看c海之水晶柱c吧！" TargetMap="21703" TargetObj="5181" TargetName="和t海之水晶柱t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21703" ObjID="5181" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="339" ImageID="1" Info="自从“未来摩尔”漂流到修隐岛，\n我整天听到楼上【伊影】的咆哮：\n“颤抖吧鼹鼠！”，\n还有它打呼噜捶地板的声音！" />					
+					<Msg NpcID="339" ImageID="1" Info="我快受不了啦~~\n住在它楼下精神压力太大了！" />					
+					<Msg NpcID="339" ImageID="1" Info="对了，你怎么知道我心情不好？" />					
+					<Option Info="【空之水晶柱】说的^^！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="339" ImageID="1" Info="哈，还是“空空”关心我！\n我不能让她失望~~" />
+					<Msg NpcID="339" ImageID="1" Info="请你转告她，\n我一定会努力创造出最最可口的水！" />					
+					<Option Info="这就告诉【空之水晶柱】！" />
+				</Action>							
+    		</Event>		  
+		</Step>	
+  		<Step ID="3" ParentList="2" ParentCost="1" >			  
+    		<Event Memo="快去c锁修塔1层c告诉c空之水晶柱c吧！" TargetMap="21701" TargetObj="5180" TargetName="和t空之水晶柱t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21701" ObjID="5180" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="338" ImageID="1" Info="【海之水晶柱】大人没事了？\n谢谢你，相信藤蔓君很快会没事的^^。" />
+					<Option Info="O(∩_∩)O！" />
+				</Action>							
+    		</Event>		  
+		</Step>	
+		
+		
+		
+	</Procedure>
+</Task>

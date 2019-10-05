@@ -1,0 +1,88 @@
+<Task ID="21" Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="艾比我来了！" />
+				</Trigger>			
+				<Action Type="TALK">						
+					<Msg NpcID="7" ImageID="1" Info="【@nick】最近去过【弗雷基码头】吗？" />	
+					<Option Info="(⊙o⊙)？" SkipTrigger="Y"/>
+					<Option Info="有事先走了" NextStep="1"/>					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="弗雷基码头？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="7" ImageID="1" Info="那里新来了一只超~可爱的“骑行精灵”——\n【乐比熊】，大家都去围观了！" />						
+					<Option Info="这就去【弗雷基码头】看看" />
+				</Action>			
+    		</Event>
+		</Step>			
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="快去弗雷基港的c弗雷基码头c和c乐比熊c聊聊吧！" TargetMap="11604" TargetObj="367" TargetName="和t乐比熊t对话"><!--加熊-->
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="367" TaskOption="你是【乐比熊】吗？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="367" ImageID="1" Info="找我何事？" />
+					<Msg NpcID="715" ImageID="1" Info="啧啧~“小白熊”这肥嘟嘟的身材，\n厚厚的绒毛，\n摸上去一定超级舒服。" />
+					<Msg NpcID="719" ImageID="1" Info="抬回【锁修塔】，当“抱枕”玩儿\(^o^)/~" />
+					<Msg NpcID="401" ImageID="1" Info="（【乐比熊】被“宝箱精灵”绑架了！\n快追去【修隐岛·锁修塔4层】看看吧！）" />					
+					<Option Info="这就去【修隐岛】！" />
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="c伊影c的手下绑架了c乐比熊c，\n快去修隐岛上的c锁修塔4层c找伊影放人吧！" TargetMap="21704" TargetObj="337" TargetName="和t伊影t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21704" ObjID="337" TaskOption="【乐比熊】在哪儿？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="719" ImageID="1" Info="“小白熊”的肚子真舒服啊~" />	
+					<Msg NpcID="337" ImageID="1" Info="谁允许你们养“宠物”的？！！\n抬走抬走！	" />
+					<Msg NpcID="715" ImageID="1" Info="不要啊老大，它很“萌”的~" />	
+					<Msg NpcID="719" ImageID="1" Info="还是格历尔大陆【速度最快的精灵】……" />	
+					<Msg NpcID="337" ImageID="1" Info="在我面前夸口【速度快】？\n哈哈哈哈，有趣！\n敢不敢和我比试比试？" />
+					<Msg NpcID="367" ImageID="1" Info="呼~呼，我困了~" />
+					<Msg NpcID="715" ImageID="1" Info="老大，它无视你~~" />	
+					<Msg NpcID="337" ImageID="1" Info="……\n不打败我，别想离开锁修塔！！" />
+					<Option Info="快放了【乐比熊】！" SkipTrigger="Y" />
+				</Action>																			
+    		</Event>
+		</Step>					
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="2010" Count="1" />       
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="打败c伊影c啦↖(^ω^)↗！\n快去修隐岛上的c锁修塔4层c，让它放了c乐比熊c吧！" TargetMap="21704" TargetObj="337" TargetName="和t伊影t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21704" ObjID="337" TaskOption="打败你啦！" />
+				</Trigger>					
+				<Action Type="TALK">	
+					<Msg NpcID="337" ImageID="1" Info="你们走吧……\n不过我才是【出手速度最快的精灵】！" />
+					<Msg NpcID="367" ImageID="1" Info="这里的精灵真不解风情~\n竟然喜欢【对战】这么无趣的事。" />
+					<Msg NpcID="366" ImageID="1" Info="【乐比熊】也是喜欢旅行的【骑行精灵】吧？\n加入我们，一起远行怎么样？" />							
+					<Msg NpcID="367" ImageID="1" Info="哈，以后有事就召唤我吧，\n没事我先歇会儿去了。" />	
+					<Msg NpcID="401" ImageID="3" Info="（友情提醒：【乐比熊】就在你的【旅行箱】→【武器装备】里。\n不过要【40级】才可以装备，\n未来勇士要努力升级唷！）" />														
+					<Option Info="使命必达！" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去修隐岛上的c锁修塔4层c，\n打败c伊影c，救出c乐比熊c吧！" TargetMap="21704" TargetObj="337" TargetName="和t伊影t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21704" ObjID="337" TaskOption="快放了乐比熊！" />
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="337" ImageID="1" Info="哟吼？赌上我“影子小魔王”的荣誉，来战！" />	
+					<Option Info="来战！" />
+					<Option Info="我准备下" NextStep="5" />										
+				</Action>					
+    			<Action Type="COMMAND" Command="BATTLE" Params="2010" /> 				
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

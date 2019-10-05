@@ -1,0 +1,92 @@
+<Task ID="10073" Memo="c鹦鹉“TT”c在找未来摩尔？\n小主人快去c弗雷基港码头c看看吧！" TargetMap="11604">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c鹦鹉“TT”c在找未来摩尔？\n小主人快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="找我有事？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="TT想要【铝】T__T~~~~看虾米？\n“鸡”都会说话，鹦鹉说话很正常。" />					
+					<Msg NpcID="52" ImageID="1" Info="你现在是不是很闲？很需要委托任务？\n我的任务要求低，报酬高！" />
+					<Option Info="说来听听"  SkipTrigger="Y" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="4" ParentList="1" ParentCost="1" >
+    		<Event Memo="c鹦鹉“TT”c在找未来摩尔？\n小主人快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="委托任务？" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="港口“T商会”的会长叫【TA】，\n是我的拍档。\n告诉你个秘密……我们以前是海贼！\n要成为海贼王的海贼T_T！" />	
+					<Msg NpcID="52" ImageID="1" Info="我和TA袭击商会货船，环游世界，\n吃的玩的都是你没见过的哈哈。" />
+					<Msg NpcID="52" ImageID="1" Info="可是——美好的时光总是短暂T_T！\nTA这家伙爱上一个女孩子。\n为了这个女孩，竟然放弃成为“海贼王”的梦想住在了弗雷基港……" />														
+					<Msg NpcID="52" ImageID="1" Info="它……它竟然为了个女孩子抛弃我！\n我是堂堂“海贼”！海贼不需要女朋友！\n我要自己造船重新当海贼T_T！" />	
+					<Msg NpcID="52" ImageID="1" Info="所以——现在我的船就差螺丝钉了。\n我在这儿喊了8年了！！\nTB都8岁了也没人给我铝！！\nTT想要【铝】T__T~！只要1个铝就可以~！" />					
+					<Option Info="我帮你采铝" />
+					<Option Info="有事先走了"  NextStep="5" SkipTrigger="Y" />										
+				</Action>								
+    		</Event>
+    	</Step>		
+  		<Step ID="5" ParentList="0" ParentCost="1" >
+    		<Event Memo="c鹦鹉“TT”c在找未来摩尔？\n小主人快去c弗雷基港码头c看看吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="有事先走了" />												
+				</Trigger>						
+				<Action Type="TALK">	
+					<Msg NpcID="52" ImageID="1" Info="8~~年~~了！！\n什么“鸟生”（人生）啊……~~！" />					
+					<Option Info="……（-▽-）" NextStep="4" />										
+				</Action>								
+    		</Event>
+    	</Step>
+					
+  		<Step ID="2" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Item ID="170006" Count="1" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="采集完成↖(^ω^)↗\n快去c弗雷基港码头c交给c鹦鹉“TT”c吧!" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="铝来了！" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="铝！！！！！！！！！！" />
+					<Msg NpcID="52" ImageID="1" Info="噗哈哈哈哈~……\n我听到了出航的号角声~\n美妙的大海在呼唤我~~\n我要造船了！" />
+					<Option Info="( ⊙o⊙ )哦" />
+				</Action>	
+     			<Action Type="MOVIE" Url="task_10073_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y"  />											
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="TT说c风之矿洞c能采到c铝c。\n小主人快去看看吧！" TargetMap="21501" TargetName="采集t铝t" TargetPos="653,870">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="铝在哪里？" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="做装备的安德鲁说只有格历尔西边【风之矿洞】第一层可以采到。" />				
+					<Msg NpcID="52" ImageID="1" Info="友情建议你从摩尔王国出发，往下↓再往左←一直走到底！\n【@nick】加油，【@nick】加油~T T" />					
+					<Option Info="我去也" />
+				</Action>				
+    		</Event>			
+    	</Step>  
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="小型……海啸？！去c弗雷基港码头c看看“海贼鹦鹉”【TT】吧！" TargetMap="11604" TargetObj="52" TargetName="和t鹦鹉TTt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="TT海贼船怎样了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="我…………\n我……………………\n我用8年时间组装的海贼船T   T…………" />
+					<Msg NpcID="48" ImageID="1" Info="精灵研究员说弗雷基预报，\n今天弗雷基港会有“小型海啸”啊……" />
+					<Msg NpcID="52" ImageID="1" Info="最讨厌海啸！" />						
+					<Msg NpcID="48" ImageID="1" Info="TT，来，给你带了礼物。" />					
+					<Option Info="(⊙_⊙)啥？" />	
+				</Action>		
+     			<Action Type="MOVIE" Url="task_10073_2.swf" MapLevel="TASK" Pos="0,0" />				
+				<Action Type="TALK">
+					<Msg NpcID="52" ImageID="1" Info="可…………\n可……………………\n可爱的女孩子( ⊙ w⊙ )！！！！" />					
+					<Msg NpcID="48" ImageID="1" Info="^__^和我一起住在弗雷基港OK？" />
+					<Msg NpcID="52" ImageID="1" Info="\(^o^)/好诶~~~~~~~~" />
+					<Option Info="O(∩_∩)O哈！" />	
+				</Action>																						
+    		</Event>
+    	</Step>			
+	</Procedure>
+</Task>

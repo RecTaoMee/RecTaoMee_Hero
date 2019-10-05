@@ -1,0 +1,57 @@
+<!--风之洞穴三层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="234,141" targetMapId="21502" targetTransPortId="2" name=""/>  	
+		<node id="2" pos="1189,343" targetMapId="" targetTransPortId="2" name=""/>  			
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="5106" type="Object" level="downLevel" res="MC_sjs1" />		
+		<node id="5107" type="Object" level="contentLevel" res="MC_sjs2" />	
+		<node id="5108" type="Object" level="contentLevel" res="MC_sjs3" />					
+	</object>
+	<npc>
+		<node id="329" type="NPC" res="MC_npc_329"  level="downLevel" fun="" alpTaskID="143_1_0,150_3_3" compTaskID="143_2_1,150_1_2" visible="0" taskType="0" action="11" needLevel="" needKind=""/>	
+		<node id="701" type="NPC" res="MC_npc_701" action="0"/>			
+		<node id="61" type="NPC" res="MC_npc_61" action=""  taskShowSteps="20029_5|55" />				
+	</npc>	
+	<actions>
+		<proAction id="0" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="1" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="2" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="3" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="4" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="9" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="10" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>
+			<proAction npcID="329" id="11" type="0" answer="风之龙你好" to="o" >
+			<des>
+				<![CDATA[1#……]]>
+			</des>
+		</proAction>					
+	</actions>			
+</map>

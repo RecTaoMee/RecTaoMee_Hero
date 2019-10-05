@@ -1,0 +1,65 @@
+<Task ID="20019" Memo="“白银导师”c瑞凌c在呼叫小主人——\n就在c修隐岛中心地带c左边的木梯上，\n快去看看吧！" TargetMap="11702">
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="“白银导师”c瑞凌c在呼叫小主人——\n就在c修隐岛中心地带c左边的木梯上，\n快去看看吧！" TargetMap="11702" TargetObj="54" TargetName="和t银魂·瑞凌t对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="54" TaskOption="怎么啦？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="54" ImageID="1" Info="【@nick】今天坚持修行了吗？\n有时间去净化8只【幽光战士】怎么样？" />								
+					<Option Info="现在就去！" SkipTrigger="Y" />
+					<Option Info="【幽光战士】？" NextStep="4" SkipTrigger="Y" />				
+					<Option Info="让我再想想" NextStep="1" />
+				</Action>																		
+    		</Event>
+		</Step>	
+  		<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="“白银导师”c瑞凌c在呼叫小主人——\n就在c修隐岛中心地带c左边的木梯上，\n快去看看吧！" TargetMap="11702" TargetObj="54" TargetName="和t银魂·瑞凌t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="54" TaskOption="【幽光战士】？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="54" ImageID="1" Info="黑化的【幽光战士】被封印在【锁修塔第1层】，\n是有着“战斗之魂”的小精灵。" />								
+					<Msg NpcID="54" ImageID="1" Info="不管挨打多少次都不会厌倦——\n很适合帮助你修行。" />								
+					<Option Info="现在就去！" SkipTrigger="Y"/>			
+					<Option Info="让我再想想" NextStep="1"/>	
+				</Action>																		
+    		</Event>
+		</Step>			
+  		<Step ID="3" ParentList="1, 4" ParentCost="1" >
+    		<Event Memo="“白银导师”c瑞凌c在呼叫小主人——\n就在c修隐岛中心地带c左边的木梯上，\n快去看看吧！" TargetMap="11702" TargetObj="54" TargetName="和t银魂·瑞凌t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="54" TaskOption="净化【幽光战士】" />									
+				</Trigger> 				
+    			<Action Type="COMMAND" Command="NOTHING" /> 																				
+    		</Event>
+		</Step>		
+<!-- 节点1↑ -->  
+
+			
+  		<Step ID="2" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Battle ID="51" Count="8" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="c幽光战士c净化成功\(≧▽≦)/\n快去报告“白银导师”c瑞凌c吧——\n就在c修隐岛中心地带c左边的木梯上！" TargetMap="11702" TargetObj="54" TargetName="和t银魂·瑞凌t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="54" TaskOption="【幽光战士】净化成功！" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="54" ImageID="1" Info="干得不错，以后也要坚持修行知道吗！" />								
+					<Option Info="修行万岁↖(^ω^)↗" />
+				</Action>																		
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c锁修塔第1层c净化8只c幽光战士c吧！" TargetMap="21701" TargetName="打败t幽光战士t" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11702" ObjID="54" TaskOption="【幽光战士】在哪？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="54" ImageID="1" Info="黑化的【幽光战士】被封印在【锁修塔第1层】，\n是有着“战斗之魂”的小精灵。" />								
+					<Msg NpcID="54" ImageID="1" Info="不管挨打多少次都不会厌倦——\n很适合帮助你修行。" />	
+					<Option Info="现在就去！" />
+				</Action>																		
+    		</Event>			
+		</Step>				
+	</Procedure>
+</Task>

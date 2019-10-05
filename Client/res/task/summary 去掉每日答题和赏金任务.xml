@@ -1,0 +1,4390 @@
+<!--  Task ID:【从1开始】可以不连续但必须按序(1-500) 
+ ID段表示任务类型(1~10000主线、10001~20000支线、20001~30000重复、30001~40000周期、20001~30000重复) Parent:父任务ID必须小于ID 
+  -->
+<!--  Node ID:任务中节点ID，【从1开始】
+  -->
+<!--  RepeatType（已废除）:【仅对20001~30000重复任务有效】重复类型(0不能重复，1每日重复，2每周重复，3每月重复，【4指定星期】，其他类型按需定义) 
+  -->
+<!--  InItem 
+        Count:输入物品的种数 
+        ItemId:从1开始连续排列 
+        OutType:输入物品类型: 1：角色属性，2：普通物品，3：宠物，4：服饰，5：技能，6：称号，7：功能
+        ItemId:输入物品ID Count：输入物品数量 ExpirationDate有效期限(1永远、2天、3小时)
+  -->
+<!--  Target 
+       Item ID:从1开始连续排列 
+       Count:目标数量 只需配置类型为(1打怪、2收集物品、3打怪收集) 
+       Item DropOdds: 杀怪物品掉落概率（0-100）(根据目标类型按需配置)
+       Item Count:目标达成所需数量 BeastType:怪物ID(根据类型按需配置) ItemId:相关物品ID(根据类型按需配置) 
+
+ 任务目标中Del属性如果不配，默认删除，不删：0
+   -->
+<!-- 
+      OutItem OptionCnt: 输出奖励选项数量(1-3) 
+	   
+	   ParentList:前置任务列表
+	   ParentCost: ParentList中必须完成的数量
+  -->
+<!-- 
+	MapType 1:航海任务 0：大陆任务
+  -->
+<!--  OutItem Item OutId:输出选项序号(0表示首次完成输出，1-3表示只在相应选项输出，255表示总是输出，必须在所有选项后面) 
+ 	    二输出举例：
+		<OutItem OptionCnt="1">	
+  			<Item ID="1" OutType="4" ItemId="1" Count="1"/> 
+  			<Item ID="1" OutType="4" ItemId="2" Count="1"/> 
+		</OutItem>	
+		二选一举例：
+		<OutItem OptionCnt="2">	
+  			<Item ID="1" OutType="4" ItemId="1" Count="1"/> 
+  			<Item ID="2" OutType="4" ItemId="2" Count="1"/> 
+		</OutItem>
+  -->
+<!--  OutItem Item Type:输出物品类型(1人物属性(xiaomee星豆ID=1、exp不可分配经验ID=2、exp可分配经验ID=3)、2普通物品、3宠物、4装备、5技能、6称号)
+	任务激活UI功能:
+	宠物（4），
+	荣誉（1），    
+	技能（2） 
+	图鉴（8），	
+	g档案（512）大地图（16），=528
+	邮件（32），时报神谕（64），净化之路（256），=352
+	小屋（128），		
+	激活相应的UI,直接将改ui对应的数字相加  即可 
+  -->
+<!--  OutItem Item ItemId:输出物品ID Count:输出物品数量  -->
+<!-- Level：人物等级
+       Job：-3所有进阶职业，-2无条件， -1任何职业（必须有职业），0无职业，1剑士，2弓箭手，3魔法师，4传教士，5忍者 ,6狂战士 ,7黑魔导士 ,8圣言使 ,9巫术士
+       JobLevel：职业阶段 1 2 3 4
+       PhaseLevel：技能阶段 1 2 3 4 5 6 7 8 9 10	  	   
+举例：	   
+	<Task ID="1" Name="任务名" ParentCost="0" ParentList="0" Time="1:13-14 2:13-14 3:13-14 4:13-14 5:13-14 6:13-14 7:13-14" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="1" SkillLimit="106 0 10">
+		<Node ID="1">
+			<ItemTarget ItemId="280001" Count="10" Del="1" BeastType="2001" DropOdds="100" Check="0" />
+			<BeastTarget BeastType="2004" Count="1" DropOdds=""/>
+			<BeastGrp GrpId="1" Count="1" Win="1"/>
+			<SkillTarget SkillID="106" Count="2"/>			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="1" Count="5" /> 
+  				<Item OutType="1" ItemId="2" Count="1"/>
+  				<Item OutType="1" ItemId="50004" SubID="106" Count="30"/>
+			</OutItem>
+		</Node>
+	</Task>
+
+														
+	
+Kind：任务类型（必填）  1：主线，2：支线，3：重复，4：运营
+Trace：是否追踪 1：追踪，0:不追踪（默认值）
+BreakTrace：可否取消追踪 1：可取消，0：不去取消（默认值）	
+
+任务插图编号：	
+Puzzle="" 
+
+环任务：
+<TaskLoops>
+	<TaskLoop ID="1" Name="环任务1" Tasks="1 2 3" MinTaskCnt="1" MaxTaskCnt="3" LoopCnt="2" MaxSame="1" StartTask="" EndTask="" />
+</TaskLoops>
+
+Tasks:任务组包含的子任务，多个子任务之间用空格隔开
+MinTaskCnt:完成一环任务，所需要完成的子任务最小数目
+MaxTaskCnt:完成一环任务，所需要完成的子任务最大数目
+
+LoopCnt：每天最多可以完成的环数
+
+MaxSame：环任务中允许子任务重复的次数，1表示在同一环中不会接取到重复的子任务，2表示单个子任务最多会重复2次，以此类推；默认值为“1”
+
+StartTask：环任务的开始任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才可以接取到第1个子任务。
+EndTask：环任务的结束任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才算1环任务结束。
+★StartTask和EndTask最好一起出现，如果不配置默认直接第一个子任务开始。
+
+
+<PetTarget Type="1 2 3 4" Count="1 2 3 4" />
+  -->    
+	
+
+<TaskSummary>	
+	<TaskLoops>
+		<TaskLoop ID="1" Name="送信" Tasks="36002 36003 36004 36005 36006 36007 36008 36009 36010 36011" MinTaskCnt="10" MaxTaskCnt="10" LoopCnt="1" MaxSame="1" StartTask="36001" EndTask="36012"/>
+				
+		<TaskLoop ID="3" Name="水晶的预言" Tasks="36110 36111 36112 36113 36114 36115 36116 36117 36118 36119 " MinTaskCnt="5" MaxTaskCnt="5" LoopCnt="1" MaxSame="1" StartTask="36052" EndTask="36502"/>
+		
+		<TaskLoop ID="4" Name="水晶的预言" Tasks="36125 36126 36127 36128 36129 36130 36131 36132 36141 36142 36143 36144 36145 36146 36147 36148" MinTaskCnt="8" MaxTaskCnt="8" LoopCnt="1" MaxSame="1" StartTask="36053" EndTask="36503"/>
+		
+		<TaskLoop ID="5" Name="水晶的预言" Tasks="36149 36150 36151 36152 36153 36154 36155 36156 36157 36158 36159 36160 36161 36162" MinTaskCnt="8" MaxTaskCnt="8" LoopCnt="1" MaxSame="1" StartTask="36054" EndTask="36504"/>
+		<!-- 
+		<TaskLoop ID="6" Name="每日答题" Tasks="36505 36506 36507 36508 36509 36510 36511 36512 36513 36514 36515 36516 36517 36518 36519" MinTaskCnt="5" MaxTaskCnt="5" LoopCnt="1" MaxSame="1" StartTask="36535" EndTask="36536"/>
+		--> 
+	</TaskLoops>
+	
+	
+<Tasks>
+	<Task ID="1" Name="姐姐的感谢！" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="" ParentList="" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="1"  >	
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="1" ItemId="50002" Count="50" />				
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="3" Name="光明与黑暗" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="1" JobLevel="0" Star="1" Order="3" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="130012" Count="1" />
+			</OutItem>											
+		</Node>							
+		<Node ID="2" Step="2" Memo="" IsEnd="1">  
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="150" />		
+			</OutItem>											
+		</Node>		
+	</Task>	
+	<Task ID="16" Name="光明与黑暗" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="2" JobLevel="0" Star="1" Order="3" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" >  
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="130286" Count="1" /> 			
+			</OutItem>										
+		</Node>							
+		<Node ID="2" Step="2" Memo="" IsEnd="1">  
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="150" />
+			</OutItem>											
+		</Node>		
+	</Task>	
+	<Task ID="17" Name="光明与黑暗" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="3" JobLevel="0" Star="1" Order="3" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="130291" Count="1" />	
+			</OutItem>											
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="150" /> 
+			</OutItem>											
+		</Node>	
+	</Task>	
+	<Task ID="18" Name="光明与黑暗" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="4" JobLevel="0" Star="1" Order="3" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="130296" Count="1" /> 	
+			</OutItem>											
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="150" /> 
+			</OutItem>												
+		</Node>	
+	</Task>	
+	<Task ID="19" Name="光明与黑暗" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="5" JobLevel="0" Star="1" Order="3" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="130281" Count="1" />  	
+			</OutItem>											
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1">  
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="150" /> 
+			</OutItem>												
+		</Node>										
+	</Task>						
+	<Task ID="4" Name="剑士·新技能" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="3" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="1" JobLevel="0" Star="1" Order="4" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo=""> <!-- 剑士 -->
+			<OutItem ID="1">			
+				<Item OutType="5" ItemId="102" Count="1" />			
+				<Item OutType="5" ItemId="106" Count="1" />	
+ 				<Item OutType="7" ItemId="0" Count="2" />	<!--技能（2）-->																																			
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="300" />																											
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="5" Name="弓箭手·新技能" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="16" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="2" JobLevel="0" Star="1" Order="4" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > <!-- 弓箭手 -->
+			<OutItem ID="1">							
+				<Item OutType="5" ItemId="110" Count="1" />	
+				<Item OutType="5" ItemId="111" Count="1" />		
+ 				<Item OutType="7" ItemId="0" Count="2" />	<!--技能（2）-->																																																														
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">							
+				<Item OutType="1" ItemId="50002" Count="300" />																																																						
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="6" Name="魔法师·新技能" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="17" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="3" JobLevel="0" Star="1" Order="4" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > <!-- 魔法师 -->
+			<OutItem ID="1">		
+				<Item OutType="5" ItemId="2001" Count="1" />	
+				<Item OutType="5" ItemId="2003" Count="1" />		
+ 				<Item OutType="7" ItemId="0" Count="2" />	<!--技能（2）-->																																																																		
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50002" Count="300" />																													
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="7" Name="传教士·新技能" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="18" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="4" JobLevel="0" Star="1" Order="4" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" >
+			<OutItem ID="1">		
+				<Item OutType="5" ItemId="2002" Count="1" />		
+				<Item OutType="5" ItemId="1002" Count="1" />	
+ 				<Item OutType="7" ItemId="0" Count="2" />	<!--技能（2）-->																																																																			
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="2" Memo="" IsEnd="1" > <!-- 传教士 -->
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50002" Count="300" />																													
+			</OutItem>
+		</Node>
+	</Task>			
+	<Task ID="8" Name="忍者·新技能" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="19" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="5" JobLevel="0" Star="1" Order="4" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">		
+				<Item OutType="5" ItemId="114" Count="1" />	
+				<Item OutType="5" ItemId="116" Count="1" />		
+ 				<Item OutType="7" ItemId="0" Count="2" />	<!--技能（2）-->																																																																			
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> <!-- 忍者 -->
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50002" Count="300" />																																				
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="9" Name="被绑架的吉普豆泥" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="4 5 6 7 8" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="5" RecomLevel="1" >
+		<Node ID="1" Step="10" Memo="" > 
+			<OutItem ID="1"/>		
+		</Node>		
+		<Node ID="2" Step="2" Memo="" > 
+			<BeastGrp GrpId="19" Count="1" Win="1"/>														
+			<OutItem ID="1"/>								
+		</Node>			
+		<Node ID="3" Step="3" Memo="" IsEnd="1"> 
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50001" Count="100" />						
+				<Item OutType="1" ItemId="50002" Count="500" />
+				<Item OutType="1" ItemId="50003" Count="500" />				
+				<Item OutType="3" ItemId="6" Count="1" />	
+ 				<Item OutType="7" ItemId="0" Count="4" />	<!--宠物（4）-->																																																								
+			</OutItem>
+		</Node>
+	</Task>				
+	<Task ID="10" Name="鼬西的报复" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="9" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="6" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50002" Count="800" />
+				<Item OutType="3" ItemId="1" Count="1" />						
+				<Item OutType="3" ItemId="2" Count="1" />																		
+			</OutItem>			
+		</Node>		
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 
+			<BeastGrp GrpId="3008" Count="1" Win="1"/>														
+			<OutItem ID="1"/>
+		</Node>
+	</Task>		
+	<Task ID="11" Name="恐惧魔王登场" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="10" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="7" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" > 	
+			<OutItem ID="1"/>								
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1"> 			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />		
+				<Item OutType="1" ItemId="50002" Count="1200" />										
+				<Item OutType="1" ItemId="50003" Count="1200" />	
+			</OutItem>
+		</Node>		
+	</Task>		
+	<Task ID="12" Name="神秘的黑衣人" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="11" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="8" RecomLevel="1" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1"> 
+			<OutItem ID="1">	
+				<Item OutType="1" ItemId="50001" Count="100" />		
+				<Item OutType="1" ItemId="50002" Count="1800" />									
+				<Item OutType="1" ItemId="50003" Count="1800" />		
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="13" Name="净化之路" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="12" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="9" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="" >    
+			<OutItem ID="1">				
+				<Item OutType="7" ItemId="0" Count="256" />	<!--净化之路（256）-->	 
+			</OutItem>														         
+		</Node>
+		<Node ID="2" Step="2" Memo="" IsEnd="1">             
+			<BeastGrp GrpId="2509" Count="1" Win="1"/>			    														
+			<OutItem ID="1">		
+				<Item OutType="1" ItemId="50002" Count="2600" />								
+				<Item OutType="1" ItemId="50003" Count="2600" />		
+			</OutItem>
+		</Node>		
+	</Task>						
+	<Task ID="14" Name="皮克司精灵研究所" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="1" ParentList="13" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="1" Job="-1" JobLevel="0" Star="1" Order="10" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />	
+				<Item OutType="4" ItemId="130007" Count="1" />					
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100001" Count="1" />	
+ 				<Item OutType="7" ItemId="0" Count="520" />	<!--g档案（512），图鉴（8）-->					
+			</OutItem>
+		</Node>		
+		<Node ID="3" Step="10" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="3300" />
+				<Item OutType="1" ItemId="50003" Count="3300" />
+				<Item OutType="2" ItemId="270011" Count="5" />	
+				<Item OutType="3" ItemId="3" Count="1" />					
+				<Item OutType="7" ItemId="0" Count="3312" /> <!--大地图（16），邮件（32），时报神谕（64），小屋（128），勇士周历（1024），挂机（2048），合成制作（4096）-->	 																					
+			</OutItem>
+		</Node>		
+	</Task>
+	<Task ID="15" Name="命运之轮①" Kind="1" DefaultTrace="1" BreakTrace="0" ParentCost="0" ParentList="0" AcceptStep="9" RepeatType="0" RepeatCnt="0" Level="10" Job="-1" JobLevel="0" Star="1" Order="11" RecomLevel="10" >
+		<Node ID="1" Step="3" Memo="" IsEnd="1">              
+			<OutItem ID="1">	
+				<Item OutType="1" ItemId="50001" Count="200" />			
+				<Item OutType="1" ItemId="50002" Count="4200" />																							
+				<Item OutType="1" ItemId="50003" Count="4200" />		
+				<Item OutType="4" ItemId="110028" Count="1" />	
+				<Item OutType="6" ItemId="1038" Count="1" />																
+			</OutItem>
+		</Node>
+	</Task>		
+	<!-- 任务ID 		任务种类 是否追踪 		可否取消追踪 		任务名字				有几个前置任务 前置任务列表 		开始步骤 	重复类型 		重复次数 		任务等级 职业需求 职业阶段 		难易星级 推荐等级 		荣誉匣里的页数 -->
+	<Task ID="20" Kind="1" DefaultTrace="1" BreakTrace="1" Name="陆行鸟大家族"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >
+		<Node ID="1" Step="3" Memo="">
+			<!-- 物品收集 物品ID			物品数量    是否删除 -->
+			<ItemTarget ItemId="230002" Count="20" Del="1"/>
+			<!-- 输出物品 输出物品类型 物品ID 物品数量 -->			
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" Memo="">
+			<ItemTarget ItemId="160006" Count="90" Del="1"/>			
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="200" />
+			</OutItem>
+		</Node>		
+		<Node ID="3" Step="7" IsEnd="1">
+		<!-- 打怪目标 怪物类型 怪物数量 输赢 -->
+		<BeastTarget BeastType="16" Count="10" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="89001" Count="1" />																	
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="21" Kind="1" DefaultTrace="1" BreakTrace="1" Name="萌萌乐比熊"  ParentCost="1" ParentList="20" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="35" Job="-1" JobLevel="0" Star="4" RecomLevel="35" Order="1" >
+		<Node ID="1" Step="3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2010" Count="1" Win="1"/>														
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="5000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="4" ItemId="89002" Count="1" />																							
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="66" Name="怪盗集团①"  Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="11" Job="-2" JobLevel="0" Star="1" RecomLevel="10" Order="13">
+		<Node ID="1" Step="4" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+		<BeastTarget BeastType="7" Count="3" Win="1"/>							
+			<OutItem ID="1">
+				<Item OutType="3" ItemId="16" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="7200" />
+				<Item OutType="1" ItemId="50003" Count="7200" />			
+			</OutItem>
+		</Node>
+	</Task>							
+	<Task ID="67" Name="怪盗集团②" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="66" RepeatType="0" RepeatCnt="0" Level="11" Job="-2" JobLevel="0" Star="1" RecomLevel="11" RecomTeam="0" Order="14" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />	
+				<Item OutType="2" ItemId="180046" Count="1" />									
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="7" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />	
+				<Item OutType="4" ItemId="110010" Count="1" />																							
+			</OutItem>
+		</Node>				
+		<Node ID="3" Step="8" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="9000" />		
+				<Item OutType="1" ItemId="50003" Count="9000" />										
+			</OutItem>
+		</Node>					
+	</Task>		
+
+
+	<Task ID="68" Name="怪盗集团③" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="67" RepeatType="0" RepeatCnt="0" Level="11" Job="-2" JobLevel="0" Star="2" RecomLevel="11" RecomTeam="0" Order="15" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />				
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="6" Memo="" >
+			<ItemTarget ItemId="300016" Count="1" BeastType="200007" DropOdds="1000" Check="0" Del="0"/>
+			<BeastGrp GrpId="6" Count="1" Win="1"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />									
+			</OutItem>
+		</Node>			
+		<Node ID="3" Step="11" Memo="" IsEnd="1">
+			<BeastGrp GrpId="8" Count="1" Win="1"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />												
+			</OutItem>
+		</Node>										
+	</Task>
+		
+	<Task ID="51" Name="试胆敢不敢" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="68" AcceptStep="43" RepeatType="0" RepeatCnt="0" Level="10" Job="1" JobLevel="0" Star="1" Order="12"  RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="5600" />	
+				<Item OutType="1" ItemId="50003" Count="5600" />											
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="52" Name="试胆敢不敢" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="68" AcceptStep="43" RepeatType="0" RepeatCnt="0" Level="10" Job="2" JobLevel="0" Star="1" Order="12"  RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="5600" />	
+				<Item OutType="1" ItemId="50003" Count="5600" />											
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="53" Name="试胆敢不敢" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="68" AcceptStep="43" RepeatType="0" RepeatCnt="0" Level="10" Job="3" JobLevel="0" Star="1" Order="12"  RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="5600" />	
+				<Item OutType="1" ItemId="50003" Count="5600" />											
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="54" Name="试胆敢不敢" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="68" AcceptStep="43" RepeatType="0" RepeatCnt="0" Level="10" Job="4" JobLevel="0" Star="1" Order="12"  RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="5600" />	
+				<Item OutType="1" ItemId="50003" Count="5600" />											
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="55" Name="试胆敢不敢" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="68" AcceptStep="43" RepeatType="0" RepeatCnt="0" Level="10" Job="5" JobLevel="0" Star="1" Order="12"  RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="5600" />	
+				<Item OutType="1" ItemId="50003" Count="5600" />											
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="99" Name="勇士斗技场" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="23" Job="-1" JobLevel="0" Star="2" RecomLevel="23" Order="10">
+		<Node ID="1" Step="1" Memo="祝贺【15级】！*王国西街尽头的勇士斗技场的大门向你打开！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+				<Item OutType="1" ItemId="50002" Count="2000" />
+				<Item OutType="1" ItemId="50003" Count="2000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="第一次参加斗技场【单人比试】，太激动了！">
+			<ItemTarget ItemId="290002" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+				<Item OutType="1" ItemId="50002" Count="4000" />
+				<Item OutType="1" ItemId="50003" Count="4000" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" IsEnd="1">
+			<ItemTarget ItemId="290002" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290002" Count="20" />
+				<Item OutType="1" ItemId="50002" Count="4000" />
+				<Item OutType="1" ItemId="50003" Count="4000" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="100" Name="修炼之域的挑战" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="99" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="2" RecomLevel="21" Order="10">
+		<Node ID="1" Step="3" IsEnd="1" Memo="挑战【修炼之域】证明实力，击败c修炼之域15域c，然后回复斗技场管理处的c圣弗雷德c！">
+			<BeastGrp GrpId="3025" Count="1" Win="1" Help="1"/>			
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290002" Count="20" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+
+	
+	<Task ID="101" Name="剑士协会学员班" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="1" JobLevel="0" Star="3" Order="10" RecomLevel="13" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，\n★打败拉拉美王【并记住联军的人数】告诉老师吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1031" Count="1"/>
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="300024" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="102" Name="弓箭手协会学员班" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="2" JobLevel="0" Star="3" Order="10" RecomLevel="13" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，\n★打败拉拉美王【并记住联军的人数】告诉老师吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1031" Count="1"/>
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="300025" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="103" Name="魔法师协会学员班" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="3" JobLevel="0" Star="3" Order="10" RecomLevel="13" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，\n★打败拉拉美王【并记住联军的人数】告诉老师吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1031" Count="1"/>
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="300026" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="104" Name="传教士协会学员班" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="4" JobLevel="0" Star="3" Order="10" RecomLevel="13" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，\n★打败拉拉美王【并记住联军的人数】告诉老师吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1031" Count="1"/>
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="300027" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="105" Name="忍者协会学员班" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="5" JobLevel="0" Star="3" Order="10" RecomLevel="13" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，\n★打败拉拉美王【并记住联军的人数】告诉老师吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+			<BeastGrp GrpId="2002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1031" Count="1"/>
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="300028" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+						
+	<Task ID="116" Name="命运之轮②" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="101 102 103 104 105" RepeatType="0" RepeatCnt="0" Level="15" Job="-2" JobLevel="0" Star="1" RecomLevel="15" RecomTeam="0" Order="17" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />									
+			</OutItem>
+		</Node>										
+	</Task>
+	<Task ID="117" Name="三个好朋友" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="116" RepeatType="0" RepeatCnt="0" Level="15" Job="-2" JobLevel="0" Star="1" RecomLevel="15" RecomTeam="0" Order="18" >
+		<Node ID="1" Step="5" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />						
+			</OutItem>
+		</Node>										
+	</Task>
+	<Task ID="118" Name="时光井的精灵" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="17" Job="-1" JobLevel="0" Star="2" RecomLevel="17" RecomTeam="1" Order="11">
+		<Node ID="1" Step="3" Memo="麦田村的守护精灵失踪了，是什么原因呢？">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="麦田村的守护精灵被黑化了，霸占了东之时光井。">
+			<ItemTarget ItemId="180042" Count="1" Del="1" BeastType="2003" DropOdds="1000"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="10" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="120" Name="学员班毕业啦！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="17" Job="1" JobLevel="0" Star="4" Order="17" RecomLevel="17" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<BeastGrp GrpId="3006" Count="1" Win="1"/>					
+			<OutItem ID="1" />
+		</Node>		
+		<Node ID="3" Step="10" IsEnd="1" >
+			<BeastGrp GrpId="2006" Count="1" Win="1"/>								
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="15000" /> 	
+				<Item OutType="1" ItemId="50003" Count="15000" /> 
+				<Item OutType="6" ItemId="2" Count="1" /> 
+				<Item OutType="2" ItemId="300029" Count="1" />												
+			</OutItem>		
+		</Node>		
+	</Task>
+
+	<Task ID="121" Name="学员班毕业啦！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="17" Job="2" JobLevel="0" Star="4" Order="17" RecomLevel="17" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<BeastGrp GrpId="3006" Count="1" Win="1"/>					
+			<OutItem ID="1" />
+		</Node>		
+		<Node ID="3" Step="10" IsEnd="1" >
+			<BeastGrp GrpId="2006" Count="1" Win="1"/>											
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />  	
+				<Item OutType="6" ItemId="8" Count="1" /> 
+				<Item OutType="2" ItemId="300030" Count="1" />																				
+			</OutItem>		
+		</Node>		
+	</Task>
+	<Task ID="122" Name="学员班毕业啦！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="17" Job="3" JobLevel="0" Star="4" Order="17" RecomLevel="17" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<BeastGrp GrpId="3006" Count="1" Win="1"/>					
+			<OutItem ID="1" />
+		</Node>		
+		<Node ID="3" Step="10" IsEnd="1" >
+			<BeastGrp GrpId="2006" Count="1" Win="1"/>											
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="10000" /> 
+				<Item OutType="1" ItemId="50003" Count="15000" /> 	
+				<Item OutType="6" ItemId="14" Count="1" />
+				<Item OutType="2" ItemId="300031" Count="1" />	 																			
+			</OutItem>		
+		</Node>		
+	</Task>
+	<Task ID="123" Name="学员班毕业啦！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="17" Job="4" JobLevel="0" Star="4" Order="17" RecomLevel="17" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<BeastGrp GrpId="3006" Count="1" Win="1"/>					
+			<OutItem ID="1" />
+		</Node>		
+		<Node ID="3" Step="10" IsEnd="1" >
+			<BeastGrp GrpId="2006" Count="1" Win="1"/>											
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="10000" /> 
+				<Item OutType="1" ItemId="50003" Count="15000" /> 		
+				<Item OutType="6" ItemId="20" Count="1" />
+				<Item OutType="2" ItemId="300032" Count="1" />	 																		
+			</OutItem>		
+		</Node>		
+	</Task>
+	<Task ID="124" Name="学员班毕业啦！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="17" Job="5" JobLevel="0" Star="4" Order="17" RecomLevel="17" RecomTeam="1" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<BeastGrp GrpId="3006" Count="1" Win="1"/>					
+			<OutItem ID="1" />
+		</Node>		
+		<Node ID="3" Step="10" IsEnd="1" >
+			<BeastGrp GrpId="2006" Count="1" Win="1"/>											
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="10000" /> 
+				<Item OutType="1" ItemId="50003" Count="15000" /> 	
+				<Item OutType="6" ItemId="26" Count="1" />
+				<Item OutType="2" ItemId="300033" Count="1" />	 																			
+			</OutItem>		
+		</Node>		
+	</Task>	
+	<Task ID="135" Name="TB的忧郁" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="18" Job="-1" JobLevel="0" Star="1" Order="18" RecomLevel="18" >
+		<Node ID="1" Step="5 6" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="500" /> 				
+			</OutItem>		
+		</Node>	
+		<Node ID="2" Step="16" IsEnd="1" >			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	
+				<Item OutType="1" ItemId="50001" Count="6250" /> 								 																		 											
+			</OutItem>		
+		</Node>		
+		<Node ID="3" Step="17" IsEnd="1" >			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" /> 
+				<Item OutType="1" ItemId="50001" Count="10000" /> 	
+				<Item OutType="6" ItemId="1034" Count="1" />
+			</OutItem>		
+		</Node>		
+	</Task>	
+	<Task ID="141" Name="命运之轮③" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="116" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="19" Job="-1" JobLevel="0" Star="1" Order="19" RecomLevel="19" >	
+		<Node ID="1" Step="2" IsEnd="1" >
+			<ItemTarget ItemId="110028" Count="1" Del="1" />						
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110029" Count="1" /> 									
+				<Item OutType="1" ItemId="50001" Count="4000" /> 
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 					
+			</OutItem>		
+		</Node>		
+	</Task>	
+	<Task ID="142" Name="港湾小战争" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="141" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="19" Job="-1" JobLevel="0" Star="1" Order="19" RecomLevel="19" >	
+		<Node ID="1" Step="17" IsEnd="1" >
+			<BeastGrp GrpId="3007" Count="1" Win="1"/>												
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="4000" /> 
+				<Item OutType="1" ItemId="50002" Count="15000" /> 	
+				<Item OutType="1" ItemId="50003" Count="15000" /> 					
+			</OutItem>		
+		</Node>		
+	</Task>	
+	<Task ID="143" Name="风之洞穴探险" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="1" Order="20" RecomLevel="20" >	
+		<Node ID="1" Step="51, 3, 4" >			
+			<OutItem ID="1"/>		
+		</Node>			
+		<Node ID="2" Step="5" IsEnd="1" >			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="4000" /> 
+				<Item OutType="1" ItemId="50002" Count="15000" /> 	
+				<Item OutType="1" ItemId="50003" Count="15000" /> 					
+			</OutItem>		
+		</Node>		
+	</Task>
+	<!-- 任务ID 		任务种类 是否追踪 		可否取消追踪 		任务名字				有几个前置任务 前置任务列表 		开始步骤 	重复类型 		重复次数 		任务等级 职业需求 职业阶段 		难易星级 推荐等级 		荣誉匣里的页数 -->
+	<Task ID="144" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅰ"  ParentCost="1" ParentList="143" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="4" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />				
+			</OutItem>						
+		</Node>
+	</Task>
+	<Task ID="145" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅱ"  ParentCost="1" ParentList="144" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150002" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />				
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="146" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅲ"  ParentCost="1" ParentList="145" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800007" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />				
+			</OutItem>						
+		</Node>	
+	</Task>
+	<Task ID="147" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅳ"  ParentCost="1" ParentList="146" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150003" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="30000" />
+				<Item OutType="1" ItemId="50003" Count="30000" />						
+			</OutItem>						
+		</Node>
+	</Task>
+	<Task ID="148" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅴ"  ParentCost="1" ParentList="147" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900007" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />						
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="149" Kind="1" DefaultTrace="1" BreakTrace="1" Name="多修的试炼Ⅵ"  ParentCost="1" ParentList="148" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" Order="1" >	
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3310" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />							
+			</OutItem>						
+		</Node>	
+	</Task>
+	<Task ID="150" Name="风之龙觉醒" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="143" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="22" Job="-1" JobLevel="0" Star="4" Order="14" RecomLevel="22" >
+		<Node ID="1" Step="51" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="180048" Count="1" />				
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="7" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>				
+		<Node ID="3" Step="17" >		
+			<BeastGrp GrpId="3101" Count="1" Win="1"/>																
+			<OutItem ID="1"/>
+		</Node>	
+		<Node ID="4" Step="18" IsEnd="1" >		
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="100012" Count="1" />
+				<Item OutType="1" ItemId="50001" Count="6000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>
+		</Node>					
+	</Task>
+	<Task ID="151" Name="风龙的试炼" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="150" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="1" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>			
+		<Node ID="3" Step="8" IsEnd="1" >			            <!-- 剑士 -->	
+			<BeastGrp GrpId="3102" Count="1" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="3" Count="1" />				
+				<Item OutType="2" ItemId="300035" Count="1" />									
+				<Item OutType="1" ItemId="50001" Count="10000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="154" Name="风龙的试炼" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="150" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="2" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>			
+		<Node ID="3" Step="9" IsEnd="1" >				       <!-- 弓箭手 -->
+			<BeastGrp GrpId="3102" Count="1" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="9" Count="1" Job="2" />
+				<Item OutType="2" ItemId="300036" Count="1" Job="2" />																		
+				<Item OutType="1" ItemId="50001" Count="10000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>			
+		</Node>					
+	</Task>	
+	<Task ID="155" Name="风龙的试炼" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="150" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="3" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>					
+		<Node ID="3" Step="10" IsEnd="1" >				        <!-- 魔法师 -->
+			<BeastGrp GrpId="3102" Count="1" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="15" Count="1" Job="3" />				
+				<Item OutType="2" ItemId="300037" Count="1" Job="3" />	
+				<Item OutType="1" ItemId="50001" Count="10000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="156" Name="风龙的试炼" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="150" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="4" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>			
+		<Node ID="3" Step="11" IsEnd="1" >				        <!-- 传教士 -->
+			<BeastGrp GrpId="3102" Count="1" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="21" Count="1" Job="4" />				
+				<Item OutType="2" ItemId="300038" Count="1" Job="4" />																						
+				<Item OutType="1" ItemId="50001" Count="10000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>					
+		</Node>	 
+	</Task>		
+	<Task ID="157" Name="风龙的试炼" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="150" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="5" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="5000" /> 				
+			</OutItem>
+		</Node>				 
+		<Node ID="3" Step="12" IsEnd="1" >				    <!--   忍者 -->	
+			<BeastGrp GrpId="3102" Count="1" Win="1"/>					  
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="27" Count="1" Job="5" />				
+				<Item OutType="2" ItemId="300039" Count="1" Job="5" />																					
+				<Item OutType="1" ItemId="50001" Count="10000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>					
+		</Node>		
+	</Task>									
+	<Task ID="152" Name="勇士号新航线！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="1" Order="16" RecomLevel="25" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" /> 											
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="4" IsEnd="1" >				                                            
+			<ItemTarget ItemId="170005" Count="10" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="4000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" /> 												
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="153" Name="出发了！勇士号！" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="1" Order="17" RecomLevel="25" >
+		<Node ID="1" Step="2" Memo="" > 
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" /> 												
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="" >
+			<OutItem ID="1"> 				
+				<Item OutType="1" ItemId="50002" Count="1000" />
+			</OutItem>
+		</Node>			
+		<Node ID="3" Step="4" IsEnd="1" >				                                            
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" /> 												
+			</OutItem>
+		</Node>			
+	</Task>
+	<Task ID="158" Name="废弃的土豆村" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="153" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="4" Order="15" RecomLevel="25" >
+		<Node ID="1" Step="3" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 				
+			</OutItem>
+		</Node>		 
+		<Node ID="2" Step="4" IsEnd="1" >				   
+				<BeastTarget BeastType="1" Count="5" Win="0"/>				  
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />			
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" /> 	 							
+			</OutItem>					
+		</Node>		
+	</Task>
+	<Task ID="201" Name="锁修塔·银魂的考验" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="30" Job="1" JobLevel="0" Star="4" Order="18" RecomLevel="30" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 
+				<Item OutType="4" ItemId="100005" Count="1" /> 		
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="16" IsEnd="1" >	
+			<ItemTarget ItemId="260023" Count="1" BeastType="2010" DropOdds="1000" Del="1"/>												
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="202" Name="锁修塔·银魂的考验" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="30" Job="2" JobLevel="0" Star="4" Order="18" RecomLevel="30" >
+		<Node ID="1" Step="3" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 
+				<Item OutType="4" ItemId="100005" Count="1" /> 		
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="17" IsEnd="1" >
+			<ItemTarget ItemId="260023" Count="1" BeastType="2010" DropOdds="1000" Del="1"/>													
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="203" Name="锁修塔·银魂的考验" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="30" Job="3" JobLevel="0" Star="4" Order="18" RecomLevel="30" >
+		<Node ID="1" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 
+				<Item OutType="4" ItemId="100005" Count="1" /> 		
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="18" IsEnd="1" >	
+			<ItemTarget ItemId="260023" Count="1" BeastType="2010" DropOdds="1000" Del="1"/>												
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="204" Name="锁修塔·银魂的考验" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="30" Job="4" JobLevel="0" Star="4" Order="18" RecomLevel="30" >
+		<Node ID="1" Step="5" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 
+				<Item OutType="4" ItemId="100005" Count="1" /> 		
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="19" IsEnd="1" >	
+			<ItemTarget ItemId="260023" Count="1" BeastType="2010" DropOdds="1000" Del="1"/>												
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="205" Name="锁修塔·银魂的考验" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="152" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="30" Job="5" JobLevel="0" Star="4" Order="18" RecomLevel="30" >
+		<Node ID="1" Step="20" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="5000" /> 
+				<Item OutType="4" ItemId="100005" Count="1" /> 		
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="21" IsEnd="1" >	
+			<ItemTarget ItemId="260023" Count="1" BeastType="2010" DropOdds="1000" Del="1"/>												
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" /> 	
+				<Item OutType="1" ItemId="50003" Count="10000" /> 							
+			</OutItem>  
+		</Node>			
+	</Task>		
+	<Task ID="206" Name="进阶之路" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="201 202 203 204 205" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" Job="-1" JobLevel="0" Star="4" Order="1" RecomLevel="30" >
+		<Node ID="1" Step="101" >
+			<OutItem ID="1">			
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" >
+			<BeastGrp GrpId="3104" Count="1" Win="1"/>
+			<OutItem ID="1">			
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="5" >
+			<BeastGrp GrpId="3105" Count="1" Win="1"/>
+			<OutItem ID="1">			
+			</OutItem>
+		</Node>
+		<Node ID="4" Step="7" >
+			<BeastGrp GrpId="3106" Count="1" Win="1"/>
+			<OutItem ID="1">			
+			</OutItem>
+		</Node>	
+		<Node ID="5" Step="9" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290024" Count="1" />
+			</OutItem>  
+		</Node>				
+	</Task>		
+	<Task ID="207" Name="迈向新职业" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="206" AcceptStep="11 12 13 14" RepeatType="0" RepeatCnt="0" Level="30" Job="-1" JobLevel="0" Star="4" Order="1" RecomLevel="30" >
+		<Node ID="1" Step="50" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300081" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="250" Name="愤怒的尤利" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="19" RecomLevel="28" >
+		<Node ID="1" Step="3" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="8" IsEnd="1" >	
+			<BeastGrp GrpId="3103" Count="1" Win="1"/>					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8000" />								
+				<Item OutType="1" ItemId="50002" Count="20000" /> 	
+				<Item OutType="1" ItemId="50003" Count="20000" /> 	
+			</OutItem>  
+		</Node>			
+	</Task>		
+	<Task ID="251" Name="古镜奇谈" Kind="1" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" Job="-2" JobLevel="0" Star="4" Order="19" RecomLevel="30" >
+		<Node ID="1" Step="2" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="53" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>								
+		<Node ID="4" Step="8" >	
+			<BeastGrp GrpId="2011" Count="1" Win="1"/>														
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />															
+			</OutItem>  
+		</Node>		
+		<Node ID="5" Step="9" >	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />														
+			</OutItem>  
+		</Node>	
+		<Node ID="6" Step="11" IsEnd="1" >	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="20000" />								
+				<Item OutType="1" ItemId="50002" Count="35000" /> 	
+				<Item OutType="1" ItemId="50003" Count="35000" /> 	
+			</OutItem>  
+		</Node>						
+	</Task>	
+				
+<!--新加的每周主线-->
+	<Task ID="252" Name="激战！库噜王侵袭" Kind="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="1" RecomLevel="" Order="1" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<BeastGrp GrpId="2911" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350016" Count="1" />
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+<!--中秋节主线任务下架
+	<Task ID="253" Name="嫦娥的心愿" Kind="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="15" Job="-1" JobLevel="0" Star="1" RecomLevel="" Order="1" >
+		<Node ID="1" Step="3" >	
+			<BeastGrp GrpId="2912" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="6" >	
+			<BeastGrp GrpId="2913" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="7" >	
+			<BeastGrp GrpId="2914" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="8" >	
+			<BeastGrp GrpId="2915" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="5" Step="9" IsEnd="1" >	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="8000" />				
+			</OutItem>
+		</Node>							
+	</Task>			
+-->		
+
+<!--新加的每周主线-->
+	<Task ID="254" Name="雪绒草的秘密" Kind="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="27" Job="-1" JobLevel="0" Star="1" RecomLevel="" Order="1" >
+		<Node ID="1" Step="2" Memo="">
+			<ItemTarget ItemId="150005" Count="10" Del="1" />
+			<OutItem ID="1">				
+			</OutItem>						
+		</Node>		
+		<Node ID="2" Step="3" >	
+			<ItemTarget ItemId="150007" Count="10" Del="1" />
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="4" >	
+			<BeastGrp GrpId="2916" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		
+		<Node ID="4" Step="5" >	
+			<BeastGrp GrpId="2917" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>				
+		<Node ID="5" Step="6" IsEnd="1" >	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="12000" />				
+				<Item OutType="2" ItemId="310043" Count="1" />
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+<!--新加的每周主线-->
+	<Task ID="255" Name="世界之树" Kind="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="35" Job="-1" JobLevel="0" Star="1" RecomLevel="" Order="1" >	
+		<Node ID="1" Step="3" >	
+			<BeastGrp GrpId="2012" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" >	
+			<BeastGrp GrpId="2013" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>						
+		<Node ID="3" Step="5" IsEnd="1" >	
+			<BeastGrp GrpId="2015" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="5000" />				
+				<Item OutType="1" ItemId="50002" Count="20000" />
+			</OutItem>
+		</Node>	
+	</Task>		
+	
+	
+<!--40级主线-->
+	<Task ID="256" Name="生命之根" Kind="1" ParentCost="1" ParentList="255" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="40" Job="-1" JobLevel="0" Star="1" RecomLevel="" Order="1" >	
+		<Node ID="1" Step="2" >	
+			<BeastGrp GrpId="42" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="3" >	
+			<BeastGrp GrpId="43" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>						
+		<Node ID="3" Step="4" >											
+			<BeastGrp GrpId="44" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="6" >										
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="5" Step="7" IsEnd="1" >	
+			<ItemTarget ItemId="110029" Count="1" Del="1" />											
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110030" Count="1" />				
+				<Item OutType="1" ItemId="50002" Count="40000" />
+				<Item OutType="1" ItemId="50001" Count="9999" />
+			</OutItem>
+		</Node>			
+	</Task>		
+	
+			
+				
+	<Task ID="10001" Kind="2" DefaultTrace="1" BreakTrace="1" Name="王国游记" AcceptStep="12" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="10" Job="-2" JobLevel="0" Star="1" RecomLevel="15" Order="8">
+		<Node ID="1"  Step="3" Memo="把【贝利】大叔委托的【午餐】盒送到了道具店，好心的贝蒂大婶送了一张【面包兑换券】。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2"  Step="5" Memo="贝多罗大叔做的【面包】真是太美味了！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3"  Step="6" Memo="莓可又笑了，真是太好了！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="4"  Step="8" Memo="原来蒂蒂拉和琪琪姐姐是同学。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="5"  Step="10" Memo="【大祭司•铃】真厉害啊，不愧是十二勇士之一。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="6"  Step="11" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="3" ItemId="22" Count="1" Secret="1" />
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />		
+			</OutItem>
+			<OutItem ID="2">
+				<Item OutType="3" ItemId="23" Count="1" Secret="1" />
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />				
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10002" Kind="2" DefaultTrace="1" BreakTrace="1" Name="旅行家柯特" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="11" Job="-1" JobLevel="0" Star="1" RecomLevel="11" Order="8">
+		<Node ID="1" Step="1" Memo="皮皮克克的来信上说柯特在格历尔平原1区附近。">
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100006" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<ItemTarget ItemId="150003" Count="5" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="150001" Count="20" />
+				<Item OutType="1" ItemId="50002" Count="1000" />
+				<Item OutType="1" ItemId="50003" Count="1000" />
+				<Item OutType="4" ItemId="140021" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140029" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140030" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140273" Prof="32" Extent="2" Count="1" />											
+			</OutItem>
+		</Node>
+	</Task>
+	<!-- 重复任务 
+	<Task ID="10003" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵研究①" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="12" Job="-1" JobLevel="0" Star="1" RecomLevel="12" Order="7" >
+		<Node ID="1" Step="2" Memo="从公告栏接到了皮克司精灵研究所的精灵研究任务">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="散发着恶臭的c泥浆c拿到了，皮克司教授要这个做什么呢？">
+			<ItemTarget ItemId="260013" Count="1" Del="1" BeastType="6"	DropOdds="400"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+				<Item OutType="4" ItemId="140017" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140023" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140024" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140271" Prof="32" Extent="2" Count="1" />													
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10004" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵研究②" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="15" Job="-1" JobLevel="0" Star="1" RecomLevel="15" Order="7" >
+		<Node ID="1" Step="2" Memo="从公告栏接到了皮克司精灵研究所的精灵研究任务">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="让人全身发痒的c吉吉粉c，这东西有什么用吗？">
+			<ItemTarget ItemId="260009" Count="1" Del="1" BeastType="8"	DropOdds="400"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="400" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+				<Item OutType="4" ItemId="140020" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140028" Prof="60" Extent="2" Count="1" />																			
+			</OutItem>
+		</Node>
+	</Task>
+
+	<Task ID="10005" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵研究③" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="" RepeatCnt="" Level="18" Job="-1" JobLevel="0" Star="2" RecomLevel="18" RecomTeam="1" Order="6" >
+		<Node ID="1" Step="2" Memo="从公告栏接到了皮克司精灵研究所的精灵研究任务。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="打败拉拉美王得到了【神秘的花】，皮克司教授的要求真是千奇百怪。">
+			<ItemTarget ItemId="180045" Count="1" Del="1" BeastType="2002" DropOdds="1000"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="750" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140048" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140056" Prof="60" Extent="2" Count="1" />													
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10006" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵研究④" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="" RepeatCnt="" Level="20" Job="-1" JobLevel="0" Star="2" RecomLevel="20" RecomTeam="1" Order="6" >
+		<Node ID="1" Step="2" Memo="从公告栏接到了皮克司精灵研究所的精灵研究任务。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="打败拉拉美王得到了【神秘的花】，皮克司教授的要求真是千奇百怪。">
+			<BeastTarget BeastType="10" Count="5" Win="0"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="750" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140034" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140042" Prof="60" Extent="2" Count="1" />												
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10007" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵研究⑤" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="" RepeatCnt="" Level="26" Job="-1" JobLevel="0" Star="2" RecomLevel="26" RecomTeam="1" Order="6" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" Memo="">
+			<BeastTarget BeastType="2" Count="15" Win="0"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="5" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="750" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140063" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140071" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140072" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140282" Prof="32" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>
+	</Task>
+	-->
+	
+	
+	<Task ID="10009" Kind="2" DefaultTrace="1" BreakTrace="1" Name="秘密守护人" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="19" Job="-2" JobLevel="0" Star="1" RecomLevel="19" Order="8">
+		<Node ID="1" Step="9" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="1000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="10" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="2000" />
+				<Item OutType="1" ItemId="50003" Count="2000" />
+				<Item OutType="4" ItemId="140033" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140041" Prof="60" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10013" Kind="2" DefaultTrace="1" BreakTrace="1" Name="精灵培育" AcceptStep="1" ParentCost="" ParentList="" RepeatType="0" RepeatCnt="0" Level="14" Job="-1" JobLevel="0" Star="1" RecomLevel="15" Order="10">
+		<Node ID="1" Step="10" Memo="莓可说等级达到15级才教你【精灵培育】。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="11" Memo="莓可说等级达到15级才教你【精灵培育】。">
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100002" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="18" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="270022" Count="3" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+				<Item OutType="4" ItemId="140019" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140027" Prof="60" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10014" Kind="2" DefaultTrace="1" BreakTrace="1" Name="挑战下水道•第3层" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="13" Job="-1" JobLevel="0" Star="3" RecomLevel="13" RecomTeam="1" Order="19">
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="6" ItemId="1001" Count="1" />				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="2001" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />				
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140018" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140025" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140026" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140272" Prof="32" Extent="2" Count="1" />											
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="10015" Kind="2" DefaultTrace="1" BreakTrace="1" Name="挑战下水道•第5层" ParentCost="1" ParentList="10014" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="18" Job="-1" JobLevel="0" Star="3" RecomLevel="18" RecomTeam="1" Order="19">
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="2004" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1002" Count="1" />
+				<Item OutType="2" ItemId="190005" Count="1" />
+				<Item OutType="1" ItemId="50001" Count="2000" />				
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140032" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140039" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140040" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140275" Prof="32" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="10016" Kind="2" DefaultTrace="1" BreakTrace="1" Name="挑战下水道•第8层" ParentCost="1" ParentList="10015" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="3" RecomLevel="25" RecomTeam="1" Order="19">
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="2005" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1003" Count="1" />
+				<Item OutType="1" ItemId="50001" Count="2000" />				
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />				
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="10021" Kind="2" DefaultTrace="1" BreakTrace="1" Name="小咸的礼物" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="15" Job="-1" JobLevel="0" Star="2" Order="13" RecomLevel="15">
+		<Node ID="1" Step="4" Memo="稀里糊涂的上了一堂课...." IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="10023" Kind="2" DefaultTrace="1" BreakTrace="1" Name="麦婶生病了？" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="17" Job="-1" JobLevel="0" Star="1" RecomLevel="17" Order="11">
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100003" Count="1" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="150001" Count="10" />
+				<Item OutType="2" ItemId="150003" Count="10" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" >
+			<ItemTarget ItemId="210001" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />				
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+				<Item OutType="4" ItemId="140031" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140037" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140038" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140274" Prof="32" Extent="2" Count="1" />												
+			</OutItem>
+		</Node>			
+	</Task>	
+	
+	<Task ID="10024" Kind="2" DefaultTrace="1" BreakTrace="1" Name="黄金麦面包" AcceptStep="1" ParentCost="1" ParentList="10023" RepeatType="0" RepeatCnt="0" Level="18" Job="-1" JobLevel="0" Star="1" RecomLevel="18" Order="11">
+		<Node ID="1" Step="3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100004" Count="1" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>			
+	</Task>	
+	
+	<Task ID="10025" Kind="2" DefaultTrace="1" BreakTrace="1" Name="铁锤的考验" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="10" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="12">
+		<Node ID="1" Step="2" Memo="从【迪迪拉10人组】手中夺回了重要的配方。">
+			<ItemTarget ItemId="260017" Count="1" Del="1" BeastType="100007" DropOdds="1000"/>
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100005" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" Memo="完成了安德鲁给予的试炼的任务，学会了【装备制作】的方法。">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="150002" Count="15" />
+				<Item OutType="2" ItemId="170001" Count="10" />
+				<Item OutType="7" ItemId="0" Count="4096" /> <!--合成制作（4096）-->
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />	
+			</OutItem>
+		</Node>		
+	</Task>	
+	
+	<Task ID="10026" Kind="2" DefaultTrace="1" BreakTrace="1" Name="剑术的试炼" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="24" Job="1" JobLevel="0" Star="4" RecomLevel="24" RecomTeam="1" Order="12">
+		<Node ID="1" Step="1" Memo="加入剑士协会有一段时间了，有没有遇到什么疑惑呢?和杰森老师聊聊吧。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="3002" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110001" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="10027" Kind="2" DefaultTrace="1" BreakTrace="1" Name="弓术的试炼" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="24" Job="2" JobLevel="0" Star="4" RecomLevel="24" RecomTeam="1" Order="12">
+		<Node ID="1" Step="1" Memo="加入弓箭手协会有一段时间了，有没有遇到什么疑惑呢?和瑞凌老师聊聊吧。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="3003" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110002" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="10028" Kind="2" DefaultTrace="1" BreakTrace="1" Name="魔法的试炼" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="24" Job="3" JobLevel="0" Star="4" RecomLevel="24" RecomTeam="1" Order="12">
+		<Node ID="1" Step="1" Memo="加入魔法师协会有一段时间了，有没有遇到什么疑惑呢?和彼兔老师聊聊吧。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="3001" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110003" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="10029" Kind="2" DefaultTrace="1" BreakTrace="1" Name="信仰的试炼" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="24" Job="4" JobLevel="0" Star="4" RecomLevel="24" RecomTeam="1" Order="12">
+		<Node ID="1" Step="1" Memo="加入传教士协会有一段时间了，有没有遇到什么疑惑呢?和温蒂老师聊聊吧。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="3004" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110004" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10030" Kind="2" DefaultTrace="1" BreakTrace="1" Name="忍术的试炼" AcceptStep="4" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="24" Job="5" JobLevel="0" Star="4" RecomLevel="24" RecomTeam="1" Order="12">
+		<Node ID="1" Step="1" Memo="加入忍者协会有一段时间了，有没有遇到什么疑惑呢?和休一老师聊聊吧。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<BeastGrp GrpId="3009" Count="1" Win="1" Help="1"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110040" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="15000" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10031" Kind="2" DefaultTrace="1" BreakTrace="1" Name="摩尔的美学" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="1" RecomLevel="20" Order="10">
+		<Node ID="1" Step="2" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="80066" Count="1" />
+				<Item OutType="4" ItemId="80067" Count="1" />
+				<Item OutType="4" ItemId="80068" Count="1" />
+				<Item OutType="4" ItemId="80069" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="10065" Kind="2" DefaultTrace="1" BreakTrace="1" Name="风→地→水→火" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="1" RecomLevel="21" Order="10">
+		<Node ID="1" Step="21" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="120001" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="3000" />			
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="22" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="120002" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="3000" />			
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="23" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="120003" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="3000" />				
+			</OutItem>
+		</Node>
+		<Node ID="4" Step="24" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="120004" Count="1" />
+				<Item OutType="1" ItemId="50002" Count="3000" />					
+			</OutItem>
+		</Node>				
+	</Task>		
+	<Task ID="10073" Kind="2" DefaultTrace="1" BreakTrace="1" Name="TT想要铝" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="22" Job="-1" JobLevel="0" Star="1" RecomLevel="22" Order="1" >
+		<Node ID="1" Step="4" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<ItemTarget ItemId="170006" Count="1" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140045" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140051" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140052" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140277" Prof="32" Extent="2" Count="1" />					
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="10075" Kind="2" DefaultTrace="1" BreakTrace="1" Name="星空守望者" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="16" Job="-1" JobLevel="0" Star="1" RecomLevel="16" Order="10" >
+		<Node ID="1" Step="6" IsEnd="1">
+			<OutItem ID="1" >
+				<Item OutType="1" ItemId="50001" Count="1600" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+				<Item OutType="4" ItemId="140035" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140043" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140044" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140276" Prof="32" Extent="2" Count="1" />																						
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="10076" Kind="2" DefaultTrace="1" BreakTrace="1" Name="黑暗中的侦查员"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="2" RecomLevel="21" Order="1" >
+		<Node ID="1" Step="2, 3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+		<BeastTarget BeastType="15" Count="15" Win="1"/>			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140049" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140057" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140058" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140279" Prof="32" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<!--
+	<Task ID="10079" Name="变身吧，吉普豆！" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="158" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="25" Job="-1" JobLevel="0" Star="1" RecomLevel="25" Order="11" >
+		<Node ID="1" Step="14" Memo="">		
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1200" />
+			</OutItem>
+		</Node>		
+	</Task>
+	-->	
+	<Task ID="10080" Kind="2" DefaultTrace="1" BreakTrace="1" Name="水手的小秘密" ParentCost="1" ParentList="201 202 203 204 205" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" Job="-1" JobLevel="0" Star="1" RecomLevel="30" Order="17" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2600" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140062" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140070" Prof="60" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="10081" Kind="2" DefaultTrace="1" BreakTrace="1" Name="王国军训报道！" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="1" RecomLevel="21" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="10082" Kind="2" DefaultTrace="1" BreakTrace="1" Name="王国军训·桦木" ParentCost="1" ParentList="10081" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="22" Job="-1" JobLevel="0" Star="1" RecomLevel="22" Order="1" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<ItemTarget ItemId="170005" Count="15" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="10083" Kind="2" DefaultTrace="1" BreakTrace="1" Name="宝箱勇士①" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="26" Job="-1" JobLevel="0" Star="1" RecomLevel="26" Order="1" >
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>		
+	</Task>		
+	<Task ID="10084" Kind="2" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令①" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="27" Job="-1" JobLevel="0" Star="1" RecomLevel="27" Order="1" >
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+		<BeastTarget BeastType="24" Count="15" Win="1"/>							
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1800" />
+				<Item OutType="1" ItemId="50002" Count="7000" />
+				<Item OutType="1" ItemId="50003" Count="7000" />
+				<Item OutType="4" ItemId="140059" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140065" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140066" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140280" Prof="32" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="10085" Kind="2" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令②" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-1" JobLevel="0" Star="1" RecomLevel="28" Order="1" >
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+				<Item OutType="1" ItemId="50002" Count="3000" />
+				<Item OutType="1" ItemId="50003" Count="3000" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+		<BeastTarget BeastType="23" Count="15" Win="1"/>							
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1800" />
+				<Item OutType="1" ItemId="50002" Count="7000" />
+				<Item OutType="1" ItemId="50003" Count="7000" />
+				<Item OutType="4" ItemId="140060" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140067" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140068" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140281" Prof="32" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>	
+	
+	<Task ID="10086" Kind="2" DefaultTrace="1" BreakTrace="1" Name="逃跑的怪盗" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="23" Job="-1" JobLevel="0" Star="1" RecomLevel="26" Order="1" >
+		<Node ID="1" Step="4" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1">
+		<ItemTarget ItemId="230001" Count="1" Del="1" />						
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="2" ItemId="300001" Count="1" />
+				<Item OutType="4" ItemId="140046" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140053" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140054" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140278" Prof="32" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>	
+	
+	<Task ID="10087" Kind="2" DefaultTrace="1" BreakTrace="1" Name="捣乱的拉拉美" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="23" Job="-1" JobLevel="0" Star="1" RecomLevel="26" Order="1" >
+		<Node ID="1" Step="3" IsEnd="1">
+		<BeastTarget BeastType="11" Count="15" Win="0"/>						
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>		
+	</Task>	
+	
+	<Task ID="10088" Kind="2" DefaultTrace="1" BreakTrace="1" Name="被抢走的星豆袋" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="24" Job="-1" JobLevel="0" Star="1" RecomLevel="26" Order="1" >
+		<Node ID="1" Step="3" IsEnd="1">
+		<ItemTarget ItemId="260029" Count="1" Del="1" BeastType="12" DropOdds="1000"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+				<Item OutType="4" ItemId="140047" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140055" Prof="60" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>		
+	<Task ID="10089" Kind="2" DefaultTrace="1" BreakTrace="1" Name="躲避飞吻的艺术"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="22" Job="-1" JobLevel="0" Star="2" RecomLevel="10" Order="1" >
+		<Node ID="1" Step="2" Memo="c杰森c邀请未来勇士参加一个很重要的课程，快去c剑士协会c看看吧">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+		<BeastTarget BeastType="10" Count="12" Win="1"/>		
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="10090" Kind="2" DefaultTrace="1" BreakTrace="1" Name="怪盗大集结！" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="29" Job="-1" JobLevel="0" Star="1" RecomLevel="29" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1">
+		<BeastTarget BeastType="12" Count="15" Win="1"/>							
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+			</OutItem>
+		</Node>		
+	</Task>		
+	<Task ID="10091" Kind="2" DefaultTrace="1" BreakTrace="1" Name="捣乱的盯眼蝠" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="29" Job="-1" JobLevel="0" Star="1" RecomLevel="29" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1">
+		<BeastTarget BeastType="13" Count="15" Win="1"/>							
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140061" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140069" Prof="60" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>	
+	<Task ID="10092" Kind="2" DefaultTrace="1" BreakTrace="1" Name="自由的空气结晶" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="31" Job="-1" JobLevel="0" Star="1" RecomLevel="31" Order="1" >
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="3" IsEnd="1">
+			<ItemTarget ItemId="180051" Count="10" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="20000" />
+				<Item OutType="1" ItemId="50003" Count="20000" />
+				<Item OutType="4" ItemId="140077" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140085" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140086" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140275" Prof="32" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>				
+	</Task>
+	<Task ID="10093" Kind="2" DefaultTrace="1" BreakTrace="1" Name="振作吧，藤蔓君！" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="32" Job="-1" JobLevel="0" Star="1" RecomLevel="32" Order="1" >
+		<Node ID="1" Step="3" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+			</OutItem>
+		</Node>		
+		<Node ID="2" Step="5" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140073" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140079" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140080" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140283" Prof="32" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>		
+	</Task>
+	<Task ID="10094" Kind="2" DefaultTrace="1" BreakTrace="1" Name="水源小风波" ParentCost="1" ParentList="10093" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="33" Job="-1" JobLevel="0" Star="1" RecomLevel="33" Order="1" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140074" Prof="2" Extent="2" Count="1" />										
+				<Item OutType="4" ItemId="140081" Prof="4" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140082" Prof="24" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140284" Prof="32" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>
+	<Task ID="10095" Kind="2" DefaultTrace="1" BreakTrace="1" Name="友情真伟大" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="34" Job="-1" JobLevel="0" Star="1" RecomLevel="34" Order="1" >
+		<Node ID="1" Step="2" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140075" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140083" Prof="60" Extent="2" Count="1" />								
+			</OutItem>
+		</Node>				
+	</Task>
+	<Task ID="10096" Kind="2" DefaultTrace="1" BreakTrace="1" Name="小恶魔·撒旦蝠" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="36" Job="-1" JobLevel="0" Star="1" RecomLevel="36" Order="1" >
+		<Node ID="1" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+			</OutItem>
+		</Node>				
+	</Task>					
+	<Task ID="10098" Kind="2" DefaultTrace="1" BreakTrace="1" Name="净化石头人" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="35" Job="-1" JobLevel="0" Star="1" RecomLevel="35" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1">
+		<BeastTarget BeastType="54" Count="13" Win="0"/>						
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+				<Item OutType="4" ItemId="140076" Prof="2" Extent="2" Count="1" />				
+				<Item OutType="4" ItemId="140084" Prof="60" Extent="2" Count="1" />									
+			</OutItem>
+		</Node>	
+	</Task>		
+		
+	<Task ID="10099" Kind="2" DefaultTrace="1" BreakTrace="1" Name="吉普豆料理！？" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="27" Job="-1" JobLevel="0" Star="1" RecomLevel="27" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1">
+		<ItemTarget ItemId="180056" Count="10" Del="1" BeastType="2" DropOdds="800" Check="0" />							
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1500" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+				<Item OutType="1" ItemId="50003" Count="10000" />
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+<!-- 支线引导任务补充 -->	
+	
+	<Task ID="10100" Name="树系精灵的秘密" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="22" MaxLevel="24" Job="-1" JobLevel="0" Star="1" RecomLevel="24" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c拉尼克斯c，" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="1" ItemId="50002" Count="50" />				
+			</OutItem>
+		</Node>	
+	</Task>				
+	<Task ID="10101" Name="精灵竞技" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" MaxLevel="22" Job="-1" JobLevel="0" Star="1" RecomLevel="22" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c库噜噜c" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="1" ItemId="50002" Count="50" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+	<Task ID="10102" Name="勇士小游戏" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="12" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="14" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c拉尼克斯c" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="1" ItemId="50002" Count="50" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+	<Task ID="10103" Name="【30级副本】月之宫殿" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" MaxLevel="32" Job="-1" JobLevel="0" Star="1" RecomLevel="30" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c薇尔c" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="15000" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+	<Task ID="10104" Name="合成石（初级）" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="20" Job="-1" JobLevel="0" Star="1" RecomLevel="20" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c卢西奥c" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350027" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+		
+	<Task ID="10105" Name="平行世界" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="35" Job="-1" JobLevel="0" Star="1" RecomLevel="35" Order="1" >
+		<Node ID="1" Step="2" Memo="去勇士广场找c乔依c" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="15000" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+
+<!-- 野兽系种族技能支线任务 -->	
+	<Task ID="10106" Name="野兽之王帕瑞" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="24" Job="-1" JobLevel="0" Star="1" RecomLevel="24" Order="1" >
+		<Node ID="1" Step="3" >	
+			<BeastGrp GrpId="2918" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" >	
+			<BeastGrp GrpId="2919" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>						
+		<Node ID="3" Step="5" IsEnd="1" >	
+			<BeastGrp GrpId="2920" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="8000" />	
+				<Item OutType="2" ItemId="350033" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>
+
+<!--万圣节支线任务下架，改为200级
+	<Task ID="10107" Name="给你糖果爱捣蛋" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="100" Job="-1" JobLevel="0" Star="1" RecomLevel="12" Order="1" >					
+		<Node ID="1" Step="4" >	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="5" IsEnd="1" >	
+			<BeastGrp GrpId="38" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="10000" />					
+				<Item OutType="2" ItemId="350035" Count="1" />	
+				<Item OutType="4" ItemId="80061" Count="1" />				
+			</OutItem>
+		</Node>
+	</Task>
+-->
+	
+<!-- 昆虫系种族技能支线任务 -->	
+	<Task ID="10108" Name="世界树精灵王" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="256" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="40" Job="-1" JobLevel="0" Star="1" RecomLevel="40" Order="1" >
+		<Node ID="1" Step="1" >
+			<OutItem ID="1">
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" >
+			<OutItem ID="1">
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="4" >
+			<BeastGrp GrpId="45" Count="1" Win="1"/>
+			<OutItem ID="1">
+			</OutItem>
+		</Node>						
+		<Node ID="4" Step="5" IsEnd="1" >	
+			<BeastGrp GrpId="46" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="30000" />	
+				<Item OutType="2" ItemId="310049" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>
+	
+<!-- 变身卡支线任务 -->	
+	<Task ID="10201" Name="学习百变之术" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="0" ParentList="0" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="40" Job="-1" JobLevel="0" Star="1" RecomLevel="40" Order="1" >
+		<Node ID="1" Step="5" IsEnd="1" >
+			<BeastGrp GrpId="3061" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="5" ItemId="100008" Count="1" />
+				<Item OutType="1" ItemId="50001" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+			</OutItem>
+		</Node>	
+	</Task>
+	
+	<Task ID="10202" Name="神秘卡片" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="10201" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="40" Job="-1" JobLevel="0" Star="1" RecomLevel="40" Order="1" >
+		<Node ID="1" Step="2" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="340001" Count="1" />
+				<Item OutType="1" ItemId="50001" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="10000" />
+			</OutItem>
+		</Node>	
+	</Task>
+<!-- 精灵转生支线任务 -->	
+	<Task ID="10203" Name="消失的配方" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="45" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="15"  >			
+		<Node ID="1" Step="7" Memo="击败剧毒蜂皇">
+			<BeastGrp GrpId="2511" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="260042" Count="1" />	
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="8" Memo="实验完成" IsEnd="1">
+		<ItemTarget ItemId="260042" Count="1" Del="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="300" />
+				<Item OutType="1" ItemId="50003" Count="300" />
+				<Item OutType="5" ItemId="100009" Count="1" />	
+			</OutItem>
+		</Node>
+	</Task>	
+			
+<!-- 重复任务 
+	<Task ID="20001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="盗贼克星" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="1" >
+		<Node ID="1" Step="2" Memo="勇士广场的公告栏有新公告了。请向守城士兵了解今天c迪迪拉c的最新动向。">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<BeastTarget BeastType="7" Count="5" Win="0"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="20002" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国悬赏令①" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="1" RepeatCnt="1" Level="11" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="11" Order="3">
+		<Node ID="1" Step="3" Memo="王国发出悬赏令：谁能净化下水道的【被黑化】的吉普豆泥，将得到300星豆赏星">
+			<BeastTarget BeastType="6" Count="7" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="20003" Kind="3" DefaultTrace="1" BreakTrace="1" Name="库噜战士的头盔" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="1" RepeatCnt="1" Level="11" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="11" Order="4">
+		<Node ID="1" Step="2" Memo="装备店的贝利大叔需要10个【库噜战士的头盔】的头盔">
+			<ItemTarget ItemId="180041" Count="10" Del="1" BeastType="5" DropOdds="1000"/>
+			<OutItem ID="1">
+				<Item OutType="4" ItemId="110005" Count="1" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="3" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="400" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="20004" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国悬赏令②" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="1" RepeatCnt="1" Level="15" MaxLevel="19" Job="-1" JobLevel="0" Star="1" RecomLevel="15" Order="3">
+		<Node ID="1" Step="3" Memo="王国发出悬赏令：谁能净化海底洞穴中的c被黑化c的钢姆，将得到500星豆赏星">
+			<BeastTarget BeastType="21" Count="10" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="20005" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国悬赏令③" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="45" Job="-1" JobLevel="0" Star="2" RecomLevel="25" RecomTeam="1" Order="6" >
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<ItemTarget ItemId="180053" Count="5" Del="1" BeastType="51" DropOdds="1000"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />
+				<Item OutType="1" ItemId="50002" Count="130" />
+				<Item OutType="1" ItemId="50003" Count="130" />
+			</OutItem>
+		</Node>
+	</Task>
+	-->	
+	
+	
+	
+	<Task ID="20008" Kind="3" DefaultTrace="1" BreakTrace="1" Name="女神祈祷" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="4" Job="-2" JobLevel="0" Star="1" Order="1" RecomLevel="1" >
+		<Node ID="1" Step="4" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="80" />				
+				<Item OutType="1" ItemId="50003" Count="80" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="80" />				
+				<Item OutType="1" ItemId="50003" Count="80" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="6" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="80" />				
+				<Item OutType="1" ItemId="50003" Count="80" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="4" Step="7" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="80" />				
+				<Item OutType="1" ItemId="50003" Count="80" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="5" Step="8" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="80" />					
+				<Item OutType="1" ItemId="50003" Count="80" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="6" Step="9" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+		<Node ID="7" Step="10" IsEnd="1" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1" />		
+				<Item OutType="6" ItemId="1038" Count="1" />																						
+			</OutItem>
+		</Node>
+		<Node ID="8" Step="11" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="6" ItemId="1038" Count="1" />																				
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="20013" Kind="3" DefaultTrace="1" BreakTrace="1" Name="每一天都是铃的" AcceptStep="1, 3, 4, 5" ParentCost="1" ParentList="15" RepeatType="1" RepeatCnt="1" Level="10" Job="-1" JobLevel="0" Star="1" Order="15" RecomLevel="10" >
+		<Node ID="1" Step="11" Memo="">
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="100" />			
+			</OutItem>
+		</Node><!--萝卜-->
+		<Node ID="2" Step="12" Memo="">
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node><!--鸟-->
+		<Node ID="3" Step="13" Memo="">
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>	<!--水龙头-->
+		<Node ID="4" Step="6" IsEnd="1"  >
+			<OutItem ID="1">				
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="80" />
+				<Item OutType="1" ItemId="50003" Count="80" />								
+			</OutItem>
+		</Node>						
+	</Task>	
+	<Task ID="20016" Kind="3" DefaultTrace="1" BreakTrace="1" Name="特产蜂蜜的收集" ParentCost="1" ParentList="15" AcceptStep="1 4" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="2" RecomLevel="20" MaxLevel="24" >
+		<Node ID="1" Step="3" Memo=""  >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />							
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo=" " IsEnd="1" >
+		<ItemTarget ItemId="180047" Count="10" Del="1" BeastType="24" DropOdds="700"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />		
+				<Item OutType="1" ItemId="50002" Count="160" />		
+				<Item OutType="1" ItemId="50003" Count="160" />						
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="20017" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王冠卡西卡的挑衅" ParentCost="1" ParentList="15" AcceptStep="1 4" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="2" RecomLevel="20" MaxLevel="24" >
+		<Node ID="1" Step="3" Memo=""  >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />							
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo=" " IsEnd="1" >
+		<BeastTarget BeastType="16" Count="15" Win="1"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="700" />		
+				<Item OutType="1" ItemId="50002" Count="120" />		
+				<Item OutType="1" ItemId="50003" Count="120" />						
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="20019" Kind="3" DefaultTrace="1" BreakTrace="1" Name="银魂·每日训练" ParentCost="1" ParentList="15" AcceptStep="1 4" RepeatType="1" RepeatCnt="1" Level="30" Job="-2" JobLevel="0" Star="2" RecomLevel="30" MaxLevel="34" >
+		<Node ID="1" Step="3" Memo=""  >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />							
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="2" Memo=" " IsEnd="1" >
+		<BeastTarget BeastType="51" Count="8" Win="1"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="800" />		
+				<Item OutType="1" ItemId="50002" Count="140" />		
+				<Item OutType="1" ItemId="50003" Count="140" />						
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="20020" Kind="3" DefaultTrace="1" BreakTrace="1" Name="马沙虾·每日洗澡"  ParentCost="1" ParentList="15" AcceptStep="51 1" RepeatType="1" RepeatCnt="1" Level="25" Job="-2" JobLevel="0" Star="1" RecomLevel="25" MaxLevel="29" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="9" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="11" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />
+				<Item OutType="1" ItemId="50002" Count="130" />
+				<Item OutType="1" ItemId="50003" Count="130" />
+			</OutItem>
+		</Node>								
+	</Task>		
+	<Task ID="20021" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国军训·卡西卡" ParentCost="1" ParentList="10082" AcceptStep="1 2" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="2" RecomLevel="20" MaxLevel="25" >
+		<Node ID="1" Step="3" Memo=" " IsEnd="1" >
+		<ItemTarget ItemId="180054" Count="6" Del="1" BeastType="16" DropOdds="500"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="700" />		
+				<Item OutType="1" ItemId="50002" Count="115" />		
+				<Item OutType="1" ItemId="50003" Count="115" />						
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="20022" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国军训·马尾藤" ParentCost="1" ParentList="10082" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" RecomLevel="20" MaxLevel="25" >
+		<Node ID="1" Step="3" Memo=" " IsEnd="1" >
+			<ItemTarget ItemId="150009" Count="15" Del="1" />									
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />		
+				<Item OutType="1" ItemId="50002" Count="115" />		
+				<Item OutType="1" ItemId="50003" Count="115" />						
+			</OutItem>
+		</Node>					
+	</Task>			
+	<Task ID="20023" Kind="3" DefaultTrace="1" BreakTrace="1" Name="王国军训·时光井" ParentCost="1" ParentList="10082" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" RecomLevel="20" MaxLevel="25" >
+		<Node ID="1" Step="4" Memo=" " IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />		
+				<Item OutType="1" ItemId="50002" Count="110" />		
+				<Item OutType="1" ItemId="50003" Count="110" />						
+			</OutItem>
+		</Node>					
+	</Task>		
+	<Task ID="20024" Kind="3" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令③" ParentCost="1" ParentList="10085" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="27" Job="-2" JobLevel="0" Star="2" RecomLevel="27" MaxLevel="30" >
+		<Node ID="1" Step="3" Memo=" " IsEnd="1" >
+		<ItemTarget ItemId="180055" Count="6" Del="1" BeastType="23" DropOdds="500"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="700" />		
+				<Item OutType="1" ItemId="50002" Count="130" />		
+				<Item OutType="1" ItemId="50003" Count="130" />						
+			</OutItem>
+		</Node>			
+	</Task>		
+	<Task ID="20025" Kind="3" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令④" ParentCost="1" ParentList="15" AcceptStep="1 2" RepeatType="1" RepeatCnt="1" Level="26" Job="-2" JobLevel="0" Star="1" RecomLevel="26" MaxLevel="30" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<ItemTarget ItemId="170006" Count="1" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="115" />
+				<Item OutType="1" ItemId="50003" Count="115" />
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="20026" Kind="3" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令⑤" ParentCost="1" ParentList="20025" AcceptStep="1 2" RepeatType="1" RepeatCnt="1" Level="27" Job="-2" JobLevel="0" Star="1" RecomLevel="27" MaxLevel="30" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<ItemTarget ItemId="170008" Count="1" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="115" />
+				<Item OutType="1" ItemId="50003" Count="115" />
+			</OutItem>
+		</Node>
+	</Task>
+
+	<Task ID="20027" Kind="3" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令⑦" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="26" Job="-2" JobLevel="0" Star="1" RecomLevel="26" MaxLevel="30" >
+		<Node ID="1" Step="3" >
+			<OutItem ID="1"/>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />
+				<Item OutType="1" ItemId="50002" Count="115" />
+				<Item OutType="1" ItemId="50003" Count="115" />
+			</OutItem>
+		</Node>		
+	</Task>				
+	<Task ID="20028" Kind="3" DefaultTrace="1" BreakTrace="1" Name="风洞悬赏令⑥" ParentCost="1" ParentList="20026" AcceptStep="1 2" RepeatType="1" RepeatCnt="1" Level="27" Job="-2" JobLevel="0" Star="1" RecomLevel="27" MaxLevel="30" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<ItemTarget ItemId="170008" Count="1" Del="1" />			
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="600" />
+				<Item OutType="1" ItemId="50002" Count="115" />
+				<Item OutType="1" ItemId="50003" Count="115" />
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="20029" Kind="3" DefaultTrace="1" BreakTrace="1" Name="宝箱勇士②" ParentCost="1" ParentList="10083" AcceptStep="1 2" RepeatType="1" RepeatCnt="1" Level="26" Job="-2" JobLevel="0" Star="1" RecomLevel="26" MaxLevel="30" >
+		<Node ID="1" Step="10" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="700" />
+				<Item OutType="1" ItemId="50002" Count="115" />
+				<Item OutType="1" ItemId="50003" Count="115" />
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	
+	<Task ID="21001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·追击" SkillLimit="102 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="102" Count="5"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="102" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>			
+	
+	<Task ID="21002" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·毁伤" SkillLimit="108 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="108" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="108" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21003" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·狂击" SkillLimit="106 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="106" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="106" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21004" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·多重箭" SkillLimit="109 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="109" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="109" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21005" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·凝神箭" SkillLimit="111 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="111" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="111" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21006" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·双星箭" SkillLimit="110 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="110" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="110" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21007" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·流火术" SkillLimit="2003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="2003" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="2003" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21008" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·霜冻术" SkillLimit="2002 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="2002" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="2002" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21009" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·陨石术" SkillLimit="2001 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="2001" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="2001" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21010" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·旋风术" SkillLimit="2004 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="2004" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="2004" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21011" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·救赎" SkillLimit="1008 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="1008" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="1008" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="21012" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈领域" SkillLimit="1003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="1003" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="1003" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21013" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈之阵" SkillLimit="1003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="1002" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="1002" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	
+	<Task ID="21014" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·瞬杀" SkillLimit="116 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="116" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="116" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>	
+	
+	<Task ID="21015" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·飞叶剑" SkillLimit="114 1 4"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="114" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="114" Count="500"/>
+			</OutItem>
+		</Node>
+	</Task>			
+<!--				
+	<Task ID="30001" Name="关于“海德”问问皮克司吧！" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="2" Memo="关于c海德c问问皮克司吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="100" />								
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="3" Memo="关于c海德c问问皮克司吧！" IsEnd="1" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="1000" />						
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="30002" Name="关于假面“奇奇”帕问问皮克司吧!" Kind="4" ParentCost="1" ParentList="15" AcceptStep="3" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="关于假面“奇奇”帕问问皮克司吧！">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="100" />								
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="2" Memo="关于假面“奇奇”帕问问皮克司吧！" IsEnd="1" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="2000" />						
+			</OutItem>
+		</Node>			
+	</Task> 
+     <Task ID="30003" Name="关于“哒哒鸟”问问皮克司吧!" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="2" Memo="关于假面“奇奇”帕问问皮克司吧！" >					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="100" />						
+			</OutItem>
+		</Node>			
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="2000" />						
+			</OutItem>						
+		</Node>		
+	</Task>  	
+	<Task ID="30004" Name="关于“忽悠喵”问问皮克司吧!" Kind="4" ParentCost="1" ParentList="15" AcceptStep="3" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="关于假面“奇奇”帕问问皮克司吧！" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="100" />								
+			</OutItem>
+		</Node>			
+	</Task>
+	<Task ID="30005" Name="关于“海神马”问问皮克司吧!" Kind="4" ParentCost="1" ParentList="15" AcceptStep="3" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="1" Memo="关于“海神马”问问皮克司吧！" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="100" />								
+			</OutItem>
+		</Node>			
+	</Task> 	 
+	 <Task ID="30006" Name="关于“咕噜蝶”问问皮克司吧!" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
+		<Node ID="1" Step="2" Memo="关于咕噜蝶问问皮克司吧！"  IsEnd="1">					
+			<OutItem ID="1" >
+				<Item OutType="1" ItemId="50003" Count="100" />						
+			</OutItem>
+		</Node>				
+	</Task>
+	
+	<Task ID="31001" Name="走失的摇铃兔" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="10" >
+		<Node ID="1" Step="5">
+			<BeastGrp GrpId="53" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="200" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="8">
+			<BeastGrp GrpId="53" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="9" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="3000" />
+				<Item OutType="1" ItemId="50002" Count="300" />
+				<Item OutType="2" ItemId="300044" Count="3" />
+				<Item OutType="2" ItemId="290023" Count="10" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="31002" Name="节日要和朋友一起过" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="10" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="320001" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="300" />
+				<Item OutType="2" ItemId="290023" Count="10" />
+				<Item OutType="2" ItemId="300044" Count="2" />
+			</OutItem>
+		</Node>
+	</Task>
+ -->
+	
+    <Task ID="35000" Name="G档案·忽悠喵" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24" >
+		<Node ID="1" Step="222 333 444" Memo=""  IsEnd="1">					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="85" />						
+			</OutItem>
+		</Node>				
+	</Task> 
+    <Task ID="35002" Name="G档案·海神马" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24" >
+		<Node ID="1" Step="4" Memo=""  IsEnd="1">					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="85" />						
+			</OutItem>
+		</Node>				
+	</Task> 
+	<Task ID="35003" Name="G档案·哒哒鸟" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24"  >
+		<Node ID="1" Step="3" Memo="" >					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />						
+			</OutItem>
+		</Node>			
+		<Node ID="2" Step="5" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="85" />						
+			</OutItem>						
+		</Node>		
+	</Task> 	
+	<Task ID="35004" Name="G档案·咕噜蝶" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24"  >
+		<Node ID="1" Step="3" Memo="" >					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />						
+			</OutItem>
+		</Node>			
+		<Node ID="2" Step="6" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="85" />						
+			</OutItem>						
+		</Node>		
+	</Task> 
+	<Task ID="35005" Name="G档案·海德" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24">
+		<Node ID="1" Step="2" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />								
+			</OutItem>
+		</Node>			
+	</Task>	
+	<Task ID="35006" Name="G档案·假面奇奇帕" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:6-24 7:6-24">
+		<Node ID="1" Step="2" Memo="" IsEnd="1" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1000" />												
+				<Item OutType="1" ItemId="50003" Count="85" />						
+			</OutItem>
+		</Node>			
+	</Task> 
+	<Task ID="35007" Name="改造日·喵斯熊" Kind="4" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="1" RepeatCnt="1" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="7:12-13">
+		<Node ID="1" Step="3" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />								
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" Memo="" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />						
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="11" Memo="" IsEnd="1" >				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="85" />		
+				<Item OutType="1" ItemId="50001" Count="2000" />														
+			</OutItem>
+		</Node>					
+	</Task> 
+<!-- 
+	<Task ID="35008" Name="普天同庆大放送" Kind="3" ParentCost="0" ParentList="" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="35" Time="6:14-15 7:14-15">
+		<Node ID="1" Step="2" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="150000" />								
+			</OutItem>
+		</Node>			
+	</Task>	
+ -->	
+ 
+ <!-- 
+ 	<Task ID="36000" Name="魔龙斯巴鲁" Kind="4" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="0" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1"  >			
+		<Node ID="1" Step="3" Memo="收集十个紫焰水晶">
+			<ItemTarget ItemId="180066" Count="10" Del="1" BeastType="52"	DropOdds="1000" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" Memo="击败小石怪">
+			<BeastGrp GrpId="3318" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />				
+			</OutItem>						
+		</Node>
+		<Node ID="3" Step="5" Memo="击败斯巴鲁幼兽">
+			<BeastGrp GrpId="3317" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />				
+			</OutItem>						
+		</Node>				
+		<Node ID="4" Step="6" Memo="击败魔龙斯巴鲁" IsEnd="1">
+			<BeastGrp GrpId="3316" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="300" />
+				<Item OutType="1" ItemId="50003" Count="300" />
+			</OutItem>						
+		</Node>		
+	</Task>
+
+ -->	
+	<Task ID="36001" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1"  >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36002" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36003" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36004" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36005" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36006" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36007" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36008" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task> 
+	
+	<Task ID="36009" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36010" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36011" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="150" />
+				<Item OutType="1" ItemId="50003" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36012" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="1200" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36051" Name="乔依的嘱托" Kind="4" Time="" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36052" Name="乔依的嘱托" Kind="4" Time="" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36053" Name="乔依的嘱托" Kind="4" Time="" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36054" Name="乔依的嘱托" Kind="4" Time="" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36101" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="4" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36102" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="4" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36103" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="4" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36104" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150002" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36105" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="160001" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>			
+	</Task>
+	
+	<Task ID="36106" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170001" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36107" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3301" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36108" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3302" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36109" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3303" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36110" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="210003" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36111" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="130016" Count="1" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36112" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="270011" Count="5" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36113" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="160004" Count="5" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36114" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170002" Count="5" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36115" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3304" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36116" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3305" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36117" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3306" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36118" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3307" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36119" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3308" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36125" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800007" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36126" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800012" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36127" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800016" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36128" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800015" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36129" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800013" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36130" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800008" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36131" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800011" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36132" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="800009" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36141" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150003" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36142" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150005" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36143" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170003" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36144" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150007" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36145" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170005" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />				
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36146" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="150009" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36147" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170007" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36148" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<ItemTarget ItemId="170002" Count="30" Del="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36149" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900007" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36150" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900012" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36151" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900016" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36152" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900015" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />								
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36153" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900013" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36154" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900008" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36155" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900011" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36156" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastTarget BeastType="900009" Count="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36157" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3310" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />								
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36158" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3311" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36159" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3309" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />							
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36160" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3312" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />								
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36161" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3313" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />								
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36162" Name="乔依的嘱托" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<BeastGrp GrpId="3314" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36501" Name="乔依的感谢" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="99" MaxLevel="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />	
+				<Item OutType="1" ItemId="50002" Count="500" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36502" Name="乔依的感谢" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" MaxLevel="29" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="4000" />	
+				<Item OutType="1" ItemId="50002" Count="500" />						
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36503" Name="乔依的感谢" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="39" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="7000" />	
+				<Item OutType="1" ItemId="50002" Count="500" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	<Task ID="36504" Name="乔依的感谢" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="9000" />	
+				<Item OutType="1" ItemId="50002" Count="500" />					
+			</OutItem>						
+		</Node>		
+	</Task>
+
+	
+	<!--每日答题任务-->	
+	<!--
+	<Task ID="36505" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>		
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>		
+	</Task>
+	
+	
+	<Task ID="36506" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>		
+	</Task>	
+	<Task ID="36507" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>		
+	</Task>	
+	<Task ID="36508" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36509" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36510" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36511" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>
+	<Task ID="36512" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36513" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>
+	<Task ID="36514" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36515" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36516" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>		
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>
+	</Task>	
+	<Task ID="36517" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>		
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>
+	</Task>	
+	<Task ID="36518" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	
+	
+	<Task ID="36519" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	-->	
+<!--暂时废弃不用的题库，先统一定位100级-->
+<!--
+	<Task ID="36520" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	
+	<Task ID="36521" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36522" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36523" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36524" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>		
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>
+	</Task>	
+	<Task ID="36525" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36526" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>
+	<Task ID="36527" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36528" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	<Task ID="36529" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="50" />	
+				<Item OutType="1" ItemId="50002" Count="50" />	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36530" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36531" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36532" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36533" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	<Task ID="36534" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">	
+				<Item OutType="2" ItemId="290017" Count="1" />									
+			</OutItem>						
+		</Node>	
+		<Node ID="2" Step="3" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>		
+
+		
+	<Task ID="36535" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" Time="1:19-21 2:19-21 3:19-21 4:19-21 5:19-21 6:13-15 7:13-15" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="1" Memo="" IsEnd="1">
+			<OutItem ID="1">								
+			</OutItem>						
+		</Node>	
+	</Task>			
+	<Task ID="36536" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" Time="1:19-21 2:19-21 3:19-21 4:19-21 5:19-21 6:13-15 7:13-15" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="1" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300001" Count="2" />	
+				<Item OutType="2" ItemId="300002" Count="2" />								
+			</OutItem>						
+		</Node>	
+	</Task>	
+	-->
+	<!--中秋后下架	
+	<Task ID="36537" Name="救助雪绒草" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" MaxLevel="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" Memo="" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300045" Count="1" />	
+				<Item OutType="2" ItemId="300044" Count="1" />								
+			</OutItem>						
+		</Node>	
+	</Task>		
+	-->		
+
+	
+	<Task ID="36538" Name="无尽的战斗" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:13-15 7:13-15">			
+		<Node ID="1" Step="3" >	
+			<BeastGrp GrpId="2620" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="5" >	
+			<BeastGrp GrpId="2621" Count="1" Win="1"/>	
+			<OutItem ID="1">
+			</OutItem>
+		</Node>						
+		<Node ID="3" Step="6" IsEnd="1" >	
+			<BeastGrp GrpId="2622" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290018" Count="20" />	
+				<Item OutType="2" ItemId="300046" Count="2" />	
+				<Item OutType="2" ItemId="350029" Count="1" />	
+				<Item OutType="2" ItemId="350031" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	
+	<Task ID="36539" Name="支援菠萝" Kind="3" ParentCost="1" ParentList="1"  AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" MaxLevel="42" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" IsEnd="1" >	
+			<BeastTarget BeastType="101004" Count="20" Win="0"/>	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300046" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>
+	
+	<Task ID="36540" Name="支援安德鲁" Kind="3" ParentCost="1" ParentList="1"  AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="43" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" IsEnd="1" >	
+			<BeastTarget BeastType="101008" Count="20" Win="0"/>	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300046" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+	<Task ID="36541" Name="支援妮娜" Kind="3" ParentCost="1" ParentList="1"  AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="51" MaxLevel="58" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" IsEnd="1" >	
+			<BeastTarget BeastType="101007" Count="20" Win="0"/>	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300046" Count="1" />				
+			</OutItem>
+		</Node>	
+	</Task>
+
+	<!--22-34每日任务-->			
+	<Task ID="36542" Name="勇士的修炼" Kind="4" ParentCost="1" ParentList="1" Time="1:19-21 2:19-21 3:19-21 4:19-21 5:19-21 6:13-15 7:13-15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="22" MaxLevel="34" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="3" IsEnd="1" >	
+			<BeastGrp GrpId="28" Count="1" Win="1" />	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="350" />	
+				<Item OutType="2" ItemId="300066" Count="1" />								
+			</OutItem>
+		</Node>	
+		
+		<Node ID="2" Step="4" >	
+			<ItemTarget ItemId="150005" Count="10" Del="1" />
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+							
+		<Node ID="3" Step="5" IsEnd="1" >	
+			<BeastGrp GrpId="29" Count="1" Win="1" />	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50003" Count="500" />				
+				<Item OutType="2" ItemId="300066" Count="1" />								
+			</OutItem>
+		</Node>
+		
+		<Node ID="4" Step="6" >	
+			<ItemTarget ItemId="290002" Count="5" Del="1" />
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+			
+		<Node ID="5" Step="7" IsEnd="1" >	
+			<BeastGrp GrpId="28" Count="1" Win="1" />	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50005" Count="2000" />				
+				<Item OutType="2" ItemId="300066" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>
+
+<!--万圣节预热任务下架，改为200级
+	<Task ID="36543" Name="智破南瓜军团" Kind="4" ParentCost="1" ParentList="1" Time="5:19-21 6:13-15 7:13-15 6:19-21 7:19-21" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="200" MaxLevel="300" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="2" >	
+			<OutItem ID="1">						
+			</OutItem>
+		</Node>						
+		<Node ID="2" Step="3" >	 
+			<BeastGrp GrpId="31" Count="3" Win="1" />	
+			<OutItem ID="1">						
+			</OutItem>
+		</Node>									
+		<Node ID="3" Step="6" >	
+			<BeastGrp GrpId="33" Count="2" Win="1" />	
+			<OutItem ID="1">							
+			</OutItem>
+		</Node>
+		<Node ID="4" Step="8" IsEnd="1" >	
+			<BeastGrp GrpId="34" Count="1" Win="1" />	
+			<OutItem ID="1">				
+				<Item OutType="2" ItemId="290021" Count="1" />								
+			</OutItem>
+		</Node>		
+	</Task>
+
+圣旦金斧头银斧头送礼任务 已下架改为200级
+	<Task ID="36545" Name="健忘的圣旦老人" Kind="3" ParentCost="1" ParentList="1" Time="6:0-24 7:0-24" AcceptStep="11" RepeatType="1" RepeatCnt="1" Level="200" MaxLevel="300" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Node ID="1" Step="10" >
+			<TimeCost Time="300" />
+			<OutItem ID="1">
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="24" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350013" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="25" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350017" Count="3" />		
+			</OutItem>
+		</Node>
+		<Node ID="4" Step="26" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350019" Count="3" />		
+			</OutItem>
+		</Node>
+		<Node ID="5" Step="27" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350029" Count="3" />		
+			</OutItem>
+		</Node>
+		<Node ID="6" Step="28" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300044" Count="5" />			
+			</OutItem>
+		</Node>
+		<Node ID="7" Step="29" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300045" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="8" Step="30" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300046" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="9" Step="31" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350013" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="10" Step="32" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350017" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="11" Step="33" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350019" Count="3" />				
+			</OutItem>
+		</Node>
+		<Node ID="12" Step="34" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350029" Count="3" />			
+			</OutItem>
+		</Node>
+		<Node ID="13" Step="35" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300044" Count="5" />				
+			</OutItem>
+		</Node>
+		<Node ID="14" Step="36" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300045" Count="3" />					
+			</OutItem>
+		</Node>
+		<Node ID="15" Step="37" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="300046" Count="3" />					
+			</OutItem>
+		</Node>
+	</Task>
+-->
+	<!--未来勇士成长修行-->	
+		<Task ID="36544" Name="未来勇士成长修行" IsCountTime="1" Kind="4" ParentCost="1" ParentList="1" Time="5:19-21 6:13-15 6:19-21 7:13-15 7:19-21" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="15" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+			<Node ID="1" Step="2" >	
+				<BeastGrp GrpId="2921" Count="1" Win="1" />
+				<OutItem ID="1">
+				</OutItem>
+			</Node>
+									
+			<Node ID="2" Step="3" >
+				<BeastGrp GrpId="2922" Count="1" Win="1" />	
+				<OutItem ID="1">						
+				</OutItem>
+			</Node>
+								
+			<Node ID="3" Step="4" >
+				<BeastGrp GrpId="2923" Count="1" Win="1" />	
+				<OutItem ID="1">							
+				</OutItem>
+			</Node>
+
+			<Node ID="4" Step="5" >	
+				<BeastGrp GrpId="2924" Count="1" Win="1" />	
+				<OutItem ID="1">							
+				</OutItem>
+			</Node>
+
+			<Node ID="5" Step="6" >	
+				<BeastGrp GrpId="2925" Count="1" Win="1" />	
+				<OutItem ID="1">							
+				</OutItem>
+			</Node>
+			
+			<Node ID="6" Step="7" IsEnd="1" >	
+				<OutItem ID="1">				
+					<Item OutType="2" ItemId="300045" Count="5" />
+					<Item OutType="2" ItemId="300044" Count="10" />
+					<Item OutType="2" ItemId="300079" Count="1" />
+				</OutItem>
+			</Node>		
+		</Task>	
+			
+	<Task ID="40000" Name="怪盗星豆争夺战" Kind="4" ParentCost="" ParentList="" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="2" Order="2" RecomLevel="10" MaxLevel="20" Time="5:15-17 6:15-17 7:15-17" AutoStartEnd="1">
+		<Node ID="1" Step="" Memo="" IsEnd="1" >					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="150" />														
+			</OutItem>
+		</Node>				
+	</Task>
+
+	<Task ID="40001" Name="怪盗集团" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="2" Order="2" RecomLevel="" Time="5:15-17 6:15-17 7:15-17" >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="6" Memo="" >
+			<ItemTarget ItemId="300016" Count="1" BeastType="200007" DropOdds="1000" Check="0" Del="0"/>
+			<BeastGrp GrpId="6" Count="1" Win="1"/>				
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="11" Memo="" IsEnd="1">
+			<BeastGrp GrpId="8" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="200" />
+				<Item OutType="1" ItemId="50003" Count="200" />												
+			</OutItem>
+		</Node>
+	</Task>
+<!-- 圣诞特别任务
+	<Task ID="40002" Name="比安的心愿" Kind="4" ParentCost="" ParentList="" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" Job="-2" JobLevel="0" Star="2" Order="2" RecomLevel="10" MaxLevel="100" Time="1:6-24 2:6-24 5:6-24 6:6-24 7:6-24">
+		<Node ID="1" Step="3">
+			<ItemTarget ItemId="180064" Count="5" Del="1"/>
+			<OutItem ID="1"/>
+		</Node>
+		<Node ID="2" Step="4" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="500" />
+			</OutItem>
+		</Node>
+	</Task>
+ -->
+
+	<Task ID="39001" Name="尤利的逆袭" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="1:19-21 2:19-21 3:19-21 4:19-21 5:19-21 6:19-21 7:19-21" >
+		<Node ID="1" Step="6" >
+			<BeastGrp GrpId="2901" Count="1" Win="1"/>	
+			<ItemTarget ItemId="290012" Count="1" BeastType="102009" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290012" Count="3" />
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="10" >
+			<BeastGrp GrpId="2902" Count="1" Win="1"/>	
+			<ItemTarget ItemId="290012" Count="1" BeastType="102001" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290012" Count="3" />
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="16">
+			<BeastGrp GrpId="2903" Count="1" Win="1"/>	
+			<ItemTarget ItemId="290012" Count="1" BeastType="102007" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290012" Count="3" />
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="21" >
+			<BeastGrp GrpId="2904" Count="1" Win="1"/>	
+			<ItemTarget ItemId="290012" Count="1" BeastType="102005" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290012" Count="3" />
+			</OutItem>
+		</Node>	
+		<Node ID="5" Step="22" IsEnd="1">
+			<BeastGrp GrpId="2905" Count="1" Win="1"/>	
+			<ItemTarget ItemId="290012" Count="1" BeastType="103019" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="290012" Count="8" />
+			</OutItem>
+		</Node>	
+	</Task>	
+
+	<Task ID="39002" Name="基姆的侵袭" Kind="4" ParentCost="1" ParentList="10106" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="25" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="3">
+			<BeastGrp GrpId="2926" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="200" />
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="5">
+			<BeastGrp GrpId="2927" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50002" Count="300" />
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="6" IsEnd="1">
+			<BeastGrp GrpId="2928" Count="1" Win="1"/>	
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="5000" />
+				<Item OutType="1" ItemId="50002" Count="500" />
+				<Item OutType="2" ItemId="300044" Count="10" />
+				<Item OutType="2" ItemId="300078" Count="1" />
+			</OutItem>
+		</Node>
+	</Task>
+	<Task ID="39003" Name="基姆的秘密" Kind="4" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="15"  >			
+		<Node ID="1" Step="8" Memo="击败怪盗">
+			<BeastGrp GrpId="3320" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />	
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="9" Memo="击败鬼脸箱">
+			<BeastGrp GrpId="3321" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="350051" Count="1" />
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="10" Memo="打开宝箱">
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="11" Memo="击败黑暗魔王基姆" IsEnd="1">
+			<BeastGrp GrpId="3322" Count="1" Win="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />	
+				<Item OutType="1" ItemId="300100" Count="1" />
+			</OutItem>
+		</Node>					
+	</Task>
+	
+	<Task ID="39004" Name="琉璃翼龙的召唤" Kind="4" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="10" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="15"  >			
+		<Node ID="1" Step="3" Memo="击败琉璃翼龙">
+			<BeastGrp GrpId="3324" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />	
+			</OutItem>
+		</Node>
+		<Node ID="2" Step="4" Memo="击败宾德">
+			<BeastGrp GrpId="3325" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="100" />	
+				<Item OutType="2" ItemId="320005" Count="1" />	
+			</OutItem>
+		</Node>
+		<Node ID="3" Step="6" Memo="了解真相" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="10000" />
+				<Item OutType="1" ItemId="50002" Count="300" />
+				<Item OutType="1" ItemId="50003" Count="300" />
+				<Item OutType="2" ItemId="320005" Count="1" />	
+			</OutItem>
+		</Node>
+	</Task>	
+</Tasks>
+</TaskSummary>

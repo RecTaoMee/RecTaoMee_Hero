@@ -1,0 +1,45 @@
+<!--永恒森林-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="72,319" targetMapId="21802" targetTransPortId="2"/> 
+		<node id="2" pos="733,836" targetMapId="11802" targetTransPortId="1"/> 
+		<node id="3" pos="150,1018" targetMapId="11803" targetTransPortId="1"/> 
+		<node id="4" pos="1312,347" targetMapId="11804" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4"/>
+	</object>
+	<npc>
+		<node id="79" type="NPC" res="MC_npc_79" action="1$2"/>
+		<node id="80" type="NPC" res="MC_npc_80" action="3$4"/>
+		<node id="753" type="NPC" res="MC_npc_753" action="" taskShowSteps="251_10|11"/>		
+		<node id="74" type="NPC" res="MC_npc_74" action="" taskShowSteps="251_11"/>						
+	</npc>
+	<actions>
+	<!--可学技能-->
+		<proAction npcID="79" id="1" type="0" answer="【精灵学魔法技能】$祝你好运" to="b10_79$o" colorID="1$0">
+			<des>
+				<![CDATA[1#精灵学技能要特别注意自身【属性】！$$]]>
+				<![CDATA[1#地属性的精灵使用地系魔法，能发挥更大的威力。不过与风属性精灵战斗就会被【双倍克制】。]]>
+			</des>
+		</proAction>
+		<proAction npcID="79" id="2" type="0" answer="【精灵学魔法技能】$关于魔法技能$祝你好运" to="b10_79$a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#风地水火四大元素力量相生相克——\n如此美丽的朴素的宇宙——真是奥妙的世界啊!]]>
+			</des>
+		</proAction>
+		<proAction npcID="80" id="3" type="0" answer="【精灵学物理技能】$关于物理技能$祝你好运" to="b10_80$a4$o" colorID="1$0">
+			<des>
+				<![CDATA[1#脆弱的【魔法系职业】需要擅长物理技能的精灵来保护！]]>
+			</des>
+		</proAction>
+		<proAction npcID="80" id="4" type="0" answer="【精灵学物理技能】$祝你好运" to="b10_80$o" colorID="1$0">
+			<des>
+				<![CDATA[1#最近给精灵学习【护卫技能】的魔法师特别多~关键时刻，精灵伙伴挺身而出的“护卫”——就是伟大的友谊和爱啊！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

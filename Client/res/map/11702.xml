@@ -1,0 +1,40 @@
+<!--修隐岛中心地带-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="180,690" targetMapId="11701" targetTransPortId="2"/>
+		<node id="2" pos="930,418" targetMapId="11703" targetTransPortId="1"/>
+		<node id="3" pos="819,757" targetMapId="21751" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>	
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>	
+	</object>
+	<npc>
+		<node id="54" type="NPC" res="MC_npc_54" level="downLevel" need="202" needType="task" needAction="2$3" fun="" taskType="0" action="0$1" needLevel="" needKind=""/>
+	</npc>
+	<actions>
+<!--不可学技能-->
+		<proAction npcID="54" id="0" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#弓箭手喜欢站在高处……\n不放过任何射程之内的猎物……]]>
+			</des>
+		</proAction>	
+		<proAction npcID="54" id="1" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#你愿意和我一起练习新技能么^？\n没有【王冠卡西卡】的海岛充满了寂寞又美好的风……]]>
+			</des>
+		</proAction>								
+<!--可学技能-->	
+		<proAction npcID="54" id="2" type="0" answer="我想学【技能】$摩尔勇士万岁！" to="a3$o" >
+			<des>
+				<![CDATA[1#射箭就是安静地等待，\n不放过任何射程之内的猎物。\n享受狩猎的快乐吧！]]>
+			</des>
+		</proAction>	
+		<proAction npcID="54" id="3" type="0" answer="谢谢银魂老师！$摩尔勇士万岁！" to="b9_54$o" >
+			<des>
+				<![CDATA[1#你已经通过了锁修塔的考验，选择适合你的“二阶段技能”吧！]]>
+			</des>
+		</proAction>
+	</actions>			
+</map>

@@ -1,0 +1,79 @@
+<Task ID="10063" Memo="c弗雷基港c的c安德鲁c是格历尔大陆上最厉害的铁匠，去拜访一下他吧。" TargetMap="11603">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c弗雷基港c的c安德鲁c是格历尔大陆上最厉害的铁匠，去拜访一下他吧。" TargetMap="11603">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="我想学习装备合成！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="乳臭未干的小鬼也想学装备合成？先证明你的实力给我看看！" />
+						<Option Info="怎么证明呢？" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="前几天，摩尔王国的【贝利】托人送来一些装备的配方，结果在【平原6区】被【迪迪拉10人组】抢走了，你先去把配方夺回来吧！" />
+						<Option Info="好的！" />
+					</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="260017" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="拿回了配方快点送给c安德鲁c吧。" TargetMap="11603">
+				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="配方夺回来了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="还不错，那我就把【装备制作】传授给你吧！" />
+					<Option Info="谢谢" SkipTrigger="Y" />
+				</Action><!--提交节点1-->
+    		</Event>
+			<Event ConditionType="OUT" Memo="摩尔王国送来的装备配方被c迪迪拉十人组c抢走了？！快点去夺回配方！\n★迪迪拉10人组最近在c平原6区c出没" TargetMap="21306">
+  				<Trigger>
+					 <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="迪迪拉10人组在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="根据“被害者”的报告，【迪迪拉10人组】目前在平原6区活动。" />
+					<Option Info="明白了！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="学会了c装备制作c！不过c安德鲁c好像还有什么话要和你说。" TargetMap="11217">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="第一次考验" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="105" ImageID="1" Info="学会了【装备制作】是不是很得意？哼哼~考验来了！\n这张配方给你，尝试制作一个【旅行者布帽】，然后戴在头上来找我吧！" />
+						<Option Info="好的！" /> 
+					</Action><!--提交节点2-->
+			</Event>
+		</Step> 
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Person Equipment="140001" />	
+			</Condition>
+    		<Event ConditionType="IN" Memo="自己做的帽子戴起来真舒服，快点给c安德鲁c看看吧！" TargetMap="11603">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="看我做的帽子！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="大小挺合适的嘛，以新手的程度来说，你做的很不错了。\n 继续努力吧，这些配方就送给你了！" />
+					<Option Info="谢谢" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="自己合成一个c旅行者布帽c，还要戴在头上给c安德鲁c看看，小Case~~" TargetMap="11603">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="怎么才算通过考验？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="把【旅行者布帽】做出来并戴在头上再来找我吧，可别想着拿别人做的来蒙混过关！" />
+					<Option Info="好的！" />
+				</Action>
+			</Event>			
+		</Step>
+	</Procedure>
+</Task>

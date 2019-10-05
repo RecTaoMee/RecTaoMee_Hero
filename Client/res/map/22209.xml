@@ -1,0 +1,10 @@
+<!--克拉斯岩洞九层-->
+<map name="克拉斯岩洞九层" type="0" comment="克拉斯岩洞九层" sound="BGM-201.mp3">
+	<transport intPos="90,398">
+		<node id="1" pos="403,756" targetMapId="22208" targetTransPortId="2" name="克拉斯岩洞八层"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="10" type="Object" res="MC_stone"/>
+	</object>
+</map>

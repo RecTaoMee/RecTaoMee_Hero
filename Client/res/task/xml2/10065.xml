@@ -1,0 +1,225 @@
+<Task ID="10065" Memo="c莱卡c邀请小主人前去c勇士大厅•国王呈见厅c。不去看看吗？" TargetMap="11307">
+	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c莱卡c邀请小主人前去c勇士大厅•国王呈见厅c。不去看看吗？" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="莱卡我来啦！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="25" ImageID="1" Info="不行，我们再比一场！\n（难道这次要妮娜帮我？）" />					
+						<Msg NpcID="24" ImageID="2" Info="尊敬的士兵长大人，最近每天都陪您练习，请允许我失陪一下。\n培养未来勇士是我更重要的职责。" />							
+						<Msg NpcID="24" ImageID="2" Info="啊【@nick】你来了，\n你愿意听我讲【战斗秘诀】吗？" />												
+						<Option Info="战斗秘诀？" SkipTrigger="Y" />
+						<Option Info="我很忙，下次再说吧" NextStep="1" />						
+					</Action>				
+			</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c莱卡c要对小主人讲c战斗秘诀c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="战斗秘诀？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="1" Info="战斗需要智慧。\n否则即使拥有宾德大人那样杰出的实力，也不一定能赢得胜利。" />						
+						<Msg NpcID="24" ImageID="2" Info="你从导师那里学过【风地水火】四大属性相克对吗？" />											
+						<Option Info="学过了" SkipTrigger="Y" />
+						<Option Info="忘记了" SkipTrigger="Y" NextStep="3" />						
+					</Action>				
+			</Event>
+		</Step>
+  		<Step ID="3" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c要对小主人讲c属性相克c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="属性相克？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="啊……我听到了你的导师心碎的声音……" />		
+						<Msg NpcID="24" ImageID="2" Info="★战斗时要选择【克制对方属性】的【水晶】和【魔法技能】。\n这就是我打败宾德大人的秘诀之一。" />		
+						<Msg NpcID="24" ImageID="1" Info="只需要了解了对方的属性，无论是摩尔还是精灵，胜利的女神向你招手。" />													
+						<Msg NpcID="24" ImageID="2" Info="请记住【风→地→水→火】的咒文。\n风克地、地克水、水克火、火又克风。" />		
+						<Msg NpcID="24" ImageID="2" Info="跟我一起说【风地水火】——" />																					
+						<Option Info="【风地水火】" SkipTrigger="Y" NotUpdateBuffer="Y" />
+						<Option Info="你再说一遍" SkipTrigger="Y" NextStep="13" />		
+						<Option Info="我很忙，先走了" NextStep="13" />											
+					</Action>				
+			</Event>
+		</Step>	
+
+  		<Step ID="30" ParentList="2" ParentCost="1" >
+    		<Event Memo="c莱卡c要对小主人讲c属性相克c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="属性相克？" />
+				</Trigger>
+					<Action Type="TALK">	
+						<Msg NpcID="24" ImageID="2" Info="嗯，就像你的老师说的那样。\n★战斗时要选择【克制对方属性】的【水晶】和【魔法技能】。\n这就是我打败宾德大人的秘诀之一。" />		
+						<Msg NpcID="24" ImageID="1" Info="只需要了解了对方的属性，无论是摩尔还是精灵，胜利的女神向你招手。" />													
+						<Msg NpcID="24" ImageID="2" Info="请记住【风→地→水→火】的咒文。\n风克地、地克水、水克火、火又克风。" />		
+						<Msg NpcID="24" ImageID="2" Info="跟我一起说【风地水火】——" />																					
+						<Option Info="【风地水火】" SkipTrigger="Y" NotUpdateBuffer="Y" />
+						<Option Info="你再说一遍" SkipTrigger="Y" NextStep="13" />		
+						<Option Info="我很忙，先走了" NextStep="13" />											
+					</Action>				
+			</Event>
+		</Step>
+
+		
+				
+  		<Step ID="4" ParentList="30, 3, 13" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【风地水火】" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="我们来玩一个小游戏。我先说一个属性，你就说出【克制】它的属性。\n准备好了吗？" />																						
+						<Option Info="开始吧" SkipTrigger="Y" />
+						<Option Info="我要复习" SkipTrigger="Y" NextStep="13" />		
+						<Option Info="我很忙，下次再说" NextStep="13" />											
+					</Action>				
+			</Event>
+		</Step>					
+	
+
+
+
+
+	
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要答题" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="什么属性克制【水】——" />																	
+						<Option Info="地" SkipTrigger="Y" />		
+						<Option Info="火" SkipTrigger="Y" NextStep="9" />
+						<Option Info="风" SkipTrigger="Y" NextStep="9" />												
+					</Action>				
+			</Event>
+		</Step>		
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要答题~" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="什么属性克制【地】——" />																	
+						<Option Info="水" SkipTrigger="Y" NextStep="9" />
+						<Option Info="火" SkipTrigger="Y" NextStep="9" />	
+						<Option Info="风" SkipTrigger="Y" />																			
+					</Action>				
+			</Event>
+		</Step>		
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要答题~~~" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="什么属性克制【火】——" />																	
+						<Option Info="风" SkipTrigger="Y" NextStep="9" />
+						<Option Info="水" SkipTrigger="Y" />							
+						<Option Info="地" SkipTrigger="Y" NextStep="9" />													
+					</Action>				
+			</Event>
+		</Step>	
+  		<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要答题~~~~" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="什么属性克制【风】——" />																	
+						<Option Info="地" SkipTrigger="Y" NextStep="9" />
+						<Option Info="水" SkipTrigger="Y" NextStep="9" />		
+						<Option Info="火" SkipTrigger="Y" />												
+					</Action>				
+			</Event>
+		</Step>	
+
+
+
+
+
+  		<Step ID="9" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c要和小主人玩c属性相克小游戏c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="属性相克？？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="看来你还没有完全掌握【属性相克】，请允许我再说一次吧。" />																	
+						<Option Info="（T_T）说吧" SkipTrigger="Y" NextStep="13" />	
+						<Option Info="我很忙，下次再说" NextStep="9" />																	
+					</Action>				
+			</Event>
+		</Step>	
+  		<Step ID="13" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c要对小主人讲c属性相克c。\n去c勇士大厅•国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="属性相克？？?" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="2" Info="战斗前要先选择【克制】对方属性的【水晶】和【魔法技能】。" />														
+						<Msg NpcID="24" ImageID="2" Info="请记住【风→地→水→火】。\n意思是风克地、地克水、水克火、火克风。" />		
+						<Msg NpcID="24" ImageID="1" Info="跟我一起说【风地水火】——" />																					
+						<Option Info="【风地水火】" SkipTrigger="Y" NotUpdateBuffer="Y" />																					
+						<Option Info="你再说一遍" SkipTrigger="Y" NextStep="13" />		
+						<Option Info="我很忙，下次再说" NextStep="13" />											
+					</Action>				
+			</Event>
+		</Step>					
+  		<Step ID="10" ParentList="8" ParentCost="1" >
+    		<Event Memo="c莱卡c的问题全部答对↖(^ω^)↗。\n去c勇士大厅•国王呈见厅c问他要奖励吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="答对啦!" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="24" ImageID="1" Info="完美的答案。\n在战斗中属性【克制】对方，\n可以得到【1.5倍】的伤害。" />		
+						<Msg NpcID="24" ImageID="2" Info="等你达到【15级】以后，请经常去【勇士斗技场•修炼之域】第30域挑战宾德大人。" />		
+						<Msg NpcID="24" ImageID="1" Info="我会感谢你的^^" />			
+						<Msg NpcID="25" ImageID="1" Info="……" />	
+						<Msg NpcID="24" ImageID="2" Info="作为对【@nick】的鼓励，请挑选一个适合的【水晶】佩戴吧。\n希望对你有帮助^^" />																																
+						<Option Info="风之水晶" SkipTrigger="Y" NextStep="21" />		
+						<Option Info="地之水晶" SkipTrigger="Y" NextStep="22" />	
+						<Option Info="水之水晶" SkipTrigger="Y" NextStep="23" />	
+						<Option Info="火之水晶" SkipTrigger="Y" NextStep="24" />																												
+					</Action>				
+			</Event>
+		</Step>		
+		
+  		<Step ID="21" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c的问题全部答对↖(^ω^)↗。\n去c勇士大厅•国王呈见厅c问他要奖励吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要风之水晶" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>			
+  		<Step ID="22" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c的问题全部答对↖(^ω^)↗。\n去c勇士大厅•国王呈见厅c问他要奖励吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要地之水晶" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>			
+  		<Step ID="23" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c的问题全部答对↖(^ω^)↗。\n去c勇士大厅•国王呈见厅c问他要奖励吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要水之水晶" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>			
+  		<Step ID="24" ParentList="0" ParentCost="1" >
+    		<Event Memo="c莱卡c的问题全部答对↖(^ω^)↗。\n去c勇士大厅•国王呈见厅c问他要奖励吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="我要火之水晶" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>			
+		
+		
+			
+	</Procedure>
+</Task>

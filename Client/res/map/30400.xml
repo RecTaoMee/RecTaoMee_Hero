@@ -1,0 +1,24 @@
+<map name="勇士广场（琉璃翼龙）" type="0" comment="勇士广场（琉璃翼龙）" sound="BGM-201.mp3">
+	<process>
+		<node name="Map_30400"/>
+	</process>
+	<transport intPos="422,554">
+		<node id="1" pos="400,493" targetMapId="21306" targetTransPortId="0" name="传入点" confirm="1"/>
+	</transport>
+	<npc>
+		<node id="25" type="NPC" name="宾德" res="MC_npc_25" action="1" needType="task" need="39004" needAction="2"/>
+	</npc>
+	<actions>
+		<proAction id="1" npcID="25" type="0" answer="准备一下" to="o" colorID="0">
+			<des>
+				<![CDATA[1#曾经有一只非常珍稀的精灵，就在我的眼前，我却没有珍惜……如果上天给我再来一次的机会，我一定会对那个精灵毫不犹豫地使用无敌万用闪灵胶片。]]>
+			</des>
+		</proAction>	
+		<proAction id="2" npcID="25" type="0" answer="我还要梦幻烟花$准备一下" to="a3$o" colorID="1$0">
+			<des>
+				<![CDATA[1#曾经有一只非常珍稀的精灵，就在我的眼前，我却没有珍惜……如果上天给我再来一次的机会，我一定会对那个精灵毫不犹豫地使用无敌万用闪灵胶片。]]>
+			</des>
+		</proAction>	
+		<proAction id="3" npcID="25" type="5" fightID="3326" />
+	</actions>
+</map>

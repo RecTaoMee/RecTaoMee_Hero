@@ -1,0 +1,266 @@
+<Task ID="10001" Memo="第一次来到摩尔王国去装备店看看吧！要成为摩尔勇士怎么能没一身好装备呢？" TargetMap="11209">
+   	<Procedure>
+		<Step ID="12" ParentList="0" ParentCost="0" >
+    		<Event Memo="第一次来到摩尔王国，去c勇士广场c的c装备店c看看吧！要成为摩尔勇士怎么能没一身好装备呢？" TargetMap="11209" TargetObj="16" TargetName="和t贝利t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="勇士装备？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="1" ParentList="12" ParentCost="1" >
+    			<Event Memo="第一次来到摩尔王国，去c勇士广场c的c装备店c看看吧！要成为摩尔勇士怎么能没一身好装备呢？" TargetMap="11209" TargetObj="16" TargetName="和t贝利t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="勇士装备？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="7" Info="你想买装备?等等！你现在有空没？帮我送一份东西到隔壁道具店吧！" />
+					<Option Info="大叔，就在隔壁..." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="1" Info="咳咳，如果你想成为摩尔勇士就不能偷懒！【@nick】，看你的了！" />
+					<Option Info="......" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="16" ImageID="5" Info="这个【午餐盒】拿好了！快点出去吧！" />
+					<Option Info="好的..." />
+				</Action>	
+    				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260003" />											
+    			</Event>
+		</Step>
+		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="稀里糊涂被装备店的c贝利c大叔派去送午餐T T，目的地是隔壁的c贝塔商会道具店c" TargetMap="11210" TargetObj="17" TargetName="和t贝蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="17" TaskOption="午餐盒？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="17" ImageID="1" Info="肚子好饿....可是现在又走不开，该怎么办呢？" />
+					<Option Info="午餐盒来了！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="17" ImageID="2" Info="啊..午餐盒!是他让你送来的吗？………虽然嘴上那么说，还是挺关心我的^^" />
+					<Option Info="是呀~" />
+				</Action>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260003" NextStep="3" SkipTrigger="Y"/>			
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="午餐时间到了，问问贝蒂大婶哪边有面包店吧！" TargetMap="11210" TargetObj="17" TargetName="和t贝蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11210" ObjID="17" TaskOption="【肚子】咕咕..." />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="17" ImageID="1" Info="对了，【@nick】你的肚子肯定也饿了吧，这张面包店的招待券送给你吧~" ></Msg>
+						<Msg NpcID="17" ImageID="1" Info="【贝多罗面包店】目前在举行十周年店庆，这张招待券可以去免费享受一份面包料理^^" ></Msg>
+						<Option Info="谢谢" />
+					</Action>	
+					<Action Type="TALK">
+						<Msg NpcID="17" ImageID="1" Info="贝多罗面包店就在【王国南街】，【皮克司研究所】的对面，别迷路啦" />
+						<Option Info="知道了！" />
+					</Action>
+					<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260004"/>
+    		</Event>
+		</Step>
+
+
+
+  		<Step ID="4" ParentList="3" ParentCost="1">
+    			<Event Memo="免费的面包招待券！太棒了！c贝多罗面包店c好像就在c王国南街c。" TargetMap="11213" TargetObj="18" TargetName="和t贝多罗t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="午餐是面包" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="只有【贝多罗面包店】，才能让你体会面包的真谛！" />
+						<Option Info="面包招待券" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="5" Info="嘿嘿，你今天有口福啦!快尝尝我刚刚做好的究极面包料理—————【贝多罗十周年纪念版卡布基诺慕斯】(不准打包哦^^）" />
+						<Option Info="哇！！" />
+					</Action>						
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260004" NextStep="5" SkipTrigger="Y"/>	
+    			</Event>
+		</Step>
+		
+		<Step ID="5" ParentList="4" ParentCost="1">
+    			<Event Memo="吃过了超美味的面包料理，去感谢贝多罗大叔的款待吧！" TargetMap="11213" TargetObj="18" TargetName="和t贝多罗t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="谢谢款待" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="哈哈，看到你我不禁想起自己年轻的时候啊！" />
+						<Msg NpcID="18" ImageID="1" Info="不要看我现在那么胖！其实大叔我年轻的时候也是非常厉害的！" />
+						<Msg NpcID="18" ImageID="1" Info="那时候，我也带着精灵伙伴们，以摩尔勇士为目标，四处旅行来磨砺自己！" />
+						<Option Info="精灵伙伴的心情" />
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="18" ImageID="1" Info="说到这一点，那你可一定要去见见爱精灵协会的会长【莓可】。" />
+						<Msg NpcID="18" ImageID="1" Info="爱精灵协会在王国东街，记得带上你的精灵伙伴一起去！" />
+						<Option Info="谢谢大叔"/>
+					</Action>					
+				</Event>
+		</Step>
+		
+	
+
+  		<Step ID="6" ParentList="5" ParentCost="1">
+    			<Event Memo="c爱精灵协会c在c王国东街c，快点去问问莓可关于精灵的事吧！" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="莓可的烦恼" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="越来越多的精灵受到【黑水晶】力量的影响，行为反常…………该怎么办呢？" />
+					<Msg NpcID="20" ImageID="1" Info="咦？你的精灵看起来很开心的样子，它们一定很喜欢和你在一起吧？" />
+					<Option Info="我们是好朋友!" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="谢谢【@nick】，你和精灵之间的友谊给了我信心。我一定能够帮助那些黑化精灵找回自我。" />
+					<Option Info="嘿嘿"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="对了，你有去过勇敢者旅馆吗？" />
+					<Option Info="没有...." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="如果以后在旅途中不小心受伤了，你可以去勇敢者旅馆1楼找蒂蒂拉治疗" />
+					<Msg NpcID="20" ImageID="1" Info="蒂蒂拉的包扎技术可是一流的~而且白魔法也很厉害，当年可是传教士协会的优秀学员呢！" />
+					<Option Info="记住了，谢谢" />
+				</Action>
+    			</Event>
+		</Step>
+
+
+
+  		<Step ID="7" ParentList="6" ParentCost="1">
+    			<Event Memo="c勇敢者旅馆c在c勇士广场c，去拜访一下蒂蒂拉吧。" TargetMap="11207" TargetObj="14" TargetName="和t蒂蒂拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="14" TaskOption="你好！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="6" Info="大叔！！！我刚拖过的地板又被你踩脏了！" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="....对了，蒂蒂拉，周末出去看【勇士斗技场】的比赛吧！" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="6" Info="大叔！你别想转移话题，快点去拖地！" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="2" Info="你看，来客人了！" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="啊？客人您好^^，欢迎光临勇敢者旅馆！" />
+					<Option Info="......" NextStep="8" SkipTrigger="Y"/>
+				</Action>
+    			</Event>
+		</Step>  		
+
+
+		<Step ID="8" ParentList="7" ParentCost="1">
+    			<Event Memo="过去和蒂蒂拉打个招呼吧。" TargetMap="11207" TargetObj="14" TargetName="和t蒂蒂拉t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="14" TaskOption="初次见面" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="没吓到吧，我很温柔的^^，对了，你是哪来的小摩尔啊，好像没见过你呢？" />
+					<Option Info="我从吉普豆村来的" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="2" Info="吉普豆村！那你一定认识琪琪了!" />
+					<Option Info="嗯" />
+				</Action>				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="我和琪琪是好朋友，曾经一起在传教士协会学习白魔法，如果以后你受伤了也可以来找我^^。" />
+					<Msg NpcID="14" ImageID="1" Info="顺便说一句，我的包扎技巧可绝对不输给琪琪哦^^。" />
+					<Option Info="你和琪琪姐姐都好厉害^^。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="1" Info="对了，【@nick】是第一次来摩尔王国吗？" />
+					<Option Info="是呀" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="14" ImageID="2" Info="啊~~~那你一定要去参观【女神大圣堂】！大圣堂是摩尔王国最有名的地方！！" />
+					<Msg NpcID="14" ImageID="2" Info="十二勇者之一的【铃】可是时之女神的祭司，我和琪琪的白魔法都受过铃大人的指导呢！" />
+					<Msg NpcID="14" ImageID="2" Info="如果你还有什么问题都可以去找她。虽然是最接近女神的人，但是铃大人一点架子都没有，大家都很喜欢她^^" />
+					<Option Info="哇~我现在就去" />
+				</Action>	                						
+  			</Event>
+		</Step>
+
+
+
+		<Step ID="9" ParentList="8" ParentCost="1">
+    			<Event Memo="c女神大圣堂c在c王国西街c！十二勇士之一的铃！真想快点见到她！" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="大祭司 【铃】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="来自未来的小摩尔，很高兴在这里见到你O(∩_∩)O~" />
+					<Option Info="你怎么知道的？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="“当黑暗再次降临，世界面临末日，来自未来的【光芒】会带给大地希望”" />
+					<Msg NpcID="102" ImageID="1" Info="这是时之女神【神谕】中的一句话。我已经感受到你身上所散发出来的【光芒】，给人一种非常温暖的感觉^^" />
+					<Option Info="我要成为摩尔勇士！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="呵呵，我相信你。" />
+					<Msg NpcID="102" ImageID="1" Info="未来的旅途并不是一帆风顺，也许会碰到许多困难，愿女神的祝福与你同在^^" />
+					<Option Info="谢谢^^" NextStep="10" SkipTrigger="Y"/>		
+				</Action>	                							
+			</Event>
+		</Step>
+		
+		<Step ID="10" ParentList="9" ParentCost="1">
+    			<Event Memo="参观完女神大圣堂，向铃大人道别吧^^" TargetMap="11217" TargetObj="102" TargetName="和t铃t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="告别" TalkOver="Y"/>
+				</Trigger>
+				<Action Type="MOVIE" Url="task_10001_12001.swf" MapLevel="CONTENT" Pos="-402,-252" Params="STAND_5"/>					
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="铃大人，很抱歉打扰你们的谈话，摩尔王要召见【@nick】。" />
+					<Option Info="啊？" />
+				</Action><Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="呵呵，没有关系。【@nick】，赶快去摩尔城堡吧，摩尔王肯定是有很重要的事情要找你。" />
+					<Option Info="好的" />
+				</Action> 	
+			</Event>
+		</Step>
+
+		<Step ID="11" ParentList="10" ParentCost="1">
+    			<Event Memo="摩尔王一定是有非常重要的事情，快点回c国王呈见厅c吧~" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王的召见" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="首先，祝贺你年轻人，通过了【职业协会】的考核!" />
+					<Option Info="谢谢国王" />
+				</Action><Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="但是，这只是迈开了通往摩尔勇士之路的第一步，以后道路一定会更加艰难。" />
+					<Msg NpcID="30" ImageID="1" Info="失败和挫折也许会伴随你的旅程，胆怯和懦弱会阻碍你前进的脚步。" />
+					<Msg NpcID="30" ImageID="1" Info="你有足够的勇气继续前进吗？" />
+					<Option Info="我不怕！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="说得好！我相信有一天，你一定会成为与【十二勇士】齐名的勇者。现在我有一份礼物要送给你。" />
+					<Msg NpcID="30" ImageID="2" Info="这里有2个“住宅型精灵”，你愿意代替我照顾他们吗？" />
+					<Option Info="当然乐意了！" />
+				</Action>				
+				<Action Type="MOVIE" Url="Task35Module" MapLevel="TASK" Pos="0,0" IsModule="Y" />	
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="“住宅型精灵”喜欢住在干净整洁的房子里。【摩尔王国·地下住宅】为你开启。\n现在就去属于你的小屋看看吧。" />
+					<Msg NpcID="24" ImageID="1" Info="又一个伟大的决定诞生了，伟大的摩尔王，我现在就去准备。" />
+					<Option Info="谢谢国王陛下" />
+				</Action>									
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

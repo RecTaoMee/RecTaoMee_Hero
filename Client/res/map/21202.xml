@@ -1,0 +1,37 @@
+<!--下水道一层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="92,114" targetMapId="11220" targetTransPortId="2" name="神秘地道"/>
+		<node id="2" pos="1160,900" targetMapId="21203" targetTransPortId="1" name="神秘地道" level="10_a0"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>		
+	</object>
+	
+	<npc>		
+		<!-- 嫦娥任务：妮娜-->
+		<node id="100" type="NPC" res="MC_npc_100" action="1" needType="task" need="253" needAction="2"/>
+		
+		
+	</npc>	
+	
+	<actions>
+		<proAction npcID="226" id="0" type="0" answer="我要努力成长！" to="o" >
+			<des>
+				<![CDATA[1#下水道深处很危险，10级以前不能通行!]]>
+			</des>
+		</proAction>
+		<proAction npcID="101" id="1" type="0" answer="妮娜……" to="o" >
+			<des>
+				<![CDATA[1#你这渺小的摩尔，哪里冒出来的，给我滚远点!]]>
+			</des>
+		</proAction>
+		<proAction npcID="101" id="2" type="0" answer="……唔……" to="o" >
+			<des>
+				<![CDATA[1#谢谢你，小勇士，逢蒙虽然在你我合力下战败了，但他的魂魄还未死，只求以后他能放下嫉妒仇恨之邪念。]]>
+			</des>
+		</proAction>		
+					
+	</actions>
+</map>

@@ -1,0 +1,95 @@
+<Task ID="143" Memo="宾德发布了勇士协会B级任务，\n快去c国王呈见厅c看看吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="宾德发布了勇士协会B级任务，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="B级任务？" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="最近守卫【风之洞穴】的士兵们全都倒下了，\n一靠近洞穴入口就莫名其妙地害怕！" />
+					<Option Info="⊙o⊙？" SkipTrigger="Y"/>					
+					<Option Info="有事先走了" NextStep="50" />
+				</Action>																		
+    		</Event>
+		</Step>		
+  		<Step ID="51" ParentList="50" ParentCost="1" >
+    		<Event Memo="宾德发布了勇士协会B级任务，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="风之矿洞？" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【风之矿洞】是格历尔大陆的“风源”，\n影响着所有的海船出航……" />					
+					<Msg NpcID="25" ImageID="1" Info="事情紧急，\n由【@nick】去【风之矿洞】调查一下如何？" />
+					<Option Info="使命必达！" />
+				</Action>		
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503, 1" SkipTrigger="Y" />															
+    		</Event>
+		</Step>
+
+		
+	
+  		<Step ID="1" ParentList="51" ParentCost="1" >
+    		<Event Memo="宾德发布了勇士协会B级任务，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="风之矿洞？" />												
+				</Trigger>	
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />												
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="宾德发布了勇士协会B级任务，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="风之矿洞？" />												
+				</Trigger>	
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+    		</Event>
+		</Step>		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="快去格历尔平原西面的c风之洞穴3层c侦查吧！" TargetMap="21503" TargetName="去t风之洞穴三层t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21503" />																			
+				</Trigger>				
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="3000, -1000" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="2000" /> 								
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="1" Info="【风之龙】身后有一个隐身的魔鬼！！\nmomo害怕，momo想回家~~" />
+					<Option Info="嗯！" SkipTrigger="Y" />
+				</Action>	
+    		</Event>
+		</Step>
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="快去c风之洞穴3层c，\n问问c风之龙c出什么事了吧！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话" >
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21503" />																								  
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="风龙风龙怎么了？" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="风——之——鉴——证——" />					
+					<Msg NpcID="345" ImageID="1" Info=" 恐  惧   吐     息     " />					
+					<Msg NpcID="329" ImageID="1" Info="这种气息……" />		
+					<Option Info="风之龙？！" />						
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21503, 16010" />																	
+				<Action Type="TALK">				
+					<Msg NpcID="401" ImageID="1" Info="momo——\n恐惧魔王真可怕，\n风之龙晕倒了！" />	
+					<Msg NpcID="401" ImageID="1" Info="我们快逃（＞﹏＜）！！！！" />						
+					<Option Info="这就去报告【宾德】！" />												
+				</Action>	
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />																			
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307, 1" />																																		
+    		</Event>
+		</Step>	
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="恐惧魔王封印了风之龙！\n快去c国王呈见厅c告诉c宾德c大人吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="恐惧魔王封印了风龙！" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="黑暗势力又开始涌动了……" />
+					<Msg NpcID="25" ImageID="1" Info="不过【@nick】这次出色地完成了使命，\n可以接受更高难度的挑战了！" />
+					<Option Info="O(∩_∩)O" />					
+				</Action>																					
+    		</Event>
+		</Step>				
+</Procedure>
+</Task>

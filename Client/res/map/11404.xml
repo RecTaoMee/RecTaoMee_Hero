@@ -1,0 +1,69 @@
+<!--尼康康餐厅-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
+	<transport intPos="250,390">
+		 <node id="1" pos="656,363" targetMapId="11401" targetTransPortId="3" name="旅馆1楼"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="35" type="NPC" res="MC_npc_35" action="0$1$2"/>
+        <node id="34" type="NPC" res="MC_npc_34" action="4"/> 
+        <node id="42" type="NPC" res="MC_npc_42" action="5$6"/> 
+        <node id="43" type="NPC" res="MC_npc_43" action="7$8"/> 
+		<node id="15" type="NPC" res="MC_npc_15" action="3" alpTaskID="" compTaskID="20_4, 21_4, 22_4, 23_4"/>
+<!--
+		<node id="15" type="NPC" res="MC_npc_15" visible="0" action="3" alpTaskID="" compTaskID="20_4, 21_4, 22_4, 23_4"/>
+-->
+	</npc>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction npcID="35" id="0" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[6#不听话的小鬼简直是黑化精灵！那边的！小心我的盘子！]]>
+			</des>
+		</proAction>
+		<proAction npcID="35" id="1" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[7#天啊你的脸色怎么这么差！又受伤了吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="35" id="2" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[1#欢迎光临!]]>
+			</des>
+		</proAction>
+		<proAction npcID="15" id="3" type="0" answer="祝你好运" to="o" >
+			<des>
+				<![CDATA[1#……。]]>
+			</des>
+		</proAction>
+		<proAction npcID="34" id="4" type="0" answer="..." to="o" >
+			<des>
+				<![CDATA[1#……。]]>
+			</des>
+		</proAction>
+		<proAction npcID="42" id="5" type="0" answer="【精灵学魔法】$祝你好运" to="b10_42$o" colorID="1$0">
+			<des>
+				<![CDATA[7#擅长【魔法技能】的精灵们是我可爱的小天使~~]]>
+			</des>
+		</proAction>
+		<proAction npcID="42" id="6" type="0" answer="【精灵学魔法】$祝你好运" to="b10_42$o" colorID="1$0">
+			<des>
+				<![CDATA[1#培养精灵要抓“重点”！给适合【魔法技能】的精灵学习魔法技能，这才是重点~！]]>
+			</des>
+		</proAction>
+		<proAction npcID="43" id="7" type="0" answer="【精灵学技能】$祝你好运" to="b10_43$o" colorID="1$0">
+			<des>
+				<![CDATA[1#擅长【物理技能】的精灵是我的最爱~！]]>
+			</des>
+		</proAction>
+		<proAction npcID="43" id="8" type="0" answer="【精灵学技能】$祝你好运" to="b10_43$o" colorID="1$0">
+			<des>
+				<![CDATA[3#培养精灵要抓“重点”~，\n给适合【物理技能】的精灵学习物理技能，\n这才是重点~！]]>
+			</des>
+		</proAction>		
+	</actions>
+</map>

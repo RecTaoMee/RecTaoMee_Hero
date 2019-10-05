@@ -1,0 +1,27 @@
+<!--废弃的摩尔王国西街-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="1474,450" targetMapId="51202" targetTransPortId="3" name="废弃的勇士广场"/>
+	</transport>
+	<object>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="1" type="NPC" res="MC_npc_105" action="1" name="安德鲁"/>
+		<node id="2" type="TransPort" res="MC_door_0" transPortId="1"/>
+
+    </npc>
+    <actions>
+		<proAction npcID="105" id="1" type="0" answer="特别活动$我会小心" to="a2$o" colorID="1">
+			<des>
+				<![CDATA[2#可恶，这里的黑化精灵（43-51级）根本无法净化，看来得增派更多的士兵来了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="105" id="2" type="0" answer="我会小心！" to="o" colorID="0">
+			<des>
+				<![CDATA[2#每日13:00-15:00在这里会出现【蜘蛛炸弹】、【迷之宝箱】、BOSS【积木关亡灵】，请准时来帮助摩尔王国剿灭敌人！]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

@@ -1,0 +1,259 @@
+<Task ID="256" Memo="世界之树似乎有什么奇妙动静，前往c永恒之森c找到精灵族长c塔西里亚c查探" TargetMap="11804">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="世界之树似乎有什么奇妙动静，前往c永恒之森c找到精灵族长c塔西里亚c查探" TargetMap="11804" TargetObj="74" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="发生什么事了？" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task256_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />					
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="我先前看到天空中闪现出一个图案，那是我的挚友黄金十二勇士之一的凯西专用的信号弹发出的。" />
+					<Option Info="凯西大人怎么了？" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="74" ImageID="1" Info="凯西的任务是负责守护位于世界之树顶端的“生命之根”，他会使用这枚信号弹，就说明“生命之根”有危险了！" />
+					<Msg NpcID="74" ImageID="1" Info="我信任的未来勇士们啊！请你们一定要协助凯西解除这场危机！！" />
+					<Option Info="义不容辞！" SkipTrigger="Y" />																		
+				</Action>												
+    		</Event>		
+		</Step>		
+
+
+  		<Step ID="5" ParentList="1" ParentCost="1" >
+    		<Event Memo="世界之树似乎有什么奇妙动静，前往c永恒之森c找到精灵族长c塔西里亚c查探" TargetMap="11804" TargetObj="74" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="世界之树怎么进？" />
+				</Trigger>									
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="世界之树入口的封印已经解除了，只有通过世界之树内“双重禁界”的考验，才能登上世界之树顶端。" />
+					<Msg NpcID="74" ImageID="1" Info="我不能违背之前订下的契约，无法进入世界之树内。未来勇士们，我把希望寄托在你们身上了！" />
+					<Option Info="看我的！" />						
+				</Action>	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11805,11810" />	<!--世界树底 鼬西刷出来-->
+    		</Event>		
+		</Step>		
+						
+  		<Step ID="2" ParentList="5" ParentCost="1" >		
+			<Condition>
+				<Battle ID="42" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已战胜了鼬西，现在可以与c鼬西c对话" TargetMap="11805" TargetObj="11810" TargetName="和t鼬西t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11810" TaskOption="死不悔改呀你！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="呜~我又失败了！" />
+					<Option Info="这是做坏事的下场！" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="虽然我的目地没达成，但是你们还是来晚了一步。尤利大人和剧毒蜂皇大人已经用“特殊的方法”登上树顶了！" />
+					<Option Info="糟糕！" />
+				</Action>	
+				<Action Type="MOVIE" Url="task256_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="我本来是想瞒着加布老大独自立功的，但是世界之树内的家伙太厉害了，我打不过它。" />
+					<Msg NpcID="998" ImageID="7" Info="还是加布老大想得周到，让尤利大人亲自出击。小勇士，拜拜啦！" />
+					<Option Info="可恶…要阻止尤利！" />
+				</Action>		
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21804,21804" />	<!--世界树顶 凯西刷出来-->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="21804,21805" />	<!--世界树顶 尤利刷出来-->							
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_4" Params="21804,21807" />	<!--世界树顶 剧毒蜂皇刷出来-->							
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21804,1" />	
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="有人已经提前赶往世界之树，前往c世界树底c调查" TargetMap="11805" TargetObj="11810" TargetName="调查t世界树底t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11810" TaskOption="又是你！！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="嗨~摩尔，我们又见面了！这次不会让你这么轻易的通过这里！" />					
+					<Option Info="收拾你！！" />
+					<Option Info="让我准备一下！" NextStep="2" />
+				</Action>						
+				<Action Type="COMMAND" Command="BATTLE" Params="42"/>											
+    		</Event>
+		</Step>	
+		
+		
+					
+  		<Step ID="3" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Battle ID="43" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜后，再次与c魔王尤利c对话" TargetMap="21804" TargetObj="21805" TargetName="和t魔王尤利t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21804" ObjID="21805" TaskOption="（…击败了尤利…）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="又是你！可恶的摩尔！！！" />							
+					<Option Info="你是不会得逞的" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="碍眼的家伙！让你见识五天王之一，恐惧魔王尤利的真正实力！" />							
+					<Option Info="要小心了！" />
+				</Action>	
+				<Action Type="MOVIE" Url="task256_3.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />	
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="混沌吧，黑水晶能量球！" />							
+					<Option Info="要小心了！" SkipTrigger="Y" />
+				</Action>	
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="来到c世界之树顶端c，帮助c凯西c战胜袭击世界树的c魔王尤利c下" TargetMap="21804" TargetObj="21804" TargetName="和t凯西t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21804" ObjID="21804" TaskOption="（十二勇士的凯西）" />
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11810" />	<!--世界树底 鼬西删除-->							
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="摩尔族的同伴！是来支援我的么！" />	
+					<Option Info="凯西，我来帮助你！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="哈哈哈！就凭你们几个是无法阻止我的！！" />				
+					<Option Info="接招吧，魔王！" />
+					<Option Info="先准备一下" NextStep="3" />	
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="43"/>										
+    		</Event>
+		</Step>			
+	
+		
+  		<Step ID="4" ParentList="3" ParentCost="1" >		
+			<Condition>
+				<Battle ID="44" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="再次战胜c魔王尤利c，与其对话" TargetMap="21804" TargetObj="21805" TargetName="和t魔王尤利t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21804" ObjID="21805" TaskOption="果然强大了不少…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="只接我一招便已经喘不过气了吗？受死吧！" />
+					<Msg NpcID="345" ImageID="1" Info="黑暗力量——终极爆发！！！！！" />					
+					<Option Info="快要撑不住了…" />
+				</Action>
+				<Action Type="MOVIE" Url="task256_4.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21807" />  <!--世界树顶 剧毒蜂皇删除-->	
+				<Action Type="MOVIE" Url="task256_5.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21804,21806" />	<!--世界树顶 妮娜 安德鲁刷出来-->
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="2" Info="我们来了！" />
+					<Msg NpcID="101" ImageID="1" Info="未来勇士，你没事吧？这里就交给我们吧。" />
+					<Option Info="终于得救了。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="可恶的黄金勇士们！我一定要破坏“生命之根”！" />
+					<Option Info="大家小心！" />
+				</Action>
+				<Action Type="MOVIE" Url="task256_6.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21805" />	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="什么？！刚才那是黑龙？可恶！“生命之根”遭到黑暗力量强烈腐蚀，正在渐渐失去效力！" />
+					<Option Info="生命之根？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="神魔之战后，虽然封印了大魔王伊恩与黑水晶，但是战斗使得整个世界都遭受了黑暗力量的污染。" />
+					<Msg NpcID="107" ImageID="1" Info="时之女神贝尔丹蒂用最后的力量从神界转移来了几个能够净化黑暗力量的神物，其中一个便是生命之根。" />
+					<Option Info="原来如此…" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="生命之根失去效力之后，整个世界的净化之力将被消弱。少了这份净化力量的压制，黑暗力量会使得黑化精灵变得强大！" />
+					<Option Info="那该怎么办？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="目前其他大陆还有另一些神物存在，并且有十二勇士守护着，但是具体位置，只有守护者自己知道。" />
+					<Option Info="为什么呢？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="神魔之战后，携带着女神庇护符文的黄金十二勇士有些被分派到世界各地清除残余的黑暗力量，而我与其中几个黄金勇士奉命分别守护各个大陆上的神物。" />
+					<Msg NpcID="107" ImageID="1" Info="除了守护者本人，没人知道神物的下落，已经过了500多年了，根本联系不上他们。" />
+					<Option Info="你们活了500年？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="没错，龙之试练时，黑龙想用黑暗魔法消灭我们，关键时刻，时之女神用时间魔法保护了我们。" />
+					<Msg NpcID="107" ImageID="1" Info="那一刻起，我们十二勇士就成了【不受时间束缚的人】，年龄永远停留在那一刻。神魔之战后，女神进入了虚弱期，但赐予我们的符文却一直维持着这份力量。" />
+					<Msg NpcID="107" ImageID="1" Info="现在生命之根被破坏了，我也没有留在这里继续守护的必要了。看样子你就是“神谕”里提到的未来勇士，那就与我们一起阻止即将到来的黑暗吧。" />
+					<Option Info="请把符文给我。" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="我的符文代表的是【忠诚】，它代表着忠实、诚恳、服从。" />
+					<Option Info="收到！" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="自从神魔战争后，明明被击溃的魔王尤利再次现身，看来是因为最近黑暗力量泄漏的缘故让他们复活了。" />
+					<Msg NpcID="107" ImageID="1" Info="魔王尤利的计划应该是要破坏各个大陆上的压制黑暗力量的神物，然后集结强大的黑化军团破除大魔王伊恩的封印吧。" />
+					<Msg NpcID="107" ImageID="1" Info="真没想到就连与女神有约定的黑龙卡尔加布也来干涉，看来其中必有蹊跷。" />
+					<Option Info="一定要阻止他们！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="说得没错。你先把符文拿回王国去镶嵌回轮盘上，然后准备向炎之大陆进发吧。我们必须在五天王组建起黑暗军团之前集齐符文唤醒时之女神的力量，才能拯救摩尔王国。" />
+					<Msg NpcID="107" ImageID="1" Info="（需要携带【黄色符文晶石】与【命运轮盘II】，才会获得【命运轮盘III】" />
+					<Option Info="就这么办！" />
+				</Action>					
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="再次与c魔王尤利c对话" TargetMap="21804" TargetObj="21805" TargetName="和t魔王尤利t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="21804" ObjID="21805" TaskOption="（准备再次应战）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="接招吧，摩尔！秘法——暗影分身！" />								
+					<Option Info="全力迎战！" />
+					<Option Info="先准备一下" NextStep="4" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="44"/>										
+    		</Event>
+		</Step>			
+				
+
+  		<Step ID="6" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Person Equipment="110029" />	
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="装备好了“命运轮盘II”，告诉c凯西c吧！" TargetMap="21804" TargetObj="21804" TargetName="和t凯西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21804" ObjID="21804" TaskOption="装备【命运轮盘II】了！" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="我这就将象征“忠诚”的【黄色符文晶石】交付与你！" />	
+					<Msg NpcID="107" ImageID="1" Info="符文交给你，希望你能恢复女神的力量，记得把它刻印在【圣衣】上!" />		
+					<Option Info="嗯！我这就去" />
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11302,1" />	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260025" /> 	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21806" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21804" />										
+    		</Event>
+    		<Event ConditionType="OUT" Memo="装备【命运轮盘II】吧！" TargetMap="21804" TargetName="装备t命运轮盘IIt">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21804" ObjID="21804" TaskOption="【命运轮盘】？" />							
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="如果你有【命运轮盘II】，我就可以将【黄色符文晶石】交付与你。" />	
+					<Option Info="马上戴【命运轮盘II】！" />
+				</Action>	
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG,110029" />				      														
+    		</Event>			  
+		</Step>			
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="获得了凯西的符文↖(^o^)↗，\n快把它镶嵌到c勇士大厅c的c女神圣衣c上吧！" TargetMap="11302" TargetName="点击t女神石像t" TargetPos="783,917"> 	
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11302" ObjID="5200" />																											
+				</Trigger>	
+				<Action Type="TALK">															
+					<Msg NpcID="2" ImageID="2" Info="谢谢你，让我感受到了新的活力。" />	
+					<Msg NpcID="401" ImageID="1" Info="（记得继续找齐【十二勇士】，恢复“女神圣衣”的力量唷~~）" />							
+					<Option Info="摩尔勇士万岁！" />					
+				</Action>	
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260025" /> 															
+    		</Event>
+		</Step>	
+		
+		
+		
+		
+		
+				
+				
+	</Procedure>
+</Task>

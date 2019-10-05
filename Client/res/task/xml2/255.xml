@@ -1,0 +1,188 @@
+<Task ID="255" Memo="前往c永恒之森c找到精灵族长c塔西里亚c，他似乎有很紧急的事找你" TargetMap="11804">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="前往永恒之森找到精灵族长c塔西里亚c，他似乎有很紧急的事找你" TargetMap="11804" TargetObj="74" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="族长，有什么事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="很抱歉，我们紧急召唤你到来！不久前有一伙不明身份的黑衣人闯进了世界树里。" />
+					<Option Info="为什么不去调查呢？" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="74" ImageID="1" Info="由于精灵族历代与神明签订的契约，保护世界树的任何族人都无法进入世界树内部，但那群人已经闯入了内部，我们唯独可以相信你，请你进入世界树保住“生命之根”！" />
+					<Option Info="“生命之根”？" />																		
+				</Action>												
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="生命之根是世界树的生命之源，也是格历尔大陆的命脉，如果生命之根被破坏，格历尔大陆将发生毁灭性的崩塌，想要挽救一切就晚了……" />
+					<Option Info="我一定会守卫勇士的国度！！！" SkipTrigger="Y" />						
+				</Action>	
+    		</Event>		
+		</Step>		
+
+
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往永恒之森找到精灵族长c塔西里亚c，他似乎有很紧急的事找你" TargetMap="11804" TargetObj="74" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="生命之树在哪？" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task255_1.swf" MapLevel="CONTENT" Pos="278,-29" />	
+ 		     	<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11804,11804" />								
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="从这里下去，往左走就能到达生命之树的入口。这是永夜村的精灵勇士，赤胆忠心，他们将协助你一同前去查探，切记小心！" />
+					<Option Info="我这就去！" />					
+				</Action>															
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11805,11808" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11805" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11805,1" />	
+				<Action Type="MOVIE" Url="task255_3.swf" MapLevel="TASK" Pos="0,0" />	
+    		</Event>		
+		</Step>		
+
+
+
+						
+  		<Step ID="3" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2012" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已战胜了鼬西，现在可以与c鼬西c对话" TargetMap="11805" TargetObj="11806" TargetName="和t鼬西t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11806" TaskOption="还打不打！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11804,11804" />
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="哎呦！轻一点，疼死我了！" />
+					<Option Info="你简直是找打！" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="小摩尔，别高兴的太早了，尤利大人的手下剧毒蜂皇阁下已经进入了世界树了，你们根本无法阻止了，哈哈哈哈！" />
+					<Option Info="你给我让开！" />
+				</Action>	
+				<Action Type="MOVIE" Url="task255_4.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11805,11807" />							
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往c世界树底c调查，与精灵族长c塔西里亚c对话" TargetMap="11805" TargetObj="11808" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11808" TaskOption="情况怎么样了？" />
+				</Trigger>
+				<Action Type="MOVIE" Url="task255_2.swf" MapLevel="CONTENT" Pos="433,251" />				
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="究竟发生了什么？！" />					
+					<Msg NpcID="" ImageID="1" Info="刚才又有一群来路不明的黑衣人将我们打伤后闯入了世界树，族长这可怎么办才好！" />
+					<Option Info="……" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="小勇士，你是命运中注定的那个人吧，请替我们保护“生命之根”免受破坏吧！" />
+					<Option Info="义不容辞！" />
+				</Action>	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11806" />																			
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="小摩尔，你终于来啦！哈哈哈哈！" />
+					<Option Info="鼬西，你怎么在这里！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="谢谢你给我开路让我进到了世界树，很快你就可以和我一起见证世界的毁灭了，哈哈哈哈！！！" />
+					<Option Info="你这个忘恩负义的家伙！！" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="哼，没错！一直以来就是为了得到你的信任，才那么对你低声下气，目的就是进入永恒森林的结界！" />
+					<Option Info="教训你！！" />
+					<Option Info="让我准备一下！" NextStep="3" />
+				</Action>						
+				<Action Type="COMMAND" Command="BATTLE" Params="2012"/>											
+    		</Event>
+		</Step>	
+					
+  		<Step ID="4" ParentList="3" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2013" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜偷袭世界树的c剧毒蜂皇c的手下" TargetMap="11805" TargetObj="11807" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11807" TaskOption="服不服？！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哼，看来你的确有两下子！看来还得我亲自出马！小的们都退下！" />
+					<Msg NpcID="998" ImageID="1" Info="蜂皇大哥加油！蜂皇大哥万岁！" />	
+					<Msg NpcID="997" ImageID="1" Info="没用的东西，闪一边去！" />									
+					<Option Info="……" SkipTrigger="Y"/>
+				</Action>				
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="战胜偷袭世界树的c剧毒蜂皇c的手下" TargetMap="11805" TargetObj="11807" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11807" TaskOption="（…剧毒蜂皇出现…）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="可恶，里面那个老家伙太厉害了，根本不是她的对手！恩？这不是精灵族长吗？小的们给我上，逮了带回去给尤利大人处置！" />				
+					<Msg NpcID="74" ImageID="1" Info="剧毒蜂皇，你扰乱世界之树的安宁，精灵族人是不会饶恕你的。" />
+					<Msg NpcID="998" ImageID="5" Info="哈哈，有剧毒蜂皇大人的力量相助，看你们不完蛋！" />	
+					<Option Info="族长让我来！" />
+					<Option Info="先准备一下" NextStep="4" />	
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="2013"/>										
+    		</Event>
+		</Step>				
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >		
+			<Condition>
+				<Battle ID="2015" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="战胜偷袭世界树的c剧毒蜂皇c" TargetMap="11805" TargetObj="11807" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11807" TaskOption="……" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="没想到精灵族请了你这么一个高手！塔西里亚，你给我记着！黑暗势力是不会饶恕你的！哈哈哈！哈哈哈！" />
+					<Msg NpcID="74" ImageID="1" Info="剧毒蜂皇！你的阴谋永远不会得逞，精灵族也永远不会屈服黑暗势力！" />					
+					<Option Info="……" />
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="鼬西，我们先走一步，下次再来收拾这帮家伙！走着瞧，小摩尔！" />
+					<Option Info="我不会畏惧你们的！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="7" Info="是，剧毒蜂皇阁下！小的们，撤！" />
+					<Option Info="别跑……" />
+				</Action>					
+				<Action Type="MOVIE" Url="task255_5.swf" MapLevel="TASK" Pos="0,0" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11806" />					
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11807" />				
+				
+												
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="感谢你对我们精灵族的帮助，我们无以为报！" />
+					<Option Info="这是我应该做的！" />
+				</Action>					
+				<Action Type="MOVIE" Url="task255_6.swf" MapLevel="TASK" Pos="0,0" />					
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="世界树……不知还能支撑多久……" />
+					<Option Info="要不要我进去看看？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="小勇士，既然已经化解了危机，暂时还是不要进去了，世界树的门是不能轻易开启的，我们会尽快把它修复好。" />
+					<Option Info="好，那我先走了。" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11804,1" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11808" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11805" />	
+    		</Event>				
+																															
+    		<Event ConditionType="OUT" Memo="战胜偷袭世界树的c剧毒蜂皇c" TargetMap="11805" TargetObj="11807" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11807" TaskOption="…剧毒蜂皇…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="破坏我偷袭世界之树的计划，实在不可饶恕！小摩尔，受死吧！！" />								
+					<Option Info="来战吧！" />
+					<Option Info="先准备一下" NextStep="5" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="2015"/>										
+    		</Event>
+		</Step>			
+				
+	</Procedure>
+</Task>

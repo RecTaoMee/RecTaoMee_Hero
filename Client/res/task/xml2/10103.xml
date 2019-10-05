@@ -1,0 +1,31 @@
+<Task ID="10103" Memo="勇士广场的副本管理员c薇尔c好像有事需要你帮助，快去看看吧！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的副本管理员c薇尔c好像有事需要你帮助，快去看看吧！" TargetMap="11202" TargetObj="319" TargetName="和t薇尔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="319" TaskOption="有啥事？薇尔" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1001" ImageID="1" Info="你已到达30级，可以挑战【月之宫殿】副本了哦！对了，听说植物系精灵雪绒草被关在月之宫殿密室，你可以前去寻找吗？" />
+					<Option Info="没有问题！" />
+					<Msg NpcID="1001" ImageID="1" Info="但是要注意哦，月之宫殿的开启时间为：周1-周5每天12-13/19-21点，周日6-周日每天13-15点/20-21点，“雪绒草”被困在月之宫殿的密室，需要通过前殿、正殿、后殿才能到达密室哦！" />				
+					<Option Info="清楚啦！"  />			
+					<Msg NpcID="1001" ImageID="1" Info="【月之宫殿】现在可以获得35、40级装备合成配方哦，但里面有众多月饼怪防守，你要小心。" />
+					<Option Info="不辱使命！" />					
+				</Action>	
+			</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="在【月之宫殿】开启时间范围内，通过副本关卡，进入密室，与c雪绒草c对话！" TargetMap="41211" TargetObj="" TargetName="去t月宫前殿t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="41214" ObjID="318" TaskOption="小家伙！？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="723" ImageID="1" Info="咦？你来救我的吗？真好，我再也不贪玩了，呜呜……" />
+					<Option Info="以后可要听话哦~" />
+				</Action>				
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

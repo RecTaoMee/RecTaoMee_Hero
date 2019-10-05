@@ -1,0 +1,23 @@
+<task id="3">
+	<taskDes>
+		<![CDATA[体力恢复咯！精神百倍！琪琪姐姐好像有什么话要和我说呢。【和琪琪姐姐聊聊吧！】]]>
+	</taskDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="6" title="谢谢琪琪姐姐"  action="0" needRes="" needResNum="" resID="" resNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="6" title="谢谢琪琪姐姐" action="1" needRes="" needResNum="" resID="130001,130002,130003,130004" resNum="1,1,1,1" unResAction="" />
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="6" answer="好！" to="s1">
+			<des>
+				<![CDATA[2#你看，又活蹦乱跳了^^$$]]>
+				<![CDATA[1#以后如果在战斗中消耗了体力，记得来我这里进行全面的【恢复】啊！]]>																						
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="6" answer="谢谢琪琪姐姐！" to="c" nextTask="4_0">
+			<des>
+				<![CDATA[4#不知道为什么最近精灵们会攻击摩尔，给大家的生活带来了很大困扰…………以前不是这样的……$$]]>	
+				<![CDATA[1#对了这些是我自己做的衣服。这些装备可以保护你！希望你能收下!]]>																						
+			</des>
+		</proAction>
+	</actions>
+</task>

@@ -1,0 +1,36 @@
+<!--
+	%NICKNAME% 可以替换玩家自己的昵称
+eg:
+	<e ID="" Desc="%NICKNAME%很高兴，哈哈 。。" />
+
+-->
+<emotion>
+	<e ID="e0" Desc="%NICKNAME%开心地笑了笑！" />
+	<e ID="e1" Desc="%NICKNAME%哼着小曲儿！" />
+	<e ID="e2" Desc="%NICKNAME%直冒冷汗！" />
+	<e ID="e3" Desc="%NICKNAME%快睡着了！" />
+	<e ID="e4" Desc="%NICKNAME%感到十分震惊！" />
+	<e ID="e5" Desc="%NICKNAME%无聊地转了转眼睛……" />
+	<e ID="e6" Desc="%NICKNAME%吸了吸鼻子！" />
+	<e ID="e7" Desc="%NICKNAME%非常感动！" />
+	<e ID="e8" Desc="%NICKNAME%伤心地哭了！" />
+	<e ID="e9" Desc="%NICKNAME%咬牙切齿！" />
+	<e ID="e10" Desc="%NICKNAME%铁青着脸……" />
+	<e ID="e11" Desc="%NICKNAME%吐了吐舌头！" />
+	<e ID="e12" Desc="%NICKNAME%表示非常疑惑！" />
+	<e ID="e13" Desc="%NICKNAME%摆了个很酷的Pose！" />
+	<e ID="e14" Desc="%NICKNAME%贪婪地流着口水……" />
+	<e ID="e15" Desc="%NICKNAME%非常健康，不需要治疗！" />
+	<e ID="e16" Desc="%NICKNAME%受伤了，需要赶快治疗！" />
+	<e ID="e17" Desc="%NICKNAME%准备好了，随时接受挑战！" />
+	<e ID="e18" Desc="%NICKNAME%需要补充HPMP！" />
+	<e ID="e19" Desc="%NICKNAME%表示完全没有问题！" />
+	<e ID="e20" Desc="%NICKNAME%请求帮助！" />
+	<e ID="e21" Desc="%NICKNAME%★星豆多多★" />
+	<e ID="e22" Desc="%NICKNAME%^0^快来组队！加+加+加+^0^" />
+	<e ID="e23" Desc="%NICKNAME%o(≧v≦)o加油！" />
+	<e ID="e24" Desc="%NICKNAME%快【防御】！" />
+	<e ID="e25" Desc="%NICKNAME%快快快！GoGoGo!" />	
+	<e ID="e26" Desc="%NICKNAME%快喝生命之息补充HP！" />
+	<e ID="e27" Desc="%NICKNAME%快【救赎】我(ㄒoㄒ)/~!" />		
+</emotion>

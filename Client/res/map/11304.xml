@@ -1,0 +1,45 @@
+<!--魔-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<transport intPos="145,340">
+		 <node id="1" pos="174,283" targetMapId="11302" targetTransPortId="4"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_magicHandBook" module="MagicBookModule"/>
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="27" type="NPC" res="MC_npc_27" action="0$4$3"/>
+	</npc>
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<actions>
+		<proAction npcID="27" id="0" type="0" answer="【学习技能】$魔法师体验$摩尔勇士万岁！" to="b9_27$a1$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[2#魔法无处不在……]]>
+			</des>
+		</proAction>
+		<proAction npcID="27" id="1" type="0" answer="准备好了！" to="a2" >
+			<des>
+				<![CDATA[2#魔法的力量会让你浑身颤抖……做好心理准备了吗，拿上【练习法杖】我们开始吧！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="1" outMap="1" level="taskLevel" name="skill_3" moviepos="0,0"  to="o"/>
+		<proAction npcID="27" id="3" type="0" answer="【学习技能】$魔法师体验$摩尔勇士万岁！" to="b9_27$a1$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[2#努力积累战斗【经验】，提升【等级】，获得【努力值】————是提高自己实力的修炼之路。]]>
+			</des>
+		</proAction>
+		<proAction npcID="27" id="4" type="0" answer="【学习技能】$魔法师体验$摩尔勇士万岁！" to="b9_27$a1$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[2#每个魔法师都期待学会【新技能】，但在那之前必须要付出很大的努力！]]>
+			</des>
+		</proAction>
+		<proAction npcID="27" id="5" type="0" answer="我准备好了！$以后再说吧。" to="a6$o" colorID="0$0" >
+			<des>
+				<![CDATA[2#让我看看你的实力吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="27" id="6" type="5" fightID="3001" />
+	</actions>
+</map>

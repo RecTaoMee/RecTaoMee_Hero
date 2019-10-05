@@ -1,0 +1,41 @@
+<!--平原六区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="724,74" targetMapId="21305" targetTransPortId="2" name="平原五区"/>
+		<node id="2" pos="414,997" targetMapId="11603" targetTransPortId="1" level="15_a2" name="弗雷基港"/>
+		<node id="3" pos="1496,600" targetMapId="21308" targetTransPortId="1" name="平原八区"/>
+		<node id="4" pos="132,105" targetMapId="21307" targetTransPortId="1" name="平原七区"/>		
+		
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<!-- alpTaskID:完成某任务某【节点】 npc出现 ★不仅限该任务中，需要在npc里配visible="0"-->
+		<!-- compTaskID 完成某任务某【节点】 npc消失 ★不仅限该任务中，任务完成了npc就不在了-->	
+		<!-- disTaskID 完成某任务某【步骤】 npc消失 ★仅限该任务中-->
+		<node id="329" type="NPC" res="MC_npc_329" alpTaskID="27_4" action="0"/>		
+
+		<!-- 战胜后↑-->			
+		<node id="314" type="NPC" res="MC_npc_314" action="0$1"/>		
+		<!-- 战胜前↑-->	
+	</npc>
+	<actions>
+		<proAction npcID="314" id="0" type="0" answer="要星豆没有要HP一条！" to="o" >
+			<des>
+				<![CDATA[1#YOU（你） YOU（你） YOU（你） ！\n想过去的都把星豆留下！]]>
+			</des>
+		</proAction>
+	    <proAction npcID="314" id="1" type="0" answer="打劫万岁！" to="o" >
+			<des>
+				<![CDATA[1#YOU（你） and（和）ME（我们）~~\n带着口罩一起抢遍格历尔平原——]]>
+			</des>
+		</proAction>
+	</actions>		
+</map>
+

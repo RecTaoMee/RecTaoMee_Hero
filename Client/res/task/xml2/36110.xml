@@ -1,0 +1,39 @@
+<Task ID="36110" Memo="这次的委托任务是什么呢？快点去勇士广场问问占卜师c乔依c吧？" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="这次的委托任务是什么呢？快点去勇士广场问问占卜师c乔依c吧？" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="乔依的委托" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="我缺一些占卜用的材料，【生命之息II】可用来增强水晶球的灵力，你可以帮我找一瓶过来吗？" />
+					<Option Info="好的" />
+				</Action>
+			</Event>
+		</Step>
+	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="210003" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快回去找占卜师c乔依c吧！" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="达成目标" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="这么快就回来了，谢谢你啦！ " />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="麦田村的贝塔商会移动分店似乎正在出售c生命之息IIc，赶快过去看看！" TargetMap="11401" TargetObj="" TargetName="购买t生命之息IIt">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="榆木哪里有？" /><!--无法触发-->
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="听说贝塔商会道具店那里可以买到榆木，你去那边看看吧！" />
+					<Option Info="嗯！" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

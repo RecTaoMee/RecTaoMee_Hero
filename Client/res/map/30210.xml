@@ -1,0 +1,20 @@
+<!--剧毒蜂皇Boss领域-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="860,608">
+		<node id="1" pos="352,500" targetMapId="11202" targetTransPortId="0" name="打完BOSS离开" confirm="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="381" type="NPC" res="MC_npc_381" level="contentLevel" action="1" />
+	</npc>
+	<actions>
+		<proAction npcID="997" id="1" type="0" answer="切…你等着$折断你的针" to="o$a2" colorID="0$1" >
+			<des>
+				<![CDATA[1#基姆大人送我的这只针真漂亮！来，让我蛰一下吧，一点都不疼的。^_^]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="5" fightID="2511" />
+	</actions>
+</map>

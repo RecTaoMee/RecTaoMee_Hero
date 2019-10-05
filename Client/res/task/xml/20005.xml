@@ -1,0 +1,68 @@
+<task id="20005">
+	<taskDes>
+		<![CDATA[你的心里装着秘密的小愿望吗？前往王国的【女神大圣堂】祈祷吧，让女神的智慧指引你^_^。$$]]>
+		<![CDATA[得到【女神大圣堂】大祭司【铃】的允许就可以向女神祈祷了。$$]]>
+		<![CDATA[站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+	    <pro type="0" parent="" npcID="102" title="我想祈祷" action="0" taskDes="1" mapID="11217"/>
+		<pro type="3" parent="0" mapID="11217" name="task_20005_1" level="upLevel" point="0,0" action="1" taskDes="1"/>
+	    <pro type="0" parent="0" npcID="102" title="怎样祈祷" action="9" needRes="" needResNum="" unResAction="" taskDes="2" mapID="11217"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="102" answer="好的" to="so">
+			<des>
+				<![CDATA[1#祈祷是让心情平静的好方式，记得常来祈祷啊^_^。那么请站在彩色窗前我们一起用共鸣召唤女神的意志————]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="2" answer="成为最强的摩尔勇士$每次战斗都能胜利$知道世界上所有的事$可以让小精灵更喜欢我吗$请让大家都幸福$我只想告诉你，我喜欢你" to="a2$a3$a4$a5$a6$a7">
+			<des>
+				<![CDATA[1#在我听过的无数个愿望里，人们最想要的是时间。那么，你——亲爱的摩尔，什么是你真正的愿望？]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#有志气是一个不错的开始。$$]]>
+				<![CDATA[1#向着自己的目标坚持下去吧，我期待看到你的努力————]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#成为真正令人尊敬的对手，要比获得胜利的荣誉更值得骄傲，不是吗^^？]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#虽然无穷无尽的知识让人着迷，但亲身经历的那些不可替代的感受才真的更可贵。请用心去享受属于你的独一无二的冒险————]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#请原谅，即使是神也必须尊重精灵自己的心意。不过你可以相信，真心喜欢精灵的人一定也会被精灵们喜欢的^^————]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#这也是我的愿望呢。不过人们对幸福的期望各不相同，即使是我也没有办法猜想到……$$]]>
+				<![CDATA[1#但我可以告诉你，真正的幸福可以通过自己的双手去创造，请把这个转告给大家————]]>
+			</des>
+		</proAction>
+		<proAction id="7" type="0" npcID="2" answer="女神再见" to="c">
+			<des>
+				<![CDATA[1#谢谢你的鼓励，人和神都需要来自别人的鼓励，无论听多少次都觉得很开心^^……]]>
+			</des>
+		</proAction>
+		<proAction id="8" type="0" npcID="2" answer="得到很多星豆$什么时候可以升级$怎样让时空门更稳定$怎样能成为神$通过考试$我只想告诉你，我喜欢你" to="a2$a3$a4$a5$a6$a7">
+			<des>
+				<![CDATA[1#在我听过的无数个愿望里，人们最想要的是时间。那么，你——亲爱的摩尔，什么是你真正的愿望？]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="0" npcID="102" answer="好的" to="o">
+			<des>
+				<![CDATA[1#祈祷是让心情平静的好方式，记得常来祈祷啊^_^。那么请站在彩色窗前我们一起用共鸣召唤女神的意志————]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

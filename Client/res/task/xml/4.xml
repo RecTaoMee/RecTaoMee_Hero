@@ -1,0 +1,47 @@
+<task id="4">
+	<taskDes>
+		<![CDATA[得到了有趣的衣服，【先去谢谢琪琪姐姐吧O(∩_∩)O！】]]>
+	</taskDes>
+	<taskPro>
+		<pro type="2" parent="" mapID="11104" action="0" />
+		<pro type="0" parent="" npcID="6" title="谢谢你的衣服！" action="0" needRes="" needResNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="6" action="1" title="谢谢你的衣服！" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="6" answer="好的" to="s1">
+			<des>
+				<![CDATA[2#本来是做给皮皮克克的，放在你的【旅行箱】里了，快穿上看看合不合身吧！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="6" answer="我是从未来来的摩尔" to="a2">
+			<des>
+				<![CDATA[1#不过你是哪里的小摩尔？好像不是我们村的人呢。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="6" answer="嗯，摩尔庄园！" to="a3">
+			<des>
+				<![CDATA[9#！来自未来？！！$$]]>
+				<![CDATA[9#你真的是来自未来的摩尔？？]]>
+			</des>
+		</proAction>			
+		<proAction id="3" type="0" npcID="6" answer="⊙-⊙好吧" to="a4">
+			<des>
+				<![CDATA[7#【神谕】说的没错呢……$$]]>
+				<![CDATA[7#是你的话一定可以帮助我们吉普豆村！$$]]>	
+				<![CDATA[7#可以的话请你去见见我们的村长吧！]]>				
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="6" answer="找队长$找船长$忘记了" to="a5$a5$a5">
+			<des>
+				<![CDATA[1#提问时间到了——你知道现在要去做什么吗？]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="1" outMap="1" level="taskLevel" name="task_2_1" moviepos="0,0" to="a6"/>
+		<proAction id="6" type="0" npcID="6" answer="我这就去找村长" to="c">
+			<des>
+				<![CDATA[2#要做的事情都会自动记录在笔记本里，再健忘也不怕了！$$]]>
+				<![CDATA[1#【村长】就在隔壁的土豆屋里，请快去见见他吧!]]>
+			</des>
+		</proAction>		
+	</actions>
+</task>

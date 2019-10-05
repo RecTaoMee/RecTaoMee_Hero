@@ -1,0 +1,1460 @@
+<!--Errors
+	cmd：协议号
+	result：错误代码
+	info：错误提示信息
+	type：显示错误码的框类型，0表示BaseAlert，1表示Alert，2表示InfoBox，3表示不提示
+-->
+	
+<Errors defaultAlertType="1">
+	<Error cmd="0">
+		<node result="200000" info="遇到未知乱流干扰！" /> <!-- 未知的错误 -->
+		<node result="200006" info="时空连接断开！" /> <!-- 内部服务器断开 -->
+		<node result="200012" info="女神繁忙，请稍等^_^！" />  <!-- 服务器忙 -->
+		<node result="101001" info="神领域出错！" /> <!-- 数据库系统出错 -->
+		<node result="101002" info="神领域出错！" /> <!-- 数据库系统出错 -->
+		<node result="101003" info="神网络出错！" /> <!-- 数据库网络出错 -->
+		<node result="101017" info="地球网络超时！" />   <!-- 网络超时 -->
+		<node result="200005" info="战斗领域断开！" />   <!-- 对战服务器断开 -->
+		<node result="104373" info="摩尔王国是诚信之地，加速、外挂者请慎重。" />   <!-- 对战服务器断开 -->
+	</Error>
+
+	<Error cmd="1001">
+		<node result="200001" info="登录验证失败！" />
+		<node result="200007" info="你的米米号已在其它地方登录！" /> <!-- 你的帐号已在其它地方登录！ -->
+		<node result="101105" info="荣耀时代不存在这个摩尔！" /> <!-- 该用户信息不存在 -->
+	</Error>
+	
+	<!-- 用户跨场景 1004 -->
+	<Error cmd="1004">
+		<node result="200200" info="星豆不足，无法传送！" alertType="2"/>
+		<node result="200159" info="没有钥匙，无法进入！" alertType="2"/>
+		<node result="200310" info="你已在这里了O(∩_∩)O！" alertType="2"/>
+		<node result="200312" info="你没有登记过陆行鸟注册点！" alertType="2"/>
+		<node result="200311" info="地图入口不存在！" alertType="2"/> <!-- 属性点不合法 -->
+		<node result="200003" info="队长已经离开！" alertType="2"/> <!-- 队长已经离线 -->
+		<node result="200060" info="与队长不在同一地图！" alertType="2"/> <!-- 与队长不在同一地图 -->
+		<node result="200066" info="请等待其他队员结束战斗！" alertType="2"/>
+		<node result="200109" info="需要完成指定任务才能传送哦！" alertType="2"/>
+		<node result="200066" info="请等待其他队员结束战斗！" alertType="2"/>
+		<node result="200067" info="请等待对战结束！" alertType="2"/>
+		<node result="200315" info="不通过考验是无法进入的哦！" alertType="2"/>
+		<node result="200204" info="等级不足，无法进入！" alertType="2"/>
+	</Error>
+	
+	<!-- 拉取用户简单资料 1005 -->
+	<Error cmd="1005">
+		<node result="101105" info="数据库错误！" alertType="2"/>
+	</Error>
+
+	<!-- 用户走路 1009 -->	
+	<Error cmd="1009">
+		<node result="200013" info="无法移动到该位置！" alertType="2"/>
+		<node result="200052" info="不是队长无法带领队伍移动哦！" alertType="2"/>
+	</Error>
+	
+	<!-- 用户发言 1010 -->
+	<Error cmd="1010">
+		<node result="200008" info="请不要使用“禁语”！" alertType="2"/>
+		<node result="200015" info="等待片刻才能再次使用世界频道发言！" alertType="2"/>
+		<node result="200200" info="星豆不足，无法使用世界频道发言！" alertType="2"/>
+		<node result="200159" info="小喇叭不够！" alertType="2"/>
+		<node result="200314" info="不在交易大厅中" alertType="2"/>
+	</Error>
+	
+	<!-- 用户注册 1015 -->
+	<Error cmd="1015">
+		<node result="200009" info="来自未来的摩尔已在荣耀时代登记过咯！" isStage="1"/> <!-- 用户已经注册过信息 -->
+		<node result="200010" info="请不要使用非法方式分配努力值！" isStage="1"/> <!-- 属性点不合法 -->
+		<node result="200151" info="请不要使用未知来源的物品！" isStage="1"/> <!-- 物品（水晶）ID不正确 -->
+		<node result="200008" info="请不要使用“禁语”！" isStage="1"/>   <!-- 你使用了非法语言！ -->
+	</Error>
+	
+	<!-- 新手任务标志 1017 -->
+	<Error cmd="1017">
+		<node result="200011" info="你已经完成了新手任务O(∩_∩)O！" isStage="1"/> <!-- 新手任务已完成过 -->
+		<node result="101105" info="该米米号存在！" isStage="1"/>
+	</Error>
+	
+	<!-- 非法语言验证 1018 -->
+	<Error cmd="1018">
+		<node result="200008" info="请不要使用“禁语”！" isStage="1"/>
+	</Error>
+	
+	<!-- 填写就职报名卡 1019 -->
+	<Error cmd="1019">
+		<node result="200008" info="请不要使用“禁语”！" />
+		<node result="200205" info="你已经加入过职业协会咯(∩_∩)！" /> <!-- 你已经就职过了！ -->
+		<node result="200206" info="荣耀时代没有这个职业协会存在！" />
+	</Error>
+	
+	<!-- 修改用户昵称 1023 -->
+	<Error cmd="1023">
+		<node result="200008" info="请不要使用“禁语”！" />
+		<node result="101105" info="荣耀时代不存在这个摩尔" /> <!-- 用户不存在！ -->
+	</Error>
+	
+	<!-- 修改用户签名 1024 -->
+	<Error cmd="1024">
+		<node result="200008" info="请不要使用“禁语”！" />
+		<node result="101105" info="该用户信息不存在！" /> <!-- 该用户信息不存在 -->
+		<node result="200010" info="剩余努力属性点为0，无法分配！" />
+	</Error>
+	
+	<!-- 人物治疗 1025 -->
+	<Error cmd="1025">
+		<node result="200203" info="十分健康，无需治疗O(∩_∩)O！" alertType="2"/>
+		<node result="200200" info="星豆不足，无法治疗！" alertType="2"/>
+		<node result="101105" info="用户信息不存在！" />
+		<node result="200314" info="防外挂！" alertType="3"/>
+		
+	</Error>
+	
+	<!-- 人物配点 1027 -->
+	<Error cmd="1027">
+		<node result="200010" info="努力值没有生效！" /> <!-- 属性点无效！ -->
+		<node result="101105" info="荣耀时代不存在这个摩尔！" /> <!-- 用户不存在！ -->
+	</Error>
+	
+	<!-- 设置配点教程标志位,登陆领取 1031 -->
+	<Error cmd="1031">
+		<node result="200160" info="背包已满" alertType="2"/>
+	</Error>
+	
+	<!-- 经验树分配经验 1036 -->
+	<Error cmd="1036">
+		<node result="200014" info="经验树存储的经验不足！" alertType="2"/>
+		<node result="200015" info="可分配的经验已达上限！" alertType="2"/>
+	</Error>
+	
+	<!-- 经验树分配经验 1042 -->
+	<Error cmd="1042">
+		<node result="104369" info="抽奖次数已到达今日上限！" alertType="2"/>
+	</Error>
+	
+	<!-- 勇士杯报名 -->
+	<Error cmd="1044">
+		<node result="104372" info="这个队伍人数太多了,换个队伍吧！" alertType="2"/>
+		<node result="104374" info="你已经报过名了,快去比赛吧！" alertType="2"/>
+		<node result="200510" info="本期勇士杯已经结束了，请等待下期开始吧！" alertType="2"/>
+	</Error>
+	
+	<!-- 反馈别人的邀请 1052 -->
+	<Error cmd="1052">
+		<node result="103103" info="黑名单用户，无法接受邀请！" alertType="2"/>
+		<node result="103105" info="你的好友已达到上限，无法接受邀请！" alertType="2"/>
+	</Error>
+	
+	<!-- 删除好友 1053 -->
+	<Error cmd="1053">
+		<node result="103104" info="不存在想要删除的这个好友！" alertType="2"/>
+	</Error>
+	
+	<!-- 申请拜师招徒 1060 -->
+	<Error cmd="1060">
+		<node result="200024" info="最多只能同时拜3位师傅哦！" alertType="2"/>
+		<node result="200025" info="最多只能同时招收1位徒弟哦！" alertType="2"/>
+		<node result="104364" info="对方师徒人数已达上限！" alertType="2"/>
+	</Error>
+	
+	<!-- 接受拜师招徒 1061 -->
+	<Error cmd="1061">
+		<node result="104363" info="师徒标志不匹配"/>
+		<node result="104364" info="对方师徒人数到达上限！" alertType="2"/>
+		<node result="104368" info="等级不符，无法建立师徒关系！" alertType="2"/>
+		<node result="200024" info="对方已经有3位师傅啦！" alertType="2"/>
+		<node result="200025" info="对方已经招收了1位徒弟！" alertType="2"/>
+		<node result="200204" info="等级不符，无法建立师徒关系！" alertType="2"/>
+	</Error>
+	
+	<!-- 解除师徒关系 1062 -->
+	<Error cmd="1062">
+		<node result="200019" info="今日无法解除师徒关系！" alertType="2"/>
+	</Error>
+	
+	<!-- 师徒值兑换奖励 1065 -->
+	<Error cmd="1065">
+		<node result="200015" info="角色等级已达上限，无法兑换经验！" alertType="2"/>
+	</Error>
+	
+	<!-- 宝石合成 1069 -->
+	<Error cmd="1069">
+		<node result="200160"	info="旅行箱已满，不能再合成宝石，请及时清理！" alertType="2"/>
+	</Error>
+	
+	<!-- 购买装备 1101 -->
+	<Error cmd="1101">
+		 <node result="200162"  info="装扮类型ID或等级无效！" alertType="2"/> <!-- 装扮类型ID或等级无效！ -->
+		 <node result="200153"	info="装备缺货，无法购买！" alertType="2"/> <!-- 该装扮无法购买！ -->
+		 <node result="200200"	info="星豆不足，无法购买！" alertType="2"/>
+		 <node result="200160"	info="旅行箱已满，请及时清理！" alertType="2"/>
+		 <node result="103108"	info="糟糕，装备没能穿上！" alertType="2"/>  <!-- 装扮插入数据库不成功！ -->
+	</Error>
+	
+	<!-- 删除装备 1104 -->
+	<Error cmd="1104">
+		<node result="103107" info="该装备不存在！" alertType="2"/>
+		<node result="200161" info="不能丢弃身上的装备！" alertType="2"/> <!-- 已穿装备无法丢弃！ -->
+		<node result="200314" info="无法丢弃装备！" alertType="2"/>
+	</Error>
+	
+	<!-- 更换身上装备 1105 -->
+	<Error cmd="1105">
+		<node result="200162" info="装备ID或等级无效！" alertType="2"/>
+		<node result="200158" info="人物等级或职业不符！" alertType="2"/>
+		<node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="101015" info="装备不存在！" alertType="2"/>
+		<node result="200204" info="人物等级或职业不符，无法装备！" alertType="2"/>
+		<node result="200163" info="装备非法！"/> <!-- 装扮ID无效！-->
+		<node result="200164" info="装备不存在！"/> <!-- 装扮ID无效！-->
+	</Error>
+	
+	<!-- 购买物品 1108 -->
+	<Error cmd="1108">
+		  <node result="200151" info="物品ID无效！" alertType="2"/>
+		  <node result="200152" info="物品数量已达上限！" alertType="2"/>
+		  <node result="200153" info="无法购买该物品！" alertType="2"/>
+		  <node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		  <node result="200200" info="星豆不足，无法购买！" alertType="2"/>
+		  <node result="101105" info="米米号不存在！" alertType="2"/>
+	</Error>
+	
+	<!-- 获取物品区间 1110 -->
+	<Error cmd="1110">
+		<node result="200150" info="物品ID区间值无效！" />
+	</Error>
+	
+	<!-- 出售装备 1111-->
+	<Error cmd="1111">
+		<node result="200163" info="该装备不存在！" alertType="2"/>
+		<node result="200162" info="装备ID无效！" alertType="2"/>
+		<node result="200154" info="该装备无法出售！" alertType="2"/>
+		<node result="101105" info="米米号不存在！" alertType="2"/>
+		<node result="200314" info="当前场景内无法出售装备给NPC！" alertType="2"/>
+	</Error>
+	
+	<!-- 出售物品 1112-->
+	<Error cmd="1112">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200154" info="该物品无法出售！" alertType="2"/>
+		<node result="101105" info="米米号不存在！" alertType="2"/>
+		<node result="103121" info="旅行箱中没有该物品！" alertType="2"/>
+		<node result="103122" info="旅行箱中该物品数量不足！" alertType="2"/>
+		<node result="200314" info="当前场景内无法出售物品给NPC！" alertType="2"/>
+	</Error>
+	
+	<!-- 删除物品 1113-->
+	<Error cmd="1113">
+		  <node result="200151"	info="物品ID无效！" alertType="2"/>
+		  <node result="200156"	info="该物品无法丢弃！" alertType="2"/>
+		  <node result="103121"	info="旅行箱中没有该物品！" alertType="2"/>
+		  <node result="103122"	info="旅行箱中该物品数量不足！" alertType="2"/>
+		  <node result="200314" info="无法删除物品！" alertType="2"/>
+	</Error>
+	
+	<!-- 使用物品 1114-->
+	<Error cmd="1114">
+		<node result="200003" info="对方已离线！" alertType="2"/>
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200159" info="没有该物品！" alertType="2"/>
+		<node result="200203" info="无需使用该物品！" alertType="2"/>
+		<node result="200258" info="对方不在队伍中！" alertType="2"/>
+		<node result="200058" info="对方不在队伍中！" alertType="2"/>
+		<node result="200155" info="物品无法使用！" alertType="2"/>
+		<node result="200056" info="正在战斗中！" alertType="2"/>
+		<node result="200306" info="你没有随身携带该宠物！" alertType="2"/>
+	</Error>
+	
+	<!-- 属性点重置  1115 -->
+	<Error cmd="1115">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200159" info="没有该物品！" alertType="2"/>
+		<node result="200306" info="宠物不在背包中！" alertType="2"/>
+		<node result="101105" info="米米号不存在！" alertType="2"/>
+		<node result="200016" info="需要重置的努力值已达上限，无法增加！" alertType="2"/>
+		<node result="200017" info="需要重置的努力值已达下限，无法减少！" alertType="2"/>
+		<node result="200204" info="等级不符合要求，无法使用该道具！" alertType="2"/>
+		<node result="200205" info="当前无需重置努力值！" alertType="2"/> 
+	</Error>
+	
+	<!-- 登录图鉴 1116 -->
+	<Error cmd="1116">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200159" info="没有该物品！" alertType="2"/>
+		<node result="104342" info="该图鉴已登录，无需再次使用！" alertType="2"/>
+		<node result="104343" info="怪物信息已登录，无需再次使用图鉴！" alertType="2"/> 
+	</Error>
+	
+	<!-- 放烟花 1117 -->
+	<Error cmd="1117">
+		<node result="200019" info="当前时间无法使用烟花！" alertType="2"/>
+		<node result="200023" info="当前时间无法使用烟花！" alertType="2"/>
+		<node result="200159" info="该物品不足，无法使用！" alertType="2"/>
+		<node result="200352" info="今日可使用的次数已达上限！" alertType="2"/>
+	</Error>
+	
+	<!-- 检查队伍钥匙 1118 -->
+	<Error cmd="1118">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+	</Error>
+	
+	<!-- 修理装备 1119 -->
+	<Error cmd="1119">
+		<node result="200164" info="该装备不存在！" alertType="2"/>
+		<node result="200165" info="该装备不需要修理！" alertType="2"/>
+		<node result="200163" info="装备ID无效！" alertType="2"/>
+		<node result="200200" info="你的星豆不足，无法修理！" alertType="2"/>
+	</Error>
+	
+	<!-- 仓库取出放入物品 1123 -->
+	<Error cmd="1123">
+		<node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200159" info="旅行箱中该物品数量不足！" alertType="2"/>
+		<node result="104348" info="储物箱中该物品数量不足！" alertType="2"/>
+	</Error>
+	
+	<!-- 仓库取出放入装备 1124 -->
+	<Error cmd="1124">
+		<node result="200166" info="该装备已在旅行箱中！" alertType="2"/>
+		<node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200164" info="该装备不在旅行箱中！" alertType="2"/>
+	</Error>
+	
+	<!-- 删除仓库物品 1125 -->
+	<Error cmd="1125">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200156" info="该物品无法删除！" alertType="2"/>
+		<node result="103121" info="旅行箱中没有该物品！" alertType="2"/>
+		<node result="103122" info="旅行箱中该物品数量不足！" alertType="2"/>
+	</Error>
+	
+	<!-- 物品合成 1126 -->
+	<Error cmd="1126">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200167" info="该物品无法合成！" alertType="2"/>
+		<node result="200159" info="旅行箱中该物品数量不足！" alertType="2"/>
+		<node result="200021" info="精力值不够，请休息一会补充精力（在线可自动回复精力值）" alertType="2"/>
+	</Error>
+	
+	<!-- 礼包兑换 1127 -->
+	<Error cmd="1127">
+		<node result="200151" info="该物品无法使用！" alertType="2"/>
+		<node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200159" info="该物品已使用过！" alertType="2"/>
+		<node result="200204" info="等级不足，无法使用！" alertType="2"/>
+		<node result="200178" info="钥匙不足！" alertType="2"/>
+	</Error>
+	
+	<!-- 兑换物品 1128 -->
+	<Error cmd="1128">
+		<node result="200169" info="兑换物品无效！" alertType="2"/>
+		<node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200159" info="旅行箱中兑换道具不足！" alertType="2"/>
+		<node result="200204" info="等级不足，无法兑换！" alertType="2"/>
+		<node result="200502" info="荣誉不足，无法兑换！" alertType="2"/>
+		<node result="200457" info="周六周日的遗迹碎片兑换活动还未开启，请14:30准时前来参加" alertType="2"/>
+		<node result="200351" info="该物品的兑换数量已达上限！" alertType="2"/>
+		<node result="200152" info="兑换物品的数量不正确！" alertType="2"/>
+		<node result="200000" info="装备信息不存在！" alertType="2"/>
+	</Error>
+	
+	<!-- 使用礼包 1129 -->
+	<Error cmd="1129">
+		<node result="200170" info="今日获得的荣誉已达上限，请明天再试！" />
+		<node result="200159" info="你的荣誉兑换券不足，无法获得荣誉！" alertType="2"/>
+		<node result="200015" info="角色等级已达上限，无法打开获得经验！" alertType="2"/>
+		<node result="200177" info="无法批量打开物品！" alertType="2"/>
+	</Error>
+	
+	<!-- 兑换宠物 1130 -->
+	<Error cmd="1130">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200305" info="宠物背包已满，请及时整理！" alertType="2"/>
+		<node result="200159" info="兑换物品不足，无法获得宠物！" alertType="2"/>
+		<node result="200204" info="等级不足，无法兑换！" alertType="2"/>
+		<node result="200020" info="只有超时空勇士才能孵化这个精灵蛋！" alertType="2"/>
+	</Error>
+	
+	<!-- 装备合成 1131 -->
+	<Error cmd="1131">
+		<node result="200163" info="物品ID无效！" alertType="2"/>
+		<node result="200167" info="该装备无法合成！" alertType="2"/>
+		<node result="200160" info="旅行箱已满，请及时清理！" alertType="2"/>
+		<node result="200200" info="星豆不足，无法合成！" alertType="2"/>
+		<node result="200159" info="材料不足，无法合成！" alertType="2"/>
+		<node result="200021" info="精力值不够，请休息一会补充精力（在线可自动回复精力值）" alertType="2"/>
+	</Error>
+	
+	<!-- 孵蛋 1133 -->
+	<Error cmd="1133">
+		<node result="200159" info="你的旅行箱中已经没有需要孵化的精灵蛋了。" alertType="2"/>
+	</Error>
+	
+	<!-- 使用道具 1139 -->
+	<Error cmd="1139">
+		<node result="200021" info="已经处于疲劳状态，无法再使用经验丸。" alertType="2"/>
+		<node result="200022" info="已经激活了3倍经验时间，无需再使用经验丸。" alertType="2"/>
+		<node result="200352" info="使用的次数已达上限。" alertType="2"/>
+	</Error>
+	
+	<!-- 接受任务 1151 -->
+	<Error cmd="1151">
+		<node result="103117" info="已达可接任务上限！" /> <!-- 已达该类可接任务上限 -->
+		<node result="103118" info="今天的任务重复次数已达上限了！" /> 
+		<node result="103115" info="已经接受了这个勇敢的任务！" /> <!-- 任务已接 -->
+		<node result="103116" info="这个任务已经完成了O(∩_∩)O！" />   <!-- 该任务已经完成 -->
+		<node result="103120" info="还有任务没完成，暂时不能接取这个任务" /> <!-- 依赖的父任务没有完成 -->
+		<node result="103114" info="遭到一次【DB】偷袭！" /> <!-- DB错误 -->
+		<node result="103122" info="任务物品已存在" /> <!-- 任务物品已存在 -->
+		<node result="200101" info="没有这个任务，我保证(@_@)b！" />   <!-- 任务ID无效 -->
+		<node result="200204" info="等级还不够啊……" />
+		<node result="200158" info="职业或职业等级不符合要求！" />
+		<node result="200107" info="还有任务没完成，暂时不能接取这个任务！"/> <!-- 依赖的父任务没有完成 -->
+		<node result="200110" info="这个任务已经完成了O(∩_∩)O！" />   <!-- 任务已经完成 -->
+		<node result="200111" info="今天的任务重复次数已达上限了！" />   <!-- 任务重复次数上限 -->
+		<node result="200112" info="你领取的任务太多了，先去完成一些吧！" /> <!-- 在接任务数量上限 -->
+	</Error>
+
+	<!-- 完成任务 1152 -->
+	<Error cmd="1152">
+		<node result="200101" info="没有这个任务" /> <!-- 任务ID无效 -->
+		<node result="200102" info="无效选项" /> <!-- 任务选项ID无效 -->
+		<node result="200107" info="任务未接或已完成！" alertType="2"/> <!-- 任务未接 -->
+		<node result="200108" info="任务奖励被【DB】抢走了！" />  <!-- 添加任务奖励时出错 -->
+		<node result="103119" info="任务未接或已完成！" alertType="2"/>
+		<node result="200305" info="宠物背包已满" />
+		<node result="200160" info="旅行箱已满" />
+		<node result="103122" info="旅行箱中该物品不足！" /> <!-- 包裹中该物品不足 -->
+		<node result="104331" info="单种物品数达到上限" />
+	</Error>
+	
+	<!-- 设置AS任务BUFFER 1154 -->
+	<Error cmd="1154">
+		<node result="101002" info="设置BUFF，后台数据出错" /> <!-- 设置BUFF，后台数据出错 -->
+		<node result="200101" info="没有这个任务" /> <!-- 任务ID无效 -->
+		<node result="103119" info="任务未接或已完成" />
+	</Error>
+	
+	<!-- 取消任务 1155 -->
+	<Error cmd="1154">
+		<node result="200107" info="还有任务没完成，暂时不能接取这个任务！"/> <!-- 依赖的父任务没有完成 -->
+	</Error>
+	
+	<!-- 拉取单个任务详细信息 1158 -->
+	<Error cmd="1158">
+		<node result="200101" info="任务ID无效！"/>
+	</Error>
+	
+	<!-- 记录任务日记 1159-->
+	<Error cmd="1159">			 
+		<node result="200101" info="未知的任务" /> <!-- 随机ID无效 -->
+		<node result="200008" info="内容检测不合格，无法为你保存！" />
+	</Error>
+	
+	<!-- 接受任务 1162-->
+	<Error cmd="1162">			 
+		<node result="200101" info="任务ID无效！" />
+		<node result="200204" info="等级不够，无法领取任务！" alertType="2"/>
+		<node result="200158" info="职业或职业等级不符合要求，无法领取任务！" alertType="2"/>
+		<node result="200106" info="前置任务未完成，无法领取该任务！" alertType="2"/>
+		<node result="200110" info="该任务已完成！" alertType="2"/>
+		<node result="200111" info="该任务已达领取次数上限！" alertType="2"/>
+		<node result="200112" info="当前进行的任务过多，完成一些任务后再来领取吧！" alertType="2"/>
+		<node result="200019" info="当前时间无法领取该任务！" alertType="2"/>
+	</Error>
+	
+	<!-- 完成任务节点 1163-->
+	<Error cmd="1163">			 
+		<node result="200101" info="任务ID无效！" />
+		<node result="200102" info="任务选项ID无效！" />
+		<node result="200107" info="任务尚未领取！" alertType="2"/>
+		<node result="200108" info="任务输出奖励有误！" alertType="2"/>
+		<node result="103119" info="该任务未领取或已完成！" alertType="2"/>
+		<node result="200305" info="宠物背包已满，请及时整理！" alertType="2"/>
+		<node result="200160" info="物品背包已满，请及时清理！" alertType="2"/>
+		<node result="103122" info="包裹中该物品不足！" alertType="2"/>
+		<node result="104331" info="包裹空间不足，请及时清理！" alertType="2"/>
+		<node result="200100" info="任务完成条件不满足！" alertType="2"/>
+		<node result="200115" info="任务步骤无效！" alertType="2"/>
+		<node result="200253" info="学习的技能已达上限！" alertType="2"/>
+		<node result="200013" info="今天很累了，明天再继续吧！" alertType="2"/>
+		<node result="200457" info="礼物还没准备好呢，等会再来找我吧。" alertType="2"/>
+	</Error>
+	
+	<!-- 记录任务日记 1164-->
+	<Error cmd="1164">			 
+		<node result="200101" info="任务ID无效！" />
+		<node result="200114" info="该任务无法取消！" alertType="2"/>
+		<node result="200107" info="该任务尚未领取！" alertType="2"/>
+	</Error>
+	
+	<!-- 设置任务Buff 1165-->
+	<Error cmd="1165">			 
+		<node result="200101" info="任务ID无效！" />
+		<node result="200107" info="该任务尚未领取！" alertType="2"/>
+	</Error>
+	
+	<!-- 获取任务Buff 1166-->
+	<Error cmd="1166">			 
+		<node result="200101" info="任务ID无效！" />
+		<node result="200107" info="该任务尚未领取！" alertType="2"/>
+	</Error>
+	
+	<!-- 装备称号 1201-->
+	<Error cmd="1201">	
+		<node result="200400" info="尚未获得此称号，无法装备！" alertType="2"/>
+		<node result="200401" info="称号ID无效" />
+		<node result="200020" info="不是VIP不能使用该称号" />
+	</Error>
+	
+	<!-- 发起挑战 1300 -->
+	<Error cmd="1300">
+		<node result="200003" info="对方已离线！" alertType="2"/>
+		<node result="200006" info="正在战斗中！" alertType="2"/>
+		<node result="200051" info="对方不是队长，无法向他挑战！" alertType="2"/>
+		<node result="200052" info="你不是队长，无法发起挑战！" alertType="2"/>
+		<node result="200056" info="正在战斗中，无法发起挑战！" alertType="3"/>
+		<node result="200057" info="对方正在战斗中，无法向他挑战！" alertType="2"/>
+		<node result="200063" info="队员正在忙碌中，无法发起挑战！" alertType="2"/>
+		<node result="200067" info="队员尚未结束战斗，无法发起挑战！" alertType="2"/>
+		<node result="200068" info="正在战斗中，无法发起挑战！" alertType="2"/>
+		<node result="200069" info="对方正在战斗中，无法向他挑战！" alertType="2"/>
+		<node result="200070" info="没有可挑战的对象！" alertType="2"/> <!-- 此地图没有怪物分布 -->
+		<node result="200076" info="附近没有黑化精灵耶！" alertType="2"/> <!-- 未遇敌 -->
+		<node result="200075" info="太累了，休息…休息一会。" alertType="2"/> <!-- 遇敌太频繁 -->
+		<node result="200074" info="正在等待对手加入。" alertType="2"/>
+		<node result="200027" info="对方正在学习中，无法向他挑战！" alertType="2"/>
+		<node result="200019" info="当前时间无法发起挑战！" alertType="2"/>
+		<node result="200300" info="没有出战宠物，无法发起挑战！" alertType="2"/>
+		<node result="200053" info="请离开队伍后再发起挑战！" alertType="2"/>
+		<node result="210000" info="服务器即将进行停机维护，对战服务暂停！" alertType="1"/>
+	</Error>
+	
+	<!-- 接受挑战 1301 -->
+	<Error cmd="1301">
+		<node result="200003" info="队伍已解散！" alertType="2"/>
+		<node result="200052" info="你不是队长，无法接受挑战！" alertType="2"/>
+		<node result="200056" info="正在战斗中！" alertType="2"/>
+		<node result="200061" info="对方已取消挑战！" alertType="2"/>
+		<node result="200068" info="正在挑战中！" alertType="2"/>
+		<node result="200074" info="正在挑战中！" alertType="2"/>
+		<node result="200027" info="对方正在学习中，无法向他挑战！" alertType="2"/>
+		<node result="200314" info="对方正在摆摊中，无法向他挑战！" alertType="2"/>
+		<node result="210000" info="服务器即将进行停机维护，对战服务暂停！" alertType="1"/>
+	</Error>
+	
+	<!-- 挑战明雷 1304 -->
+	<Error cmd="1304">
+		<node result="200003" info="队伍已解散！" alertType="2"/>
+		<node result="200052" info="你不是队长，无法发起挑战！" alertType="2"/>
+		<node result="200056" info="正在战斗中，无法发起挑战！" alertType="2"/>
+		<node result="200067" info="队员尚未结束战斗，无法发起挑战！" alertType="3"/>
+		<node result="200068" info="正在战斗中，无法发起挑战！" alertType="2"/>
+		<node result="200071" info="你行动有点迟，捕捉开放已结束，请下次再来捕捉（双休日）哦！" alertType="2"/> <!-- 怪物组ID无效 -->
+		<node result="200400" info="条件不足，无法发起挑战！" alertType="2"/> <!-- 未获得相应的称号 -->
+		<node result="200075" info="太累了，休息…休息一会。" alertType="2"/> <!-- 挑战太频繁 -->
+		<node result="200074" info="正在等待对手加入。" alertType="2"/>
+		<node result="200314" info="没有可挑战的对象。" alertType="2"/> <!-- 不在正确的地图 -->
+		<node result="200351" info="今日挑战次数已达上限。" alertType="2"/>
+		<node result="200455" info="你还没有开始钓鱼。" alertType="2"/>
+		<node result="200053" info="请解散队伍后再进行挑战。" alertType="2"/>
+		<node result="200204" info="等级过高，无法发起挑战。" alertType="2"/>
+		<node result="200019" info="该时间段内无法发起挑战。" alertType="2"/>
+		<node result="200027" info="对方正在学习中，无法向他挑战！" alertType="2"/>
+		<node result="200159" info="你没有挑战证明，无法发起挑战！" alertType="2"/>
+		<node result="210000" info="服务器即将进行停机维护，对战服务暂停！" alertType="2"/>
+	</Error>
+	
+	<!-- 发招 1306 -->
+	<Error cmd="1306">
+		<node result="200066" info="没有对战信息！" alertType="3"/>
+	</Error>
+
+	<!-- 发招 1308 -->
+	<Error cmd="1308">
+		<node result="200066" info="没有对战信息！" alertType="3"/>
+		<node result="200314" info="该场景无法战斗！" alertType="3"/>
+	</Error>
+	
+	<!-- 使用药品 1309 -->
+	<Error cmd="1309">
+		<node result="200151" info="物品ID无效！" alertType="2"/>
+		<node result="200159" info="你没有该物品！" alertType="2"/>
+		<node result="200066" info="没有对战信息！" alertType="3"/>
+		<node result="200059" info="位置信息错误！" alertType="3"/>
+	</Error>
+	
+	<!-- 用户上报回合信息 1312 -->
+	<Error cmd="1312">
+		<node result="200066" info="没有对战信息！" alertType="3"/>
+	</Error>
+	
+	<!-- 1317 -->
+	<Error cmd="1317">
+		<node result="200066" info="没有对战信息！" alertType="3"/>
+	</Error>
+	
+	<!-- 拒绝挑战 1320 -->
+	<Error cmd="1320">
+		<node result="200052" info="你不是队长，无法发起挑战！" alertType="2"/>
+		<node result="200056" info="正在战斗中！" alertType="2"/>
+	</Error>
+	
+	<!-- 邀请对方加入队伍 1323 -->
+	<Error cmd="1323">
+		<node result="200003" info="对方已下线！" alertType="2"/>
+		<node result="200052" info="你不是队长，无法邀请对方！" alertType="2"/>
+		<node result="200053" info="对方已经加入了队伍" alertType="2"/>
+		<node result="200054" info="队伍已满，无法邀请对方！" alertType="2"/>
+		<node result="200056" info="正在战斗中，无法邀请对方！" alertType="2"/>
+		<node result="200057" info="对方正在战斗中，无法发起邀请！" alertType="2"/>
+		<node result="200060" info="对方不在当前地图，无法发起邀请！" alertType="2"/>
+		<node result="200062" info="对方未开启组队选项！" alertType="2"/>
+		<node result="200063" info="对方正在忙碌中，请稍后再试！" alertType="2"/>
+		<node result="200068" info="正在战斗中，无法邀请对方！" alertType="2"/>
+		<node result="200069" info="对方正在战斗中，无法发起邀请！" alertType="2"/>
+		<node result="200074" info="对方正在等待斗技场对战，无法发起邀请！" alertType="2"/>
+	</Error>
+	
+	<!-- 邀请对方加入队伍回应 1594 -->
+	<Error cmd="1594">
+		<node result="200003" info="对方已下线！" alertType="2"/>
+		<node result="200052" info="你不是队长，无法邀请对方！" alertType="2"/>
+		<node result="200053" info="对方已经加入了队伍" alertType="2"/>
+		<node result="200054" info="队伍已满，无法邀请对方！" alertType="2"/>
+		<node result="200056" info="正在战斗中，无法邀请对方！" alertType="2"/>
+		<node result="200057" info="对方正在战斗中，无法发起邀请！" alertType="2"/>
+		<node result="200060" info="对方不在当前地图，无法发起邀请！" alertType="2"/>
+		<node result="200062" info="对方未开启组队选项！" alertType="2"/>
+		<node result="200063" info="对方正在忙碌中，请稍后再试！" alertType="2"/>
+		<node result="200068" info="正在战斗中，无法邀请对方！" alertType="2"/>
+		<node result="200069" info="对方正在战斗中，无法发起邀请！" alertType="2"/>
+		<node result="200074" info="对方正在等待斗技场对战，无法发起邀请！" alertType="2"/>
+	</Error>
+	
+	<!-- 应邀加入对方的队伍 1325 -->
+	<Error cmd="1325">
+		<node result="200052" info="你不是队长，无法应答！" alertType="2"/>
+		<node result="200057" info="对方的队伍已经解散！" alertType="2"/>
+		<node result="200056" info="正在战斗中，无法加入队伍！" alertType="2"/>
+		<node result="200054" info="对方的队伍已满！" alertType="2"/>
+		<node result="200053" info="你已在队伍中！" alertType="2"/>
+		<node result="200060" info="对方不在当前地图！" alertType="2"/>
+		<node result="200204" info="等级不足，无法加入队伍！" alertType="2"/>
+		<node result="200300" info="没有主战宠物，无法报名多精灵PVP！" alertType="2"/>
+		<node result="200068" info="正在战斗中，无法加入队伍！" alertType="2"/>
+		<node result="200351" info="挑战已达上限" alertType="2"/>
+		<node result="200019" info="不在活动时间" alertType="3"/>
+	</Error>
+	
+	<!-- 取消斗技场PK匹配 1326 -->
+	<Error cmd="1326">
+		<node result="200052" info="你不是队长，无法取消！" alertType="2"/>
+		<node result="200056" info="正在战斗中！" alertType="2"/>
+		<node result="200072" info="你尚未报名参加斗技场PK！" alertType="2"/>
+		<node result="200073" info="匹配成功，正在建立对战！" alertType="2"/>
+		<node result="200068" info="正在战斗中！" alertType="2"/>
+	</Error>
+
+	<!-- 申请加入对方的队伍 1327 -->
+	<Error cmd="1327">
+		 <node result="200003" info="对方不在线！" alertType="2"/>
+		 <node result="200052" info="对方不是队长！" alertType="2"/>
+		 <node result="200053" info="你已经加入了队伍！" alertType="2"/>
+		 <node result="200054" info="队伍已满，无法加入！" alertType="2"/>
+		 <node result="200056" info="正在战斗中！" alertType="2"/> 
+		 <node result="200060" info="对方不在当前地图！" alertType="2"/>
+		 <node result="200063" info="对方正在忙碌中，请稍后再试！" alertType="2" />
+		 <node result="200064" info="对方未开启组队选项！" alertType="2"/>
+		 <node result="200074" info="对方正在等待斗技场对战，无法发起邀请！" alertType="2"/>
+	</Error>
+	
+	<!-- 注册队伍列表（更改队伍名称）1329 -->
+	<Error cmd="1329">
+		<node result="200008" info="请不要使用“禁语”！" alertType="2"/>
+		<node result="200052" info="正在组建队伍中！" alertType="2"/>
+	</Error>
+	
+	<!-- 请离用户离开战队 1331 -->
+	<Error cmd="1331">
+		 <node result="200052" info="你不是队长，无法请对方离开队伍！" alertType="2"/> 
+	</Error>
+	
+	<!-- 用户离开战队 1332 -->
+	<Error cmd="1332">
+		 <node result="200055" info="你没有加入队伍！" alertType="2"/>
+		 <node result="200056" info="正在战斗中！" alertType="2"/> 
+	</Error>
+	
+	<!-- 取消挑战 1336 -->
+	<Error cmd="1336">
+		 <node result="200052" info="你不是队长！" alertType="2"/> 
+		 <node result="200000" info="对战无法取消！" alertType="2"/>
+		 <node result="200066" info="你没有发起过挑战！" alertType="3"/>
+	</Error>
+	
+	<!-- 捉宠 1338 -->
+	<Error cmd="1338">
+		 <node result="200151" info="物品ID无效！" alertType="2"/>
+		 <node result="200159" info="没有该物品！" alertType="2"/>  
+		 <node result="200066" info="没有对战信息！" alertType="3"/>
+		 <node result="200308" info="拥有的精灵已达上限！" alertType="3"/>
+	</Error>
+	
+	<!-- 换宠 1339 -->
+	<Error cmd="1339">
+		 <node result="200300" info="没有宠物【出战】状态！" alertType="2"/>
+		 <node result="200307" info="该宠物不是【待命】状态！" alertType="2"/>
+		 <node result="200204" info="人物等级不足，宠物不听命令！" alertType="2"/>
+	</Error>
+	
+	<!-- 广播队长行动 1342 -->
+	<Error cmd="1342">
+		 <node result="200065" info="开关值无效！" alertType="2"/>
+	</Error>
+	
+	<!-- 队长移交 1346 -->
+	<Error cmd="1346">
+		 <node result="200052" info="你不是队长，无法移交权限！" alertType="2"/>
+		 <node result="200058" info="对方不在队伍中，无法移交权限！" alertType="2"/>
+	</Error>
+	
+	<!-- 报名巨石战场 1352 -->
+	<Error cmd="1352">
+		 <node result="200074" info="你已报名，请耐心等待！" alertType="2"/>
+		 <node result="200056" info="正在对战中，无法报名！" alertType="2"/>
+		 <node result="200068" info="请取消对战邀请再报名！" alertType="2"/>
+		 <node result="200052" info="只有队长才能报名参赛！" alertType="2"/>
+	</Error>
+	
+	<!-- 取消报名巨石战场 1353 -->
+	<Error cmd="1353">
+		 <node result="200052" info="只有队长才能取消报名！" alertType="2"/>
+	</Error>
+	
+	<!-- 争夺武器座 1354 -->
+	<Error cmd="1354">
+		 <node result="200314" info="请进入战场武器座附近再发起争夺！" alertType="2"/>
+		 <node result="300003" info="武器座上的队员正在对战中！" alertType="2"/>
+		 <node result="300004" info="对方正处于保护状态！" alertType="2"/>
+		 <node result="300001" info="地图信息错误！" alertType="2"/>
+		 <node result="300005" info="等级不足，无法开启炮台！" alertType="2"/>
+	</Error>
+	
+	<!-- 出卡片 1355 -->
+	<Error cmd="1355">
+		 <node result="200314" info="请先进入战场！" alertType="3"/>
+	</Error>
+	
+	<!-- 登上武器座攻击Boss 1356 -->
+	<Error cmd="1356">
+		 <node result="200314" info="请先进入战场！" alertType="3"/>
+	</Error>
+	
+	<!-- 获取巨石战位置信息 1362 -->
+	<Error cmd="1362">
+		 <node result="200314" info="请先进入战场！" alertType="2"/>
+		 <node result="300001" info="地图信息错误！" alertType="2"/>
+		 <node result="300002" info="位置信息非法！" alertType="2"/>
+		 <node result="300003" info="武器座上的队员正在对战中！" alertType="2"/>
+		 <node result="300004" info="对方正处于保护状态！" alertType="2"/>
+		 <node result="300005" info="等级不足，暂时无法开启炮台！" alertType="2"/>
+	</Error>
+	
+	<!-- 获取巨石战位置信息 1363 -->
+	<Error cmd="1363">
+		 <node result="200314" info="请先进入战场！" alertType="2"/>
+		 <node result="300002" info="位置信息非法！" alertType="2"/>
+		 <node result="300001" info="地图信息错误！" alertType="2"/>
+	</Error>
+	
+	<!-- 领取精灵挑战奖励 1366 -->
+	<Error cmd="1366">
+		 <node result="200160" info="旅行箱空间不足，请清理后再领取奖励！" alertType="2"/>
+		 <node result="200077" info="尚未击败所有挑战目标，无法领取奖励！" alertType="2"/>
+	</Error>
+	
+	
+	
+	<!-- 万圣节新增 1380 -->
+	<Error cmd="1380">
+		 <node result="200019" info="不在活动时间内！请周日14:00~15:00和19:00~20:00来参加" alertType="2"/>
+		 <node result="200204" info="你的等级没有达到参赛需求。" alertType="2"/>
+	</Error>
+	
+	
+	<!-- 增加宠物 1550 -->
+	<Error cmd="1550">
+		 <node result="200302" info="宠物类型ID无效" />
+	</Error>
+	
+	<!-- 修改宠物状态标志 1551 -->
+	<Error cmd="1551">
+		 <node result="200300" info="宠物已是【空闲】状态！" alertType="2"/>
+		 <node result="200301" info="最多只能有一个宠物为【出战】状态！" alertType="2"/>
+		 <node result="200304" info="最多只能同时指定3个出战和待命的宠物！" alertType="2"/>
+		 <node result="200305" info="携带的宠物已经达到上限！" alertType="2"/>
+		 <node result="200306" info="宠物不在背包中，不能让它待命！" alertType="2"/>
+		 <node result="103109" info="咦(⊙⊙)宠物不在了！" alertType="2"/> <!-- 该宠物不存在！ -->
+		 <node result="200313" info="宠物已在背包中！" alertType="2"/>
+		 <node result="200204" info="人物等级不足，宠物不听命令！" alertType="2"/>
+		 <node result="200056" info="正在战斗中，无法修改宠物状态！" alertType="2"/>
+		 <node result="200068" info="已发起新的挑战，无法修改宠物状态！" alertType="2"/>
+		 <node result="200308" info="小屋宠物数量已达上限！" alertType="2"/>
+		 <node result="200317" info="辅助战斗的宠物数量已达上限！" alertType="2"/>
+		 <node result="200074" info="正在申请对战匹配，无法修改宠物战斗状态！" alertType="2"/>
+	</Error>
+	
+	<!--  修改宠物昵称 1552 -->
+	<Error cmd="1552">
+		 <node result="200008" info="请不要使用“禁语”！" /> <!-- 你使用了非法语言！ -->
+		 <node result="103109" info="咦(⊙⊙)宠物不在了！" /> <!-- 该宠物不存在！ -->
+	</Error>
+	
+	<!--  拉取宠物信息 1553 -->
+	<Error cmd="1553">
+		 <node result="103109" info="咦(⊙⊙)宠物不在了！" /> <!-- 该宠物不存在！ -->
+	</Error>
+	
+	<!--  宠物恢复 -->
+	<Error cmd="1555">
+		 <node result="200200" info="您的星豆不足，无法恢复!" alertType="2"/>
+		 <node result="200203" info="该宠物不需要恢复！" alertType="2"/>
+		 <node result="100306" info="该宠物不在背包中！" alertType="2"/>
+		 <node result="101105" info="米米号不存在！" alertType="2"/>
+	</Error>
+	
+	<!--  宠物受伤治疗 -->
+	<Error cmd="1556">
+		 <node result="200200" info="你的星豆不足，无法治疗！!" alertType="2"/>
+		 <node result="200203" info="该宠物不需要治疗！" alertType="2"/>
+		 <node result="200306" info="该宠物不在背包中！" alertType="2"/>
+		 <node result="101105" info="米米号不存在！" alertType="2"/>
+	</Error>
+	
+	<!--  拉取组队用户的宠物列表 1557 -->
+	<Error cmd="1557">
+		 <node result="200003" info="该用户已离线!" alertType="2"/>
+		 <node result="200258" info="该用户不在队伍中！" alertType="2"/>
+	</Error>
+	
+	<!-- 宠物更随 1558-->
+	<Error cmd="1558">	
+		 <node result="200306" info="宠物不在身边，无法跟随(^_^)p" alertType="2"/>
+		 <node result="103109" info="宠物不存在，无法跟随(^_^)p" alertType="2"/>
+	</Error>
+	
+	<!--  修改仓库中的宠物位置 1560 -->
+	<Error cmd="1560">
+		 <node result="200313" info="宠物在背包中" alertType="2"/> <!-- 宠物在背包中 -->
+		 <node result="103109" info="宠物不存在！" alertType="2"/>
+	</Error>
+	
+	<!--  解约宠物 1561 -->
+	<Error cmd="1561">
+		 <node result="200074" info="正在匹配对战对手，无法解约精灵！" alertType="2"/> <!-- 宠物在背包中 -->
+	</Error>
+	
+	<!--  兑换宠物 1563 -->
+	<Error cmd="1563">
+		 <node result="200169" info="兑换ID无效"/>
+		 <node result="200306" info="用来交换的宠物不在背包中！" alertType="2"/>
+		 <node result="200302" info="交换所需的宠物不正确！" alertType="2"/> <!-- 宠物类型无效 -->
+		 <node result="200159" info="交换精灵所需的道具不足！" alertType="2"/>
+		 <node result="200074" info="正在匹配对战对手，无法兑换精灵！" alertType="2"/>
+	</Error>
+	
+	<!--  宠物重置分配点数 1565 -->
+	<Error cmd="1565">
+		 <node result="200151" info="物品ID无效"/>
+		 <node result="200159" info="旅行箱中没有该物品！" alertType="2"/>
+		 <node result="200306" info="需要重置努力的精灵不在背包中！" alertType="2"/>
+		 <node result="200204" info="精灵等级不符，无法使用该道具！" alertType="2"/>
+		 <node result="200205" info="该精灵不需要重置配点！" alertType="2"/>
+	</Error>
+	
+	<!--  宠物兑换特殊物品 1569 -->
+	<Error cmd="1569">
+		 <node result="200351" info="当日兑换次数已达上限！" alertType="2"/>
+		 <node result="200302" info="该宠物不可用来兑换！" alertType="2"/>
+		 <node result="200015" info="角色等级已达上限，无法兑换经验！" alertType="2"/>
+	</Error>
+	
+	<!--  使用种族技能道具 1571 1572 -->
+	<Error cmd="1571">
+		 <node result="200306" info="背包中没有可学习种族技能的精灵！" alertType="2"/>
+		 <node result="200175" info="无法为该宠物学习种族技能！" alertType="2"/>
+		 <node result="200176" info="替换的技能过多！" alertType="2"/>
+		 <node result="200301" info="所选精灵不正确，无法学习种族技能！" alertType="2"/>
+		 <node result="200254" info="所选精灵没有相关技能或替换的技能不正确！" alertType="2"/>
+	</Error>
+	<Error cmd="1572">
+		 <node result="200306" info="背包中没有可学习种族技能的精灵！" alertType="2"/>
+		 <node result="200175" info="无法为该宠物学习种族技能！" alertType="2"/>
+		 <node result="200176" info="替换的技能过多！" alertType="2"/>
+		 <node result="200301" info="所选精灵不正确，无法学习种族技能！" alertType="2"/>
+		 <node result="200254" info="所选精灵没有相关技能或替换的技能不正确！" alertType="2"/>
+	</Error>
+	
+	<!--  获得副本场景 1573 -->
+	<Error cmd="1573">
+		 <node result="200318" info="当前所有副本地图被占用，请稍后再试！" alertType="2"/>
+		 <node result="200019" info="当前不在活动时间内，请在活动内参与活动！" alertType="2"/>
+	</Error>
+	
+	<!--  修复装备当前耐久 1574 -->
+	<Error cmd="1574">
+		 <node result="200165" info="装备无需修理。" alertType="2"/>
+	</Error>
+	
+	<!--  修炼之域开箱子 1577 -->
+	<Error cmd="1577">
+		 <node result="200315" info="不通过试炼是无法开启谜之宝箱的哦！" alertType="2"/>
+		 <node result="200308" info="该场景没有谜之宝箱可开启！" alertType="2"/>
+		 <node result="200457" info="今日可开启谜之宝箱的次数已达上限！" alertType="2"/>
+		 <node result="200450" info="该谜之宝箱无法开启！" alertType="2"/><!-- 箱子ID不正确 -->
+		 <node result="200151" info="需要谜之钥匙才能开启！" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再来试试吧" alertType="2"/>
+	</Error>
+	
+	<!--  皇家卫队个人战 1584 -->
+	<Error cmd="1584">
+		 <node result="200019" info="当前不在活动时间内。" alertType="2"/>
+		 <node result="200056" info="正在战斗中！" alertType="2"/>
+		 <node result="200068" info="正在发起挑战！" alertType="2"/>
+		 <node result="200314" info="当前不在战场中，无法战斗！" alertType="2"/><!-- 箱子ID不正确 -->
+		 <node result="200053" info="正在队伍中，请先离开队伍！" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再来试试吧" alertType="2"/>
+		 <node result="200457" info="今日活动次数已达到上限……" alertType="2"/>		 
+	</Error>
+	
+	<!--  洗点用 1586 -->
+	<Error cmd="1586">
+		 <node result="200205" info="不需要重置配点" alertType="2"/> 
+		 <node result="200204" info="你的等级不够，40级以上才可以" alertType="2"/> 
+		 <node result="200351" info="本月免费洗点次数已使用完~~" alertType="2"/> 
+	</Error>
+	
+	<!--  前端标记位 1587 -->
+	<Error cmd="1587">
+		 <node result="200000" info="未知乱流" alertType="2"/> 
+		 <node result="200306" info="宠物不在背包中~~" alertType="2"/> 
+	</Error>
+
+	<!--  组队 1590 -->
+	<Error cmd="1590">
+		 <node result="200003" info="对方不在线！" alertType="2"/>
+		 <node result="200051" info="对方不是队长！" alertType="2"/>
+		 <node result="200053" info="你已经加入了队伍！" alertType="2"/>
+		 <node result="200054" info="队伍已满，无法加入！" alertType="2"/>
+		 <node result="200056" info="正在战斗中！" alertType="2"/> 
+		 <node result="200060" info="对方不在当前地图！" alertType="2"/>
+		 <node result="200063" info="对方正在忙碌中，请稍后再试！" alertType="2" />
+		 <node result="200064" info="对方未开启组队选项！" alertType="2"/>
+		 <node result="200074" info="对方正在等待斗技场对战，无法发起邀请！" alertType="2"/>
+		 <node result="200314" info="地图不正确" alertType="2"/> 
+	</Error>
+	
+	<!--  组队 1592 -->
+	<Error cmd="1592">
+		 <node result="200003" info="用户已经下线" alertType="2"/> 
+	</Error>
+	
+	<!--  检查变速 1593 -->
+	<Error cmd="1593">
+		 <node result="200000" info="系统检测到你正在使用变速程序，请及时关闭！" alertType="1"/>
+	</Error>
+	
+	<!--  申请观战 1595 -->
+	<Error cmd="1595">
+		 <node result="200063" info="正忙，不能观战" alertType="1"/>
+		 <node result="200074" info="正在PK" alertType="1"/>
+		 <node result="200056" info="正在战斗" alertType="1"/>
+		 <node result="200069" info="正在挑战" alertType="1"/>
+		 <node result="200053" info="在战队中" alertType="1"/>
+		 <node result="200066" info="对方没有进入战斗" alertType="1"/>
+	</Error>
+
+	<!--  转职 1598 -->
+	<Error cmd="1598">
+		 <node result="200024" info="只有未进阶的职业才能申请进阶新职业！" alertType="2"/>
+		 <node result="200314" info="当场场景不允许进行该操作！" alertType="2"/>
+		 <node result="200159" info="未携带进阶证明，不予进阶！" alertType="2"/>
+	</Error>
+
+	<!--  试用vip领取 1599 -->
+	<Error cmd="1599">
+		 <node result="200351" info="你已经领取了超时空勇士试用特权咯！" alertType="2"/>
+		 <node result="200024" info="职业不符合要求，无法领取超时空勇士试用特权！" alertType="2"/>
+		 <node result="200019" info="当前不在活动时间内，请关注活动公告！" alertType="2"/>
+		 <node result="200006" info="超时空勇士试用特权领取失败，请稍后再试！" alertType="2"/>
+	</Error>
+	
+	<!--  角色学习技能 1600-->
+	<Error cmd="1600">
+		 <node result="200158" info="职业不符合，无法学习该技能！" alertType="2"/>
+		 <node result="200200" info="星豆不足，无法学习该技能!" alertType="2"/>
+		 <node result="200250" info="技能ID无效！" />
+		 <node result="200252" info="该技能已经领悟！" alertType="2"/>
+		 <node result="200253" info="技能数已达上限！" alertType="2"/>
+		 <node result="101105" info="米米号不存在！" />
+		 <node result="103111" info="该技能已存在！" alertType="2"/> 
+	</Error>
+	
+	<!--  宠物学习技能 1601-->
+	<Error cmd="1601">
+		 <node result="200204" info="宠物等级不够！" alertType="2"/>
+		 <node result="200200" info="您的星豆不够!" alertType="2"/>
+		 <node result="200250" info="技能ID无效！" />
+		 <node result="200252" info="该技能已经学会！" alertType="2"/>
+		 <node result="200253" info="技能数已经达到上限！" alertType="2"/>
+		 <node result="200306" info="宠物不在背包中！" alertType="2"/>
+		 <node result="103111" info="该技能已经学会！" alertType="2"/>
+	</Error>
+	
+	<!-- 增加人物技能 1603 -->
+	<Error cmd="1603">
+		 <node result="200158" info="职业不符，无法学习该技能！" alertType="2"/>
+		 <node result="200250" info="技能ID无效" />
+		 <node result="200252" info="你已经学会了这个技能O(∩_∩)O！" alertType="2"/>
+		 <node result="200253" info="领悟的技能已达上限！" alertType="2"/>
+		 <node result="200010" info="剩余属性点为0，无法分配！" alertType="2"/>
+		 <node result="200306" info="精灵不在背包中，无法分配属性点！" alertType="2"/>
+	</Error>
+	
+	<!-- 删除人物技能 1604 -->
+	<Error cmd="1604">
+		 <node result="200254" info="你想要遗忘的技能不存在！" /> <!-- 你想要删除的技能不存在！ -->
+	</Error>
+	
+	<!-- 删除宠物技能 1605 -->
+	<Error cmd="1605">
+		 <node result="103112" info="你想要遗忘的技能不存在！" /> <!-- 你想要删除的技能不存在！ -->
+	</Error>
+	
+	<!-- 宠物配点 1606 -->
+	<Error cmd="1606">
+		 <node result="200306" info="宠物不在背包中" />
+		 <node result="200010" info="分配努力值无效" /> <!-- 配点值无效 -->
+		 <node result="103109" info="咦(⊙⊙)宠物不在了！"/>  <!-- 宠物不存在 -->
+	</Error>
+	
+	<!-- 分配经验树 1609 -->
+	<Error cmd="1609">
+		 <node result="200014" info="经验树经验不足！" alertType="2"/>
+		 <node result="200254" info="技能不存在或该技能无需分配经验！" alertType="2"/>
+	</Error>
+	
+	<!-- 使用变身卡 1612 -->
+	<Error cmd="1612">
+		 <node result="200151" info="物品id不正确" alertType="2"/>
+		 <node result="200159" info="物品不存在" alertType="2"/>
+		 <node result="200254" info="没有百变之术技能，请到达40级后完成对应任务" alertType="2"/>
+		 <node result="200204" info="技能等级太低不能使用此变身卡" alertType="2"/>
+	</Error>
+	
+	<!-- 兑换蛋 1613 -->
+	<Error cmd="1613">
+		 <node result="200056" info="正在战斗中" alertType="2"/>
+		 <node result="200152" info="精灵蛋已经被兑换完" alertType="2"/>
+		 <node result="200159" info="物品不够" alertType="2"/>
+	</Error>
+	
+	<!-- 提交所有精灵出战状态 -->
+	<Error cmd="1611">
+		 <node result="200056" info="正在战斗中" alertType="2"/>
+		 <node result="200074" info="正在PK" alertType="2"/>
+	</Error>
+	
+	<!-- 提交所有精灵出战状态 -->
+	<Error cmd="1615">
+		 <node result="200306" info="没有这个宠物" alertType="2"/>
+		 <node result="200204" info="宠物等级不够" alertType="2"/>
+	</Error>
+	
+	<!-- 设置寄养 -->
+	<Error cmd="1616">
+		 <node result="200306" info="宠物不在小屋内" alertType="2"/>
+		 <node result="200204" info="宠物等级不能超过人物等级" alertType="2"/>
+	</Error>
+	
+	<!-- 寄养收取 -->
+	<Error cmd="1617">
+		<node result="200019" info="没到时间" alertType="2"/>
+		<node result="200308" info="没有寄养宠物" alertType="2"/>
+		<node result="103109" info="指定宠物不存在" alertType="2"/>
+	</Error>
+	
+	<!-- 寄养加速 -->
+	<Error cmd="1619">
+		 <node result="200308" info="没有寄养宠物" alertType="2"/>
+		 <node result="200159" info="加速物品不够" alertType="2"/>
+		 <node result="200151" info="物品id不正确" alertType="2"/>
+	</Error>
+	
+	<!-- 骑扫把游戏 -->
+	<Error cmd="1620">
+		 <node result="200351" info="次数已用完" alertType="2"/>
+	</Error>
+	<Error cmd="1623">
+		 <node result="200160" info="背包已满" alertType="2"/>
+		 <node result="200351" info="次数已用完" alertType="2"/>
+	</Error>
+	
+	<Error cmd="1625">
+		 <node result="200204" info="等级不符" alertType="2"/>
+	</Error>
+	
+	<!-- 获取交易房间ID 1630 -->
+	<Error cmd="1630">
+		 <node result="200056" info="当前正在战斗中。" alertType="2"/>
+		 <node result="200068" info="当前正在战斗中。" alertType="2"/>
+		 <node result="200053" info="请先解散队伍。" alertType="2"/>
+		 <node result="200074" info="当前正在战斗中。" alertType="2"/>
+		 <node result="200308" info="不在该交易中心。" alertType="2"/>
+		 <node result="200062" info="正在准备商品中。" alertType="2"/>
+		 <node result="200601" info="房间已满。" alertType="1"/>
+		 <node result="200600" info="交易房间不正确。" alertType="2"/>
+	</Error>
+
+	<Error cmd="1629">
+		 <node result="200351" info="已经领取过了。" alertType="2"/>
+	</Error>
+
+	<!-- 拉去店铺信息 1631 -->
+	<Error cmd="1631">
+		 <node result="200308" info="不在该交易中心，无法获得店铺信息。" alertType="2"/>
+	</Error>
+	
+	<!-- 重新上架商品 1634 -->
+	<Error cmd="1634">
+		 <node result="200308" info="不在该交易中心。" alertType="2"/>
+		 <node result="200602" info="商店已关闭或正在准备中。" alertType="2"/>
+		 <node result="200605" info="35分钟内无法租用同一店铺。" alertType="2"/>
+		 <node result="200200" info="星豆不足，无法租用店铺。" alertType="2"/>
+		 <node result="200608" info="没有待出售的商品，无法开店。" alertType="2"/>
+		 <node result="200603" info="开店失败。" alertType="1"/>
+	</Error>
+	
+	<!-- 添加交易物品 1637 -->
+	<Error cmd="1637">
+		 <node result="200308" info="不在该交易中心。" alertType="2"/>
+		 <node result="200602" info="商店已关闭或正在准备中。" alertType="2"/>
+		 <node result="200609" info="镶嵌宝石的装备不能交易。" alertType="2"/>
+	</Error>
+	
+	<!-- 从摊位购买物品 1639 -->
+	<Error cmd="1639">
+		 <node result="200308" info="当前场景不可购买商品。" alertType="2"/>
+		 <node result="200602" info="商店已关闭或正在准备中。" alertType="2"/>
+		 <node result="200319" info="不在该交易中心，无法购买该商品。" alertType="2"/>
+		 <node result="200159" info="想要购买的商品不存在。" alertType="2"/>
+		 <node result="200153" info="该商品已下架。" alertType="2"/>
+		 <node result="200200" info="星豆不足，无法购买。" alertType="2"/>
+		 <node result="200003" info="店主已下线。" alertType="2"/>
+	</Error>
+	
+	<!-- 拉去商品列表 1640 -->
+	<Error cmd="1640">
+		 <node result="200308" info="当前场景不可买卖商品。" alertType="2"/>
+		 <node result="200602" info="商店已关闭或正在准备中。" alertType="2"/>
+		 <node result="200607" info="无法获取商品信息。" alertType="2"/>
+	</Error>
+	
+	<!-- 获取随机物品（钥匙）1700 -->
+	<Error cmd="1700">	 
+		 <node result="200350" info="发现违禁物品(⊙⊙)" /> <!-- 物品ID无效 -->
+		 <node result="200160" info="你的旅行箱已装满，赶快整理吧！" alertType="2"/>
+		 <node result="200351" info="今天你领取的次数超过了上限，明天再来吧！" alertType="2"/>
+		 <node result="200501" info="精力值不足" alertType="2"/>
+		 <node result="200159" info="所需物品不足，无法兑换！" alertType="2"/>
+		 <node result="200314" info="这里没有你想要的物品。" alertType="3"/> <!-- 不在正确的地图 -->
+		 <node result="200352" info="每位小摩尔只能领取一次，不能贪心哦！" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再来试试吧！" alertType="2"/>
+		 <node result="200510" info="尚未参加怪盗战！" alertType="2"/>
+		 <node result="200504" info="击退怪盗的数量不足！" alertType="2"/>
+		 <node result="200204" info="角色等级不足，无法采集该材料！" alertType="2"/>
+	</Error>	  
+	
+	<!-- 领取随机物品 1701 -->
+	<Error cmd="1701">	 
+		 <node result="200350" info="摇奖ID无效" /> <!-- 物品ID无效 -->
+		 <node result="200151" info="发现违禁物品(⊙⊙)" /> <!-- 物品ID无效 -->
+		 <node result="200159" info="你的牛奶瓶盖不够，无法参加活动！" alertType="2"/>
+		 <node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+		 <node result="103130" info="免费摇奖的次数已用完" />
+		 <node result="200207" info="您已经超过10级，寻找【牛奶瓶盖】来抽奖吧！" /> <!-- 等级太高 -->
+		 <node result="200351" info="今日的免费摇奖次数已用完，寻找【牛奶瓶盖】再来抽奖吧！" />
+		 <node result="200314" info="这里没有你想要的物品。" alertType="2"/> <!-- 不在正确的地图 -->
+		 <node result="200352" info="每位小摩尔只能领取一次，不能贪心哦！" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再来试试吧！" alertType="2"/>
+	</Error>
+	
+	<!-- 检查领取随机物品次数 1702 -->
+	<Error cmd="1702">
+		 <node result="200350" info="随机ID无效！" />
+	</Error>
+	
+	<!-- 领取Vip礼包 1703 -->
+	<Error cmd="1703">
+		 <node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+		 <node result="200020" info="你不是超时空勇士。" alertType="3"/>
+		 <node result="200351" info="不可重复领取。" alertType="2"/>
+		 <node result="200352" info="不可重复领取。" alertType="2"/>
+		 <node result="200353" info="不可重复领取。" alertType="2"/>
+		 <node result="200354" info="不可重复领取。" alertType="2"/>
+	</Error>
+	
+	<!-- 神奇密码 1704 -->
+	<Error cmd="1704">
+		 <node result="200160" info="你的旅行箱空间不足，快整理一下吧！"  alertType="2"/>
+		 <node result="200351" info="你输入错误的兑换码次数过多，明天再来兑换吧。"  alertType="2"/>
+		 <node result="104352" info="你输入的兑换码不正确，不能兑换奇异蛋。" alertType="2"/>
+		 <node result="104353" info="你已经领取过奇异蛋了，无法再次兑换。" alertType="2"/>
+		 <node result="104355" info="你输入的兑换码已被使用过。" alertType="2"/>
+		 <node result="200020" info="你不是超时空勇士。" alertType="3"/>
+	</Error>
+	
+	<!-- 抽卡嗨翻天 1708 -->
+	<Error cmd="1708">
+		 <node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+	</Error>
+	
+	<!-- 参与调查 1710 -->
+	<Error cmd="1710">
+		 <node result="200506" info="你已经参与过本次调查。" alertType="2"/>
+	</Error>
+	
+	<!-- 参加小游戏 1713 -->
+	<Error cmd="1713">
+		 <node result="200019" info="当前时间无法参加小游戏。" alertType="2"/>
+		 <node result="103132" info="该奖励已被领完。" alertType="2"/>
+		 <node result="200160" info="你的旅行箱已满，请及时清理！" alertType="2"/>
+		 <node result="200013" info="你今天已经很累了，明天再来参加吧。" alertType="2"/>
+	</Error>
+	
+	<!-- 开始挂机 1750 -->
+	<Error cmd="1750">
+		 <node result="200013" info="今天太累了，明天再来吧！" alertType="2"/>
+		 <node result="200026" info="这个位置已经被人占用咯！" alertType="2"/>
+		 <node result="200053" info="正在队伍中，无法进入学习状态！" alertType="2"/>
+		 <node result="200509" info="今日技能学习时间已消耗完，请明日再来！" alertType="2"/>
+	</Error>
+	
+	<!-- 使用陆行鸟 1800-->
+	<Error cmd="1800">
+		 <node result="200308" info="陆行鸟拒绝飞往该地点！" alertType="2"/> <!-- 陆行鸟/地图ID无效 -->
+		 <node result="200309" info="该地图没有陆行鸟！" alertType="2"/>
+	</Error>
+	
+	<!-- 检查陆行鸟注册情况 1802-->
+	<Error cmd="1802">
+		 <node result="200053" info="宠物不在背包中！" alertType="2"/>
+	</Error>
+	
+	<!-- Boss注册点传送 1810-->
+	<Error cmd="1810">	
+		 <node result="200308" info="该地图无法传送！" alertType="2"/>
+	</Error>
+	
+	<!-- 开启宝箱 1900 -->
+	<Error cmd="1900">			 
+		 <node result="200450" info="宝箱ID无效" alertType="2"/>
+		 <node result="200451" info="宝箱未激活或已被人抢走" alertType="2"/>
+		 <node result="200452" info="离宝箱太远" alertType="2"/>
+		 <node result="200056" info="正在战斗中" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再继续吧！" alertType="2"/>
+		 <node result="200019" info="当前时间无法进行该操作！" alertType="2"/>
+		 <node result="200351" info="今日参与该活动的次数已达上限！" alertType="2"/>
+	</Error>
+	
+	<!-- 获得人物附近传送门的转移地图 1911 -->
+	<Error cmd="1911">			 
+		 <node result="200454" info="时间裂缝已闭合！" alertType="2"/>
+		 <node result="200453" info="裂缝入口已转移！" alertType="2"/>
+	</Error>
+	
+	<!-- 发送邮件 1950 -->
+	<Error cmd="1950">			 
+		 <node result="200500" info="邮件信息有误！" alertType="2"/>
+	</Error>
+	
+	<!-- 邮件寄送物品 1951 -->
+	<Error cmd="1951">			 
+		 <node result="200500" info="邮件信息有误！" alertType="2"/>
+		 <node result="104349" info="邮件发送失败，请重新尝试！" alertType="2"/>
+		 <node result="104351" info="对方邮件已满，无法接收新邮件！" alertType="2"/>
+	</Error>
+	
+	<!-- 提取邮件物品 1953 -->
+	<Error cmd="1953">			 
+		 <node result="104350" info="邮件不存在！" alertType="2"/>
+	</Error>
+	
+	<!-- 删除邮件 1954 -->
+	<Error cmd="1954">			 
+		 <node result="104350" info="邮件不存在！" alertType="2"/>
+		 <node result="200500" info="邮件信息有误！" alertType="2"/>
+	</Error>
+	
+	<!-- 设置邮件标志位 1955 -->
+	<Error cmd="1955">			 
+		 <node result="104350" info="邮件不存在！" alertType="2"/>
+		 <node result="200500" info="邮件信息有误！" alertType="2"/>
+	</Error>
+	
+	<!-- Vip礼包领取 1958 -->
+	<Error cmd="1958">			 
+		 <node result="200152" info="道具拥有量已达上限。" alertType="2"/>
+		 <node result="200160" info="你的旅行箱空间不足，快整理一下吧！" alertType="2"/>
+	</Error>
+
+	<!-- 勇士杯领取个人奖励 1977-->
+	<Error cmd="1977">			 
+		<node result="104370" info="今天已经领过奖励了。" alertType="2"/>
+		<node result="104371" info="只有每队的前100名才可以领奖！" alertType="2"/>
+		<node result="200509" info="勇士杯已经结束了！" alertType="2"/>
+		<node result="103132" info="你没有报名参加勇士杯！" alertType="2"/>
+	</Error>
+		
+	<!-- 勇士杯领取队伍奖励 1979-->
+	<Error cmd="1979">			 
+		<node result="104370" info="已经领过奖励了。" alertType="2"/>
+		<node result="200510" info="请等待本期勇士杯结束后，再来领取奖励！" alertType="2"/>
+		<node result="200511" info="你没有报名参加勇士杯！" alertType="2"/>
+	</Error>
+	
+	<!-- 拉取小屋信息 2000 -->
+	<Error cmd="2000">			 
+		 <node result="200014" info="经验值不足！" alertType="2"/>
+	</Error>
+	
+	<!-- 给大树浇水 2051 -->
+	<Error cmd="2051">			 
+		 <node result="200019" info="智慧之树现在不需要浇灌。" alertType="2"/>
+		 <node result="200159" info="至纯之水不足，无法浇灌智慧之树。" alertType="2"/>
+	</Error>
+	
+	<!-- 开始钓鱼 2052 -->
+	<Error cmd="2052">			 
+		 <node result="200351" info="今天已经参加过3次钓鱼，明天再来吧！" alertType="2"/>
+		 <node result="200013" info="今天很累了，明天再来试试吧！" alertType="2"/>
+	</Error>
+	
+	<!-- 钓鱼产出 2053 -->
+	<Error cmd="2053">			 
+		 <node result="200455" info="你还没有开始钓鱼哦！" alertType="2"/>
+		 <node result="200352" info="你已经没有鱼饵了！" alertType="2"/>
+		 <node result="200456" info="违禁物品！"/>
+	</Error>
+	
+	<!-- 勇士杯报名 2055 -->
+	<Error cmd="2055">			 
+		 <node result="200508" info="你已经报过名了！" alertType="2"/>
+		 <node result="104367" info="该队伍已满员，请去其他队伍报名吧！" alertType="2"/>
+	</Error>
+	
+	<!-- 勇士杯队伍领奖 2058 -->
+	<Error cmd="2058">			 
+		 <node result="200174" info="你已经领取过队伍奖励了！" alertType="2"/>
+		 <node result="200160" info="旅行箱空间不足，请清理后再来领取奖励！" alertType="2"/>
+		 <node result="200503" info="你没有报名过“勇士杯”，无法领取奖励！" alertType="2"/>
+	</Error>
+	
+	<!-- 领取勇士杯奖励 2062 -->
+	<Error cmd="2062">			 
+		 <node result="200174" info="已领取过奖励！" alertType="2"/>
+		 <node result="200503" info="你没有报名参加过勇士杯比赛，无法领取奖励！" alertType="2"/>
+		 <node result="200160" info="旅行箱空间不足，请清理后再来领取奖励！" alertType="2"/>
+		 <node result="200508" info="7月15日前报名勇士杯比赛才能领取个人榜奖励！" alertType="2"/>
+	</Error>
+	
+	<!-- 领取VIP召回活动奖品 2064 -->
+	<Error cmd="2064">			 
+		 <node result="200174" info="已领取过奖励！" alertType="2"/>
+		 <node result="200352" info="今日领取的次数已达上限！" alertType="2"/>
+		 <node result="200160" info="旅行箱空间不足，请清理后再来领取奖励！" alertType="2"/>
+	</Error>
+	
+	<!-- 神谕投票 2151 -->
+	<Error cmd="2151">			 
+		 <node result="200506" info="你已经投过票咯，谢谢你的参与！" alertType="2"/>
+	</Error>
+	
+	<!-- 获取神奇密码兑换信息 3001 -->
+	<Error cmd="3001">			 
+		 <node result="300001" info="兑换的物品不存在！"/>
+		 <node result="300002" info="输入的神奇密码错误！" alertType="2"/>
+		 <node result="300003" info="输入的神奇密码未激活！" alertType="2"/>
+		 <node result="300004" info="输入的神奇密码已过期！" alertType="2"/>
+		 <node result="300005" info="输入的神奇密码已失效！" alertType="2"/>
+		 <node result="300006" info="输入的神奇密码已使用过！" alertType="2"/>
+		 <node result="300007" info="警报！时空兑换系统混乱！"/>
+		 <node result="300008" info="输入的神奇密码非法！" alertType="2"/>
+		 <node result="300009" info="你已经兑换过物品咯，不能重复兑换！" alertType="2"/>
+	</Error>
+	
+	<!-- 使用神奇密码兑换 3002 -->
+	<Error cmd="3002">			 
+		 <node result="300001" info="兑换的物品不存在！"/>
+		 <node result="300002" info="输入的神奇密码错误！" alertType="2"/>
+		 <node result="300003" info="输入的神奇密码未激活！" alertType="2"/>
+		 <node result="300004" info="输入的神奇密码已过期！" alertType="2"/>
+		 <node result="300005" info="输入的神奇密码已失效！" alertType="2"/>
+		 <node result="300006" info="输入的神奇密码已使用过！" alertType="2"/>
+		 <node result="300007" info="警报！兑换系统混乱！"/>
+		 <node result="300008" info="输入的神奇密码非法！" alertType="2"/>
+		 <node result="300009" info="你已经兑换过物品咯，不能重复兑换！" alertType="2"/>
+	</Error>
+	
+	<!-- 米币购买道具 3203 -->
+	<Error cmd="3203">			 
+		 <node result="400001" info="包头中COMMAND_ID值无效"/>
+		 <node result="400002" info="包数据格式不正确"/>
+		 <node result="400003" info="请求包中参数值不合法"/>
+		 <node result="400004" info="系统错误"/>
+		 <node result="400009" info="查询商品项数过大"/>
+		 <node result="400010" info="要购买的物品不存在"/>
+		 <node result="400011" info="米米号不存在"/>
+		 <node result="400012" info="支付密码不正确，无法购买。" alertType="2"/>
+		 <node result="400013" info="库存物品不足，无法购买。" alertType="2"/>
+		 <node result="400014" info="你不是超时空勇士，无法购买。" alertType="2"/>
+		 <node result="400015" info="想要购买的数量超过了上限。" alertType="2"/>
+		 <node result="400016" info="想要购买的数量超过了当前可购买的数量上限。" alertType="2"/>
+		 <node result="400017" info="想要购买的物品组合内某物品数量超过了当前可购买的数量上限。" alertType="2"/>
+		 <node result="400018" info="想要购买的物品不存在。" alertType="2"/>
+		 <node result="400019" info="想要购买的数量超过了当前可购买的数量上限。" alertType="2"/>
+		 <node result="400020" info="旅行箱空间不足，请及时清理。" alertType="2"/>
+		 <node result="400021" info="旅行箱空间不足，请及时清理。" alertType="2"/>
+		 <node result="400022" info="无法购买更多该道具。" alertType="2"/>
+		 <node result="400023" info="想要购买的装备不存在。" alertType="2"/>
+		 <node result="400102" info="米币帐户不存在"/>
+		 <node result="400104" info="米币帐户未激活"/>
+		 <node result="400105" info="米币余额不足，请充值。" alertType="2"/>
+		 <node result="400106" info="购买数量有误。" alertType="2"/>
+		 <node result="400107" info="本月可使用的米币数量已达上限。" alertType="2"/>
+		 <node result="400108" info="此次购买所需米币数量超过了上限。" alertType="2"/>
+	</Error>
+	
+	<!-- 使用时空密码兑换 4002 -->
+	<Error cmd="4002">			 
+		 <node result="300001" info="兑换的物品不存在！"/>
+		 <node result="300002" info="输入的时空密码错误！" alertType="2"/>
+		 <node result="300004" info="输入的时空密码未激活！" alertType="2"/>
+		 <node result="300003" info="输入的时空密码已过期！" alertType="2"/>
+		 <node result="300005" info="输入的时空密码未绑定！" alertType="2"/>
+		 <node result="300006" info="输入的时空密码已冻结！" alertType="2"/>
+		 <node result="300007" info="输入的时空密码已使用过！"/>
+		 <node result="300008" info="该道具已兑换完，请选择其它道具兑换！" alertType="2"/>
+		 <node result="300009" info="可兑换的道具已达上限！" alertType="2"/>
+		 <node result="300010" info="你已兑换过所有道具！" alertType="2"/>
+		 <node result="300011" info="需要兑换的道具不存在！" alertType="2"/>
+		 <node result="300012" info="内部错误！"/>
+	</Error>
+	<!-- 精灵转生 4003 -->
+	<Error cmd="4003">			 
+		 <node result="200610" info="精灵转生次数已达上限！" alertType="2"/>
+		 <node result="200611" info="精灵未满足转生条件！" alertType="2"/>
+		 <node result="200612" info="精灵数据异常!" alertType="2"/>
+	</Error>
+</Errors>	

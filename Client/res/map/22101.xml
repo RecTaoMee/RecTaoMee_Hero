@@ -1,0 +1,20 @@
+<!--克拉斯海岸-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="90,398">
+		<node id="1" pos="90,398" targetMapId="" targetTransPortId="" name="默认传送点"/>
+		<node id="2" pos="1467,114" targetMapId="12101" targetTransPortId="1" name="克拉斯海滩"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="2"/>
+	</object>
+	<npc>
+		<node id="60" type="NPC" name="勇士号水手" res="MC_npc_60" action="60" />
+	</npc>
+	<actions>
+		<proAction npcID="60" id="60" type="0" answer="我要去弗雷基码头$我要去克拉斯岩洞外$摩尔勇士万岁！" to="w2_11604_1$w2_22102_2$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[1#热情为您服务！您要我帮您传送到哪里呢？~~]]>
+			</des>
+		</proAction>	
+	</actions>		
+</map>

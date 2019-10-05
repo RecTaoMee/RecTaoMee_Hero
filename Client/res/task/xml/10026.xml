@@ -1,0 +1,31 @@
+<task id="10026">
+	<taskDes>
+		<![CDATA[皮皮克克的来信上说坷一特在格历尔平原1区附近，去那边看看。$$]]>
+		<![CDATA[坷一特在做什么呢？上去问问。]]>
+	</taskDes>
+	<taskPro>
+		<pro type="0" parent="" npcID="41" action="0" title="你好" needRes="" needResNum="" unResAction="" taskDes="0" mapID="21301"/>
+		<pro type="0" parent="0" npcID="41" action="1" title="你在做什么呢" needRes="" needResNum="" unResAction="" taskDes="1" mapID="21301"/>
+	</taskPro>
+	<actions>
+		<proAction id="0" type="0" npcID="41" answer="你在这做什么呢" to="s1">
+			<des>
+				<![CDATA[1#哈哈，你就是【@nick】吗，皮皮克克那小子经常提起你！$$]]>
+				<![CDATA[1#嘿嘿，我是旅行家坷一特。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="41" answer="采集？" to="a2">
+			<des>
+				<![CDATA[1#我正在【采集】！嘿嘿，第一次见吧。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="41" answer="T﹏T嗯！" to="c" nextTask="10027_0">
+			<des>
+				<![CDATA[1#对摩尔来讲，【采集】可是非常重要的自强自立的生活技能！$$]]>
+				<![CDATA[1#只有“肚子的独立”才能“精神独立”！$$]]>
+				<![CDATA[1#美味的料理需要的食材，药剂调配需要的原料，都可以通过【采集】获得！$$]]>
+				<![CDATA[1#想象一下——不会采集的摩尔的一生，简直是无法想象！我就把这个至关生死存亡的重要【技能】教给你！]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

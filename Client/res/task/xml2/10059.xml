@@ -1,0 +1,623 @@
+<Task ID="10059" Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+   	<Procedure> 
+<!--	
+  		<Step ID="60" ParentList="0" ParentCost="0"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="60" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="今天的任务是\n跟这个屋子里的三个女生说完话然后再来找我说话。" />
+					<Option Info="60stepover"/>												
+				</Action>
+    		</Event>											
+	    </Step>			
+  		<Step ID="61" ParentList="0" ParentCost="0"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="61" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="22" ImageID="2" Info="【@nick】来摩尔王国有段时间了呢，练级辛苦吗？你的努力我们都看到了^^\n不过有时候也该让自己好好放松一下啊~" />
+					<Option Info="61stepover"/>												
+				</Action>
+    		</Event>											
+	    </Step>				
+  		<Step ID="62" ParentList="0" ParentCost="0"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="62" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="23" ImageID="1" Info="【@nick】来摩尔王国有段时间了呢，练级辛苦吗？你的努力我们都看到了^^\n不过有时候也该让自己好好放松一下啊~" />
+					<Option Info="62stepover"/>												
+				</Action>
+    		</Event>											
+	    </Step>	
+  		<Step ID="63" ParentList="0" ParentCost="0"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="63" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【@nick】来摩尔王国有段时间了呢，练级辛苦吗？你的努力我们都看到了^^\n不过有时候也该让自己好好放松一下啊~" />
+					<Option Info="62stepover"/>												
+				</Action>
+    		</Event>											
+	    </Step>						
+  		<Step ID="64" ParentList="60, 61, 62, 63" ParentCost="4"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="64" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="  ParentList=[60, 61, 62, 63] ParentCost=4 " />
+					<Option Info="63stepover"/>												
+				</Action>
+    		</Event>											
+	    </Step>			
+-->		
+			
+		
+
+		
+  		<Step ID="26" ParentList="0" ParentCost="0"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="新神谕？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="【@nick】这段时间成长非常快呢！\n练级一定很辛苦吧？\n有时也该让自己好好【放轻松】一下。" />
+					<Msg NpcID="102" ImageID="1" Info="最近祈祷的时候，我听到了女神大人的\n【新神谕】：\n【@nick】需要一次彻底的放松，\n我将给予他特别的【放轻松礼物】。" />
+					<Option Info="特别礼物？！" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="放轻松的秘诀？" NextStep="1" SkipTrigger="Y" NotUpdateBuffer="Y" />		
+					<Option Info="我很忙，下次再放松" NextStep="41" SkipTrigger="Y" NotUpdateBuffer="Y" />												
+				</Action>
+    		</Event>											
+	    </Step>			
+  		<Step ID="41" ParentList="0" ParentCost="1"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="我很忙，下次再放松" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="6" Info="就是因为忙才要放松！相信我！" />
+					<Option Info="放轻松的秘诀" NextStep="51" SkipTrigger="Y" NotUpdateBuffer="Y" />	
+					<Option Info="真的很忙，下次吧" NextStep="26"  />														
+				</Action>
+    		</Event>											
+	    </Step>							
+  		<Step ID="51" ParentList="0" ParentCost="1"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+				<Msg NpcID="102" ImageID="2" Info="刚才就应该这样说的^^" />
+				<Option Info="唔……" NextStep="1" SkipTrigger="Y"  />														
+				</Action>
+    		</Event>											
+	    </Step>									
+  		<Step ID="3" ParentList="26" ParentCost="1"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="特别礼物？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="2" Info="这是秘密^^\n【@nick】让自己放轻松就能知道了。" />
+					<Option Info="放轻松的秘诀"  SkipTrigger="Y" />									
+				</Action>
+    		</Event>											
+	    </Step>			
+  		<Step ID="1" ParentList="0" ParentCost="1" >
+    		<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="我该怎么放松？" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />							
+    		</Event>
+		</Step>								
+		<Step ID="2" ParentList="3, 1" ParentCost="1"  >
+			<Event Memo="c大祭司·铃c听到了新神谕。\n——女神大人要“召见”小主人吗？\n快去c女神大圣堂c看看吧！" TargetMap="11217">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">										
+					<Msg NpcID="102" ImageID="2" Info="抱歉帮不上【@nick】——我一直都很轻松^^" />		
+					<Msg NpcID="102" ImageID="1" Info="不过【勇士协会】的导师们也许会有好建议。他们最近在安排【期末考试】\n可是忙得很快乐呢~" />
+					<Msg NpcID="102" ImageID="1" Info="等你彻底放轻松下来，记得向【摩尔王】汇报~" />
+					<Option Info="马上去！\(≧▽≦)/" />	
+				</Action>
+    		</Event>											
+	    </Step>			
+
+ 		
+		
+		
+		
+<!--  剑士↓  -->		
+		<Step ID="4" ParentList="2" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="26" ImageID="1" Info="对普通人来说——就像【路库·K】，每天喝酸奶就能放轻松。" />
+			        <Msg NpcID="26" ImageID="3" Info="像我这样【英俊的剑士】嘛——女孩子们的微笑会更有效！" />
+					<Option Info="(￣▽￣)" />					
+				</Action>					
+				<Action Type="MOVIE" Url="task_10059_1.swf" MapLevel="TASK" Pos="0,0" />							
+				<Action Type="TALK">					
+			        <Msg NpcID="26" ImageID="1" Info="根据我多年的经验，没有女孩子能抗拒草莓的诱惑~~\n想看她们微笑的话就去封印【草莓蜂】吧！" />
+					<Option Info="现在就去！" />			
+					<Option Info="对我没用(︶︿︶) " NextStep="31" SkipTrigger="Y" />	
+					<Option Info="我很忙，下次吧 " NextStep="4" />										
+				</Action>
+    		</Event>
+    	</Step>	
+		<Step ID="31" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="草莓蜂对我没用" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="26" ImageID="5" Info="很遗憾，你将失去人生的一大乐趣！年轻人不多多尝试会后悔的！" />
+					<Option Info="现在就去！" NextStep="5" />
+					<Option Info="考虑考虑~ "  NextStep="4" />					
+				</Action>														
+    		</Event>
+    	</Step>							
+ 		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>			
+				<Pet Follow="Y" Type="9" Level="0" Grow="0" />					
+			</Condition>
+        	<Event ConditionType="IN" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="我把草莓蜂带来了 " />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="26" ImageID="3" Info="【@nick】去送给你喜欢的人吧！\n要是我就送给【温蒂】。\n看到她的微笑，就像躺在沙滩上晒太阳一样享受！" />
+            		<Option Info="还是送给你吧囧"  SkipTrigger="Y"  />				
+    			</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="我把草莓蜂带来了 " />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="26" ImageID="2" Info="我没看到嘛，你把它藏哪儿了？\n如果在精灵口袋里就让它【跟随】出来吧~！ " />
+            		<Option Info="马上带它来！ " />
+            		<Option Info="草莓蜂在哪？ " NextStep="45" SkipTrigger="Y"  NotUpdateBuffer="Y" />					
+    			</Action>
+            </Event>				
+        </Step>		
+		<Step ID="45" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="送你草莓蜂 " />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="26" ImageID="1" Info="草莓蜂就在【格历尔平原3区】。别磨磨蹭蹭的！\n勇士的意思就是被蜇多少次也不会放弃！" />	
+					<Option Info="现在就去！ " NextStep="5" />			
+    			</Action>
+    		</Event>
+		</Step>					
+		<Step ID="30" ParentList="5" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="送你草莓蜂 " />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="26" ImageID="2" Info="开什么玩笑！\n看来这个办法不适合你。\n去问问别人吧！" />	
+					<Option Info="现在就去！ " SkipTrigger="Y" />			
+    			</Action>
+    		</Event>
+		</Step>	
+		
+<!--		
+		<Step ID="32" ParentList="0" ParentCost="1" >
+			<Event Memo="" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="......" />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="26" ImageID="2" Info="什么，你竟然没有脱口而出的名字！\n看来这个办法不适合你,【@nick】。去问问别人吧！" />	
+					<Option Info="现在就去！ " SkipTrigger="Y" />			
+    			</Action>
+    		</Event>
+		</Step>	
+
+
+  		<Step ID="50" ParentList="30, 32" ParentCost="1" >
+    		<Event Memo="" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="草莓蜂放轻松" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	
+-->		
+
+<!--  传教室↓  -->
+
+
+		<Step ID="6" ParentList="2" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="22" ImageID="2" Info="来，闭上眼睛我们一起祈祷……\n^_^和你开玩笑的。\n祈祷是我们最需要用心去做的工作。" />
+			        <Msg NpcID="22" ImageID="1" Info="我另外有一种什么都不用想，\n就能很开心的方法，\n【@nick】想试试看吗？" />
+					<Option Info="快告诉我！" SkipTrigger="Y" />	
+					<Option Info="我很忙，下次吧" NextStep="6" />														
+				</Action>
+    		</Event>
+    	</Step>
+		<Step ID="33" ParentList="6" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="放轻松的秘诀" />
+				</Trigger>		
+				<Action Type="TALK">						
+					<Msg NpcID="22" ImageID="1" Info="这需要请到【库噜战士】才行。\n可以的话请把它带来。" />									
+					<Option Info="现在就去！" />
+					<Option Info="我很忙，下次吧" NextStep="33" />
+				</Action>
+    		</Event>
+    	</Step>		
+		<Step ID="7" ParentList="33" ParentCost="1" >
+			<Condition>
+				<Pet Follow="Y" Type="5" Level="0" Grow="0" />				
+			</Condition>
+        	<Event ConditionType="IN" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="我把库噜战士带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="22" ImageID="2" Info="啊——可怜的库噜战士\n——让我们一起净化它吧——" />
+            		<Option Info="好啊！" TalkOver="Y" />	
+    			</Action>														
+				<Action Type="MOVIE" Url="task_10059_2.swf" MapLevel="TASK" Pos="0,0" />	 	
+    			<Action Type="TALK">				
+					<Msg NpcID="22" ImageID="2" Info="每次净化一只库噜战士，\n救赎了一个孤独的灵魂，\n我的心情就会轻松起来~" />	
+            		<Option Info="^_^;唔"  SkipTrigger="Y" />					
+    			</Action>																	
+    		</Event>
+    		<Event ConditionType="OUT" Memo="导师们有什么放松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c大圣堂c，不要迷路！" TargetMap="">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="我把库噜战士带来了！" />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="22" ImageID="1" Info="咦？我没看到啊。\n库噜战士没有跟你一起来吗？\n如果在精灵口袋里就让它【跟随】出来吧~！ " />
+            		<Option Info="马上带它来！" />
+            		<Option Info="库噜战士在哪？ " NextStep="46" SkipTrigger="Y"  NotUpdateBuffer="Y" />					
+    			</Action>
+            </Event>				
+        </Step>			
+		<Step ID="46" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c大圣堂c，不要迷路！" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="我把库噜战士带来了！" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="22" ImageID="2" Info="库噜战士们在摩尔城堡古老的【下水道】一二三四五六层。因为那里有库噜王。\n【@nick】请多给它一点耐心，一定可以感化它的^^。" />				
+            		<Option Info="现在就去！" NextStep="7" />
+    			</Action>
+    		</Event>		
+        </Step>				
+		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="库噜战士放轻松" />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="22" ImageID="9" Info="...本来想和【@nick】一起分享这种心情的。\n看来这个方法好像不太适合你啊。\n去问问别人吧~" />				
+            		<Option Info="现在就去！" SkipTrigger="Y" />
+    			</Action>
+    		</Event>		
+        </Step>			
+			
+			
+<!--  彼得  -->
+		<Step ID="9" ParentList="2" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="27" ImageID="1" Info="我放轻松的秘诀绝不外传——\n只告诉勇士学员。\n 请带一只【钢姆】来吧！" />					
+					<Option Info="现在就去！" />
+					<Option Info="我很忙，下次吧" NextStep="9" />
+				</Action>
+    		</Event>
+    	</Step>		
+ 		<Step ID="10" ParentList="9" ParentCost="1"  >
+			<Condition>
+				<Pet Follow="Y" Type="21" Level="0" Grow="0" />				
+			</Condition>
+        	<Event ConditionType="IN" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="我把钢姆带来了！ " />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="27" ImageID="3" Info="你相信吗，魔法是世界上最接近女神力量的东西。让我喝口水…\n【@nick】你也一起听吧。宇宙是…从前…天狼星…" /> 
+					<Option Info="开始吧！" TalkOver="Y" />		
+    			</Action>
+	   			<Action Type="MOVIE" Url="task_10059_3.swf" MapLevel="TASK" Pos="0,0" />   
+    			<Action Type="TALK">               
+					<Msg NpcID="27" ImageID="1" Info="【@nick】听懂了吗？" />									
+					<Option Info="好困！" SkipTrigger="Y" />
+					<Option Info="你在说什么？" SkipTrigger="Y" />				
+    			</Action>
+    		</Event>				
+    		<Event ConditionType="OUT" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="我把钢姆带来了！ " />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="27" ImageID="4" Info="钢姆在哪里？~~我没看到啊~\n如果在精灵口袋里就让它【跟随】出来吧~！ " />
+            		<Option Info="出发！" />
+            		<Option Info="钢姆在哪？ " NextStep="47" SkipTrigger="Y" NotUpdateBuffer="Y" />						
+    			</Action>
+            </Event>				
+        </Step>						
+		<Step ID="47" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">				
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="我把钢姆带来了！ " />
+				</Trigger>					
+    			<Action Type="TALK">				
+ 					<Msg NpcID="27" ImageID="2" Info="钢姆就在【海底洞穴】！\n把钢姆带来，我就教你“放轻松的秘技”^__,^+。 " />
+            		<Option Info="现在就去！ " NextStep="10" />
+    			</Action>
+    		</Event>
+       </Step>			
+		<Step ID="11" ParentList="10" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">				
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11304" ObjID="27" TaskOption="钢姆放轻松" />
+				</Trigger>					
+    			<Action Type="TALK">				
+ 					<Msg NpcID="27" ImageID="4" Info="…我果然还是最喜欢钢姆啊。" />
+ 					<Msg NpcID="27" ImageID="3" Info="看到它迷惑的眼睛，我就知道它和我一样向往未知世界。" />
+ 					<Msg NpcID="27" ImageID="3" Info="☆钢姆不愧是格历尔大陆数一数二的潜力【魔法宠物】~\n它听我的魔法课总是那么认真~~~。" />
+					<Msg NpcID="27" ImageID="1" Info="看来这个放松的办法不太适合你。\n去问问别人吧。" />
+            		<Option Info="现在就去！ " SkipTrigger="Y" />
+    			</Action>
+    		</Event>
+       </Step>				
+	   
+	   
+	   
+<!--  弓箭手  -->	   
+		<Step ID="12" ParentList="2" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="28" ImageID="1" Info="【@nick】最近【肌肉酸痛】吗？" />
+					<Option Info="是啊，你怎么知道？" SkipTrigger="Y" />
+					<Option Info="肌肉酸痛？" NextStep="14" SkipTrigger="Y" />					
+    			</Action>
+    		</Event>
+		</Step>					
+		<Step ID="13" ParentList="12" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="28" ImageID="2" Info="我是弓箭手导师我懂的。" />
+					<Option Info="嘿嘿 "  SkipTrigger="Y" />					
+    			</Action>
+    		</Event>
+		</Step>					
+		<Step ID="14" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="28" ImageID="1" Info="练习还不够努力啊~~" />
+					<Option Info="⊙﹏⊙" NextStep="15" SkipTrigger="Y" />				
+    			</Action>
+    		</Event>
+		</Step>													
+		<Step ID="15" ParentList="13" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="28" ImageID="3" Info="我平时射箭要长时间保持一个姿势非常痛苦！\n所以特别发明了【王冠按摩运动澡】，\n让全身彻底放松。" />
+			        <Msg NpcID="28" ImageID="1" Info="【@nick】如果想体验的话就带一只【王冠卡西卡】来吧，我免费传授。" />	
+					<Option Info="现在就去！" />
+					<Option Info="我很忙，下次吧" NextStep="15" />					
+    			</Action>
+    		</Event>
+		</Step>							
+ 		<Step ID="16" ParentList="15" ParentCost="1" >
+			<Condition>
+				<Pet Follow="Y" Type="16" Level="0" Grow="0" />				
+			</Condition>
+        	<Event ConditionType="IN" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="我带王冠卡西卡来了 " />
+				</Trigger>			
+    			<Action Type="TALK">			
+					<Msg NpcID="28" ImageID="3" Info="哈，这不是我最喜欢的“王冠小喵咪”吗？\n【@nick】去放水，准备洗澡。" />
+            		<Option Info="不会吧！" TalkOver="Y" /> 
+	         		<Option Info="啊？？" TalkOver="Y" /> 				
+    			</Action>	 		
+				<Action Type="MOVIE" Url="task_10059_4.swf" MapLevel="TASK" Pos="0,0" />			
+    			<Action Type="TALK">	
+					<Msg NpcID="28" ImageID="9" Info="——你为什么这么惊讶？\n哦好吧那我不亲自示范了。" />				
+					<Msg NpcID="28" ImageID="1" Info="就简单说明一下：\n【王冠按摩运动澡】就是假装要抢卡西卡的王冠，让它发动“尾巴铁锤”。" />
+					<Msg NpcID="28" ImageID="5" Info="被卡西卡砸真是享受啊~\n不过记住千万不要真的抢到手，\n那样你会英年早逝的！" />			
+            		<Option Info="太危险了！ " SkipTrigger="Y"  />
+    			</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+        		<Trigger>
+            		<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="我带王冠卡西卡来了 " />
+        		</Trigger>
+    			<Action Type="TALK">
+					<Msg NpcID="28" ImageID="1" Info="是吗？我怎么没看到？\n如果在精灵口袋里就让它【跟随】出来吧~！ " />
+            		<Option Info="现在就去！ " />
+            		<Option Info="王冠卡西卡在哪？ " NextStep="49" SkipTrigger="Y" NotUpdateBuffer="Y" />					
+    			</Action>
+            </Event>				
+		</Step>
+		<Step ID="49" ParentList="0" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="我带王冠卡西卡来了 " />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="28" ImageID="1" Info="王冠卡西卡就在【格历尔平原11、12区】！\n这点小事我就不帮你了！ " />	
+					<Option Info="现在就去！" NextStep="16" />			
+    			</Action>
+    		</Event>
+		</Step>				
+		<Step ID="18" ParentList="16" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="卡西卡放轻松" />
+				</Trigger>
+				<Action Type="TALK">							
+			        <Msg NpcID="28" ImageID="1" Info="看来泡“王冠按摩运动澡”这个办法不太适合你。去问问别人吧! " />	
+					<Option Info="现在就去！" SkipTrigger="Y" />			
+    			</Action>
+    		</Event>
+		</Step>		
+
+
+<!--  铃  -->
+  		<Step ID="34" ParentList="2" ParentCost="1" >
+			<Event Memo="导师们有什么放轻松秘诀？\n——先去4个c职业协会c看看吧！\n导师们就在c摩尔城堡·勇士大厅c和c女神大圣堂c，不要迷路!" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="放轻松的秘诀到底是什么" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="【@nick】和【4位职业导师】都咨询过了吗？\n相信总有一种方法适合你^^！" />
+					<Msg NpcID="102" ImageID="1" Info="温蒂老师就站在那边哦，其它3位导师在\n【摩尔城堡的勇士大厅】各自的职业协会。" />
+					<Msg NpcID="102" ImageID="2" Info="不管什么年龄都怕见老师，我很理解(*^__^*)~~嘻嘻……" />
+					<Option Info="知道了" NextStep="34" />									
+				</Action>
+    		</Event>											
+	    </Step>	
+	
+			
+		
+  		<Step ID="35" ParentList="17" ParentCost="1" >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="没法放松！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="碰到困难的时候，除了祈祷，还可以找“万能的摩尔王”。\n他从来不会让人失望^^！" />	
+					<Option Info="这就去找摩尔王" NextStep="35" />								
+				</Action>
+    		</Event>											
+	    </Step>	 	
+
+
+  		<Step ID="17" ParentList="30, 8, 11, 18, 34" ParentCost="4" SkipList="34" >
+    		<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+    			<Action Type="COMMAND" Command="NOTHING" />							
+    		</Event>
+		</Step>	<!--提交节点2 -->			
+
+
+
+
+
+<!--  摩尔王  -->
+  		<Step ID="25" ParentList="17" ParentCost="1" >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="你泡【王冠运动按摩澡】吗？ " />
+					<Option Info="不泡" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>	
+  		<Step ID="19" ParentList="25" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="你跳【库噜库噜舞】吗？ " />
+					<Option Info="不跳" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>	
+		<Step ID="20" ParentList="19" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="你玩游戏吗？ " />
+					<Option Info="囧……" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>	
+  		<Step ID="21" ParentList="20" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="那【@nick】来摩尔王国这么久，\n你怎样娱乐休息呢？ " />
+					<Option Info="净化精灵练级" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>		
+  		<Step ID="22" ParentList="21" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="……！！\n我代表摩尔王国感谢你……。\n现在就为你请出时之女神。" />
+					<Option Info="你为什么不早说 " SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>			
+  		<Step ID="23" ParentList="22" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="女神大人经常神隐，我也没办法。 " />
+					<Option Info="-___-" SkipTrigger="Y" />	
+				</Action>
+    		</Event>											
+	    </Step>	
+  		<Step ID="24" ParentList="23" ParentCost="1"  >
+			<Event Memo="万能的c摩尔王c会有怎样的放松秘诀？\n去c国王呈见厅c看看吧！" TargetMap="11307">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="放轻松的秘诀" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="请准许我以时间的名义… " />
+					<Msg NpcID="2" ImageID="2" Info="令人敬爱的【摩尔王·詹姆斯】————\n你特地召唤找我有什么事——？ " />
+					<Msg NpcID="30" ImageID="2" Info="请依照神谕给这位努力的小勇士——\n【@nick】颁发特别奖励。" />
+					<Msg NpcID="2" ImageID="2" Info="我明白了……\n谢谢你【@nick】……\n你让我感受到了新的活力……" />					
+					<Msg NpcID="2" ImageID="1" Info="我代表 时 间，\n预先给你【未来2天的经验】——\n【@nick】给自己放一个愉快的假期吧~" />															
+					<Option Info="\(^o^)/经验万岁！" />	
+				</Action>
+    		</Event>											
+	    </Step>								
+	</Procedure>
+</Task>

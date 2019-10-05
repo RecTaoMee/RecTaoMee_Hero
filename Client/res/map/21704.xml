@@ -1,0 +1,22 @@
+<!-- 锁修塔四层 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+    <transport intPos="223,314">
+        <node id="1" pos="800,830" targetMapId="21703" targetTransPortId="2"/>
+        <node id="2" pos="712,126" targetMapId="11704" targetTransPortId="2" confirm="1" confirmStr="锁修塔5层暂未开放，是否要回到锁修塔底层？"/>
+    </transport>
+    <object>
+        <node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+        <node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+    </object>
+	<npc>
+		<node id="337" type="NPC" res="MC_npc_337" action="0"/>
+	</npc>	
+	<actions>
+        <proAction npcID="337" id="1" type="0" answer="我要挑战你！$回锁修塔底层$下次再见" to="a10$a11$o" colorID="1$1$0">
+            <des> <![CDATA[1#……]]>
+            </des>
+        </proAction>        
+		<proAction id="10" type="5" fightID="2010" />
+		<proAction id="11" type="7" mapID="11704" />
+	</actions>
+</map>

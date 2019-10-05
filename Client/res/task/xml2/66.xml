@@ -1,0 +1,55 @@
+<Task ID="66" Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，\n快去看看吧！" TargetMap="11307">
+   	<Procedure> 
+  	  	<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，\n快去看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="有事吗？" />			
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="25" ImageID="6" Info="【怪盗集团】最近疯狂偷窃星豆，\n【@nick】去净化【3只怪盗迪迪拉】如何？" />														
+					<Option Info="【怪盗迪迪拉】在哪里？" SkipTrigger="Y" />					
+					<Option Info="我很忙，下次吧" NextStep="1" />
+				</Action>
+    		</Event>
+    	</Step>						
+  	  	<Step ID="4" ParentList="1" ParentCost="1" >
+    		<Event Memo="c宾德c士兵长邀请未来勇士前去c国王呈见厅c，\n快去看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="【怪盗迪迪拉】在哪里？" />			
+				</Trigger>
+				<Action Type="TALK">					
+			        <Msg NpcID="25" ImageID="1" Info="从王国【南街】出城向下↓走，\n怪盗迪迪拉就在格历尔【平原1区】出没。" />	
+					<Option Info="使命必达！" />					
+				</Action>
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21301,16002" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21301,1" />						
+    		</Event>
+    	</Step>			   
+  	  	<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="7" Count="3" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="怪盗迪迪拉封印成功↖(^ω^)↗！\n快去c国王呈见厅c报告c宾德c士兵长吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="净化3只迪迪拉了！" />			
+				</Trigger>
+				<Action Type="TALK">	
+			        <Msg NpcID="315" ImageID="3" Info="⊙﹏⊙|||\n又是鸡冠头士兵长~~~" />										
+			        <Msg NpcID="25" ImageID="6" Info="给你们介绍下，\n这只【王冠卡西卡】是我的侍卫精灵。\n如果迪迪拉再偷窃星豆，\n就得尝尝它“铁锤尾巴”的滋味！" />	
+			        <Msg NpcID="25" ImageID="1" Info="你想和这只【王冠卡西卡】成为同伴吗？" />																																
+					<Option Info="想！" />
+				</Action>
+				<Action Type="TALK">	
+			        <Msg NpcID="25" ImageID="1" Info="祝你们成为最佳拍档！" />																																
+					<Option Info="卡西卡万岁！" />
+				</Action>				
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="小主人快去c平原1区c净化c【3只】怪盗迪迪拉c吧（精灵和头目不算哦~）！" TargetMap="21301" TargetObj="16002" TargetName="净化t怪盗迪迪拉t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21301" ObjID="16002" />
+				</Trigger>
+				<Action Type="COMMAND" Command="BATTLE" Params="21" />														
+    		</Event>			
+    	</Step>			
+</Procedure>
+</Task>

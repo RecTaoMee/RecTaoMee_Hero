@@ -1,0 +1,48 @@
+<Task ID="19999" Memo="时间漩涡终于消失了，到底是怎么回事呢？去问问c国王呈见厅c问问执行大臣c莱卡c。" TargetMap="11307">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="时间漩涡终于消失了，到底是怎么回事呢？去问问c国王呈见厅c问问执行大臣c莱卡c。" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="时间漩涡" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="180052" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="时间漩涡终于消失了，到底是怎么回事呢？去问问c国王呈见厅c问问执行大臣c莱卡c。" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="时间漩涡" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="1" Info="伊恩大魔王使用了禁忌魔法【天启】，你手上碎片表示你参与了保卫战斗！\n摩尔王国授予你荣誉称号：———" />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="时间漩涡终于消失了，到底是怎么回事呢？去问问c国王呈见厅c问问执行大臣c莱卡c。" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="时间漩涡" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="伊恩大魔王使用了禁忌魔法【天启】，不同的时空被撕裂纠缠在一起，世界虽然逃避了毁灭，但是也发生了巨大的改变..." />
+					<Msg NpcID="24" ImageID="2" Info="为了纪念这次事件\n给予你纪念称号:———" />
+					<Option Info="...." NextStep="3" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="时间漩涡终于消失了，到底是怎么回事呢？去问问c国王呈见厅c问问执行大臣c莱卡c。" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="时间漩涡" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

@@ -1,0 +1,12 @@
+<!--平原四区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308"> 
+		<node id="1" pos="156,396" targetMapId="21303" targetTransPortId="3" name="平原三区"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-496,-125" tip="aaa"/>
+	</object>
+	<npc>		
+		<node id="363" type="NPC" res="MC_npc_363" action=""  taskShowSteps="35007_5|6|7|8" />				
+	</npc>		
+</map>

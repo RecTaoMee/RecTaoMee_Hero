@@ -1,0 +1,32 @@
+<!--王国军营-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-014.mp3">
+	<transport intPos="422,470">
+		<node id="1" pos="422,470" targetMapId="11205" targetTransPortId="4" name="王国东街"/>
+	</transport>
+	<object>
+		<node id="12" type="TransPort" res="MC_door_1" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="1" type="NPC" res="MC_npc_101" action="1" name="妮娜"/>
+		<node id="2" type="NPC" res="MC_npc_200" action="2" name="士兵"/>
+		<node id="2" type="NPC" res="MC_npc_201" action="2" name="士兵"/>
+		<node id="2" type="NPC" res="MC_npc_202" action="2" name="士兵"/>
+		<node id="2" type="NPC" res="MC_npc_203" action="2" name="士兵"/>
+		<node id="2" type="NPC" res="MC_npc_204" action="2" name="士兵"/>
+		<node id="2" type="NPC" res="MC_npc_205" action="2" name="士兵"/>
+	</npc>		
+	<actions>
+		<proAction npcID="101" id="1" type="0" answer="我知道了" to="o" >
+			<des>
+				<![CDATA[1#南瓜公爵经过万圣节我们的顽强抗击，已经逃逸……]]>
+			</des>
+		</proAction>			
+	</actions>
+	<actions>
+		<proAction npcID="200" id="2" type="0" answer="我知道了" to="o" >
+			<des>
+				<![CDATA[1#1...2...1为了保卫家园，为了王国的荣誉，我们一定要加紧操练，尽快提升自己的能力，对抗南瓜军！！！]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

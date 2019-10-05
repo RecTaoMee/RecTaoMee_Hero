@@ -1,0 +1,49 @@
+<!--平原二区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<process>
+		<node name="ActivityGegela"/>
+	</process>
+	<transport intPos="360,308"> 
+		<node id="1" pos="73,708" targetMapId="21301" targetTransPortId="3" name="平原一区"/>
+		<node id="2" pos="1526,473" targetMapId="21303" targetTransPortId="1" name="平原三区"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_enter0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_enter1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="324" name="智慧之树" type="NPC" res="MC_npc_324" level="downLevel" fun="" taskType="0" action="0" needLevel="" needKind=""/>
+		<node id="361" type="NPC" res="MC_npc_361" action=""  taskShowSteps="35007_5|6|7|8" />								
+	</npc>
+	<actions>
+		<proAction npcID="324" id="0" type="0" answer="给大树喝水$大树和海德的故事$摩尔勇士万岁" to="k0$k2$o" colorID="1$1$0" >
+				<des>
+					<![CDATA[1#好想念【至纯之水】的味道，那能让我恢复活力，再见到【海德】的神奇之水！每周六、周日的<FONT COLOR="#E7100B">6:00-24:00</FONT>是我饮水的时间！]]>
+				</des>
+		</proAction>
+		<proAction npcID="324" id="1" type="0" answer="知道了" to="o" >
+				<des>
+					<![CDATA[1#每周六、周日的<FONT COLOR="#E7100B">6:00-24:00</FONT>我才喝水！到时再来吧！]]>
+				</des>
+		</proAction>	
+		<proAction npcID="324" id="2" type="0" answer="知道了" to="o" >
+				<des>
+					<![CDATA[1#平原一区的【柯特】也许能提供【至纯之水】；听说【海港镇】也有卖，勤快的摩尔买些回来吧！]]>
+				</des>
+		</proAction>	
+		<proAction npcID="324" id="3" type="0" answer="知道了" to="o" >
+				<des>
+					<![CDATA[2#感谢大家的至纯之水，暂时弱化了黑水晶的力量！趁这短暂的时间，快去契约精灵【海德】吧！]]>
+				</des>
+		</proAction>	
+		
+		<proAction npcID="314" id="4" type="0" answer="开打$我闪" event="click_gegela" to="a5$o" >
+				<des>
+					<![CDATA[1#敢跟我打吗？]]>
+				</des>
+		</proAction>	
+		<proAction id="5" type="5" fightID="22"/>
+	</actions>	
+</map> 

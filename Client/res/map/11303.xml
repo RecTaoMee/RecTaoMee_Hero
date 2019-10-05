@@ -1,0 +1,42 @@
+<!--弓-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<transport intPos="145,340">
+		 <node id="1" pos="622,292" targetMapId="11302" targetTransPortId="2"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_archerHandBook" module="ArcherBookModule" />
+		
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="28" type="NPC" res="MC_npc_28" action="0$1"/>
+	</npc>
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<actions>
+		<proAction npcID="28" id="0" type="0" answer="【学习技能】$弓箭手体验$摩尔勇士万岁！" to="b9_28$a2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#你知道弓箭手的秘诀吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="28" id="1" type="0" answer="【学习技能】$弓箭手体验$摩尔勇士万岁！" to="b9_28$a2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#秘诀那就是——工作时从不多喝水~不然“不得已的身体原因”会使你跟丢猎物。]]>
+			</des>
+		</proAction>
+		<proAction npcID="28" id="2" type="0" answer="准备好了！" to="a3" >
+			<des>
+				<![CDATA[2#那些外行不会了解弓术的魅力~。不过你真心想了解的话可以让你感受一下~。拿上【练习弓箭】我们开始吧！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" outMap="1" level="taskLevel" name="skill_1" moviepos="0,0"  to="o"/>
+		<proAction npcID="28" id="4" type="0" answer="我准备好了来吧！$当我没说过" to="a6$o" colorID="1$0" >
+			<des>
+				<![CDATA[2#你想要挑战我？nonono....这绝不是个聪明的决定。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="5" fightID="" />
+		<proAction id="6" npcID="28" type="5" fightID="3003" />
+	</actions>
+</map>

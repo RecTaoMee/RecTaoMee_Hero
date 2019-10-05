@@ -1,0 +1,141 @@
+<Task ID="20" Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201">
+	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="艾比我来啦！" />
+				</Trigger>			
+				<Action Type="TALK">						
+					<Msg NpcID="7" ImageID="7" Info="【陆行鸟古力】最爱吃的【时间甜甜圈】找不着了！" />	
+					<Msg NpcID="8" ImageID="2" Info="（T_T）~（很难过的样子呢）" />	
+					<Option Info="怎么回事？" SkipTrigger="Y"/>
+					<Option Info="有事先走了" NextStep="1"/>					
+				</Action>			
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="快去c王国南街c找陆行鸟训练师c艾比c聊聊吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="怎么回事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="8" ImageID="2" Info="今天一觉醒来，\n我藏在羽毛里的【20个甜甜圈】全都不见了（T_T）~！" />						
+					<Msg NpcID="401" ImageID="9" Info="（“灵异事件”？\n快去王国南街的【面包店】，\n买【20个时间甜甜圈】安慰一下陆行鸟吧！）" />
+					<Option Info="古力请稍等" />
+				</Action>			
+    		</Event>
+		</Step>						
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="230002" Count="20" />		
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="c时间甜甜圈c买到啦，\n快去c王国南街c告诉c艾比c吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="时间甜甜圈买来啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="8" ImageID="1" Info="甜甜圈配【牛奶】最好吃了！\n（¯﹃¯）口水~" />		
+					<Msg NpcID="7" ImageID="7" Info="牛奶……也找不着了。" />																
+					<Msg NpcID="8" ImageID="2" Info="！！我的【90瓶牛奶】……心好痛啊（T_T）~" />	
+					<Msg NpcID="401" ImageID="3" Info="（友情提醒：弗雷基港的【弗雷基商会】有售【牛奶】唷。）" />					
+					<Option Info="古力请稍等" />
+				</Action>			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去王国南街的c面包店c买c20个时间甜甜圈c吧！" TargetMap="11213" TargetObj="" TargetName="买20个t时间甜甜圈t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="找不到【时间甜甜圈】…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="8" ImageID="2" Info="（T_T）~（很难过的样子呢）" />	
+					<Msg NpcID="401" ImageID="3" Info="（快去王国南街的【面包店】，买【20个时间甜甜圈】安慰一下陆行鸟吧！）" />
+					<Option Info="古力请稍等" />
+				</Action>			
+    		</Event>			  
+		</Step>		
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+			<Condition>
+				<Item ID="160006" Count="90" />		
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="c牛奶c买到啦，\n快去c王国南街c告诉c艾比c吧！" TargetMap="11201" TargetObj="7" TargetName="和t艾比t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="牛奶买来啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="366" ImageID="1" Info="这么多【牛奶】够喝2个月了，\n陆行鸟大哥一定又要【远行】了！\n你们每次都不带我去╰_╯！" />		
+					<Msg NpcID="401" ImageID="6" Info="（看来【牛奶和甜甜圈】都是【蛋黄鸟】故意藏起来的！）" />																
+					<Msg NpcID="366" ImageID="2" Info="我不会告诉你们，\n我多想和你们一起玩儿……" />																																													
+					<Msg NpcID="7" ImageID="7" Info="蛋黄鸟，别走——" />																
+					<Msg NpcID="8" ImageID="1" Info="唉~它每次不高兴都会去【麦田村】发呆……" />	
+					<Option Info="这就去【麦田村】找它！" />			
+				</Action>			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去弗雷基港的c弗雷基商会c买c90瓶牛奶c吧！" TargetMap="11602" TargetObj="" TargetName="买90瓶t牛奶t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="找不到【牛奶】…" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="8" ImageID="2" Info="我的【90瓶牛奶】……心好痛啊（T_T）~" />	
+					<Msg NpcID="401" ImageID="3" Info="（友情提醒：弗雷基港的【弗雷基商会】有售【牛奶】唷。）" />					
+					<Option Info="古力请稍等" />
+				</Action>			
+    		</Event>			  
+		</Step>		
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="快去c麦田村广场c找c蛋黄鸟c聊聊吧！" TargetMap="11401" TargetObj="366" TargetName="和t蛋黄鸟t对话">	<!--加鸟-->
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="366" TaskOption="蛋黄鸟怎么啦？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="8" ImageID="1" Info="蛋黄鸟，你在“迎风流泪”咩？" />	
+					<Msg NpcID="8" ImageID="1" Info="我知道你很想“远行”，\n可是外面的世界很危险……" />						
+					<Msg NpcID="366" ImageID="1" Info="哼（╯＾╰）！" />																																																		
+					<Msg NpcID="8" ImageID="1" Info="好吧，只要你能找到一个像艾比一样可靠的【拍档】结伴旅行，我就放心了——" />	
+					<Option Info="我就是好拍档！" />									
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="366" ImageID="4" Info="咕咕，当我的拍档必须实力出众！\n上次路过【平原11区】被一群【王冠卡西卡】欺负，\n我的拍档居然先跑了！" />						
+					<Msg NpcID="366" ImageID="4" Info="你有能力保护我吗？\n打败【1个王冠卡西卡】来证明吧！" />	
+					<Option Info="当然！(不用打,点逃跑也算)" SkipTrigger="Y"/>									
+					<Option Info="怕怕" NextStep="5" />									
+				</Action>																				
+    		</Event>
+		</Step>		
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="快去c麦田村广场c找c蛋黄鸟c聊聊吧！" TargetMap="11401" TargetObj="366" TargetName="和t蛋黄鸟t对话">	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="366" TaskOption="证明实力给你看" />
+				</Trigger>
+				<Action Type="TALK">					
+					<Msg NpcID="366" ImageID="4" Info="【王冠卡西卡】就在【平原11区】，\n别让我失望唷！" />																																																		
+					<Option Info="一言为定！(不用打,点逃跑也算)" />							
+				</Action>														
+    		</Event>
+		</Step>					
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+			<Condition>
+				<Battle ID="16" Count="1" />
+			</Condition>			  
+    		<Event ConditionType="IN" Memo="打赢王冠卡西卡啦，快去c麦田村广场c找c蛋黄鸟c聊聊吧！" TargetMap="11401" TargetObj="366" TargetName="和t蛋黄鸟t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="366" TaskOption="打败王冠卡西卡啦" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="366" ImageID="4" Info="以后我们就是一起旅行的伙伴啦！" />
+					<Msg NpcID="366" ImageID="4" Info="请随时召唤我O(∩_∩)O！\n我就在你的【旅行箱】→【武器装备】里。\n我能使你行动更迅速！" />
+					<Option Info="好诶！" />	
+				</Action>	
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="ITEM_BAG,89001" />												      						
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c平原11区c打败c10只王冠卡西卡c吧！" TargetMap="21311" TargetObj="" TargetName="打败t王冠卡西卡t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="366" TaskOption="王冠卡西卡在哪" />
+				</Trigger>
+				<Action Type="TALK">					
+					<Msg NpcID="366" ImageID="1" Info="王冠卡西卡就在【平原11区】，\n我等你好消息！" />																																																		
+					<Option Info="一言为定！" />	
+				</Action>
+    		</Event>			  
+		</Step>						
+	</Procedure>
+</Task>

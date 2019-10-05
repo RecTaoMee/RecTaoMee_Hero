@@ -1,0 +1,50 @@
+<Task ID="10082" Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="桦木？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="今天有没有偷懒，不好好训练？" />					
+					<Option Info="当然没有！"  SkipTrigger="Y" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="桦木？" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="OK。开始这次的军训课吧——\n收集15个桦木。\n去格历尔平原3区的矮树墩上很容易就能采集到。" />	
+					<Option Info="使命必达！" />
+				</Action>
+    		</Event>
+    	</Step>
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="170005" Count="15" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="采集完成↖(^ω^)↗\n快去c平原11区c交给c守卫士兵Zc吧!" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="桦木来了！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="谢谢【@nick】，有了木材就可以扩建营地了。\n士兵们都很高兴！" />
+					<Option Info="O(∩_∩)O" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="快去c格历尔平原3区c采集c15个桦木c吧！" TargetMap="21303" TargetName="采集t桦木t" TargetPos="210,230">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="去采桦木来啦！" />											
+				</Trigger>		
+				<Action Type="TALK">						
+					<Msg NpcID="225" ImageID="1" Info="【15个桦木】从格历尔平原3区的矮树墩上很容易就能采集到。" />	
+					<Option Info="使命必达！" />					
+				</Action>						
+    		</Event>			
+    	</Step>  			
+	</Procedure>
+</Task>

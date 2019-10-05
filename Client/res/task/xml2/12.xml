@@ -1,0 +1,27 @@
+<Task ID="12" Memo="刚才出手相助的神秘c黑衣人c好像有话要说。" TargetMap="11102" TargetObj="16014" TargetName="和黑衣人对话" > 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="" TargetMap="11102" TargetObj="16015" TargetName="和t黑衣人t对话" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="9" ParentCost="1" >
+    		<Event Memo="刚才出手相助的神秘c黑衣人c好像有话要说。" TargetMap="11102" TargetObj="104" TargetName="和t黑衣人t对话" >  	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="104" TaskOption="恐惧魔王？" />					  					  						  		
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="你就是受到“女神”召唤的未来摩尔？" />	
+					<Msg NpcID="104" ImageID="1" Info="在勇士的国度，想保护好自己并不简单。\n你如果挑战过【净化之路】，\n就会意识到自己的弱小。" />	
+					<Option Info="【净化之路】？" />
+				</Action>		
+ 				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="那是一条挑战“王者级”精灵的试炼之路。\n奇普力【村长】会告诉你一切。" />	
+					<Option Info="这就去问【村长】" />
+				</Action>		
+    			<Action Type="MOVIE" Url="task_12_1.swf" MapLevel="CONTENT" Pos="-330,-75" />			
+    		</Event>
+		</Step>			    		
+</Procedure>
+</Task>
+

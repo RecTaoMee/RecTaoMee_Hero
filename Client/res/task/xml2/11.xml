@@ -1,0 +1,37 @@
+<Task ID="11" Memo="“狐狸”c鼬西c向“恐惧魔王”求救了（⊙ｏ⊙） ？\n快去c土豆屋外c看看吧！" TargetMap="11102" > 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="" TargetMap="11102" TargetObj="16014" TargetName="和t恐惧魔王t对话" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="“狐狸”c鼬西c向“恐惧魔王”求救了（⊙ｏ⊙） ？\n快去c土豆屋外c看看吧！" TargetMap="11102" TargetObj="345" TargetName="和t恐惧魔王t对话" >  	
+  				<Trigger> 
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="345" TaskOption="恐惧魔王？" />					  					  						  		
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="亵渎【魔王】之名的摩尔，\n付出代价吧——" />	
+					<Option Info="来战！" />
+				</Action>	
+    			<Action Type="MOVIE" Url="task_11_1.swf" MapLevel="CONTENT" Pos="-450,-75" />  	
+ 				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="【@nick】退下！" />	
+					<Option Info="（⊙ｏ⊙） ？" SkipTrigger="Y" />
+				</Action>							
+    		</Event>
+		</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="“狐狸”c鼬西c向“恐惧魔王”求救了（⊙ｏ⊙） ？\n快去c土豆屋外c看看吧！" TargetMap="11102" TargetObj="345" TargetName="和t恐惧魔王t对话" >  	
+  				<Trigger> 
+					<Item Type="NPC_OPTION" MapID="11102" ObjID="345" TaskOption="恐惧魔王？" />					  					  						  		
+				</Trigger>	
+    			<Action Type="COMMAND" Command="BGM_MUTE" />  <!-- 背景音乐静音 -->				
+    			<Action Type="MOVIE" Url="task_11_2.swf" MapLevel="TASK" Pos="0,0" />	
+    			<Action Type="COMMAND" Command="BGM_NORMAL" />  <!-- 背景音乐正常播放 -->						
+    		</Event>
+		</Step>				   		    		
+</Procedure>
+</Task>
+
+

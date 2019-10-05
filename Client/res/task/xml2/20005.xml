@@ -1,0 +1,56 @@
+<Task ID="20005" Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202">
+<BoardInfo PageType="1" Title="王国悬赏令③" Content="【修隐岛•锁修塔】里游荡着大量【幽光战士】，请前往那里净化5只【幽光战士】，并带回【5把昔日的佩剑】作为证明。"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="180053" Count="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="净化完毕，c请回去国王呈见厅把昔日的佩剑交给宾德吧。c" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="已经净化完毕" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="看到这些剑，不禁让我想起过去在锁修塔修炼的日子......\n今天辛苦了，请去公告栏领取奖励吧。" />
+					<Option Info="谢谢" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="小主人快前往c锁修塔c净化c幽光战士c吧。" TargetMap="21701" TargetObj="" TargetName="t昔日的佩剑t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="锁修塔在哪？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="弗雷基港乘坐勇士号就可以到达修隐岛，锁修塔在修隐岛的密林深处。" />
+					<Option Info="好的" />
+				</Action>
+			</Event>
+		</Step>	
+		
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="锁修塔的秘密可不止这一点~嘿嘿~" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>

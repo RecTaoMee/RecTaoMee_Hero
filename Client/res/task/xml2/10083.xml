@@ -1,0 +1,58 @@
+<Task ID="10083" Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+	<Procedure>   					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="你好啊^^!" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="可恶！！刚才有个小鬼溜进了风之洞穴！" />	
+					<Option Info="咦(⊙o⊙)？" SkipTrigger="Y"/>							
+					<Option Info="有事先走了" NextStep="1" />																					
+				</Action>																		
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="你好啊^^!" />									
+				</Trigger> 				
+				<Action Type="TALK">				
+					<Msg NpcID="222" ImageID="1" Info="风之洞穴是王国一级危险区域，\n如果遇到黑化精灵可不是开玩笑的!" />				
+					<Msg NpcID="222" ImageID="1" Info="你能帮我找到他吗？\n看到戴着“土豆皮帽子”的家伙就是他了！" />	
+					<Option Info="这就去【风之洞穴】！" />																											
+				</Action>				
+    		</Event>
+		</Step>		
+			
+<!-- 节点1↑ -->                                                                             
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="戴“土豆皮帽子”的摩尔就在c风之洞穴c，\n快去找找看吧！" TargetMap="21501" TargetObj="61" TargetName="和t菠萝t对话" >
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21501" ObjID="61" TaskOption="士兵在找你！" />									
+				</Trigger> 						
+				<Action Type="TALK">
+					<Msg NpcID="61" ImageID="1" Info="他还说这里很危险吧？\n哈哈，在斗技场就没人能赢过我。" />	
+					<Msg NpcID="61" ImageID="1" Info="这里完全没有挑战性啊~~\n不过我得玩够了才出去！" />						
+					<Option Info="(￣▽￣)|||" />				
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="1" Info="【@nick】别光顾着聊天，\n快去报告守卫士兵吧！" />																														
+					<Option Info="这就去【平原12区】" />				
+				</Action>									
+			</Event>
+		</Step>		
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="找到菠萝啦↖(^ω^)↗\n快去c平原12区c报告c守卫士兵Wc吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="他很安全!" />									
+				</Trigger> 					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="好吧，我放心点了。\n我发誓下次再也不让可恶的小鬼混进去了！" />																								
+					<Option Info="O(∩_∩)O" />				
+				</Action>		
+    		</Event>
+		</Step>		 		
+	</Procedure>
+</Task>

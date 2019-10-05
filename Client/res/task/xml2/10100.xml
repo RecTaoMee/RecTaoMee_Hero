@@ -1,0 +1,28 @@
+<Task ID="10100" Memo="勇士广场的c拉尼克斯c好像知道树系精灵的秘密，快去找他一看究竟吧！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="勇士广场的c拉尼克斯c好像知道什么秘密，快去找他一看究竟吧！" TargetMap="11202" TargetObj="316" TargetName="和t拉尼克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="316" TaskOption="拉尼克斯的秘密" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/> 		
+			</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="勇士广场的c拉尼克斯c好像知道什么秘密，快去找他一看究竟吧！" TargetMap="11202" TargetObj="316" TargetName="和t拉尼克斯t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="316" TaskOption="拉尼克斯的秘密" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="316" ImageID="1" Info="你终于来了，伟大的摩尔勇士，我叫拉尼克斯，你不必了解我，我的目的就是告诉你一个秘密。" />
+					<Option Info="什么秘密？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="316" ImageID="1" Info="传说中的“草木树海”隐藏在在格历尔平原的深处，伟大的树系精灵们生活在那片地方，现在似乎在女王娜蒂丝的带领下苏醒了。" />
+					<Option Info="树系精灵……" />
+				</Action>				
+			</Event>
+		</Step>
+	</Procedure>
+</Task>
+		

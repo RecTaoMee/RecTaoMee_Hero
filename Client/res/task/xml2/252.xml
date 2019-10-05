@@ -1,0 +1,68 @@
+<Task ID="252" Memo="草木树海的库噜王又开始猖獗了，快找勇士广场的c多修c询问详情！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="草木树海的库噜王又开始猖獗了，快找勇士广场的c多修c询问详情！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="库噜王这家伙又来了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="我摩尔十二圣战士之一的多修，库噜王自从上次被树系女王娜蒂丝击败后，并为善罢甘休，而今又集结了一帮手下袭击草木树海。" />
+					<Option Info="库噜王到底为何这么做？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="库噜王原本是魔王尤利的手下，但最近魔王尤利被未来勇士们击败，实力大大受损。于是库噜王就自立门户，侵袭草木树海，希望壮大自己的势力。" />
+					<Option Info="原来是这样……" />						
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="现在库噜王已集结了大批库噜兵囤集在草木树海，小勇士，你前去【草木树海】找到库噜王一探究竟，植物系女王娜蒂丝会在战斗中帮助你。" />
+					<Option Info="我这就去！" />						
+				</Action>
+			</Event>
+		</Step>
+		
+     	<Step ID="2" ParentList="1" ParentCost="1" >
+	     	<Event Memo="" TargetMap="11503" TargetObj="309" TargetName="和t库噜王t对话">
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11503,309" />
+				<Action Type="MOVIE" Url="task39002_1.swf" MapLevel="TASK" Pos="0,0" />
+	    	</Event>
+	    </Step>
+			
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="2911" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="前往草木树海战胜c库噜王c" TargetMap="11503" TargetObj="309" TargetName="和t库噜王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11503" ObjID="309" TaskOption="库噜王你败了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="309" ImageID="1" Info="没想到我库噜王居然会输给你这毛头小娃！要不是娜蒂丝助你，我怎么会败给你？！" />
+					<Option Info="输了还不承认，真不要脸！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="309" ImageID="1" Info="你听着，本座并不服你，你若是在每天12-13点、19-21点再来挑战本座，本座会使出真正的实力，当然你若战胜，我会给你回报！" />
+					<Option Info="哼，谁怕你！" />
+				</Action>								
+			</Event>
+			<Event ConditionType="OUT" Memo="前往草木树海战胜c库噜王c" TargetMap="11503" TargetObj="309" TargetName="和t库噜王t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11503" ObjID="309" TaskOption="库噜王！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="309" ImageID="1" Info="（……“库噜王库噜王”……）是谁在叫唤本座？哼，原来是个小摩尔，敢直呼本座名号，你胆子不小啊！" />
+					<Option Info="笨库噜！丑库鲁！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="309" ImageID="1" Info="气死我了，气死我了，看来你和娜蒂丝是一伙的了，让你尝尝本座的厉害！受死吧！" />
+					<Option Info="不怕你，来吧！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="317" ImageID="1" Info="（……娜蒂丝突然出现……）小勇士，不用怕，我来保护你！库噜王，你这手下败将，三番四次挑衅我草木树海，你觉悟吧！" />
+					<Option Info="一起上！" />	
+					<Option Info="让我准备一下！" NextStep="3" />				
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2911"/>
+    		</Event>
+		</Step>			
+	</Procedure>
+</Task>

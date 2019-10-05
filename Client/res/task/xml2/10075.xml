@@ -1,0 +1,112 @@
+<Task ID="10075" Memo="c路伊c老师在等小主人，\n快去c麦田村广场c的麦田边看看吧！" TargetMap="11401">
+	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c路伊c老师在等小主人，\n快去c麦田村广场c的麦田边看看吧！" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="路伊我来啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="1" Info="【@nick】是来自【未来】的摩尔吗？\n我有种感觉——\n你不属于这个时代。" />	
+					<Option Info="正是！" />																						
+				</Action>
+				<Action Type="TALK">					
+					<Msg NpcID="32" ImageID="1" Info="那你肯定有【未来勇士】的称号吧，\n戴出来证明下你的身份怎样？" />	
+					<Option Info="马上就戴" />																
+					<Option Info="有事先走了" NextStep="1" />	
+				</Action>																				
+    		</Event>
+		</Step>			
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="称号戴好了，\n给c麦田村广场c上的c路伊c老师瞧瞧吧！" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="称号戴好了！" />	
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="6" Info="你的称号都在【个人信息】【荣誉称号】里。\n选择符合的称号戴上吧！" />
+					<Option Info="戴上【称号】给你看！" />									
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="3" Info="（T-T）其实……我也是【未来摩尔】！" />		
+					<Option Info="( ⊙o⊙ )不会吧？" />									
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="32" ImageID="1" Info="看，我和【@nick】一样“名字在脚下”！\n这个时代，摩尔的名字都在头顶上不是么。" />			
+					<Msg NpcID="32" ImageID="1" Info="而且我知道【摩尔庄园】和这里一些摩尔名字、长相、性格都超~级像——\n简直就是“家族命运”的延续。" />		
+					<Msg NpcID="32" ImageID="1" Info="这只是我的猜测，比如——" />																																																			
+					<Option Info="瑞恩↔瑞琪" SkipTrigger="Y" NotUpdateBuffer="Y" />				
+					<Option Info="妮娜↔尤娜" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="5" />
+					<Option Info="RK↔多修" SkipTrigger="Y" NotUpdateBuffer="Y" NextStep="4" />																																							
+				</Action>																																					
+    		</Event>			
+		</Step>		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="摩尔庄园(⊙_⊙)？\n去问问c麦田村广场c的c路伊c老师吧！" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="瑞恩和瑞琪" />
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="32" ImageID="1" Info="“握爪”（握手）！\n都是“主角型”人物，太阳一样的存在！" />																		
+					<Option Info="同意！" SkipTrigger="Y" />																																				
+				</Action>											
+    		</Event>
+		</Step>		
+  		<Step ID="4" ParentList="0" ParentCost="1" >
+    		<Event Memo="摩尔庄园(⊙_⊙)？\n去问问c麦田村广场c的c路伊c老师吧！" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="RK和多修" />
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="32" ImageID="1" Info="低调又有趣的自由型。\n我欣赏【RK】的自由，【多修】的低调——\n还有他们的穿衣品味^0^。" />																	
+					<Option Info="(*^__^*) " SkipTrigger="Y" />																																					
+				</Action>											
+    		</Event>
+		</Step>
+  		<Step ID="5" ParentList="0" ParentCost="1" >
+    		<Event Memo="摩尔庄园(⊙_⊙)？\n去问问c麦田村广场c的c路伊c老师吧！" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="妮娜和尤娜" />
+				</Trigger>
+				<Action Type="TALK">	
+					<Msg NpcID="32" ImageID="2" Info="只是名字相似吧……\n妮娜的出身有点像“么么公主”。\n但在战斗时她比很多剑士导师还可怕……" />																		
+					<Option Info="原来如此" SkipTrigger="Y" />																																					
+				</Action>											
+    		</Event>
+		</Step>	
+  		<Step ID="6" ParentList="3, 4, 5" ParentCost="1" >
+    		<Event Memo="c路伊c老师在寻找c未来勇士c。\n小主人不去c麦田村广场c看看吗？" TargetMap="11401" TargetObj="32" TargetName="和t路伊t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="32" TaskOption="未来路伊好！" />
+				</Trigger>
+				<Action Type="TALK">					
+					<Msg NpcID="32" ImageID="1" Info="对了，【@nick】也是在【摩尔庄园】受到【女神】召唤，来解救这个时代的吗？" />																																														
+					<Option Info="嗯！" />								
+				</Action>
+				<Action Type="TALK">				
+					<Msg NpcID="32" ImageID="1" Info="摩尔庄园现在有没有新的smc职业新骑宠？\n瑞琪回来了吗？\n拉姆进化出新形态了吗？" />		
+					<Msg NpcID="32" ImageID="1" Info="……\n哈，不好意思问题比较多。\n长大了就有些还念过去……" />																																																																																															
+					<Option Info="理解" TalkOver="Y" />																																																		
+				</Action>	
+    			<Action Type="MOVIE" Url="task_10075_1.swf" MapLevel="TASK" Pos="0,0" /> 													
+				<Action Type="TALK">	
+					<Msg NpcID="32" ImageID="3" Info="就这样过了半年，美好的麦田村受黑水晶影响越来越严重。" />	
+					<Msg NpcID="32" ImageID="3" Info="TB、卡密尔、村长……大家都遭到过黑化精灵袭击……\n如果我成为【摩尔勇士】，就有实力保护他们……" />
+					<Msg NpcID="32" ImageID="1" Info="你还记得奇普力爷爷交给你的【希望之坠】吗？" />							
+					<Option Info="记得" />	
+					<Option Info="忘记了" />	
+				</Action>
+				<Action Type="TALK">													
+					<Msg NpcID="32" ImageID="1" Info="“希望之坠”里寄托了大家“希望消灭黑色力量”的神圣光芒。\n我没有坚持修行，希望之坠的光芒黯淡了，我也失去了成为勇士的资格……" />																							
+					<Msg NpcID="32" ImageID="1" Info="我以前只想过自己喜欢的生活……\n但生活是【你喜欢做的事】，加上【你必须做的事】。" />	
+					<Msg NpcID="32" ImageID="1" Info="你有【未来勇士】的称号，你一定可以的。\n希望你加上我的份一起，成为【摩尔勇士】！\n——这是我的请求。" />										
+					<Option Info="我会成为摩尔勇士！" />				
+				</Action>
+				<Action Type="TALK">	
+					<Msg NpcID="32" ImageID="1" Info="我记得摩尔王说过“成为摩尔勇士的道路决不会比成为摩尔勇士简单”。\n如果你真的当上【摩尔勇士】，别忘了回来告诉我。" />						
+					<Option Info="摩尔勇士万岁！" />		
+				</Action>																		
+    		</Event>
+		</Step>																  		
+	</Procedure>
+</Task>
+
+

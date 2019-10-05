@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Type	1 ：杀死boss (KeyValue为怪物组ID)
+			2 : 获得稀有物品，装扮（KeyValue为物品ID，装扮ID）
+			3 : 获得稀有宠物（KeyValue为宠物ID）
+			4 : 迷宫刷新，稀有宠物刷新(KeyValue为迷宫ID)
+			5 : 友情提醒
+			6 : 活动预热
+	AdditionInfo: 附加标识ID，迷宫刷新中标识在哪个地图中刷新
+	Message:系统消息模板
+	Refresh:广播间隔
+-->
+
+<SysInfos>
+	<Info Type="0" KeyValue="0" Message="时空之门能源使用殆尽，将在%TIME%后关闭。请小摩尔们耐心等待，贝尔丹蒂会尽快注入新的时空能量。" />
+	<Info Type="0" KeyValue="1" Message="时空之门发生异常，能源耗尽，将在%TIME%后关闭紧急补充。请小摩尔们耐心等待，贝尔丹蒂会尽快注入新的时空能量。" />
+	<Info Type="1" KeyValue="3040" Message="%NICK% 成功击败【宾德】，通过修炼之域30域的试炼。公民们，快去勇士斗技场证明你们的勇气吧！"/>
+	<Info Type="1" KeyValue="3045" Message="%NICK% 成功击败【导师5人组】，通过修炼之域35域的试炼。公民们，快去勇士斗技场证明你们的勇气吧！"/>
+	<Info Type="1" KeyValue="3055" Message="%NICK% 成功击败【莱卡】，通过修炼之域40域的试炼。公民们，快去勇士斗技场证明你们的勇气吧！"/>
+	<Info Type="1" KeyValue="3060" Message="%NICK% 成功击败【路西西】，通过修炼之域30域的试炼。公民们，快去勇士斗技场证明你们的勇气吧！"/>
+<!--	
+	<Info Type="2" Message="%NICK% 获得了 %ITEM%，真令人羡慕！" />
+	<Info Type="4" Message="%PALACE% 出现了神秘的变化，大家快去看看吧，说不定会有意想不到的惊喜！"/>
+	<Info Type="6" Refresh="2400" Message="双倍经验时间，每天登陆都能领！" />
+	<Info Type="6" Refresh="2400" Message="还在为练级发愁吗？多精灵辅助战斗开启！" />
+-->
+	<Info Type="3" KeyValue="17" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="3" KeyValue="18" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="3" KeyValue="63" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="3" KeyValue="84" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="3" KeyValue="88" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="3" KeyValue="92" Message="%NICK% 获得了稀有的%PET%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310009" Message="%NICK% 在勇士广场举行的魔王逆袭活动中兑换到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="89003" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350015" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310022" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310021" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310020" Message="%NICK% 在勇士广场举行的精灵竞技比赛中兑换到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="315001" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310001" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350010" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310024" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310026" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350013" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="100006" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310025" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310004" Message="%NICK% 在小游戏大挑战比赛中抢先领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="8" KeyValue="0" Message="今日【怪盗的阴谋】活动戈戈拉击杀数已达成，请参与的勇士前往乔伊处领取奖励。"/>
+	<Info Type="2" KeyValue="310042" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310021" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350026" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350019" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350028" Message="%NICK% 在勇士广场的【幸运卡片】嗨翻天活动中领取到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350047" Message="%NICK% 在【满月幸运星】活动中兑换到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="310055" Message="%NICK% 在【满月幸运星】活动中兑换到了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350035" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350039" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350040" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350041" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350043" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="2" KeyValue="350044" Message="%NICK% 在【精灵对对碰】中获取了稀有的 %ITEM%，真令人羡慕！"/>
+	<Info Type="9" KeyValue="0" Message="%CURRENTMAP% 的迷之宝箱被发现并开启了，它再次溜到了%TARGETMAP%，请35-55级的未来勇士前去捉拿！"/>
+	<activeInfos>
+	<!--
+		type 类型
+		startDate  开始日期，月份从1-12。
+		EndDate   结束日期
+		week 星期0-6 0代表周日
+		StartTime 当天开始的时间 19.35 19代表19点（0代表24点），35代表35分钟 
+		EndTime  当天结束的时间
+		InterValTime  65 代表播放广播的时间间隔，以分钟为单位
+		message 代表 播放内容
+	-->
+		<Info Type="7" StartDate="1.20" EndDate="2.2" Week="7" StartTime="5.59" EndTime="23.59" InterValTime="20" Message="小宅精灵们正在【克拉斯海滩】袭击旅人们，未来勇士们请尽快赶往救援！"/>			
+		<Info Type="7" StartDate="3.11" EndDate="3.11" Week="0" StartTime="6.04" EndTime="23.59" InterValTime="20" Message="周日14:00~15:00、19:00~20:00，皇家卫队选拔赛开战！想参加的未来勇士请到【斗技场大厅】找【卡莉尔】报名。"/>
+		<Info Type="7" StartDate="2.24" EndDate="2.24" Week="0" StartTime="6.01" EndTime="23.59" InterValTime="15" Message="王国贸易中心正在营业准备中，预计于2月25日正式开放！"/>
+	</activeInfos>
+</SysInfos>

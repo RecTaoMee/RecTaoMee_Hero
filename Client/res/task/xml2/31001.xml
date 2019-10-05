@@ -1,0 +1,198 @@
+<Task ID="31001" Memo="好奇心旺盛的摇铃兔又走失了，快去找c兔铃c了解一下情况吧！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="好奇心旺盛的摇铃兔又走失了，快去找c兔铃c了解一下情况吧！" TargetMap="11202" TargetObj="318" TargetName="和t兔铃t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="318" TaskOption="兔铃你找我？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="318" ImageID="1" Info="[@nick]你来啦，有件事我想拜托你。" />
+					<Option Info="什么事啊？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="318" ImageID="1" Info="摇铃兔说一年好不容易才有一次机会来摩尔王国，它每天想去不同的地方逛逛。" />
+					<Msg NpcID="318" ImageID="1" Info="可是今天又跑出去这么久没回来，我有点担心，你能不能帮我去找找呢？" />
+					<Option Info="它有说去哪么？" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="318" ImageID="1" Info="记得到摩尔王国后的第二天，它出去玩了一整天，回来时很得意地说交到几个好朋友，还约好了每天都要结伴寻找格历尔大陆的美味。" />
+					<Msg NpcID="318" ImageID="1" Info="我也不清楚它今天到底会去哪，听说占卜师乔依的水晶球能预知未来，不如请他帮忙占卜一下，看看它们将会出现在哪。" />
+					<Option Info="交给我了" />						
+				</Action>
+			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="兔铃建议你去c乔依c那占卜一下摇铃兔的情况。" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="封印节快乐！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="[@nick]，封印节快乐！想占卜一下今天的吉运吗？" />
+					<Option Info="有事求助" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="是摇铃兔出走的事情吧？这小家伙真是让人头疼。好吧，我帮你预测一下，看看它接下来会去哪。" />
+					<Option Info="谢谢乔依" />						
+				</Action>	
+				<Action Type="MOVIE" Url="task_31001_31003.swf" MapLevel="TASK" Pos="0,0"/>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="真奇怪，最近的预测结果都很模糊，难道我的占卜术也受封印节的影响？" />
+					<Msg NpcID="111" ImageID="1" Info="抱歉[@nick]，占卜的结果不是特别精准，摇铃兔与它的三个新朋友接下来可能会去的地方有两处。" />
+					<Msg NpcID="111" ImageID="1" Info="贝多罗面包店、麦田村广场，这两个地方都去找找看吧。" />
+					<Option Info="去贝多罗面包店" NextStep="3"/>
+					<Option Info="去麦田村广场" NextStep="6" />						
+				</Action>	
+			</Event>
+		</Step>
+		
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="去c贝多罗面包店c找c摇铃兔c。" TargetMap="11213" TargetObj="" TargetName="去t贝多罗面包店t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11213, 31001" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11213, 31002" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11213, 1" />
+			</Event>
+		</Step>
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="去c贝多罗面包店c找摇铃兔。" TargetMap="11213" TargetObj="31001" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="31001" TaskOption="(电波小队？！)" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="贝多罗面包店的面包真好吃，谢谢你们带我来这么好的地方。" />
+					<Msg NpcID="301" ImageID="1" Info="小意思！我们有点急事先走，你慢慢吃，吃完就直接回去好了，我们明天老时间老地方见。" />
+					<Msg NpcID="319" ImageID="1" Info="恩，明天再带我玩哦！" />
+					<Msg NpcID="301" ImageID="1" Info="（嘿嘿……这个小呆子，我们可没钱付这顿，只能辛苦你留下来洗盘子了。）" />
+					<Msg NpcID="301" ImageID="1" Info="一定，明天带你去更好吃的地方！" />
+					<Option Info="电波小队？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="301" ImageID="1" Info="真倒霉，我们兄弟这么久没露面，没想到一露面就遇到这缠人的未来勇士。" />
+					<Msg NpcID="301" ImageID="1" Info="小弟们，给我拦住他！摇铃兔，我们先撤了，明天见！" />
+					<Msg NpcID="319" ImageID="1" Info="恩，绝对绝对说好了哦！" />
+					<Option Info="别想跑！" SkipTrigger="Y"/>						
+				</Action>	
+			</Event>
+		</Step>
+		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="53" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="击败了c摇铃兔c，听听它想说什么。" TargetMap="11213" TargetObj="31001" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="31001" TaskOption="摇铃兔对不起了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="哎呀，好疼！未来勇士欺负我们，我要告诉兔铃，让她打你屁屁！" />
+					<Option Info="……" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="1" Info="摇铃兔，面包好吃吗？这是你们的消费清单，总共800星豆。" />
+					<Msg NpcID="18" ImageID="1" Info="咦？跟你一起来的几位朋友呢？" />
+					<Msg NpcID="319" ImageID="1" Info="它们有事先走了。" />
+					<Option Info="它们是电波小队" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="18" ImageID="1" Info="什么！！！糟了，怪不得我看怎么这么眼熟。" />
+					<Msg NpcID="18" ImageID="1" Info="……摇铃兔啊，看来你是被那几只黑兔子欺骗了，它们吃了面包没给星豆，把你丢在这里了。" />
+					<Msg NpcID="319" ImageID="1" Info="我不信，我们说好明天还要一起玩的。" />
+					<Msg NpcID="18" ImageID="1" Info="……[@nick]，这面包的事就算了，你帮我传给信给兔铃，让她千万要注意，别让摇铃兔被不良精灵带坏了。" />
+					<Option Info="我知道了" />					
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202, 1" />
+			</Event>
+			<Event ConditionType="OUT" Memo="击败拦路的c摇铃兔c。" TargetMap="11213" TargetObj="31001" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11213" ObjID="31001" TaskOption="摇铃兔别拦我" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="你想对我朋友们做什么？哼，就算你是未来勇士，也别想欺负我们兔子精灵！" />
+					<Option Info="……" />				
+					<Option Info="准备战斗" NextStep="5" />						
+				</Action>	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11213, 31002" />
+				<Action Type="COMMAND" Command="BATTLE" Params="53"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="6" ParentList="2" ParentCost="1" >
+    		<Event Memo="去c麦田村广场c找c摇铃兔c。" TargetMap="11401" TargetObj="" TargetName="去t麦田村广场t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11401, 31003" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11401, 31004" />
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11401, 1" />
+			</Event>
+		</Step>
+		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="去c麦田村广场c找c摇铃兔c。" TargetMap="11401" TargetObj="31003" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="31003" TaskOption="(电波小队？！)" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="麦田村的萝卜真好吃，谢谢你们带我来这么好的地方。" />
+					<Msg NpcID="301" ImageID="1" Info="嘘！轻声点，这个秘密地方只有天知地知你知我们知，可千万不能告诉别人，不然以后我们就没得吃了。" />
+					<Msg NpcID="319" ImageID="1" Info="（大声说）恩，以后每年封印节我们都来这里吃萝卜吧！" />
+					<Option Info="你们在干什么？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="301" ImageID="1" Info="糟糕！被发现了！都让你别大声嚷嚷了。" />
+					<Msg NpcID="301" ImageID="1" Info="摇铃兔，想要吃好吃的就帮我们拦住他！我们明天老时间老地方见！" />
+					<Msg NpcID="319" ImageID="1" Info="恩，明天要带我去更好吃的地方哦！" />
+					<Option Info="别想跑！" SkipTrigger="Y"/>						
+				</Action>		
+			</Event>
+		</Step>
+		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Condition>
+				<Battle ID="53" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="击败了c摇铃兔c，听听它想说什么。" TargetMap="11401" TargetObj="31003" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="31003" TaskOption="摇铃兔对不起了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="哎呀，好疼！未来勇士欺负我们，我要告诉兔铃，让她打你屁屁！" />
+					<Option Info="……" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="1" Info="什么事呀这么吵？哎呀，我的萝卜啊……[@nick]，这是怎么回事？" />
+					<Option Info="说明事情经过" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="35" ImageID="1" Info="……摇铃兔啊，看来你是被那几只黑兔子欺骗了，这是我辛辛苦苦种的萝卜，准备用来做菜的。" />
+					<Msg NpcID="35" ImageID="1" Info="……[@nick]，这萝卜的事就算了，你帮我传给信给兔铃，让她千万要注意，别让摇铃兔被不良精灵带坏了。" />
+					<Option Info="我知道了" />					
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202, 1" />
+			</Event>
+			<Event ConditionType="OUT" Memo="击败拦路的c摇铃兔c。" TargetMap="11401" TargetObj="31003" TargetName="和t摇铃兔t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11401" ObjID="31003" TaskOption="摇铃兔别拦我" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="319" ImageID="1" Info="只要有我在，就不许你欺负它们！先说好了，我可是很厉害的！" />
+					<Option Info="……"/>
+					<Option Info="准备战斗" NextStep="8" />						
+				</Action>	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11401, 31004" />
+				<Action Type="COMMAND" Command="BATTLE" Params="53"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="9" ParentList="5,8" ParentCost="1" >
+    		<Event Memo="找到摇铃兔了，回c勇士广场c找c兔铃c吧。" TargetMap="11202" TargetObj="318" TargetName="和t兔铃t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="318" TaskOption="我回来了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="318" ImageID="1" Info="辛苦你了！咦，摇铃兔怎么愁眉苦脸的？" />
+					<Option Info="说明事情经过" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="318" ImageID="1" Info="摇铃兔！你又淘气了，明天不许再跟电波小队一起玩，我要好好给你上上课！" />
+					<Msg NpcID="318" ImageID="1" Info="[@nick]，这些兔型水晶碎片送给你，可以向我换取各种好东西哦！封印节快乐！" />
+					<Option Info="封印节快乐"/>						
+				</Action>	
+			</Event>
+		</Step>
+	</Procedure>
+</Task>

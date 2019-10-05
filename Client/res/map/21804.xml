@@ -1,0 +1,11 @@
+<!--世界树顶-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="610,1050" targetMapId="21803" targetTransPortId="2"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+	</npc>
+</map>

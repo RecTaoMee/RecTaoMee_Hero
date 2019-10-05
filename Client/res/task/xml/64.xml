@@ -1,0 +1,43 @@
+<task id="64">
+	<taskDes>
+		<![CDATA[【平原三区】是【拉拉美王】带领“拉拉美素食主义联军”的巡逻区，★打败拉拉美王【并记住联军的人数】告诉老师吧！]]>
+	</taskDes>
+<taskPro>
+    <pro type="0" parent="" npcID="28" title="打败拉拉美王了！" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11305"/>
+    <pro type="0" parent="0" npcID="28" title="打败拉拉美王了！" action="4" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11305"/>
+  </taskPro>
+  <actions>	
+    <proAction id="0" type="0" npcID="28" answer="打败了！" objLevel="" objName="" objType="" objValue="" to="s1">
+      <des>
+		<![CDATA[1#你遇到“拉拉美素食主义联盟”并且打败【拉拉美王】了吗？]]>
+	  </des>
+	</proAction>
+    <proAction id="1" type="0" npcID="28" answer="1个$2个$3个$4个$5个$6个$7个$8个$9个$10个" objLevel="" objName="" objType="" objValue="" to="a3$a3$a3$a3$a3$a3$a3$a3$a2$a3">
+      <des>
+		<![CDATA[1#那么告诉我——“拉拉美素食主义联军”（☆除拉拉美王）共有几个精灵？]]>
+	  </des>
+	</proAction>
+    <proAction id="2" type="0" npcID="28" answer="谢谢瑞凌老师！" objLevel="" objName="" objType="" objValue="" to="c">
+      <des>
+		<![CDATA[1#非常好，诚实并且勇敢的你通过了我的考试！$$]]>
+		<![CDATA[1#让我想起以前我和【彼兔】【温蒂】【杰森】一起参加勇士学员班的时候，我们的指导老师是【阿凯老师】。$$]]>
+		<![CDATA[1#这是当时【阿凯】给我们的第三个考试任务。$$]]>
+		<![CDATA[1#等你的Lv(等级)满【15级】时，就来我这里领取毕业证书吧！另外这些是你本次出色表现的奖励（^_,^）。]]>
+	  </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="28" answer="重新回答$再去挑战联军" objLevel="" objName="" objType="" objValue="" to="a1$ao">
+      <des>
+		<![CDATA[1#很遗憾回答错误。你确定吗？再回忆下吧，$$]]>
+		<![CDATA[1#所以我出门随身带笔记本，你的【荣誉匣（xiá）】里不是有可以写日记的【旅行相册】么，重要的信息一定要随时做好笔记！$$]]>
+		<![CDATA[1#决定重新回答或者再去【平原三区】挑战拉拉美王确定人数？]]>
+	  </des>
+	</proAction>
+    <proAction id="4" type="0" npcID="28" answer="打败了！" objLevel="" objName="" objType="" objValue="" to="a1">
+      <des>
+		<![CDATA[1#你遇到“拉拉美素食主义联盟”并且打败【拉拉美王】了吗？]]>
+	  </des>
+	</proAction>
+  </actions>
+</task>
+
+

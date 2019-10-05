@@ -1,0 +1,90 @@
+<Task ID="35002" Memo="G档案·海神马\n周六~周日：6:00~24:00" TargetMap="21401">
+<!--  Time="12-14 18-20" Week="6" 总表需要加上的-->
+   	<Procedure> 
+	<Step ID="1" ParentList="0" ParentCost="0" ><!--  
+			<Condition>
+			<Time Hour="12-14,18-20" />
+			<Week Day="6" />
+			</Condition>-->
+			<Event Memo="去c海底洞穴1层c看看吧！" TargetMap="21401" TargetObj="" TargetName="去t海底洞穴t"> 
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21401" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING"  SkipTrigger="Y" />  
+			</Event>
+				
+	</Step>  
+	
+	<Step ID="11" ParentList="1" ParentCost="1" >
+			<!-- 	<Condition>
+			<Time Hour="12-14,18-20" />
+			<Week Day="6" />
+			</Condition>
+			<Event ConditionType="IN" Memo="进入场景地图" TargetMap="21401"> 	-->
+			 <Event  Memo="去c海底洞穴1层c看看吧！" TargetMap="21401" TargetObj="" TargetName="去t海底洞穴t"> 
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21401" />
+				</Trigger>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21401,30027 " />  <!-- 添加场景临时物品1 -->
+				<Action Type="COMMAND" Command="ROLL_CAMERA" Params="130, 232" />  <!-- 移动镜头到指定位置 -->
+				<Action Type="TALK">
+					<Msg NpcID="330" ImageID="1" Info="这是个“神马”星球啊···\n陆地这么小···~，\n海洋就一圈···。" />
+					<Msg NpcID="330" ImageID="1" Info="我想要回海洋星哎，你能过来陪陪我吗····~，\n经过我的精密分析，要过这片“神马大海”要用海边的石块。"/>
+					<Option Info="外星精灵(⊙o⊙)！"/>
+				</Action>
+				<Action Type="COMMAND" Command="RESTORE_CAMERA" />  <!-- 镜头回到主角 -->
+			</Event>
+				
+	</Step>  
+	
+	<Step ID="2" ParentList="11" ParentCost="1">
+			<Condition>
+				<Buffer Sta1="YY"/>
+				<Pet Follow="Y" Type="3"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="去c麦田村·海底洞穴一层c，和外星精灵c海神马c聊聊吧！" TargetMap="21401" TargetObj="30027" TargetName="和t海神马t对话"> 	
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21401" ObjID="30027" TaskOption="我到了~" />
+			</Trigger>
+			<Action Type="TALK">
+					<Msg NpcID="330" ImageID="1" Info="···你终于登陆了。\n海洋星上最隆重的欢迎仪式吧——！" />
+					<Option Info="“神马”东西？"/>
+			</Action>
+			<Action Type="COMMAND" Command="BATTLE" Params="13" RightUp="Y" SkipTrigger="Y"/>	
+			</Event>
+			<Event ConditionType="OUT" Memo="到达c麦田村·海底洞穴一层c啦，快让c小石怪跟随c在身边渡过“神马大海”吧！" TargetObj="30027" TargetMap="21401"> 	
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21401" ObjID="30027" TaskOption="你是神马？" />
+			</Trigger>
+			<Action Type="TALK">
+					<Msg NpcID="330" ImageID="1" Info="你你你是神马···我是来自海洋星的【海神马】。\n我也不知道“喂神马”来到这里···。" />
+					<Msg NpcID="330" ImageID="1" Info="你们星球有没有【“石头型”精灵】？···【“小一点”】就可以··反正这里海洋也不大= =|||···" />
+					<Option Info="这就带石头型精灵来"/>
+			</Action>
+			</Event>
+			
+	</Step>
+	<Step ID="33" ParentList="2" ParentCost="1">
+			<Event  Memo="海洋星的欢迎仪式是神马？\n快去c麦田村·海底洞穴一层c和外星精灵c海神马c聊聊吧！" TargetMap="21401" TargetObj="30027" TargetName="和t海神马t对话"> 
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21401" ObjID="30027" />
+			</Trigger>						
+			<Action Type="TALK">
+					<Msg NpcID="330" ImageID="1" Info="“神马”？！你的战斗能力真是比海洋星的“钢牙鲨”强太多了！\n【@nick】获得了海神马的无比崇拜···哔哔——" />
+					<Msg NpcID="330" ImageID="1" Info="我总在问自己——我是“神马”？\n我要做海洋星上最强的 海——神——马——！\n我要升级我要变强！" />
+					<Msg NpcID="330" ImageID="1" Info="★每周三12：00-13：00和周六19：00-21：00，海洋星会发射一个海神马来这里。" />
+					<Option Info="一起加油升级吧！" SkipTrigger="Y" />
+			</Action>
+			<!-- <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21401,30027 " />-->  <!-- 移除场景临时物品1 -->
+			</Event> 
+	</Step>
+	<Step ID="4" ParentList="33" ParentCost="1">
+			<Event  Memo="去c麦田村·海底洞穴一层c，和外星精灵c海神马c聊聊吧！" TargetMap="21401" TargetObj="30027" TargetName="和t海神马t对话"> 	
+			<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21401" ObjID="30027" />
+			</Trigger>				
+			 <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21401,30027 " /> <!-- 移除场景临时物品1 -->
+			</Event> 
+	</Step>
+	</Procedure>
+</Task>

@@ -1,0 +1,52 @@
+<!--永恒之森武器道具店-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-013.mp3">
+	<transport intPos="145,340">
+		<node id="1" pos="745,327" targetMapId="11801" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="77" type="NPC" res="MC_npc_77" action="0$1$2"/>
+		<node id="76" type="NPC" res="MC_npc_76" action="3"/>		
+	</npc>
+	<actions>
+		<proAction npcID="77" id="0" type="0" answer="我想买道具$我想卖东西$祝你好运！" to="b0_77$b1_77$o" colorID="1$1$0" >
+			<des>
+				<![CDATA[1#欢迎光临【永恒之森装备道具店】，\n来把没用的星豆变成有用的东西吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="77" id="1" type="0" answer="我想买道具$我想卖东西$祝你好运！"  to="b0_77$b1_77$o" colorID="1$1">
+			<des>
+				<![CDATA[1#欢迎光临【永恒之森装备道具店】，\n道具可是非常实用的。]]>
+			</des>
+		</proAction>
+		<proAction npcID="77" id="2" type="0" answer="我想买道具$我想卖东西$祝你好运！"  to="b0_77$b1_77$o" colorID="1$1">
+			<des>
+				<![CDATA[1#欢迎光临【永恒之森装备道具店】。\n你知道旅行不带道具有多糟糕吗，\n那就等于下雨天不带伞！]]>
+			</des>
+		</proAction>
+		<proAction npcID="76" id="3" type="0" answer="我想修装备$我想卖东西$关于【武器装备】$祝你好运！"  to="b12_76$b3_76$a4$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【永恒之森装备道具店】。\n快把没用的星豆变成有用的装备吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="76" id="4" type="0" answer="武器$防具" to="a5$a6">
+			<des>
+				<![CDATA[1#武器防具的事你问对人了，想知道什么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="76" id="5" type="0" answer="我想修装备$我想卖东西$关于【武器装备】$祝你好运！" to="b12_76$b3_76$a3$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【武器】可是好东西！\n我们的武器都是“女神之泪”净化过的。\n没被净化过的武器会伤害精灵，非常危险！$$]]>
+				<![CDATA[1#拿着星豆等着被盗贼抢，\n不如换成净化黑化精灵的武器！\n这就是我的生存之道哈哈————！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="76" id="6" type="0" answer="我想修装备$我想卖东西$关于【武器装备】$祝你好运！"  to="b12_76$b3_76$a3$o" colorID="1$1$0$0" >
+			<des>
+				<![CDATA[1#【防具】可是比武器更好的东西。\n遇到危险最好的办法就是逃跑，\n逃不掉的时候就会挨打。\n即使被打，也能撑到厉害的伙伴来救你！$$]]>
+				<![CDATA[1#拿着星豆等着被盗贼抢劫，不如换成防身的家伙！这就是我的生存之道哈哈————！]]>
+			</des>
+		</proAction>		
+	</actions>
+</map>

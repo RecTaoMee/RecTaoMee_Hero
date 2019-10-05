@@ -1,0 +1,74 @@
+<Task ID="152" Memo="近卫士兵长c宾德c有新的B级任务！\n快去c国王呈见厅c吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="近卫士兵长c宾德c有新的B级任务！\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="摩尔王召见我？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="国王陛下——\n好消息，被洋流困在远海的【勇士号】回到弗雷基港了！" />
+					<Msg NpcID="30" ImageID="1" Info="啊，这么巧，\n未来勇士【@nick】来了^_^。" />
+					<Option Info="（^_^）" SkipTrigger="Y" />
+				</Action>																		
+    		</Event>
+		</Step>								
+  		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="近卫士兵长c宾德c有新的B级任务！\n快去c国王呈见厅c吧！" TargetMap="11307" TargetObj="30" TargetName="和t摩尔王t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王召见我？" />									
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="你知道【勇士号】吗？" />	
+					<Option Info="不知道" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="【勇士号】是格历尔大陆的重要海船。\n因为你的努力，\n我们又找回了【勇士号】。" />	
+					<Msg NpcID="30" ImageID="2" Info="现在它就停泊在【弗雷基港码头】，\n不去看看吗？" />
+					<Option Info="现在就去【弗雷基港】" />
+				</Action>																				
+    		</Event>						
+		</Step>
+  		<Step ID="3" ParentList="2" ParentCost="1" >			
+    		<Event Memo="海船c勇士号c归来，\n快前往c弗雷基港码头c看看吧^^!" TargetMap="11604" TargetObj="58" TargetName="和t勇士号水手t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="请问【勇士号】在哪？" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="勇士号整个沉下去了，\n所以你看不到了(T_T)。" />	
+					<Msg NpcID="58" ImageID="2" Info="我们正在组装【勇士号】，\n现在还需要10个【桦木】……" />		
+					<Msg NpcID="312" ImageID="1" Info="交给【@nick】一定可以，\n让风之龙觉醒的了不起的摩尔！" />	
+					<Option Info="交给我吧！" />
+					<Option Info="有事先走了" NextStep="3" />
+				</Action>																	
+    		</Event>						
+		</Step>
+	
+  		<Step ID="4" ParentList="3" ParentCost="1" >			
+			<Condition>
+				<Item ID="170005" Count="10" />
+			</Condition>
+    		<Event  ConditionType="IN" Memo="c10个桦木c足够了！\n快去交给c弗雷基港码头c的c勇士号水手们c吧^^!" TargetMap="11604" TargetObj="58" TargetName="和t勇士号水手t对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="10个【桦木】" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="啊太好了！" />							
+					<Msg NpcID="312" ImageID="1" Info="太——好——了！" />	
+					<Msg NpcID="58" ImageID="2" Info="我们会赶快完成勇士号的还原工作！\n一起期待强大的勇士号吧！" />	
+					<Option Info="O(∩_∩)O！" />
+				</Action>																	
+    		</Event>	
+    		<Event  ConditionType="OUT" Memo="让勇士号浮起来需要c10个桦木c。\n快去c平原三区c采集吧!" TargetMap="21303" TargetName="采集10个t桦木t" TargetPos="1039,474">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="10个【桦木】？" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="勇士号沉下去了(T_T)……\n我们正在组装【勇士号】。" />	
+					<Msg NpcID="58" ImageID="2" Info="现在还需要10个【桦木】……" />	
+					<Msg NpcID="312" ImageID="1" Info="交给【@nick】一定可以，\n让风之龙觉醒的了不起的摩尔！" />	
+					<Option Info="交给我吧！" />
+				</Action>																	
+    		</Event>								
+		</Step>
+</Procedure>
+</Task>

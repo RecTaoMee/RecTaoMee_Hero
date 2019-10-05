@@ -1,0 +1,89 @@
+<Task ID="10004" Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202">
+<BoardInfo PageType="1" Title="皮克司的精灵研究" Content="皮克司精灵研究所招募志愿者，有愿意参加精灵研究工作的可以来研究所报名！报名者有机会得到精灵大师【皮克司】的亲笔签名哦！"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    			<Event Memo="皮克司精灵研究所在c公告栏c发出了悬赏，快去看看悬赏内容。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+    				<Action Type="COMMAND" Command="NOTHING" /> 
+    			</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="接受了委托，去c皮克司精灵研究所c看看工作的具体内容是什么。" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【假面吉吉帕】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="【@nick】你也被我的魅力吸引过来了吗？" />
+					<Option Info="......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="哈哈，看来我还是有搞笑天赋！说正事吧，今天的研究课题是【假面吉吉帕】！" />
+					<Option Info="假面吉吉帕？" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="【假面吉吉帕】外形很类似蘑菇，它们擅长使用魔法，这似乎和一种叫【吉吉粉】的魔法原料有关。" />
+					<Msg NpcID="12" ImageID="1" Info="你去【平原2区】应该会很容易碰到它们，和它们战斗胜利有可能会得到这种粉末。" />
+					<Option Info="绝对没问题！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Item ID="260009" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="拿到了c吉吉粉c，回去送给c皮克司教授c吧！" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【吉吉粉】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="【@nick】你拿到【吉吉粉】吗？" />
+					<Option Info="拿到了！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="2" Info="忘记给你说了...这个粉末千万不能弄到身上，不然会很痒的...总之，谢谢你啦！" />
+					<Msg NpcID="12" ImageID="2" Info="你的报酬已经送到公告栏了，快去领取吧！" />
+					<Option Info="嗯T T" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="c假面吉吉帕c喜欢在c平原2区c出没。☆战斗胜利取得了c吉吉粉c，就回去给c皮克司教授c吧！" TargetMap="21302" TargetObj="" TargetName="t吉吉粉t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【吉吉粉】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="【@nick】你拿到【吉吉粉】吗？" />
+					<Option Info="还没有..." />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="1" Info="假面吉吉帕们常在【平原2区】出现！和它们战斗胜利有可能得到一种叫【吉吉粉】的魔法原料。" />
+					<Msg NpcID="12" ImageID="2"  Info="神啊给我一个【吉吉粉】吧！" />
+					<Option Info="立刻出发！" />
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这件事你干的很漂亮嘛！" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+

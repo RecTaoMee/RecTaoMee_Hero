@@ -1,0 +1,434 @@
+<!--pos(怪物刷新的位置)
+	point：怪物刷新范围左上角点
+	width,height：怪物刷新范围宽，高
+-->
+	
+<!--monster 发1300（挑战明雷）协议
+	typeID：怪物形象ID
+	groupID：怪物挑战组ID
+	type：0中立，1主动（攻击人速度变3），2胆小（逃跑时速度变4）
+	pos：可以设定在哪些点刷这种怪
+	range：主动攻击怪物的警戒范围半径，默认是150
+	speed：怪物行走速度，默认是2
+	walkType：0在制定的pos刷新，在制定的范围走路；1随机点刷新，全地图随机走路
+-->
+<!--boss 发1304（挑战npc）协议
+	refreshTime：战斗结束后怪物的刷新时间
+	taskID：哪个任务显示这个怪物
+	startNode：任务起始节点，怪物从这个节点出现
+	endNode：任务结束节点，怪物从这个节点消失
+-->
+
+<!--reverse
+	typeID：遇到跟随宠物会变类型的怪物ID
+	pet：跟随宠物的ID
+	type：怪物遇到pet会变成哪种类型，0中立，1主动，2胆小，3点击触发
+-->
+	
+<monsters>
+	<map mapID="11201" count="6">
+		<pos id="1" point="375,525" width="300" height="300" />
+
+		<boss typeID="37" groupID="3306" type="0" pos="1,2" speed="4" taskID="36117" startNode="0" endNode="1" refreshTime="-1"/>
+	</map>
+	
+	<map mapID="11202" count="6">
+		<pos id="1" point="438,474" width="300" height="300" />
+		<pos id="2" point="1499,628" width="320" height="290" />
+
+		<boss typeID="16" groupID="3301" type="0" pos="1,2" speed="4" taskID="36107" startNode="0" endNode="1" refreshTime="-1"/>
+		<boss typeID="14" groupID="3302" type="0" pos="1,2" speed="4" taskID="36108" startNode="0" endNode="1" refreshTime="-1"/>
+		<boss typeID="21" groupID="3303" type="0" pos="1,2" speed="4" taskID="36109" startNode="0" endNode="1" refreshTime="-1"/>
+		<boss typeID="21" groupID="3308" type="0" pos="1,2" speed="4" taskID="36119" startNode="0" endNode="1" refreshTime="-1"/>
+	</map>
+	
+	<map mapID="11203" count="6">
+		<pos id="1" point="880,342" width="300" height="185" />
+
+		<boss typeID="24" groupID="3304" type="0" pos="1" speed="4" taskID="36115" startNode="0" endNode="1" refreshTime="-1"/>
+	</map>
+	
+	<map mapID="11204" count="6">
+		<pos id="1" point="329,744" width="300" height="300" />
+
+		<boss typeID="36" groupID="3307" type="0" pos="1" speed="4" taskID="36118" startNode="0" endNode="1" refreshTime="-1"/>
+	</map>
+	
+	<map mapID="11205" count="6">
+		<pos id="1" point="371,415" width="300" height="300" />
+
+		<boss typeID="21" groupID="3305" type="0" pos="1" speed="4" taskID="36116" startNode="0" endNode="1" refreshTime="-1"/>
+	</map>
+	
+	<!--
+	<map mapID="11503" count="6">
+		<pos id="1" point="300,700" width="100" height="100" />
+		<pos id="2" point="550,880" width="100" height="100" />
+		<pos id="3" point="800,700" width="100" height="100" />
+		<pos id="4" point="850,450" width="100" height="100" />
+		<pos id="5" point="1150,650" width="100" height="100" />
+
+		<monster typeID="5" groupID="5" type="0" pos="1,2,3,4,5" />
+		<monster typeID="1002" groupID="1002" type="0" pos="1,2,3,4,5" />
+	</map>
+	<map mapID="11504" count="6">
+		<pos id="1" point="395,1003" width="15" height="15" />
+		<pos id="2" point="700,645" width="50" height="50" />
+		<pos id="3" point="565,555" width="15" height="15" />
+		<pos id="4" point="460,677" width="30" height="30" />
+		<pos id="5" point="240,400" width="25" height="25" />
+
+		<monster typeID="11" groupID="11" type="0" pos="1,2,3,4,5" />
+		<monster typeID="1014" groupID="1014" type="0" pos="1,2,3,4,5" />
+	</map>
+	-->
+	
+	<map mapID="21301" count="6" haveElite="1">
+		<pos id="1" point="238,355" width="100" height="150" />
+		<pos id="2" point="176,941" width="180" height="110" />
+		<pos id="3" point="287,697" width="180" height="110" />
+		<pos id="4" point="866,587" width="280" height="160" />
+		<pos id="5" point="1100,391" width="200" height="110" />
+		<pos id="6" point="917,813" width="80" height="80" />
+
+		<monster typeID="7" groupID="7" type="0" pos="1,2,3,4,5"/>
+	</map>
+
+	<map mapID="21302" count="6" haveElite="1">
+		<pos id="1" point="280,40" width="340" height="200" />
+		<pos id="2" point="644,107" width="380" height="200" />
+		<pos id="3" point="466,777" width="380" height="260" />
+		<pos id="4" point="522,471" width="300" height="200" />
+		<pos id="5" point="1072,621" width="520" height="200" />
+		<pos id="6" point="987,324" width="80" height="80" />
+		<pos id="7" point="710,700" width="80" height="80" />
+
+		<monster typeID="7" groupID="7" type="0" pos="1,2,3,4,5,6"/>
+		<monster typeID="8" groupID="8" type="0" pos="1,2,3,4,5,6"/>
+		<boss typeID="12" groupID="22" type="0" pos="" walkType="1" count="6" taskID="40000" startNode="0" endNode="0"/>
+	</map>
+
+	<map mapID="21303" count="6">
+		<pos id="1" point="136,6" width="420" height="360" />
+		<pos id="2" point="701,117" width="390" height="320" />
+		<pos id="3" point="1060,159" width="220" height="200" />
+		<pos id="4" point="360,643" width="300" height="300" />
+		<pos id="5" point="844,224" width="300" height="760" />
+		<pos id="6" point="1062,932" width="100" height="100" />
+		<pos id="7" point="613,411" width="80" height="80" />
+
+		<monster typeID="8" groupID="8" type="0" pos="1,2,3,4,6"/>
+		<monster typeID="9" groupID="9" type="0" pos="1,2,3,4,6"/>
+		<boss typeID="40" groupID="2002" type="0" pos="5" speed="4" refreshTime="1000000"/>
+	</map>
+	
+	<map mapID="21304" count="6" haveElite="1">
+		<pos id="1" point="119,81" width="230" height="230" />
+		<pos id="2" point="224,206" width="236" height="250" />
+		<pos id="3" point="429,251" width="340" height="200" />
+
+		<monster typeID="8" groupID="8" type="0" pos="1,2,3" range="100" />
+		<monster typeID="9" groupID="9" type="0" pos="1,2,3" range="" />
+	</map>
+
+	<map mapID="21305" count="6">
+		<pos id="1" point="291,210" width="280" height="220" />
+		<pos id="2" point="855,53" width="290" height="230" />
+		<pos id="3" point="1114,189" width="300" height="230" />
+		<pos id="4" point="1146,584" width="370" height="320" />
+		<pos id="5" point="295,875" width="280" height="220" />
+
+		<monster typeID="7" groupID="7" type="0" pos="1,2,3,4,5"/>
+		<monster typeID="10" groupID="10" type="0" pos="1,2,3,4,5"/>
+	</map>
+
+	<map mapID="21306" count="6">
+		<pos id="1" point="476,581" width="370" height="390" />
+		<pos id="2" point="145,244" width="320" height="290" />
+		<pos id="3" point="686,-3" width="240" height="220" />
+
+		<monster typeID="10" groupID="10" type="0" pos="2,3"/>
+		<monster typeID="11" groupID="11" type="0" pos="2,3"/>
+		<boss typeID="7" groupID="7" type="0" pos="1" speed="4" taskID="10025" startNode="0" endNode="1"/>
+	</map>
+
+	<map mapID="21307" count="6" haveElite="1">
+		<pos id="1" point="978,82" width="460" height="260" />
+		<pos id="2" point="420,365" width="460" height="180" />
+		<pos id="3" point="856,360" width="700" height="180" />
+
+		<monster typeID="11" groupID="11" type="0" pos="1,2,3"/>
+		<monster typeID="12" groupID="12" type="0" pos="1,2,3"/>
+	</map>
+	
+	<map mapID="21308" count="6" haveElite="1">
+		<pos id="1" point="360,425" width="100" height="50" />
+		<pos id="2" point="710,455" width="100" height="50" />
+		<pos id="3" point="785,260" width="100" height="50" />
+
+		<monster typeID="12" groupID="12" type="0" pos="1,2,3"/>
+		<monster typeID="13" groupID="13" type="0" pos="1,2,3"/>
+	</map>
+	
+	<map mapID="21310" count="6" haveElite="1">
+		<pos id="1" point="647,363" width="422" height="222" />
+		<pos id="2" point="1016,589" width="400" height="220" />
+		<pos id="3" point="291.5,376" width="271" height="140" />
+		<pos id="4" point="943,945" width="390" height="180" />
+		<pos id="5" point="386,163" width="744" height="188" />
+
+		<monster typeID="7" groupID="7" type="0" pos="1,2,3,4,5"/>
+		<monster typeID="15" groupID="15" type="0" pos="1,2,3,4,5"/>
+	</map>
+
+	<map mapID="21311" count="6" haveElite="1">
+		<pos id="1" point="472,950" width="760" height="120" />
+		<pos id="2" point="109,778" width="300" height="180" />
+		<pos id="3" point="263,634" width="160" height="240" />
+		<pos id="4" point="1260,477.5" width="82" height="245" />
+		<pos id="5" point="239,81" width="218" height="178" />
+
+		<monster typeID="16" groupID="16" type="0" pos="1,2,3,4,5"/>
+		<monster typeID="15" groupID="15" type="0" pos="1,2,3,4,5"/>
+	</map>
+
+	<map mapID="21312" count="6">
+		<pos id="1" point="265,290" width="700" height="250" />
+		<pos id="2" point="1060,369" width="510" height="180" />
+		<pos id="3" point="1279,182" width="104" height="94" />
+
+		<monster typeID="15" groupID="15" type="0" pos="1,2,3"/>
+		<monster typeID="16" groupID="16" type="0" pos="1,2,3"/>
+	</map>
+	
+	<map mapID="21702" count="6">
+		<pos id="1" point="650,740" width="290" height="160" />
+		<pos id="2" point="1094,455" width="200" height="160" />
+		<pos id="3" point="518,410" width="288" height="164" />
+		<pos id="4" point="444,-8" width="270" height="124" />
+
+		<monster typeID="13" groupID="13" type="1" pos="1,2,3,4"/>
+		<monster typeID="52" groupID="52" type="1" pos="1,2,3,4"/>
+	</map>
+	
+	<map mapID="21801" count="6">
+		<pos id="1" point="70,740" width="70" height="60" />
+		<pos id="2" point="330,520" width="70" height="60" />
+		<pos id="3" point="800,550" width="100" height="70" />
+		<pos id="4" point="1380,710" width="100" height="70" />
+		<pos id="5" point="1240,290" width="100" height="70" />
+
+		<monster typeID="3020" groupID="3020" type="1" pos="1,2,3,4,5"/>
+		<monster typeID="3021" groupID="3021" type="1" pos="1,2,3,4,5"/>
+		<monster typeID="3022" groupID="3022" type="1" pos="1,2,3,4,5"/>
+	</map>
+	
+	<map mapID="21802" count="6">
+		<pos id="1" point="140,560" width="100" height="100" />
+		<pos id="2" point="270,890" width="100" height="100" />
+		<pos id="3" point="630,540" width="100" height="100" />
+
+		<monster typeID="3020" groupID="3020" type="1" pos="1,2,3"/>
+		<monster typeID="3021" groupID="3021" type="1" pos="1,2,3"/>
+		<monster typeID="3022" groupID="3022" type="1" pos="1,2,3"/>
+	</map>
+	
+	<map mapID="21803" count="6">
+		<pos id="1" point="330,485" width="80" height="80" />
+		<pos id="2" point="535,190" width="50" height="50" />
+		<pos id="3" point="1355,195" width="50" height="50" />
+		<pos id="4" point="1390,565" width="80" height="80" />
+		<pos id="5" point="1085,1000" width="80" height="80" />
+
+		<monster typeID="80" groupID="80" type="1" pos="1,2,3,4,5"/>
+		<monster typeID="89" groupID="89" type="1" pos="1,2,3,4,5"/>
+	</map>
+	
+	<map mapID="22101" count="6">
+		<pos id="1" point="690,200" width="100" height="100" />
+		<pos id="2" point="980,590" width="100" height="100" />
+		<pos id="3" point="930,360" width="100" height="100" />
+		<pos id="4" point="1210,100" width="100" height="100" />
+
+		<monster typeID="46" groupID="46" type="1" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22102" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="13" groupID="13" type="0" pos="1,2,3,4"/>
+		<monster typeID="14" groupID="14" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22103" count="6">
+		<pos id="1" point="690,200" width="100" height="100" />
+		<pos id="2" point="980,590" width="100" height="100" />
+		<pos id="3" point="930,360" width="100" height="100" />
+		<pos id="4" point="1210,100" width="100" height="100" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>	
+	<map mapID="22201" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22202" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22203" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22204" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22205" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22206" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22207" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="22208" count="6">
+		<pos id="1" point="" width="" height="" />
+		<pos id="2" point="" width="" height="" />
+		<pos id="3" point="" width="" height="" />
+		<pos id="4" point="" width="" height="" />
+
+		<monster typeID="93" groupID="93" type="0" pos="1,2,3,4"/>
+		<monster typeID="94" groupID="94" type="0" pos="1,2,3,4"/>
+	</map>
+	<map mapID="41211" count="6">
+		<pos id="3" point="147,660" width="80" height="80" />
+		<pos id="4" point="670,640" width="80" height="80" />
+		<pos id="5" point="200,922" width="80" height="80" />
+		<pos id="6" point="640,940" width="80" height="80" />
+
+		<boss typeID="17" groupID="2601" type="0" pos="3,4,5,6" speed="4" refreshTime="8000"/>
+		<boss typeID="18" groupID="2601" type="0" pos="3,4,5,6" speed="4" refreshTime="8000"/>
+		<boss typeID="17" groupID="2601" type="0" pos="3,4,5,6" speed="4" refreshTime="8000"/>
+		<boss typeID="18" groupID="2601" type="0" pos="3,4,5,6" speed="4" refreshTime="8000"/>
+	</map>
+	
+	<map mapID="41212" count="6">
+		<pos id="1" point="179,291" width="80" height="80" />
+		<pos id="2" point="607,290" width="80" height="80" />
+		<pos id="3" point="917,400" width="80" height="80" />
+		<pos id="4" point="1383,460" width="80" height="80" />
+		<pos id="5" point="293,367" width="80" height="80" />
+
+		<boss typeID="69" groupID="2602" type="0" pos="1,2,3,4,5" speed="4" refreshTime="5000"/>
+		<boss typeID="70" groupID="2602" type="0" pos="1,2,3,4,5" speed="4" refreshTime="5000"/>
+		<boss typeID="69" groupID="2602" type="0" pos="1,2,3,4,5" speed="4" refreshTime="5000"/>
+		<boss typeID="70" groupID="2602" type="0" pos="1,2,3,4,5" speed="4" refreshTime="5000"/>
+	</map>
+	
+	<map mapID="51201" count="6">
+		<pos id="1" point="145,400" width="30" height="30" />
+		<pos id="2" point="270,510" width="30" height="30" />
+		<pos id="3" point="540,630" width="30" height="30" />
+		<pos id="4" point="245,755" width="30" height="30" />
+		<pos id="5" point="420,930" width="30" height="30" />
+		<pos id="6" point="525,775" width="30" height="30" />
+
+		<boss typeID="52" groupID="2607" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1011" groupID="2607" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1006" groupID="2608" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="64" groupID="2609" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1004" groupID="2609" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+	</map>
+	
+	<map mapID="51203" count="6">
+		<pos id="1" point="1170,500" width="30" height="30" />
+		<pos id="2" point="1090,345" width="30" height="30" />
+		<pos id="3" point="945,345" width="30" height="30" />
+		<pos id="4" point="610,350" width="30" height="30" />
+		<pos id="5" point="355,425" width="30" height="30" />
+		<pos id="6" point="160,350" width="30" height="30" />
+
+		<boss typeID="21" groupID="2610" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1009" groupID="2610" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="38" groupID="2611" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1002" groupID="2611" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="12" groupID="2612" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1008" groupID="2612" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+	</map>
+	
+	<map mapID="51205" count="6">
+		<pos id="1" point="215,460" width="80" height="80" />
+		<pos id="2" point="640,480" width="30" height="30" />
+		<pos id="3" point="890,480" width="30" height="30" />
+		<pos id="4" point="970,355" width="30" height="30" />
+		<pos id="5" point="1180,355" width="30" height="30" />
+		<pos id="6" point="1395,480" width="30" height="30" />
+
+		<boss typeID="55" groupID="2613" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1013" groupID="2613" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="34" groupID="2614" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1010" groupID="2614" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1003" groupID="2615" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+		<boss typeID="1007" groupID="2615" type="0" pos="1,2,3,4,5,6" speed="4" refreshTime="5000"/>
+	</map>
+ 
+<!--万圣节预热36543任务刷新的小怪-->	<!--万圣节10107支线任务刷新的【寂灭骨龙】-->	
+	<map mapID="11223" count="6">
+		<pos id="1" point="759,181" width="80" height="80" />
+		<pos id="2" point="872,341" width="80" height="80" />
+		<pos id="3" point="751,824" width="80" height="80" />
+		<pos id="4" point="308,696" width="80" height="80" />
+
+		<boss typeID="82" groupID="31" type="0" pos="1" taskID="36543" startNode="1" endNode="2" speed="4" range="1000" refreshTime="5000"/>
+		<boss typeID="82" groupID="31" type="0" pos="3" taskID="36543" startNode="1" endNode="2" speed="4" range="1000" refreshTime="5000"/>
+		<boss typeID="82" groupID="31" type="0" pos="2" taskID="36543" startNode="1" endNode="2" speed="4" range="1000 " refreshTime="5000"/>		
+		<boss typeID="85" groupID="38" type="0" pos="4" taskID="10107" startNode="1" endNode="2" speed="10" range="8000 " refreshTime="5000"/>		
+	</map>
+
+	
+	<reverse>
+		<monster typeID="7" pet="8" type="1" />
+	</reverse>
+</monsters>

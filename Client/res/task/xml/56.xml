@@ -1,0 +1,48 @@
+<task id="56">
+	<taskDes>
+		<![CDATA[完成学员班第一个D级任务了。彼兔老师的下一个挑战充满勇气去战胜它吧！*摩尔城堡·魔法师协会$$]]>
+		<![CDATA[【下水道】我又来挑战了！【下水道入口的铁门士兵】有可靠的情报，去向他请教吧！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="27" title="彼兔老师好！！" action="4" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11304"/>
+		<pro type="0" parent="0" npcID="207" title="你好守卫士兵！" action="3" needRes="" needResNum="" unResAction="" taskDes="1" mapID="21201"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="27" answer="当然记得$不记得了" to="a1$a2">
+			<des>
+				<![CDATA[10#Hi【@nick】~最近在王国生活得好吗？有没有好好练习我教你的技能！不给我好好练习背着我偷懒打你屁股！————哈哈~$$]]>
+				<![CDATA[1#说正经的，还记得王国吊桥边的下水道吗？你以前答应摩尔王“挑战试胆”去过的地方。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="27" answer="保证完成任务！" to="so">
+			<des>			
+				<![CDATA[2#一个勇敢的摩尔会在它摔倒的地方站起来！$$]]>				
+				<![CDATA[1#没错，这次的“考题”就是————挑战下水道【普豆泥王】！$$]]>
+				<![CDATA[1#上次你的失败一方面是运气不好，更重要的是没有获取足够的“情报”————情报在魔法师手中会产生神奇的变化————$$]]>
+				<![CDATA[10#嘭————甚至变成兔子————$$]]>
+				<![CDATA[1#【守卫士兵·H】是下水道的负责人，去向它获取情报吧！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="27" answer="保证完成任务！" to="so">
+			<des>	
+				<![CDATA[2#哈哈哈哈哈哈！一个勇敢的摩尔会在它摔倒的地方站起来！$$]]>				
+				<![CDATA[1#没错，这次的“考题”就是————挑战下水道【普豆泥王】！$$]]>
+				<![CDATA[1#上次你的失败一方面是运气不好，更重要的是没有获取足够的“情报”————情报在魔法师手中会产生神奇的变化————$$]]>
+				<![CDATA[10#嘭————甚至变成兔子————$$]]>
+				<![CDATA[1#天啊————又忍不住变成兔子了————【守卫士兵·H】是下水道的负责人，向它获取情报吧！]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="207" answer="请告诉我普豆泥王的情报" to="c" nextTask="57_0">
+			<des>					
+				<![CDATA[1#您好，有事么。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="27" answer="嘿嘿O(∩_∩)O" to="a0">
+			<des>					
+				<![CDATA[1#说了多少遍别叫我【彼兔】！我叫彼得！当心我用10级【流星雨】砸你。]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

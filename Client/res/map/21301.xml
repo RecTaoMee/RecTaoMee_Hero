@@ -1,0 +1,83 @@
+<!--平原一区-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-003.mp3">
+	<transport intPos="360,308"> 
+		<node id="1" pos="800,237" targetMapId="11201" targetTransPortId="4" name="南街"/> 	
+		<node id="2" pos="820,1002" targetMapId="21305" targetTransPortId="1" name="平原五区" level="10_a7"/>
+		<node id="3" pos="1512,718" targetMapId="21302" targetTransPortId="1" name="平原二区"/>	
+		<node id="4" pos="105,767" targetMapId="21310" targetTransPortId="1" name="平原十区" level="15_a8"/>
+
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2">
+			<event type="change_map" hit="ChangeMapHit" noLimit="1"/>
+		</node>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4">
+			<event type="change_map" hit="ChangeMapHit" noLimit="1"/>
+		</node>
+		<node id="5" type="AppModule" res="MC_carvedStone" module="boards/CarvedStoneModule" />
+		<node id="6" type="AppModule" res="MC_roadSign" module="boards/FieldRoadSignModule" />
+		<node id="7" type="AppModule"  res="MC_roadSign_1" module="boards/RoadSign_1Module" />
+	</object>
+	<taskSWF>
+		<!-- taskID:在可接摸个任务的时候会加载此资源,level:载入存入层级,存入后的名字-->
+		<node id="1" taskID="10002" level="contentLevel" name="task_10002_12002" />
+		<node id="2" taskID="10002" level="contentLevel" name="task_10002_12003" />
+	</taskSWF>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="217" name="守卫士兵R" type="NPC" res="MC_npc_217" action="0$2$5"/>
+		<node id="210" name="守卫士兵K" type="NPC" res="MC_npc_210" action="1$3$6"/>
+		<node id="41" name="坷一特" type="NPC" res="MC_npc_41" action="4"/>
+	</npc>
+	<actions>
+		<proAction npcID="217" id="0" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#请放心，我们会坚守王国和团长妮娜小姐。]]>
+			</des>
+		</proAction>
+		<proAction npcID="210" id="1" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#最近【盗贼型精灵迪迪拉】在城门口频繁出没，出城请小心！]]>
+			</des>
+		</proAction>
+		<proAction npcID="217" id="2" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#自从“黑化事件”后我和【K】被分配到这里驻守摩尔王国。]]>
+			</des>
+		</proAction>
+		<proAction npcID="210" id="3" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#自从“黑化事件”后我和【R】一直驻守在这里，从未离开……]]>
+			</des>
+		</proAction>
+		<proAction npcID="41" id="4" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#美味的棉球果呦………]]>
+			</des>
+		</proAction>
+		<proAction npcID="217" id="5" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#【K】有没有觉得最近城门口人变多了，奇怪...]]>
+			</des>
+		</proAction>	
+		<proAction npcID="210" id="6" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#【R】有没有觉得最近城门口人变多了，奇怪...]]>
+			</des>
+		</proAction>	
+		<proAction npcID="226" id="7" type="0" answer="我要前往$我要努力成长！" to="a9$o" >
+			<des>
+				<![CDATA[1#10级前进入平原5区会比较危险，确定还要进入么？]]>
+			</des>
+		</proAction>
+		<proAction npcID="226" id="8" type="0" answer="我要前往$我要努力成长！" to="a9$o" >
+			<des>
+				<![CDATA[1#15级前进入平原10区会比较危险，确定还要进入么？]]>
+			</des>
+		</proAction>			
+		<proAction npcID="226" id="9" type="6" event="change_map"/>
+	</actions>		
+</map>

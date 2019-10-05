@@ -1,0 +1,21 @@
+<!--下水道四层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="430,890" targetMapId="21207" targetTransPortId="1" name="下水道五层"/>
+		<node id="2" pos="1481,108" targetMapId="21204" targetTransPortId="3" name="下水道三层"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="2"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="1"/>	
+		<node id="4" type="" res="MC_key_0">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[钥匙不不不在我这里呱呱...]]>
+			</event>
+		</node>
+		<node id="5" type="" res="MC_key_1">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[保护青蛙人人有责！]]>
+			</event>
+		</node>
+	</object>
+</map>

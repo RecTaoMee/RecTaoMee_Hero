@@ -1,0 +1,88 @@
+<task id="79">
+	<taskDes>
+		<![CDATA[向【“情报员”】了解情况吧！$$]]>
+		<![CDATA[强盗是“黄鼠狼”，村后的【海地洞穴】$$]]>
+		<![CDATA[抢回毕业证书的消息告诉【情报员】吧！*尼康康餐厅]]>
+	</taskDes>
+<taskPro>
+    <pro type="0" parent="" npcID="15" title="关于毕业证书的情报" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11404"/>
+    <pro type="" parent="0" npcID="15" title="关于毕业证书的情报" action="13" needRes="" needResNum="" unResAction="" bossID="3006" bossNum="1" taskDes="1" mapID="11404"/>
+    <pro type="0" parent="1" npcID="15" title="证书抢回来了！" action="15" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="2" mapID="11407"/>
+</taskPro>
+  <actions>	
+    <proAction id="0" type="0" npcID="15" answer="受害者？" to="s1">
+      <des>
+		<![CDATA[1#我找到一位“受害者”可以告诉你些情报。]]>
+	  </des>
+	</proAction>
+    <proAction id="1" type="0" npcID="37" answer="一定把证书找回来！" to="o">
+      <des>
+		<![CDATA[1#我我我讨厌黄鼠狼！！每次我送毕业信都要抢！丢了这么重要的东西我可能要被开除村长职位啊，讨厌黄鼠狼！！$$]]>
+		<![CDATA[1#真是的，即使送信也要像保镖一样担惊受怕啊~~~！$$]]>
+		<![CDATA[1#那只黄鼠狼抢了我的证书背包以后往【村后的·海地洞穴】方向疯狂的逃走了！！太可怕了~~！]]>
+	  </des>
+	</proAction>
+    <proAction id="2" type="0" npcID="998" answer="把大家的证书交出来！$先生您好。" to="a3$a7">
+      <des>
+		<![CDATA[1#一百一十张…一百一十二张…一百一十三张……嘿嘿嘿…看你们怎么毕业…]]>
+	  </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="998" answer="来——吧！武力夺回！$我只是路过的村民..." to="a4$a6">
+      <des>
+		<![CDATA[1#！竟然被你发现了⊙''⊙！——等等...不用慌！【妮娜】不在这里~！小鼹鼠看我怎么欺负你！~]]>
+	  </des>
+	</proAction>
+    <proAction id="4" type="5" fightID="3006" data="1" to="e1"/>
+    <proAction id="5" type="5" fightID="3006" data="1" to="e1"/>
+     <proAction id="6" type="0" npcID="998" answer="把大家的证书交出来！$能让我看看您的背包吗？$哦，没什么事~" to="a3$a8$o">
+      <des>
+		<![CDATA[1#村民？走开走开~没看别人忙着呢吗？没看别人在认真工作吗？]]>
+	  </des>
+	</proAction>
+    <proAction id="7" type="0" npcID="998" answer="把大家的证书交出来！$能让我看看您的背包吗？$哦，没什么事~" to="a3$a8$o">
+      <des>
+		<![CDATA[1#啊哟？有事咩~？]]>
+	  </des>
+	</proAction>	
+    <proAction id="8" type="0" npcID="998" answer="先生您的背包很有品位$把大家的证书交出来！$哦，没什么事~" to="a9$a3$o">
+      <des>
+		<![CDATA[1#干嘛？你要看我的背包干什么？]]>
+	  </des>
+	</proAction>	
+    <proAction id="9" type="0" npcID="998" answer="证书我就收下了！" to="a10">
+      <des>
+		<![CDATA[1#啊西西~既然你这么有品味O(∩3∩)O那就给你看看吧~！]]>
+	  </des>
+	</proAction>	
+    <proAction id="10" type="7" taskResID="260012" taskResNum="1" delTaskResID="" delTaskResNum="" to="a11"/>	
+    <proAction id="11" type="0" npcID="998" answer="这是属于大家的!" to="a12">
+      <des>
+		<![CDATA[1#！你说什吗！你还我证书！]]>
+	  </des>
+	</proAction>	
+    <proAction id="12" type="5" fightID="3006" data="1" to="e1"/>	
+    <proAction id="13" type="0" npcID="15" answer="现在就去【海地洞穴】" to="o">
+      <des>
+		<![CDATA[1#这位“受害者”的心情十分低落。看来有必要去【村后的·海地洞穴】找找看了。]]>
+	  </des>
+	</proAction>
+   <proAction id="14" type="7" taskResID="" taskResNum="" delTaskResID="260012" delTaskResNum="1" to="a15"/>	
+   <proAction id="15" type="0" npcID="15" answer="咦村长来了" to="c" nextTask="80_1">
+      <des>
+		<![CDATA[1#唷吼~  看来已经没我什么事了。（■_,■）]]>
+	  </des>
+	</proAction> 
+  </actions>
+</task>	
+
+
+
+
+
+ 
+
+ 
+
+
+
+

@@ -1,0 +1,47 @@
+<task id="20016">
+	<taskDes>
+		<![CDATA[【公告栏】又有了新的悬赏令，快去【勇士广场】看看。$$去和【守卫士兵•S】确认一下任务的具体内容吧。★【守卫士兵•S】在【摩尔城堡】的吊桥边$$在【摩尔城堡•下水道】击败7只吉普豆泥……如果完成了就回去找【守卫士兵•S】$$快去公告栏领取奖励吧！]]>
+	</taskDes>
+	<laterDes>
+		<![CDATA[【摩尔城堡•下水道】有大量【吉普豆泥】被黑化，谁能净化它们摩尔王将给予1500星豆的奖赏]]>
+	</laterDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+			<pro type="0" parent="" npcID="300" action="0" title="王国悬赏令①" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11202"/>
+			<pro type="0" parent="0" npcID="218" action="0" title="下水道的吉普豆泥？" needRes="" needResNum="" unResAction="" taskDes="1" mapID="11204"/>
+			<pro type="0" parent="1" npcID="218" action="5" title="已经净化完毕" bossID="6" bossNum="7" unResAction="" taskDes="2" mapID="11204"/>
+			<pro type="0" parent="2" npcID="218" action="1" title="已经净化完毕" bossID="" bossNum="" unResAction="" taskDes="2" mapID="11204"/>
+			<pro type="0" parent="3" npcID="300" action="2" title="王国悬赏令①" bossID="" bossNum="" unResAction="" taskDes="3" mapID="11202"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="218" answer="好的！" to="e1">
+			<des>
+				<![CDATA[1#原本生活在下水道区域的【吉普豆泥】最近都被【黑化】了，$$]]>
+				<![CDATA[1#吉普豆泥并不可怕，但是很多士兵的盔甲都被粘糊糊土豆泥黏住！几天不能出门站岗！！天啊我们的盔甲——太可怕了！！！！$$]]>
+				<![CDATA[1#你应该从【贝利】那儿听说过，用女神泉水洗礼过的武器击败黑化精灵就可以净化它们，请帮助我们净化【7只吉普豆泥】！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="218" answer="这就去公告栏" to="e3">
+			<des>
+				<![CDATA[1#又有7个黑化吉普豆泥被净化了，太好了，我们的盔甲有救了！快回公告栏领取赏星吧！]]>
+			</des>
+		</proAction>		
+		<proAction id="2" type="0" npcID="15" answer="是的" to="a3">
+			<des>
+				<![CDATA[1#黑水晶的力量已经侵入下水道了啊....]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="2" panel="PublicShouLiModule" data="20016_4" to=""/>
+		<proAction id="4" type="0" npcID="15" answer="嗯！" to="c">
+			<des>
+				<![CDATA[1#这些是你的赏星！看来要忙很长一阵子了。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="218" answer="加油！" to="o">
+			<des>
+				<![CDATA[1#总共需要净化【7只】黑化吉普豆泥，加油！]]>
+			</des>
+		</proAction>
+	</actions>
+</task>

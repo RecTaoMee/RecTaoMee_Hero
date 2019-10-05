@@ -1,0 +1,147 @@
+<Task ID="10107" Memo="一年一度的【万圣节】即将来临，摩尔王国的c詹姆斯国王c准备给大家分发万圣节糖果，快去【国王呈见厅】找c詹姆斯国王c看看吧！" TargetMap="11307">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="【万圣节】即将来临，c詹姆斯国王c准备给大家分发糖果，快去【国王呈见厅】找c詹姆斯国王c看看吧！" TargetMap="11307" TargetObj="30" TargetName="去国王呈见厅找t詹姆斯t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="摩尔王大人~" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="哦呵呵…小摩尔万圣节快乐！" />
+					<Option Info="国王陛下万圣快乐！" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="30" ImageID="1" Info="万圣节到来了，摩尔王国却依然处于紧张的状态！" />
+					<Option Info="陛下别担心了~" />																		
+				</Action>																
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="宾德、多修、妮娜众人为了摩尔王国如此操劳，你能否帮我一个忙呢？！" />
+					<Option Info="陛下尽管吩咐！" />						
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="2" Info="我这有些糖果，你帮我分别依次送给宾德、多修和妮娜吧。当然，既然是万圣节期间，对他们进行小小的恶作剧是少不了的，希望能暂时舒缓大家的心情！" />
+					<Option Info="好，我一定办妥！" />						
+				</Action>
+    		</Event>		
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往c国王呈见厅c找到近卫士兵长c宾德c，送上詹姆斯国王的万圣祝福糖果。" TargetMap="11307" TargetObj="25" TargetName="去国王呈见厅找t宾德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="亲耐地宾德队长~" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="小摩尔，你怎么跑来了？？" />
+					<Option Info="宾德大人请闭眼！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="纳尼？你是要送我圣诞礼物吗？！" />
+					<Option Info="给你糖果爱捣蛋！" />
+				</Action>	
+				<Action Type="MOVIE" Url="task10107_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />					
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哎哟，我老人家可折腾不起啊！" />
+					<Option Info="万圣节快乐！" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="原来是詹姆士国王托你给我送糖果来了，你要替我感谢他哦！我也会分发给其他王国士兵的！" />
+					<Option Info="我会转达的，先走啦！" />
+				</Action>					
+    		</Event>		
+		</Step>		
+			
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="前往c勇士广场c左侧找到十二勇士之一的神秘c多修c，送上詹姆斯国王的万圣祝福糖果。" TargetMap="11202" TargetObj="104" TargetName="去勇士广场找t多修t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="酷酷地多修GG~" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="咳…咳…我接到线报，南瓜公爵正在密谋一个邪恶的计划，请你前往那里进行阻止！" />
+					<Msg NpcID="104" ImageID="1" Info="复苏的南瓜公爵出现的时间为：10月28日-11月3日周1-5每天下午19-21点，周6-7每天下午14-16/19-21点！" />				
+					<Option Info="好的我会准时前往！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="咳咳，对了，你找我有什么事？！" />
+					<Option Info="多修好帅气（到底要下手吗…）" />
+				</Action>	
+				<Action Type="MOVIE" Url="task10107_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />	
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="咳咳…咳咳咳，你这小子！摩尔王不是还要叫你给妮娜送糖去吗？还不快去呀！" />
+					<Option Info="原来你知道呀！" />
+				</Action>					
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="咳咳，我怎么可能不知道…记得也要给妮娜捣一下蛋！" />
+					<Option Info="嗯，那我走啦！" />
+				</Action>						
+    		</Event>		
+		</Step>		
+	
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="前往c王国军营c找到王国骑士团长c妮娜c，送上詹姆斯国王的万圣祝福糖果。" TargetMap="11222" TargetObj="1" TargetName="去王国军营找t妮娜t">
+        		<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="1" TaskOption="美丽地妮娜姐姐~" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="呀，你来啦？是发生什么事了吗？" />
+					<Option Info="给你糖果爱捣蛋！" />
+				</Action>	
+				<Action Type="MOVIE" Url="task10107_3.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="呵呵，替我谢谢摩尔王詹姆士的糖。多修也真是的，还特别叮嘱你来给我捣蛋呀！" />
+					<Option Info="哈哈，万圣节快乐！" SkipTrigger="Y" />
+				</Action>										
+    		</Event>
+		</Step>		
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Battle ID="38" Count="1" />>				
+			</Condition>
+    		<Event ConditionType="IN" Memo="击败了c寂灭骨龙c后，回王国军营找c妮娜c回报吧。" TargetMap="11222" TargetObj="1" TargetName="去王国军营找t妮娜t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="1" TaskOption="打败寂灭骨龙啦！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="你真棒，小勇士！居然这么快就击败【寂灭骨龙】！~" />
+					<Option Info="嘿嘿，小菜一碟！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="另外，作为感谢，我送你一个时装“南瓜头套”，万圣节期，大家都带着南瓜头套，点南瓜灯的感觉是很好地哦！！" />
+					<Option Info="谢谢妮娜姐！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="还有，刚刚骑士团成员在清理战场时，发现了【寂灭骨龙精灵蛋】！听说只有超时空勇士才能打开，如果你要获得强大的【寂灭骨龙】，只要成为【超时空勇士】就可以啦！" />
+					<Option Info="哇！好滴好滴！" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="报告妮娜团长，南瓜军团计划在万圣之期对我们进行反击，据说【王国军营】和【史诗战场】的“南瓜灯笼”里藏匿着南瓜军团，请团长指示！" />
+					<Msg NpcID="101" ImageID="1" Info="看来形式依然不乐观，南瓜军团居然使用“木马计……好，我们就将计就计！小勇士，10.29-10.30每天下午14-16点，点亮【王国军营】和【史诗战场】的南瓜灯，揪出南瓜军团！" />
+					<Msg NpcID="101" ImageID="1" Info="作为回报，你可以获得【南瓜时装兑换券】，在我这里兑换詹姆斯国王为摩尔勇士准备的【精美南瓜时装】哦！！" />
+					<Option Info="哇！好滴好滴！" />
+				</Action>											
+    		</Event>			
+    		<Event ConditionType="OUT" Memo="前往c王国军营c找到王国骑士团长c妮娜c，送上詹姆斯国王的万圣祝福糖果。" TargetMap="11223" TargetObj="" TargetName="去史诗战场击败t寂灭骨龙t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="1" TaskOption="南瓜公爵复苏了吗？" />
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="上次一战之后，【南瓜公爵】被封入【万圣古祭坛】，却被他吸收上古恶灵的魔力，眼下就是南瓜公爵复苏之期。！" />
+					<Msg NpcID="101" ImageID="1" Info="不仅如此，南瓜公爵还将沉睡古祭坛中的上古魔兽——【寂灭骨龙】唤醒，出现在了【史诗战场】。请你帮忙消灭【寂灭骨龙】吧！" />
+					<Option Info="嗯，我去试试！" />
+				</Action>						
+    		</Event>		
+		</Step>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+				
+	</Procedure>
+</Task>

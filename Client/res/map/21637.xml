@@ -1,0 +1,24 @@
+<!--弓术试炼之间-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="400,400">
+		<node id="1" pos="" targetMapId="21635" targetTransPortId="0" name="修炼之域35层"/>
+	</transport>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+		<node id="28" type="CleanBoss" res="MC_npc_28" action="0" needType="winCount" need="1" needAction="2" groupID="103047" transPortId="1"/>
+    </npc>
+    <actions>
+		<proAction npcID="28" id="0" type="0" answer="老师，请指教！$返回【修炼35域】$摩尔勇士万岁！" to="a1$go_prev$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#现在是发挥你们团队精神的时候了。]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="5" fightID="3047" />
+		<proAction npcID="28" id="2" type="0" answer="返回【修炼35域】$摩尔勇士万岁！" to="go_prev$o" colorID="0$0">
+			<des>
+				<![CDATA[1#你们的表现，让我很欣慰！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

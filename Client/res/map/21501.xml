@@ -1,0 +1,15 @@
+<!--风之洞穴一层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="1379,239" targetMapId="21502" targetTransPortId="1" name="平原一区"/> 
+		<node id="2" pos="229,271" targetMapId="21312" targetTransPortId="1" name="平原七区"/> 	
+		
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<node id="61" type="NPC" res="MC_npc_61" action=""  taskShowSteps="20029_3|33,10083_3" />		
+	</npc>	
+</map>

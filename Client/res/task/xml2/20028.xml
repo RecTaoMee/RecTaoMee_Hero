@@ -1,0 +1,51 @@
+<Task ID="20028" Memo="c守卫士兵Wc在找未来摩尔收集银？\n小主人快去c平原12区c看看吧！" TargetMap="21312">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔收集银？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="你需要银？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="我还缺少一些强化装备的材料，\n请去【风之洞穴】帮我采集1个【银】吧！" />
+					<Option Info="使命必达！"  />																																						
+					<Option Info="怎么回事？"  SkipTrigger="Y" NextStep="2" />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>	
+  		<Step ID="2" ParentList="0" ParentCost="1" >
+    		<Event Memo="c守卫士兵Wc在找未来摩尔收集银？\n小主人快去c平原12区c看看吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="你需要银？" />											
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="最近的黑化精灵升级神速啊（T_T），\n身为守卫士兵不能再穿破破烂烂的装备了。\n如果采集到【银】，就能请安德鲁强化装备！" />	
+					<Option Info="使命必达！" />
+				</Action>								
+    		</Event>
+    	</Step>							
+  		<Step ID="3" ParentList="1, 2" ParentCost="1" >
+			<Condition>
+				<Item ID="170008" Count="1" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="采集完成↖(^ω^)↗\n快去c平原12区c交给c守卫士兵Wc吧!" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="银来了！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="每天只要1个银，绝对不贪心嘿嘿~~\n剩下的都留给【@nick】，\n你也好好打造一套装备吧！" />
+					<Option Info="O(∩_∩)O" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="快去c风之洞穴2层c采集c1个银c吧！" TargetMap="21502" TargetName="采集t银t" TargetPos="294,214">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="银在哪里？" />											
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="我还缺少一些强化装备的材料，\n请去【风之洞穴】帮我采集1个【银】吧！" />
+					<Option Info="使命必达！"  />																																										
+				</Action>						
+    		</Event>			
+    	</Step>  			
+	</Procedure>
+</Task>

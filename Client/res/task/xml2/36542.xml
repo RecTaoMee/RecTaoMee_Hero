@@ -1,0 +1,211 @@
+<Task ID="36542" Memo="修炼之域是摩尔勇士的训练之地，c圣弗雷德c奉摩尔王之命对未来勇士们展开特训。\n周1-5：每天19：00-21：00\n周6-7：每天13：00-15：00" TargetMap="11219">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c圣弗雷德c奉摩尔王之命对未来勇士们展开特训，前往【勇士斗技场--斗技场管理处】找到c圣弗雷德c" TargetMap="11219" TargetObj="38" TargetName="找斗技场管理处t圣弗雷德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="你好，圣弗雷德！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="38" ImageID="1" Info="小勇士,你收到我的邀请了吧？没错，我奉摩尔王詹姆斯之命特邀未来勇士前来接受特训！" />
+					<Option Info="特训？" />					
+				</Action>							
+				<Action Type="TALK">			
+					<Msg NpcID="38" ImageID="1" Info="正是！修炼之域的挑战即将开启，如果你想要证明你自己，就前往修炼之域管理员“咚妮”处参加修炼之域的挑战！" />
+					<Option Info="修炼之域！？" />																		
+				</Action>	
+				<Action Type="MOVIE" Url="task36542_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />	
+				<Action Type="TALK">			
+					<Msg NpcID="38" ImageID="1" Info="当你挑战修炼之域达到一定的域数，即可获得令人羡慕的“称号”，同时也可以获得各种称心满意的【紫色装备】、【合成材料】等等，帮助你大大提升你自己的实力！！" />
+					<Option Info="我该怎么做？" />																		
+				</Action>					
+				<Action Type="TALK">			
+					<Msg NpcID="38" ImageID="1" Info="前往斗技场大厅找修炼之域管理员“咚妮”，她会帮你进入修炼之域！" />
+					<Option Info="我这就去！" />																		
+				</Action>					
+				<Action Type="TALK">			
+					<Msg NpcID="38" ImageID="1" Info="先别着急，在你出发去历练之前，先去见见宾德大人，他有话要对你说。" />
+					<Option Info="……好吧！" />																		
+				</Action>																				
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307,1" />	
+    		</Event>		
+		</Step>	
+		
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="前往【勇士大厅--国王呈见厅】找到c宾德c" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="宾德队长？" />
+				</Trigger>							
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="呵呵，小勇士，是圣弗雷德让你来的吧？" />
+					<Option Info="你怎么知道？" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哈哈哈，作为聪明的宾德大人，怎么会不知道呢？" />
+					<Option Info="……好臭美！" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="让我先问你一个问题，如果你能答对，我就告诉你圣弗雷德让你来找我的原因！" />
+					<Option Info="……还要考试啊？" />					
+				</Action>				
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="最喜欢说“吃得苦中苦，方为人上人”的是【苦苦草A】、【苦苦草B】还是【苦苦草C】？" />
+					<Option Info="苦苦草A" NextStep="3" SkipTrigger="Y" />		
+					<Option Info="苦苦草B" NextStep="4" SkipTrigger="Y" />	
+					<Option Info="苦苦草C" NextStep="6" SkipTrigger="Y" />		
+					<Option Info="让我思考一下" NextStep="2" />				
+				</Action>					
+
+    		</Event>		
+		</Step>		
+						
+  		<Step ID="3" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Battle ID="28" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已战胜了王国卫兵，现在可以继续与c宾德c对话" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="哈哈！胜利了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="看来你还不赖嘛，这是给你的奖励，修炼之域是摩尔勇士必须经历的考验，通过层层挑战的勇士们，也将获得各种奖励！" />
+					<Msg NpcID="25" ImageID="6" Info="【修炼之域】里有适合20-35级勇士穿着的【紫色装备】，同时还有各种【合成石】的产出，快去那里证明实力吧！" />
+					<Option Info="谢谢！现在就去！" />
+				</Action>				
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11218,1" />							
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往【勇士大厅--国王呈见厅】找到c宾德c，并通过王国士兵的战斗考验" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="宾德队长" />
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="苦苦草A？看来你还不够聪明，在你去修炼之域前先和我们王国士兵打一场吧！" />
+					<Option Info="来吧！！" />
+					<Option Info="准备一下" NextStep="3" />					
+				</Action>					
+				<Action Type="COMMAND" Command="BATTLE" Params="28"/>											
+    		</Event>
+		</Step>	
+						
+  		<Step ID="4" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Item ID="150005" Count="10" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已获得了10株苦苦草，现在可以回【勇士大厅--国王呈见厅】找c宾德c回话了" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="老大，苦苦草采回来了" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哦呵呵，就是这个。好了，现在我就要告诉你这个秘密了！" />
+					<Option Info="？？？" />				
+				</Action>	
+				<Action Type="MOVIE" Url="task36542_2.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="现在你知道我的真实身份了吧！小勇士！" />
+					<Option Info="……" SkipTrigger="Y" />				
+				</Action>																		
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往【勇士大厅--国王呈见厅】找到c宾德c，并去c格历尔平原2区c采集找10株苦苦草" TargetMap="11307" TargetObj="25" TargetName="平原2区采10株苦苦草">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="宾德队长" />
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="苦苦草B？哦呵呵，好久没有看见过【苦苦草】了哈，你帮我去“格历尔平原2区”找10株苦苦草来吧！！" />
+					<Option Info="真麻烦！~" />		
+				</Action>					
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21302,1" />											
+    		</Event>
+		</Step>				
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >		
+			<Condition>
+				<Battle ID="29" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已战胜了宾德，现在可以继续与c宾德c对话" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="哈哈！胜利了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="哦呵呵，实力果然不赖嘛！这是给你的奖励，希望你下次还能答对哦！" />
+					<Msg NpcID="25" ImageID="9" Info="另外，去修炼之域可要小心了，在那里我会拿出我的真实实力与你较量！你需要击败层层关卡才能与我挑战，当然奖励也不会让你失望的！" />
+					<Msg NpcID="25" ImageID="6" Info="【修炼之域】里有适合20-35级勇士穿着的【紫色装备】，同时还有各种【合成石】的产出，快去那里证明实力吧！" />
+					<Option Info="谢谢！现在就去！" />
+				</Action>				
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11218,1" />							
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往【勇士大厅--国王呈见厅】找到c宾德c，并赢得宾德的战斗考验" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="修炼之域大BOSS啊…" />
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="既然已经告诉你我的真实身份了，那么就让我先试试你的实力吧！" />
+					<Option Info="恭敬不如从命！" />
+					<Option Info="准备一下" NextStep="5" />					
+				</Action>					
+				<Action Type="COMMAND" Command="BATTLE" Params="29"/>											
+    		</Event>
+		</Step>		
+		
+
+
+  		<Step ID="6" ParentList="2" ParentCost="1" >		
+			<Condition>
+				<Item ID="290002" Count="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已获得了5枚c十字勋章c，现在可以回【勇士大厅--国王呈见厅】找c宾德c回话了" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="十字勋章已获得！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="小勇士果然勇气可嘉！那我就告诉你一个小秘密吧！搜集足够的【十字勋章】就可以在斗技场“咚妮”处抽奖，说不定运气不错的你会抽到各种大奖哦！！" />
+					<Option Info="哇！！" SkipTrigger="Y" />				
+				</Action>																		
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往【勇士大厅--国王呈见厅】找到c宾德c，之后去【勇士斗技场--斗技场大厅】c咚妮c处，挑战任意域获得5枚c十字勋章c" TargetMap="11307" TargetObj="25" TargetName="找斗技场大厅t咚妮t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="宾德队长" />
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="苦苦草C？好像还是答的不正确呀，看来你的智慧似乎还不够……那么我得考考你的勇气如何！" />
+					<Msg NpcID="25" ImageID="1" Info="这样吧，修炼之域每日第一次击破任意一域都会掉落【十字勋章】，你去打5枚【十字勋章】来证明你的勇气吧！" />
+					<Option Info="我会证明我的勇气！" />		
+				</Action>					
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11218,1" />											
+    		</Event>
+		</Step>	
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >		
+			<Condition>
+				<Battle ID="28" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="你已战胜了宾德，现在可以继续与c宾德c对话" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="哇！赢了！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="看来你还不赖嘛，这是给你的奖励，修炼之域里有不少这种奖励，难度需要通过层层挑战，才能够拿到奖励哦！" />
+					<Msg NpcID="25" ImageID="9" Info="【修炼之域】里有适合20-35级勇士穿着的【紫色装备】，同时还有各种【合成石】的产出，快去那里证明实力吧！" />
+					<Option Info="谢谢！现在就去！" />
+				</Action>				
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11218,1" />							
+    		</Event>
+																												
+    		<Event ConditionType="OUT" Memo="前往【勇士大厅--国王呈见厅】找到c宾德c，并赢得宾德的最后考验" TargetMap="11307" TargetObj="25" TargetName="找国王呈见厅t宾德t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="我了解十字勋章了" />
+				</Trigger>						
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="那么现在还有最后一项考验，和我的王国士兵较量一下证明你的最终实力吧！！" />
+					<Option Info="来吧！" />
+					<Option Info="准备一下" NextStep="7" />					
+				</Action>					
+				<Action Type="COMMAND" Command="BATTLE" Params="28"/>											
+    		</Event>
+		</Step>	
+				
+	</Procedure>
+</Task>

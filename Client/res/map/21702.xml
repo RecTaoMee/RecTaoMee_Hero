@@ -1,0 +1,27 @@
+<!--锁修塔2层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="747,991" targetMapId="21701" targetTransPortId="2"/>
+		<node id="2" pos="604,61" targetMapId="21703" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TowerFloor" res="MC_floor_1" delay="2000" targetPoint="747,991"/>
+		<node id="4" type="TowerFloor" res="MC_floor_2" delay="1700" targetPoint="1092,615"/>
+		<node id="5" type="TowerFloor" res="MC_floor_3" delay="1400" targetPoint="797,503"/>
+	</object><!--
+	<actions>
+		<proAction npcID="7" id="1" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#你的水晶不够]]>
+			</des>
+		</proAction>
+		<proAction npcID="7" id="2" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#水晶还未开启]]>
+			</des>
+		</proAction>
+	</actions> -->
+
+</map>

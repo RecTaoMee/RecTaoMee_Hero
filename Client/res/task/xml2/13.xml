@@ -1,0 +1,76 @@
+<Task ID="13" Memo="关于c净化之路c的事，\n去问问nc村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" > 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="关于c净化之路c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="关于c净化之路c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >  						
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="我要挑战【净化之路】！" />
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="哦嚯？\n【净化之路】是“穿越时空”的试炼，\n只有“时之女神”大人能指引你前往。" />	
+					<Msg NpcID="5" ImageID="1" Info="妈妈咪呀噜噜西亚——" />						 
+					<Option Info="(⊙o⊙）？" />
+				</Action>	
+    			<Action Type="MOVIE" Url="task_13_2.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />	 
+    		</Event>
+		</Step>			  <!-- 节点2↓ -->
+  		<Step ID="4" ParentList="1" ParentCost="1" >
+    		<Event Memo="关于c净化之路c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >  						
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="我要挑战【净化之路】！" />
+				</Trigger>		   										 
+ 				<Action Type="TALK">					 
+					<Msg NpcID="2" ImageID="10" Info="尊敬的【奇普力】——\n你召唤我——？ " />	
+					<Msg NpcID="5" ImageID="1" Info="请允许【@nick】挑战【净化之路】。" />
+					<Msg NpcID="2" ImageID="10" Info="我明白了……\n那么，准备好启程了吗？" />										 
+					<Option Info="准备好了！" />
+				</Action>	 
+    			<Action Type="MOVIE" Url="task_13_1.swf" MapLevel="TASK" Pos="0,0" />
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="30208, 1" SkipTrigger="Y" />			
+    		</Event>
+		</Step>		 
+  		<Step ID="3" ParentList="4" ParentCost="1" >                                   				                      
+    		<Event Memo="c净化之路c挑战开始！\n快打败c卡拉兽c吧！" TargetMap="30208" TargetObj="2" TargetName="和t女神t对话" >  	 		
+  				<Trigger>s
+					<Item Type="NPC_OPTION" MapID="30208" ObjID="2" TaskOption="我要挑战【净化之路】！" />
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="10" Info="“净化之路”上集结了荣耀时代最强的\n【黑化精灵】。\n净化它们将拯救精灵世界……" />
+					<Msg NpcID="2" ImageID="10" Info="这里就是【@nick】未来遇见黑化精灵——\n【卡拉兽】的时空……" />					 					 					 
+					<Option Info="这就挑战【卡拉兽】" SkipTrigger="Y" />
+				</Action>		 		
+    		</Event>			  
+		</Step>		  
+  		<Step ID="2" ParentList="3" ParentCost="1" >                                   
+ 			<Condition>
+				<Battle ID="2509" Count="1" />
+			</Condition>				                      
+    		<Event ConditionType="IN" Memo="c净化之路c挑战成功↖(^ω^)↗，\n快去告诉c女神c大人吧！" TargetMap="30208" TargetObj="2" TargetName="和t女神t对话" >	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30208" ObjID="2" TaskOption="战胜卡拉兽了！" />
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="10" Info="【@nick】赋予了【卡拉兽】新的生命。\n“新生卡拉兽宝宝”希望成为你的战斗伙伴^^!" />		
+					<Msg NpcID="2" ImageID="10" Info="“净化之路第2站”将为你开启……\n在那之前，先把好消息告诉【村长】吧——" />											 					 									 
+					<Option Info="这就去找【村长】！" />
+				</Action>		 
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11103, 1" />
+    		</Event>                                  
+    		<Event ConditionType="OUT" Memo="c净化之路c挑战开始！\n快打败c卡拉兽c吧！" TargetMap="30208" TargetObj="756" TargetName="打败t卡拉兽t" >  						
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="30208" ObjID="756" TaskOption="你就是【卡拉兽】？" />
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="756" ImageID="1" Info="鼹鼠……\n来见证黑水晶的力量吧——" />	
+					<Option Info="来战" />
+				</Action>	
+                <Action Type="COMMAND" Command="BATTLE" Params="2509" />												
+    		</Event>		  
+		</Step>			   		   	    		
+</Procedure>
+</Task>
+

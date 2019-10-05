@@ -1,0 +1,74 @@
+<Task ID="153" Memo="c安德鲁c有很重要的消息要告诉小主人！\n快去c弗雷基广场c看看吧！" TargetMap="11603">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >			
+    		<Event Memo="c安德鲁c有很重要的消息要告诉小主人！\n快去c弗雷基广场c看看吧！" TargetMap="11603" TargetObj="105" TargetName="和t安德鲁t对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="重要的消息？" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="1" Info="是时候告诉你了，唤醒了风之龙的摩尔——\n【妮娜】一直在海外寻找失踪的【瑞恩】。" />		
+					<Msg NpcID="105" ImageID="1" Info="现在黑水晶力量越来越严重，\n摩尔王国需要他们的力量！" />							
+					<Msg NpcID="105" ImageID="1" Info="你是受到“命运之轮”指引的未来勇士，\n承担起自己的使命，\n出海寻找他们吧！" />																	
+					<Option Info="这就去乘【勇士号】！" />
+				</Action>																										
+    		</Event>						
+		</Step>	
+  		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="水手们用小主人的材料让勇士号新生了！\n在c弗雷基码头c的勇士号水手们在忙什么呢……" TargetMap="11604" TargetObj="58" TargetName="和t勇士号水手t对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="58" TaskOption="勇士号怎样了？" />							
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="谢谢你慷慨捐赠的造船材料！\n现在一切准备就绪，\n大家一起念【浮水咒】，\n赋予勇士号生命——" />	
+					<Msg NpcID="58" ImageID="2" Info="【浮水咒】——\n阿普阿普阿普——" />
+					<Option Info="阿普阿普阿普——" />
+				</Action>
+				<Action Type="MOVIE" Url="task_30_1.swf" MapLevel="TASK" Pos="0,0" />						
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="我们的勇士号！\n~\(≧▽≦)/勇士号万岁！~" />	
+					<Msg NpcID="58" ImageID="2" Info="可以开始日常的“近海巡逻”了，\n【@nick】一起登上勇士号吧！" />
+					<Msg NpcID="312" ImageID="1" Info="来嘛来嘛！~" />
+					<Option Info="我要坐船寻找【妮娜】！" />
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="【@nick】认识十二勇士！！\n如果看到她记得帮我们要签名啊！" />												
+					<Msg NpcID="58" ImageID="2" Info="有你在出海一定很安全^^！海盗海贼闪边边！" />							
+					<Option Info="好！" />
+				</Action>		
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11705, 1" SkipTrigger="Y" />																					
+    		</Event>									
+		</Step>
+<!--船上↓-->
+  		<Step ID="3" ParentList="2" ParentCost="1" >			
+    		<Event  Memo="勇士号浮起来了！\n快c登上勇士号c和水手们一起近海巡逻吧^^！" TargetMap="" TargetObj="58" TargetName="登上t勇士号海船t">
+  				<Trigger>				
+					<Item Type="ENTER_MAP" MapID="11705" />
+					<Item Type="NPC_OPTION" MapID="11705" ObjID="58" TaskOption="聊聊勇士号" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="2" Info="天气真好啊！\n万里无云~\n看——弗雷基们都在抓马沙虾呢~~\n抓的好开心啊！" />							
+					<Msg NpcID="312" ImageID="1" Info="抓马沙虾~！" />
+					<Msg NpcID="51" ImageID="6" Info="啊————！！！！！！！！！！！！！！！！！" />						
+					<Msg NpcID="58" ImageID="1" Info="章界王！" />
+					<Option Info="章界王！" />
+				</Action>
+				<Action Type="MOVIE" Url="task_30_2.swf" MapLevel="TASK" Pos="0,0" />	
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11701, 1" SkipTrigger="Y" />																													
+    		</Event>									
+		</Step>
+  		<Step ID="4" ParentList="3" ParentCost="1" >			
+    		<Event  Memo="勇士号偏离了航线，\n来到了c神秘海岛c！\n快问问c勇士号的水手c吧!" TargetMap="11701" TargetObj="60" TargetName="和t勇士号水手t对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="11701" ObjID="60" TaskOption="现在情况怎样？" />							
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="58" ImageID="1" Info="【章界王】在海上的实力太强了！\n幸好勇士号坚固才能安全抵达……" />	
+					<Msg NpcID="58" ImageID="1" Info="我们好像发现了未知的岛屿！" />						
+					<Msg NpcID="58" ImageID="2" Info="对了，需要上船回【弗雷基港】，\n在我的“对话选项”里选择【我要乘船】就可以了。" />							
+					<Msg NpcID="58" ImageID="2" Info="听说每次“主角能力”的惊人提升，\n都是从一次“命中注定的探险”开始的\n(■_,■)！【@nick】加油！" />
+					<Option Info="知道了^_^v" />
+				</Action>																					
+    		</Event>									
+		</Step>
+</Procedure>
+</Task>

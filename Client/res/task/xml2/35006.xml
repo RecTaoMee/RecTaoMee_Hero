@@ -1,0 +1,34 @@
+<Task ID="30006" Memo="假面“奇奇”帕出现了,快去平原三区看看吧！\n周六~周日：6:00~24:00" TargetMap="21303">
+   	<Procedure> 
+	  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="假面“奇奇”帕出现了,快去平原三区看看吧！\n周六~周日：6:00~24:00" TargetMap="21303" TargetObj="" TargetName="去t平原三区t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21303" />						
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="啊哈哈哈哈……笑死我了哈哈……\n那些调皮的哈哈哈【假面“奇奇”帕】哈哈……\n我我我笑得肚子疼……哈哈哈……" />								
+					<Option Info="（⊙⊙）发生什么了？！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="【假面“奇奇”帕】是【假面“吉吉”帕】的同类精灵，\n它们就躲在【平原三区】的【红色土堆】里面。" />								
+					<Msg NpcID="12" ImageID="5" Info="啊哈哈我刚刚碰到了“奇奇帕粉”后已经笑了3小时了，\n哈哈哈太奇怪了……" />	
+					<Option Info="（=  =）#" SkipTrigger="Y" />
+				</Action>															
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="假面“奇奇”帕出现了,快去平原三区看看吧！\n周六6:00-24:00\n周日6:00-24:00" TargetMap="21303" TargetObj="" TargetName="去t平原三区t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21303" />														
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="12" ImageID="5" Info="小心吸入奇奇帕粉，\n3小时笑不停哈哈哈哈……" />
+					<Msg NpcID="12" ImageID="5" Info="啊哈哈笑得我想哭……为了G档案补完计划是值得的（T_T）~……\n和【假面奇奇帕】签订契约速速带来我的研究所。\n【G档案】里一定要记录它们的详细资料哈哈哈……！" />								
+					<Option Info="这就去找【红色土堆】！" />
+				</Action>												
+    		</Event>
+		</Step>
+
+</Procedure>
+</Task>

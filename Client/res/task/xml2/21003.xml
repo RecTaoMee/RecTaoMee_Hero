@@ -1,0 +1,51 @@
+<Task ID="21003" Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="狂击！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="狂击！" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="狂击是通过牺牲命中率来提供攻击力的技巧，如果你的速度比较快，那么用这个技能就很适合你。" />
+						<Msg NpcID="26" ImageID="2" Info="看上去，你似乎不太擅长使用这个技能呀？这样吧！你在战斗中使用【5次狂击】再回来找我，我会传授一些我的心得给你！" />
+						<Option Info="好的！" />
+					</Action>
+    		</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Skill ID="106" Times="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快回去找c杰森老师c吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="达成目标！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="干的不错，我就传授一些心得给你帮助你更好的掌握这个技能吧！" />
+						<Option Info="谢谢杰森老师！" />
+					</Action>
+				</Event>
+				<Event ConditionType="OUT" Memo="按照c杰森老师c的要求在战斗中使用c狂击c吧！" TargetMap="" TargetObj="" TargetName="使用狂击">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="小提示！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="狂击适合那些在敏捷上分配较多的努力值的人，当你面对速度比你快很多的对手时，最好不要轻易使用狂击！" />
+						<Option Info="明白了！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

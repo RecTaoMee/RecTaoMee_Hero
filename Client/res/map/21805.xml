@@ -1,0 +1,19 @@
+<!--世界树2F-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-002.mp3">
+	<transport intPos="403,232">
+		<node id="1" pos="403,232" targetMapId="21803" targetTransPortId="3"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+	</object>
+	<npc>
+		<node id="348" type="NPC" res="MC_npc_348" action="0"/>
+	</npc>
+	<actions>
+		<proAction npcID="348" id="0" type="0" answer="……" to="o" colorID="0" >
+			<des>
+				<![CDATA[1#想要去世界树顶?先得过了我这关！]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

@@ -1,0 +1,39 @@
+<Task ID="20022" Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311">
+   	<Procedure> 		
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c守卫士兵Zc在找未来摩尔？\n小主人快去c平原11区c看看吧！" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="马尾藤？" />												
+				</Trigger>					
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="“采集资源”需要日积月累的恒心，\n——因为每天能用来采集的【精力】有限。\n今天先去收集【15个马尾藤】，\n练习一下如何？" />
+					<Option Info="使命必达！"  />					
+					<Option Info="有事先走了"  NextStep="1" />						
+				</Action>								
+    		</Event>
+    	</Step>							
+  		<Step ID="3" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Item ID="150009" Count="15" />
+			</Condition>			
+    		<Event ConditionType="IN" Memo="采集完成↖(^ω^)↗\n快去c平原11区c交给c守卫士兵Zc吧!" TargetMap="21311" TargetObj="225" TargetName="和t守卫士兵Zt对话">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="马尾藤来了！" />											
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="记得每天都要【采集】啊！" />
+					<Option Info="O(∩_∩)O" />
+				</Action>	
+    		</Event>
+    		<Event ConditionType="OUT"  Memo="快去c平原11区c采集c15个马尾藤c吧！" TargetMap="21311" TargetName="采集t马尾藤t" TargetPos="905,967">
+  				<Trigger>				
+					<Item Type="NPC_OPTION" MapID="21311" ObjID="225" TaskOption="马尾藤在哪里？" />											
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="225" ImageID="1" Info="【马尾藤】就在平原11区我的下↓方。\n去采集【15个】来吧！" />
+					<Option Info="使命必达！"  />					
+				</Action> 			
+    		</Event>			
+    	</Step>  			
+	</Procedure>
+</Task>

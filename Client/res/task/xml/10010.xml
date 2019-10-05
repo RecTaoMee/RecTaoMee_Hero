@@ -1,0 +1,43 @@
+<task id="10010">
+	<taskDes>
+		<![CDATA[奇怪的精灵脚印？快点去找【皮克司】教授吧！$$]]>
+		<![CDATA[被【电波小队】盯上了...]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+			<pro type="0" parent="" npcID="12" action="0" title="小偷是精灵？" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11206"/>
+			<pro type="0" parent="0" npcID="12" action="5" title="小偷是精灵？" needRes="" needResNum="" unResAction="" taskDes="0" mapID="11206"/>
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="12" answer="嗯" to="a1">
+			<des>
+				<![CDATA[7#摩尔城堡发生了盗窃案，小偷可能是精灵！？]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="1" level="contentLevel" name="task_10009_1" moviepos="0,0" to="a2"/>
+		<proAction id="2" type="0" npcID="12" answer="...." to="a6">
+			<des>
+				<![CDATA[6#这个是？让我仔细看看…………]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="12" answer="你怎么知道的？" to="s4">
+			<des>
+				<![CDATA[2#哈哈，我明白了！又是那群电波兔干的好事。]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="0" npcID="12" answer="它们很厉害？" to="a5">
+			<des>
+				<![CDATA[2#哈哈，那是因为这种卡片我最近收到了很多。这群捣蛋鬼经常来研究所添乱T T。$$]]>
+				<![CDATA[2#看起来你也被他们盯上了呢！这张卡片的意思是让你去上面标示的地点见面。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="0" npcID="12" answer="...." to="c" nextTask="10011_16">
+			<des>
+				<![CDATA[2#电波兔是很顽皮的精灵，喜欢捉弄别人T T，不过他们本性并不坏！$$]]>
+				<![CDATA[1#如果能彼此深入了解，我觉得是能够成为好朋友的！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="1" outMap="1" level="taskLevel" name="task_10009_2" moviepos="0,0" to="a3"/>
+	</actions>
+</task>

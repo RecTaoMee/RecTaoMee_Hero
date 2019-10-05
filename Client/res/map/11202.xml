@@ -1,0 +1,291 @@
+<!--王国广场-->
+<map name="王国广场" type="0" comment="aaa" sound="BGM-004.mp3">
+	<process>
+		<node name="TeacherStudentMapProcess"/>
+	</process>
+	<transport intPos="872,238">
+		<node id="1" pos="337,997" targetMapId="11201" targetTransPortId="2" name="南街"/>
+		<node id="2" pos="926,54" targetMapId="11204" targetTransPortId="1" name="城堡吊桥"/>
+		<node id="3" pos="60,442" targetMapId="11203" targetTransPortId="1" name="西街"/>
+		<node id="4" pos="1861,432" targetMapId="11205" targetTransPortId="1" name="东街"/>
+		<node id="5" pos="283,314" targetMapId="11207" targetTransPortId="1" name="旅馆1楼"/>
+		<node id="6" pos="1224,213" targetMapId="11209" targetTransPortId="1" name="武器店铺"/>
+		<node id="7" pos="1444,324" targetMapId="11210" targetTransPortId="1" name="道具店"/>
+		<node id="8" pos="256,183" targetMapId="11208" targetTransPortId="2" name="旅馆2楼"/>
+		<node id="9" pos="240,869" targetMapId="11308" targetTransPortId="1" name="时空俱乐部"/>
+		<node id="10" pos="816,737" targetMapId="" targetTransPortId="" name="活动传送"/>
+		<node id="11" pos="684,587" targetMapId="51202" targetTransPortId="1" name="废弃的王国广场"/>
+		<node id="12" pos="1349,300" targetMapId="11504" targetTransPortId="2" name="兽王峡谷"/>
+		<node id="13" pos="684,587" targetMapId="51202" targetTransPortId="1" name="废弃的王国广场"/>
+	</transport>
+	<object>
+		<node id="101" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4"/>
+		<node id="5" type="TransPort" res="MC_door_4" transPortId="5"/>
+		<node id="106" type="TransPort" res="MC_door_5" transPortId="6"/>
+		<node id="7" type="TransPort" res="MC_door_6" transPortId="7"/>
+		<node id="8" type="TransPort" res="MC_door_7" transPortId="8"/>
+		<node id="9" type="TransPort" res="MC_door_8" transPortId="9"/>
+		<node id="10" type="AppModule" res="MC_flowerBoard" module="boards/FlowerBoardModule"/>
+		<!--node id="11" type="AppModule" res="MC_roadSign" module="boards/SquareRoadSignModule"/-->
+		<node id="12" type="Object" res="MC_bird" />
+		<node id="13" type="NPC" pods="LittleTrickPod" res="MC_panel" />
+	</object>
+	<npc>
+		<node id="6" type="NPC" name="琪琪姐姐" res="MC_npc_6" action="301" />
+		<node id="1" type="NPC" name="皮皮克克" res="MC_npc_1" action="302" />		
+		
+		<node id="346" type="NPC" res="MC_npc_346" action="1" />
+		<node id="231" type="NPC" res="MC_npc_231" action="12" />
+		<node id="999" type="NPC" res="MC_npc_999" action="" />
+		<node id="104" type="NPC" name="多修" res="MC_npc_104" action="200" />
+		<!--02.28达人秀NPC时之女神-->
+		<node id="51" type="NPC" name="贝尔丹蒂" res="MC_npc_2" action="250" />
+
+		<node id="85" type="NPC" res="MC_npc_85" action="211" needType="" need="14-16 19-21" needAction="211"/>
+		<node id="72" type="NPC" res="MC_npc_72" action="202" needType="level" need="20" needAction="201"/>
+		<node id="227" type="NPC" res="MC_npc_227" action="50" interval="15">
+			<event type="enter_map" hit="RepeatSpeakHit" pos="" endEvent="">
+				<![CDATA[每日12：00-13：00、19：00-21：00，勇士广场活动多多]]>
+			</event>
+		</node>
+		<node id="82" type="NPC" res="MC_npc_82" action="11" />
+		<node id="111" type="NPC" name="乔依" res="MC_npc_111" action="223" />
+		<node id="316" type="NPC" res="MC_npc_316" action="231" needType="" need="14-16" needAction="231" />
+		<node id="317" type="NPC" name="活动引导员卢西奥" res="MC_npc_317" action="235" />		
+		<node id="318" type="NPC" res="MC_npc_318" action="13$14$15" />	
+		<node id="319" type="NPC" name="副本引导员薇尔" res="MC_npc_319" action="241" needType="level" need="30" needAction="243"  />
+	</npc>
+	<actions>
+		<proAction id="0" type="2" panel="PublicTaskModule" to="" />	
+			
+		<proAction npcID="6" id="301" type="0" answer="封印节快乐！" to="o" >
+			<des>
+				<![CDATA[1#又到封印节了，一年过得好快啊！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1" id="302" type="0" answer="封印节快乐！" to="o" >
+			<des>
+				<![CDATA[1#魔法烟花在手，欢乐无忧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="303" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#嗯哼]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="231" id="12" type="0" answer="圣诞快乐" to="o" >
+			<des>
+				<![CDATA[1#嚯嚯，周末我会在这里派发圣诞礼物，但只有诚实的摩尔才能获得它们。！]]>
+			</des>
+		</proAction>
+		<proAction npcID="226" id="50" type="0" answer="我一定准时去！" to="o" >
+			<des>
+				<![CDATA[1#每日任何时间，【精灵挑战赛】、【幸运卡片】嗨翻天！，活动多多，礼品多多，还不快去参加？！]]>
+			</des>
+		</proAction>	
+		
+		<proAction npcID="82" id="11" type="0" answer="师徒的试炼$我要兑换奖励$我有多少亲密值可用？$导师计划奖励规则$摩尔勇士万岁！" to="a101$a3$a10$a1$o" colorID="2$1$0$0$0">
+			<des>
+				<![CDATA[1#如果你的等级超过30级，点击新手摩尔（30级以下）个人秀面板上的【收徒】按钮，\n如果对方同意，你就会成为他的导师！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="82" id="1" type="0" answer="如何拜师？$亲密值如何获得？$解除师徒关系的惩罚$如何提升导师等级$摩尔勇士万岁！" to="a20$a2$a8$a9$o" colorID="1$0$0$0$0">
+			<des>
+				<![CDATA[1#你想知道哪方面内容呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="2" type="0" answer="我还想问其他问题！$摩尔勇士万岁！" to="a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#1.和徒弟组队战胜敌人时，徒弟每获得100点经验值，导师可以获得1点亲密值。$$]]>
+				<![CDATA[1#2.帮助徒弟击败任务里的BOSS(比如【学员班毕业啦！】里的巨石蟹）。每击败1个任务BOSS可以获得100点亲密值。$$]]>
+				<![CDATA[1#只有徒弟出师以后，和他之间积累亲密值才可以去兑换奖励！请用心呵护徒弟的成长吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="8" type="0" answer="我还想问其他问题！$摩尔勇士万岁！" to="a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#1.徒弟达到出师等级会自动出师的，导师可以获得全部的亲密值奖励。\n2.徒弟未达到出师等级就主动解除师徒关系，导师可以获得当前的全部亲密值。$$]]>
+				<![CDATA[1#3.导师主动解除和徒弟的师徒关系，不会获得任何亲密值，请不要随意抛弃自己的徒弟哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="9" type="0" answer="我还想问其他问题！$摩尔勇士万岁！" to="a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#哈哈，想提升导师等级只有多带徒弟啦！每出师一个徒弟都会获得一定的师徒值哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="10" type="0" answer="我还想问其他问题！$摩尔勇士万岁！" to="a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#您现在一共有@sweet亲密值可用。]]>
+			</des>
+		</proAction>
+	
+		<proAction actionID="20" type="1" level="taskLevel" name="skill_5" moviepos="0,0" to="a21"/>
+		
+		<proAction npcID="82" id="21" type="0" answer="我还想问其他问题！$摩尔勇士万岁！" to="a1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#还有什么不明白的吗?]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="82" id="3" type="0" answer="我要兑换人物经验$我要兑换星豆$我要兑换精灵经验$我要兑换技能经验$下次再来" to="a4$a5$a6$a7$o" colorID="1$1$1$1$0">
+			<des>
+				<![CDATA[1#亲密值可以兑换成人物经验，星豆，精灵经验或者技能经验，您要选择哪一种呢？\n注意：精灵经验和技能经验会帮您自动存入经验树中哦。]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="4" type="0" answer="确认兑换$下次再来！" to="sweetExchange_50002$o" colorID="1$0">
+			<des>
+				<![CDATA[1#您现在一共有@sweet亲密值可用，可以兑换@exchangeSweet经验。\n您确认要兑换吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="5" type="0" answer="确认兑换$下次再来！" to="sweetExchange_50001$o" colorID="1$0">
+			<des>
+				<![CDATA[1#您现在一共有@sweet亲密值可用，可以兑换@exchangeSweet星豆。\n您确认要兑换吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="6" type="0" answer="确认兑换$下次再来！" to="sweetExchange_50003$o" colorID="1$0">
+			<des>
+				<![CDATA[1#您现在一共有@sweet亲密值可用，可以兑换@exchangeSweet精灵经验。\n您确认要兑换吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="82" id="7" type="0" answer="确认兑换$下次再来！" to="sweetExchange_50005$o" colorID="1$0">
+			<des>
+				<![CDATA[1#您现在一共有@sweet亲密值可用，可以兑换@exchangeSweet技能经验。\n您确认要兑换吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="82" id="101" type="0" answer="我这就去" to="o" colorID="2">
+			<des>
+				<![CDATA[1#你知道摩尔王国东街那的惊讶萝卜吗？为了证明你们师徒的情谊，前去击败他吧！要小心哦，它虽然不是想象中的那么厉害，不过...]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="104" id="200" type="0" answer="魔力水晶兑换$我还有其它事！" to="module_YouLiExchangeModule$o" colorID="1$0">
+			<des>
+				<![CDATA[1#恐惧、黑暗魔王相继出动，各大陆的形势越来越严峻了，我们一定要团结起来，粉碎它们的阴谋！]]>
+			</des>
+		</proAction>
+
+		<!--02.28达人秀NPC时之女神-->
+		<proAction npcID="2" id="250" type="0" answer="马上去看看$我还有其它事！" to="module_TalentShowModule$o" colorID="1$0">
+			<des>
+				<![CDATA[1#摩尔王国正举办时尚达人秀活动，诚挚邀请你选出所喜欢的时尚装扮。$$]]>
+				<![CDATA[1#如果你也对自己装扮有自信，欢迎报名参加。我将根据大家的投票在每周五决定胜利者。]]>
+			</des>
+		</proAction>
+		<proAction npcID="72" id="201" type="0" answer="精灵之露兑换$精灵挑战$我还有其它事！" to="f10$module_PetChallengeModule$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#未来勇士，你只要到达20级，即可每天参与【精灵挑战赛】哦！刺激的挑战、丰厚的奖品、精灵经验，赶快拿出你们强大的精灵参与活动吧！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="72" id="202" type="0" answer="挑战规则$精灵之露兑换$谢谢你" to="a203$f10$o" colorID="2">
+			<des>
+				<![CDATA[1#未来勇士，你只要到达20级，即可每天参与【精灵挑战赛】哦！刺激的挑战、丰厚的奖品、精灵经验，赶快拿出你们强大的精灵参与活动吧！]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="72" id="203" type="0" answer="明白啦" to="o" colorID="2">
+			<des>
+				<![CDATA[1#在【精灵挑战赛】里，只有你所携带的“出战”和“辅助”的精灵，才会参加战斗哦，你自己是不能参与战斗的，所以，多多提高精灵等级吧^_^！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="85" id="211" type="0" answer="抽取幸运卡片$我还有其它事！" to="module_LuckCardPanelModul$o" colorID="1$0">
+			<des>
+				<![CDATA[1#幸运卡片乐翻天活动已经全新开启，各种大奖、各种好礼等你来领！]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="111" id="221" type="0" answer="了解详情$我还有其它事！" to="a222$o" colorID="0$0">
+			<des>
+				<![CDATA[1#未来勇士，如果你对自己的努力方向有疑惑，我将帮助你重新选择！]]>
+			</des>
+		</proAction>
+		<proAction id="222" type="1" level="taskLevel" name="11202_2" moviepos="0,0" to=""/>
+		<proAction npcID="111" id="223" type="0" answer="了解详情$我还有其它事！" to="a222$o" colorID="0$0">
+			<des>
+				<![CDATA[1#我在水晶球中看到了不寻常的东西，有时间的话让我为你占卜一下吧，未来勇士！]]>
+			</des>
+		</proAction>
+		<proAction npcID="316" id="231" type="0" answer="出发去【草木树海】$出发去【兽王峡谷】$参加小游戏大挑战$了解详情$我还有其它事！" to="changeMap_11503$changeMap_11504$module_SelectMiniGameModule$a232$o" colorID="1$1$1$0$0">
+			<des>
+				<![CDATA[1#现在全天任何时候都能参加小游戏啦，每个级别奖励每天均可获得一次！（钓鱼小游戏每天有10次机会，飞镖与射箭无限制）]]>
+			</des>
+		</proAction>
+		<proAction id="232" type="1" level="taskLevel" name="11202_1" moviepos="0,0" to=""/>
+		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$离开" to="module_AnswerExchangeModule$f14$o" colorID="0$0$0$0">
+			<des>
+				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
+				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
+            </des>
+		</proAction>
+		
+<!--兔铃↓-->
+		<proAction npcID="318" id="13" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#封印节终于又到了，好想念摩尔王国的大家啊！]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="14" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#555~路过格历尔平原的时候，一部分魔法烟花被龙系精灵抢走了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="15" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#这贪玩的摇铃兔又跑哪去了，总让我不能安心……]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="320" id="236" type="0" answer="兑换月饼$离开" to="f12$o" colorID="0$0">
+			<des>
+				<![CDATA[1#小勇士，我是飞行系精灵嫦娥，谢谢你中秋的帮助，9月16号-9月22号期间，还没兑换月饼的勇士请尽快兑换哦，本周结束，月饼兑换就会关闭。]]>
+			</des>
+		</proAction>	
+		<proAction npcID="1001" id="238" type="0" answer="现在出发$玩法规则$找帮手组队" to="j5$a239$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#点击“现在出发”，可开始匹配进入月之宫殿（单人则进入匹配界面，多人则直接进入）\n点击“找帮手组队”，则离开当前界面，可以找其他勇士组队再进宫殿哦]]>
+			</des>
+		</proAction>		
+		
+		<proAction npcID="1001" id="239" type="0" answer="返回上层$离开" to="a238$o" colorID="0$0">
+			<des>
+				<![CDATA[1#30级以上的勇士每天有2次机会进入月之宫殿，要珍惜哦\n组队进入宫殿后若断线，再重新登录同一号服务器，则依然在该宫殿中\n进入宫殿后不可以换线，换线则退出宫殿！]]>
+			</des>
+		</proAction>	
+				
+		<proAction npcID="227" id="240" type="0" answer="返回上层$离开" to="a235$o" colorID="0$0">
+			<des>
+				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
+				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
+			</des>
+		</proAction>	
+
+		<proAction npcID="1001" id="241" type="0" answer="王国军营$了解了" to="changeMap_11222$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”$$]]>
+				<![CDATA[1#目前已开放30级副本【月之宫殿】，每日可以进入2次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>				
+			</des>
+		</proAction>
+
+		<proAction npcID="1001" id="242" type="0" answer="月之宫殿（推荐30-40级）$离开" to="a238$o" colorID="1$0">
+			<des>
+				<![CDATA[1#你好，我是副本管理员薇尔。每日可以进入2次副本，从中可以帮你快速提升你的等级，并且以后还会有丰富的奖励等你获得，建议找上你的伙伴们一起来挑战哦！$$]]>
+				<![CDATA[1#目前已开放30级副本【月之宫殿】，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
+			</des>
+		</proAction>	
+		
+		<proAction npcID="1001" id="243" type="0" answer="勇士广场（琉璃翼龙）$王国军营$毁坏的勇士国度(35-53级)$月之宫殿（30-40级）$离开" to="changeMap_30400$changeMap_11222$changeMap_51202$a238$o" colorID="1$1$1$1$0">
+			<des>
+				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”。$$]]>
+				<![CDATA[1#目前已开放30级副本【月之宫殿】，每日可以进入2次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
+			</des>
+		</proAction>	
+	</actions>
+</map>
+
+

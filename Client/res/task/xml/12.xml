@@ -1,0 +1,39 @@
+<task id="12">
+	<taskDes>
+		<![CDATA[嘟嘟嘟嘟——【琪琪姐姐】好像遇到麻烦了！——紧急呼救中——$$]]>
+		<![CDATA[制作生命之息需要从【星锤兔】那儿抢回【1个棉球果】，琪琪姐姐等我好消息！]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="6"  title="琪琪还好吗？" action="0" needRes="" needResNum="" unResAction=""  taskDes="1" />
+		<pro type="0" parent="0" npcID="6" title="琪琪还好吗？" action="3" needRes="" needResNum="" unResAction=""  taskDes="1" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="6" answer="那怎么办呢" to="a1">
+			<des>
+                <![CDATA[4#调配恢复体力的药剂“生命之息”需要的【棉球果】被黑化的【星锤兔】抢走了，材料不够了……]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="0" npcID="6" answer="我来抢回棉球果！" to="s2">
+			<des>
+				<![CDATA[4#和星锤兔战斗胜利，星锤兔就会归还棉球果。但是爸爸不敢和黑化的精灵战斗……]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="0" npcID="6" answer="不知道" to="a3">
+			<des>
+				<![CDATA[7#请等一下！$$]]>
+				<![CDATA[1#一个人战斗可是十分危险的，我们摩尔的精神是【团结协作】！$$]]>
+				<![CDATA[1#你知道【临时小队】吗？]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="0" npcID="6" answer="好！" to="a4">
+			<des>
+				<![CDATA[1#战士们在旅行中可以组成一个临时小队，由一位有责任感的【队长】带领大家前进。$$]]>
+				<![CDATA[1#你和皮皮克克练习组队试试吧^_^!]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="1" outMap="1" level="taskLevel" name="task_12_0" moviepos="0,0" to="c"/>
+
+	</actions>
+</task>

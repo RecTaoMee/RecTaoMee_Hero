@@ -1,0 +1,21 @@
+<!--克拉斯岩洞外-->
+<map name="克拉斯岩洞外" type="0" comment="克拉斯岩洞外" sound="BGM-012.mp3">
+	<transport intPos="200,398">
+		<node id="1" pos="430,220" targetMapId="22201" targetTransPortId="1" name="克拉斯岩洞一层"/>
+		<node id="2" pos="435,780" targetMapId="22101" targetTransPortId="1" name="克拉斯海岸"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+	</object>
+	<npc>
+		<node id="224" type="NPC" name="守卫士兵" res="MC_npc_224" action="1" />
+	</npc>
+	<actions>
+		<proAction npcID="224" id="1" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[摩尔勇士万岁！]]>
+			</des>
+		</proAction>	
+	</actions>
+</map>

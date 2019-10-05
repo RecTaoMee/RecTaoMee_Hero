@@ -1,0 +1,108 @@
+<Task ID="117" Memo="为了找到伟大的摩尔勇士【瑞恩】，\n快去【麦田村·瑞恩的家】看看吧！" TargetMap="11406">
+   	<Procedure> 					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="为了找到伟大的摩尔勇士【瑞恩】，\n快去【麦田村·瑞恩的家】看看吧！" TargetMap="11406" TargetName="去t瑞恩的家t">
+  				<Trigger>				
+					<Item Type="ENTER_MAP" MapID="11406" />					  					  					
+				</Trigger>	
+    			<Action Type="COMMAND" Command="NOTHING" /> 					
+    		</Event>
+    	</Step> 	
+  		<Step ID="6" ParentList="1" ParentCost="1" >
+    		<Event Memo="为了找到伟大的摩尔勇士【瑞恩】，\n快去【麦田村·瑞恩的家】看看吧！" TargetMap="11406" TargetName="去t瑞恩的家t">	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11406, 30020" SkipTrigger="Y" />					
+    		</Event>
+    	</Step> 		   			
+  		<Step ID="2" ParentList="6" ParentCost="1" >
+    		<Event Memo="为了找到伟大的摩尔勇士【瑞恩】，\n快去【麦田村·瑞恩的家】看看吧！" TargetMap="11406" TargetName="和t妮娜t对话">
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11406" ObjID="30020" /> 		
+				</Trigger>																						
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="……\n你是谁，为什么来这里？" />
+					<Option Info="我在找瑞恩" />				
+				</Action>	
+				<Action Type="TALK">	
+					<Msg NpcID="101" ImageID="1" Info="麦田村发生黑化事件后，他就失踪了……" />									
+					<Msg NpcID="101" ImageID="1" Info="我弄丢了【瑞恩】最重要的【荣誉匣】……\n刚才扫地的时候灰尘太大，我放到木桶里了。" />			
+					<Option Info="扫地(⊙o⊙)？" />						
+				</Action>					
+				<Action Type="TALK">														
+					<Msg NpcID="101" ImageID="1" Info="我和【瑞恩、多修】在勇士学员班时就是好朋友。\n【瑞恩】失踪后……多修和大家一直在寻找他……" />
+					<Msg NpcID="101" ImageID="2" Info="我很喜欢在这里，\n这间屋子里有我们小时候熟悉的味道……" />
+					<Msg NpcID="101" ImageID="1" Info="刚才我在打扫房间。\n如果瑞恩有一天突然回来，\n家里乱糟糟的一定会不习惯吧。" />					
+					<Msg NpcID="101" ImageID="1" Info="荣誉匣一定还在这个房间里，\n【@nick】能帮我一起找吗？" />				
+					<Option Info="交给我吧！" />				
+				</Action>								
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11406, 30021" />																			
+    		</Event>
+    	</Step> 
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="妮娜弄丢了瑞恩的荣誉匣。\n咦，c瑞恩c家里忽然多了一只c兔子c？" TargetMap="11406" TargetObj="30021" TargetName="和兔子t酷伦t对话">
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11406" ObjID="30021" /> 	
+ 					<Item Type="NPC_OPTION" MapID="11406" ObjID="30020" /> 										  				
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="303" ImageID="1" Info="呲呲~~即使是妮娜，\n也不能乱放【瑞恩老大的荣誉匣】。" />
+					<Option Info="你拿了【荣誉匣】？" />									
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="303" ImageID="1" Info="当然~老大的家是我们【电波小队】的秘密据点，一切尽在掌握。\n(不好，暴露了……)\n瑞恩的荣誉匣怎么能随便给你？" />		
+					<Option Info="我是未来勇士" />						
+				</Action>					
+				<Action Type="TALK">																	
+					<Msg NpcID="303" ImageID="1" Info="未来会成为摩尔勇士的“未来勇士”？\n你有【未来勇士】的称号吗？\n有的话戴出来让我瞧瞧。" />					
+					<Option Info="戴上【称号】给你看！" SkipTrigger="Y" />	
+					<!--Option Info="没有【称号】囧" /-->									
+				</Action>				
+				<Action Type="COMMAND" Command="OPEN_PANEL" Params="CHANGE_HONOR, 1038" />
+    		</Event>
+    	</Step>  
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="戴上c未来勇士c的称号，\n快去c瑞恩c家找c酷伦c吧！" TargetMap="11406" TargetObj="30021" TargetName="和兔子t酷伦t对话">
+  				<Trigger>
+ 					<Item Type="NPC_OPTION" MapID="11406" ObjID="30021" /> 		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="303" ImageID="1" Info="什么，没有【未来勇士】的称号？！\n你不是被女神召唤来的，难道是个冒牌偷渡的家伙？" />
+					<Option Info="戴上【称号】给你看！" />									
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="303" ImageID="1" Info="你以后会成为摩尔勇士？\n不太可能吧……\n~呲呲，瑞恩的【荣誉匣】我保管得好好的。\n女孩子真是丢三落四……" />			
+					<Option Info="还给【妮娜】吧！" />									
+				</Action>										
+    		</Event>		
+		</Step>	
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="荣誉匣找回↖(^ω^)↗，\n快去c瑞恩c家告诉c妮娜c吧！" TargetMap="11406" TargetObj="30020" TargetName="和t妮娜t对话">
+  				<Trigger>	
+ 					<Item Type="NPC_OPTION" MapID="11406" ObjID="30020" /> 					
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="电波兔【酷伦】是瑞恩的契约精灵，\n不太喜欢瑞恩身边的女孩子。\n幸好你拿到了荣誉匣，\n不然我只好武力解决了^^!" />
+					<Msg NpcID="101" ImageID="3" Info="荣誉匣……那时瑞恩也是小孩子……好怀念啊——【瑞恩的旅行相册】……" />					
+					<Option Info="瑞恩的旅行相册？" TalkOver="Y" />				
+				</Action>	
+    			<Action Type="MOVIE" Url="task_10072_1.swf" MapLevel="TASK" Pos="115,60" />	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="2" Info="哈，这是我们学员班毕业的时候……\n【阿凯】老师被瑞恩硬拉过来一起画的像。\n你想看看吗？" />
+					<Option Info="想！" TalkOver="Y" />				
+				</Action>	
+    			<Action Type="MOVIE" Url="task_10072_2.swf" MapLevel="TASK" Pos="0,0" /> 
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="我相信只要大家不放弃，\n瑞恩一定会回来的……" />
+					<Msg NpcID="101" ImageID="3" Info="啊对了，瑞恩可能就在……\n我现在就去找他。" />	
+					<Option Info="请给我【勇士符文】！！" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="先找到瑞恩要紧，\n【@nick】下次再见^^！" />
+					<Option Info="再见（T_T）" />
+				</Action>					
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11406, 30020" /> 	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11406, 30021" /> 														  																
+    		</Event>
+    	</Step> 			   		   		   		   				 	
+	</Procedure>
+</Task>

@@ -1,0 +1,47 @@
+<!--下水道三层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="786,226" targetMapId="21203" targetTransPortId="2" name="下水道二层"/>
+		<node id="2" pos="798,897" targetMapId="21205" targetTransPortId="2" name="进入普豆泥王BOSS领域"/>
+		<node id="3" pos="789,436" targetMapId="" targetTransPortId="" name="离开普豆泥王BOSS领域"/>
+		<node id="4" pos="1081,556" targetMapId="21206" targetTransPortId="2" name="下水道四层"/>
+		<node id="5" pos="488,561" targetMapId="11220" targetTransPortId="2" name="下水道入口"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="UnderKeyTrans" res="MC_door_1" transPortId="2" keyID="280001">
+			<!--event type="under_no_key" hit="InfoBoxHit"-->
+			<event type="under_no_key" hit="NPCDialogHit" id="0">
+				<![CDATA[点击不会说话的蛤蟆就可以找到钥匙]]>
+			</event>
+		</node>
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="4"/>
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="5"/>
+		<node id="5" type="UnderKey" pods="UnderKeyPod" res="MC_underKey_0" rand="1">
+			<event type="is_get_key" hit="SpeakHit">
+				<![CDATA[请让我歇会儿呱呱<br>欢迎下次光临呱呱]]>
+			</event>
+			<event type="no_key" hit="SpeakHit">
+				<![CDATA[我的嘴巴里什么都么有哦，到对面看看吧！]]>
+			</event>
+		</node>
+		<node id="6" type="UnderKey" pods="UnderKeyPod" res="MC_underKey_1" rand="1">
+			<event type="is_get_key" hit="SpeakHit">
+				<![CDATA[请让我歇会儿呱呱<br>欢迎下次光临呱呱]]>
+			</event>
+			<event type="no_key" hit="SpeakHit">
+				<![CDATA[我的嘴巴里什么都么有哦，到对面看看吧！]]>
+			</event>
+		</node>
+	</object>
+	<npc>
+		<node id="226" type="NPC" res="MC_npc_226" action="0"/>
+	</npc>
+	<actions>
+		<proAction npcID="226" id="0" type="0" answer="哦~" to="o" >
+			<des>
+				<![CDATA[1#蛤蟆贪吃吞钥匙？到底是什么意思呢？]]>
+			</des>
+		</proAction>			
+	</actions>
+</map>

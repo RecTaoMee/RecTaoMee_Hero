@@ -1,0 +1,20 @@
+<task id="18">
+	<taskDes>
+		<![CDATA[【精灵背包】里装着我的精灵伙伴，带着和皮皮克克的约定，是出发的时候了！【和村长爷爷说再见吧！】]]>
+	</taskDes>
+	<taskPro>
+		<!--type:0任务类型,npcId:任务目标，action:触发的动作,needRes和needResNum接受此任务所需要物品和数量，unResAct如果没有相应的物品所触发的动作,-->
+		<pro type="0" parent="" npcID="5" action="0" title="村长爷爷我走了" needRes="" needResNum="" unResAction="" />
+		<pro type="0" parent="0" npcID="5" action="5" title="村长爷爷我走了" needRes="" needResNum="" unResAction="" />
+	</taskPro>
+	<actions>
+		<!--type:0对话，1，播放动画,2,显示通用面板-->
+		<proAction id="0" type="0" npcID="5" answer="奇普力爷爷再见！" to="s1">
+			<des>
+				<![CDATA[2#再见了，勇敢的孩子。我守护的【吉普豆地道入口】为你打开，去摩尔王国吧————！$$]]>
+				<![CDATA[2#我这里有一些【生命之息】和【吉普吐司】，在前往王国的地道之路上可能对你有用。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" level="contentLevel" name="task_18_1" moviepos="-194,-356" objLevel="" objName="" objType="" objValue=""  to="c"/>
+	</actions>
+</task>

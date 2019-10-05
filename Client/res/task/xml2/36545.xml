@@ -1,0 +1,428 @@
+<Task ID="36545" Memo="圣旦老人又来摩尔王国派送礼物了，快去c勇士c广场找他吧。\n周六~周日：6:00~24:00" TargetMap="11202">
+   	<Procedure>
+		<Step ID="11" ParentList="0" ParentCost="0" >
+    		<Event Memo="圣旦老人又来摩尔王国派送礼物了，快去c勇士c广场找他吧。" TargetMap="11202" TargetObj="231" TargetName="和t圣旦老人t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="圣旦老人！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="1" ParentList="11" ParentCost="1" >
+    		<Event Memo="圣旦老人又来摩尔王国派送礼物了，快去c勇士c广场找他吧。" TargetMap="11202" TargetObj="231" TargetName="和t圣旦老人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="圣旦老人！" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="嚯嚯，亲爱的未来勇士，今天你有什么想要的礼物啊？" />
+					<Option Info="精灵成长重组丸" NextStep="2" />
+					<Option Info="种族技能仙草" NextStep="3" />					
+					<Option Info="修理模具(中级)" NextStep="4" />
+					<Option Info="合成石(高级)" NextStep="5" />
+					<Option Info="精灵经验笔记" NextStep="6" />
+					<Option Info="冒险经验笔记" NextStep="7" />					
+					<Option Info="技能经验笔记" NextStep="8" />	
+				</Action>	
+    		</Event>		
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="2" />
+			</Event>
+		</Step>
+		<Step ID="3" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="3" />
+			</Event>
+		</Step>
+		<Step ID="4" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="4" />
+			</Event>
+		</Step>
+		<Step ID="5" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="5" />
+			</Event>
+		</Step>
+		<Step ID="6" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="6" />
+			</Event>
+		</Step>
+		<Step ID="7" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="7" />
+			</Event>
+		</Step>
+		<Step ID="8" ParentList="1" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="COMMAND" Command="SET_STA_1" Params="8" />
+			</Event>
+		</Step>
+		
+		<Step ID="9" ParentList="2,3,4,5,6,7,8" ParentCost="1">
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="恩，好吧，不过我身上正好没带你想要的礼物，我去准备一下，5分钟后再来拿吧。" />
+					<Option Info="好的" />
+				</Action>
+			</Event>
+		</Step>
+		
+		<Step ID="10" ParentList="9" ParentCost="1" >
+			<Condition>
+				<TimeCost Time="300" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="时间差不多了，再去c勇士广场c看看c圣旦老人c准备好了没。" TargetMap="11202" TargetObj="231" TargetName="和t圣旦老人t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="我来领礼物" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="亲爱的未来勇士，你回来啦！" />
+					<Option Info="我来领礼物"/>
+				</Action>	
+				<Action Type="COMMAND" Command="SET_STA_LIST" Params="2,2,3,4,5,6,7,8" />
+    		</Event>
+			<Event ConditionType="OUT" Memo="时间还没到，说好了5分钟后再去c勇士广场c找c圣旦老人c的。" TargetMap="11202" TargetObj="231" TargetName="等圣旦老人准备礼物">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="我来领礼物" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="礼物还没准备好呢，等会再来找我吧。" />
+					<Option Info="好的" />
+				</Action>												
+    		</Event>		
+		</Step>
+		
+		<Step ID="12" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="2" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【精灵成长重组丸】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="13" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="3" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【种族技能仙草】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="14" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="4" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【修理模具(中级)】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="15" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="5" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【合成石(高级)】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="16" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="6" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【精灵经验笔记】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="17" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="7" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【冒险经验笔记】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="18" ParentList="10" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="8" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你要的礼物我带来了，是不是这个【技能经验笔记】呢？" />
+					<Option Info="是" NextStep="19" SkipTrigger="Y" />
+					<Option Info="不是" NextStep="20" SkipTrigger="Y" />	
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="19" ParentList="12,13,14,15,16,17,18" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="Sta1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="恩，你是个诚实的孩子，请把礼物带回家吧，圣诞快乐！" />
+					<Option Info="谢谢圣旦老人" NextStep="22" SkipTrigger="Y"/>
+				</Action>			
+			</Event>
+			<Event ConditionType="OUT" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="在这个幸福的节日里欺骗老人家可是不对的。那么我再给你一次机会，去帮我收集10个圣诞袜来兑换你的礼物吧。" />
+					<Option Info="……" NextStep="21" />
+				</Action>			
+			</Event>
+		</Step>
+		<Step ID="20" ParentList="12,13,14,15,16,17,18" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="!Sta1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="恩，你是个诚实的孩子，请把礼物带回家吧，圣诞快乐！" />
+					<Option Info="谢谢圣旦老人" NextStep="22" SkipTrigger="Y" />
+				</Action>			
+			</Event>
+			<Event ConditionType="OUT" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="在这个幸福的节日里欺骗老人家可是不对的。那么我再给你一次机会，去帮我收集10个圣诞袜来兑换你的礼物吧。" />
+					<Option Info="……" NextStep="21" />
+				</Action>			
+			</Event>
+		</Step>
+		<!--未答对-->
+		<Step ID="21" ParentList="0" ParentCost="1" >
+			<Condition>
+				<Item ID="180064" Count="10" />
+			</Condition>
+			<Event ConditionType="IN" Memo="已经收集了10个圣诞袜，快去c勇士广场c交给c圣旦老人c吧。" TargetMap="11202" TargetObj="231" TargetName="和t圣旦老人t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="圣诞袜来了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="虽然之前欺骗了我，但你用行动证明了自己善良的内心，礼物送给你。" />
+					<Option Info="谢谢圣诞老人" NextStep="23" SkipTrigger="Y" />
+				</Action>			
+			</Event>
+			<Event ConditionType="OUT" Memo="圣旦老人让你去c平原一区c帮他收集10个圣诞袜。" TargetMap="21301" TargetObj="" TargetName="收集t10个圣诞袜t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="231" TaskOption="圣诞袜来了" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="231" ImageID="1" Info="你还没收集齐10个圣诞袜，快去c平原一区c打败怪盗迪迪拉夺回它们。" />
+					<Option Info="好的……" />
+				</Action>			
+			</Event>
+		</Step>
+		<!--答对给奖励-->
+		<Step ID="22" ParentList="0" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<!--未答对给奖励-->
+		<Step ID="23" ParentList="0" ParentCost="1" >
+			<Event Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<!--答对奖励分支-->
+		<Step ID="24" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="2" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="25" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="3" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="26" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="4" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="27" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="5" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="28" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="6" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="29" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="7" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<Step ID="30" ParentList="22" ParentCost="1" >
+			<Condition>
+				<Buffer Sta2="8" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />		
+			</Event>
+		</Step>
+		<!--答对奖励分支2||答错-->
+		<Step ID="31" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="2"/>
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="32" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="3" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="33" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="4" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="34" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="5" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="35" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="6" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="36" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="7" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+		<Step ID="37" ParentList="23,24,25,26,27,28,29,30" ParentCost="1" >
+			<Condition>
+				<Buffer Sta1="8" />
+			</Condition>
+			<Event ConditionType="IN" Memo="" TargetMap="" TargetObj="" TargetName="">
+				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11202" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" />		
+			</Event>
+		</Step>
+	</Procedure>
+</Task>

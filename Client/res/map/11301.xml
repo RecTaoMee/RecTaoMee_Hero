@@ -1,0 +1,130 @@
+<!--皇宫花园-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-005.mp3">
+	<transport intPos="700,338" dir="2">
+		<node id="1" dir="" pos="803,253" targetMapId="11302" targetTransPortId="1" name="勇士大厅"/>
+		<node id="2" dir="" pos="805,1031" targetMapId="11204" targetTransPortId="2" name="城堡吊桥"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="1" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="91" type="Normal" res="MC_bird_1"/>
+		<node id="92" type="Normal" res="MC_bird_2"/>
+		<node id="93" type="Normal" res="MC_bird_3"/>
+		<node id="94" type="Normal" res="MC_bird_4"/>
+		<node id="95" type="Normal" res="MC_bird_5"/>
+		<node id="96" type="Normal" res="MC_bird_6"/>
+	</object>
+	<npc>
+		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
+		<node id="200" type="NPC" res="MC_npc_200" action="0"/>
+		<node id="201" type="NPC" res="MC_npc_201" action="2"/>
+		<node id="202" type="NPC" res="MC_npc_202" action="4"/>
+		<node id="203" type="NPC" res="MC_npc_203" action="6"/>
+		<node id="205" type="NPC" res="MC_npc_205" action="8"/>
+		<node id="206" type="NPC" res="MC_npc_206" action="10"/>
+		<node id="318" type="NPC" res="MC_npc_318" action="12"/>		
+		<node id="323" type="NPC" res="MC_npc_323" action="38$39"/>	
+		<node id="345" type="NPC" taskShowSteps="39001_22|23|24" visible="0" res="MC_npc_345" taskType="0" level="contentLevel" fun="" action="" compTaskID="" needLevel="" needKind=""/>	
+	</npc>
+	<actions>  
+		<proAction npcID="200" id="0" type="0" answer="了解情况$摩尔勇士万岁！" to="a1$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园，它对所有摩尔公民开放。]]>
+			</des>
+		</proAction>
+		<proAction npcID="200" id="1" type="0" answer="了解情况$摩尔勇士万岁！" to="a1$o">
+			<des>
+				<![CDATA[1#每年王国守卫士兵都会进行比赛重新排序，我是今年的No.1【守卫士兵·A】(^Δ^)————第一名可以亲吻【妮娜】团长的圣衣护手！]]>
+			</des>
+		</proAction>
+		<proAction npcID="201" id="2" type="0" answer="了解情况$摩尔勇士万岁！" to="a3$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园，皇宫花园的开放时间是晨光破晓的早晨6:00到夜幕入深的晚上12:00。]]>
+			</des>
+		</proAction>
+		<proAction npcID="201" id="3" type="0" answer="了解情况$摩尔勇士万岁！" to="a3$o">
+			<des>
+				<![CDATA[1#可恶啊我是今年王国守卫士兵比赛第二名，这是今年最令人懊悔的事了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="202" id="4" type="0" answer="了解情况$摩尔勇士万岁！" to="a5$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园，以前这里满是随风飘荡的铃兰草都是【铃】大人亲手培育的。]]>
+			</des>
+		</proAction>
+		<proAction npcID="202" id="5" type="0" answer="了解情况$摩尔勇士万岁！" to="a5$o">
+			<des>
+				<![CDATA[1#要是我是【守卫士兵·B】，我一定不会在那决定胜负的一回合使出“追击”，那绝不是明智的决定。]]>
+			</des>
+		</proAction>
+		<proAction npcID="203" id="6" type="0" answer="了解情况$摩尔勇士万岁！" to="a7$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园，自从黑化事件后这些绿色的铃兰草都不再开花了……]]>
+			</des>
+		</proAction>
+		<proAction npcID="203" id="7" type="0" answer="了解情况$摩尔勇士万岁！" to="a7$o">
+			<des>
+				<![CDATA[1#虽然没有进入今年前三强排入【ABC】的称号，但可以进入守卫皇宫花园的编制我已经觉得很幸运了————$$]]>
+				<![CDATA[1#……我少年时候路经这里，遇到那时还年幼的【铃】大人在照料这些铃兰草，她说即使是花草被好好照料也可以获得灵魂，她的笑容令我难以忘记…………$$]]>
+				<![CDATA[1#……虽然黑化事件后铃兰草已经不再开花，我还是希望永远守卫在这里……抱歉，我在守卫……不能和你谈论过多……]]>
+			</des>
+		</proAction>
+		<proAction npcID="205" id="8" type="0" answer="了解情况$摩尔勇士万岁！" to="a9$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园。我身后的路通往城堡其他区域，没有【宾德】士兵长的允许我无法让您通过。十分抱歉。]]>
+			</des>
+		</proAction>
+		<proAction npcID="205" id="9" type="0" answer="了解情况$摩尔勇士万岁！" to="a9$o">
+			<des>
+				<![CDATA[1#本来应该是【守卫士兵·E】站在这里，因为摩尔王詹姆斯某天突发奇想要在皇宫大厅用卫兵头顶的称号拼写【M·O·L·E】————$$]]>
+				<![CDATA[1#所以【E】被调走了，我站在了这里，我表示压力很大……]]>
+			</des>
+		</proAction>
+		<proAction npcID="206" id="10" type="0" answer="了解情况$摩尔勇士万岁！" to="a11$o">
+			<des>
+				<![CDATA[1#欢迎来到皇宫花园。我身后的路通往城堡其他区域，没有【宾德】士兵长的允许我无法让您通过。十分抱歉。]]>
+			</des>
+		</proAction>
+		<proAction npcID="206" id="11" type="0" answer="了解情况$摩尔勇士万岁！" to="a11$o">
+			<des>
+				<![CDATA[1#你也是来皇宫花园散步寻找“灵感”的旅人吗？我在这里经常看到一些画家、雕塑家、考古学家、符号学家……，他们在这里“探讨艺术”说一些奇怪的话。$$]]>
+				<![CDATA[1#我不懂得艺术，但守卫站岗也希望有个好环境啊————谁敢在属于大家的皇宫花园乱扔垃圾我会把他当做垃圾扔出去！]]>
+			</des>
+		</proAction>	
+<!--兔铃↓-->		
+		<proAction npcID="318" id="12" type="3" to="o" />
+		<proAction npcID="318" id="13" type="0" answer="领取【摇铃兔精灵蛋】$我要【封印节★礼物】$我要【恢复HP/MP】$下次再见吧！" to="k0$f4$b8_318$o" colorID="1$0$0$0">
+			<des>
+				<![CDATA[1#感谢大家解救了我的【摇铃兔】，我会送你一只【摇铃兔精灵蛋】，好好培育吧！2月25日我将离开摩尔王国去环游世界了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="14" type="0" answer="如何孵化【摇铃兔精灵蛋】$我要【封印节★礼物】$我要【恢复HP/MP】$下次再见吧！" to="a15$f4$b8_318$o" colorID="1$0$0$0">
+			<des>
+				<![CDATA[1#感谢大家解救了我的【摇铃兔】，我会送你一只【摇铃兔精灵蛋】，好好培育吧！2月25日我将离开摩尔王国去环游世界了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="15" type="0" answer="知道了$我要【恢复HP/MP】$下次再见吧！" to="a16$b8_318$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#快去问问【莓可】，她对孵化出【摇铃兔】宝宝，很精通的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="318" id="16" type="0" answer="我办事，你放心！$我要【恢复HP/MP】$下次再见吧！" to="o$b8_318$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#你要好好培育【摇铃兔】哟！]]>
+			</des>
+		</proAction>					
+<!--安德鲁↓-->	
+		<proAction npcID="323" id="38" type="0" answer="学习技能【装备制造】$我要合成装备$我想修装备$摩尔勇士万岁！"  to="b9_323$f3$b12_323$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#难得见到这些优秀的年轻人，有什么事儿啊【任务】什么的等我回【弗雷基港】再说。]]>				
+			</des>
+		</proAction>	
+		<proAction npcID="323" id="39" type="0" answer="学习技能【装备制造】$我要合成装备$我想修装备$摩尔勇士万岁！"  to="b9_323$f3$b12_323$o" colorID="1$1$1$0">
+			<des>
+				<![CDATA[1#难得见到这些优秀的年轻人，【任务】什么的等我回【弗雷基港】再说。]]>				
+			</des>
+		</proAction>
+									
+	</actions>
+</map>

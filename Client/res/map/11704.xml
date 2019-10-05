@@ -1,0 +1,92 @@
+<!--锁修塔底层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-012.mp3">
+	<transport intPos="223,314">
+		<node id="1" pos="396,464" targetMapId="11703" targetTransPortId="2"/>
+		<node id="2" pos="397,178" targetMapId="21701" targetTransPortId="1"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>	
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+	</object>
+	<npc>
+		<node id="56" type="NPC" res="MC_npc_56" level="downLevel" fun="" taskType="0" action="0$3" need="204" needType="task" needAction="4$7" needLevel="" needKind=""/>
+		<node id="55" type="NPC" res="MC_npc_55" level="downLevel" fun="" taskType="0" action="1$2" need="203" needType="task" needAction="5$6" needLevel="" needKind=""/>		
+		<node id="701" type="NPC" res="MC_npc_701" action="8"/>
+	</npc>
+	<actions>
+<!--不可学技能-->		
+		<proAction npcID="56" id="0" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_56$o" >
+			<des>
+				<![CDATA[1#投入神的怀抱，拥抱片刻的宁静……\n有什么可以帮你的吗？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="55" id="1" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#魔法无处不在……特别是在人迹罕见的神隐海岛……]]>
+			</des>
+		</proAction>
+		<proAction npcID="55" id="2" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#银色之魂坚毅的心——是不会被魔法的契约变成兔子的……]]>
+			</des>
+		</proAction>
+		<proAction npcID="56" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_56$o" >
+			<des>
+				<![CDATA[1#我们在这里有更重要的使命……\n关于新的未来勇士的培养……\n是不能被伊恩大魔王阻止的……]]>
+			</des>
+		</proAction>
+<!--可学技能-->					
+		<proAction npcID="56" id="4" type="0" answer="我要【恢复HP/MP】$我想学【技能】$摩尔勇士万岁！" to="b8_56$b9_56$o" >
+			<des>
+				<![CDATA[1#投入神的怀抱，拥抱片刻的宁静……\n有什么可以帮你的吗？]]>
+			</des>
+		</proAction>	
+		<proAction npcID="55" id="5" type="0" answer="我想学【技能】$摩尔勇士万岁！" to="b9_55$o" >
+			<des>
+				<![CDATA[1#魔法无处不在……特别是在人迹罕见的海岛上……]]>
+			</des>
+		</proAction>
+		<proAction npcID="55" id="6" type="0" answer="我想学【技能】$摩尔勇士万岁！" to="b9_55$o" >
+			<des>
+				<![CDATA[1#银色之魂坚毅的心——是不会被魔法的契约变成兔子的……]]>
+			</des>
+		</proAction>
+		<proAction npcID="56" id="7" type="0" answer="我要【恢复HP/MP】$我想学【技能】$摩尔勇士万岁！" to="b8_56$b9_56$o" >
+			<des>
+				<![CDATA[1#我们在这里有更重要的使命……\n关于新的未来勇士的培养……\n是不能被伊恩大魔王阻止的……]]>
+			</des>
+		</proAction>		
+		<proAction id="8" type="3" to="o" >
+		</proAction>
+		<proAction npcID="701" id="9" type="0" answer="我要登记冒险小队$我要寻找冒险小队$摩尔勇士万岁！" to="m1$m2$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="10" type="0" answer="我要登记冒险小队$摩尔勇士万岁！" to="m1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="11" type="0" answer="我要寻找冒险小队$摩尔勇士万岁！" to="m2$o" colorID="1$0">
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="12" type="0" answer="摩尔勇士万岁！" to="o" >
+			<des>
+				<![CDATA[1#组队！组队！快点寻找队伍伙伴，一个人的旅行可是充满危险的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="17" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#未满8级无法创建组队哦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="701" id="18" type="0" answer="知道了" to="o" colorID="0">
+			<des>
+				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
+			</des>
+		</proAction>					
+	</actions>
+</map>

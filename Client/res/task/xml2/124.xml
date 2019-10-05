@@ -1,0 +1,161 @@
+<Task ID="124" Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407" >
+   	<Procedure> 
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="出什么事了？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="【@nick】救我！我的【白宝书】被偷了！！" />
+					<Option Info="【白宝书】？" SkipTrigger="Y"/>															
+				</Action>					
+    		</Event>
+		</Step>		
+				
+ 		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c麦田村村长•尼康康c发来sos求救信！\n——绑架？黑化精灵？？\n这是什么情况？！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="【白宝书】？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="就是那本白色宝典：《怎样当好村长》啊。\n没了它，我不知道怎么当村长了哇！" />
+					<Msg NpcID="37" ImageID="1" Info="路伊说偷书的是一只大型“黄鼠狼”。\n我我我讨厌黄鼠狼！！" />
+					<Msg NpcID="37" ImageID="1" Info="它抢走我的“白宝书”以后往【村后的·海地洞穴】方向大笑着疯狂的逃走了！！\n太可怕了~~！" />	
+					<Msg NpcID="401" ImageID="1" Info="这位“受害者”的心情十分低落。\n看来有必要去【海地洞穴】找找看了。" />
+					<Option Info="现在就去【海底洞穴】！" />										
+				</Action>												
+    		</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="白宝书大盗是“黄鼠狼”，\n村后的c海底洞穴c" TargetMap="21402" TargetObj="998" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="998" TaskOption="咳 咳" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="嘿嘿…村长的宝贝书一定有写【永恒森林结界】的事！\n打听到这么重要的情报，\n我就快升小队长咯~~" />	
+					<Msg NpcID="998" ImageID="5" Info="到底在哪一页…" />																																												
+					<Option Info="请看清书名" SkipTrigger="Y" />	
+				</Action>		
+    		</Event>
+		</Step>
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="白宝书大盗是“黄鼠狼”，\n村后的c海底洞穴c" TargetMap="21402" TargetObj="998" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="998" TaskOption="请看清书名" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="啊哟？\n…《怎样当好村长》?!!!!!!!!" />																				
+					<Option Info="白宝书还给村长吧！" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="7" Info="竟然被你发现了⊙''⊙！" />																				
+					<Msg NpcID="998" ImageID="1" Info="——等等——不用慌！这回【妮娜】不在~！不用慌了！~" />
+					<Option Info="来——吧！武力夺回！" />	
+				</Action>
+				 <Action Type="COMMAND" Command="BATTLE" Params="3006" />					
+    		</Event>
+		</Step>	
+	
+  		<Step ID="5" ParentList="4" ParentCost="1">
+			<Condition>
+				<Battle ID="3006" Count="1" />				
+			</Condition>
+    		<Event ConditionType="IN" Memo="白宝书大盗是“黄鼠狼”，\n村后的c海底洞穴c" TargetMap="21402" TargetObj="998" TargetName="和t鼬西t对话">
+   				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="998" TaskOption="把白宝书交出来吧！" />			
+				</Trigger>   		
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="7" Info="妈 妈 妈 妈妈呀！这是“神马”（什么）大螃蟹啊？！" />																				
+					<Option Info="⊙0⊙？" />					
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="7" Info="！啦啦啦~！白宝书就送螃蟹了！\n我闪！" />																				
+					<Option Info="⊙皿⊙！！！" />					
+				</Action>																						
+    		</Event><!--提交节点2-->
+    		<Event ConditionType="OUT" Memo="白宝书大盗是“黄鼠狼”，村后的c海底洞穴c" TargetMap="21402" TargetObj="998" TargetName="打败t鼬西t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="998" TaskOption="把白宝书交出来！" />			
+				</Trigger>
+				<Action Type="TALK">															
+					<Msg NpcID="998" ImageID="1" Info="还想被揍吗？" />
+					<Option Info="看我的！" />	
+				</Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3006" />												
+    		</Event>			
+		</Step>
+			
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="海底洞内的大螃蟹精灵“巨石蟹”受惊了，看来只好迎战了！\n白宝书就在眼前了！加油啊！！" TargetMap="21402" TargetObj="311" TargetName="和t巨石蟹t对话">
+					<Action Type="MOVIE" Url="task_20_1.swf" MapLevel="CONTENT_STAGE" Pos="0,0" />		
+    		</Event>
+		</Step>
+		
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="海底洞内的大螃蟹精灵“巨石蟹”受惊了，看来只好迎战了！\n白宝书就在眼前了！加油啊！！" TargetMap="21402" TargetObj="311" TargetName="和t巨石蟹t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="311" TaskOption="请把白宝书还给我" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="310" ImageID="1" Info="呼——咔咔咕咔——瓦!!!!!\n（你——要吃我——？！!!!!）" />																				
+					<Option Info="⊙-⊙？！又要打！" SkipTrigger="Y" />					
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="2006" />		
+    		</Event>
+		</Step>
+  		
+  		<Step ID="8" ParentList="7" ParentCost="1" >
+			<Condition>
+				<Battle ID="2006" Count="1" />				
+			</Condition>
+    		<Event ConditionType="IN" Memo="螃蟹打晕了\n应该可以从螃蟹身上拿回白宝书了^0^！" TargetMap="21402" TargetObj="311" TargetName="和t巨石蟹t对话">
+  				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>					
+    		</Event>
+    		<Event ConditionType="OUT" Memo="白宝书大盗是“黄鼠狼”，\n村后的c海底洞穴c" TargetMap="21402" TargetObj="311" TargetName="打败t巨石蟹t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="311" TaskOption="请把白宝书还给我" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="310" ImageID="1" Info="呼——咔咔咕咔——瓦!!!!!\n（你——要吃我——？！!!!!）" />																				
+					<Option Info="⊙-⊙？！还要打！"  />					
+				</Action>				
+                <Action Type="COMMAND" Command="BATTLE" Params="2006" />									
+    		</Event>			
+		</Step>	
+		
+		<Step ID="9" ParentList="8" ParentCost="1" >
+    		<Event Memo="螃蟹打晕了\n应该可以从螃蟹身上拿回白宝书了^0^！" TargetMap="21402" TargetObj="310" TargetName="和t巨石蟹t对话">			
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21402" ObjID="310" TaskOption="请把白宝书还给我" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="310" ImageID="1" Info="呼呼呼——瓦瓦（不要吃我——啊！）" />																				
+					<Option Info="嗯嗯不吃你O(∩_∩)O！" />					
+				</Action>		
+				<Action Type="TALK">
+					<Msg NpcID="401" ImageID="1" Info="快去报告【尼康康村长】吧！" />																				
+					<Option Info="这就去【尼康康村长家】！" />					
+				</Action>									
+   				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260012" SkipTrigger="Y" />										
+    		</Event>
+		</Step>
+		
+		
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="赶快回把书还给尼康康村长吧！" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="【白宝书】找到了！" />			
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="37" ImageID="1" Info="太好了我可以继续当村长了（T T），\n我的人生得救了！！\n感谢女神————（T T）！！" />							
+					<Msg NpcID="401" ImageID="1" Info="多多帮助大家会有惊喜momo~~\n你获得了使用更高技能等级的权限!" />										
+				<Msg NpcID="401" ImageID="1" Info="记得好好提升【技能等级】，\n我很期待【@nick】成为【下忍】啊~~" />					
+					<Option Info="(^_^)!"  />
+				</Action>						
+   				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260012" />									
+    		</Event>
+		</Step>
+</Procedure>
+</Task>

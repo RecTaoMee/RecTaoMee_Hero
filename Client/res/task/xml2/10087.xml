@@ -1,0 +1,53 @@
+<Task ID="10087" Memo="弗雷基商会的cTAc呼叫小主人，快点去看看吧！" TargetMap="11602">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="弗雷基商会的cTAc呼叫小主人，快点去看看吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="有什么事吗？" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="弗雷基商会的cTAc呼叫小主人，快点去看看吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="有什么事吗？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="48" ImageID="1" Info="又见面了【@nick】，最近有去找TB玩吗？" />
+						<Msg NpcID="48" ImageID="1" Info="哈哈！今天找你来是请你帮忙【清理附近的黑化拉拉美】。" />
+						<Option Info="拉拉美？"  SkipTrigger="Y"/>
+					</Action>
+					<Action Type="TALK">
+						<Msg NpcID="48" ImageID="1" Info="嗯，最近平原6区和平原7区的出现了很多黑化拉拉美，到处进行破坏，未来勇士，请帮忙去清理15只拉拉美吧！" />
+						<Option Info="好的！" />
+					</Action>
+			</Event>
+		</Step>
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="11" Count="15" />
+			</Condition>
+    			<Event ConditionType="IN" Memo="成功净化了15只拉拉美，回去把这个好消息告诉TA吧！" TargetMap="11602" TargetObj="48" TargetName="和tTAt对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="有什么事吗？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="48" ImageID="1" Info="哈哈，不愧是未来勇士，辛苦你了，这是你的报酬！" />
+						<Option Info="谢谢！" />
+					</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="去c平原6区c和c平原7区c净化15只拉拉美吧！" TargetMap="21306" TargetObj="" TargetName="击败t拉拉美t">
+  				<Trigger>
+				    <Item Type="NPC_OPTION" MapID="11602" ObjID="48" TaskOption="拉拉美在哪？" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="48" ImageID="1" Info="平原5区和平原6区，从弗雷基镇出去就能看到了。" />
+						<Option Info="谢谢！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

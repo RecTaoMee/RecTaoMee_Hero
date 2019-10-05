@@ -1,0 +1,71 @@
+<Task ID="20002" Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202">
+<BoardInfo PageType="1" Title="王国悬赏令①" Content="【摩尔城堡•下水道】有大量【吉普豆泥】被黑化，谁能净化它们摩尔王将给予300星豆的奖赏"></BoardInfo>   	
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c公告栏c又有了新的悬赏令，快去勇士广场看看。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_ACCEPT" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" /> 
+    		</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="去和下水道入口处的c守卫士兵•Sc确认一下任务的具体内容吧。" TargetMap="11204" TargetObj="218" TargetName="和t守卫士兵·St对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11204" ObjID="218" TaskOption="下水道的吉普豆泥" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="218" ImageID="1" Info="原本生活在下水道区域的【吉普豆泥】最近都被【黑化】了，请帮助我们净化【7只吉普豆泥】！" />
+					<Option Info="好的！" />
+				</Action>
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="6" Count="7" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="7只吉普豆泥净化完毕！回去向c守卫士兵•Sc报告吧！" TargetMap="11204" TargetObj="218" TargetName="和t守卫士兵·St对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11204" ObjID="218" TaskOption="已经净化完毕" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="218" ImageID="1" Info="又有7个黑化吉普豆泥被净化了，太好了，我们的盔甲有救了！快回公告栏领取赏星吧！" />
+					<Option Info="谢谢" />
+				</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="任务是在c摩尔城堡•下水道c净化7只吉普豆泥...." TargetMap="21202" TargetObj="" TargetName="击败t吉普豆泥t">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11204" ObjID="218" TaskOption="已经净化完毕" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="218" ImageID="1" Info="总共需要净化【7只】黑化吉普豆泥，加油！" />
+					<Option Info="好的" />
+				</Action>
+			</Event>
+		</Step>	
+		
+		
+		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="完成任务，去c公告栏c领取奖赏吧。" TargetMap="11202" TargetObj="13" TargetName="前往t公告栏t">
+  				<Trigger>
+					<Item Type="BOARD_SUBMIT" />
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="15" TaskOption="任务完成" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这件事你干的很漂亮嘛！" />
+					<Option Info="嘿嘿" TalkOver="Y"/>
+				</Action>
+				<Action Type="MOVIE" Url="TaskAcceptModule" MapLevel="TASK" Pos="0,0" IsModule="Y" />
+    			<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="这些是你的赏星奖励，可恶太令人羡慕了……都拿去吧！好好使用吧！" />
+					<Option Info="嗯！" />
+				</Action>
+			</Event>
+		</Step>	
+	</Procedure>
+</Task>
+
+ 

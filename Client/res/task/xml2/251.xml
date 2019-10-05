@@ -1,0 +1,299 @@
+<Task ID="251" Memo="c莱卡c大人召见，是有新的考验吗？\n小主人快去c国王呈见厅c看看吧！" TargetMap="11307">  
+	<Procedure>   				
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c莱卡c大人召见，是有新的考验吗？\n小主人快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="您召见我？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="【@nick】来了，\n给你介绍一本有意思的书——" />
+					<Option Info="(⊙o⊙)哦？" SkipTrigger="Y" />
+					<Option Info="有事先走了" NextStep="1" />					
+				</Action>											
+    		</Event>
+		</Step>		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c莱卡c大人召见，是有新的考验吗？\n小主人快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="有意思的书？" />
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="为你念一段吧：\n“【月光湖】……召唤仪式……\n【不可思议之镜】……”\n（这本书一到关键地方就字迹不清~囧。）" />	
+					<Msg NpcID="30" ImageID="2" Info="不可思议之镜？有趣的名字。\n我来研究研究。" />		
+					<Option Info="摩尔王加油！" />
+				</Action>		
+    			<Action Type="MOVIE" Url="task_251_1.swf" MapLevel="TASK" Pos="0,0"/>	 <!-- 造镜子动画-->					
+				<Action Type="TALK">					
+					<Msg NpcID="30" ImageID="2" Info="哦呵呵呵，“詹姆斯牌”不可思议之镜诞生~" />	
+					<Msg NpcID="30" ImageID="1" Info="……\n可我看不出这面镜子有什么特别啊。" />												
+					<Msg NpcID="24" ImageID="2" Info="看来只有请【@nick】去【月光湖】一探究竟了。" />																						
+					<Option Info="使命必达-做到最好！" />
+				</Action>	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260031" /> 	 <!-- 	镜子 iteminfo tip icon	-->									
+    		</Event>
+		</Step>					
+		
+ <!-- 节点2↓ -->
+  		<Step ID="3" ParentList="2" ParentCost="1" >                                                 
+    		<Event Memo="书上说的“不可思议之镜”是怎么回事？\n快去c月光湖c一探究竟吧！" TargetMap="11502" TargetObj="51" TargetName="和t蟹娜t对话"><!-- 加谢娜 -->	 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="51" TaskOption="蟹娜同学？" />		 		  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="2" Info="马沙虾儿快快上钩,\n“章界王”大人想你们啦(*^__^*)~~" />  														
+					<Msg NpcID="51" ImageID="1" Info="咦？【@nick】也来钓虾玩儿吗？" />
+					<Option Info="在查【不可思议之镜】" />
+				</Action>		
+				<Action Type="TALK">		
+					<Msg NpcID="51" ImageID="3" Info="什么什么你有【镜子】？让我看看！" />
+					<Option Info="给你——" />
+				</Action>	 
+    			<Action Type="MOVIE" Url="task_251_2.swf" MapLevel="TASK" Pos="0,0"/> <!--照镜子动画-->		
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260031" /> 	
+    			<Action Type="MOVIE" Url="task_251_10.swf" MapLevel="TASK" Pos="-13,-13"/> <!--	 折射动画-->	
+				<Action Type="TALK">		
+					<Msg NpcID="51" ImageID="4" Info="啊——有“小怪兽”(⊙＿⊙) ！" />                     
+					<Option Info="小怪兽？" />
+				</Action>																																																			
+    		</Event>
+		</Step>					
+  		<Step ID="4" ParentList="3" ParentCost="1" >                                                 
+    		<Event Memo="“不可思议之镜”召唤出了精灵沃特尔？\n快去c月光湖c问问c沃特尔c是怎么回事吧！" TargetMap="11502" TargetObj="307" TargetName="和t沃特尔t对话">   <!-- 加沃特尔 -->	 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="307" TaskOption="你是“沃特尔”？" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="307" ImageID="1" Info="你是——\n在麦田村的【时光井】，救过我的摩尔吗？" />					             	 
+					<Option Info="嗯！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="307" ImageID="1" Info="好久不见，十分想念（=^o^=）~" />	
+					<Option Info="嘿嘿" />
+				</Action>						
+				<Action Type="TALK">										
+					<Msg NpcID="307" ImageID="1" Info="最近我终于遇到了我的偶像——\n【沃特尔王】（^o^）！" />		
+					<Msg NpcID="307" ImageID="2" Info="可是刚见面它就一拳打晕了我……\n悲剧（T_T）~" />																
+					<Option Info="同悲同悲~" />
+				</Action>	
+				<Action Type="TALK">		
+					<Msg NpcID="307" ImageID="2" Info="后来我就对“偶像”死心了，\n一直在湖底睡大觉。" />								
+					<Msg NpcID="51" ImageID="2" Info="打扰一下，那位传说中的【沃特尔王】还住在月光湖吗？\n好想和它“合影留念”啊！" />																																									
+					<Msg NpcID="307" ImageID="4" Info="【沃特尔王】讨厌讨厌讨厌~~\n你们要找它就自己去【西之时光井】吧！" />	
+					<Option Info="这就去【西之时光井】！" />										
+				</Action>																								
+    		</Event>
+		</Step>	
+	
+		
+		
+		
+					
+ <!-- 节点3↓ -->
+  		<Step ID="50" ParentList="4" ParentCost="1" >                                                 
+    		<Event Memo="快和c蟹娜c一起，去c西之时光井c找“沃特尔王”吧！" TargetMap="11501" TargetObj="51" TargetName="和t蟹娜t对话">   <!-- 加蟹娜 -->
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="51" TaskOption="你来啦^^" />					  			  					  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="【沃特尔王】不在啊？\n咦，这根绳子上绑着一张【小纸条】——" />						
+					<Option Info="让我看看" />	
+				</Action>		
+    			<Action Type="MOVIE" Url="task_251_3.swf" MapLevel="TASK" Pos="120,130"/> 	<!-- 纸条物品 -->
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="放我出去！放我出去！！" />	
+					<Msg NpcID="51" ImageID="4" Info="啊，原来【沃特尔王】掉进【木桶陷阱】了！" />												  					
+					<Msg NpcID="51" ImageID="1" Info="刚才的小纸条上没写去哪交星豆啊~\n(￣口￣)!!汗。" />	
+					<Msg NpcID="401" ImageID="6" Info="momo有种预感，救出【沃特尔王】的机关就藏在【左边的陶罐】里~~" />																
+					<Option Info="一定找到【机关】！" />	
+				</Action>										
+    		</Event>
+		</Step>				
+  		<Step ID="51" ParentList="50" ParentCost="1" >                                                 
+    		<Event Memo="试试砸坏c西之时光井底的陶罐c，\n能不能救出c沃特尔王c吧！" TargetMap="11501" TargetObj="5133" TargetName="点击t陶罐t">  
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11501" ObjID="5133" />
+				</Trigger>	
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260032" /> 	<!--  钥匙280001 iteminfo tip icon	-->			
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="1" Info="这把【钥匙】能打开右边→的【箱子】的吗？" />	
+					<Option Info="这就【打开箱子】试试！" />					
+				</Action> 											
+    		</Event>
+		</Step>		
+  		<Step ID="52" ParentList="51" ParentCost="1" >                                                 
+    		<Event Memo="试试打开c西之时光井底的箱子c，\n能不能救出c沃特尔王c吧！" TargetMap="11501" TargetObj="5132" TargetName="点击t箱子t">  
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11501" ObjID="5132" />
+				</Trigger>
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260032" /> 							 
+				<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260033" /> 	 <!-- 锤子 iteminfo tip 【icon】	-->		
+				<Action Type="TALK">
+					<Msg NpcID="51" ImageID="2" Info="哈，一不小心猜对啦。\n“钥匙机关”真有“创意”~~" />	
+					<Msg NpcID="51" ImageID="1" Info="唔……这把锤子也许能劈开【木桶】，\n【沃特尔王】有救啦！" />						
+					<Option Info="这就去劈开【木桶】！" />	
+				</Action> 													
+    		</Event>
+		</Step>				
+  		<Step ID="53" ParentList="52" ParentCost="1" >                                                         <!-- 加沃特尔王 -->	
+    		<Event Memo="用锤子劈开c西之时光井底的木桶c，\n救出c沃特尔王c吧！" TargetMap="11501" TargetObj="5131" TargetName="点击t木桶t">  
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11501" ObjID="5131" />
+				</Trigger>	
+				<Action Type="COMMAND" Command="REJECT_ITEM" Params="260033" />						
+    			<Action Type="COMMAND" Command="NOTHING" /> 
+    			<Action Type="MOVIE" Url="task_251_4.swf" MapLevel="CONTENT" Pos="-17,-100"/>  <!--桶破动画-->										
+    		</Event>
+		</Step>	
+			
+ <!-- 节点4↓ -->													
+  		<Step ID="5" ParentList="53" ParentCost="1" >                                                 
+    		<Event Memo="快去c西之时光井c吧！" TargetMap="11501" TargetObj="753" TargetName="和t沃特尔王t对话">    
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="753" TaskOption="沃特尔王快醒醒！" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="绝不允许你破坏【月光湖】！\n【尤利】，来战吧！！" />	
+					<Msg NpcID="51" ImageID="4" Info="糟糕，沃特尔王被“黑化”了。\n我们只能应战了（T_T）~" />								
+					<Option Info="123让我准备下" />					
+				</Action>											
+    		</Event>
+		</Step>			
+  		<Step ID="6" ParentList="5" ParentCost="1" >  
+			<Condition>
+				<Battle ID="2011" Count="1" />       
+			</Condition>			                                                 
+    		<Event ConditionType="IN" Memo="快去c西之时光井c吧！" TargetMap="11501" TargetObj="753" TargetName="和t沃特尔王t对话">   
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="753" TaskOption="你清醒啦↖(^o^)↗" />					  			  
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="……\n你是谁，为什么在这里？" />		
+					<Option Info="【沃特尔】的朋友" />					
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="【沃特尔】没事吧？\n上次在月光湖，\n它大喊大叫引来了【魔王尤利】，\n我只好把它打晕……" />	
+					<Msg NpcID="753" ImageID="1" Info="我在那场战斗中失去了意识，\n只记得逃到时光井，\n不知怎么掉进了木桶……" />						
+					<Option Info="原来如此" />					
+				</Action>			
+				<Action Type="TALK">						 					
+					<Msg NpcID="753" ImageID="1" Info="多亏你救了我，有什么能帮你吗？" />								
+					<Option Info="知道【不可思议之镜】吗？" SkipTrigger="Y" />
+				</Action>																					
+    		</Event>
+    		<Event ConditionType="OUT" Memo="快去c西之时光井c吧！" TargetMap="11501" TargetObj="753" TargetName="击败t沃特尔王t">   
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="753" TaskOption="沃特尔王快醒醒！" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="绝不允许你破坏【月光湖】！\n【尤利】，来战吧！！" />	
+					<Option Info="来战！" />
+					<Option Info="忽然肚子痛" NextStep="6" />													
+				</Action>		
+    			<Action Type="COMMAND" Command="BATTLE" Params="2011" /> 																	
+    		</Event>			  
+		</Step>			 <!--
+  		<Step ID="7" ParentList="0" ParentCost="1" >                                                 
+    		<Event Memo="快去c西之时光井c吧！" TargetMap="11501" TargetObj="753" TargetName="和t沃特尔王t对话">    
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="753" TaskOption="知道【尖耳朵摩尔】吗？" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="那是住在【永恒之森】深处的“精灵族”——\n亲近大自然的摩尔部落！" />	
+					<Msg NpcID="753" ImageID="1" Info="森林入口有很强的【隐形结界】，\n只有极少数得到认可的家伙才能进入——\n比如说我O(∩_∩)O。" />	
+					<Msg NpcID="51" ImageID="1" Info="想去想去想去！" />	
+					<Msg NpcID="753" ImageID="1" Info="【平原8区】是进入永恒之森的入口，\n我们在那里集合，一起进去吧！" />																		
+					<Option Info="这就去【平原8区】！" />					
+				</Action>											
+    		</Event>
+		</Step>	-->	
+  		<Step ID="8" ParentList="6" ParentCost="1" >                                                 
+    		<Event Memo="快去c西之时光井c吧！" TargetMap="11501" TargetObj="753" TargetName="和t沃特尔王t对话">    
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11501" ObjID="753" TaskOption="知道【不可思议之镜】吗？" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="那是【精灵族摩尔】召唤我的小信物，\n我们是一起守护森林的好朋友^^！" />	
+					<Option Info="精灵族摩尔？" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="嗯嗯，住在【永恒之森】深处，\n喜欢大自然的摩尔部落！" />	
+					<Msg NpcID="753" ImageID="1" Info="因为森林入口有很强的【隐形结界】，\n只有极少数得到认可的家伙才能进入——\n比如说我O(∩_∩)O。" />	
+					<Msg NpcID="51" ImageID="3" Info="想去想去想去！" />	
+					<Msg NpcID="753" ImageID="1" Info="【平原8区】是进入永恒之森的入口，\n我们在那里集合，一起进去吧！" />																		
+					<Option Info="这就去【平原8区】！" />					
+				</Action>																
+    		</Event>
+		</Step>					
+ <!-- 节点5↓ -->			
+  		<Step ID="9" ParentList="8" ParentCost="1" >                                                 
+    		<Event Memo="和c沃特尔王c约好在c平原8区c集合，\n别让它久等~" TargetMap="21308" TargetObj="753" TargetName="和t沃特尔王t对话">   <!-- 加沃特尔王 -->	 
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21308" ObjID="753" TaskOption="一起去【永恒之森】吧！" />					  			  
+				</Trigger>		
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="让我来破除【隐形结界】吧！" />	
+					<Msg NpcID="753" ImageID="1" Info="永恒之森-世界之树请允许我，\n波若波罗蜜——" />								
+					<Option Info="(⊙o⊙)？" />					
+				</Action>		 			     		
+    			<Action Type="MOVIE" Url="task_251_5.swf" MapLevel="CONTENT" Pos="620,-150"/>  <!--结界解除动画-->												
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="进入永恒之森的【结界】终于打开了啊哈哈哈哈哈哈！" />	 
+					<Option Info="咦，鼬西？" />	
+				</Action>					     		
+    			<Action Type="MOVIE" Url="task_251_6.swf" MapLevel="TASK" Pos="0,0"/>  <!-- 鼬西跑进森林动画 -->				
+				<Action Type="TALK">										
+					<Msg NpcID="753" ImageID="1" Info="喂喂~不带你这样偷渡的！" />
+					<Msg NpcID="51" ImageID="1" Info="它就是在时光井留小纸条的“鼬西”？\n笑嘻嘻笑嘻嘻，不是好东西~~" />		
+					<Msg NpcID="753" ImageID="1" Info="大家分头找“鼬西”怎么样？\n10分钟后在【永夜村】集合！" />		
+					<Option Info="好诶↖(^o^)↗" />					
+				</Action>				 																														
+    		</Event>
+		</Step>						
+  		<Step ID="10" ParentList="9" ParentCost="1" >                        
+    		<Event Memo="约定的10分钟快到啦，\n快去c永夜村c和大家集合吧！" TargetMap="11801" TargetObj="753" TargetName="和t沃特尔王t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11801" ObjID="753" TaskOption="找到鼬西了吗？" />					  
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="753" ImageID="1" Info="不愧是“狐狸”鼬西，什么线索都没留下……" />
+					<Msg NpcID="79" ImageID="1" Info="！！\n没耳朵的摩尔？！\n大家快抓住它！" />					
+					<Option Info="不要~~" />
+				</Action>				   		
+    			<Action Type="MOVIE" Url="task_251_7.swf" MapLevel="CONTENT" Pos="-50,-100"/>	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11801, 16014" /> 	<!--加围观群众	-->				
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="你你你竟然冲破了结界……\n一定是【大魔王】派你“入侵”永恒之森的！" />
+					<Option Info="我是来找鼬西的" />							
+				</Action>	
+				<Action Type="TALK">												
+					<Msg NpcID="79" ImageID="1" Info="解释就是掩饰，带它去见村长大人！" />					
+					<Option Info="（T_T）~" />
+				</Action>	
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11801, 16014" /> <!--																
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11804, 1" />  	-->	
+    		</Event>
+		</Step>
+  		<Step ID="11" ParentList="10" ParentCost="1" >  
+    		<Event Memo="被精灵族摩尔当做了入侵者，\n快去c永夜村c向c村长大人c解释清楚吧！" TargetMap="11801" TargetObj="74" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11801" ObjID="74" TaskOption="我不是入侵者（T_T）" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="79" ImageID="1" Info="这只混进村子的摩尔没有耳朵~~" />					
+					<Msg NpcID="74" ImageID="1" Info="你……突破了结界？\n如果你有【命运轮盘】，就戴出来证明你的身份吧。" />
+					<Option Info="请看【命运轮盘】" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="嗯……果然。\n你拥有【命运轮盘】。" />
+					<Msg NpcID="79" ImageID="1" Info="虾米（什么）？" />										
+					<Msg NpcID="74" ImageID="1" Info="是“命运”指引你来到这里。\n你愿意继续【寻找12勇士】的使命吗？" />					
+					<Option Info="当然！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="珍惜现在，好好锻炼自己吧。\n新的考验才刚刚开始……" />					
+					<Option Info="O(∩_∩)O！" />
+				</Action>			
+    		</Event>
+		</Step>									
+</Procedure>
+</Task>

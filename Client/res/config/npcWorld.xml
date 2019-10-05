@@ -1,0 +1,133 @@
+
+<!--
+	生命力（绿色#00FF00表示）：&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;
+	魔力（蓝色#0000FF表示）：&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;
+	星豆（蓝色#FF0000表示）：&lt;FONT color=&quot;#FF0000&quot;&gt; %PRICE%&lt;/FONT&gt;个星豆&lt;br/&gt;
+	所有名字（【】表示）：【%NAME%】、【%SKILLNAME%】
+	换行 ： &lt;br/&gt;
+-->
+
+
+<worlds>
+	<kind id="treatment">
+		<world id="1" emotionId="6=1,14=1" content="需要恢复吗？" />
+		<world id="2" emotionId="6=1,14=2" content="你的&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;已经完全恢复了！" />
+		<world id="4" emotionId="6=4,14=9" content="十分抱歉！&lt;br/&gt;你的星豆不足，无法进行恢复！&lt;br/&gt;万分抱歉！" />
+		<world id="5" emotionId="6=2,14=2" content="检查完毕^_^&lt;br/&gt;活蹦乱跳！&lt;br/&gt;你没有恢复&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;的必要^_^" />
+		<world id="6" emotionId="6=2,14=2" content="检查完毕^_^&lt;br/&gt;十分健康！&lt;br/&gt;你没有治疗的必要^_^" />
+		
+		<world id="8" emotionId="6=1,14=1" content="恢复你的&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;&lt;br/&gt;需要&lt;FONT color=&quot;#FF0000&quot;&gt;%PRICE%&lt;/FONT&gt;个星豆&lt;br/&gt;可以吗？" />
+		<world id="9" emotionId="6=1,14=1" content="恢复你的&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;&lt;br/&gt;需要&lt;FONT color=&quot;#FF0000&quot;&gt; %PRICE%&lt;/FONT&gt;个星豆&lt;br/&gt;可以吗？" />
+		<world id="11" emotionId="6=1,14=1" content="恢复【%NAME%】的&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;和&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;&lt;br/&gt;需要&lt;FONT color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/FONT&gt;个星豆&lt;br/&gt;可以吗？" />
+		<world id="12" emotionId="6=1,14=1" content="治疗【%NAME%】需要&lt;font color=&quot;#FF0000&quot;&gt;%PRICE%&lt;/font&gt;个星豆,可以吗？" />
+		<world id="23" emotionId="6=2,14=2" content="我们为10级以下的年轻冒险者&lt;br/&gt;提供【免星豆恢复】^_^&lt;br/&gt;现在开始恢复吗？"/>
+		
+		<world id="13" emotionId="6=2,14=2" content="你的&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;已经完全恢复了^_^ &lt;br/&gt;还有什么可以帮你的吗？" />
+		<world id="15" emotionId="6=2,14=2" content="你的宠物&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;和&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;已经完全恢复^_^&lt;br/&gt;还有什么可以帮你的吗？" />
+		
+		<world id="16" emotionId="6=4,14=9" content="你没有足够的星豆恢复这只可怜的宠物。" /> 
+		<world id="17" emotionId="6=4,14=9" content="十分抱歉！&lt;br/&gt;你的星豆不足，无法进行治疗！&lt;br/&gt;万分抱歉！ " />
+		<world id="18" emotionId="6=2,14=2" content="检查完毕，活蹦乱跳，你没有恢复&lt;font color=&quot;#0000FF&quot;&gt;魔力&lt;/font&gt;的必要^_^" />
+		<world id="19" emotionId="6=4,14=9" content="失误了失误了！恢复失败。请让我再试一次！下次一定成功！万分抱歉！" />
+		<world id="20" emotionId="6=2,14=2" content="检查完毕^_^ 你的宠物&lt;br/&gt;活蹦乱跳！&lt;br/&gt;没有恢复&lt;font color=&quot;#00FF00&quot;&gt;生命力&lt;/font&gt;的必要^_^" />
+		<world id="21" emotionId="6=2,14=2" content="治疗完毕^_^ 你的宠物【%NAME%】&lt;br/&gt;已经活蹦乱跳了！" />
+		<world id="22" emotionId="6=2,14=2" content="治疗完毕^_^ &lt;br/&gt;是不是感觉精神满满呢^_^"/>
+		
+		<!-- 一键恢复成功 -->
+		<world id="24" emotionId="6=2,14=2" content="全部恢复完毕^_^ &lt;br/&gt;是不是感觉精神满满呢^_^"/>
+		<!-- 一键恢复 需要的小米提示 -->
+		<world id="25" emotionId="6=2,14=2" content="全部恢复需要&lt;FONT color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/FONT&gt;个星豆&lt;br/&gt;可以吗？" />
+	</kind>
+	 
+	<kind id="buy">
+		<world id="1" emotionId="18=1,16=1,17=1" content="一次只能购买４种物品" />
+		<world id="2" emotionId="18=1,16=1,17=1" content="一次只能购买１件装备哦！" />
+		<world id="3" emotionId="18=1,16=1,17=1" content="我这里有什么你需要的东西吗？" content_16="买装备？看看你眼光如何~" content_18="来点新鲜出炉的面包补充MP(魔力)吗？" content_20="我这里有什么你需要的东西吗？" />
+		<world id="4" emotionId="18=1,16=1,17=1" content="请选择想买的物品吧！" />
+		<world id="5" emotionId="18=1,16=1,17=1" content="购买成功！祝你好运！" content_20="购买成功！祝你好运！"/>
+		<world id="6" emotionId="18=1,16=1,17=1" content="购买失败！" />
+		<world id="7" emotionId="18=1,16=1,17=1" content="抱歉你的旅行箱满了装不下了^^" />
+		<world id="8" emotionId="18=1,16=1,17=1" content="抱歉此物品已经不能叠加了！注意整理旅行箱" />
+	</kind>
+	
+	<kind id="sale">
+		<world id="1" emotionId="18=1,16=1,17=2" content="欢迎光临【贝塔商会回收店】，您想出售什么呢？" />
+		<world id="2" emotionId="18=1,16=5,17=1" content="出售成功！获得了&lt;font color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/font&gt;星豆！" />
+		<world id="3" emotionId="18=5,16=7,17=1" content="一次最多只能出售&lt;font color=&quot;#FF0000&quot;&gt;%COUNT%&lt;/font&gt;种物品！" />
+		<world id="4" emotionId="18=1,16=1,17=1" content="请选择要出售的物品。" />
+	</kind>
+	
+	<kind id="skillStudy">
+		<world id="1" emotionId="12=1,20=1,42=1" content="【%NAME%】，为你的宠物学习更多技能，他们会变得更强！" />
+		<world id="2" emotionId="12=1,20=8,42=1" content="想要为哪个宠物学习【%SKILLNAME%】？" />
+		<world id="3" emotionId="12=7,20=4,42=1" content="你的宠物【%NAME%】等级不足，无法学习【%SKILLNAME%】。" />
+		<world id="4" emotionId="12=2,20=1,42=1" content="你的宠物【%NAME%】等级符合要求，可以学习【%SKILLNAME%】。" />
+		<world id="5" emotionId="12=7,20=4,42=1" content="学习【%SKILLNAME%】需要&lt;font color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/font&gt;星豆，你拥有的星豆不足哦！" />
+		<world id="6" emotionId="12=1,20=8,42=1" content="为%NAME%学习【%SKILLNAME%】需要&lt;font color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/font&gt;星豆，可以吗？" />
+		<world id="7" emotionId="12=7,20=8,42=1" content="你的宠物【%NAME%】学习的技能已达上限，请选择要替换的技能！" />
+		<world id="8" emotionId="12=1,20=8,42=1" content="你确定要将【%OLDSKILLNAME%】替换成【%NEWSKILLNAME%】吗？" />
+		<world id="9" emotionId="12=2,20=1,42=1" content="学习技能成功！" />
+		<world id="10" emotionId="12=7,20=4,42=1" content="学习技能失败！" />
+			
+		<world id="11" emotionId="26=2,27=2,28=2" content="【%NAME%】，选择适合你的技能吧，你会变得更强大！" />
+		<world id="12" emotionId="26=1,27=1,28=1" content="你准备学习【%SKILLNAME%】技能，需要&lt;font color=&quot;#FF0000&quot;&gt;%MONEY%&lt;/font&gt;星豆，可以吗？" />
+		<world id="13" emotionId="26=1,27=1,28=1" content="你掌握的技能已到达上限，请选择要替换的技能！" />
+		<world id="14" emotionId="26=1,27=1,28=1" content="你确定要将【%OLDSKILLNAME%】替换成【%NEWSKILLNAME%】吗?这样会丢失【%OLDSKILLNAME%】的所有经验哦！"/>
+		<world id="15" emotionId="26=1,27=1,28=1" content="你现在没有加入协会，我可不能教你啊" />
+		<world id="16" emotionId="12=7,20=4,42=1" content="唔……&lt;br/&gt;你的宠物还没有能力学习这个技能&lt;br/&gt;请加油训练它吧！"/>
+			
+		<world id="17" emotionId="26=1,27=1,28=1" content="我所教的技能你已经全部学会咯，到其他导师处请教试试吧。" />
+		<world id="18" emotionId="12=1,20=8,42=1" content="你没有宠物需要学习【%SKILLNAME%】，看看是不是还有别的技能需要学习吧！" />
+	</kind>
+	<kind id="lookForClue">
+		<world id="0" emotionId="26=2" content="这里是詹姆斯国王的寝宫，可恶的小偷，把这里翻的一团糟！仔细搜索一下，看能不能找到一些线索。" />
+		<world id="1" emotionId="26=2" content="没有…" />
+		<world id="2" emotionId="26=2" content="这里也没有…" />
+		<world id="3" emotionId="26=2" content="………" />
+		<world id="4" emotionId="26=2" content="狡猾的犯人，一点痕迹都没留下吗？" />
+		<world id="5" emotionId="26=2" content="咦，这个是？" />
+	</kind>
+	
+	<kind id="repairEquip">
+		<world id="0" emotionId="26=2" content="轻松搞定，还要修理哪件？" />
+		<world id="1" emotionId="26=2" content="修理完毕，看看我这技术，看上去比全新的都闪亮！" />
+		<world id="2" emotionId="26=2" content="你带的星豆不够，去赚点再来找我！一分技术一分价，怎么说大叔我也是王国公认的锻造师！" />
+		<world id="3" emotionId="26=2" content="全部搞定，快穿上试试，保管跟你买来时一样结实锋锐！" />
+		<world id="4" emotionId="26=2" content="你带的星豆不够，去赚点再来找我！一分技术一分价，怎么说大叔我也是王国公认的锻造师！" />
+		<world id="5" emotionId="26=2" content="一次只能修理4件装备！" />
+	</kind>
+	
+	<kind id="petMail">
+		<world id="0"  emotionId="0=4" content="我去送信了，不要想我哦^^"/>
+		<world id="1"  emotionId="0=2" content="报告！目标邮件已经成功销毁"/>
+		<world id="2"  emotionId="0=2" content="我帮你换了一个新的收件箱~厉害吧！"/>	
+		<world id="3"  emotionId="0=3" content="收件人是谁呢？"/>
+		<world id="4"  emotionId="0=1" content="寄给别人一张白纸可是不礼貌的！"/>	
+		<world id="5"  emotionId="0=3" content="这么多邮件你要我删除哪一封呢？"/>
+		<world id="6"  emotionId="0=1" content="删除邮件很辛苦的！我最多只能一次删除7封啦！"/>	
+		<world id="7"  emotionId="0=2" content="收件箱已经干干净净啦！"/>
+		<world id="8"  emotionId="0=3" content="发送这封邮件需要%NEED_MONEY%星豆，你的星豆不足哦！"/>
+		<world id="9"  emotionId="0=1" content="最多只能选择10个收件人！"/>
+	</kind>
+	
+	<kind id="cook">
+		<world id="0"  emotionId="0=4" content="你的背包满了，先去清理一下背包吧！"/>
+		<world id="1"  emotionId="0=4" content="材料不够，请先去收集材料吧！"/>
+		<world id="2"  emotionId="0=4" content_18="你想做什么料理呢？" content_23="你想调配什么药剂呢？" />
+		<world id="3"  emotionId="0=4" content_18="没有配方是无法制作料理的！" content_23="没有配方是无法调配药剂的！" /> 
+	</kind>
+	
+	<kind id="mark">
+		<world id="0"  emotionId="0=4" content="你的背包满了，先去清理一下背包吧！"/>
+		<world id="1"  emotionId="0=4" content="材料不够，请先去收集材料吧！"/>
+		<world id="2"  emotionId="0=4" content_105="你要做什么装备呢？"/>
+		<world id="3"  emotionId="0=4" content_105="没有配方可是无法制作装备的！" /> 
+	</kind>
+	
+	<kind id="skillUnlock">
+		<world id="0"  emotionId="0=4" content="你想为哪个精灵解锁天赋技能呢？"/>
+		<world id="1"  emotionId="0=4" content="你没有符合条件的精灵哦!"/>
+		<world id="2"  emotionId="0=4" content_105="你确定要为%PETNAME%解锁天赋技能吗？"/>
+		<world id="3"  emotionId="0=4" content_105="你的星豆不足，无法解锁天赋技能！" /> 
+	</kind>
+</worlds>

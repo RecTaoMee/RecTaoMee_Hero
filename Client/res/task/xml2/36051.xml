@@ -1,0 +1,27 @@
+<Task ID="36051" Memo="神秘的占卜师c乔依c在c勇士广场c出现了！快点去看看！" TargetMap="11202">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="神秘的占卜师c乔依c在c勇士广场c出现了！快点去看看！" TargetMap="11202" TargetObj="111" TargetName="和t乔依t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="神秘的占卜师" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="我们的相见一定是女神的指引，我能感受需要帮助的灵魂.....\n未来勇士，你愿意帮助他们吗？" />
+					<Option Info="好的！" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>
+	
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="神秘的占卜师c乔依c在c勇士广场c出现了！快点去看看！" TargetMap="11217" TargetObj="22" TargetName="和t乔依t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="神秘的占卜师" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="111" ImageID="1" Info="乐于助鼠的摩尔会受到女神的祝福，你完成了一定数量的委托任务，我会给你一份特别礼物的！" />
+					<Option Info="谢谢！" />
+				</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

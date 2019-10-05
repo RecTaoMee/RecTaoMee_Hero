@@ -1,0 +1,68 @@
+<task id="78">
+	<taskDes>
+		<![CDATA[终于Lv15了！符合入职要求了！快前往协会向自己的指导老师领取毕业证书吧！$$]]>
+		<![CDATA[抢回大家的毕业证书吧！出城向东→★【麦田村*尼康康餐厅】，【“情报员”？】，【协会暗号“xxxxxx”】]]>
+	</taskDes>
+<taskPro>
+    <pro type="0" parent="" npcID="22" title="我来领【毕业证书】" action="0" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="0" mapID="11305"/>
+    <pro type="0" parent="0" npcID="15" title="请问你是【情报员】？" action="4" needRes="" needResNum="" unResAction="" bossID="" bossNum="" taskDes="1" mapID="11406"/>
+  </taskPro>
+  <actions>	
+    <proAction id="0" type="0" npcID="22" answer="先给我毕业证书吧$我去把大家的毕业证找回来！" to="a2$a1">
+      <des>
+		<![CDATA[1#让我找找...嗯，找到了。【@nick】很幸运啊！$$]]>
+		<![CDATA[1#这次大部分的【毕业证书】都被“不明身份者”劫走了，有12勇士签名的【毕业证书】是荣誉的象征。$$]]>
+		<![CDATA[2#丢了这么重要的东西我可能要离职了，你要换老师了……你会记得我吗？……【@nick】你怎么看待这件事呢？]]>
+	  </des>
+	</proAction>
+    <proAction id="1" type="0" npcID="22" answer="一定把证书找回来！" to="so">
+      <des>
+		<![CDATA[2#^_^——我欣赏你的正义感！$$]]>
+		<![CDATA[1#负责送毕业证书的是【麦田村村长·尼康康】$$]]>
+		<![CDATA[2#出城向东→前往麦田村，找到情报员，告诉他协会暗号【“退缩你就输了”】，$$]]>
+		<![CDATA[1#他会告诉你他所了解的一切情报，帮助你夺回大家的协会【毕业证书】。$$]]>
+		<![CDATA[1#记住接头地点★【麦田村*尼康康餐厅】。]]>
+	  </des>
+	</proAction>
+    <proAction id="2" type="0" npcID="22" answer="先给我毕业证书吧$那就交给我吧！" to="a3$a1">
+      <des>
+		<![CDATA[1#……。如果被抢走的是你的【毕业证书】，现在你就无法成为正式的传教士，使用更高级的传教技能。你愿意帮其它学员抢回毕业信吗？]]>
+	  </des>
+	</proAction>
+    <proAction id="3" type="0" npcID="22" answer="......" to="o">
+      <des>
+		<![CDATA[2#……。$$]]>
+		<![CDATA[1#你知道什么叫做“同伴”吗？在任务中共同进退，一起被“打飞”回摩尔王国的朋友，那些人我们把TA们叫做【同伴】！$$]]>
+		<![CDATA[2#虽然个人实力很重要，能在同伴遇到困难时挺身而出的摩尔，才有可能成为真正的摩尔勇士。$$]]>
+		<![CDATA[1#...很遗憾你暂时还不能成为一名真正的见习传教士。等你明白了“同伴的含义”再来找我吧！]]>
+	  </des>
+	</proAction>
+    <proAction id="4" type="0" npcID="15" answer="【懦弱你就赢了】$【退缩你就赢了】$【勇敢你就赢了】$【退缩你就输了】$【退步你就输了】" to="a5$a5$a5$a6$a5" >
+      <des>
+		<![CDATA[1#【我该怎么办——？】]]>
+	  </des>
+	</proAction>
+    <proAction id="5" type="0" npcID="15" answer="咦？暗号错了⊙⊙？" to="o">
+      <des>
+		<![CDATA[1#……。]]>
+	  </des>
+	</proAction>
+    <proAction id="6" type="0" npcID="15" answer="请告诉我证书情报" to="c" nextTask="79_0">
+      <des>
+		<![CDATA[1#协会暗号通过。]]>
+	  </des>
+	</proAction>
+  </actions>
+</task>
+
+
+
+
+
+ 
+
+ 
+
+
+
+

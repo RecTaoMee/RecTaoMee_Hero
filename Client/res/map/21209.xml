@@ -1,0 +1,26 @@
+<!--下水道六层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="195,236" targetMapId="21207" targetTransPortId="3" name="神秘地道"/>
+		<node id="2" pos="1407,236" targetMapId="21210" targetTransPortId="1" name="神秘地道"/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+		<node id="4" type="" res="MC_key_0">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[可以帮我点着火把吗？我够不着。你需要召唤一只法尔精灵跟随……]]>
+			</event>
+		</node>
+		<node id="5" type="" res="MC_key_1">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[已经足够暖和了…这个火把就不用了…谢谢你……]]>
+			</event>
+		</node>
+		<node id="6" type="" pods="LittleTrickPod" res="MC_key_2">
+			<event type="click" hit="SpeakHit">
+				<![CDATA[看不见的法尔们就在这里……]]>
+			</event>
+		</node>
+	</object>
+</map>

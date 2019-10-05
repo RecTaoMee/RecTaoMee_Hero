@@ -1,0 +1,208 @@
+<Task ID="150" Memo="近卫士兵长c宾德c大人有请，\n快去c国王呈见厅c看看吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="近卫士兵长c宾德c大人有请，\n快去c国王呈见厅c看看吧！" TargetMap="11307" TargetObj="25" TargetName="和t宾德t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="宾德我来啦！" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="据守卫士·H兵报告，\n最近捡到了一个奇怪的【纸条】。\n上面写着：【@nick】收。" />
+					<Option Info="咦？" SkipTrigger="Y"/>
+				</Action>																		
+    		</Event>
+		</Step>		
+  		<Step ID="51" ParentList="50" ParentCost="1" >
+    		<Event Memo="自称c“小西西”c的家伙，\n约小主人在c格历尔平原6区c见面。\n表示非常可疑……" TargetMap="21306" TargetObj="25" TargetName="和t宾德t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="25" TaskOption="奇怪的【纸条】？" />												
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="25" ImageID="1" Info="我对【@nick】的私事不感兴趣。\n纸条的具体内容你自己看吧。\n放在你的【旅行箱】→【收集品】里。" />
+					<Option Info="马上看【纸条】" />
+				</Action>													
+    		</Event>
+		</Step>							
+  		<Step ID="1" ParentList="51" ParentCost="1" >
+    		<Event Memo="自称c“小西西”c的家伙，\n约小主人在c格历尔平原6区c见面。\n表示非常可疑……" TargetMap="21306" TargetName="去t平原六区t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21306" />														
+				</Trigger>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21306, 16008" />						
+    			<Action Type="COMMAND" Command="ROLL_CAMERA" Params="900, 900" />	
+    			<Action Type="COMMAND" Command="DELAY" Params="1000" /> 				
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="（鼹鼠！我在这里，来【桥】这边……）" />
+					<Option Info="(⊙o⊙)哦" />
+				</Action>
+    			<Action Type="COMMAND" Command="RESTORE_CAMERA" />														
+    		</Event>
+		</Step>
+  		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="自称c“小西西”c的家伙，\n约小主人在c格历尔平原6区c见面。\n表示非常可疑……" TargetMap="21306" TargetObj="16008" TargetName="和t鼬西t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21306" ObjID="16008" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="嗯哼……没人跟踪你吧？" />
+					<Option Info="(⊙o⊙)没有" />
+				</Action>			
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="长话短说，上次你救我一命……，\n可 是——我不打算欠你这个人情！\n我只能告诉你个【秘密】作为“狐狸的报恩”……" />								
+					<Option Info="什么秘密？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="你知道【弗雷基港】的风为什么突然停止了吗？\n毫无疑问，只有“【恐惧魔王】”办得到！\n是它封印了【风之龙】！" />
+					<Msg NpcID="998" ImageID="1" Info="呼……这样轻松多了！\n我可以继续自由自在搞破坏！" />					
+					<Msg NpcID="15" ImageID="2" Info="不好意思【@nick】，我跟踪了你。\n我的红鼻子嗅到了狐狸的味道。" />	
+					<Msg NpcID="15" ImageID="1" Info="现在最重要的就是救出【风之龙】。\n★友情建议【@nick】，行动前先向【平原12区】的【守卫士兵W】了解下情况。" />					
+					<Option Info="马上去【平原12区】" />				
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21306, 16008" />											
+    		</Event>			
+		</Step>
+
+ <!-- 节点2↓ -->
+  		<Step ID="7" ParentList="2" ParentCost="1" >
+    		<Event Memo="为了救出“风之龙”，\n先去c平原12区c向c守卫士兵Wc了解下情况吧！" TargetMap="21312" TargetObj="222" TargetName="和t守卫士兵Wt对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="我要救出【风之龙】！" />												
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="222" ImageID="1" Info="【风之龙】就在风之洞穴的深处。\n不过洞穴里有很多危险的黑化精灵，\n需要我为你直接【传送】吗？" />
+					<Option Info="多谢^_^" />
+				</Action>	
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21503, 16009" />	
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503, 2" SkipTrigger="Y"/>  																																				
+    		</Event>
+		</Step>
+  		<Step ID="20" ParentList="7" ParentCost="1" >
+    		<Event Memo="去格历尔平原西面的c风之洞穴c解救c风之龙c，应该会很危险。\n准备充分，冒险！前进！20" TargetObj="222" TargetMap="21312" TargetName="和t守卫士兵Wt对话">
+    			<Action Type="COMMAND" Command="NOTHING" /> 																																																																												
+    		</Event>
+		</Step>		
+  		<Step ID="8" ParentList="20" ParentCost="1" >
+    		<Event Memo="去格历尔平原西面的c风之洞穴c解救c风之龙c，应该会很危险。\n准备充分，冒险！前进！8" TargetMap="21503" TargetName="去t风之洞穴三层t">		
+    			<Action Type="COMMAND" Command="NOTHING" /> 																																																																																										
+    		</Event>
+		</Step>
+ <!-- 正义的伙伴提示点水晶↓ -->	
+  		<Step ID="21" ParentList="8" ParentCost="1" >
+    		<Event Memo="c风之龙c在哪里？\n快去问问c正义的伙伴c吧!" TargetMap="21503" TargetObj="16009" TargetName="和t正义的伙伴t对话">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="21503" />
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16009" />		
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="2" Info="嗯哼？我闻到了【风之龙】的气息。\n岩壁周围这些“水晶矿”是怎么回事……" />
+					<Msg NpcID="15" ImageID="2" Info="如果我的推断没错，\n风之龙被困在【隐形结界】里。\n【水晶矿】就是解开结界的关键！" />
+					<Option Info="好的！" />
+				</Action>								
+    		</Event>
+		</Step>				
+ <!-- 点水晶↓ -->		
+  		<Step ID="9" ParentList="21" ParentCost="1" >
+    		<Event Memo="正义的伙伴的情报——\nc岩壁周围的水晶矿c是解开“隐形结界”的钥匙。" TargetMap="21503" TargetPos="1053,240" TargetName="点击t水晶Ct">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="5106" />																			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="“隐形结界”解除了！" />
+					<Option Info="使命必达！" />
+				</Action>								
+    		</Event>
+		</Step>
+  		<Step ID="10" ParentList="21" ParentCost="1" >
+    		<Event Memo="正义的伙伴的情报——\nc岩壁周围的水晶矿c是解开“隐形结界”的钥匙。" TargetMap="21503" TargetPos="1031,609" TargetName="点击t水晶At">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="5107" />																			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="“隐形结界”解除了！" />
+					<Option Info="使命必达！" />
+				</Action>											
+    		</Event>
+		</Step>
+  		<Step ID="11" ParentList="21" ParentCost="1" >
+    		<Event Memo="正义的伙伴的情报——\nc岩壁周围的水晶矿c是解开“隐形结界”的钥匙。" TargetMap="21503" TargetPos="1297,619" TargetName="点击t水晶Bt">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="5108" />																			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="“隐形结界”解除了！" />
+					<Option Info="使命必达！" />
+				</Action>										
+    		</Event>
+		</Step>
+ <!-- 出现风之龙↓ -->	
+  		<Step ID="12" ParentList="9, 10, 11" ParentCost="1" >			
+			<Event Memo="“c风之龙c为什么在黑水晶里？\n快去问问c正义的伙伴c吧！" TargetMap="21503">										
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="21503, 16010" SkipTrigger="Y" />				
+    		</Event> 		
+    	</Step>
+		
+  		<Step ID="14" ParentList="12" ParentCost="1" >
+    		<Event Memo="c风之龙c为什么在黑水晶里？\n快去问问c正义的伙伴c吧！" TargetMap="21503" TargetObj="16010" TargetName="和t风之龙t对话" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16009" />		
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16010" />																							  																
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="2" Info="……糟糕……【风之龙】已经被黑水晶的力量封印了。\n只有打败它的“暗影”，\n才能让真正的风之龙觉醒。" />					
+					<Msg NpcID="329" ImageID="1" Info="……" />
+					<Option Info="准备战斗！" />						
+				</Action>														
+    		</Event>
+		</Step>		
+  		<Step ID="16" ParentList="14" ParentCost="1" >
+			<Condition>
+				<Battle ID="3101" Count="1" />
+			</Condition>	
+    		<Event ConditionType="IN" Memo="黑水晶封印解除!\n快去c风之洞穴3层c问问风之龙弗雷基港的事吧！" TargetMap="21503" TargetObj="16010" TargetName="和t风之龙t对话" >		
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="16010" />	
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="16009" />																								
+				</Trigger>					
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21503, 16010" SkipTrigger="Y"/>																																			
+    		</Event>					
+    		<Event ConditionType="OUT" Memo="小主人快打败黑水晶里的c风之龙c，\n让它觉醒吧！" TargetMap="21503" TargetObj="16010" TargetName="打败t风之龙t" >
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16010" />	
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16009" />																								
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="2" Info="还没打败【风之龙】的“暗影”吗？\n相信你的实力！" />
+					<Msg NpcID="329" ImageID="1" Info="……" />					
+					<Option Info="来战吧！" />
+					<Option Info="我准备下" NextStep="16" />					
+				</Action>	
+    			<Action Type="COMMAND" Command="BATTLE" Params="3101" />  													
+    		</Event>
+		</Step>
+
+  		<Step ID="17" ParentList="16" ParentCost="1" >	
+    		<Event Memo="黑水晶封印解除!\n快去c风之洞穴3层c问问c风之龙c弗雷基港的事吧！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话" >		
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="弗雷基港？" />								
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16009" />						 
+				</Trigger>	
+    			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" /> 											
+    		</Event>					
+		</Step>
+  		<Step ID="18" ParentList="17" ParentCost="1" >	
+    		<Event Memo="黑水晶封印解除!\n快去c风之洞穴3层c问问c风之龙c弗雷基港的事吧！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话" >		
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="弗雷基港？" />								
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="16009" />						 
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="咳咳……\n嗓子有点干，吹不出风……" />					
+					<Msg NpcID="15" ImageID="2" Info="喝瓶“生命之息”润润喉咙怎样？" />
+					<Msg NpcID="329" ImageID="1" Info="嗯————哼。\n“生命之息”有点甜。\n感    觉    不    错。" />
+					<Option Info="风龙加油！" TalkOver="Y" />				
+				</Action>			
+    			<Action Type="MOVIE" Url="task_27_1.swf" MapLevel="TASK" Pos="0,0" />		
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21503, 16009" />																									
+    		</Event>					
+		</Step>		
+</Procedure>
+</Task>
