@@ -1,0 +1,237 @@
+﻿<Task ID="11000" Memo="收到了路库K的邀请，是怎么一回事？" TargetMap="11207">
+  <Procedure>
+    <Step ID="1" ParentList="0" ParentCost="0" >
+      <Event Memo="收到了路库K的邀请，是怎么一回事？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="请问....?" />
+          <!--单独寻访-->
+        </Trigger>
+        <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+      </Event>
+    </Step>
+
+    <Step ID="2" ParentList="1" ParentCost="1" >
+      <Event Memo="收到了路库K的邀请，是怎么一回事？" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="请问....?" />
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="13" ImageID="5" Info="哎哎哎，住店还是堂食？（完全没有注意到来的玩家）" />
+          <Option Info="什么啊……喊了人来还不理人？"/>
+
+        </Action>
+        <Action Type="TALK">
+          <Msg NpcID="13" ImageID="8" Info="哎哎哎（又拉了几个顾客），好了！今天结束了。" />
+          <Option Info="（嫌恶脸，打算要走。）"/>
+        </Action>
+        <Action Type="TALK">
+          <Msg NpcID="13" ImageID="7" Info="别走啊，有事找你呢。（神秘笑容）有酬劳的啦。 "/>
+          <Msg NpcID="13" ImageID="9" Info="(拿出一盒牛奶瓶盖，让玩家摸摸。) "/>
+
+          <Option Info="这是？"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="13" ImageID="1" Info="(手上的瓶盖还是瓶盖，不知怎么的却有种奇怪的不能言说的感觉。 )"/>
+          <Msg NpcID="13" ImageID="1" Info="(他拿起一个瓶盖咬了一口，再指了指瓶盖。牛奶瓶盖上的milk，变成了mllk，被咬的地方也留下了清晰的痕迹。) "/>
+          <Msg NpcID="13" ImageID="1" Info="这是最近和客人们玩游戏的时候，收到的伪造的瓶盖。 "/>
+          <Msg NpcID="13" ImageID="9" Info="问了客人，客人也不知道这些假币从哪来的，平时没注意随便收录，你消息灵通，帮我打听打听，到时候收集银犬的符文，我在我表外甥那里给你美言几句啦。 "/>
+
+          <Option Info="行啦行啦，我去打听打听。"/>
+        </Action>
+      </Event>
+    </Step>
+
+
+    <Step ID="3" ParentList="2" ParentCost="1" >
+      <Event Memo="这种小道消息，也许正义的伙伴会有点消息吧。" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="请问....?" />
+          <!--单独寻访-->
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="【@nick】，来啦。" />
+          <Option Info="你好，有一件事情我……"/>
+
+        </Action>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="你来的正好，我有一件事情想拜托你，只是一会蒂蒂拉找我研究植物生长的秘方，不能脱开身，这样，你帮我把一封信送给麦田村村长吧，十万火急，作为回报我会和你交换一个情报的。" />
+          <Msg NpcID="21" ImageID="1" Info="换一个情报的。" />
+
+          <Option Info="好吧，你可不能反悔哦"/>
+          <Option Info="不然我会带着幽光战士"/>
+          <Option Info="来追杀你的哟（坏笑）"/>
+
+        </Action>
+
+
+      </Event>
+    </Step>
+
+
+
+    <Step ID="4" ParentList="3" ParentCost="1" >
+      <Event Memo="前往麦田村村长尼康康家" TargetMap="11407" TargetObj="37" TargetName="和t尼康康t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11407" ObjID="37" TaskOption="村长，有你的信件哦。" />
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="37" ImageID="1" Info="啊！是上次托正义的伙伴要的东西！" />
+          <Msg NpcID="37" ImageID="1" Info="（打开一看，大笑）" />
+          <Option Info="是什么啊，村长你这么开心？"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="37" ImageID="1" Info="是净水的方子，前段时间大雨，几个堤坝给冲塌了，这里的水受到了一点污染，正愁怎么处理呢，有了这个方子我就能继续做好村长啦！" />
+          <Option Info="(汗颜！)"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="37" ImageID="2" Info="这是给正义的伙伴的酬金！多的给你啦！辛苦你咯！" />
+          <Option Info="(回去找正义的伙伴)"/>
+        </Action>
+
+      </Event>
+    </Step>
+
+
+    <Step ID="5" ParentList="4" ParentCost="1" >
+      <Event Memo="回去找正义的伙伴" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="已经送到村长手上了" />
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="咳咳！(藏起来一些信纸)" />
+
+          <Option Info="我回来啦"/>
+
+        </Action>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="咳咳！(藏起来一些信纸)" />
+
+          <Option Info="这是尼康康村长给你的酬金。"/>
+
+        </Action>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="效率挺高嘛……我还在……" />
+
+          <Option Info="那是"/>
+        </Action>
+        <Action Type="MOVIE" Url="task_11000_4.swf" MapLevel="CONTENT" Pos="35,-248" />
+        <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11208,110001" />
+
+      </Event>
+    </Step>
+
+    <Step ID="6" ParentList="5" ParentCost="1" >
+      <Event Memo="箱子里蹦出一只摇铃兔" TargetMap="11208" TargetObj="110001" TargetName="和t摇铃兔t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11208" ObjID="110001" />
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="319" ImageID="1" Info="正义的伙伴没有藏起来蒂蒂拉小姐的信哦？" />
+          <Option Info="什么信？"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="喂！没有啦就是没有啦！" />
+          <Option Info="什么信？"/>
+        </Action>
+        <Action Type="MOVIE" Url="task_11000_6.swf" MapLevel="CONTENT" Pos="35,-248" />
+        <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11208,110001" />
+
+
+
+      </Event>
+    </Step>
+
+    <Step ID="7" ParentList="6" ParentCost="1" >
+      <Event Memo="听听正义的伙伴怎么说" TargetMap="11208" TargetObj="21" TargetName="和t神秘人t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="（偷笑）"/>
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="别管那个了！这次又麻烦你跑腿了，作为回报，你想听什么消息？" />
+          <Option Info="最近王国里开始流通"/>
+          <Option Info="了伪造的牛奶瓶盖"/>
+          <Option Info="不知道是谁做出来的东西"/>
+          <Option Info="稀里糊涂的就开始流通啦。"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="这件事我也不知道很多，但是格历尔平原6区的怪盗戈戈拉好像知道点消息。" />
+          <Option Info="那我这就去找他！"/>
+        </Action>
+
+
+        <Action Type="TALK">
+          <Msg NpcID="21" ImageID="1" Info="祝你好运！" />
+          <Option Info="嗯"/>
+        </Action>
+      </Event>
+    </Step>
+
+
+    <Step ID="8" ParentList="7" ParentCost="1" >
+      <Event Memo="寻找格历尔平原6区的怪盗戈戈拉" TargetMap="21306" TargetObj="314" TargetName="和t怪盗头目t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="21306" ObjID="314"TaskOption="（打招呼）"  />
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="314" ImageID="1" Info="带上口罩~一起抢劫~" />
+          <Option Info="（掏出武器）"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="314" ImageID="1" Info="别！大侠饶命！有什么事都可以商量啦没必要一见面就刀光火影的你说什么我都可以就是别要我小命啦~~~~" />
+          <Option Info="我也没要你命呀"/>
+          <Option Info="就一个事儿"/>
+          <Option Info="最近流通的假的牛奶瓶盖"/>
+          <Option Info="是不是你们的事？"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="314" ImageID="1" Info="这事吧，有是有，可不是我们做的啊！~~~~" />
+          <Msg NpcID="314" ImageID="1" Info="我是知道一点，是假面奇奇帕和忽悠猫做的事，可具体就不清楚了。~~~~" />
+          <Option Info="奇奇帕和忽悠猫？"/>
+          <Option Info="都是稀有精灵啊"/>
+          <Option Info="我怎么找？"/>
+        </Action>
+
+        <Action Type="TALK">
+          <Msg NpcID="314" ImageID="1" Info="这没有关系，大哥有求，小弟自然会做啦！" />
+          <Msg NpcID="314" ImageID="1" Info="(戈戈拉吹响了口哨。)" />
+          <Option Info="好的"/>
+        </Action>
+        <Action Type="MOVIE" Url="task_11000_8.swf" MapLevel="CONTENT" Pos="-350,-117" />
+        <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21306,110003" />
+        <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21306,110005" />
+      </Event>
+    </Step>
+
+    <Step ID="9" ParentList="8" ParentCost="1" >
+      <Event Memo="寻找格历尔平原6区的怪盗戈戈拉" TargetMap="21306" TargetObj="110003" TargetName="和t忽悠猫t对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="21306" ObjID="110003"TaskOption="怎么啦"  />
+        </Trigger>
+        <Action Type="MOVIE" Url="task_11000_2.swf" MapLevel="TASK" Pos="-0,-0" />
+        <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21306,110003" />
+        <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21306,110005" />
+
+      </Event>
+    </Step>
+    <Step ID="10" ParentList="9" ParentCost="1" >
+      <Event Memo="这就去找路库K！" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+        <Trigger>
+          <Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="(交代假牛奶瓶盖的出现原因)" />
+          <!--单独寻访-->
+        </Trigger>
+        <Action Type="TALK">
+          <Msg NpcID="13" ImageID="1" Info="啊，这样我就没有担心的事啦！" />
+          <Option Info="使命必达啦~"/>
+        </Action>
+      </Event>
+    </Step>
+
+  </Procedure>
+</Task>

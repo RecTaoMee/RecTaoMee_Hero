@@ -1,0 +1,1375 @@
+<!--
+	Grp ID：怪物组，值小于4000
+	MapID：怪物组出现地图【-1表示特殊形式，与地图无关；0表示不限制地图。未配置默认为0】
+	GrpType：怪物组生成形式【0普通，1时间裂痕形式，2野外明雷刷新组形式，3净化挑战形式，4烟花类型。未配置默认为0】
+		0: 普通，位置固定，数量固定
+		1：只出现在迷宫，其他与GrpType=0相同
+		2：指定怪物数量范围，随机位置(Cnts="a b"生成数量为a~b之间随机，Cnts="n"生成数量为人数的n倍)
+		3：boss占0或5，按人数生成小怪数量，对称站位
+		4：烟花类型，只出现其中一只怪(Percents表示出现的概率)
+	TitleID：需要获得相应的称号才能与Boss对战
+	LimitExp：升级经验【-1或不配置示按正常输出，否则按配置的值输出】
+	LimitSkillExp：技能经验【-1或不配置按正常输出，否则按配置的值输出】
+	AllowTeam：组队许可【0可组队，1不可组队，未配置默认为0】
+-->
+<!--
+	Type ID：怪物类型，对应素材【beast.xml原始Type+100000表示第一个捕捉概率0，原始Type+200000表示第二个捕捉概率1000，依此类推，用于Box.xml、BeastGrp.xml、Map.xml】
+	BaseLv：怪物基准等级【区间（如5 10）表示在区间（5级~10级）范围内随机产生；不配置或配置单个（如5）表示根据LvType产生等级，产生的等级>=配置值（5级）；不配置默认BaseLv为2级】
+	LvType：怪物等级生成方法【0最大等级，1最小等级，2平均等级，3最大等级-3，4平均等级-3且单人时锁定为BaseLv】（锁定等级的除外）
+	Position：怪物位置【前排中间0，0右侧1，0左侧2，1右侧3，2左侧4，后排为前排位置加5】 40213
+	HPCoefficient：血量修正倍率【千分比】
+	MPCoefficient：魔力修正倍率【千分比】
+	AtkCoefficient：物攻修正倍率【千分比】
+	MatkCoefficient：魔攻修正倍率【千分比】
+	DefCoefficient：防御修正倍率【千分比】
+	SpeedCoefficient：速度修正倍率【千分比】
+	SpiritCoefficient：精神修正倍率【千分比】
+	ResumeCoefficient：回复修正倍率【千分比】
+	Mdef抗魔，Cri必杀，FightBack反击，Hit命中，Avd回避，Rpoison抗毒，Rlithification抗石化，Rlethargy抗昏睡，Rcurse抗诅咒，Rconfusion抗混乱，Roblivion抗遗忘
+-->
+<!--
+	1、固定位置
+	2、部分位置固定，部分位置按一定规则随机
+		规则一：按人数两倍进行产生怪物数量，并随机位置
+		规则二：指定怪物数量范围，随机位置
+		规则三：按人数两倍产生怪物数量，位置对称随机
+-->
+<BeastGrps>
+	<Grp ID="1" MapID="11102">
+		<Type ID="100017" BaseLv="1 1" Position="6 7" Name="星锤兔" HPCoefficient="100" MPCoefficient="100" />
+	</Grp>
+	<Grp ID="2" MapID="21301">
+		<Type ID="100018" BaseLv="8 8" Position="6 7" Name="电波兔" HPCoefficient="300" MPCoefficient="300" />
+	</Grp>
+	<Grp ID="3" MapID="21302">
+		<Type ID="100014" BaseLv="10 10" Position="6 7" Name="曼陀萝卜" HPCoefficient="500" MPCoefficient="500" />
+	</Grp>
+	<Grp ID="4" MapID="21401">
+		<Type ID="100034" BaseLv="12 12" Position="5" Name="18K钢姆" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="5" MapID="21306" GrpType="3" LimitExp="100" >
+		<Type ID="100012" BaseLv="18 18" Position="5" Name="怪盗戈戈拉" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="100007" BaseLv="15 17" Position="1 2 3 4 8 9" Name="怪盗迪迪拉" HPCoefficient="100" MPCoefficient="100" AtkCoefficient="500" />
+	</Grp>
+	<Grp ID="6" MapID="11205" LimitExp="100">
+		<Type ID="200007" BaseLv="6" Position="5" Name="怪盗迪迪拉" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="7" MapID="21306" LimitExp="1">
+		<Type ID="100007" BaseLv="17 19" Position="0 1 2 3 4 5 6 7 8 9" Name="怪盗迪迪拉" HPCoefficient="100" MPCoefficient="100" AtkCoefficient="500" />
+	</Grp>
+	<Grp ID="8" MapID="11205" LimitExp="100">
+		<Type ID="100012" BaseLv="8" Position="0" Name="怪盗戈戈拉" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="500"/>
+		<Type ID="200007" BaseLv="6 7" Position="6 7" Name="怪盗迪迪拉" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="9" MapID="-1" GrpType="2" Cnt="1 2" RepeatCnt="1">
+		<Type ID="300042" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="海德" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="10" MapID="21303" GrpType="2" Cnt="1 2" RepeatCnt="1" Time="6:6-24 7:6-24">
+		<Type ID="300043" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="假面奇奇帕" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="11" MapID="11401" RepeatCnt="1">
+		<Type ID="300035" BaseLv="1 1" Position="5" Name="哒哒鸟" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="12" MapID="0" RepeatCnt="1">
+		<Type ID="300047" BaseLv="1 1" Position="5" Name="忽悠喵" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="13" MapID="21401" GrpType="2" Cnt="1 2" RepeatCnt="1">
+		<Type ID="300048" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="海神马" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="14" MapID="11104">
+		<Type ID="100003" BaseLv="2 2" Position="0 6 7" Name="小石怪" HPCoefficient="300" MPCoefficient="300" />
+	</Grp>
+	<Grp ID="15" MapID="0">
+		<Type ID="300019" BaseLv="1 1" Position="5" Name="咕噜蝶" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="16" MapID="0" GrpType="2" Cnt="1 5">
+		<Type ID="300033" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="沃特尔" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300033" BaseLv="29 30" Position="-1" BeastCnt="1 4" Name="沃特尔" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="17" MapID="0" GrpType="2" Cnt="1 5">
+		<Type ID="300046" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="马沙虾" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300046" BaseLv="29 30" Position="-1" BeastCnt="1 4" Name="马沙虾" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="18" MapID="0" GrpType="2" Cnt="1 5">
+		<Type ID="300055" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="沃勒格球" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300055" BaseLv="29 30" Position="-1" BeastCnt="1 4" Name="沃勒格球" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="19" MapID="11102">
+		<Type ID="100015" BaseLv="2 2" Position="6 7" Name="迷眼蝠" HPCoefficient="500" MPCoefficient="500" SpiritCoefficient="1000" />
+		<Type ID="100010" BaseLv="2 2" Position="0" Name="迷唇爱丝" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="100" />
+	</Grp>
+	<Grp ID="20" MapID="-1" GrpType="4" Cnt="1 1">
+		<Type ID="200017" BaseLv="1 1" Position="-1" Name="星锤兔" HPCoefficient="1000" MPCoefficient="1000" Percents="40"/>
+		<Type ID="200018" BaseLv="1 1" Position="-1" Name="电波兔" HPCoefficient="1000" MPCoefficient="1000" Percents="40"/>
+		<Type ID="300020" BaseLv="1 1" Position="-1" Name="弗雷基" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="300025" BaseLv="1 1" Position="-1" Name="黑魅鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="80"/>
+		<Type ID="300026" BaseLv="1 1" Position="-1" Name="白魅鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="80"/>
+		<Type ID="300028" BaseLv="1 1" Position="-1" Name="地之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="90"/>
+		<Type ID="300029" BaseLv="1 1" Position="-1" Name="水之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="90"/>
+		<Type ID="300030" BaseLv="1 1" Position="-1" Name="火之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="90"/>
+		<Type ID="300031" BaseLv="1 1" Position="-1" Name="风之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="90"/>
+		<Type ID="300051" BaseLv="1 1" Position="-1" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+	</Grp>
+	<Grp ID="21" MapID="21301">
+		<Type ID="7" BaseLv="8" Position="0 6 7" Name="怪盗迪迪拉" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="22" MapID="21302" LimitExp="3000" MaxRoleLv="20" >
+		<Type ID="100012" BaseLv="12 12" Position="0" Name="怪盗戈戈拉" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="500"/>
+		<Type ID="100007" BaseLv="12 12" Position="5 6 7" Name="怪盗迪迪拉" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="23" MapID="21303">
+		<Type ID="1015" BaseLv="1 1" Position="5" Name="喵斯熊·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="24" MapID="11205" GrpType="2" Cnt="3 5" RepeatCnt="1">
+		<Type ID="60" BaseLv="1 1" Position="-1" BeastCnt="1 2" Name="愤怒萝卜" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="60" BaseLv="15 15" Position="-1" BeastCnt="2 4" Name="愤怒萝卜" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="25" MapID="-1" GrpType="4" Cnt="1 1" AllowTeam="1" >
+		<Type ID="200063" BaseLv="1 1" Position="-1" Name="星星布鲁" HPCoefficient="1000" MPCoefficient="1000" Percents="10" />
+		<Type ID="300037" BaseLv="1 1" Position="-1" Name="撒旦蝠" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300011" BaseLv="1 1" Position="-1" Name="拉拉美" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300036" BaseLv="1 1" Position="-1" Name="巨石怪" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300013" BaseLv="1 1" Position="-1" Name="盯眼蝠" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300024" BaseLv="1 1" Position="-1" Name="喵斯熊" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300021" BaseLv="1 1" Position="-1" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+		<Type ID="300053" BaseLv="1 1" Position="-1" Name="无脸隐者" HPCoefficient="1000" MPCoefficient="1000" Percents="70"/>
+	</Grp>
+	<Grp ID="26" MapID="-1" GrpType="4" Cnt="1 1">
+		<DropItem ItemID="210001 230001 300046 300045 300044" Rate="500 491 3 3 3" Count="1 1 1 1 1"/>
+		<Type ID="100008" BaseLv="1 1" Position="-1" Name="假面吉吉帕" HPCoefficient="1000" MPCoefficient="1000" Percents="200" />
+		<Type ID="100009" BaseLv="1 1" Position="-1" Name="草莓蜂" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="100011" BaseLv="1 1" Position="-1" Name="拉拉美" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="100010" BaseLv="1 1" Position="-1" Name="迷唇爱丝" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="100012" BaseLv="1 1" Position="-1" Name="怪盗戈戈拉" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+	</Grp>
+	<Grp ID="27" MapID="11504">
+		<Type ID="76" BaseLv="1 1" Position="5" Name="金羊狼" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="28" MapID="11307">
+		<Type ID="3011" BaseLv="20" Position="1" Name="王国剑士" HPCoefficient="4000" MPCoefficient="3000" AtkCoefficient="100"/>
+		<Type ID="3012" BaseLv="20" Position="5" Name="王国魔法师" HPCoefficient="2500" MPCoefficient="3000" AtkCoefficient="100" SpiritCoefficient="1000"/>
+		<Type ID="3013" BaseLv="20" Position="2" Name="王国弓术士" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="100"/>
+		<Type ID="3014" BaseLv="20" Position="8" Name="王国祭祀" HPCoefficient="2500" MPCoefficient="3000" AtkCoefficient="100" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="29" MapID="11307">
+		<Type ID="3016" BaseLv="20" Position="5" Name="宾德" HPCoefficient="8500" MPCoefficient="8000" AtkCoefficient="100"/>
+		<Type ID="3010" BaseLv="20" Position="6 7" Name="王国骑士" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="100" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="30" MapID="11503">
+		<Type ID="80" BaseLv="1 1" Position="5" Name="食人樱" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="31" MapID="11223">
+		<Type ID="100081" LvType="2" BaseLv="10" Position="0 6 7" Name="南瓜骑士" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100082" LvType="2" BaseLv="10" Position="5" Name="电锯小丑" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="33" MapID="11223" NpcID="4003">
+		<Type ID="100081" LvType="2" BaseLv="10" Position="0 3 4 5 6 7" Name="南瓜骑士" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="34" MapID="11223" Bgm="FT_BGM-002.mp3" NpcID="4003">
+		<Type ID="2021" LvType="0" BaseLv="10" Position="5" Name="南瓜公爵" HPCoefficient="5000" MPCoefficient="5000"/>
+		<Type ID="100082" LvType="2" BaseLv="10" Position="1 2" Name="电锯小丑" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="100081" LvType="2" BaseLv="10" Position="0 8 9" Name="南瓜骑士" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="35" MapID="11223" Bgm="FT_BGM-002.mp3" RepeatCnt="3">
+		<DropItem ItemID="300044 300045 350014 350034 350035" Rate="1000 300 7 20 50" Count="3 2 1 1 1"/>
+		<Type ID="2021" LvType="0" BaseLv="25" Position="5" Name="南瓜公爵" HPCoefficient="8000" MPCoefficient="8000" Avd="80" AtkCoefficient="2000" SpiritCoefficient="8000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100082" LvType="2" BaseLv="25" Position="1 2" Name="电锯小丑" HPCoefficient="3000" MPCoefficient="3000" SpeedCoefficient="3000"/>
+		<Type ID="100084" LvType="2" BaseLv="25" Position="0 3 4" Name="萌萌收割者" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="1500" Avd="80"/>
+		<Type ID="100085" LvType="2" BaseLv="25" Position="8 9" Name="寂灭骨龙" HPCoefficient="5000" MPCoefficient="5000" DefCoefficient="3000"/>
+	</Grp>
+	<Grp ID="36" MapID="11223" Bgm="FT_BGM-002.mp3" RepeatCnt="1">
+		<DropItem ItemID="300044 300045 350014 350034 350035" Rate="1000 300 7 20 50" Count="3 2 1 1 1"/>
+		<Type ID="2021" LvType="0" BaseLv="25" Position="5" Name="南瓜公爵" HPCoefficient="8000" MPCoefficient="8000" Avd="80" AtkCoefficient="2000" SpiritCoefficient="8000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100082" LvType="2" BaseLv="25" Position="1 2" Name="电锯小丑" HPCoefficient="3000" MPCoefficient="3000" SpeedCoefficient="3000"/>
+		<Type ID="100084" LvType="2" BaseLv="25" Position="0 3 4" Name="萌萌收割者" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="1500" Avd="80"/>
+		<Type ID="100085" LvType="2" BaseLv="25" Position="8 9" Name="寂灭骨龙" HPCoefficient="5000" MPCoefficient="5000" DefCoefficient="3000"/>
+	</Grp>
+<!-- 万圣节 萌萌收割者 定时刷新下架
+	<Grp ID="37" MapID="11223">
+		<Type ID="84" BaseLv="1 1" Position="5" Name="萌萌收割者" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+-->
+	<Grp ID="38" MapID="11223">
+		<Type ID="100085" LvType="0" BaseLv="15" Position="5" Name="寂灭骨龙" HPCoefficient="5000" MPCoefficient="5000"/>
+	</Grp>
+	<Grp ID="39" MapID="0" RepeatCnt="10">
+		<DropItem ItemID="300067" Rate="1000" Count="1"/>
+		<Type ID="100081" LvType="0" BaseLv="10" Position="5" Name="南瓜骑士" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+<!-- 天火活动 -->
+	<Grp ID="40" MapID="0" GrpType="5" RepeatCnt="15" Time="1:19-21 2:19-21 3:19-21 4:19-21 5:19-21 6:13-15 6:19-21 7:13-15 7:19-21">
+		<DropItem ItemID="300001 300044 300045 300046 350004" Rate="300 200 100 80 20" Count="5 2 1 1 1"/>
+		<Type ID="2016" LvType="0" BaseLv="20" Position="5" Name="火焰领主" HPCoefficient="10000" MPCoefficient="10000" LeaderLv="20 100" Percent="100" ItemID="350013" Rate="1000" Count="1"/>
+		<Type ID="100086" LvType="2" BaseLv="10" Position="1 2 3 4 6 7 8 9" Name="炎石巨人" HPCoefficient="5000" MPCoefficient="5000"/>
+	</Grp>
+	<Grp ID="41" MapID="12101">
+		<Type ID="88" BaseLv="1 1" Position="5" Name="趴趴贝" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="42" MapID="11805" Bgm="FT_BGM-002.mp3">
+		<Type ID="3006" BaseLv="40 40" Position="5" Name="鼬西" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100037" BaseLv="37 37" Position="8 9" Name="撒旦蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100013" BaseLv="37 37" Position="1 2" Name="盯眼蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="43" MapID="21804" Bgm="FT_BGM-002.mp3">
+		<Type ID="2015" BaseLv="40 40" Position="6" Name="剧毒蜂皇" HPCoefficient="5000" MPCoefficient="5000" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3006" BaseLv="40 40" Position="7" Name="鼬西" HPCoefficient="5000" MPCoefficient="5000" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="44" MapID="21804" Bgm="FT_BGM-003.mp3">
+		<Type ID="3019" BaseLv="45 45" Position="5" Name="尤利" HPCoefficient="5000" MPCoefficient="7000" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="2015" BaseLv="40 40" Position="1" Name="剧毒蜂皇" HPCoefficient="2000" MPCoefficient="3000" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3006" BaseLv="40 40" Position="2" Name="鼬西" HPCoefficient="2000" MPCoefficient="3000" Avd="60" Rpoison="9" Rlithification="9" Rlethargy="9" Rcurse="9" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="45" MapID="21803" Bgm="FT_BGM-002.mp3">
+		<Type ID="100080" BaseLv="40 40" Position="0 3 4 6 7" Name="食人樱" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="46" MapID="21805" Bgm="FT_BGM-003.mp3">
+		<Type ID="2017" BaseLv="45 45" Position="5" Name="曼提斯" HPCoefficient="10000" MPCoefficient="10000" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100089" BaseLv="40 40" Position="1 2 8 9" Name="梦幻瓢虫" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+<!-- 圣诞节 比安 时限任务
+	<Grp ID="47" MapID="11202">
+		<Type ID="91" BaseLv="1 1" Position="5" Name="比安" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+ -->
+<!-- 巴布迁徙活动
+	<Grp ID="48" MapID="0" GrpType="5" RepeatCnt="10" Time="1:19-20 2:19-20 3:19-20 4:19-20 5:19-20 6:19-20 7:19-20">
+		<DropItem ItemID="300045 300046 300044 350034 350029 310050" Rate="300 300 300 100 50 30" Count="3 3 5 3 3 1"/>
+		<Type ID="2003" LvType="0" BaseLv="20" Position="5" Name="暗黑沃特尔" HPCoefficient="10000" MPCoefficient="10000" LeaderLv="20 100" Percent="100" ItemID="350013" Rate="1000" Count="1"/>
+		<Type ID="100090" LvType="2" BaseLv="10" Position="1 2 3 4 6 7 8 9" Name="巴布" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="49" MapID="0" GrpType="5" RepeatCnt="10" Time="6:15-16 7:15-16">
+		<DropItem ItemID="300045 300046 300044 350034 350029 310050" Rate="300 300 300 100 50 30" Count="3 3 5 3 3 1"/>
+		<Type ID="2003" LvType="0" BaseLv="20" Position="5" Name="暗黑沃特尔" HPCoefficient="10000" MPCoefficient="10000" LeaderLv="20 100" Percent="100" ItemID="350013" Rate="1000" Count="1"/>
+		<Type ID="100090" LvType="2" BaseLv="10" Position="1 2 3 4 6 7 8 9" Name="巴布" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+ -->
+<!-- 暴走的小宅精灵 -->
+	<Grp ID="50" MapID="12101" GrpType="5" TypeID="100022 100023">
+		<DropItem ItemID="290022" Rate="1000" Count="5"/>
+		<Type ID="2010" LvType="0" BaseLv="20" Position="5" Name="伊影" HPCoefficient="8000" MPCoefficient="8000" LeaderLv="20 100" Percent="100" ItemID="350014" Rate="1000" Count="1"/>
+		<Type ID="100022" LvType="2" BaseLv="10" Position="1 2 3 4" Name="小宅罐" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="100023" LvType="2" BaseLv="10" Position="6 7 8 9" Name="小宅箱" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+<!-- 封印节活动
+	<Grp ID="51" MapID="0" GrpType="5" TypeID="100058 100059 100066 100092">
+		<DropItem ItemID="290023 320001" Rate="1000 300" Count="5 1"/>
+		<Type ID="100085" LvType="0" BaseLv="25" Position="5" Name="寂灭骨龙" HPCoefficient="2000" MPCoefficient="2000" LeaderLv="25 100" Percent="100" ItemID="290023" Rate="1000" Count="5"/>
+		<Type ID="100058" LvType="2" BaseLv="10" Position="8 9" Name="伊瑟拉" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="1000"/>
+		<Type ID="100059" LvType="2" BaseLv="10" Position="6 7" Name="刺尾龙蜥" HPCoefficient="1500" MPCoefficient="1500" AtkCoefficient="500"/>
+		<Type ID="100066" LvType="2" BaseLv="10" Position="3 4" Name="蓝迷你龙" HPCoefficient="1500" MPCoefficient="1500" AtkCoefficient="500"/>
+		<Type ID="100092" LvType="2" BaseLv="10" Position="1 2" Name="翡翠晶龙" HPCoefficient="1500" MPCoefficient="1500" AtkCoefficient="500"/>
+	</Grp>
+-->	
+	<Grp ID="52" MapID="-1" GrpType="4" Cnt="1 1" AllowTeam="1">
+		<Type ID="200017" BaseLv="1 1" Position="-1" Name="星锤兔" HPCoefficient="1000" MPCoefficient="1000" Percents="30"/>
+		<Type ID="200018" BaseLv="1 1" Position="-1" Name="电波兔" HPCoefficient="1000" MPCoefficient="1000" Percents="30"/>
+		<Type ID="200028" BaseLv="1 1" Position="-1" Name="地之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="200029" BaseLv="1 1" Position="-1" Name="水之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="200030" BaseLv="1 1" Position="-1" Name="火之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="200031" BaseLv="1 1" Position="-1" Name="风之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" Percents="200"/>
+		<Type ID="200063" BaseLv="1 1" Position="-1" Name="星星布鲁" HPCoefficient="1000" MPCoefficient="1000" Percents="25"/>
+		<Type ID="200084" BaseLv="1 1" Position="-1" Name="萌萌收割者" HPCoefficient="1000" MPCoefficient="1000" Percents="65"/>
+		<Type ID="200088" BaseLv="1 1" Position="-1" Name="趴趴贝" HPCoefficient="1000" MPCoefficient="1000" Percents="45"/>
+		<Type ID="200092" BaseLv="1 1" Position="-1" Name="翡翠晶龙" HPCoefficient="1000" MPCoefficient="1000" Percents="5"/>
+	</Grp>
+	<Grp ID="53" MapID="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="100038" LvType="0" BaseLv="10" Position="5" Name="摇铃兔" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100018" LvType="2" BaseLv="10" Position="1 2" Name="电波兔" HPCoefficient="1000" MPCoefficient="1000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+<!-- 幽灵小鬼夜游 -->
+	<Grp ID="54" MapID="0" GrpType="5" TypeID="100052 100095" Time="1:14-15 2:14-15 3:14-15 4:14-15 5:14-15 6:14-15 7:14-15">
+		<DropItem ItemID="300001 300044 300045 300046 310054" Rate="300 200 100 80 30" Count="5 5 3 3 1"/>
+		<Type ID="2010" LvType="0" BaseLv="20" Position="5" Name="伊影" HPCoefficient="8000" MPCoefficient="8000" LeaderLv="20 100" Percent="100" ItemID="350014" Rate="1000" Count="1"/>
+		<Type ID="100052" LvType="2" BaseLv="10" Position="1 2 8 9" Name="噬魂鬼" HPCoefficient="4000" MPCoefficient="4000"/>
+		<Type ID="100095" LvType="2" BaseLv="10" Position="3 4 6 7" Name="噬灵鬼" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="55" MapID="-1" GrpType="4" Cnt="1 1" AllowTeam="1">
+		<Type ID="200109" BaseLv="1 1" Position="-1" Name="琉璃翼龙" HPCoefficient="1000" MPCoefficient="1000" Percents="20"/>
+		<Type ID="200092" BaseLv="1 1" Position="-1" Name="翡翠晶龙" HPCoefficient="1000" MPCoefficient="1000" Percents="100"/>
+		<Type ID="200063" BaseLv="1 1" Position="-1" Name="星星布鲁" HPCoefficient="1000" MPCoefficient="1000" Percents="100"/>
+		<Type ID="200084" BaseLv="1 1" Position="-1" Name="萌萌收割者" HPCoefficient="1000" MPCoefficient="1000" Percents="100"/>
+		<Type ID="200088" BaseLv="1 1" Position="-1" Name="趴趴贝" HPCoefficient="1000" MPCoefficient="1000" Percents="50"/>
+		<Type ID="300024" BaseLv="1 1" Position="-1" Name="喵斯熊" HPCoefficient="1000" MPCoefficient="1000" Percents="100"/>
+		<Type ID="300021" BaseLv="1 1" Position="-1" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" Percents="150"/>
+		<Type ID="300053" BaseLv="1 1" Position="-1" Name="无脸隐者" HPCoefficient="1000" MPCoefficient="1000" Percents="150"/>		
+		<Type ID="300051" BaseLv="1 1" Position="-1" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" Percents="150"/>
+		<Type ID="200088" BaseLv="1 1" Position="-1" Name="趴趴贝" HPCoefficient="1000" MPCoefficient="1000" Percents="50"/>
+	</Grp>
+	<Grp ID="56" MapID="-1" GrpType="4" Cnt="1 1" AllowTeam="1">
+		<Type ID="200109" BaseLv="1 1" Position="-1" Name="琉璃翼龙" HPCoefficient="1000" MPCoefficient="1000" Percents="5"/>
+		<Type ID="200092" BaseLv="1 1" Position="-1" Name="翡翠晶龙" HPCoefficient="1000" MPCoefficient="1000" Percents="80"/>
+		<Type ID="200063" BaseLv="1 1" Position="-1" Name="星星布鲁" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+		<Type ID="200084" BaseLv="1 1" Position="-1" Name="萌萌收割者" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+		<Type ID="200088" BaseLv="1 1" Position="-1" Name="趴趴贝" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+		<Type ID="300024" BaseLv="1 1" Position="-1" Name="喵斯熊" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+		<Type ID="300021" BaseLv="1 1" Position="-1" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+		<Type ID="300053" BaseLv="1 1" Position="-1" Name="无脸隐者" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>		
+		<Type ID="300051" BaseLv="1 1" Position="-1" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" Percents="60"/>
+	</Grp>
+
+<!-- 野生Boss -->
+	<Grp ID="2001" MapID="21205" Bgm="FT_BGM-002.mp3">
+		<Type ID="2001" BaseLv="10 10" Position="0" Name="普豆泥王" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100006" BaseLv="7 9" Position="6 7" Name="吉普豆泥" HPCoefficient="500" MPCoefficient="500" />
+	</Grp>
+	<Grp ID="2002" MapID="21303" Bgm="FT_BGM-002.mp3">
+		<Type ID="2002" BaseLv="12 12" Position="5" Name="拉拉美王" HPCoefficient="2500" MPCoefficient="2500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100011" BaseLv="9 11" Position="0 1 2 3 4 6 7 8 9" Name="拉拉美" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="300" />
+	</Grp>
+	<Grp ID="2003" MapID="11408" Bgm="FT_BGM-002.mp3">
+		<Type ID="2003" BaseLv="15 15" Position="5" Name="暗黑沃特尔" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2004" MapID="21208" TitleID="1001" Bgm="FT_BGM-002.mp3">
+		<Type ID="2004" BaseLv="15 15" Position="5" Name="库噜王" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100005" BaseLv="12 14" Position="0 6 7 8 9" Name="库噜战士" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="300" />
+	</Grp>
+	<Grp ID="2005" MapID="21212" TitleID="1002" Bgm="FT_BGM-002.mp3">
+		<Type ID="2005" BaseLv="20 20" Position="5" Name="法尔王" HPCoefficient="3500" MPCoefficient="3500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100004" BaseLv="17 19" Position="0 1 2 3 4" Name="法尔" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="2006" MapID="21402" Bgm="FT_BGM-003.mp3">
+		<Type ID="2006" BaseLv="15 15" Position="5" Name="巨石蟹" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100021" BaseLv="12 14" Position="0 1 2 8 9" Name="钢姆" HPCoefficient="500" MPCoefficient="500" />
+	</Grp>
+	<Grp ID="2009" MapID="-1" GrpType="3" Bgm="FT_BGM-002.mp3">
+		<Type ID="2009" BaseLv="35 35" Position="5" Name="金甲剑魂" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100051" BaseLv="33 33" Position="0 1 2 3 4 6 7 8 9" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="2010" MapID="21704" GrpType="3" Bgm="FT_BGM-003.mp3">
+		<Type ID="2010" BaseLv="40 40" Position="5" Name="伊影" HPCoefficient="1000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100025" BaseLv="38 38" Position="1 2 3 4" Name="黑魅鬼脸箱" HPCoefficient="500" MPCoefficient="1000" />
+		<Type ID="100026" BaseLv="38 38" Position="6 7 8 9" Name="白魅鬼脸箱" HPCoefficient="500" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="2011" MapID="11501" Bgm="FT_BGM-003.mp3">
+		<Type ID="2007" BaseLv="30 30" Position="5" Name="沃特尔王" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2012" MapID="11805" Bgm="FT_BGM-002.mp3">
+		<Type ID="3006" BaseLv="35 35" Position="5" Name="鼬西" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2013" MapID="11805">
+		<Type ID="3006" BaseLv="35 35" Position="5" Name="鼬西" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100037" BaseLv="32 34" Position="8 9" Name="撒旦蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100013" BaseLv="32 34" Position="1 2" Name="盯眼蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2015" MapID="11805" Bgm="FT_BGM-002.mp3">
+		<Type ID="2015" BaseLv="35" Position="0" Name="剧毒蜂皇" HPCoefficient="5000" MPCoefficient="5000" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100037" BaseLv="32 34" Position="6 7" Name="撒旦蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100013" BaseLv="32 34" Position="3 4" Name="盯眼蝠" HPCoefficient="2000" MPCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	
+<!-- 竞技之塔 -->
+	<Grp ID="2401" MapID="31201" Bgm="FT_BGM-002.mp3">
+		<Type ID="101014" BaseLv="6 6" Position="8 9" Name="卡西卡·改" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="101015" BaseLv="6 6" Position="1 2 " Name="喵斯熊·改" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2402" MapID="31202" Bgm="FT_BGM-002.mp3">
+		<Type ID="100017" BaseLv="7 7" Position="1 2" Name="星锤兔" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="100018" BaseLv="7 7" Position="5 8 9" Name="电波兔" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2403" MapID="31203" Bgm="FT_BGM-002.mp3">
+		<Type ID="100038" BaseLv="8 8" Position="5 8 9" Name="摇铃兔" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="101011" BaseLv="8 8" Position="0 3 4" Name="拉拉美·改" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2404" MapID="31204" Bgm="FT_BGM-002.mp3">
+		<Type ID="101009" BaseLv="9 9" Position="1 2 3 4" Name="草莓蜂·改" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="101010" BaseLv="9 9" Position="5 8 9" Name="迷唇丝·改" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2405" MapID="31205" Bgm="FT_BGM-003.mp3">
+		<Type ID="2011" BaseLv="10 10" Position="0 3 4 6 7" Name="卡拉兽" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2406" MapID="31206" Bgm="FT_BGM-002.mp3">
+		<Type ID="100042" BaseLv="11 11" Position="6 7" Name="海德" HPCoefficient="2500" MPCoefficient="2500"/>
+		<Type ID="101008" BaseLv="11 11" Position="0 3 4" Name="吉吉帕·改" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2407" MapID="31207" Bgm="FT_BGM-002.mp3">
+		<Type ID="101005" BaseLv="12 12" Position="0 3 4" Name="普豆叶·改" HPCoefficient="2500" MPCoefficient="2500"/>
+		<Type ID="101006" BaseLv="12 12" Position="5 6 7" Name="普豆花·改" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2408" MapID="31208" Bgm="FT_BGM-002.mp3">
+		<Type ID="100048" BaseLv="13 13" Position="0 3 4" Name="海神马" HPCoefficient="2500" MPCoefficient="2500"/>
+		<Type ID="101001" BaseLv="13 13" Position="6 7 8 9" Name="普豆泥·改" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2409" MapID="31209" Bgm="FT_BGM-002.mp3">
+		<Type ID="100055" BaseLv="14 14" Position="0 1 2 3 4" Name="沃勒格球" HPCoefficient="2500" MPCoefficient="2500"/>
+		<Type ID="101004" BaseLv="14 14" Position="5 6 7" Name="法尔·改" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2410" MapID="31210" Bgm="FT_BGM-003.mp3">
+		<Type ID="2002" BaseLv="15 15" Position="5" Name="拉拉美王" HPCoefficient="3500" MPCoefficient="3500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100011" BaseLv="15 15" Position="1 2 8 9" Name="拉拉美" HPCoefficient="2500" MPCoefficient="2500"/>
+		<Type ID="101011" BaseLv="15 15" Position="0 3 4 6 7" Name="拉拉美·改" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2411" MapID="31211" Bgm="FT_BGM-002.mp3">
+		<Type ID="100020" BaseLv="16 16" Position="0 3 4" Name="弗雷基" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="100047" BaseLv="16 16" Position="1 2 5" Name="忽悠喵" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2412" MapID="31212" Bgm="FT_BGM-002.mp3">
+		<Type ID="101012" BaseLv="17 17" Position="1 2 3 4" Name="盯眼蝠·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101013" BaseLv="17 17" Position="5 6 7" Name="迷眼蝠·改" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2413" MapID="31213" Bgm="FT_BGM-002.mp3">
+		<Type ID="100032" BaseLv="18 18" Position="6 7 8 9" Name="恐恐鸟" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="100035" BaseLv="18 18" Position="1 2 3 4" Name="哒哒鸟" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2414" MapID="31214" Bgm="FT_BGM-002.mp3">
+		<Type ID="101002" BaseLv="19 19" Position="1 2 3 4" Name="库噜·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101003" BaseLv="19 19" Position="5 6 7 8 9" Name="迪迪拉·改" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2415" MapID="31215" Bgm="FT_BGM-003.mp3">
+		<Type ID="2008" BaseLv="20 20" Position="5" Name="章界王" HPCoefficient="5000" MPCoefficient="4000" SpeedCoefficient="1500" Mdef="150" Hit="30" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100046" BaseLv="20 20" Position="0 1 2 3 4 6 7 8 9" Name="马沙虾" HPCoefficient="3000" MPCoefficient="3000" Mdef="100" Hit="30" Avd="30"/>
+	</Grp>
+	<Grp ID="2416" MapID="31216" Bgm="FT_BGM-002.mp3">
+		<Type ID="100029" BaseLv="21 21" Position="0 6 7" Name="水之鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" DefCoefficient="1500" Avd="30"/>
+		<Type ID="100031" BaseLv="21 21" Position="3 4 8 9" Name="风之鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" DefCoefficient="1500" Avd="30"/>
+	</Grp>
+	<Grp ID="2417" MapID="31217" Bgm="FT_BGM-002.mp3">
+		<Type ID="100028" BaseLv="22 22" Position="1 2 5" Name="地之鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" Mdef="100" Hit="30" Avd="30"/>
+		<Type ID="100030" BaseLv="22 22" Position="0 3 4 6 7" Name="火之鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" Mdef="100" Hit="30" Avd="30"/>
+	</Grp>
+	<Grp ID="2418" MapID="31218" Bgm="FT_BGM-002.mp3">
+		<Type ID="100025" BaseLv="23 23" Position="6 7 8 9" Name="黑魅鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" DefCoefficient="1500" SpiritCoefficient="1500" Avd="30"/>
+		<Type ID="100026" BaseLv="23 23" Position="1 2 3 4 5" Name="白魅鬼脸箱" HPCoefficient="3500" MPCoefficient="3500" Mdef="150" Hit="30" Avd="30"/>
+	</Grp>
+	<Grp ID="2419" MapID="31219" Bgm="FT_BGM-002.mp3">
+		<Type ID="100058" BaseLv="24 24" Position="1 2 5 8 9" Name="伊瑟拉" HPCoefficient="3500" MPCoefficient="3500" SpiritCoefficient="1500" Avd="30"/>
+		<Type ID="100059" BaseLv="24 24" Position="0 3 4 6 7" Name="刺尾龙蜥" HPCoefficient="3500" MPCoefficient="3500" AtkCoefficient="1200" FightBack="30" Hit="30" Avd="30"/>
+	</Grp>
+	<Grp ID="2420" MapID="31220" Bgm="FT_BGM-003.mp3">
+		<Type ID="2005" BaseLv="25 25" Position="6" Name="法尔王" HPCoefficient="4500" MPCoefficient="4500" DefCoefficient="1500" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="2007" BaseLv="25 25" Position="7" Name="沃特尔王" HPCoefficient="4500" MPCoefficient="4500" Mdef="300" Hit="40" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100004" BaseLv="25 25" Position="0 5 8 9" Name="法尔" HPCoefficient="3500" MPCoefficient="3500" DefCoefficient="1500" Avd="40"/>
+		<Type ID="100033" BaseLv="25 25" Position="1 2 3 4" Name="沃特尔" HPCoefficient="3500" MPCoefficient="3500" DefCoefficient="1500" Avd="40"/>
+	</Grp>
+	<Grp ID="2421" MapID="31221" Bgm="FT_BGM-002.mp3">
+		<Type ID="101001" BaseLv="26 26" Position="0 8 9" Name="普豆泥·改" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+		<Type ID="101005" BaseLv="26 26" Position="3 4 5" Name="普豆叶·改" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" FightBack="30" Hit="30" Avd="30"/>
+		<Type ID="101006" BaseLv="26 26" Position="6 7" Name="普豆花·改" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+	</Grp>
+	<Grp ID="2422" MapID="31222" Bgm="FT_BGM-002.mp3">
+		<Type ID="101003" BaseLv="27 27" Position="0 3 4" Name="迪迪拉·改" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" Hit="30" Avd="30"/>
+		<Type ID="101012" BaseLv="27 27" Position="1 2 6 7" Name="盯眼蝠·改" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" Hit="30" Avd="30"/>
+		<Type ID="101013" BaseLv="27 27" Position="5 8 9" Name="迷眼蝠·改" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+	</Grp>
+	<Grp ID="2423" MapID="31223" Bgm="FT_BGM-002.mp3">
+		<Type ID="100025" BaseLv="28 28" Position="6" Name="黑魅鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+		<Type ID="100026" BaseLv="28 28" Position="7" Name="白魅鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" FightBack="30" Hit="30" Avd="30"/>
+		<Type ID="100028" BaseLv="28 28" Position="1 2" Name="地之鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" FightBack="30" Hit="30"/>
+		<Type ID="100029" BaseLv="28 28" Position="0 5" Name="水之鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="1500" SpiritCoefficient="1500" Avd="30"/>
+		<Type ID="100030" BaseLv="28 28" Position="3 4" Name="火之鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" Mdef="200" FightBack="30" Hit="30"/>
+		<Type ID="100031" BaseLv="28 28" Position="8 9" Name="风之鬼脸箱" HPCoefficient="4000" MPCoefficient="4000" DefCoefficient="1500" SpiritCoefficient="1500" Avd="30"/>
+	</Grp>
+	<Grp ID="2424" MapID="31224" Bgm="FT_BGM-002.mp3">
+		<Type ID="100017" BaseLv="29 29" Position="1 2 3 4" Name="星锤兔" HPCoefficient="4500" MPCoefficient="4500" Mdef="200" FightBack="30" Hit="30" Avd="30"/>
+		<Type ID="100018" BaseLv="29 29" Position="0 8 9" Name="电波兔" HPCoefficient="4500" MPCoefficient="4500" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+		<Type ID="100038" BaseLv="29 29" Position="6 7" Name="摇铃兔" HPCoefficient="4500" MPCoefficient="4500" DefCoefficient="2000" SpiritCoefficient="2000" Avd="30"/>
+	</Grp>
+	<Grp ID="2425" MapID="31225" Bgm="FT_BGM-003.mp3">
+		<Type ID="2004" BaseLv="30 30" Position="5" Name="库噜王" HPCoefficient="5000" MPCoefficient="5000" SpeedCoefficient="3000" Mdef="300" FightBack="40" Hit="40" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100027" BaseLv="30 30" Position="0 3 4" Name="库噜小队长" HPCoefficient="4000" MPCoefficient="4000" Mdef="300" FightBack="40" Hit="40"/>
+		<Type ID="101002" BaseLv="30 30" Position="1 2 6 7 8 9" Name="库噜·改" HPCoefficient="4000" MPCoefficient="4000" Hit="40" Avd="40"/>
+	</Grp>
+	<Grp ID="2426" MapID="31226" Bgm="FT_BGM-003.mp3">
+		<Type ID="2001" BaseLv="31 31" Position="5" Name="普豆泥王" HPCoefficient="6000" MPCoefficient="6000" DefCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="101005" BaseLv="31 31" Position="1 2 3 4" Name="普豆叶·改" HPCoefficient="5000" MPCoefficient="5000" Hit="40"/>
+		<Type ID="101006" BaseLv="31 31" Position="6 7 8 9" Name="普豆花·改" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2427" MapID="31227" Bgm="FT_BGM-003.mp3">
+		<Type ID="2006" BaseLv="32 32" Position="5" Name="巨石蟹" HPCoefficient="7000" MPCoefficient="7000" DefCoefficient="1500" SpiritCoefficient="3000" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100007" BaseLv="32 32" Position="1 2 8 9" Name="小石怪·改" HPCoefficient="6000" MPCoefficient="6000" FightBack="40" Hit="40"/>
+		<Type ID="100036" BaseLv="32 32" Position="0 3 4 6 7" Name="巨石怪" HPCoefficient="6000" MPCoefficient="6000" FightBack="40" Hit="40"/>
+	</Grp>
+	<Grp ID="2428" MapID="31228" Bgm="FT_BGM-003.mp3">
+		<Type ID="2009" BaseLv="33 33" Position="5" Name="金甲剑魂" HPCoefficient="5000" MPCoefficient="8000" AtkCoefficient="1500" DefCoefficient="1500" SpeedCoefficient="3000" Mdef="300" FightBack="40" Hit="40" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100034" BaseLv="33 33" Position="6 7 8 9" Name="18K钢姆" HPCoefficient="4000" MPCoefficient="7000" SpiritCoefficient="3000" Avd="40"/>
+		<Type ID="100051" BaseLv="33 33" Position="1 2 3 4" Name="幽光战士" HPCoefficient="4000" MPCoefficient="7000" AtkCoefficient="1500" FightBack="40" Avd="40"/>
+	</Grp>
+	<Grp ID="2429" MapID="31229" Bgm="FT_BGM-003.mp3">
+		<Type ID="2010" BaseLv="34 34" Position="5" Name="伊影" HPCoefficient="7000" MPCoefficient="9000" AtkCoefficient="1500" DefCoefficient="1500" SpeedCoefficient="3000" Mdef="300" Cri="40" Hit="40" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100052" BaseLv="34 34" Position="1 2 8 9" Name="噬魂鬼" HPCoefficient="6000" MPCoefficient="8000" SpiritCoefficient="3000" Avd="40"/>
+		<Type ID="100053" BaseLv="34 34" Position="3 4 6 7" Name="无脸隐者" HPCoefficient="6000" MPCoefficient="8000" SpiritCoefficient="3000" Avd="40"/>
+	</Grp>
+	<Grp ID="2430" MapID="31230" Bgm="FT_BGM-003.mp3">
+		<Type ID="3017" BaseLv="35 35" Position="5" Name="威恩德" HPCoefficient="10000" MPCoefficient="10000" DefCoefficient="1500" SpeedCoefficient="3000" Mdef="300" Cri="40" FightBack="40" Hit="40" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100058" BaseLv="35 35" Position="8 9" Name="伊瑟拉" HPCoefficient="9000" MPCoefficient="9000" SpiritCoefficient="3000" Avd="40"/>
+		<Type ID="100059" BaseLv="35 35" Position="1 2 3 4" Name="刺尾龙蜥" HPCoefficient="9000" MPCoefficient="9000" AtkCoefficient="1500" FightBack="40" Hit="40" Avd="40"/>
+	</Grp>
+	
+<!-- 净化之路 -->
+	<Grp ID="2501" MapID="30201" GrpType="3" BeastType="39" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="210012 200001" Rate="100 100 " Count="1 1"/>
+		<Type ID="2001" LvType="4" BaseLv="10" Position="0" Name="普豆泥王" HPCoefficient="1500" SpiritCoefficient="600" MPCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100006" LvType="4" BaseLv="8" Position="5 6 7 8 9" Name="吉普豆泥" HPCoefficient="1000" SpiritCoefficient="600" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2502" MapID="30202" GrpType="3" BeastType="40" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="210012 200001 " Rate="150 150 " Count="1 1"/>
+		<Type ID="2002" LvType="4" BaseLv="15" Position="5" Name="拉拉美王" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100011" LvType="4" BaseLv="13" Position="0 1 2 3 4 8 9" Name="拉拉美" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2503" MapID="30203" GrpType="3" BeastType="41" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 200001 " Rate="200 200 " Count=" 1 1"/>
+		<Type ID="2006" LvType="4" BaseLv="20" Position="5" Name="巨石蟹" HPCoefficient="3500" MPCoefficient="3500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100021" LvType="4" BaseLv="18" Position="0 1 2 3 4 8 9" Name="钢姆" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2504" MapID="30203" GrpType="3" BeastType="41" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 200001 " Rate="350 350 " Count="1 1"/>
+		<Type ID="2006" LvType="4" BaseLv="24" Position="5" Name="巨石蟹·强" HPCoefficient="9000" MPCoefficient="8500" SpiritCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100021" LvType="3" BaseLv="20" Position="0 1 2 3 4 6 7 8 9" Name="钢姆" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2505" MapID="30204" GrpType="3" BeastType="44" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 200001 " Rate="250 250 " Count="1 1"/>
+		<Type ID="2007" LvType="4" BaseLv="20" Position="5" Name="沃特尔王" HPCoefficient="4000" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100033" LvType="4" BaseLv="18" Position="0 1 2 3 4 8 9" Name="沃特尔" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2506" MapID="30205" GrpType="3" BeastType="45" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 210013 200001 200002 " Rate="300 100 300 100 " Count="1 1 1 1"/>
+		<Type ID="2008" LvType="4" BaseLv="23" Position="5" Name="章界王" HPCoefficient="4500" MPCoefficient="4500" SpeedCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100046" LvType="4" BaseLv="23" Position="0 1 2 3 4 8 9" Name="马沙虾" HPCoefficient="2000" MPCoefficient="2000" SpeedCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2507" MapID="30206" GrpType="2" BeastType="49" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 210013 200001 200002 340015" Rate="400 150 400 150 50" Count="1 1 1 1 1"/>
+		<Type ID="2004" LvType="4" BaseLv="20" Position="5" Name="库噜王" HPCoefficient="4500" MPCoefficient="4000" SpeedCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100027" LvType="3" BaseLv="18" Position="0 1 2 3 4" Name="库噜小队长" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2508" MapID="30207" GrpType="2" BeastType="50" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 210013 200001 200002 " Rate="450 200 450 200 " Count="1 1 1 1"/>
+		<Type ID="2005" LvType="4" BaseLv="30" Position="5" Name="法尔王" HPCoefficient="7000" MPCoefficient="7000" SpeedCoefficient="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100004" LvType="3" BaseLv="28" Position="0 1 2 3 4" Name="法尔" HPCoefficient="4500" MPCoefficient="4500"/>
+	</Grp>
+	<Grp ID="2509" MapID="30208" BeastType="57" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="210012 200001 " Rate="50 50" Count="1 1"/>
+		<Type ID="2011" BaseLv="5" Position="5" Name="卡拉兽" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="10" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2510" MapID="30209" GrpType="2" BeastType="61" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 210013 200001 200002 " Rate="500 250 500 250 " Count="1 1 1 1"/>
+		<Type ID="2012" BaseLv="25" Position="5" Name="草莓蜂后" HPCoefficient="7000" MPCoefficient="7000" Avd="40" SpiritCoefficient="3000" SpeedCoefficient="4500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100009" LvType="4" BaseLv="23" Position="1 2 3 4 6 7 8 9" Name="草莓蜂" HPCoefficient="4500" MPCoefficient="4000" AtkCoefficient="1200"/>
+	</Grp>
+	<Grp ID="2511" MapID="30210" GrpType="2" BeastType="96" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="210012 210013 200001 200002" Rate="500 250 500 250" Count="1 1 1 1"/>
+		<Type ID="2015" BaseLv="35" Position="5" Name="剧毒蜂皇" HPCoefficient="1500" MPCoefficient="4500" Avd="60" SpiritCoefficient="2000" SpeedCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="101009" LvType="4" BaseLv="30" Position="1 2 3 4 6 7 8 9" Name="草莓蜂·改" HPCoefficient="2500" MPCoefficient="4500" AtkCoefficient="1000"/>
+	</Grp>
+
+<!-- 月宫副本 -->
+	<Grp ID="2601" MapID="41211" GrpType="2" Cnts="2 4" Bgm="FT_BGM-001.mp3">
+		<DropItem ItemID="180062 300002 300003" Rate="1000 300 300" Count="2 1 1"/>
+		<Type ID="100017" BaseLv="29 31" Position="-1" Name="星锤兔" AtkCoefficient="500" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100018" BaseLv="29 31" Position="-1" Name="电波兔" SpiritCoefficient="1000" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2602" MapID="41211 41212" GrpType="2" Cnts="2" Bgm="FT_BGM-001.mp3">
+		<DropItem ItemID="300002 300003" Rate="300 300" Count="1 1"/>
+		<Type ID="100069" BaseLv="29 31" Position="-1" Name="侍卫月饼" AtkCoefficient="500" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100070" BaseLv="29 31" Position="-1" Name="宫女月饼" SpiritCoefficient="1000" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2603" MapID="41212" GrpType="3" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="300044 300045" Rate="500 500" Count="1 1"/>
+		<Type ID="100071" BaseLv="35 35" Position="5" Name="月饼王" SpiritCoefficient="1000" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="100069" BaseLv="32 34" Position="0 1 2 3 4" Name="侍卫月饼" AtkCoefficient="500" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100070" BaseLv="32 34" Position="6 7 8 9" Name="宫女月饼" SpiritCoefficient="1000" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2604" MapID="41213" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="300044 300045" Rate="300 300" Count="1 1"/>
+		<Type ID="100071" BaseLv="35 35" Position="5" Name="月饼王" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2605" MapID="41213" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="300044 300045 350019 350028" Rate="1000 1000 500 500" Count="1 1 1 1"/>
+		<Type ID="2014" BaseLv="35 35" Position="0" Name="邪风月轮" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="500" SpiritCoefficient="1000"/>
+		<Type ID="100071" BaseLv="32 34" Position="6 7" Name="月饼王" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2606" MapID="41213" Bgm="FT_BGM-002.mp3">
+		<DropItem ItemID="300044 300045" Rate="300 300" Count="1 1"/>
+		<Type ID="100071" BaseLv="35 35" Position="5" Name="月饼王" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+
+<!-- 平行世界 -->
+	<Grp ID="2607" MapID="51201" GrpType="2" Cnts="3 5">
+		<Type ID="100052" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="噬魂鬼" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101011" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="拉拉美·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2608" MapID="51201" GrpType="2" Cnts="3 5">
+		<Type ID="100027" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="库噜小队长" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101006" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="普豆花·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2609" MapID="51201" GrpType="2" Cnts="3 5">
+		<Type ID="100064" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="呆呆鸟" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101004" BaseLv="70 75" Position="-1" BeastCnt="1 4" Name="法尔·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2610" MapID="51203" GrpType="2" Cnts="4 6">
+		<Type ID="100021" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101009" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="草莓蜂·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2611" MapID="51203" GrpType="2" Cnts="4 6">
+		<Type ID="100038" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="摇铃兔" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101002" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="库噜·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2612" MapID="51203" GrpType="2" Cnts="4 6">
+		<Type ID="100012" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="怪盗戈戈拉" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101008" BaseLv="60 66" Position="-1" BeastCnt="2 4" Name="吉吉帕·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2613" MapID="51205" GrpType="2" Cnts="5 7">
+		<Type ID="100055" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="沃勒格球" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101013" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="迷眼蝠·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2614" MapID="51205" GrpType="2" Cnts="5 7">
+		<Type ID="100034" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="18K钢姆" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101010" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="迷唇丝·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2615" MapID="51205" GrpType="2" Cnts="5 7">
+		<Type ID="101003" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="迪迪拉·改" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101007" BaseLv="65 70" Position="-1" BeastCnt="2 5" Name="小石怪·改" HPCoefficient="1000" MPCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2616" MapID="51201 51203 51205">
+		<DropItem ItemID="290018" Rate="1000" Count="1"/>
+		<Type ID="100056" BaseLv="35 35" Position="5" Name="蜘蛛炸弹" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2617" MapID="51201">
+		<DropItem ItemID="290018" Rate="1000" Count="3"/>
+		<Type ID="100077" LvType="2" BaseLv="35" Position="5" Name="24K蜘蛛炸弹" HPCoefficient="5000" MPCoefficient="5000"/>
+	</Grp>
+	<Grp ID="2618" MapID="51203">
+		<DropItem ItemID="290018" Rate="1000" Count="3"/>
+		<Type ID="100078" LvType="2" BaseLv="35" Position="5" Name="纳尼" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2619" MapID="51205">
+		<DropItem ItemID="290018" Rate="1000" Count="3"/>
+		<Type ID="100079" LvType="2" BaseLv="35" Position="5" Name="独眼树藤怪" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2620" MapID="51203" GrpType="2" Cnts="8">
+		<Type ID="100056" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="蜘蛛炸弹" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101009" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="草莓蜂·改" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100038" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="摇铃兔" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101002" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="库噜·改" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="100012" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="怪盗戈戈拉" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="101008" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="吉吉帕·改" HPCoefficient="1000" MPCoefficient="1000"/>
+		<Type ID="103008" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103024" BaseLv="35 35" Position="-1" BeastCnt="1 1" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+	</Grp>
+	<Grp ID="2621" MapID="51301">
+		<Type ID="103007" BaseLv="35 35" Position="0" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103008" BaseLv="35 35" Position="5" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103009" BaseLv="35 35" Position="1" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103010" BaseLv="35 35" Position="6" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103023" BaseLv="35 35" Position="2" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="103024" BaseLv="35 35" Position="7" Name="王国骑士" HPCoefficient="1500" MPCoefficient="1500"/>
+	</Grp>
+	<Grp ID="2622" MapID="51301">
+		<Type ID="102019" BaseLv="40 40" Position="5" Name="巨岩魔蛇" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101002" BaseLv="35 35" Position="3" Name="库噜·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101003" BaseLv="35 35" Position="4" Name="迪迪拉·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101004" BaseLv="35 35" Position="6" Name="法尔·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101006" BaseLv="35 35" Position="9" Name="普豆花·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101007" BaseLv="35 35" Position="1" Name="小石怪·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101010" BaseLv="35 35" Position="8" Name="迷唇丝·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101011" BaseLv="35 35" Position="2" Name="拉拉美·改" HPCoefficient="1500" MPCoefficient="1500"/>
+		<Type ID="101013" BaseLv="35 35" Position="7" Name="迷眼蝠·改" HPCoefficient="1500" MPCoefficient="1500"/>
+	</Grp>
+	<!--
+	<Grp ID="2623" MapID="51301" NeedItem="290018" NeedCount="30">
+		<DropItem ItemID="350017 350018 350029" Rate="550 550 550" Count="2 2 2"/>
+		<Type ID="102019" LvType="0" BaseLv="35" Position="5" Name="巨岩魔蛇" HPCoefficient="5000" MPCoefficient="5000"/>
+		<Type ID="101002" LvType="2" BaseLv="35" Position="3" Name="库噜·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101003" LvType="2" BaseLv="35" Position="4" Name="迪迪拉·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101004" LvType="2" BaseLv="35" Position="6" Name="法尔·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101006" LvType="2" BaseLv="35" Position="9" Name="普豆花·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101007" LvType="2" BaseLv="35" Position="1" Name="小石怪·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101010" LvType="2" BaseLv="35" Position="8" Name="迷唇丝·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101011" LvType="2" BaseLv="35" Position="2" Name="拉拉美·改" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="101013" LvType="2" BaseLv="35" Position="7" Name="迷眼蝠·改" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	-->
+	
+<!-- 尤利的逆袭 -->
+	<Grp ID="2901" MapID="11205" GrpType="2" Bgm="FT_BGM-003.mp3">
+		<Type ID="102009" BaseLv="10" Position="5" Name="金甲剑魂" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="1000" Avd="10" SpiritCoefficient="3000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100051" LvType="2" BaseLv="10" Position="1 2 3 4" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="600" SpiritCoefficient="3000"/>
+	</Grp>
+	<Grp ID="2902" MapID="11204" GrpType="2" Bgm="FT_BGM-003.mp3">
+		<Type ID="102001" BaseLv="10" Position="5" Name="普豆泥王" HPCoefficient="2500" MPCoefficient="2500" Avd="20" SpiritCoefficient="1000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100006" LvType="2" BaseLv="15" Position="0 1 2 8 9" Name="吉普豆泥" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2903" MapID="11203" GrpType="2" Bgm="FT_BGM-003.mp3">
+		<Type ID="102007" BaseLv="10" Position="5" Name="沃特尔王" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="1000" Avd="30" SpiritCoefficient="3000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100033" LvType="2" BaseLv="20" Position="1 2 3 4 8 9" Name="沃特尔" HPCoefficient="2000" MPCoefficient="2000" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2904" MapID="11201" GrpType="2" Bgm="FT_BGM-003.mp3">
+		<Type ID="102005" BaseLv="10" Position="5" Name="法尔王" HPCoefficient="3500" MPCoefficient="3500" Avd="40" SpiritCoefficient="1000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100004" LvType="2" BaseLv="25" Position="0 1 2 3 4 8 9" Name="法尔" HPCoefficient="2500" MPCoefficient="2500" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="2905" MapID="11301" GrpType="2" Bgm="FT_BGM-003.mp3">
+		<Type ID="103019" BaseLv="10" Position="5" Name="尤利" HPCoefficient="5000" MPCoefficient="8000" AtkCoefficient="1000" Avd="40" SpiritCoefficient="1000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="102009" LvType="3" BaseLv="10" Position="1" Name="金甲剑魂" HPCoefficient="2000" MPCoefficient="4000" AtkCoefficient="1000" Avd="40" SpiritCoefficient="3000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="102001" LvType="3" BaseLv="10" Position="8" Name="普豆泥王" HPCoefficient="2000" MPCoefficient="4000" Avd="40" SpiritCoefficient="1000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="102007" LvType="3" BaseLv="10" Position="2" Name="沃特尔王" HPCoefficient="2000" MPCoefficient="4000" AtkCoefficient="1000" Avd="40" SpiritCoefficient="3000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="102005" LvType="3" BaseLv="10" Position="9" Name="法尔王" HPCoefficient="2000" MPCoefficient="4000" Avd="40" SpiritCoefficient="1000" SpeedCoefficient="1500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+
+<!-- 草木树海 -->
+	<Grp ID="2906" MapID="11503" Bgm="FT_BGM-003.mp3">
+		<Type ID="102004" LvType="0" BaseLv="10" Position="5" Name="库噜王" HPCoefficient="1000000" MPCoefficient="1000000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+	<Grp ID="2907" MapID="11503" GrpType="3" RepeatCnt="3" NeedItem="180060" NeedCount="1" Bgm="FT_BGM-003.mp3" >
+		<DropItem ItemID="300044 300045 300046 315018 290015" Rate="420 200 300 50 30" Count="1 1 1 1 1"/>
+		<Type ID="102013" LvType="2" BaseLv="10" Position="5" Name="娜蒂丝" HPCoefficient="5000" MPCoefficient="5000" Avd="60" SpiritCoefficient="1" SpeedCoefficient="5000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100068" LvType="2" BaseLv="10" Position="1 2 3 4" Name="波波尔" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1"/>
+	</Grp>
+	<Grp ID="2908" MapID="11503" GrpType="3" Cnts="2" RepeatCnt="5" Bgm="FT_BGM-003.mp3" >
+		<DropItem ItemID="180061 350016 350017 300002" Rate="400 80 20 500" Count="1 1 1 1"/>	
+		<Type ID="100027" LvType="2" BaseLv="10" Position="0 1 2 3 4 6 7" Name="库噜小队长" HPCoefficient="2000" MPCoefficient="2000" SpiritCoefficient="1"/>
+	</Grp>
+	<Grp ID="2909" MapID="11503" GrpType="0" RepeatCnt="3" Bgm="FT_BGM-003.mp3" >
+		<DropItem ItemID="180061 350016 350017 300002" Rate="400 200 80 320" Count="5 1 1 1"/>	
+		<Type ID="2004" LvType="3" BaseLv="10" Position="5" Name="库噜王" HPCoefficient="5000" MPCoefficient="5000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100027" LvType="3" BaseLv="10" Position="0 1 2 3 4" Name="库噜小队长" HPCoefficient="2500" MPCoefficient="2500"/>
+	</Grp>
+	<Grp ID="2910" MapID="11503" GrpType="0" RepeatCnt="2" Bgm="FT_BGM-003.mp3" >
+		<DropItem ItemID="350016 350017 300002" Rate="400 200 400" Count="1 1 1"/>				
+		<Type ID="2004" LvType="3" BaseLv="10" Position="5" Name="库噜王" HPCoefficient="8000" MPCoefficient="8000" Avd="30" SpiritCoefficient="2000" SpeedCoefficient="2000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100027" LvType="3" BaseLv="10" Position="0 1 2 3 4 8 9" Name="库噜小队长" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="2000" SpeedCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2911" MapID="11503" Bgm="FT_BGM-003.mp3" NpcID="4001">
+		<Type ID="2004" LvType="2" BaseLv="10" Position="5" Name="库噜王" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="100027" LvType="2" BaseLv="10" Position="1 2 8 9" Name="库噜小队长" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="500"/>
+	</Grp>
+
+<!-- 嫦娥的心愿 -->
+	<Grp ID="2912" MapID="21301" Bgm="FT_BGM-001.mp3">
+		<Type ID="3007" LvType="2" BaseLv="10" Position="0 6 7" Name="王国骑士" HPCoefficient="700" MPCoefficient="500" AtkCoefficient="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+	<Grp ID="2913" MapID="11204" Bgm="FT_BGM-002.mp3">
+		<Type ID="3016" LvType="2" BaseLv="10" Position="5" Name="宾德" HPCoefficient="1200" MPCoefficient="1000" AtkCoefficient="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+	<Grp ID="2914" MapID="11220" Bgm="FT_BGM-002.mp3">
+		<Type ID="3002" LvType="2" BaseLv="10" Position="5" Name="杰森" HPCoefficient="1800" MPCoefficient="1500" AtkCoefficient="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+	<Grp ID="2915" MapID="21202" Bgm="FT_BGM-003.mp3">
+		<Type ID="3015" LvType="2" BaseLv="10" Position="5" Name="妮娜" HPCoefficient="3500" MPCoefficient="3000" AtkCoefficient="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+
+<!-- 草木树海 援救雪绒草 -->
+	<Grp ID="2916" MapID="11503" Bgm="FT_BGM-002.mp3" NpcID="4001">
+		<Type ID="2009" LvType="2" BaseLv="10" Position="1" Name="金甲剑魂" HPCoefficient="2000" MPCoefficient="2000"/>
+		<Type ID="2004" LvType="2" BaseLv="10" Position="2" Name="库噜王" HPCoefficient="2000" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="2917" MapID="11503" Bgm="FT_BGM-003.mp3">
+		<Type ID="3019" LvType="2" BaseLv="10" Position="5" Name="尤利" HPCoefficient="4000" MPCoefficient="5000" AtkCoefficient="500" SpiritCoefficient="1000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="2009" LvType="2" BaseLv="10" Position="8" Name="金甲剑魂" HPCoefficient="1500" MPCoefficient="2000" AtkCoefficient="500"/>
+		<Type ID="2004" LvType="2" BaseLv="10" Position="9" Name="库噜王" HPCoefficient="1500" MPCoefficient="2000" AtkCoefficient="500"/>
+	</Grp>
+
+<!-- 兽王峡谷 野兽之王的觉醒 -->
+	<Grp ID="2918" MapID="11504" Bgm="FT_BGM-002.mp3">
+		<Type ID="2015" BaseLv="20" Position="5" Name="剧毒蜂皇" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="800" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100037" LvType="2" BaseLv="10" Position="8 9" Name="撒旦蝠" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100013" LvType="2" BaseLv="10" Position="1 2" Name="盯眼蝠" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2919" MapID="11504" Bgm="FT_BGM-002.mp3" NpcID="4001">
+		<Type ID="2020" BaseLv="20" Position="5" Name="帕瑞" HPCoefficient="3000" MPCoefficient="3000" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2920" MapID="11504" Bgm="FT_BGM-003.mp3" NpcID="4002">
+		<Type ID="2020" BaseLv="20" Position="5" Name="帕瑞" HPCoefficient="5000" MPCoefficient="5000" DefCoefficient="1500" Mdef="500" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+
+<!-- 未来勇士成长修行 -->
+	<Grp ID="2921" MapID="11104" Bgm="FT_BGM-002.mp3">
+		<Type ID="100001" LvType="2" BaseLv="10" Position="5" Name="吉普豆叶" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100002" LvType="2" BaseLv="10" Position="6" Name="吉普豆花" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100006" LvType="2" BaseLv="10" Position="7" Name="吉普豆泥" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2922" MapID="11214" Bgm="FT_BGM-002.mp3">
+		<Type ID="100017" LvType="2" BaseLv="10" Position="1 2" Name="星锤兔" HPCoefficient="1500" MPCoefficient="1500" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100018" LvType="2" BaseLv="10" Position="8 9" Name="电波兔" HPCoefficient="2000" MPCoefficient="2000" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2923" MapID="11401" Bgm="FT_BGM-002.mp3">
+		<Type ID="100035" LvType="2" BaseLv="10" Position="0 3 4 6 7" Name="哒哒鸟" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2924" MapID="11603" Bgm="FT_BGM-002.mp3">
+		<Type ID="100020" LvType="2" BaseLv="10" Position="0 3 4 5 8 9" Name="弗雷基" HPCoefficient="2500" MPCoefficient="2500" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="2925" MapID="11703" Bgm="FT_BGM-002.mp3">
+		<Type ID="100051" LvType="2" BaseLv="10" Position="1 2" Name="幽光战士" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100052" LvType="2" BaseLv="10" Position="6 7" Name="噬魂鬼" HPCoefficient="2500" MPCoefficient="2500" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100053" LvType="2" BaseLv="10" Position="8 9" Name="无脸隐者" HPCoefficient="2500" MPCoefficient="2500" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100054" LvType="2" BaseLv="10" Position="3 4" Name="石头人" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+
+<!-- 基姆的侵袭 -->
+	<Grp ID="2926" MapID="11504">
+		<Type ID="100090" LvType="2" BaseLv="20" Position="1 2 8 9" Name="巴布" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="2927" MapID="11505" Bgm="FT_BGM-002.mp3">
+		<Type ID="2003" LvType="0" BaseLv="25" Position="5" Name="暗黑沃特尔" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100090" LvType="2" BaseLv="20" Position="1 2 8 9" Name="巴布" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="2928" MapID="11505" Bgm="FT_BGM-003.mp3">
+		<Type ID="3027" LvType="2" BaseLv="25" Position="5" Name="基姆" HPCoefficient="8000" MPCoefficient="8000" AtkCoefficient="800" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="2003" LvType="3" BaseLv="25" Position="1 2" Name="暗黑沃特尔" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+			
+<!-- 导师挑战 -->
+	<Grp ID="3001" MapID="11304">
+		<Type ID="3001" BaseLv="15" Position="5" Name="彼兔" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100017" BaseLv="15" Position="0" Name="星锤兔" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="3002" MapID="11305">
+		<Type ID="3002" BaseLv="15" Position="0" Name="杰森" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100018" BaseLv="15" Position="5" Name="电波兔" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="3003" MapID="11303">
+		<Type ID="3003" BaseLv="15" Position="5" Name="瑞凌" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100020" BaseLv="15" Position="6 7" Name="弗雷基" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="3004" MapID="11217">
+		<Type ID="3004" BaseLv="15" Position="6" Name="温蒂" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3005" BaseLv="15" Position="7" Name="瑞贝卡" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+
+	<!--
+	<Grp ID="3005" MapID="">
+		<Type ID="3015" BaseLv="50" Position="0" Name="妮娜" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3007" BaseLv="45" Position="" Name="王国骑士" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="3008" BaseLv="45" Position="" Name="王国骑士" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="3009" BaseLv="45" Position="" Name="王国骑士" HPCoefficient="3000" MPCoefficient="3000"/>
+		<Type ID="3010" BaseLv="45" Position="" Name="王国骑士" HPCoefficient="3000" MPCoefficient="3000"/>
+	</Grp>
+	-->
+	<Grp ID="3006" MapID="21402">
+		<Type ID="3006" BaseLv="15 15" Position="5" Name="鼬西" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100015" BaseLv="12 14" Position="6 7" Name="迷眼蝠" HPCoefficient="500" MPCoefficient="500" SpiritCoefficient="1000"/>
+		<Type ID="100010" BaseLv="12 14" Position="0" Name="迷唇爱丝" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="500"/>
+	</Grp>
+	<Grp ID="3007" MapID="11605">
+		<Type ID="3006" BaseLv="20 20" Position="5" Name="鼬西" HPCoefficient="4000" MPCoefficient="4000" AtkCoefficient="500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100036" BaseLv="17 19" Position="0 1 2" Name="巨石怪" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500"/>
+		<Type ID="100037" BaseLv="17 19" Position="6 7" Name="撒旦蝠" HPCoefficient="1500" MPCoefficient="1500" SpiritCoefficient="1000"/>
+	</Grp>
+	<Grp ID="3008" MapID="11102">
+		<Type ID="3006" BaseLv="3 3" Position="5" Name="鼬西" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100015" BaseLv="2 2" Position="6 7" Name="迷眼蝠" HPCoefficient="500" MPCoefficient="500" SpiritCoefficient="1000"/>
+		<Type ID="100010" BaseLv="2 2" Position="0" Name="迷唇爱丝" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="100"/>
+	</Grp>
+
+<!-- 导师挑战 -->
+	<Grp ID="3009" MapID="11306">
+		<Type ID="3018" BaseLv="15" Position="5" Name="休一" HPCoefficient="3000" MPCoefficient="3000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100037" BaseLv="15" Position="6 7" Name="撒旦蝠" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000"/>
+	</Grp>
+	
+<!-- 修炼之域 -->
+	<Grp ID="3011" MapID="21601" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="5 5" Position="0 3 4 6 7" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="20" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3012" MapID="21602" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3012" BaseLv="10 10" Position="1 2 5 8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3013" MapID="21603" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3013" BaseLv="15 15" Position="0 3 4 6 7" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="20" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3014" MapID="21604" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3014" BaseLv="20 20" Position="1 2 5 8 9" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3015" MapID="21605" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3009" BaseLv="25 25" Position="0" Name="守卫士兵・Z" HPCoefficient="2000" MPCoefficient="2000" Avd="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3011" BaseLv="25 25" Position="3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="20" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="25 25" Position="6 7" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="25 25" Position="8 9" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="20" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="25 25" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3016" MapID="21606" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="30 30" Position="0 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="30 30" Position="6 7" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3017" MapID="21607" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3013" BaseLv="35 35" Position="0 3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="35 35" Position="6 7" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3018" MapID="21608" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="40 40" Position="0 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="40 40" Position="6 7" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3019" MapID="21609" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3012" BaseLv="45 45" Position="0 3 4" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="45 45" Position="6 7" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3020" MapID="21610" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3008" BaseLv="50 50" Position="0" Name="守卫士兵・Y" HPCoefficient="2000" MPCoefficient="2000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="50 50" Position="6 7 8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="50 50" Position="3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="50 50" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3021" MapID="21611" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="55 55" Position="0 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="55 55" Position="6 7" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3022" MapID="21612" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3012" BaseLv="60 60" Position="3 4" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="60 60" Position="0 6 7" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3023" MapID="21613" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="65 65" Position="0" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="65 65" Position="8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="65 65" Position="3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="65 65" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3024" MapID="21614" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="70 70" Position="3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="70 70" Position="5" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="70 70" Position="0" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="70 70" Position="8 9" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3025" MapID="21615" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="300063" Rate="1000" Count="1"/>
+		<Type ID="3010" BaseLv="75 75" Position="5" Name="守卫士兵・X" HPCoefficient="2000" MPCoefficient="2000" Mdef="150" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="75 75" Position="1 2 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="75 75" Position="6 7 8 9" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3026" MapID="21616" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3013" BaseLv="80 80" Position="0 3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="80 80" Position="5 8 9" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3027" MapID="21617" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="85 85" Position="0 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="85 85" Position="5 8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3028" MapID="21618" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="90 90" Position="1 2 5" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="90 90" Position="6 7" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="90 90" Position="3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3029" MapID="21619" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="95 95" Position="0" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="95 95" Position="6 7" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="95 95" Position="1 2" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="95 95" Position="8 9" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3030" MapID="21620" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="300064" Rate="1000" Count="1"/>
+		<Type ID="3007" BaseLv="100 100" Position="0" Name="守卫士兵・W" HPCoefficient="2000" MPCoefficient="2000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="100 100" Position="6 7 8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="3 4" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3031" MapID="21621" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="100 100" Position="0 3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="100 100" Position="6 7" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3032" MapID="21622" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3012" BaseLv="100 100" Position="0 3 4" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="6 7" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3033" MapID="21623" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="100 100" Position="0" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="100 100" Position="8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="100 100" Position="3 4" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3034" MapID="21624" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3011" BaseLv="100 100" Position="0" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="100 100" Position="8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="100 100" Position="6 7" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3035" MapID="21625" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="300065" Rate="1000" Count="1"/>
+		<Type ID="3007" BaseLv="100 100" Position="0" Name="守卫士兵・V" HPCoefficient="2000" MPCoefficient="2000" Mdef="150" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3011" BaseLv="100 100" Position="3 4" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="100 100" Position="8 9" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="100 100" Position="1 2" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3036" MapID="21626" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="1" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3008" BaseLv="100 100" Position="5" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="2" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="8" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3037" MapID="21627" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3008" BaseLv="100 100" Position="5 8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3038" MapID="21628" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3009" BaseLv="100 100" Position="0 3 4" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3039" MapID="21629" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3008" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="0" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3040" MapID="21630" LimitExp="0" Title="3001" Bgm="FT_BGM-003.mp3" Broadcast="恭喜 {0} 击破修炼之域30层，获得大量奖励！">
+		<DropItem ItemID="300012" Rate="1000" Count="1"/>
+		<Type ID="3016" BaseLv="100 100" Position="0" Name="宾德" HPCoefficient="2500" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="3 4" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Cri="40" FightBack="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3011" BaseLv="100 100" Position="1 2" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" BaseLv="100 100" Position="6 7" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" BaseLv="100 100" Position="8 9" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" BaseLv="100 100" Position="5" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3041" MapID="21631" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="1 2 3 4 6 7 8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3042" MapID="21632" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3008" BaseLv="100 100" Position="1 2 3 4 6 7 8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3043" MapID="21633" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3009" BaseLv="100 100" Position="1 2 3 4 6 7 8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+	</Grp>
+	<Grp ID="3044" MapID="21634" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3010" BaseLv="100 100" Position="1 2 3 4 6 7 8 9" Name="守卫士兵" HPCoefficient="1500" MPCoefficient="2000" Avd="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3045" MapID="21635" LimitExp="0" Title="3002" Bgm="FT_BGM-003.mp3" Broadcast="恭喜 {0} 击破修炼之域35层，获得大量奖励！">
+		<Type ID="3001" BaseLv="100 100" Position="6" Name="彼兔" HPCoefficient="2500" MPCoefficient="5000" Avd="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3002" BaseLv="100 100" Position="0" Name="杰森" HPCoefficient="2500" MPCoefficient="5000" Mdef="150" FightBack="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3003" BaseLv="100 100" Position="3" Name="瑞凌" HPCoefficient="2500" MPCoefficient="5000" Mdef="100" Cri="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3004" BaseLv="100 100" Position="7" Name="温蒂" HPCoefficient="2500" MPCoefficient="5000" Avd="50" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3018" BaseLv="100 100" Position="4" Name="休一" HPCoefficient="2500" MPCoefficient="5000" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3046" MapID="21636" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3002" BaseLv="100 100" Position="0" Name="杰森" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100018" BaseLv="100 100" Position="3 4 5 6 7 8 9" Name="电波兔" HPCoefficient="1500" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="3047" MapID="21637" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3003" BaseLv="100 100" Position="5" Name="瑞凌" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100020" BaseLv="100 100" Position="0 1 2 6 7 8 9" Name="弗雷基" HPCoefficient="1500" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="3048" MapID="21638" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3001" BaseLv="100 100" Position="5" Name="彼兔" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100017" BaseLv="100 100" Position="0 1 2 3 4 8 9" Name="星锤兔" HPCoefficient="1500" MPCoefficient="3000"/>
+	</Grp>
+	<Grp ID="3049" MapID="21639" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3004" BaseLv="100 100" Position="6" Name="温蒂" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3005" BaseLv="100 100" Position="7" Name="瑞贝卡" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100036" BaseLv="100 100" Position="1 2 5 8 9" Name="巨石怪" HPCoefficient="1500" MPCoefficient="2000"/>
+	</Grp>
+	<Grp ID="3050" MapID="21640" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3018" BaseLv="100 100" Position="0" Name="休一" HPCoefficient="2500" MPCoefficient="4000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100037" BaseLv="100 100" Position="1 2 3 4 5 6 7" Name="撒旦蝠" HPCoefficient="1500" MPCoefficient="2000"/>
+	</Grp>
+	
+	<Grp ID="3051" MapID="21641" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3008" BaseLv="100 100" Position="0 5" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3010" BaseLv="100 100" Position="3 8" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3024" BaseLv="100 100" Position="4 9" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3052" MapID="21642" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="0 5" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="1 8" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3023" BaseLv="100 100" Position="2 9" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3053" MapID="21643" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="0" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3008" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="1" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3023" BaseLv="100 100" Position="2" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3024" BaseLv="100 100" Position="5" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3054" MapID="21644" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="3" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3008" BaseLv="100 100" Position="6" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="7" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3023" BaseLv="100 100" Position="4" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" FightBack="30" Cri="30" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3024" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="1500" Mdef="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3055" MapID="21645" LimitExp="0" Title="3003" Bgm="FT_BGM-003.mp3" Broadcast="恭喜 {0} 击破修炼之域40层，获得大量奖励！">
+		<Type ID="3025" BaseLv="100 100" Position="5" Name="莱卡" HPCoefficient="4000" MPCoefficient="8000" SpiritCoefficient="2000" DefCoefficient="2000" Mdef="500" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3007" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="2000" FightBack="30" Cri="30" Avd="60" Rpoison="40" Rlithification="40" Rlethargy="40" Rcurse="40" Rconfusion="40" Roblivion="40" />
+		<Type ID="3008" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="2000" Mdef="300" Rpoison="40" Rlithification="40" Rlethargy="40" Rcurse="40" Rconfusion="40" Roblivion="40" />
+		<Type ID="3009" BaseLv="100 100" Position="3 4" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="2000" FightBack="30" Cri="30" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="0" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="2000" Mdef="300" Rpoison="40" Rlithification="40" Rlethargy="40" Rcurse="40" Rconfusion="40" Roblivion="40" />
+		<Type ID="3024" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="1300" MPCoefficient="2500" SpiritCoefficient="2000" Mdef="300" Rpoison="40" Rlithification="40" Rlethargy="40" Rcurse="40" Rconfusion="40" Roblivion="40" />
+	</Grp>
+	<Grp ID="3056" MapID="21646" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3007" BaseLv="100 100" Position="3 4" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3008" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3023" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+	</Grp>
+	<Grp ID="3057" MapID="21647" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3008" BaseLv="100 100" Position="5 8 9" Name="守卫士兵" HPCoefficient="4000" MPCoefficient="4000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3009" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="4000" MPCoefficient="4000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3010" BaseLv="100 100" Position="3 4" Name="守卫士兵" HPCoefficient="4000" MPCoefficient="4000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3024" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="4000" MPCoefficient="4000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+	</Grp>
+	<Grp ID="3058" MapID="21648" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3001" BaseLv="100 100" Position="5" Name="彼兔" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3002" BaseLv="100 100" Position="3" Name="杰森" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="50" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3003" BaseLv="100 100" Position="4" Name="瑞凌" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" AtkCoefficient="1500" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3008" BaseLv="100 100" Position="6 7" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3009" BaseLv="100 100" Position="0 1 2" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3024" BaseLv="100 100" Position="8 9" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+	</Grp>
+	<Grp ID="3059" MapID="21649" LimitExp="0" Bgm="FT_BGM-002.mp3">
+		<Type ID="3004" BaseLv="100 100" Position="6" Name="温蒂" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3005" BaseLv="100 100" Position="7" Name="瑞贝卡" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3018" BaseLv="100 100" Position="0" Name="休一" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="50" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3007" BaseLv="100 100" Position="1 2" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3009" BaseLv="100 100" Position="3 4" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" DefCoefficient="3000" FightBack="40" Cri="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3024" BaseLv="100 100" Position="5 8 9" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+	</Grp>
+	<Grp ID="3060" MapID="21650" LimitExp="0" Title="3004" Bgm="FT_BGM-003.mp3" Broadcast="恭喜 {0} 击破修炼之域45层，获得大量奖励！">
+		<Type ID="3026" BaseLv="100 100" Position="0" Name="路西西" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" AtkCoefficient="1500" DefCoefficient="1500" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3001" BaseLv="100 100" Position="8" Name="彼兔" HPCoefficient="3000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" Mdef="500" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3002" BaseLv="100 100" Position="6" Name="杰森" HPCoefficient="3000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" DefCoefficient="3000" Avd="60" FightBack="50" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3003" BaseLv="100 100" Position="5" Name="瑞凌" HPCoefficient="3000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" AtkCoefficient="1500" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3004" BaseLv="100 100" Position="9" Name="温蒂" HPCoefficient="3000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" Mdef="500" Avd="60" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3018" BaseLv="100 100" Position="7" Name="休一" HPCoefficient="3000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="50" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3015" BaseLv="100 100" Position="1" Name="妮娜" HPCoefficient="2500" MPCoefficient="3000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="50" Cri="50" Avd="30" AtkCoefficient="1000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3016" BaseLv="100 100" Position="2" Name="宾德" HPCoefficient="2500" MPCoefficient="3000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="50" Cri="50" Avd="30" AtkCoefficient="1000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+
+		<!--
+		<Type ID="3026" BaseLv="45 45" Position="0" Name="路西西" HPCoefficient="8000" MPCoefficient="8000" SpiritCoefficient="3000" SpeedCoefficient="3000" AtkCoefficient="1500" DefCoefficient="3000" FightBack="50" Avd="50" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3001" BaseLv="45 45" Position="7" Name="彼兔" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3002" BaseLv="45 45" Position="1" Name="杰森" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" AtkCoefficient="1500" DefCoefficient="3000" FightBack="50" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3003" BaseLv="45 45" Position="5" Name="瑞凌" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3004" BaseLv="45 45" Position="6" Name="温蒂" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" Mdef="500" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="3018" BaseLv="45 45" Position="2" Name="休一" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="50" Cri="50" Avd="80" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3009" BaseLv="45 45" Position="3 4" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" SpeedCoefficient="3000" FightBack="40" Cri="40" Avd="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		<Type ID="3024" BaseLv="45 45" Position="8 9" Name="守卫士兵" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="3000" SpeedCoefficient="3000" Avd="40" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100" />
+		-->
+	</Grp>
+
+<!-- 变身技能任务 -->
+	<Grp ID="3061" MapID="11215" LimitExp="0" >
+		<Type ID="100001" LvType="2" BaseLv="40" Position="5" Name="吉普豆叶" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100002" LvType="2" BaseLv="40" Position="6" Name="吉普豆花" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100006" LvType="2" BaseLv="40" Position="7" Name="吉普豆泥" HPCoefficient="5000" MPCoefficient="5000" SpiritCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+<!-- 风龙的考验 -->
+	<Grp ID="3101" MapID="21503" Bgm="FT_BGM-003.mp3">
+		<Type ID="3017" BaseLv="25 25" Position="0" Name="威恩德虚影" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3102" MapID="21503" Bgm="FT_BGM-003.mp3">
+		<Type ID="3017" BaseLv="30 30" Position="0" Name="威恩德" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="500" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+
+	<Grp ID="3103" MapID="11502" Bgm="FT_BGM-003.mp3">
+		<Type ID="3019" BaseLv="30 30" Position="0" Name="尤利" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Avd="60" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+
+<!-- 进阶任务 -->
+	<Grp ID="3104" MapID="22102" Bgm="FT_BGM-002.mp3">
+		<Type ID="3010" BaseLv="25" Position="0" Name="王国骑士" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3105" MapID="22204" Bgm="FT_BGM-002.mp3">
+		<Type ID="2018" BaseLv="25" Position="0" Name="灭特" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="300" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3106" MapID="22209" Bgm="FT_BGM-003.mp3">
+		<Type ID="3028" BaseLv="25" Position="0" Name="伊夫特" HPCoefficient="3000" MPCoefficient="3000" SpiritCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+<!-- 环任务 -->
+	<Grp ID="3301" MapID="11202" LimitExp="0" >
+		<Type ID="100016" BaseLv="11 12" Position="5" Name="王冠卡西卡" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100015" BaseLv="11 12" Position="6 7" Name="迷眼蝠" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100010" BaseLv="11 12" Position="0" Name="迷唇爱丝" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3302" MapID="11202" LimitExp="0" >
+		<Type ID="100014" BaseLv="11 12" Position="5" Name="曼陀萝卜" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100013" BaseLv="11 12" Position="6 7" Name="盯眼蝠" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100012" BaseLv="11 12" Position="0" Name="怪盗戈戈拉" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3303" MapID="11202" LimitExp="0" >
+		<Type ID="100016" BaseLv="11 12" Position="5" Name="王冠卡西卡" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100021" BaseLv="11 12" Position="6 7" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100014" BaseLv="11 12" Position="0" Name="曼陀萝卜" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3304" MapID="11203" LimitExp="0" >
+		<Type ID="100022" BaseLv="21 22" Position="5" Name="小宅罐" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100021" BaseLv="21 22" Position="6 7" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100024" BaseLv="21 22" Position="0" Name="喵斯熊" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3305" MapID="11205" LimitExp="0" >
+		<Type ID="100037" BaseLv="21 22" Position="5" Name="撒旦蝠" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100021" BaseLv="21 22" Position="6 7" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100036" BaseLv="21 22" Position="0" Name="巨石怪" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3306" MapID="11201" LimitExp="0" >
+		<Type ID="100037" BaseLv="21 22" Position="5" Name="撒旦蝠" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100022" BaseLv="21 22" Position="6 7" Name="小宅罐" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100016" BaseLv="21 22" Position="0" Name="王冠卡西卡" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3307" MapID="11204" LimitExp="0" >
+		<Type ID="100037" BaseLv="21 22" Position="5" Name="撒旦蝠" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100022" BaseLv="21 22" Position="6 7" Name="小宅罐" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100036" BaseLv="21 22" Position="0" Name="巨石怪" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3308" MapID="11202" LimitExp="0" >
+		<Type ID="100016" BaseLv="21 22" Position="5" Name="王冠卡西卡" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100021" BaseLv="21 22" Position="6 7" Name="钢姆" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="100014" BaseLv="21 22" Position="0" Name="曼陀萝卜" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3309" MapID="11304" LimitExp="0" >
+		<Type ID="3001" BaseLv="15" Position="5" Name="彼兔" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="3310" MapID="11305" LimitExp="0" >
+		<Type ID="3002" BaseLv="15" Position="0" Name="杰森" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="3311" MapID="11303" LimitExp="0" >
+		<Type ID="3003" BaseLv="15" Position="5" Name="瑞凌" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="3312" MapID="11217" LimitExp="0" >
+		<Type ID="3004" BaseLv="15" Position="6" Name="温蒂" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="3005" BaseLv="15" Position="7" Name="瑞贝卡" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>	
+	<Grp ID="3313" MapID="11306" LimitExp="0" >
+		<Type ID="3018" BaseLv="15" Position="5" Name="休一" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3314" MapID="11307" LimitExp="0" >
+		<Type ID="3016" BaseLv="15" Position="5" Name="宾德" HPCoefficient="5000" MPCoefficient="5000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	
+	<Grp ID="3315" MapID="21301" RepeatCnt="3" Time="1:14-16 2:14-16 3:14-16 4:14-16 5:14-16 6:14-16 7:14-16">
+		<Type ID="7" BaseLv="8" Position="0 6 7" Name="怪盗迪迪拉" HPCoefficient="1000" MPCoefficient="1000" AtkCoefficient="500"/>
+	</Grp>
+<!-- 斯巴鲁 -->
+	<Grp ID="3316" MapID="22104" LimitExp="0" NpcID="4003" Bgm="FT_BGM-003.mp3">
+		<DropItem ItemID="180065" Rate="1000" Count="5"/>
+		<Type ID="2022" BaseLv="45 45" Position="0" Name="斯巴鲁" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3317" MapID="22104" Bgm="FT_BGM-002.mp3" LimitExp="0">
+		<Type ID="100051" LvType="2" BaseLv="10" Position="1 2" Name="幽光战士" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100052" LvType="2" BaseLv="10" Position="6 7" Name="噬魂鬼" HPCoefficient="1500" MPCoefficient="1500"  Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="100053" LvType="2" BaseLv="10" Position="8 9" Name="无脸隐者" HPCoefficient="1000" MPCoefficient="1000"  Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+		<Type ID="108" LvType="2" BaseLv="10" Position="5" Name="斯巴鲁幼兽" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="600" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="3318" MapID="22104" Bgm="FT_BGM-001.mp3" LimitExp="0">
+		<Type ID="3" LvType="2" BaseLv="10" Position="5 6 7 8" Name="小石头" HPCoefficient="2000" MPCoefficient="2000" AtkCoefficient="700" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10"/>
+	</Grp>
+	<Grp ID="3319" MapID="22104" LimitExp="0" Bgm="FT_BGM-003.mp3"><!-- 斯巴鲁 任务完成后，可重复战斗-->
+		<DropItem ItemID="180065 180065 180065 180065" Rate="1000 500 300 100" Count="1 1 1 2"/>
+		<Type ID="2022" BaseLv="45 45" Position="0" Name="斯巴鲁" HPCoefficient="5000" MPCoefficient="5000" AtkCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<!-- 魔王的秘密-->
+	<Grp ID="3320" MapID="21306" LimitExp="100" ><!-- 怪盗-->
+		<DropItem ItemID="300001" Rate="1000" Count="1"/>
+		<Type ID="100012" LvType="2" BaseLv="20" Position="5" Name="怪盗戈戈拉" HPCoefficient="500" MPCoefficient="500" />
+		<Type ID="100007" LvType="2" BaseLv="10" Position="1 2 3 4 6 7 8 9" Name="怪盗迪迪拉" HPCoefficient="500" MPCoefficient="500" AtkCoefficient="500" />
+	</Grp>
+	<Grp ID="3321" MapID="30301" LimitExp="0" Bgm="FT_BGM-001.mp3"><!-- 宝箱守卫-->
+		<Type ID="300025" LvType="2" BaseLv="10" Position="0" Name="黑魅鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300028" LvType="2" BaseLv="10" Position="1" Name="地之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300029" LvType="2" BaseLv="10" Position="2" Name="水之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300030" LvType="2" BaseLv="10" Position="3" Name="火之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300031" LvType="2" BaseLv="10" Position="4" Name="风之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="3322" MapID="30301" LimitExp="0" Bgm="FT_BGM-003.mp3"><!-- 魔王-->
+		<Type ID="3027" LvType="2" BaseLv="25" Position="5" Name="基姆" HPCoefficient="2000" MPCoefficient="1000" AtkCoefficient="1000" Mdef="1000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="300025" LvType="2" BaseLv="10" Position="0" Name="黑魅鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300028" LvType="2" BaseLv="10" Position="1" Name="地之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300029" LvType="2" BaseLv="10" Position="2" Name="水之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300030" LvType="2" BaseLv="10" Position="3" Name="火之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300031" LvType="2" BaseLv="10" Position="4" Name="风之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	<Grp ID="3323" MapID="30301" LimitExp="0" Bgm="FT_BGM-003.mp3"><!-- 魔王 任务完成后，可重复战斗-->	
+		<!--
+		<DropItem ItemID="300001 300100 350051" Rate="670 250 80" Count="1 1 1"/>
+		-->
+		<DropItem ItemID="300100 300001 350051" Rate="500 500 250" Count="1 1 1"/>
+		<Type ID="3027" LvType="2" BaseLv="25" Position="5" Name="基姆" HPCoefficient="1500" MPCoefficient="2000" AtkCoefficient="2000" def="500" Mdef="2000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+		<Type ID="300025" LvType="2" BaseLv="10" Position="0" Name="黑魅鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300028" LvType="2" BaseLv="10" Position="1" Name="地之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300029" LvType="2" BaseLv="10" Position="2" Name="水之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300030" LvType="2" BaseLv="10" Position="3" Name="火之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+		<Type ID="300031" LvType="2" BaseLv="10" Position="4" Name="风之鬼脸箱" HPCoefficient="1000" MPCoefficient="1000" />
+	</Grp>
+	
+	<!-- 琉璃翼龙测试 -->
+	<Grp ID="3324" MapID="30400" LimitExp="0" Bgm="FT_BGM-002.mp3">	
+		<Type ID="2023" LvType="2" BaseLv="20" Position="5" Name="琉璃翼龙" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="2000" Mdef="2000" Rpoison="100" Rlithification="100" Rlethargy="100" Rcurse="100" Rconfusion="100" Roblivion="100"/>
+	</Grp>
+	<Grp ID="3325" MapID="30400" LimitExp="0" Bgm="FT_BGM-003.mp3">
+		<Type ID="3016" LvType="2" BaseLv="25" Position="5" Name="宾德" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="2000" Mdef="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" LvType="2" BaseLv="10" Position="0" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2000" Cri="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3011" LvType="2" BaseLv="10" Position="1" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" LvType="2" BaseLv="10" Position="2" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" LvType="2" BaseLv="10" Position="3" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" LvType="2" BaseLv="10" Position="4" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+	<Grp ID="3326" MapID="30400" LimitExp="0" Bgm="FT_BGM-003.mp3">	
+		<DropItem ItemID="300001 320005" Rate="800 200" Count="1 1"/>
+		<Type ID="3016" LvType="2" BaseLv="25" Position="5" Name="宾德" HPCoefficient="3000" MPCoefficient="3000" AtkCoefficient="2000" Mdef="2000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3009" LvType="2" BaseLv="10" Position="0" Name="守卫士兵" HPCoefficient="2000" MPCoefficient="2000" Cri="40" FightBack="40" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3011" LvType="2" BaseLv="10" Position="1" Name="王国剑士" HPCoefficient="1000" MPCoefficient="1000" FightBack="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3012" LvType="2" BaseLv="10" Position="2" Name="王国魔法师" HPCoefficient="1000" MPCoefficient="1000" Mdef="100" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3013" LvType="2" BaseLv="10" Position="3" Name="王国弓术士" HPCoefficient="1000" MPCoefficient="1000" Avd="30" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+		<Type ID="3014" LvType="2" BaseLv="10" Position="4" Name="王国祭祀" HPCoefficient="1000" MPCoefficient="1000" Rpoison="10" Rlithification="10" Rlethargy="10" Rcurse="10" Rconfusion="10" Roblivion="10" />
+	</Grp>
+<!--
+	RefreshType：刷新类型
+	RefreshTime：0~50人的Online刷新频率（秒）
+	RefreshSpeed：服务器人数增加时刷新频率加速
+	PrivateRefresh：个人刷新次数
+	Cnt：刷新组基数
+	StartHour：活动起始小时
+	StartMinute：活动起始分钟
+	EndHour：活动终止小时
+	EndMinute：活动终止分钟
+-->
+
+	<RefreshGrp RefreshType="16" RefreshTime="300" RefreshSpeed="0" Cnt="1" StartHour="6" EndHour="24" Day="62" Disapear="0">
+		<Grp IDs="9" MinCnt="1" StartX="-1" StartY="-1" MapIDs="21302"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="1" StartHour="13" EndHour="15" Disapear="0">
+		<Grp IDs="2616" MinCnt="1" StartX="-1" StartY="-1" MapIDs="51201 51203 51205"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="1" StartHour="13" EndHour="15" Disapear="0">
+		<Grp IDs="2617" MinCnt="1" StartX="-1" StartY="-1" MapIDs="51201"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="1" StartHour="13" EndHour="15" Disapear="0">
+		<Grp IDs="2618" MinCnt="1" StartX="-1" StartY="-1" MapIDs="51203"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="1" StartHour="13" EndHour="15" Disapear="0">
+		<Grp IDs="2619" MinCnt="1" StartX="-1" StartY="-1" MapIDs="51205"/>
+	</RefreshGrp>
+<!--
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="2" StartHour="19" EndHour="20" Disapear="0">
+		<Grp IDs="48" MinCnt="1" StartX="-1" StartY="-1" MapIDs="21301 21302 21305 21310"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="2" StartHour="15" EndHour="16" Day="62" Disapear="0">
+		<Grp IDs="49" MinCnt="1" StartX="-1" StartY="-1" MapIDs="21301 21302 21305 21310"/>
+	</RefreshGrp>
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="3" StartHour="6" EndHour="24" Disapear="0">
+		<Grp IDs="50" MinCnt="1" StartX="-1" StartY="-1" MapIDs="12101"/>
+	</RefreshGrp>
+-->
+<!--<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="3" StartHour="14" EndHour="15" Disapear="0">-->
+<!--<Grp IDs="54" MinCnt="1" StartX="-1" StartY="-1" MapIDs="21301 21302 21305 21310"/>-->
+<!--</RefreshGrp>-->
+	<!--
+	<RefreshGrp RefreshType="16" RefreshTime="15" RefreshSpeed="0" Cnt="3" StartHour="6" EndHour="24" Disapear="0">
+		<Grp IDs="51" MinCnt="1" StartX="-1" StartY="-1" MapIDs="21301 21302 21305 21310"/>
+	</RefreshGrp>
+	-->
+	<!-- 金阳狼
+	<RefreshGrp RefreshType="16" RefreshTime="5" RefreshSpeed="0" RepeatCnt="2" Cnt="1" StartHour="14" StartMinute="50" EndHour="15" EndMinute="1" Day="62" Disapear="2">
+		<Grp IDs="27" MinCnt="1" StartX="-1" StartY="-1" MapIDs="11504"/>
+	</RefreshGrp>
+	-->
+	<!-- 食人樱
+	<RefreshGrp RefreshType="16" RefreshTime="5" RefreshSpeed="0" RepeatCnt="2" Cnt="1" StartHour="14" StartMinute="50" EndHour="15" EndMinute="1" Day="62" Disapear="2">
+		<Grp IDs="30" MinCnt="1" StartX="-1" StartY="-1" MapIDs="11503"/>
+	</RefreshGrp>
+	-->
+	<!-- 萌萌收割者
+	<RefreshGrp RefreshType="16" RefreshTime="5" RefreshSpeed="0" RepeatCnt="2" Cnt="1" StartHour="14" StartMinute="50" EndHour="15" EndMinute="1" Day="62" Disapear="2">
+		<Grp IDs="37" MinCnt="1" StartX="-1" StartY="-1" MapIDs="11223"/>
+	</RefreshGrp>
+	-->
+	<!-- 趴趴贝
+	<RefreshGrp RefreshType="16" RefreshTime="5" RefreshSpeed="0" RepeatCnt="2" Cnt="1" StartHour="14" StartMinute="50" EndHour="15" EndMinute="1" Day="62" Disapear="2">
+		<Grp IDs="41" MinCnt="1" StartX="-1" StartY="-1" MapIDs="12101"/>
+	</RefreshGrp>
+	-->
+</BeastGrps>
+
+
+

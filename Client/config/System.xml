@@ -34,16 +34,16 @@
 	</Version>
 	
 	<ServerList max="300" maxVIP="500">
-		<server id="1" name="恐恐鸟(1-10级)"/>
-		<server id="2" name="哒哒鸟(1-10级)"/>
-		<server id="3" name="星锤兔(1-10级)"/>
-		<server id="4" name="电波兔(1-10级)"/>
-		<server id="5" name="【摩尔勇士】"/>
-		<server id="6" name="【复兴服务器】"/>
-		<server id="7" name="都是一个服"/>
-		<server id="8" name="随便点一个吧"/>
-		<server id="9" name="显示这么多"/>
-		<server id="10" name="就是为了好看的"/>
+		<server id="1" name="【PVP】装逼得瑟"/>
+		<server id="2" name="【比赛】专用服"/>
+		<server id="3" name="【萌新】任务服"/>
+		<server id="4" name="【升级】打怪1服"/>
+		<server id="5" name="【爬塔】推荐服"/>
+		<server id="6" name="【升级】打怪2服"/>
+		<server id="7" name="普吉岛晒太阳"/>
+		<server id="8" name="塞班岛潜水"/>
+		<server id="9" name="毛里求斯蜜月"/>
+		<server id="10" name="深山老林养老"/>
 
 	</ServerList>
 	

@@ -183,7 +183,7 @@
 		<Item ID="180058" Name="吉普草叶" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="180059" Name="喵斯熊绒毛" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="180060" Name="植物系霸者证" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
-		<Item ID="180061" Name="库噜骨头" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
+		<Item ID="180061" Name="库噜骨头" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" DayMax="999"/>
 		<Item ID="180062" Name="兔尾巴" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="180063" Name="损坏的月饼" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="180064" Name="圣诞袜" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" DayMax="50"/>
@@ -325,13 +325,13 @@
 		<Item ID="210011" Name="11级生命之息" Type="1" Target="0" MedicineLv="10" Price="1620" SalePrice="220" Tradability="2" VipTradability="2" Vendibility="1" HpUp="2500">
 			<Material ID="160009 150017 150019" Count="10 20 10"/>
 		</Item>
-		<Item ID="210012" Name="1级重生药" Type="1" Target="0" MedicineLv="1" Price="1000000" SalePrice="500" Tradability="2" VipTradability="2" Vendibility="1" HpUp="450" DayMax="10">
+		<Item ID="210012" Name="1级重生药" Type="1" Target="0" MedicineLv="1" Price="1000000" SalePrice="500" Tradability="2" VipTradability="2" Vendibility="1" HpUp="450" DayMax="50">
 			<Material ID="150003 150005" Count="20 10"/>
 		</Item>
-		<Item ID="210013" Name="2级重生药" Type="1" Target="0" MedicineLv="2" Price="1000000" SalePrice="1000" Tradability="2" VipTradability="2" Vendibility="1" HpUp="600" DayMax="5">
+		<Item ID="210013" Name="2级重生药" Type="1" Target="0" MedicineLv="2" Price="1000000" SalePrice="1000" Tradability="2" VipTradability="2" Vendibility="1" HpUp="600" DayMax="50">
 			<Material ID="150007 210012" Count="10 1"/>
 		</Item>
-		<Item ID="210014" Name="3级重生药" Type="1" Target="0" MedicineLv="3" Price="1000000" SalePrice="1500" Tradability="2" VipTradability="2" Vendibility="1" HpUp="1000" DayMax="3">
+		<Item ID="210014" Name="3级重生药" Type="1" Target="0" MedicineLv="3" Price="1000000" SalePrice="1500" Tradability="2" VipTradability="2" Vendibility="1" HpUp="1000" DayMax="50">
 			<Material ID="160002 230004 210013" Count="20 10 1"/>
 		</Item>
 	</Kind>
@@ -726,7 +726,7 @@
 		<Item ID="270052" Name="不死系闪灵胶片V" Type="6" Price="800" SalePrice="400" Tradability="2" VipTradability="2" Race="7" CardLV="5"/>
 		<Item ID="270053" Name="金属系闪灵胶片V" Type="6" Price="800" SalePrice="400" Tradability="2" VipTradability="2" Race="8" CardLV="5"/>
 		<Item ID="270054" Name="恶魔系闪灵胶片V" Type="6" Price="800" SalePrice="400" Tradability="2" VipTradability="2" Race="9" CardLV="5"/>
-		<Item ID="270055" Name="万用闪灵胶片V" Type="6" Price="1200" SalePrice="600" Tradability="2" VipTradability="2" Vendibility="1" Race="0 1 2 3 4 5 6 7 8 9" CardLV="5"/>
+		<Item ID="270055" Name="万用闪灵胶片V" Type="6" Price="1200" SalePrice="600" Tradability="3" VipTradability="3" Vendibility="1" Race="0 1 2 3 4 5 6 7 8 9" CardLV="5"/>
 		<Item ID="270056" Name="强效万用闪灵胶片" Type="6" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="2" Vendibility="1" Race="0 1 2 3 4 5 6 7 8 9" CardLV="30"/>
 		<Item ID="270057" Name="无敌万用闪灵胶片" Type="6" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="2" Vendibility="1" Race="0 1 2 3 4 5 6 7 8 9" CardLV="30"/>
 	</Kind>
@@ -767,7 +767,7 @@
 		<Item ID="290012" Name="魔力水晶" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="290013" Name="精灵之露" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
 		<Item ID="290014" Name="精灵种族选票" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
-	    <Item ID="290015" Name="波波尔精灵蛋" Type="11" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" Del="1" BeastType="68" BeastLv="1" BeastCnt="1" FeedType="0xE0000000" FeedCount="8"/>
+	    <Item ID="290015" Name="波波尔道具" Type="11" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" Del="1" BeastType="68" BeastLv="1" BeastCnt="1" FeedType="0xE0000000" FeedCount="8"/>
   		<Item ID="290016" Name="月饼兑换券" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
   		<Item ID="290017" Name="答题证明" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
   		<Item ID="290018" Name="遗迹的碎片" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" DayMax="50"/>
@@ -790,13 +790,13 @@
 		Cnt：获得物品数量的范围
 		Tag：装备是否属于合成类【0商店类，1合成类，未配置默认为0】
 	-->
-		<Item ID="300001" Name="星豆袋" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1" DayMax="50">
+		<Item ID="300001" Name="星豆袋" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1" DayMax="200">
 			<Goods ID="50001" Rate="200" Cnt="301 2100"/>
 		</Item>
-		<Item ID="300002" Name="冒险经验手记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1">
+		<Item ID="300002" Name="冒险经验手记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1" DayMax="500">
 			<Goods ID="50002" Rate="200" Cnt="501 4000"/>
 		</Item>
-		<Item ID="300003" Name="技能经验手记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1">
+		<Item ID="300003" Name="技能经验手记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Quantities="1" DayMax="500">
 			<Goods ID="50005" Rate="200" Cnt="100 300"/>
 		</Item>
 		<Item ID="300004" Name="祝福礼箱Lv5" UseLv="5" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
@@ -1056,13 +1056,13 @@
 				<Goods ID="310020 290013" Cnt="1 15"/>
 			</RandGoods>
 		</Item>
-		<Item ID="300044" Name="精灵经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="60" Quantities="1">
+		<Item ID="300044" Name="精灵经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="200" Quantities="1">
 			<Goods ID="50003" Rate="1000" Cnt="16000"/>	
 		</Item>
-		<Item ID="300045" Name="冒险经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="30" Quantities="1">
+		<Item ID="300045" Name="冒险经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="200" Quantities="1">
 			<Goods ID="50002" Rate="1000" Cnt="8000"/>	
 		</Item>
-		<Item ID="300046" Name="技能经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="30" Quantities="1">
+		<Item ID="300046" Name="技能经验笔记" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" DayMax="200" Quantities="1">
 			<Goods ID="50005" Rate="1000" Cnt="1000"/>
 		</Item>
 		<Item ID="300047" Name="初级神秘箱II" UseLv="10" Type="17" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
@@ -1656,53 +1656,61 @@
 				<Clothes ID="142521 142522 142523 142524 142525" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
 			</RandGoods>
 		</Item>
-		<Item ID="300100" Name="基姆的秘密宝箱" UseLv="10" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="0" VipTradability="0" Vendibility="1" Del="1" DelFirstItem="350051" DelSecondItem="360047">
-			<RandGoods Percent="140">
+		<Item ID="300100" Name="基姆的秘密宝箱" DayMax="200" UseLv="10" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="0" VipTradability="0" Vendibility="1" Del="1" DelFirstItem="350051" DelSecondItem="360047">
+			<RandGoods Percent="100">
 				<Goods ID="360040" Cnt="1"/>
 			</RandGoods>
-			<RandGoods Percent="120">
-				<Goods ID="350051" Cnt="1"/>
+			
+			<RandGoods Percent="100">
+				<Goods ID="300080" Cnt="1"/>
 			</RandGoods>
-			<RandGoods Percent="280">
+			<RandGoods Percent="100">
+				<Goods ID="300001" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="100">
+				<Goods ID="300003" Cnt="1"/>
+			</RandGoods>
+			
+			<RandGoods Percent="80">
 				<Goods ID="350050" Cnt="1"/>
 			</RandGoods>
 			
 			<RandGoods Percent="30">
-				<Goods ID="370004" Cnt="5"/>
+				<Goods ID="370004" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370014" Cnt="5"/>
+				<Goods ID="370014" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370024" Cnt="5"/>
+				<Goods ID="370024" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370034" Cnt="5"/>
+				<Goods ID="370034" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370044" Cnt="5"/>
+				<Goods ID="370044" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370054" Cnt="5"/>
+				<Goods ID="370054" Cnt="1"/>
 			</RandGoods>
 
 			<RandGoods Percent="30">
-				<Goods ID="370064" Cnt="5"/>
+				<Goods ID="370064" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370074" Cnt="5"/>
+				<Goods ID="370074" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370084" Cnt="5"/>
+				<Goods ID="370084" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370094" Cnt="5"/>
+				<Goods ID="370094" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370104" Cnt="5"/>
+				<Goods ID="370104" Cnt="1"/>
 			</RandGoods>
 			<RandGoods Percent="30">
-				<Goods ID="370114" Cnt="5"/>
+				<Goods ID="370114" Cnt="1"/>
 			</RandGoods>
 			
 			<RandGoods Percent="20">
@@ -1855,6 +1863,8 @@
 		<Item ID="310053" ResID="310006" Name="积木傀儡精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="93" BeastLv="1" BeastCnt="1"/>
 		<Item ID="310054" ResID="310006" Name="噬灵鬼精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="95" BeastLv="1" BeastCnt="1"/>
 		<Item ID="310055" ResID="310055" Name="金羊狼精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="76" BeastLv="1" BeastCnt="1"/>
+		<Item ID="310056" ResID="310006" Name="库噜小队长精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="27" BeastLv="1" BeastCnt="1"/>
+		
 		<Item ID="315001" ResID="315001" Name="喵斯熊精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="24" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315002" ResID="315001" Name="撒旦蝠精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="37" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315003" ResID="315001" Name="拉拉美精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="11" BeastLv="1" BeastCnt="1" RandDiff="0"/>
@@ -1873,15 +1883,16 @@
 		<Item ID="315016" ResID="315001" Name="18K钢姆精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="34" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315017" ResID="315001" Name="伊瑟拉精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="58" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315018" ResID="315001" Name="愤怒萝卜精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="60" BeastLv="1" BeastCnt="1" RandDiff="0"/>
+		
 	</Kind>
 
 	<Kind ID="32" Team="1" Order="9" Name="活动物品" Start="320001" End="329999" Max="9999">
 		<Item ID="320001" Name="魔法烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="2" Del="0" BeastGrp="52" DayMax="10"/>
-		<Item ID="320002" Name="欢庆烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="2" Del="0" BeastGrp="20" />
-		<Item ID="320003" Name="庆典烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="2" Del="0" BeastGrp="25" />
-		<Item ID="320004" Name="怪盗信号弹" UseLv="1" Type="10" Target="1" Price="500" SalePrice="250" Tradability="2" VipTradability="2" Del="0" BeastGrp="26" />
-		<Item ID="320005" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="55"/>
-		<Item ID="320006" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="56"/>
+		<Item ID="320002" Name="欢庆烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="2" Del="0" BeastGrp="20" DayMax="10"/>
+		<Item ID="320003" Name="庆典烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="2" Del="0" BeastGrp="25" DayMax="10"/>
+		<Item ID="320004" Name="怪盗信号弹" UseLv="1" Type="10" Target="1" Price="500" SalePrice="250" Tradability="2" VipTradability="2" Del="0" BeastGrp="26" DayMax="10"/>
+		<Item ID="320005" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="55" DayMax="10"/>
+		<Item ID="320006" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="56" DayMax="10"/>
 	</Kind>
 
 	<Kind ID="33" Team="1" Order="7" Name="装备合成图纸" Start="330001" End="339999" Max="9999">
@@ -2163,12 +2174,12 @@
 	    <Item ID="350013" Name="精灵成长重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="10"/>
 	    <Item ID="350014" Name="精灵初始重组丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" />
 	    <Item ID="350015" Name="蓝迷你龙精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" VipOnly="1" Del="1" BeastType="66" BeastLv="1" BeastCnt="1" RandDiff="0" RandGrowth="-10"/>
-	    <Item ID="350016" Name="种族技能灵药" SkillPercent="100 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" Vendibility="0"  VipTradability="0" Del="1">
+	    <Item ID="350016" Name="种族技能灵药" SkillPercent="100 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" Vendibility="0"  VipTradability="0" Del="1" DayMax="50">
 	    	<Race ID="1" Skill="6203 7203 8803" SkillRate="200 400 400"/>
 	    	<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
 	    	<Race ID="5" Skill="6202 7202 8802" SkillRate="200 400 400"/>
 	    </Item>
-	    <Item ID="350017" Name="种族技能仙草" SkillPercent="300 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1">
+	    <Item ID="350017" Name="种族技能仙草" SkillPercent="300 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1" DayMax="20">
 			<Race ID="1" Skill="6203 7203 8803" SkillRate="200 400 400"/>
 			<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
 			<Race ID="5" Skill="6202 7202 8802" SkillRate="200 400 400"/>
@@ -2218,7 +2229,7 @@
 		<Item ID="350050" Name="精灵经验笔记·改" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Vendibility="0" >
 			<Goods ID="50003" Rate="1000" Cnt="99999"/>	
 		</Item>
-		<Item ID="350051" Name="魔王密钥" Type="29" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1"/>
+		<Item ID="350051" Name="魔王密钥" DayMax="50" Type="29" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1"/>
 		</Kind>
 	<Kind ID="36" Team="5" Order="" Name="米币道具" Start="350001" End="359999" Max="9999">
 		<Item ID="360001" Name="摩尔2倍经验护符" Type="14" Target="1" ExpFactor="200" ValidCount="50" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
@@ -2227,10 +2238,10 @@
 		<Item ID="360004" Name="自动补血秘药" Type="18" Target="1" MhpFactor="500000" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
 		<Item ID="360005" Name="自动回魔秘药" Type="18" Target="1" MmpFactor="100000" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
 	    <Item ID="360006" Name="自动战斗卷轴" Type="19" Target="1" ValidCount="100" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
-	    <Item ID="360007" Name="摩尔配点重置丸" Type="2" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
+	    <Item ID="360007" Name="摩尔加点重置丸" Type="2" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
 	    <Item ID="360008" Name="精灵成长重置丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
-	    <Item ID="360009" Name="精灵初始重置丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
-	    <Item ID="360010" Name="精灵配点重置丸" Type="2" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
+	    <Item ID="360009" Name="精灵五项重置丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
+	    <Item ID="360010" Name="精灵加点重置丸" Type="2" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
 	    <Item ID="360011" Name="初级种族技能炼化丸" SkillPercent="1000 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1">
 	    	<Race ID="1" Skill="6203 7203 8803" SkillRate="200 400 400"/>
 	    	<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
@@ -2300,6 +2311,9 @@
 		<Item ID="360045" Name="重置丸超值礼包" UseLv="5" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1" />
 		<Item ID="360046" Name="黄金锤(高级)" Type="28" ProcRate="0 0 800 200" LimitLv="1 200" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
 	    <Item ID="360047" Name="魔王密钥" Type="29" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" MibiOnly="1" Del="1"/>
+		<Item ID="360048" Name="超级精灵满成长丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
+		<Item ID="360049" Name="精灵等级重置丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" MibiOnly="1" Del="1"/>
+
 	</Kind>
 
 	<!--探险宝石-->

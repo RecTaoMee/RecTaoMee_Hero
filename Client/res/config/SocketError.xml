@@ -16,6 +16,8 @@
 		<node result="101017" info="地球网络超时！" />   <!-- 网络超时 -->
 		<node result="200005" info="战斗领域断开！" />   <!-- 对战服务器断开 -->
 		<node result="104373" info="摩尔王国是诚信之地，加速、外挂者请慎重。" />   <!-- 对战服务器断开 -->
+		<node result="300000" info="交易大厅升级为【交易市场】请在右下角[聊天窗口]点击连接进入！" />   <!-- 对战服务器断开 -->
+		<node result="201000" info="星豆不足！" /> 
 	</Error>
 
 	<Error cmd="1001">
@@ -138,6 +140,14 @@
 		<node result="200510" info="本期勇士杯已经结束了，请等待下期开始吧！" alertType="2"/>
 	</Error>
 	
+		<!-- 发送好友请求 1052 -->
+	<Error cmd="1051">
+		<node result="103104" info="对方不在线！" alertType="2"/>
+		<node result="103300" info="此人在你的黑名单里,请先移除！" alertType="2"/>
+		<node result="103301" info="你被对方拉黑了！" alertType="2"/>
+		<node result="103302" info="对方好友数量已满！" alertType="2"/>
+		<node result="103303" info="您的好友数量已满！" alertType="2"/>
+	</Error>
 	<!-- 反馈别人的邀请 1052 -->
 	<Error cmd="1052">
 		<node result="103103" info="黑名单用户，无法接受邀请！" alertType="2"/>
@@ -383,6 +393,7 @@
 		<node result="200200" info="星豆不足，无法合成！" alertType="2"/>
 		<node result="200159" info="材料不足，无法合成！" alertType="2"/>
 		<node result="200021" info="精力值不够，请休息一会补充精力（在线可自动回复精力值）" alertType="2"/>
+		<node result="200900" info="请保证背包中只有一个需要进阶的装备！多余的该装备请先存仓库！" alertType="1"/>
 	</Error>
 	
 	<!-- 孵蛋 1133 -->
@@ -528,6 +539,7 @@
 		<node result="200300" info="没有出战宠物，无法发起挑战！" alertType="2"/>
 		<node result="200053" info="请离开队伍后再发起挑战！" alertType="2"/>
 		<node result="210000" info="服务器即将进行停机维护，对战服务暂停！" alertType="1"/>
+		<node result="220000" info="战斗资源加载失败，对战取消" alertType="2"/>
 	</Error>
 	
 	<!-- 接受挑战 1301 -->
@@ -879,6 +891,16 @@
 		 <node result="200302" info="该宠物不可用来兑换！" alertType="2"/>
 		 <node result="200015" info="角色等级已达上限，无法兑换经验！" alertType="2"/>
 	</Error>
+	
+	<!--  宠物重置物品 1570 -->
+	<Error cmd="1570">
+		 <node result="200151" info="物品ID无效"/>
+		 <node result="200159" info="旅行箱中没有该物品！" alertType="2"/>
+		 <node result="200306" info="指定精灵不在背包中！" alertType="2"/>
+		 <node result="200204" info="精灵等级不符，无法使用该道具！" alertType="2"/>
+		 <node result="200205" info="该精灵不需要使用此物品！" alertType="2"/>
+	</Error>
+	
 	
 	<!--  使用种族技能道具 1571 1572 -->
 	<Error cmd="1571">

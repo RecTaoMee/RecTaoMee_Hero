@@ -129,4 +129,9 @@
 	<!--琉璃翼龙的召唤-->
 	<Item Task="39004" Map="30400" ID="390041" Level="CONTENT" Res="task_30400_39004_1.swf" Pos="-717,-505" TriggerType="1" /><!-- 石龙-->
 	<Item Task="39004" Map="30400" ID="390042" Level="CONTENT" Res="task_30400_39004_2.swf" Pos="-523,-558" TriggerType="1" /><!-- 妮娜 -->
+
+	<!--真假牛奶瓶盖-->
+	<Item Task="11000" Map="11208" ID="110001" Level="CONTENT" Res="task_11208_11000_1.swf" Pos="35,-248" TriggerType="1" /><!-- 摇铃兔 39001-->
+	<Item Task="11000" Map="21306" ID="110003" Level="CONTENT" Res="task_11208_11000_3.swf" Pos="-350,-117" TriggerType="1" /><!-- 忽悠猫（生病）39003 -->
+	<Item Task="11000" Map="21306" ID="110005" Level="CONTENT" Res="task_11208_11000_5.swf" Pos="-427,-172" TriggerType="1" /><!-- 假面奇奇帕（生病） 39005-->
 </TaskItem>

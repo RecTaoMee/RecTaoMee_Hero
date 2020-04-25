@@ -1,4 +1,6 @@
-<!--  Task ID:【从1开始】可以不连续但必须按序(1-500) 
+<!--  
+20200305
+Task ID:【从1开始】可以不连续但必须按序(1-500) 
  ID段表示任务类型(1~10000主线、10001~20000支线、20001~30000重复、30001~40000周期、20001~30000重复) Parent:父任务ID必须小于ID 
   -->
 <!--  Node ID:任务中节点ID，【从1开始】
@@ -96,12 +98,8 @@ MaxSame：环任务中允许子任务重复的次数，1表示在同一环中不
 StartTask：环任务的开始任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才可以接取到第1个子任务。
 EndTask：环任务的结束任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才算1环任务结束。
 ★StartTask和EndTask最好一起出现，如果不配置默认直接第一个子任务开始。
-
-
 <PetTarget Type="1 2 3 4" Count="1 2 3 4" />
   -->    
-	
-
 <TaskSummary>	
 	<TaskLoops>
 		<TaskLoop ID="1" Name="送信" Tasks="36002 36003 36004 36005 36006 36007 36008 36009 36010 36011" MinTaskCnt="10" MaxTaskCnt="10" LoopCnt="1" MaxSame="1" StartTask="36001" EndTask="36012"/>
@@ -2331,7 +2329,26 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 	</Task>	
+
+
+
+	<Task ID="11000" Name="真假牛奶瓶盖" Kind="2" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="41" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="5" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="5000" />
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="10" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="6" ItemId="1005" Count="1" />
+			</OutItem>
 			
+			
+		</Node>	
+	</Task>	
+
+	
+
 <!-- 重复任务 -->	
 	<Task ID="20001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="盗贼克星" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="1" >
 		<Node ID="1" Step="2" Memo="勇士广场的公告栏有新公告了。请向守城士兵了解今天c迪迪拉c的最新动向。">
