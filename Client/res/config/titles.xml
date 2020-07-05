@@ -125,8 +125,8 @@
  	<Title ID="2008" Name="复兴版拓荒者" FunType="1" HpMax="500" MpMax="200" Dodge="10" Desc="复兴版高端众筹用户  生命上限+500，魔法上限+200，回避+10" />
  	<Title ID="2009" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2011" Name="" />
- 	<Title ID="2012" Name="" />
+ 	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10"/>
+ 	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="2020六一国际儿童节纪念称号 抗遗忘+10 生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2013" Name="" />
  	<Title ID="2014" Name="" />
  	<Title ID="2015" Name="" />
@@ -178,5 +178,6 @@
  	<Title ID="3038" Name="皇家卫队精英" BlackFilter="1" FunType="1" ClearType="1" HpMax="110" MpMax="50" Speed="1" Spirit="1" Crit="1" Desc="生命上限+110，魔力上限+50，速度+1，精神力+1，必杀+1"/>
  	<Title ID="3039" Name="皇家卫队首席" BlackFilter="1" FunType="1" ClearType="1" HpMax="120" MpMax="50" Speed="2" Spirit="2" Crit="2" Desc="生命上限+120，魔力上限+50，速度+2，精神力+2，必杀+2"/>
  	<Title ID="3040" Name="花好月圆" FunType="1" HpMax="100" MpMax="100" Desc="中秋节活动参赛荣誉证明 生命上限+100，魔力上限+100"/>
+ 	<Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="100" MpMax="100" Desc="2020年端午节活动纪念称号 生命上限+100，魔力上限+100"/>
 
 </Titles>

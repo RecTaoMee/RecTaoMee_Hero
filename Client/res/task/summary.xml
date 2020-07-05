@@ -1,6 +1,4 @@
-<!--  
-20200305
-Task ID:【从1开始】可以不连续但必须按序(1-500) 
+<!--  Task ID:【从1开始】可以不连续但必须按序(1-500) 
  ID段表示任务类型(1~10000主线、10001~20000支线、20001~30000重复、30001~40000周期、20001~30000重复) Parent:父任务ID必须小于ID 
   -->
 <!--  Node ID:任务中节点ID，【从1开始】
@@ -98,8 +96,12 @@ MaxSame：环任务中允许子任务重复的次数，1表示在同一环中不
 StartTask：环任务的开始任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才可以接取到第1个子任务。
 EndTask：环任务的结束任务，不计算在完成的子任务数目内，如果配置，必须完成这个任务才算1环任务结束。
 ★StartTask和EndTask最好一起出现，如果不配置默认直接第一个子任务开始。
+
+
 <PetTarget Type="1 2 3 4" Count="1 2 3 4" />
   -->    
+	
+
 <TaskSummary>	
 	<TaskLoops>
 		<TaskLoop ID="1" Name="送信" Tasks="36002 36003 36004 36005 36006 36007 36008 36009 36010 36011" MinTaskCnt="10" MaxTaskCnt="10" LoopCnt="1" MaxSame="1" StartTask="36001" EndTask="36012"/>
@@ -4006,7 +4008,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	-->		
 
 	
-	<Task ID="36538" Name="无尽的战斗" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:13-15 7:13-15">			
+	<Task ID="36538" Name="无尽的战斗" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="1:13-15 2:13-15 3:13-15 4:13-15 5:13-15 6:13-15 7:13-15">			
 		<Node ID="1" Step="3" >	
 			<BeastGrp GrpId="2620" Count="1" Win="1"/>	
 			<OutItem ID="1">
@@ -4020,7 +4022,8 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		<Node ID="3" Step="6" IsEnd="1" >	
 			<BeastGrp GrpId="2622" Count="1" Win="1"/>	
 			<OutItem ID="1">
-				<Item OutType="2" ItemId="290018" Count="20" />	
+				<Item OutType="2" ItemId="290018" Count="100" />
+                                <Item OutType="1" ItemId="50005" Count="21600"/>	
 				<Item OutType="2" ItemId="300046" Count="2" />	
 				<Item OutType="2" ItemId="350029" Count="1" />	
 				<Item OutType="2" ItemId="350031" Count="1" />
@@ -4198,7 +4201,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>
 -->
 	<!--未来勇士成长修行-->	
-		<Task ID="36544" Name="未来勇士成长修行" IsCountTime="1" Kind="4" ParentCost="1" ParentList="1" Time="5:1-23 6:13-15 6:1-23 7:13-15 7:1-23" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="15" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Task ID="36544" Name="未来勇士成长修行" IsCountTime="1" Kind="4" ParentCost="1" ParentList="1" Time="1:1-23 2:1-23 3:1-23 4:1-23 5:1-23 6:1-23 7:1-23" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="15" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
 			<Node ID="1" Step="2" >	
 				<BeastGrp GrpId="2921" Count="1" Win="1" />
 				<OutItem ID="1">
@@ -4234,6 +4237,9 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 					<Item OutType="2" ItemId="300045" Count="5" />
 					<Item OutType="2" ItemId="300044" Count="10" />
 					<Item OutType="2" ItemId="300079" Count="1" />
+                                        <Item OutType="1" ItemId="50002" Count="150000"/>
+                                        <Item OutType="1" ItemId="50003" Count="250000"/>
+                                        <Item OutType="1" ItemId="50005" Count="5400"/>
 				</OutItem>
 			</Node>		
 		</Task>	
@@ -4315,7 +4321,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<BeastGrp GrpId="2905" Count="1" Win="1"/>	
 			<ItemTarget ItemId="290012" Count="1" BeastType="103019" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
 			<OutItem ID="1">
-				<Item OutType="2" ItemId="290012" Count="8" />
+				<Item OutType="2" ItemId="290012" Count="13" />
 			</OutItem>
 		</Node>	
 	</Task>	
@@ -4337,9 +4343,11 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<BeastGrp GrpId="2928" Count="1" Win="1"/>	
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50001" Count="5000" />
-				<Item OutType="1" ItemId="50002" Count="500" />
+				<Item OutType="1" ItemId="50002" Count="210000" />
+                                <Item OutType="1" ItemId="50003" Count="600000"/>
 				<Item OutType="2" ItemId="300044" Count="10" />
 				<Item OutType="2" ItemId="300078" Count="1" />
+                                <Item OutType="1" ItemId="50005" Count="21600"/>
 			</OutItem>
 		</Node>
 	</Task>
