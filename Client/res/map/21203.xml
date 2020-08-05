@@ -17,5 +17,6 @@
 				<![CDATA[下一层的蛤蟆……]]>
 			</event>
 		</node>
+		<node id="21202002" res="MC_rand_42"/>		<!--  砸第二个罐子	 -->
 	</object>
 </map>

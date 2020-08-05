@@ -134,4 +134,33 @@
 	<Item Task="11000" Map="11208" ID="110001" Level="CONTENT" Res="task_11208_11000_1.swf" Pos="35,-248" TriggerType="1" /><!-- 摇铃兔 39001-->
 	<Item Task="11000" Map="21306" ID="110003" Level="CONTENT" Res="task_11208_11000_3.swf" Pos="-350,-117" TriggerType="1" /><!-- 忽悠猫（生病）39003 -->
 	<Item Task="11000" Map="21306" ID="110005" Level="CONTENT" Res="task_11208_11000_5.swf" Pos="-427,-172" TriggerType="1" /><!-- 假面奇奇帕（生病） 39005-->
+
+	 <!-- 下水道的入侵者 -->
+	<Item Task="39005" Map="21204" ID="390055" Level="CONTENT" Res="YiQunDidila.swf" Pos="-118,-44" TriggerType="1" /><!-- 第三个罐子-->
+	<Item Task="39005" Map="21203" ID="390053" Level="CONTENT" Res="YiQunDidila.swf" Pos="661,-59" TriggerType="1" /> <!-- 第二个罐子 -->
+	<Item Task="39005" Map="21202" ID="390051" Level="CONTENT" Res="YiQunDidila.swf" Pos="172,618" TriggerType="1" />  <!-- 第一个罐子 -->
+	<!-- 保护世界树 -->
+	<Item Task="39007" Map="21803" ID="390071" Level="CONTENT" Res="task_21804_21804.swf" Pos="491,869" TriggerType="1" /><!-- 守护世界树 凯西 -->
+	<Item Task="39007" Map="21803" ID="390073" Level="CONTENT" Res="task_39007_1.swf" Pos="338,826" TriggerType="1" /><!-- 守护世界树 剧毒蜂皇 -->		
+	<Item Task="39007" Map="21804" ID="390075" Level="CONTENT" Res="ManTiSi.swf" Pos="83,794" TriggerType="1" />    <!--  新文件 世界树顶 曼提丝 -->
+	<!-- 锁修塔大冒险 -->
+	<Item Task="39008" Map="11703" ID="390081" Level="CONTENT" Res="HideIsland_pipikeke.swf" Pos="198,-118" TriggerType="1" />    <!--  新文件 锁修塔皮皮克克 -->
+	<Item Task="39008" Map="21704" ID="390083" Level="CONTENT" Res="HideIsland_pipikeke.swf" Pos="96,58" TriggerType="1" />    <!--  新文件 锁修塔皮皮克克 -->
+	<!--雕像的秘密-->
+	<Item Task="11001" Map="11604" ID="110011" Level="CONTENT" Res="task_11001_TT_fly.swf" Pos="649,-65" TriggerType="1" /><!-- TT飞走 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </TaskItem>

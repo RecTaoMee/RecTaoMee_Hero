@@ -1,0 +1,95 @@
+<!-- 
+任务文件清单 
+39008.xml								OK									
+summary.xml     (server update )       	OK   ServerOK
+taskitem.xml                           
+HideIsland_pipikeke.swf
+taskitem
+ -->
+
+
+
+
+
+<Task ID="39008" Memo="皮皮克克最近开始新的冒险修行啦!听说他这次的目的地是锁修塔，快去和他一起探索吧!" TargetMap="11104">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="皮皮克克最近开始新的冒险修行啦!听说他这次的目的地是锁修塔，快去和他一起探索吧!" TargetMap="11104" TargetObj="1" TargetName="与t皮皮克克t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11104" ObjID="1" TaskOption="【锁修塔大冒险】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="你来啦!我们去冒险吧!" />
+					<Option Info="我们去哪里？" />					
+				</Action>	
+				<Action Type="TALK">			
+					<Msg NpcID="1" ImageID="1" Info="在我深厚的捣乱功力下村长终于同意我出去冒险啦!我最近在跟随锁修塔守护者银魂•杰森导师修行，能陪我去吗?" />
+					<Option Info="没问题!我们是朋友嘛！" />																		
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="1" ImageID="1" Info="好诶!复兴冒险小分队，出发！" />
+					<Option Info="出发！" />						
+				</Action>	
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11703,1" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11703,390081" />
+				
+    		</Event>		
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event  Memo="陪皮皮克克前往【锁修塔桥】与银魂•杰森对话吧!" TargetMap="11703" TargetObj="53" TargetName="和t银魂•杰森t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11703" ObjID="53" TaskOption="【锁修塔大冒险】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="53" ImageID="1" Info="你们来了，受生命之根破损影响，塔内伊影的封印松动，它变得更加强大了。" />
+					<Option Info="需要我们做什么?" />
+				</Action>						
+				<Action Type="TALK">
+					<Msg NpcID="53" ImageID="1" Info="要想提升实力，皮皮克克也到去锁修塔试炼的时候了。小勇士，请你陪他到【锁修塔4F】，打败伊影，加固封印吧！" />
+					<Msg NpcID="1" ImageID="1" Info="好诶好诶!我还没去过修锁塔呢，这次冒险一定十分有趣！" />
+					<Option Info="使命必达!" />
+				</Action>						
+				<Action Type="TALK">
+					<Msg NpcID="53" ImageID="1" Info="那我现在把你们传送到修锁塔4F" />
+					<Option Info="好!" />
+				</Action>						
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21704,1" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21704,390083" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11703,390081" />
+
+    		</Event>
+		</Step>		
+			
+    	<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Battle ID="3504" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="陪皮皮克克前往【锁修塔4F】，打败伊影，加固封印吧！" TargetMap="21704" TargetObj="337" TargetName="和t伊影t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21704" ObjID="337" TaskOption="【锁修塔大冒险】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="337" ImageID="1" Info="……青之宝玉拿去吧。" />
+					<Msg NpcID="1" ImageID="1" Info="哇!我们成功了!我终于也能进阶啦！谢谢你来陪我，这是我的小小心意，现在就送给你啦！下周我们也要一起来加固封印哦!" />
+					<Option Info="好!" />
+				</Action>			
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21704,390083" />
+				
+			</Event>
+			<Event ConditionType="OUT" Memo="陪皮皮克克前往【锁修塔4F】，打败伊影，加固封印吧！" TargetMap="21704" TargetObj="337" TargetName="和t伊影t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21704" ObjID="337" TaskOption="【锁修塔大冒险】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="337" ImageID="1" Info="黑水晶的力量又变强了！感受黑暗阴影的笼罩吧!" />
+					<Option Info="不会让你得逞的!来战!" />
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="3504" />  
+
+			</Event>	
+		</Step>							
+
+				
+	</Procedure>
+</Task>

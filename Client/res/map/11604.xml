@@ -1,4 +1,4 @@
-<!--弗雷基港-->
+﻿<!--弗雷基港-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
 	<transport intPos="208,298">
 		<node id="1" pos="117,251" targetMapId="11603"  targetTransPortId="3"/>
@@ -9,6 +9,9 @@
 		<node id="1" type="TransPort" level="downLevel" res="MC_door2" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
 		<node id="3" type="Disable" level="downLevel" res="MC_ship" alpTaskID="152_2" visible="0"/>
+		<node id="11001" res="MC_BlackCat"/>
+		<node id="11002" res="MC_FishTank"/>
+		<node id="11003" res="MC_Captain"/>
 	</object>
 	<npc>
 		<node id="367" type="NPC" res="MC_npc_367" taskShowSteps="21_2|3" action=""/>		

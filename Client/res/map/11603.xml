@@ -1,4 +1,4 @@
-<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3" edgeRect="250,320,250,192">
+﻿<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3" edgeRect="250,320,250,192">
 	<transport intPos="145,340">
 		<node id="1" pos="150,354" targetMapId="21306"  targetTransPortId="2"/> 
 		<node id="2" pos="1348,590" targetMapId="11602" targetTransPortId="1"/> 
@@ -8,7 +8,9 @@
 		<node id="1" type="TransPort" level="downLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door2" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="3" type="TransPort" level="downLevel" res="MC_door3" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+        <node id="11004"   res="MC_CrownFish"/>		
 	</object>
+	
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->

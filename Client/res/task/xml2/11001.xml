@@ -1,0 +1,146 @@
+<Task ID="11001" Memo="鹦鹉TT好像有事找你，快去【弗雷基码头】看看吧！" TargetMap="11604">
+<Procedure>
+
+	
+	<Step ID="1" ParentList="0" ParentCost="0" >
+    	<Event Memo="鹦鹉TT好像有事找你，快去【弗雷基码头】看看吧" TargetMap="11604" TargetObj="52" TargetName="和tTTt对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11604" ObjID="52" TaskOption="TT我来啦!" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11001_1.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11604,110011" />
+		    <Action Type="MOVIE" Url="task_11001_1_2.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11604,110011" />	
+		</Event>
+	</Step>
+	
+	<Step ID="22" ParentList="1" ParentCost="1" >
+	<Condition>
+		<Battle ID="10" Count="5" />
+	</Condition>
+	<Event ConditionType="IN" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="11213" TargetObj="18" TargetName="净化完毕">
+		<Action Type="COMMAND" Command="NOTHING" />
+	</Event>
+	<Event ConditionType="OUT" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="21306" TargetName="净化t迷唇爱丝t">
+		<Trigger>
+			<Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="这就去净化迷唇爱丝" />
+		</Trigger>
+		<Action Type="COMMAND" Command="NOTHING" />				
+	</Event>
+	</Step>	
+	
+	
+	<!--                    -->	
+	
+	<Step ID="23" ParentList="1" ParentCost="1" >
+	<Condition>
+		<Item ID="230001" Count="1" />
+	</Condition>
+	<Event ConditionType="IN" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="11213"  TargetName="手指饼干买到了">
+		<Action Type="COMMAND" Command="NOTHING" />
+	</Event>
+	<Event ConditionType="OUT" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="11213" TargetName="买1份t手指饼干t">
+		<Trigger>
+			<Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="这就去买手指饼干" />
+		</Trigger>
+		<Action Type="COMMAND" Command="NOTHING" />				
+	</Event>
+	</Step>	
+
+
+	<!--               -->	    
+		
+	<Step ID="24" ParentList="1" ParentCost="1" >
+	<Condition>
+		<Item ID="160006" Count="5" />
+	</Condition>
+		<Event ConditionType="IN" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="11213"  TargetName="牛奶买到了">
+			<Action Type="COMMAND" Command="NOTHING" />
+		</Event>
+		<Event ConditionType="OUT" Memo="前往格历尔平原6区，击败迷唇爱丝×5\n前往贝多罗面包店，找贝多罗购买手指饼干×1\n前往弗雷基商会，找TA购买牛奶×5" TargetMap="11602" TargetName="买5份t牛奶t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="这就去买牛奶" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />				
+		</Event>
+	</Step>	
+	 
+	
+	
+	
+	
+	<Step ID="2" ParentList="22,23,24" ParentCost="3" >
+		<Event Memo="全部完成，前往弗雷基码头吧.点击左下角的黑猫，喂食牛奶.点击右下角的鱼缸，喂食手指饼干" TargetMap="11604"  TargetName="喂食t黑猫t牛奶">  
+			<Trigger>
+				<Item Type="ENTER_MAP" MapID="11604"  />
+			</Trigger>
+		   <Action Type="MOVIE" Url="task_11001_2.swf" MapLevel="TASK" Pos="-0,-0" />
+		   <Action Type="MOVIE" Url="task_11001_3.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+
+	<Step ID="3" ParentList="2" ParentCost="1" >
+		<Event Memo="强行摸摸这只黑猫" TargetMap="11604"  TargetName="喂食t黑猫t牛奶">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11604" ObjID="11001" />
+			</Trigger>
+			<Action Type="COMMAND" Command="DELAY" Params="2000" />
+			<Action Type="MOVIE" Url="task_11001_5.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+	
+
+	<Step ID="4" ParentList="3" ParentCost="1" >
+		<Event Memo="点击右下角的鱼缸，喂食手指饼干" TargetMap="11604"  TargetName="点击鱼缸t喂鱼t">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11604" ObjID="11002" />
+			</Trigger>
+			 <Action Type="MOVIE" Url="task_11001_FingerBiscuits.swf" MapLevel="TOP" Pos="20,-84" />		
+		 </Event>
+	</Step>	
+	
+
+	<Step ID="5" ParentList="4" ParentCost="1" >
+		<Event Memo="喂完食物啦，接下来是清理雕像!" TargetMap="11604"  TargetName="点击勇士号旁t船长雕像t">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11604" ObjID="11003" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11001_6.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+	
+
+
+	<Step ID="6" ParentList="5" ParentCost="1" >
+		<Event Memo="前往弗雷基广场，点击水里的皇冠鱼雕像!" TargetMap="11603"  TargetName="点击水里的t皇冠鱼雕像t">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11603" ObjID="11004" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11001_7.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+
+	<Step ID="7" ParentList="6" ParentCost="1" >
+		<Event Memo="再次点击左上角皇冠鱼雕像!" TargetMap="11603"  TargetName="再次点击t皇冠鱼雕像t">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11603" ObjID="11004" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11001_8.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+
+	<Step ID="8" ParentList="7" ParentCost="1" >
+		<Event Memo="返回弗雷基码头!" TargetMap="11604"  TargetName="与t船长雕像t对话">  
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="11604" ObjID="11003" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11001_9.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="MOVIE" Url="task_11001_10.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+
+
+
+
+	</Procedure>
+</Task>

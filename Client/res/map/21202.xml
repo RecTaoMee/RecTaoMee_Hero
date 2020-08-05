@@ -6,7 +6,8 @@
 	</transport>
 	<object>
 		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
-		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>		
+		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>	
+		<node id="21202001" res="MC_rand_40"/>		<!--  砸第一个罐子	 -->	
 	</object>
 	
 	<npc>		

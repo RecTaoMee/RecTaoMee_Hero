@@ -1,4 +1,4 @@
-<!--  Task ID:【从1开始】可以不连续但必须按序(1-500) 
+﻿<!--  Task ID:【从1开始】可以不连续但必须按序(1-500) 
  ID段表示任务类型(1~10000主线、10001~20000支线、20001~30000重复、30001~40000周期、20001~30000重复) Parent:父任务ID必须小于ID 
   -->
 <!--  Node ID:任务中节点ID，【从1开始】
@@ -2333,7 +2333,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>	
 
 
-
+	<!-- 2020/2/4 -->
 	<Task ID="11000" Name="真假牛奶瓶盖" Kind="2" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="41" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
 		<Node ID="1" Step="5" >
 			<OutItem ID="1">
@@ -2347,6 +2347,24 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			
 			
 		</Node>	
+	</Task>	
+	<!-- 2020/8/1 -->
+	<Task ID="11001" Name="雕像的秘密" Kind="2" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="22" Memo="">
+			<BeastTarget BeastType="10" Count="5" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		
+		<Node ID="2" Step="8" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="2000" />
+				<Item OutType="1" ItemId="50002" Count="200" />
+				<Item OutType="1" ItemId="50003" Count="200" />
+                <Item OutType="2" ItemId="341013" Count="2" />		
+			</OutItem>
+		</Node>			
 	</Task>	
 
 	
@@ -4409,5 +4427,127 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 	</Task>	
+	
+	
+	
+	
+				<!-- 2020/7/29 -->   <!-- 前置任务68 -->
+	<Task ID="39005" Name="下水道的入侵者Ⅰ" Kind="4" ParentCost="1" ParentList="68" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="4:0-24"  >
+		<Node ID="1" Step="2" Memo="">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		
+		<Node ID="2" Step="3" Memo="">
+		<BeastGrp GrpId="3500" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		
+		<Node ID="3" Step="4" Memo="">
+		<BeastGrp GrpId="3501" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>	
+		
+		<Node ID="4" Step="5" Memo="">
+		<BeastGrp GrpId="3502" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>
+		
+		<Node ID="5" Step="6" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="9999" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="20000" />
+				<Item OutType="2" ItemId="220052" Count="2" />
+                                                                <Item OutType="2" ItemId="350045" Count="1" />												
+			</OutItem>
+		</Node>		
+	</Task>
+	
+					<!-- 2020/7/30 -->    <!-- 前置任务201 202 203 204 205 -->
+	<Task ID="39006" Name="哭泣吧!水龙!" Kind="4" ParentCost="1" ParentList="206" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="3:0-24" >
+		<Node ID="1" Step="4" >
+		<BeastGrp GrpId="3503" Count="1" Win="1"/>
+			<OutItem ID="1">
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="5" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="8848" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="16000" />
+				<Item OutType="2" ItemId="350015" Count="1" />	
+				<Item OutType="2" ItemId="220038" Count="3" />	
+			</OutItem>
+		</Node>	
+	</Task>	
+	
+                                                                              <!-- 2020/7/30 -->   <!-- 前置任务10108 -->
+	<Task ID="39007" Name="保卫世界树" Kind="4" ParentCost="1" ParentList="10108" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="40" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="1:0-24" >
+		<Node ID="1" Step="3" >
+		<BeastGrp GrpId="3506" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>	
+		
+		<Node ID="2" Step="5" >
+		<BeastGrp GrpId="3507" Count="1" Win="1"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="100" />
+			</OutItem>
+		</Node>	
+		
+		<Node ID="3" Step="6" IsEnd="1">
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="20000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="40000" />
+				<Item OutType="2" ItemId="350017" Count="3" />
+				<Item OutType="2" ItemId="350013" Count="3" />	
+			</OutItem>
+		</Node>
+	</Task>
+
+	                                                                 <!-- 2020/7/30 -->   <!-- 前置任务201 202 203 204 205 -->
+	<Task ID="39008" Name="锁修塔大冒险" Kind="4" ParentCost="1" ParentList="206" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="5:0-24" >			
+		<Node ID="1" Step="3" IsEnd="1" >	
+			<BeastGrp GrpId="3504" Count="1" Win="1" />
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="30000" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="15000" />
+				<Item OutType="2" ItemId="360040" Count="5" />	
+			</OutItem>
+		</Node>
+	</Task>
+	
+	                                                                 <!-- 2020/7/30 -->   <!-- 前置任务151 154 155 156 157 -->			
+	<Task ID="39009" Name="风龙的锤炼" Kind="4" ParentCost="1" ParentList="151 154 155 156 157" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="25" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="2:0-24" >
+		<Node ID="1"  Step="3"  >
+		<BeastGrp GrpId="3505" Count="1" Win="1" />
+			<OutItem ID="1">
+			</OutItem>
+		</Node>
+		
+		<Node ID="2"  Step="4" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="13145" />
+				<Item OutType="1" ItemId="50002" Count="100" />
+				<Item OutType="1" ItemId="50003" Count="13145" />
+				<Item OutType="2" ItemId="350014" Count="3" />	
+				<Item OutType="2" ItemId="350012" Count="1" />	
+			</OutItem>
+		</Node>
+	</Task>			
+			
+	
 </Tasks>
 </TaskSummary>

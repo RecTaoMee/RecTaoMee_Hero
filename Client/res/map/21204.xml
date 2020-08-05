@@ -33,6 +33,9 @@
 				<![CDATA[我的嘴巴里什么都么有哦，到对面看看吧！]]>
 			</event>
 		</node>
+		
+		<node id="21202003" res="MC_rand_45"/>		<!--  砸第三个罐子	 -->
+		
 	</object>
 	<npc>
 		<node id="226" type="NPC" res="MC_npc_226" action="0"/>

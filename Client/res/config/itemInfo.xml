@@ -392,7 +392,17 @@
 		
 		<Item ID="350014" Name="精灵五项重组丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" />
 	    <Item ID="350013" Name="精灵成长重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="10"/>
-
+	    <Item ID="351015" Name="精灵天赋重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="10"/>
+		
+		<Item ID="350017" Name="种族技能仙草" SkillPercent="300 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1" DayMax="20">
+			<Race ID="1" Skill="6203 7203 8803" SkillRate="200 400 400"/>
+			<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
+			<Race ID="5" Skill="6202 7202 8802" SkillRate="200 400 400"/>
+	    </Item>
+		
+		<Item ID="300023" Name="魔鬼的泪晶Lv10" UseLv="10" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
+			<Goods ID="220007 220050 220051 220052" Cnt="1 1 1 1"/>
+		</Item>
 	</Kind>
 
 	<Kind ID="23" Team="1" Order="4" Name="料理" Start="230001" End="239999" Max="9999">
@@ -674,6 +684,10 @@
 		<Item ID="260040" Name="伊夫特的鳞片" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 		<Item ID="260041" Name="伊夫特的蛋" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 		<Item ID="260042" Name="蜂皇的针" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<!-- 2020/7/30 -->
+		<Item ID="260043" Name="水龙的眼泪" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<Item ID="260044" Name="风龙的鳞片" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		
 	</Kind>
 
 	<Kind ID="27" Team="4" Order="1" Name="闪灵胶片" Start="270001" End="279999" Max="9999">
@@ -788,6 +802,11 @@
 		<Item ID="290025" Name="勇气徽章" Price="10" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 
 		<Item ID="290026" Name="勇士杯奖牌" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
+		
+		
+		
+		
+		
 	</Kind>
 
 	<Kind ID="30" Team="1" Order="1" Name="礼包" Start="300001" End="309999" Max="9999">
@@ -966,9 +985,7 @@
 		<Item ID="300022" Name="修炼35域礼箱" UseLv="1" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Del="1">
 			<Goods ID="300001 210006 230005" Cnt="5 12 12"/>
 		</Item>
-		<Item ID="300023" Name="魔鬼的泪晶Lv10" UseLv="10" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
-			<Goods ID="220007 220050 220051 220052" Cnt="1 1 1 1"/>
-		</Item>
+
 		<Item ID="300024" Name="装备礼箱Lv15（剑士）" UseLv="15" Type="4" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
 			<Clothes ID="130024 130025 130026 130027 130028 130029" Cnt="1 1 1 1 1 1" Lv="0 0 0 0 0 0"/>
 		</Item>
@@ -2201,11 +2218,7 @@
 	    	<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
 	    	<Race ID="5" Skill="6202 7202 8802" SkillRate="200 400 400"/>
 	    </Item>
-	    <Item ID="350017" Name="种族技能仙草" SkillPercent="300 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1" DayMax="20">
-			<Race ID="1" Skill="6203 7203 8803" SkillRate="200 400 400"/>
-			<Race ID="2" Skill="6201 7201 8801" SkillRate="200 400 400"/>
-			<Race ID="5" Skill="6202 7202 8802" SkillRate="200 400 400"/>
-	    </Item>
+
 	    <Item ID="350018" Name="修理模具(初级)" Type="25" Target="1" Value="50" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1"/>
 	    <Item ID="350019" Name="修理模具(中级)" Type="25" Target="1" Value="100" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1"/>
 	    <Item ID="350020" Name="鲜肉月饼" Type="25" Target="1" Value="50" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" Del="1"/>

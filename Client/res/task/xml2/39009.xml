@@ -1,0 +1,86 @@
+<!-- 
+任务文件清单 
+39009.xml								OK									
+summary.xml     (server update )       	OK   ServerOK
+260044.swf		（风龙的鳞片）
+iteminfo    	 (server update )
+itemtips
+ -->
+
+
+
+
+
+<Task ID="39009" Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！" TargetMap="11202">
+   	<Procedure>
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="还记得摩尔王布置的风龙的试炼吗？近日，摩尔王与风之龙达成约定，每周二，风龙威恩德都会与小勇士们进行战斗，帮助小勇士提升实力，如果你愿意，我现在就将你传送" />
+					<Msg NpcID="104" ImageID="1" Info="到风之洞穴3F。" />
+					<Option Info="立刻出发！" />
+					<Option Info="让我再想想。" NextStep="1" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2" />											
+    			</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+			<Condition>
+				<Battle ID="3505" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+				<Action Type="COMMAND" Command="NOTHING"  />			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="你又来了。" />
+					<Msg NpcID="329" ImageID="1" Info="无畏的勇士————\n准备接受吾之锤炼吧————\n看看是否值得吾记住 汝 之 名————" />
+					<Option Info="来战吧！" />
+					<Option Info="我准备下" NextStep="2" />
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3505" />			
+    		</Event>
+		</Step>
+		 
+		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="打败风之龙了！！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"  />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="329" ImageID="1" Info="你的实力已经不容小觑，然而黑水晶的力量仍然在不断增强，千万不要松懈！" ></Msg>
+						<Msg NpcID="329" ImageID="1" Info="拿着这个，回去找那个黑衣人吧！" ></Msg>
+						<Option Info="立刻返程！" />
+					</Action>	
+					<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260044" />    <!-- 获得风龙的鳞片 -->
+					<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202,3" />
+    		</Event>
+		</Step>
+
+
+
+  		<Step ID="4" ParentList="3" ParentCost="1">
+    			<Event Memo="将风龙的鳞片带给多修吧" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="104" ImageID="1" Info="果然，你从不会让人失望。" />
+						<Msg NpcID="104" ImageID="1" Info="这是你的奖励，收下吧。" />
+						<Option Info="使命必达！" />
+					</Action>	
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260044" />        <!--   丢弃风龙的鳞片 -->
+    			</Event>
+		</Step>
+		
+	</Procedure>
+</Task>
+
+

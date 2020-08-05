@@ -1,0 +1,88 @@
+<!-- 
+任务文件清单 【哭泣吧!水龙!!】
+任务文件39006.xml                            					 OK
+summary.xml   (server update)                					 OK   Server OK
+无新增taskitem                                					OK
+260043.swf          ##水龙的眼泪			  	     			  OK 
+iteminfo.xml  （server update）   ##水龙的眼泪					OK		 S OK								
+itemtips.xml   		##水龙的眼泪                         		  OK
+3028.swf       ##伊夫特       正方形判定改为描边判定              OK
+
+ -->
+
+<Task ID="39001" Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!" TargetMap="11307">
+<Procedure>
+	<Step ID="1" ParentList="0" ParentCost="0" >
+    	<Event Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【哭泣吧!水龙!!】" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+		</Event>
+	</Step>
+	
+	<Step ID="2" ParentList="1" ParentCost="1" >
+    	<Event Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【哭泣吧!水龙!!】" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="24" ImageID="2" Info="小摩尔，王国正在为进发炎之大陆做准备，你能为我们收集用于抵御炎热的【水龙眼泪】吗?" />
+				<Option Info="没问题!可怎样才能让水龙哭泣呢?"/>
+			</Action>
+			<Action Type="TALK">
+				<Msg NpcID="24" ImageID="2" Info="（神秘微笑）答案就是--揍哭它!!!哈哈哈!" />
+				<Option Info="°ー°有道理。"/>
+			</Action>
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="22209,1"/>
+		</Event>
+	</Step>
+	
+<!--水龙的眼泪-->	
+	<Step ID="3" ParentList="2" ParentCost="1" >
+    	<Event Memo="前往【克拉斯岩洞九层】" TargetMap="22209" TargetObj="24" TargetName="点击t石碑t水龙出现">
+  			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="22209" ObjID="10"  />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_22209_20603.swf" MapLevel="TASK" Pos="0,0" />	
+  			<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="22209, 20602" />
+		</Event>
+	</Step>
+		
+	<Step ID="4" ParentList="3" ParentCost="1" >
+		<Condition>
+			<Battle ID="3503" Count="1" />
+		</Condition>
+		<Event ConditionType="IN" Memo="揍哭水龙吧！" TargetMap="22209" TargetObj="20602" TargetName="和t伊夫特t对话">
+			<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260043" />
+			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="22209, 20602" />
+		</Event>
+		<Event ConditionType="OUT" Memo="揍哭水龙吧！" TargetMap="22209" TargetObj="20602" TargetName="和t伊夫特t对话">
+			<Trigger>
+				<Item Type="OBJ_CLICK" MapID="22209" ObjID="20602"  />
+			</Trigger>
+				<Action Type="TALK">
+				<Msg NpcID="20602" ImageID="1" Info="（咆哮）别想伤害我的孩子!" />
+					<Option Info="来战！" />
+					<Option Info="让我准备一下！" NextStep="4"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3503" />
+		</Event>
+	</Step>
+	
+	<Step ID="5" ParentList="4" ParentCost="1" >
+    	<Event  Memo="快回去把眼泪交给莱卡吧!" TargetMap="11307" TargetObj="24" TargetName="与t莱卡t对话">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【哭泣吧!水龙!!】" />		
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="24" ImageID="1" Info="居然真的揍哭了水龙，不愧是未来勇士，这是你的奖励，下周再来帮忙吧!" />
+					<Option Info="嘿嘿，小菜一碟!" />
+			</Action>
+			<Action Type="COMMAND" Command="REJECT_ITEM" Params="260043" />         <!--   丢弃水龙的眼泪 -->
+  																			
+    	</Event>
+	</Step>
+		
+	</Procedure>
+</Task>
