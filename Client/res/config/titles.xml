@@ -14,7 +14,7 @@
     Dodge：回避
     Crit：必杀
     FightBack：反击
-	
+	ResistPoison：抗毒；ResistLithification：抗石化；ResistLethargy：抗昏睡；ResistCommination：抗诅咒；ResistConfusion：抗混乱；ResistOblivion：抗遗忘。
 -->
 
 <Titles>
@@ -179,5 +179,7 @@
  	<Title ID="3039" Name="皇家卫队首席" BlackFilter="1" FunType="1" ClearType="1" HpMax="120" MpMax="50" Speed="2" Spirit="2" Crit="2" Desc="生命上限+120，魔力上限+50，速度+2，精神力+2，必杀+2"/>
  	<Title ID="3040" Name="花好月圆" FunType="1" HpMax="100" MpMax="100" Desc="中秋节活动参赛荣誉证明 生命上限+100，魔力上限+100"/>
  	<Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="100" MpMax="100" Desc="2020年端午节活动纪念称号 生命上限+100，魔力上限+100"/>
-
+	<Title ID="3042" Name="破晓逐光者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="通关竞技之塔30层 生命上限+350，魔法上限+150，回避+10 抗昏睡+5 抗石化+5"/>
+	<Title ID="3043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
+	
 </Titles>

@@ -10,7 +10,7 @@ task_39007_1       		剧毒蜂皇
 
  -->
 
-<Task ID="39007" Memo="伊恩计划派遣一批黑化部队前往世界树顶，对生命之根残存的力量进行进一步破坏，请前往勇士广场向多修了解详情！" TargetMap="11202">
+<Task ID="39007" Memo="伊恩计划派遣一批黑化部队前往世界树顶，对生命之根残存的力量进行进一步破坏，请前往勇士广场向多修了解详情！\n周一 6:00-24:00" TargetMap="11202">
    	<Procedure>
   		<Step ID="1" ParentList="0" ParentCost="0" >
     		<Event Memo="伊恩计划派遣一批黑化部队前往世界树顶，对生命之根残存的力量进行进一步破坏，请前往勇士广场向多修了解详情！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
@@ -21,12 +21,18 @@ task_39007_1       		剧毒蜂皇
 					<Msg NpcID="104" ImageID="1" Info="凯西在世界树1F发出求救信号，我已通知王国其他勇士，然而他们正在筹备前往炎之大陆之事，无法立刻赶到，情况危急，我先把你传送到那里，一定要守住世界树！" />
 					<Option Info="在所不辞！" />					
 				</Action>
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21803, 390071" />         <!-- 添加凯西 -->
 				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21803,1" />
+				     
 			</Event>
 		</Step>
 		
-     	<Step ID="2" ParentList="1" ParentCost="1" >
+		<Step ID="20" ParentList="1" ParentCost="1" >
+		<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21803, 390071" />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+		
+     	<Step ID="2" ParentList="20" ParentCost="1" >
 	     	<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
 			<Trigger>
 					<Item Type="NPC_OPTION" MapID="21803" ObjID="390071"  />

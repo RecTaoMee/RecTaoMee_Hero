@@ -1,0 +1,122 @@
+<Task ID="11002" Memo="生命之根受损，格历尔大陆危在旦夕，迫不得已的情况下，王国决定前往c炎之大陆c寻找修复方法，然而c炎之大陆c又是怎样的存在呢?勇士们，带着勇气去一探究竟吧！" TargetMap="11307">
+<Procedure>
+
+	
+	<Step ID="1" ParentList="0" ParentCost="0" >
+    	<Event Memo="生命之根受损，格历尔大陆危在旦夕，迫不得已的情况下，王国决定前往c炎之大陆c寻找修复方法，然而c炎之大陆c又是怎样的存在呢?勇士们，带着勇气去一探究竟吧！" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+  			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【进发！炎之大陆！】" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11002_1.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="11603,1" />
+		</Event>
+	</Step>
+	
+
+	
+	
+	
+	<Step ID="2" ParentList="1" ParentCost="1" >
+		<Event Memo="前往【弗雷基广场】同安德鲁对话" TargetMap="11603"  TargetObj="105" TargetName="和t安德鲁t对话">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11603" ObjID="105" TaskOption="你知道炎之大陆吗？" />
+			</Trigger>
+			<Action Type="MOVIE" Url="task_11002_2.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="MOVIE" Url="task_11002_3.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="MOVIE" Url="task_11002_4.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="TALK">
+				<Msg NpcID="105" ImageID="1" Info="哈哈，关于精灵方面的问题，问皮克司研究员好像比问我更合适吧。" />
+				<Option Info="立刻出发！"/>
+			</Action>
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="11206,1" />
+		</Event>
+	</Step>	
+
+	<Step ID="3" ParentList="2" ParentCost="1" >
+		<Event Memo="前往【皮克司的家】同皮克司对话" TargetMap="11206" TargetObj="12" TargetName="和t皮克司t对话">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="⊙o⊙你怎么了!" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="12" ImageID="7" Info="(虚弱)你来了啊，太好了，能去【王国南街】的面包店买10个时间甜甜圈和5瓶牛奶给我嘛，我快饿死了..." />
+				<Option Info="立刻出发！"/>
+			</Action>
+		</Event>
+	</Step>	
+	
+
+	<Step ID="30" ParentList="3" ParentCost="1" >
+		<Condition>
+			<Item ID="230002" Count="10" />
+		</Condition>
+		<Event ConditionType="IN" Memo="买10个时间甜甜圈和5瓶牛奶" TargetMap="11213"  TargetName="t10个时间甜甜圈t">  
+			<Action Type="COMMAND" Command="NOTHING" />		
+		</Event>
+		<Event ConditionType="OUT" Memo="买10个时间甜甜圈和5瓶牛奶" TargetMap="11213"  TargetName="t10个时间甜甜圈t">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11206" ObjID="12" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />	
+		 </Event>
+	</Step>	
+	
+
+	<Step ID="31" ParentList="3" ParentCost="1" >
+		<Condition>
+			<Item ID="160006" Count="5" />
+		</Condition>
+		<Event ConditionType="IN" Memo="买10个时间甜甜圈和5瓶牛奶" TargetMap="11602"  TargetName="t5瓶牛奶t"> 
+			<Action Type="COMMAND" Command="NOTHING" />		
+		</Event>
+		<Event ConditionType="OUT" Memo="买10个时间甜甜圈和5瓶牛奶" TargetMap="11602"  TargetName="t5瓶牛奶t">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11206" ObjID="12" />
+			</Trigger>
+			 <Action Type="COMMAND" Command="NOTHING" />		
+		</Event>
+	</Step>	
+	
+
+
+	<Step ID="4" ParentList="30,31" ParentCost="2" >
+		<Event Memo="10个时间甜甜圈和5瓶牛奶都买到啦，去找皮克司吧！" TargetMap="11206" TargetObj="12"  TargetName="和t皮克司t对话">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="食物来啦！"	/>
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="12" ImageID="2" Info="（大口吞咽）啊，我又活过来了，下次实验之前一定要存够食物。" />
+				<Msg NpcID="12" ImageID="1" Info="嘿嘿，【@nick】，你找我来干嘛~？" />
+				<Option Info="你了解炎之大陆的精灵吗？"/>
+			</Action>
+			<Action Type="TALK">
+				<Msg NpcID="12" ImageID="1" Info="炎之大陆?安德鲁的故乡?虽然我没去过那里，但是根据安德鲁的描述我做了不少研究。" />
+				<Option Info="那太好了！"/>
+			</Action>
+			<Action Type="MOVIE" Url="task_11002_5.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="TALK">
+				<Msg NpcID="12" ImageID="1" Info="哈哈，没事，也谢谢你的甜甜圈和牛奶，下次再来玩啊~" />
+				<Option Info="好！"/>
+			</Action>
+			<Action Type="MOVIE" Url="task_11002_6.swf" MapLevel="TASK" Pos="-0,-0" />
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202,1" />
+			
+		</Event>
+	</Step>	
+
+	<Step ID="5" ParentList="4" ParentCost="1" >
+		<Event Memo="前往【勇士广场】同多修对话!" TargetMap="11202"  TargetObj="104" TargetName="和t多修t对话">  
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="我来了。" />
+			</Trigger>
+			<Action Type="TALK">
+				<Msg NpcID="104" ImageID="1" Info="还记得妮娜匆匆离去吗？" />
+				<Option Info="记得。"/>
+			</Action>
+			<Action Type="MOVIE" Url="task_11002_7.swf" MapLevel="TASK" Pos="-0,-0" />
+		</Event>
+	</Step>	
+
+
+
+	</Procedure>
+</Task>

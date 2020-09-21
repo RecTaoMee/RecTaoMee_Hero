@@ -11,15 +11,16 @@
 		<node id="704" type="NPC" res="MC_npc_704" action="check_is_pass"/>
     </npc>
     <actions>
-		<proAction npcID="704" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+		<proAction npcID="80701" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#兔子军团来了！！！]]>
+				<![CDATA[1#我们兔叽小分队无所畏惧！\n]]>
+				<![CDATA[(本层特性——电波兔：联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2402" />
-		<proAction npcID="704" id="2" type="0" answer="进入下一层$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$back_hall$o" colorID="0$0$0">
+		<proAction npcID="80702" id="2" type="0" answer="进入下一层$返回斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#兔子军团输了......]]>
+				<![CDATA[1#大侠饶命！]]>
 			</des>
 		</proAction>
 	</actions>

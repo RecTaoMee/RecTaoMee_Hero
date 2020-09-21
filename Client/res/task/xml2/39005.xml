@@ -11,7 +11,7 @@ taskitem.xml      #res\config    添加       				ok
 
  -->
 
-<Task ID="39005" Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！" TargetMap="11220">
+<Task ID="39005" Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！\n周四 6:00-24:00" TargetMap="11220">
 	<Procedure> 
   		<Step ID="1" ParentList="0" ParentCost="0"  >
 			<Event Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >			
@@ -35,6 +35,7 @@ taskitem.xml      #res\config    添加       				ok
 					<Option Info="交给我吧！" />	
 					<Option Info="我很忙，下次再见" NextStep="2" />																																		
 				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21202,390057" />				<!--  添加第一个罐子 static	 -->	
     		</Event>											
 	    </Step>		
 		
@@ -44,21 +45,23 @@ taskitem.xml      #res\config    添加       				ok
 			</Condition>
 			<Event ConditionType="IN" Memo="砸掉下水道一层的三个罐子，找出怪盗集团" TargetMap="21202" TargetName="t找出第一个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21202" ObjID="21202001" />	 <!--  砸第一个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21202" ObjID="390057" />	 <!--  砸第一个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21202" ObjID="390051" />	 <!--  双触发	 -->			
 				</Trigger>
     			<Action Type="TALK">
 					<Msg NpcID="315" ImageID="1" Info="好汉饶命，下次不敢了。" />		
 					<Option Info="下不为例" />																																							
 				</Action>
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21202,390051" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21202,390051" />     <!-- 移除迪迪拉 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21202,390057" />    <!-- 移除罐子 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21203,390059" />		<!--  添加第二个罐子 static	 -->	
     		</Event>	
     		<Event ConditionType="OUT" Memo="砸掉下水道一层的三个罐子，找出怪盗集团" TargetMap="21202" TargetName="t找出第一个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21202" ObjID="21202001" />	 <!--  砸第一个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21202" ObjID="390057" />	 <!--  砸第一个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21202" ObjID="390051" />	 <!--  双触发	 -->			
 				</Trigger>
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21202,390051" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21202,390051" />        <!-- 添加迪迪拉 -->
     			<Action Type="TALK">
 					<Msg NpcID="315" ImageID="1" Info="敢打扰我们的偷盗大计？兄弟们，揍他！" />		
 					<Option Info="来战" />																																							
@@ -75,7 +78,7 @@ taskitem.xml      #res\config    添加       				ok
 			</Condition>
 				<Event ConditionType="IN" Memo="砸掉下水道二层的三个罐子，找出怪盗集团" TargetMap="21203" TargetName="t找出第二个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21203" ObjID="21202002" />	 <!--  砸第二个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21203" ObjID="390059" />	 <!--  砸第二个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21203" ObjID="390053" />	 <!--  砸第二个罐子	 -->			
 				</Trigger>
     			<Action Type="TALK">
@@ -83,10 +86,13 @@ taskitem.xml      #res\config    添加       				ok
 					<Option Info="下不为例" />																																							
 				</Action>
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21203,390053" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21203,390059" />    <!-- 移除罐子 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21204,390050" />		<!--  添加第三个罐子 static	 -->	
+
     		</Event>	 
 			<Event ConditionType="OUT" Memo="砸掉下水道二层的三个罐子，找出怪盗集团" TargetMap="21203" TargetName="t找出第二个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21203" ObjID="21202002" />	 <!--  砸第二个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21203" ObjID="390059" />	 <!--  砸第二个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21203" ObjID="390053" />	 <!--  砸第二个罐子	 -->			
 				</Trigger>
 				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21203,390053" />
@@ -107,7 +113,7 @@ taskitem.xml      #res\config    添加       				ok
 			</Condition>
 			<Event ConditionType="IN" Memo="砸掉下水道三层的两个罐子，找出怪盗集团" TargetMap="21204" TargetName="t找出第三个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21204" ObjID="21202003" />	 <!--  砸第三个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21204" ObjID="390050" />	 <!--  砸第三个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21204" ObjID="390055" />	 <!--  砸第三个罐子	 -->			
 				</Trigger>
     			<Action Type="TALK">
@@ -115,10 +121,11 @@ taskitem.xml      #res\config    添加       				ok
 					<Option Info="下不为例" />																																							
 				</Action>
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21204,390055" />
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21204,390050" />    <!-- 移除罐子 -->
     		</Event>	
 			<Event ConditionType="OUT" Memo="砸掉下水道三层的两个罐子，找出怪盗集团" TargetMap="21204" TargetName="t找出第三个怪盗罐子t" >
   				<Trigger>	
- 					<Item Type="OBJ_CLICK" MapID="21204" ObjID="21202003" />	 <!--  砸第三个罐子	 -->			
+ 					<Item Type="OBJ_CLICK" MapID="21204" ObjID="390050" />	 <!--  砸第三个罐子	 -->			
  					<Item Type="OBJ_CLICK" MapID="21204" ObjID="390055" />	 <!--  砸第三个罐子	 -->			
 				</Trigger>
 				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21204,390055" />

@@ -136,9 +136,12 @@
 	<Item Task="11000" Map="21306" ID="110005" Level="CONTENT" Res="task_11208_11000_5.swf" Pos="-427,-172" TriggerType="1" /><!-- 假面奇奇帕（生病） 39005-->
 
 	 <!-- 下水道的入侵者 -->
-	<Item Task="39005" Map="21204" ID="390055" Level="CONTENT" Res="YiQunDidila.swf" Pos="-118,-44" TriggerType="1" /><!-- 第三个罐子-->
-	<Item Task="39005" Map="21203" ID="390053" Level="CONTENT" Res="YiQunDidila.swf" Pos="661,-59" TriggerType="1" /> <!-- 第二个罐子 -->
-	<Item Task="39005" Map="21202" ID="390051" Level="CONTENT" Res="YiQunDidila.swf" Pos="172,618" TriggerType="1" />  <!-- 第一个罐子 -->
+	<Item Task="39005" Map="21204" ID="390050" Level="CONTENT" Res="pot.swf" Pos="-90,-579" TriggerType="1" /><!-- 第三个罐子-->
+	<Item Task="39005" Map="21203" ID="390059" Level="CONTENT" Res="pot.swf" Pos="1077,10" TriggerType="1" /> <!-- 第二个罐子 -->
+	<Item Task="39005" Map="21202" ID="390057" Level="CONTENT" Res="pot.swf" Pos="541,611" TriggerType="1" />  <!-- 第一个罐子 -->
+	<Item Task="39005" Map="21204" ID="390055" Level="CONTENT" Res="YiQunDidila.swf" Pos="-140,-548" TriggerType="1" /><!-- 第三个罐子-->
+	<Item Task="39005" Map="21203" ID="390053" Level="CONTENT" Res="YiQunDidila.swf" Pos="1006,-24" TriggerType="1" /> <!-- 第二个罐子 -->
+	<Item Task="39005" Map="21202" ID="390051" Level="CONTENT" Res="YiQunDidila.swf" Pos="632,676" TriggerType="1" />  <!-- 第一个罐子 -->
 	<!-- 保护世界树 -->
 	<Item Task="39007" Map="21803" ID="390071" Level="CONTENT" Res="task_21804_21804.swf" Pos="491,869" TriggerType="1" /><!-- 守护世界树 凯西 -->
 	<Item Task="39007" Map="21803" ID="390073" Level="CONTENT" Res="task_39007_1.swf" Pos="338,826" TriggerType="1" /><!-- 守护世界树 剧毒蜂皇 -->		

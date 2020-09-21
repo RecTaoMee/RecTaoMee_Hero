@@ -13,15 +13,16 @@
 		<node id="526" type="NPC" res="MC_npc_526" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
     </npc>
     <actions>
-		<proAction npcID="329" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+		<proAction npcID="329" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#果然没让我失望，我—威恩德让你们领教一下真正的实力吧！]]>
+				<![CDATA[1#脚踩【@nick】之名的勇士，让我看看你能否通过这最后的试炼！\n]]>
+				<![CDATA[(本层特性——威恩德之影：威严 击晕；伊瑟拉：威严 咒怨；刺猬龙蜥：威严 重击)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2430" />
-		<proAction npcID="329" id="2" type="0" answer="谢谢你的指导。$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="o$back_hall$o" colorID="0$0$0">
+		<proAction npcID="329" id="2" type="0" answer="谢谢你的指导。$返回斗技场大厅$摩尔勇士万岁！" event="is_pass" to="o$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#能与龙族抗衡的摩尔已经不多了，你们的实力令我敬佩！！！]]>
+				<![CDATA[1#果然，汝从不让人失望。]]>
 			</des>
 		</proAction>
 		<proAction npcID="516" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_516$o" colorID="1$0$0">

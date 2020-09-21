@@ -11,7 +11,7 @@ taskitem
 
 
 
-<Task ID="39008" Memo="皮皮克克最近开始新的冒险修行啦!听说他这次的目的地是锁修塔，快去和他一起探索吧!" TargetMap="11104">
+<Task ID="39008" Memo="皮皮克克最近开始新的冒险修行啦!听说他这次的目的地是锁修塔，快去和他一起探索吧! \n周五 6:00-24:00" TargetMap="11104">
    	<Procedure>
   		<Step ID="1" ParentList="0" ParentCost="0" >
     		<Event Memo="皮皮克克最近开始新的冒险修行啦!听说他这次的目的地是锁修塔，快去和他一起探索吧!" TargetMap="11104" TargetObj="1" TargetName="与t皮皮克克t对话">

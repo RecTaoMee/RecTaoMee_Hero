@@ -1,26 +1,68 @@
-<!--修炼之域一层-->
+<!--修炼之域五层-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
 	<process>
-		<node name="ActivityHeroCupTower" randID="849"/>
+		<node name="ActivityHeroCupTower" randID="848"/>
 	</process>
 	<transport intPos="400,400">
 	</transport>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="337" type="NPC" res="MC_npc_337" action="check_is_pass"/>
+		<node id="814" type="NPC" res="MC_npc_756" action="check_is_pass"/>
+    	<node id="511" type="NPC" res="MC_npc_511" level="contentLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
+    	<node id="521" type="NPC" res="MC_npc_521" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
     </npc>
     <actions>
-		<proAction npcID="337" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+	
+		<proAction npcID="721" id="50" type="0" answer=".......$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#感受恐怖的气息吧.....]]>
+				<![CDATA[1#请允许我...忘记...$$]]>
+				<![CDATA[1#有些事情已经过了太久......久到模糊不清了...$$]]>
+				<![CDATA[1#也许......你能帮我...... （突然袭击）\n]]>
+				<![CDATA[(本层特性——金甲剑魂：击晕 重击；18K：尖刺；幽光战士：重击)]]>
 			</des>
 		</proAction>
+		
+
 		<proAction id="1" type="5" fightID="2429" />
-		<proAction npcID="337" id="2" type="0" answer="进入下一层$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$back_hall$o" colorID="0$0$0">
+		<proAction npcID="721" id="2" type="0" answer="？？？$摩尔勇士万岁！" event="is_pass" to="a6$o" colorID="1$0">
 			<des>
-				<![CDATA[1#可恶！！！]]>
+				<![CDATA[1#你的实力值得信任.......$$]]>
+				<![CDATA[1#不...还不够...要面对他们远远不够...$$]]>
+				<![CDATA[1#他还是去了...就连他最好的朋友也劝不了他...$$]]>
+				<![CDATA[1#那是陷阱啊！...不行...但是我必须去...那是我的责任，我的宿命...$$]]>
 			</des>
 		</proAction>
+		<proAction npcID="721" id="6" type="0" answer="全力以赴！$摩尔勇士万岁！"  to="a7$o" colorID="1$0">
+			<des>
+				<![CDATA[1#...... $$]]>
+				<![CDATA[1#我曾是一把宝剑...跟随着主人，足足百年...他正义感很强....$$]]>
+				<![CDATA[1#然而，这也拖累了他...$$]]>
+				<![CDATA[1#...那场战斗，他就像蝼蚁一样，哪怕使尽全力，也伤不到对面半分....$$]]>
+				<![CDATA[1#...他就那样在我面前倒下了，眼眸里的光就像我的剑身一样一点点黯淡下去...$$]]>
+				<![CDATA[1#.......后来，我就成了现在的样子......$$]]>
+				<![CDATA[1#但是，我的魂魄并不完整，有很多事情也已忘记。$$]]>
+				<![CDATA[1#你能帮我找到那些...记忆吗？我将分出我的一缕魂魄跟随你，在找到那些“我”时，请务必召唤我出来。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="721" id="7" type="0" answer="进入下一层$返回斗技场大厅$摩尔勇士万岁！"  to="next_floor$w2_11218_1$o" colorID="0$0$0">
+			<des>
+				<![CDATA[1#谢谢你...$$]]>
+				<![CDATA[1#.......一定不能怀疑自己已经走过的路.......]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="511" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_511$o" colorID="1$0$0">
+			<des>
+				<![CDATA[1#这些精灵，出手是不是太重了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="521" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_521$b7_521$a5$o" colorID="1$1$0$0">
+			<des>
+				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
+			</des>
+		</proAction>
+		<proAction actionID="5" type="1" outMap="1" level="taskLevel" name="task_9_1" moviepos="0,0" to="a4"/>
 	</actions>
 </map>

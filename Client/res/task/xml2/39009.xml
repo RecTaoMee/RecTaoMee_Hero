@@ -11,7 +11,7 @@ itemtips
 
 
 
-<Task ID="39009" Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！" TargetMap="11202">
+<Task ID="39009" Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！\n周二 6:00-24:00" TargetMap="11202">
    	<Procedure>
   		<Step ID="1" ParentList="0" ParentCost="0" >
     			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">

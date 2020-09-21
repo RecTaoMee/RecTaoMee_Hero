@@ -32,7 +32,7 @@
 				<![CDATA[1#嘻嘻，年轻的摩尔，你是来寻找和你【单人比试】的对手吗？]]>
 			</des>
 		</proAction>
-		<proAction npcID="45" id="2" type="0" answer="转动十字轮盘！$选择领域$修炼之域产出投放规则$摩尔勇士万岁！" to="a25$module_boards/PracticePanelModule$module_boards/PracticeAreaAwardModule$o" colorID="1$1$0$0">
+		<proAction npcID="45" id="2" type="0" answer="转动十字轮盘！$选择领域$竞技之塔1F-19F$竞技之塔20F-30F$修炼之域产出投放规则$摩尔勇士万岁！" to="a25$module_boards/PracticePanelModule$a50$a51$module_boards/PracticeAreaAwardModule$o" colorID="1$1$1$1$0$0">
 			<des>
 				<![CDATA[1#【修炼之域】是训练预备勇士的场所，希望你能和伙伴们一起来冒险哟，会有你意想不到的惊喜哦！]]>
 			</des>
@@ -47,6 +47,19 @@
 				<![CDATA[1#你还没有获得直接到达那里的资格哦!]]>
 			</des>
 		</proAction>
+		
+		<proAction npcID="45" id="50" type="0" answer="竞技之塔1f$竞技之塔6f$竞技之塔9f$竞技之塔12f$竞技之塔15f$竞技之塔18f$竞技之塔19f$摩尔勇士万岁！" to="w2_31201_1$w2_31206_1$w2_31209_1$w2_31212_1$w2_31215_1$w2_31218_1$w2_31219_1$o" colorID="1$1$1$1$1$1$1$0">
+			<des>
+				<![CDATA[1#“竞技之塔”内都是最强大的宠物，你准备好迎接他们的挑战了吗？]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="45" id="51" type="0" answer="竞技之塔20f$竞技之塔21f$竞技之塔22f$竞技之塔23f$竞技之塔24f$竞技之塔25f$竞技之塔26f$竞技之塔27f$竞技之塔28f$竞技之塔29f$竞技之塔30f$摩尔勇士万岁！" to="w2_31220_1$w2_31221_1$w2_31222_1$w2_31223_1$w2_31224_1$w2_31225_1$w2_31226_1$w2_31227_1$w2_31228_1$w2_31229_1$w2_31230_1$o" colorID="1$1$1$1$1$1$1$1$1$1$1$0">
+			<des>
+				<![CDATA[1#“竞技之塔”内都是最强大的宠物，你准备好迎接他们的挑战了吗？]]>
+			</des>
+		</proAction>
+		
 		<proAction npcID="39" id="5" type="3" to="o" />
 		<proAction npcID="40" id="6" type="3" to="o" />
 		<proAction npcID="45" id="7" type="3" to="o" />

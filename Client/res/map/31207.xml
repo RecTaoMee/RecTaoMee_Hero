@@ -8,18 +8,19 @@
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="707" type="NPC" res="MC_npc_707" action="check_is_pass"/>
+		<node id="811" type="NPC" res="MC_npc_703" action="check_is_pass"/>
     </npc>
     <actions>
-		<proAction npcID="707" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+		<proAction npcID="811" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#吉普双兄弟要登场了，你准备好了吗？]]>
+				<![CDATA[1#看看我们普豆家族的厉害！\n]]>
+				<![CDATA[(本层特性——普豆叶改：寄生；豆花改：联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2407" />
-		<proAction npcID="707" id="2" type="0" answer="进入下一层$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$back_hall$o" colorID="0$0$0">
+		<proAction npcID="811" id="2" type="0" answer="进入下一层$返回斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#真强啊！！！]]>
+				<![CDATA[1#好强！]]>
 			</des>
 		</proAction>
 	</actions>

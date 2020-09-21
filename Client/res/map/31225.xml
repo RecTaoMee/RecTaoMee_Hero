@@ -1,4 +1,4 @@
-<!--修炼之域一层-->
+<!--修炼之域五层-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
 	<process>
 		<node name="ActivityHeroCupTower" randID="845"/>
@@ -8,28 +8,29 @@
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="309" type="NPC" res="MC_npc_754" action="check_is_pass"/>
-		<node id="515" type="NPC" res="MC_npc_515" level="contentLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
-		<node id="525" type="NPC" res="MC_npc_525" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
+		<node id="814" type="NPC" res="MC_npc_756" action="check_is_pass"/>
+    	<node id="511" type="NPC" res="MC_npc_511" level="contentLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
+    	<node id="521" type="NPC" res="MC_npc_521" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
     </npc>
     <actions>
-		<proAction npcID="309" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+		<proAction npcID="322" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#让你们见识一下，不死之王的强大！！！]]>
+				<![CDATA[1#感受火的意志吧！\n]]>
+				<![CDATA[(本层特性——法尔王：吸收 再生 奉献；法尔α：吸收 重击；法尔：联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2425" />
-		<proAction npcID="309" id="2" type="0" answer="进入下一层$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$back_hall$o" colorID="0$0$0">
+		<proAction npcID="322" id="2" type="0" answer="进入下一层$返回斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#真不愧是……]]>
+				<![CDATA[1#强大的意志！]]>
 			</des>
 		</proAction>
-		<proAction npcID="515" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_515$o" colorID="1$0$0">
+		<proAction npcID="511" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_511$o" colorID="1$0$0">
 			<des>
-				<![CDATA[1#他们出手是不是太重了？]]>
+				<![CDATA[1#这些精灵，出手是不是太重了！]]>
 			</des>
 		</proAction>
-		<proAction npcID="525" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_525$b7_525$a5$o" colorID="1$1$0$0">
+		<proAction npcID="521" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_521$b7_521$a5$o" colorID="1$1$0$0">
 			<des>
 				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
 			</des>

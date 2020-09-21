@@ -1,39 +1,27 @@
 <!--修炼之域一层-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
 	<process>
-		<node name="ActivityHeroCupTower" randID="830"/>
+		<node name="ActivityHeroCupTower" randID="829"/>
 	</process>
 	<transport intPos="400,400">
 	</transport>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="709" type="NPC" res="MC_npc_709" action="check_is_pass"/>
-		<node id="512" type="NPC" res="MC_npc_512" level="contentLevel" fun="" taskType="0" action="3" needLevel="" needKind=""/>
-		<node id="522" type="NPC" res="MC_npc_522" level="contentLevel" fun="" taskType="0" action="4" needLevel="" needKind=""/>
+		<node id="330" type="NPC" res="MC_npc_703" action="check_is_pass"/>
     </npc>
     <actions>
-		<proAction npcID="709" id="0" type="0" answer="我要挑战你！$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$back_hall$o" colorID="0$0$0">
+		<proAction npcID="330" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#哼哼，我们老大来了，你想不想试一试？]]>
+				<![CDATA[1#神马(○o○)？你敢挑战外星生物？\n]]>
+				<![CDATA[(本层特性——海神马：重击；星星布鲁：联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2410" />
-		<proAction npcID="709" id="2" type="0" answer="进入下一层$返回《勇士杯》斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$back_hall$o" colorID="0$0$0">
+		<proAction npcID="330" id="2" type="0" answer="进入下一层$返回斗技场大厅$摩尔勇士万岁！" event="is_pass" to="next_floor$w2_11218_1$o" colorID="0$0$0">
 			<des>
-				<![CDATA[1#哼哼......]]>
+				<![CDATA[1#输了哇！]]>
 			</des>
 		</proAction>
-		<proAction npcID="512" id="3" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_512$o" colorID="1$0$0">
-			<des>
-				<![CDATA[1#他们出手是不是太重了？]]>
-			</des>
-		</proAction>
-		<proAction npcID="522" id="4" type="0" answer="我想买东西$我想卖东西$关于《贝塔商会》$祝你好运" to="b6_522$b7_522$a5$o" colorID="1$1$0$0">
-			<des>
-				<![CDATA[1#【贝塔商会移动分店】价格公道合理，质量保证。请问你需要什么？]]>
-			</des>
-		</proAction>
-		<proAction actionID="5" type="1" outMap="1" level="taskLevel" name="task_9_1" moviepos="0,0" to="a4"/>
 	</actions>
 </map>

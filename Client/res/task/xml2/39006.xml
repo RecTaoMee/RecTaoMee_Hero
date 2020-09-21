@@ -10,7 +10,7 @@ itemtips.xml   		##水龙的眼泪                         		  OK
 
  -->
 
-<Task ID="39001" Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!" TargetMap="11307">
+<Task ID="39001" Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!\n周三 6:00-24:00" TargetMap="11307">
 <Procedure>
 	<Step ID="1" ParentList="0" ParentCost="0" >
     	<Event Memo="即将进发的炎之大陆据说是个异常炎热的地方，想抵抗高温怎么办?没关系，水龙的眼泪具有神奇的保湿魔力，赶快去收集吧!" TargetMap="11307" TargetObj="24" TargetName="和t莱卡t对话">
