@@ -5,106 +5,69 @@
 	</transport>
 	<object>
 		<node id="6" type="TransPort" res="MC_door_0" transPortId="1"/>
+		
+		<node id="20" type="Object" res="MC_pumpkin4_1" alpTaskID="11003_5_1" compTaskID="11004_4_2" visible="0"/>
+		<node id="21" type="Object" res="MC_pumpkin4_2" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		
+		
+		<node id="19" type="Object" res="MC_pumpkinKIng" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+
+		
 	</object>
 	<npc>
-		<node id="1" type="NPC" res="MC_npc_199" action="1" name="王国士兵小队长"/>
-		<node id="2" type="NPC" res="MC_npc_235" action="2" name="被俘村民奸细"/>
-		<node id="2" type="NPC" res="MC_npc_236" action="2" name="被俘村民奸细"/>
-		<node id="2" type="NPC" res="MC_npc_237" action="2" name="被俘村民奸细"/>
-		<node id="3" type="NPC" res="MC_npc_238" action="3" name="被俘村民"/>
-		<node id="3" type="NPC" res="MC_npc_239" action="3" name="被俘村民"/>
-		<node id="3" type="NPC" res="MC_npc_240" action="3" name="被俘村民"/>
-		<node id="4" type="NPC" res="MC_npc_201" action="4" name="士兵"/>
-		<node id="4" type="NPC" res="MC_npc_202" action="4" name="士兵"/>
-		<node id="5" type="NPC" res="MC_npc_229" action="5" name="村民"/>
-		<node id="5" type="NPC" res="MC_npc_230" action="5" name="村民"/>
-		<node id="5" type="NPC" res="MC_npc_231" action="5" name="村民"/>
-		<node id="5" type="NPC" res="MC_npc_232" action="5" name="村民"/>
-		<!--node id="6" type="NPC" res="MC_npc_760" action="6" name="万圣节刷出来的南瓜公爵"/-->
-		<node id="6" type="NPC" res="MC_npc_760" action="13" needType="level_return,time,time" need="25,6:14-16 7:14-16 6:19-21 7:19-21,1:19-21 2:19-21 3:19-21 4:19-21 5:19-21" needAction="17,11,14"/>
-		<node id="10" type="NPC" res="MC_npc_1" action="20" name="萌萌收割者" visible="0"/>
-
+		<!-- 11003 -->
+		<node id="11" type="Object" res="MC_pumpkin_hairpin" alpTaskID="11003_1_1" compTaskID="11003_2_2" visible="0"/>
+		<node id="12" type="NPC" res="MC_pumpkin_0" alpTaskID="11003_1_1" compTaskID="11003_4_2" visible="0"/>
+		<node id="12" type="NPC" res="MC_pumpkin_1" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="12" type="NPC" res="MC_pumpkin_2" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="18" type="NPC" res="MC_pumpkin_3" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="12" type="NPC" res="MC_pumpkin_4" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="18" type="NPC" res="MC_pumpkin_5" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="12" type="NPC" res="MC_pumpkin_6" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<node id="18" type="NPC" res="MC_pumpkin_7" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
+		<!-- 11004 -->
+		<node id="15" type="NPC" res="MC_pumpkin1_1"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_2"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_3"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_4"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_5"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_6"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="15" type="NPC" res="MC_pumpkin1_7"  alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		
+		
+		<node id="16" type="NPC" res="MC_pumpkin2_1" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_2" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_3" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_4" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_5" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_6" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_7" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_8" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_9" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		<node id="16" type="NPC" res="MC_pumpkin2_10" action="1" alpTaskID="11003_5_1" compTaskID="11004_5_2" visible="0"/>
+		
+		
+		<node id="17" type="NPC" res="MC_pumpkin3_1" alpTaskID="11003_5_1" compTaskID="11004_2_2" visible="0"/>
+		<node id="17" type="NPC" res="MC_pumpkin3_2" alpTaskID="11003_5_1" compTaskID="11004_2_2" visible="0"/>
+		<node id="17" type="NPC" res="MC_pumpkin3_3" alpTaskID="11003_5_1" compTaskID="11004_2_2" visible="0"/>
+		
+		
+		<!-- 法阵 -->
+		<node id="13" type="Object" res="MC_Wards_1" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_2" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_3" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_4" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_5" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_6" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
+		<node id="13" type="Object" res="MC_Wards_7" alpTaskID="11003_1_1,11003_5_3" compTaskID="11003_4_2,11004_3_4" visible="0"/>
 		
 	</npc>		
 	<actions>
-		<proAction npcID="199" id="1" type="0" answer="请注意安全！" to="o" >
+			<proAction npcID="1000" id="1" type="0" answer="来战$准备一下" to="a2$o" >
 			<des>
-				<![CDATA[1#两军势均力敌，目前形势非常不明朗，决不能让南瓜军夺取万圣古祭坛！！!]]>
+				<![CDATA[1#休想阻止我们释放南瓜公爵大人。]]>
 			</des>
-		</proAction>			
-		<proAction npcID="230" id="2" type="0" answer="......" to="o" >
-			<des>
-				<![CDATA[1#我...我...我...不是王国，不...不...我不是南瓜军！]]>
-			</des>
-		</proAction>			
-		<proAction npcID="230" id="3" type="0" answer="......" to="o" >
-			<des>
-				<![CDATA[1#请帮帮我，我不是坏人！请你一定要相信我！]]>
-			</des>
-		</proAction>			
-		<proAction npcID="229" id="4" type="0" answer="请注意安全！" to="o" >
-			<des>
-				<![CDATA[1#看来我低估了南瓜军的实力！他们借助了南瓜公爵的邪恶力量，变的异常难缠！]]>
-			</des>
-		</proAction>			
-		<proAction npcID="229" id="5" type="0" answer="请注意安全！" to="o" >
-			<des>
-				<![CDATA[1#呜...呜呜，我们的家园被那些可恶的南瓜军破坏了！我们快要无家可归了！]]>
-			</des>
-		</proAction>			
-	
-<!--万圣节南瓜公爵定时刷新-->	
-		<proAction npcID="760" id="10" type="0" answer="南瓜公爵！" to="o" >
-			<des>
-				<![CDATA[1#万圣时刻已经到来！万圣古祭坛给予我黑暗的魔力，让我毁灭这摩尔聚居的过度！（可挑战3次，建议25级以上勇士组队挑战）]]>
-			</des>
-		</proAction>			
-		<proAction npcID="760" id="11" type="0" answer="迎战南瓜公爵$挑战规则$准备一下！" to="a12$a16$o" colorID="0$0$0" >
-			<des>
-				<![CDATA[1#万圣时刻已经到来！万圣古祭坛给予我黑暗的魔力，让我毁灭这摩尔聚居的国度！（可挑战3次）]]>
-			</des>
-		</proAction>			
-		<proAction id="12" type="5" fightID="35" />			
-		<proAction npcID="760" id="13" type="0" answer="挑战规则$离开" to="a16$o" >
-			<des>
-				<![CDATA[1#哪里来的小摩尔，你这么次，来敢向我挑战？！快回去练练，等我完全恢复能力后，25级以上才能挑战我！$$]]>
-			</des>
-		</proAction>			
-		<proAction npcID="101" id="16" type="0" answer="离开" to="o" >
-			<des>
-				<![CDATA[1#万圣期间（10.28-11.3）战胜南瓜公爵，即会获得海量【精灵经验笔记】，更有机会获得【精灵属性重置药剂】、【自动战斗卷轴】、【寂灭骨龙精灵蛋】！$$]]>
-				<![CDATA[1#周1-5每天19-21点，每天1次挑战机会；\n周6-7每天14-16/19-21点，每天3次挑战机会！]]>
-			</des>
-		</proAction>			
-		<proAction npcID="101" id="17" type="0" answer="挑战规则$离开" to="a16$o" >
-			<des>
-				<![CDATA[1#你不在活动时间点，无法挑战南瓜公爵（挑战时间周1-5每天19-21点，每天1次机会；周6-7每天14-16/19-21点，每天3次机会）]]>
-			</des>
-		</proAction>			
-		<proAction npcID="760" id="14" type="0" answer="迎战南瓜公爵$挑战规则$准备一下！" to="a15$a16$o" colorID="0$0$0" >
-			<des>
-				<![CDATA[1#万圣时刻已经到来！万圣古祭坛给予我黑暗的魔力，让我毁灭这摩尔聚居的国度！（可挑战1次，建议25级以上勇士组队挑战）]]>
-			</des>
-		</proAction>
-
-		<proAction id="15" type="5" fightID="36" />	
-	
-	
-	
-<!--萌萌收割者-->		
-		<proAction npcID="804" id="20" type="0" answer="找到你了！$离开" to="a21$o" colorID="0$0">
-			<des>
-				<![CDATA[1#咪嘛...咪嘛...咪嘛...在万圣笼罩的气息中，是时候出来活动一下了！]]>
-			</des>
-		</proAction>			
-		
-		<proAction npcID="804" id="21" type="0" answer="捕捉萌萌收割者！$先准备一下" to="refreshGrp_37$o" colorID="0$0">
-			<des>
-				<![CDATA[1#咪嘛...咪嘛...你是什么人呀？！]]>
-			</des>
-		</proAction>	
-		<proAction id="22" type="5" fightID="37" />					
+			</proAction>	
+			<proAction id="2" type="5" fightID="3509" />			
 	</actions>
-	
-	
 </map>

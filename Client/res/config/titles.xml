@@ -18,7 +18,7 @@
 -->
 
 <Titles>
-<!--职业称号-->
+<!--职业称号  蓝色-->
  	<Title ID="1" Name="剑术学员" Prof="2" ProfLv="0" FunType="1" HpMax="30" Atk="1" Def="1" Desc="生命上限+30，物攻+1，防御+1"/>
  	<Title ID="2" Name="见习剑士" Prof="2" ProfLv="1" FunType="1" HpMax="50" Atk="2" Def="2" Desc="生命上限+50，物攻+2，防御+2"/>
  	<Title ID="3" Name="剑士" Prof="2" ProfLv="2" FunType="1" HpMax="70" Atk="3" Def="3" Desc="生命上限+70，物攻+3，防御+3"/>
@@ -73,7 +73,7 @@
  	<Title ID="52" Name="巫术大师" Prof="512" ProfLv="3" FunType="1" HpMax="450" Atk="20" Speed="20" Desc="生命上限+450，物攻+20，速度+20"/>
  	<Title ID="53" Name="王国巫师" Prof="512" ProfLv="4" FunType="1" HpMax="550" Atk="25" Speed="25" Desc="生命上限+550，物攻+25，速度+25"/>
  	<Title ID="54" Name="巫王" Prof="512" ProfLv="5" FunType="1" HpMax="650" Atk="30" Speed="30" Desc="生命上限+650，物攻+30，速度+30"/>
-<!--旅程称号-->
+<!--旅程称号  绿色-->
  	<Title ID="1001" Name="粘糊糊勇士" Desc="战胜下水道三层【普豆泥王】获得" />  <!--下水道称号-->
  	<Title ID="1002" Name="啃骨头勇士" FunType="1" Atk="3" Desc="物理攻击+3" />
  	<Title ID="1003" Name="爱玩火勇士" FunType="1" Spirit="5" Desc="精神+5" />
@@ -114,7 +114,7 @@
  	<Title ID="1038" Name="未来勇士" Desc="来自未来，未来可能成为【摩尔勇士】的摩尔"/>  <!--25任务-->  
  	<Title ID="1039" Name="精灵研究员" Desc="加入【精灵G档案】调查计划获得"/>  <!--25任务-->  
  	<Title ID="1040" Name="不开玩笑勇士" Desc="愚人节向女神许下“特殊愿望”获得"/> <!--节日任务-->    
-<!--其它称号（装备专用称号）↓-->
+<!--其它称号（装备专用称号） 紫色↓-->
  	<Title ID="2001" Name="希望之星" Desc="佩戴护身项链【希望之坠】时获得"/>
  	<Title ID="2002" Name="我是摩尔♂" Desc="佩戴项链【男生项链】获得"/>
  	<Title ID="2003" Name="我是摩尔♀" Desc="佩戴项链【女生项链】获得"/>
@@ -127,8 +127,8 @@
  	<Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="2020六一国际儿童节纪念称号 抗遗忘+10 生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2013" Name="" />
- 	<Title ID="2014" Name="" />
+ 	<Title ID="2013" Name="普天同庆中国节" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="中秋国庆双节合一，普天同庆！生命上限+350，魔法上限+150，回避+10 抗遗忘+10"/>
+ 	<Title ID="2014" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2015" Name="" />
  	<Title ID="2016" Name="" />
  	<Title ID="2017" Name="" />
@@ -137,7 +137,7 @@
  	<Title ID="2020" Name="" />
 	<Title ID="2100" Name="复兴版牛逼" FunType="1" HpMax="9999" MpMax="9999" Atk="9999" Def="9999" Mdef="9999" Speed="9999" Spirit="9999" Resume="9999" Hit="9999" Dodge="9999" Crit="9999" FightBack="9999" ResistPoison="999" ResistLithification="999" ResistLethargy="999" ResistCommination="999"  ResistConfusion="999"  ResistOblivion="999" Desc="复兴版作者专用称号"/>
 	
-<!--战斗称号-->
+<!--战斗称号 橙色-->
  	<Title ID="3001" Name="修炼30域击破" FunType="1" HpMax="50" Def="3" Mdef="3" Speed="2" Desc="生命上限+50，防御+3，抗魔+3，速度+2"/>
  	<Title ID="3002" Name="修炼35域击破" FunType="1" HpMax="70" Def="4" Mdef="4" Speed="3" Desc="生命上限+70，防御+4，抗魔+4，速度+3"/>
  	<Title ID="3003" Name="修炼40域击破" FunType="1" HpMax="90" Def="5" Mdef="5" Speed="4" Desc="生命上限+90，防御+5，抗魔+5，速度+4"/>

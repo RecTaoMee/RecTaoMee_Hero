@@ -2369,8 +2369,6 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 
 	<!-- 2020/8/23 -->
 	<Task ID="11002" Name="进发！炎之大陆！" Kind="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
-
-		
 		<Node ID="1" Step="5" IsEnd="1" >
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50001" Count="20000" />
@@ -2378,9 +2376,110 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="1" ItemId="50003" Count="10000" />
                 <Item OutType="4" ItemId="84041" Count="1" />		
 			</OutItem>
-		</Node>			
+		</Node>	
 	</Task>		
+	<Task ID="11003" Name="古祭坛的异动" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+		<Node ID="1" Step="50" Memo="" >
+		</Node>	
+		<Node ID="2" Step="3" Memo="" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>		
+		<Node ID="3" Step="4" Memo="" >
+			<BeastGrp GrpId="3508" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>		
+		<Node ID="4" Step="9"  >	
+			<BeastGrp GrpId="3508" Count="1" Win="1"/>					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="500" />								
+			</OutItem>  
+		</Node>	
+		
+		<Node ID="5" Step="10"  IsEnd="1">	
+			<BeastGrp GrpId="3508" Count="1" Win="1"/>					
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50001" Count="10000" />								
+				<Item OutType="1" ItemId="50002" Count="10000" />								
+				<Item OutType="1" ItemId="50003" Count="10000" />								
+			</OutItem>  
+		</Node>	
+	</Task>		
+	<Task ID="11004" Name="恶战！抵抗入侵！" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11003" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+		<Node ID="1" Step="3" Memo="" >
+			<BeastGrp GrpId="3510" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" Memo="" >
+			<BeastGrp GrpId="3512" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="5" Memo="" >
+			<BeastGrp GrpId="3511" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="10000" />	
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="6" Memo="" >
+			<BeastGrp GrpId="3513" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+				<Item OutType="1" ItemId="50002" Count="10000" />	
+			</OutItem>
+		</Node>	
+		<Node ID="5" Step="7" Memo="" >
+			<BeastGrp GrpId="3514" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+				<Item OutType="1" ItemId="50003" Count="10000" />
+			</OutItem>
+		</Node>	
 
+		<Node ID="6" Step="9"  IsEnd="1">	
+			<OutItem ID="1">
+				<Item OutType="2" ItemId="350013" Count="5" />	
+				<Item OutType="2" ItemId="350014" Count="10" />	
+				<Item OutType="2" ItemId="360049" Count="1" />					
+				<Item OutType="2" ItemId="180067" Count="1" />					
+			</OutItem>  
+		</Node>	
+	</Task>		
+	
+	<Task ID="11005" Name="清除南瓜部队" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+		<Node ID="1" Step="3" Memo="" >
+			<BeastGrp GrpId="3515" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="10000" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="2" Step="4" Memo="" >
+			<BeastGrp GrpId="3516" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="240000" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="3" Step="5" Memo="" >
+			<BeastGrp GrpId="3517" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50003" Count="2000000" /> 
+			</OutItem>
+		</Node>	
+		<Node ID="4" Step="6" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50005" Count="100000" /> 
+				<Item OutType="2" ItemId="350035" Count="1" /> 
+				<Item OutType="2" ItemId="350036" Count="1" />
+				<Item OutType="2" ItemId="315004" Count="1" />  
+			</OutItem>
+		</Node>	
+	</Task>		
 <!-- 重复任务 -->	
 	<Task ID="20001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="盗贼克星" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="1" >
 		<Node ID="1" Step="2" Memo="勇士广场的公告栏有新公告了。请向守城士兵了解今天c迪迪拉c的最新动向。">

@@ -151,7 +151,19 @@
 	<Item Task="39008" Map="21704" ID="390083" Level="CONTENT" Res="HideIsland_pipikeke.swf" Pos="96,58" TriggerType="1" />    <!--  新文件 锁修塔皮皮克克 -->
 	<!--雕像的秘密-->
 	<Item Task="11001" Map="11604" ID="110011" Level="CONTENT" Res="task_11001_TT_fly.swf" Pos="649,-65" TriggerType="1" /><!-- TT飞走 -->
-
+	<!-- 古祭坛的异动 -->
+	<Item Task="11003" Map="11223" ID="112231" Level="TOP" Res="task_11003_Fog_0.swf" Pos="0,0" TriggerType="1" /><!-- 大雾 -->
+	<Item Task="11003" Map="11223" ID="112232" Level="TOP" Res="task_11003_Fog_1.swf" Pos="0,0" TriggerType="1" /><!-- 中心雾 -->
+	<Item Task="11003" Map="11223" ID="112233" Level="CONTENT" Res="task_11003_wind.swf" Pos="621,704" TriggerType="0" /><!-- 风法阵 -->
+	<Item Task="11003" Map="11223" ID="112234" Level="CONTENT" Res="task_11003_earth.swf" Pos="263,660" TriggerType="0" /><!-- 地法阵 -->
+	<Item Task="11003" Map="11223" ID="112235" Level="CONTENT" Res="task_11003_water.swf" Pos="202,617" TriggerType="0" /><!-- 水法阵 -->
+	<Item Task="11003" Map="11223" ID="112236" Level="CONTENT" Res="task_11003_fire.swf" Pos="660,608" TriggerType="0" /><!-- 火法阵 -->
+	<Item Task="11003" Map="11223" ID="112237" Level="CONTENT" Res="task_30400_39004_2.swf" Pos="317,515" TriggerType="1" /><!-- 妮娜 -->
+	<!-- 清理南瓜部队 -->
+	<Item Task="11005" Map="11205" ID="110051" Level="CONTENT" Res="task_11005_sword.swf" Pos="0,0" TriggerType="1" /><!-- 南瓜剑客 -->
+	<Item Task="11005" Map="11203" ID="110052" Level="CONTENT" Res="task_11005_magic.swf" Pos="-105,-80" TriggerType="1" /><!-- 妮娜 -->
+	<Item Task="11005" Map="11301" ID="110053" Level="CONTENT" Res="task_11005_captain.swf" Pos="0,-188" TriggerType="1" /><!-- 妮娜 -->
+	
 
 
 

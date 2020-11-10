@@ -42,7 +42,7 @@
 		<node id="999" type="NPC" res="MC_npc_999" action="" />
 		<node id="104" type="NPC" name="多修" res="MC_npc_104" action="200" />
 		<!--02.28达人秀NPC时之女神-->
-		<node id="51" type="NPC" name="贝尔丹蒂" res="MC_npc_2" action="250" />
+		<node id="51" type="NPC" name="贝尔丹蒂" res="MC_npc_2" action="250"  visible="0"/>
 
 		<node id="85" type="NPC" res="MC_npc_85" action="211" needType="" need="14-16 19-21" needAction="211"/>
 		<node id="72" type="NPC" res="MC_npc_72" action="202" needType="level" need="20" needAction="201"/>

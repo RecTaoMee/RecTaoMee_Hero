@@ -1,0 +1,156 @@
+<Task ID="11003" Memo=" 【南瓜公爵】上次被击败并封印在【史诗战场】的“万圣古祭坛”。近日史诗战场的古祭坛突然发生了异动，【妮娜】也在调查过程中失踪，请务必尽快前往史诗战场并找到【妮娜】。" TargetMap="11222">  
+	<Procedure>   					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo=" 【南瓜公爵】上次被击败并封印在【史诗战场】的“万圣古祭坛”。近日史诗战场的古祭坛突然发生了异动，【妮娜】也在调查过程中失踪，请务必尽快前往史诗战场并找到【妮娜】。" TargetMap="11222" TargetObj="2" TargetName="和t王国骑士t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="2" TaskOption="【古祭坛的异动】" />
+				</Trigger>			
+				<Action Type="TALK">
+					<Msg NpcID="200" ImageID="1" Info="【@nick】你来了，前几日【史诗战场】出现异样，妮娜大人前去查看，至今未归。而我们还要把守入口，不方便离开，小勇士，你能替我们进去勘察一下吗？" />
+					<Option Info="好！立刻出发" />
+				</Action>	
+    		</Event>
+		</Step>		
+
+		<Step ID="50" ParentList="1" ParentCost="1" >			
+    		<Event Memo="进入史诗战场查看情况" TargetMap="11223"  TargetName="进入t史诗战场t">
+  				<Action Type="COMMAND" Command="NOTHING"  />  	
+    		</Event>			
+		</Step>		
+
+		
+  		<Step ID="2" ParentList="50" ParentCost="1" >			
+    		<Event Memo="进入史诗战场查看情况" TargetMap="11223"  TargetName="进入t史诗战场t">
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="11223" />					  					  
+				</Trigger>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223, 112231" />  	
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11223, 112232" />  
+
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="哇！这里雾好大啊，先四处寻找下吧，看看能不能找到线索。" />
+					<Option Info="好" />
+				</Action>			
+    		</Event>			
+		</Step>					
+  		<Step ID="3" ParentList="2" ParentCost="1" >			
+    		<Event Memo="进入史诗战场查看情况！" TargetMap="11223"  TargetName="进入史诗战场查看情况">      
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="11" />			
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="这是…妮娜的发卡？" />
+					<Msg NpcID="400" ImageID="1" Info="看来情况不乐观呀！" />
+					<Msg NpcID="400" ImageID="1" Info="诶？祭坛好像有异样，快去看看吧！" />
+					<Option Info="好的" />
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112232" /> 
+				<Action Type="MOVIE" Url="task_11003_Fog_1_play.swf" MapLevel="TOP" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="可恶！果然是南瓜军团在捣鬼。" />
+					<Msg NpcID="400" ImageID="1" Info="这些南瓜士兵护住了祭坛，我们完全无法靠近，先把它们击败吧！" />
+					<Option Info="全力以赴！" />
+				</Action>	
+    		</Event>			
+		</Step>		
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >	
+			<Condition>
+				<Battle ID="3508" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="击败南瓜骑士了" TargetMap="11223" TargetObj="18" TargetName="击败t南瓜骑士t">			
+				<Action Type="TALK">
+					<Msg NpcID="1000" ImageID="1" Info="可惜，太晚咯！哈哈哈哈...." />										
+					<Option Info="...." SkipTrigger="Y"/>
+				</Action> 
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="击败南瓜骑士" TargetMap="11223" TargetObj="18" TargetName="击败t南瓜骑士t">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11223" ObjID="18" TaskOption="我要挑战你！" />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="1000" ImageID="1" Info="休想阻止我们释放南瓜公爵大人。" />		
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="4" />	
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3508"/>	
+				
+    		</Event>				  		
+		</Step>		
+  		<Step ID="5" ParentList="4" ParentCost="1" >				  		
+    		<Event Memo="结界是按照风 火 水 地的顺序进行建立的，因此需要根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223"  TargetName="想办法破除结界吧">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223, 112233" />  	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223, 112234" />  	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223, 112235" />  	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223, 112236" />  	
+				<Action Type="TALK">	
+					<Msg NpcID="400" ImageID="3" Info="现在破除结界（友情提示：momo发现结界必须按照风地水火的顺序点击才能破除哦！）" />												
+					<Option Info="好！" />
+				</Action>  				
+    		</Event>				  						
+		</Step>			
+  		<Step ID="6" ParentList="5" ParentCost="1" >			
+    		<Event Memo="根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223"  TargetName="想办法破除结界吧">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="112233" />         
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112233" /> 
+				<Action Type="MOVIE" Url="task_11003_wind_play.swf" MapLevel="CONTENT" Pos="621,704" />
+    		</Event>			
+		</Step>			
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >			
+    		<Event Memo="根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223"  TargetName="想办法破除结界吧">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="112234" />         
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112234" /> 
+				<Action Type="MOVIE" Url="task_11003_earth_play.swf" MapLevel="CONTENT" Pos="263,660" />
+    		</Event>			
+		</Step>			
+
+  		<Step ID="8" ParentList="7" ParentCost="1" >			
+    		<Event Memo="根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223"  TargetName="想办法破除结界吧">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="112235" />         
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112235" /> 
+				<Action Type="MOVIE" Url="task_11003_water_play.swf" MapLevel="CONTENT" Pos="202,617" />
+    		</Event>			
+		</Step>			
+		
+  		<Step ID="9" ParentList="8" ParentCost="1" >			
+    		<Event Memo="根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223"  TargetName="想办法破除结界吧">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="112236" />         
+				</Trigger>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112236" /> 
+				<Action Type="MOVIE" Url="task_11003_fire_play.swf" MapLevel="CONTENT" Pos="660,608" />
+				<Action Type="MOVIE" Url="task_11003_mov1.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223,112237" />  
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112231" /> 
+    		</Event>			
+		</Step>			
+
+  		<Step ID="10" ParentList="9" ParentCost="1" >			
+    		<Event Memo="根据提示正确的选择破除顺序，然后破除结界" TargetMap="11223" TargetObj="112237" TargetName="与t妮娜t对话">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11223" ObjID="112237" />         
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="【@nick】，谢谢你，多亏你破除结界，否则我可能还要被困很久。" />
+					<Option Info="这里发生了什么？" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11003_mov2.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="据悉，南瓜公爵目前在为入侵做最后的准备，其部下也在全力守卫之中，我们难以击溃他。" />
+					<Msg NpcID="101" ImageID="1" Info="然而万圣节之夜，南瓜公爵将出现在古迹坛，借此释以阵法对部队进行强化，那时正是他最脆弱之时。到时候，请你配合王国军队发起进攻，势必一举击溃南瓜军团。" />
+					<Msg NpcID="101" ImageID="1" Info="现在的当务之急是将这一消息报告国王詹姆斯，让王国提前做好战斗准备。同时，万圣节之夜，王国也需要你们的帮助。" />
+					<Option Info="严阵以待！" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11223, 112237" /> 
+
+    		</Event>			
+		</Step>	
+</Procedure>
+</Task>

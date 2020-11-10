@@ -189,6 +189,8 @@
 		<Item ID="180064" Name="圣诞袜" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" DayMax="50"/>
 		<Item ID="180065" Name="紫焰龙鳞" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" />
 		<Item ID="180066" Name="紫焰水晶" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<Item ID="180067" Name="封印蛋" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		
 	</Kind>
 
 	<Kind ID="19" Team="1" Order="6" Name="药剂料理配方" Start="190001" End="199999" Max="9999">
@@ -687,7 +689,9 @@
 		<!-- 2020/7/30 -->
 		<Item ID="260043" Name="水龙的眼泪" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 		<Item ID="260044" Name="风龙的鳞片" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
-		
+		<Item ID="260045" Name="龙角" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<Item ID="260046" Name="令牌" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<Item ID="260047" Name="护身符？！！" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 	</Kind>
 
 	<Kind ID="27" Team="4" Order="1" Name="闪灵胶片" Start="270001" End="279999" Max="9999">

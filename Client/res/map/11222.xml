@@ -2,18 +2,19 @@
 <map name="aaa" type="0" comment="aaa" sound="BGM-014.mp3">
 	<transport intPos="422,470">
 		<node id="1" pos="422,470" targetMapId="11205" targetTransPortId="4" name="王国东街"/>
+		<node id="14" pos="982,159" targetMapId="11223" targetTransPortId="1" name="史诗战场"/>
 	</transport>
 	<object>
 		<node id="12" type="TransPort" res="MC_door_1" transPortId="1"/>
+		<node id="13" type="TransPort" res="MC_door_2" transPortId="14" alpTaskID="11003_1_0" visible="0"/>
 	</object>
 	<npc>
-		<node id="1" type="NPC" res="MC_npc_101" action="1" name="妮娜"/>
-		<node id="2" type="NPC" res="MC_npc_200" action="2" name="士兵"/>
-		<node id="2" type="NPC" res="MC_npc_201" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_202" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_203" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_204" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_205" action="2" name="士兵"/>
+		<node id="4" type="NPC" res="MC_nina" action="" alpTaskID="11003_5_0" compTaskID="11004_1_1" visible="0"/>
+		
 	</npc>		
 	<actions>
 		<proAction npcID="101" id="1" type="0" answer="我知道了" to="o" >

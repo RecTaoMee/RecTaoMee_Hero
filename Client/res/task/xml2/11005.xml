@@ -1,0 +1,133 @@
+<Task ID="11005" Memo=" 尽管我们的士兵已经包围住了【史诗战场】，但仍有少部分南瓜部队通过百变术蒙混过关。请找守卫士兵了解详情，务必把所有游荡在街头的南瓜部队清除。" TargetMap="11222">  
+	<Procedure>   					
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="尽管我们的士兵已经包围住了【史诗战场】，但仍有少部分南瓜部队通过百变术蒙混过关。请找守卫士兵了解详情，务必把所有游荡在街头的南瓜部队清除。" TargetMap="11222" TargetObj="2" TargetName="和t王国士兵t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11222" ObjID="2" TaskOption="我来帮忙了！" />
+					<!-- 妮娜 -->
+				</Trigger>			
+				<Action Type="TALK">
+					<!-- 和妮娜对话 -->
+					<Msg NpcID="200" ImageID="1" Info="【@nick】来啦！据了解，在【皇宫花园】【摩尔王国东街】【摩尔王国西街】分别发现了少量南瓜部队，现在我军主力正与南瓜军团作战，无法脱身，拜托你去清除他们吧！" />
+					<Msg NpcID="200" ImageID="1" Info="友情提醒：可以和小伙伴组队哦！" />
+					<Option Info="使命必达！" />					
+				</Action>	
+			<Action Type="COMMAND" Command="CHANGE_MAP" Params="11205,1" />
+			<!-- 糖果 -->
+    		</Event>
+		</Step>		
+
+		<Step ID="2" ParentList="1" ParentCost="1" >			
+    		<Event Memo="去东街击败南瓜剑客" TargetMap="11223"  TargetName="击败t南瓜剑客t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11205, 110051" />  	
+    		</Event>			
+		</Step>		
+
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >	
+			<Condition>
+				<Battle ID="3515" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="击败南瓜剑客了，和他对话" TargetMap="11205" TargetObj="110051" TargetName="和t南瓜剑客t对话">			
+  				<!-- <Trigger> -->
+					<!-- <Item Type="OBJ_CLICK" MapID="11205" ObjID="110051"  /> -->
+				<!-- </Trigger>				 -->
+			<Action Type="TALK">
+				<Msg NpcID="1004" ImageID="1" Info="哈哈哈，你以为击败我就结束了吗？我军巫师已经到达摩尔王国西街，我们是不会失败的！" />										
+				<Option Info="这就去西街！" />
+			</Action> 
+			<!-- <Action Type="COMMAND" Command="CHANGE_MAP" Params="11203,1" /> -->
+			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11203, 110052" />  	
+			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11205, 110051" /> 
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="去东街击败南瓜剑客" TargetMap="11205" TargetObj="110051" TargetName="击败t南瓜剑客t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11205" ObjID="110051"  />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="1004" ImageID="1" Info="感受南瓜军团的愤怒吧！" />		
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="3" />	
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3515"/>					
+    		</Event>				  		
+		</Step>		
+		
+
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >				  		
+			<Condition>
+				<Battle ID="3516" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="击败南瓜巫师了，和他对话" TargetMap="11203" TargetObj="110052" TargetName="和t南瓜巫师t对话">			
+  				<!-- <Trigger> -->
+					<!-- <Item Type="OBJ_CLICK" MapID="11203" ObjID="110052"  /> -->
+				<!-- </Trigger>				 -->
+				<Action Type="TALK">
+					<Msg NpcID="1005" ImageID="1" Info="咯咯咯咯，我们的队长已经到达皇宫花园了....嘻嘻，到时候，整个王国就是我们的了。" />										
+					<Option Info="这就去皇宫花园！"  />
+				</Action> 
+				<!-- <Action Type="COMMAND" Command="CHANGE_MAP" Params="11301,1" /> -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11301, 110053" />  
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11203, 110052" /> 
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="去西街击败南瓜巫师" TargetMap="11203" TargetObj="110052" TargetName="击败t南瓜巫师t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11203" ObjID="110052"  />
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="1005" ImageID="1" Info="休想阻止我！" />										
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="4"/>
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="3516"/>	
+    		</Event>				  		
+		</Step>			
+		
+  		<Step ID="5" ParentList="4" ParentCost="1" >				  		
+			<Condition>
+				<Battle ID="3517" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="击败南瓜小队长了，和他对话" TargetMap="11301" TargetObj="110053" TargetName="和t南瓜小队长t对话">			
+  				<!-- <Trigger> -->
+					<!-- <Item Type="OBJ_CLICK" MapID="11301" ObjID="110053"/> -->
+				<!-- </Trigger>				 -->
+				<Action Type="TALK">
+					<Msg NpcID="1003" ImageID="1" Info="算你厉害。" />										
+					<Msg NpcID="1003" ImageID="1" Info="别得意的太早，相信南瓜公爵大人一定会从正面击溃你们的。" />										
+					<Option Info="一定阻止你"  />
+				</Action> 
+				<!-- <Action Type="COMMAND" Command="CHANGE_MAP" Params="11222,1" /> -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11301, 110053" /> 
+    		</Event>	
+    		<Event ConditionType="OUT" Memo="去皇宫花园击败南瓜小队长" TargetMap="11301" TargetObj="110053" TargetName="击败t南瓜小队长t">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11301" ObjID="110053"/>
+				</Trigger>				
+				<Action Type="TALK">
+					<Msg NpcID="1003" ImageID="1" Info="看看我的力量吧！" />										
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="5"/>
+				</Action>	
+				<Action Type="COMMAND" Command="BATTLE" Params="3517"/>	
+    		</Event>				  		
+		</Step>			
+
+
+		
+  		<Step ID="6" ParentList="5" ParentCost="1" >			
+    		<Event Memo="全部击败了，去王国军营" TargetMap="11222" TargetObj="2" TargetName="和t王国士兵t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11222" ObjID="2" />         
+				</Trigger>
+				<Action Type="TALK">
+					<!-- 和妮娜对话 -->
+					<Msg NpcID="200" ImageID="1" Info="啊，这么快就将南瓜部队清除干净了，果然，未来勇士不是浪得虚名。" />
+					<Msg NpcID="200" ImageID="1" Info="这是你的奖励，收下吧！" />
+					<Option Info="好的" />					
+				</Action>
+    		</Event>			
+		</Step>			
+</Procedure>
+</Task>
