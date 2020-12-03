@@ -1,0 +1,146 @@
+<Task ID="11006" Memo="【史诗战场】发现的封印蛋到底有什么作用呢？快去找莓可研究一下吧！" TargetMap="11214">  
+	<Procedure>   
+  		<Step ID="50" ParentList="0" ParentCost="0" >
+    		<Event Memo="【史诗战场】发现的封印蛋到底有什么作用呢？快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="打扰一下！" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="咦？小勇士，你怎么来啦？遇到了什么困难吗？" />	
+					<Option Info="这颗蛋…" SkipTrigger="Y"/>
+					<Option Info="有事先走了" NextStep="50" />					
+				</Action>																		
+    		</Event>
+		</Step>								
+  		<Step ID="1" ParentList="50" ParentCost="1" >
+    		<Event Memo="【史诗战场】发现的封印蛋到底有什么作用呢？快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t勇士号水手t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这颗蛋…" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="诶？这颗蛋和平常的精灵蛋好像不太一样。" />																	
+					<Msg NpcID="20" ImageID="1" Info="稍等，让我研究一下…" />	
+					<Msg NpcID="20" ImageID="1" Info="……" />												
+					<Msg NpcID="20" ImageID="1" Info="…………" />												
+					<Msg NpcID="20" ImageID="1" Info="………………" />												
+					<Msg NpcID="20" ImageID="1" Info="这颗蛋有些特别，和正常精灵蛋的孵化过程并不一样，上面存在某种封印，或许某些材料对解开这颗蛋的封印有些帮助。比如…鸡蛋什么的…" />												
+					<Msg NpcID="20" ImageID="1" Info="你能帮我收集这些材料吗？\n黄油x10\n鸡蛋x5\n至纯之水x1\n盯眼蝠的角x1（任务时打盯眼蝠获得）" />												
+					<Option Info="现在就去！" />				
+				</Action>																		
+    		</Event>
+		</Step>					
+			                          
+	
+	  	
+		<Step ID="2" ParentList="1" ParentCost="1" >
+		<Condition>
+			<Item ID="160003" Count="10" />
+		</Condition>
+		<Event ConditionType="IN" Memo="按照莓可提供的信息，去【贝多罗面包店】买10块黄油吧" TargetMap="11213"  TargetName="黄油买到了">
+			<Action Type="COMMAND" Command="NOTHING" />
+		</Event>
+		<Event ConditionType="OUT" Memo="按照莓可提供的信息，去【贝多罗面包店】买10块黄油吧" TargetMap="11213" TargetName="买10块t黄油t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这就去买黄油" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />				
+		</Event>
+		</Step>	
+		
+		
+	  	
+		<Step ID="3" ParentList="1" ParentCost="1" >
+		<Condition>
+			<Item ID="160004" Count="5" />
+		</Condition>
+		<Event ConditionType="IN" Memo="按照莓可提供的信息，去【贝多罗面包店】买5个鸡蛋吧" TargetMap="11213"  TargetName="鸡蛋买到了">
+			<Action Type="COMMAND" Command="NOTHING" />
+		</Event>
+		<Event ConditionType="OUT" Memo="按照莓可提供的信息，去【贝多罗面包店】买5个鸡蛋吧" TargetMap="11213" TargetName="买5个t鸡蛋t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这就去买鸡蛋" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />				
+		</Event>
+		</Step>	
+		
+		
+		
+	  	
+		<Step ID="4" ParentList="1" ParentCost="1" >
+		<Condition>
+			<Item ID="150001" Count="1" />
+		</Condition>
+		<Event ConditionType="IN" Memo="按照莓可提供的信息，去【摩尔王国西街】收集1瓶至纯之水吧" TargetMap="11203"  TargetName="至纯之水收集到了">
+			<Action Type="COMMAND" Command="NOTHING" />
+		</Event>
+		<Event ConditionType="OUT" Memo="按照莓可提供的信息，去【摩尔王国西街】收集1瓶至纯之水吧" TargetMap="11203" TargetName="收集1瓶t至纯之水t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这就去收集至纯之水" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />				
+		</Event>
+		</Step>	
+		
+		
+	  	
+		<Step ID="5" ParentList="2,3,4" ParentCost="3" >
+		<Condition>
+			<Item ID="260048" Count="1" />
+		</Condition>
+		<Event ConditionType="IN" Memo="按照莓可提供的信息，去【格历尔平原8区】通过击败盯眼蝠获得【盯眼蝠的角】吧" TargetMap="21308"  TargetName="获得【盯眼蝠的角】啦！">
+			<Action Type="COMMAND" Command="NOTHING" />
+		</Event>
+		<Event ConditionType="OUT" Memo="按照莓可提供的信息，去【格历尔平原8区】通过击败盯眼蝠获得【盯眼蝠的角】吧" TargetMap="21308" TargetName="去获得t盯眼蝠的角t">
+			<Trigger>
+				<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这就去击败盯眼蝠" />
+			</Trigger>
+			<Action Type="COMMAND" Command="NOTHING" />				
+		</Event>
+		</Step>	
+		
+		<Step ID="16" ParentList="5" ParentCost="1" >        <!-- 杰森 -->   						
+    		<Event Memo="按照莓可提供的信息，已经全部收集完成啦，快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="我回来啦！" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="太棒啦！有了这些材料，这颗蛋一定可以孵化" />													
+					<Msg NpcID="20" ImageID="1" Info="…………" />	
+					<Msg NpcID="20" ImageID="1" Info="好啦，这颗蛋的封印已经解除了。" />																														
+					<Option Info="太棒啦！" SkipTrigger="Y"/>					
+				</Action>																		
+    		</Event>
+		</Step>	
+
+		<Step ID="51" ParentList="16" ParentCost="1" >        <!-- 杰森 -->   	
+		<Condition>
+			<Item ID="180067" Count="1" />
+		</Condition>
+    		<Event ConditionType="IN" Memo="按照莓可提供的信息，已经全部收集完成啦，快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="南瓜队长？" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="要好好照顾它哦！" />													
+					<Option Info="嗯嗯嗯！" />					
+				</Action>																		
+			</Event>
+    		<Event ConditionType="OUT" Memo="请把蛋放到背包哦!" TargetMap="11214" TargetObj="20" TargetName="持有封印蛋和t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这颗蛋…" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="请把蛋放到背包哦!" />													
+					<Option Info="好的！" NextStep="51"/>					
+				</Action>																		
+			</Event>
+		</Step>	
+		
+		<Step ID="17" ParentList="51" ParentCost="1" >        <!-- 杰森 -->   	
+    		<Event  Memo="按照莓可提供的信息，已经全部收集完成啦，快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t莓可t对话">
+			<Action Type="COMMAND" Command="NOTHING" />				
+			</Event>
+		</Step>	
+</Procedure>
+</Task>

@@ -20,7 +20,7 @@
 	<Npc ID="22" MapID="11217" Desc="神官护士·温蒂" RoleStudyList="1002 1003 1008 3001 3002 1005 1006 1007" RoleStudyLv="1 1 1 1 1 1 1 1"/>
 	<Npc ID="26" MapID="11305" Desc="剑士导师·杰森" RoleStudyList="102 103 104 105 106 107 108 112 501 703 704 1001" RoleStudyLv="1 1 1 1 1 1 1 1 1 1 1 1"/>
 	<Npc ID="27" MapID="11304" Desc="魔法师导师·彼得" RoleStudyList="2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012" RoleStudyLv="1 1 1 1 1 1 1 1 1 1 1 1"/>
-	<Npc ID="28" MapID="11303" Desc="弓箭手导师·瑞凌" RoleStudyList="106 108 110 111 112 1001" RoleStudyLv="1 1 1 1 1 1"/>
+	<Npc ID="28" MapID="11303" Desc="弓箭手导师·瑞凌" RoleStudyList="106 108 110 111 112 1001 117" RoleStudyLv="1 1 1 1 1 1 1"/>
 	<Npc ID="29" MapID="11306" Desc="忍者导师·休一" RoleStudyList="103 106 108 112 114 115 116 501 1001" RoleStudyLv="1 1 1 1 1 1 1 1 1"/>
 	<Npc ID="42" MapID="11404" Desc="精灵学者·扎克司" PetStudyList="7001 7002 7003 7004 7005 7006 7007 7008" PetStudyLv="2 2 2 2 2 2 2 2"/>
 	<Npc ID="43" MapID="11404" Desc="精灵学者·纳司" PetStudyList="5102 5103 5106 5108 5112 5501 5703 5704 6001 8501 8701" PetStudyLv="2 2 2 2 2 2 2 2 2 2 2"/>
