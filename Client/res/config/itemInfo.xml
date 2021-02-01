@@ -1689,16 +1689,16 @@
 		</Item>
 		<Item ID="300090" Name="进阶装备箱Lv50" UseLv="50" Type="30" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1">
 			<RandGoods Prof="64">
-				<Clothes ID="141021 141022 141023 141024 141025" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
+				<Clothes ID="141041 141042 141043 141044 141045" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
 			</RandGoods>
 			<RandGoods Prof="128">
-				<Clothes ID="141521 141522 141523 141524 141525" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
+				<Clothes ID="141541 141542 141543 141544 141545" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
 			</RandGoods>
 			<RandGoods Prof="256">
-				<Clothes ID="142021 142022 142023 142024 142025" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
+				<Clothes ID="142041 142042 142043 142044 142045" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
 			</RandGoods>
 			<RandGoods Prof="512">
-				<Clothes ID="142521 142522 142523 142524 142525" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
+				<Clothes ID="142541 142542 142543 142544 142545" Cnt="1 1 1 1 1" Tag="1 1 1 1 1" Extent="2 2 2 2 2"/>
 			</RandGoods>
 		</Item>
 		<Item ID="300100" Name="基姆的秘密宝箱" DayMax="200" UseLv="10" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="0" VipTradability="0" Vendibility="1" Del="1" DelFirstItem="350051" DelSecondItem="360047">
