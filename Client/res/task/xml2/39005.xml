@@ -14,7 +14,7 @@ taskitem.xml      #res\config    添加       				ok
 <Task ID="39005" Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！\n周四 6:00-24:00" TargetMap="11220">
 	<Procedure> 
   		<Step ID="1" ParentList="0" ParentCost="0"  >
-			<Event Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >			
+			<Event Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！\n周四 6:00-24:00" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >			
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="【下水道的入侵者Ⅰ】" />
 				</Trigger>

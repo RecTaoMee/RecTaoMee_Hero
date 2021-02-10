@@ -2,20 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="renderer" content="webkit">
         <title>摩尔勇士复兴版</title>
         <link rel="Shortcut Icon" href="WebCommon/favicon.ico?v=0929" />
         <meta name="keywords" content="摩尔勇士复兴版" />
         <meta name="description" content="" />
-
-
-
         <style type="text/css">
+
 		body{margin:0;
 		padding:0;
 		background-color: #c07f28;
-
 		}
+		.container{
+				 margin: 0 auto;
+    width: 1012px;
+		}
+
 		
 /*            #flashcontent	{margin:0 auto;overflow:hidden;width:990px;height:560px;}*/
             /*#flashTextContent {visibility:hidden;padding-top:210px;overflow:hidden;height:100px;text-align:center;}*/
@@ -122,6 +124,7 @@
             else{
                 var str="";
                 str+="<object>";
+				str+="<param name=\"wmode\" value=\"window\">";
                 str+="<embed type='application/x-shockwave-flash' allowFullScreen='true' quality='high' width='990' height='560' allowScriptAccess='always' id='mymovie_em' name='mymovie_em' src='Client.swf'></embed>";
                 str+="</object>";
                 str+='<div id="innerPopIframe" style="display:none;">';
