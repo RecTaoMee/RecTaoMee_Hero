@@ -114,6 +114,7 @@
  	<Title ID="1038" Name="未来勇士" Desc="来自未来，未来可能成为【摩尔勇士】的摩尔"/>  <!--25任务-->  
  	<Title ID="1039" Name="精灵研究员" Desc="加入【精灵G档案】调查计划获得"/>  <!--25任务-->  
  	<Title ID="1040" Name="不开玩笑勇士" Desc="愚人节向女神许下“特殊愿望”获得"/> <!--节日任务-->    
+	
 <!--其它称号（装备专用称号） 紫色↓-->
  	<Title ID="2001" Name="希望之星" Desc="佩戴护身项链【希望之坠】时获得"/>
  	<Title ID="2002" Name="我是摩尔♂" Desc="佩戴项链【男生项链】获得"/>
@@ -181,5 +182,6 @@
  	<Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="100" MpMax="100" Desc="2020年端午节活动纪念称号 生命上限+100，魔力上限+100"/>
 	<Title ID="3042" Name="破晓逐光者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="通关竞技之塔30层 生命上限+350，魔法上限+150，回避+10 抗昏睡+5 抗石化+5"/>
 	<Title ID="3043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="3044" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
 	
 </Titles>
