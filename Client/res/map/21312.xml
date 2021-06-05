@@ -4,11 +4,14 @@
 		<node id="1" pos="759,303" targetMapId="21501" targetTransPortId="2" name="神秘地道"/>
 		<node id="2" pos="1536,483" targetMapId="21311" targetTransPortId="2" name="神秘地道"/>
 		<node id="3" pos="1288,215" targetMapId="11504" targetTransPortId="2" name="兽王峡谷"/>
+		<node id="4" pos="359,303" targetMapId="21313" targetTransPortId="1" name="兽王峡谷"/>
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="3" type="TransPort" level="downLevel" res="MC_door_2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="4" type="TransPort" level="downLevel" res="MC_door_5" name="bbb" transPortId="4" regPoint="200,200" depth="auto" pos="-21,143" tip="aaa" alpTaskID="11007_3_1 " visible="0"/>
+		<node id="19" type="Object" res="MC_CloudsWard" alpTaskID="11007_3_1" visible="0"/>
 	</object>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->

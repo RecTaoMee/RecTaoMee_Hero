@@ -129,7 +129,7 @@ items : 对应ItemIDs的物品名称
 			  haveMap="0"
 			  
 			  TipsType="3"  
-			  BossLevel="20-100" 
+			  BossLevel="26-32" 
 			  ItemIDs="170006 170008 170010 170012 170014 170016" 
 			  items="铝 银 金 铂金 尼格金属 西尔金属">
 		</Area>
@@ -190,18 +190,18 @@ items : 对应ItemIDs的物品名称
 		</Area>
 		
 		<AreaPoint>
-			<node ID="21301"  MapID="21301" TipsType="4" BossLevel="10-15" ItemIDs="150003 170001 170002"  InitJumpPos="804,264" TaskInitJumpPos="804,264" BeatsName="7"/>
-			<node ID="21302"  MapID="21302" TipsType="4" BossLevel="15-20" ItemIDs="150005 170003" BeatsName="7 8"/>
-			<node ID="21303"  MapID="21303" TipsType="4" BossLevel="20-25" ItemIDs="150005 170005 170004" BeatsName="2002 8 9" />
-			<node ID="21304"  MapID="21304" TipsType="4" BossLevel="25-30" items="？？？" BeatsName="8 9" />
-			<node ID="21305"  MapID="21305" TipsType="4" BossLevel="30-35" ItemIDs="150007 170007" BeatsName="7 10" />
-			<node ID="21306"  MapID="21306" TipsType="4" BossLevel="35-40" ItemIDs="150007 170009 170006" BeatsName="10 11"/>
-			<node ID="21307"  MapID="21307" TipsType="4" BossLevel="40-45" items="？？？" BeatsName="11 12" />
-			<node ID="21308"  MapID="21308" TipsType="4" BossLevel="45-50" ItemIDs="170015" BeatsName="12 13" />
-			<node ID="21309"  MapID="21801" TipsType="4" BossLevel="85-90" ItemIDs="160009 160010" BeatsName="3020 3021 3022" />
-			<node ID="21310"  MapID="21310" TipsType="4" BossLevel="55-60" ItemIDs="150009 170011" BeatsName="7 15"/>
-			<node ID="21311"  MapID="21311" TipsType="4" BossLevel="60-65" ItemIDs="150009 170013" BeatsName="15 16" />
-			<node ID="21312"  MapID="21312" TipsType="4" BossLevel="65-70" items="？？？" BeatsName="15 16" />
+			<node ID="21301"  MapID="21301" TipsType="4" BossLevel="4-6" ItemIDs="150003 170001 170002"  InitJumpPos="804,264" TaskInitJumpPos="804,264" BeatsName="7"/>
+			<node ID="21302"  MapID="21302" TipsType="4" BossLevel="7-9" ItemIDs="150005 170003" BeatsName="7 8"/>
+			<node ID="21303"  MapID="21303" TipsType="4" BossLevel="10-12" ItemIDs="150005 170005 170004" BeatsName="2002 8 9" />
+			<node ID="21304"  MapID="21304" TipsType="4" BossLevel="13-15" items="？？？" BeatsName="8 9" />
+			<node ID="21305"  MapID="21305" TipsType="4" BossLevel="16-18" ItemIDs="150007 170007" BeatsName="7 10" />
+			<node ID="21306"  MapID="21306" TipsType="4" BossLevel="18-20" ItemIDs="150007 170009 170006" BeatsName="10 11"/>
+			<node ID="21307"  MapID="21307" TipsType="4" BossLevel="20-23" items="？？？" BeatsName="11 12" />
+			<node ID="21308"  MapID="21308" TipsType="4" BossLevel="31-33" ItemIDs="170015" BeatsName="12 13" />
+			<node ID="21309"  MapID="21801" TipsType="4" BossLevel="24-26" ItemIDs="160009 160010" BeatsName="3020 3021 3022" />
+			<node ID="21310"  MapID="21310" TipsType="4" BossLevel="20-22" ItemIDs="150009 170011" BeatsName="7 15"/>
+			<node ID="21311"  MapID="21311" TipsType="4" BossLevel="22-24" ItemIDs="150009 170013" BeatsName="15 16" />
+			<node ID="21312"  MapID="21312" TipsType="4" BossLevel="24-26" items="？？？" BeatsName="15 16" />
 			<node ID="21313"  MapID="21313" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>
 			<node ID="21314"  MapID="21314" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>
 			<node ID="21315"  MapID="21315" TipsType="4" BossLevel="？？？" items="？？？" BeatsName="？？？"/>

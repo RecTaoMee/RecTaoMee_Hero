@@ -163,6 +163,15 @@
 	<Item Task="11005" Map="11205" ID="110051" Level="CONTENT" Res="task_11005_sword.swf" Pos="0,0" TriggerType="1" /><!-- 南瓜剑客 -->
 	<Item Task="11005" Map="11203" ID="110052" Level="CONTENT" Res="task_11005_magic.swf" Pos="-105,-80" TriggerType="1" /><!-- 妮娜 -->
 	<Item Task="11005" Map="11301" ID="110053" Level="CONTENT" Res="task_11005_captain.swf" Pos="0,-188" TriggerType="1" /><!-- 妮娜 -->
+	<!-- 百里狂风 -->
+	<Item Task="11007" Map="11201" ID="110071" Level="CONTENT" Res="task_11007_1.swf" Pos="423,661" TriggerType="1" /><!-- 多修 放法阵 -->
+	<Item Task="11007" Map="11201" ID="110072" Level="CONTENT" Res="task_11007_2.swf" Pos="290,364" TriggerType="1" /><!-- 南街 碎石 -->
+	<Item Task="11007" Map="11201" ID="110073" Level="TOP" Res="task_11007_3.swf" Pos="15,-578" TriggerType="1" /><!--御风结界 与 风暴 -->
+	<Item Task="11007" Map="11201" ID="110074" Level="CONTENT" Res="task_11007_4.swf" Pos="326,647" TriggerType="1" /><!--彼兔 -->
+	<Item Task="11007" Map="11201" ID="110075" Level="CONTENT" Res="task_11007_5.swf" Pos="27,292" TriggerType="1" /><!--鼬西 -->
+	<Item Task="11007" Map="21501" ID="1100710" Level="CONTENT" Res="task_11007_10.swf" Pos="515,-653" TriggerType="0" /><!--风龙眼泪-->
+	<Item Task="11007" Map="21501" ID="1100713" Level="UP" Res="task_11007_13.swf" Pos="1580,-3" TriggerType="0" /><!--风龙虚像-->
+	<Item Task="11007" Map="21501" ID="1100714" Level="CONTENT" Res="task_11007_14.swf" Pos="596,-626" TriggerType="1" /><!--正义的伙伴-->
 	
 
 

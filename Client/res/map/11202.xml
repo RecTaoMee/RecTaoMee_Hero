@@ -163,7 +163,7 @@
 			</des>
 		</proAction>
 		
-		<proAction npcID="104" id="200" type="0" answer="魔力水晶兑换$我还有其它事！" to="module_YouLiExchangeModule$o" colorID="1$0">
+		<proAction npcID="104" id="200" type="0" answer="紫焰龙鳞兑换$魔力水晶兑换$我还有其它事！" to="module_LongLinExchangeModule$module_YouLiExchangeModule$o" colorID="1$0">
 			<des>
 				<![CDATA[1#恐惧、黑暗魔王相继出动，各大陆的形势越来越严峻了，我们一定要团结起来，粉碎它们的阴谋！]]>
 			</des>
@@ -279,7 +279,7 @@
 			</des>
 		</proAction>	
 		
-		<proAction npcID="1001" id="243" type="0" answer="勇士广场（琉璃翼龙）$王国军营$毁坏的勇士国度(35-53级)$月之宫殿（周末开放）$离开" to="changeMap_30400$changeMap_11222$changeMap_51202$a238$o" colorID="1$1$1$1$0">
+		<proAction npcID="1001" id="243" type="0" answer="勇士广场（琉璃翼龙）$王国军营$毁坏的勇士国度(35-53级)$月之宫殿（周末开放）$斯巴鲁洞穴(3人副本)$离开" to="changeMap_30400$changeMap_11222$changeMap_51202$a238$changeMap_22104$o" colorID="1$1$1$1$1$0">
 			<des>
 				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”。$$]]>
 				<![CDATA[1#目前已开放30级副本【月之宫殿】，周末每日可以进入2次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		

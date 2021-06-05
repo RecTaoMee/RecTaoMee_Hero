@@ -1,0 +1,237 @@
+<Task ID="11006" Memo="王国南部发生了很大的震动，国王詹姆斯正要召见你，快去看看吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="王国南部发生了很大的震动，国王詹姆斯正要召见你，快去看看吧！" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【危机！百里狂风】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【@nick】，你来了，今日一场异常的风暴自南面而来，席卷了王国，我们损失惨重。" />	
+					<Msg NpcID="30" ImageID="1" Info="事态严峻，王国已紧急派遣多修前往【王国南街】启动【守护法阵】，避免情况恶化。勇士，你能前去协助我们吗？" />	
+					<Option Info="没问题，包在我身上。" />
+					<Option Info="有事先走了" NextStep="1" />					
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11201,4"/>	
+    		</Event>
+		</Step>		
+		
+		<Step ID="50" ParentList="1" ParentCost="1" >			
+    		<Event Memo="缓冲中......." TargetMap="11201"  TargetName="t进入t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201,110071" />  	<!-- 多修 放法阵 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11201,110072" />  	<!-- 南街 碎石 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11201,110073" />  	<!--御风结界 与 风暴 -->
+    		</Event>			
+		</Step>		
+		
+  		<Step ID="2" ParentList="50" ParentCost="1" >
+    		<Event Memo="和多修对话询问情况" TargetMap="11201" TargetObj="110071" TargetName="和t多修t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="110071" TaskOption="【危机！百里狂风】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="【@nick】，你来的正是时候。" />	
+					<Option Info="情况如何？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="不乐观。" />	
+					<Option Info="发生了什么？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="想必你知道，风之洞穴是格历尔大陆风的源头，而风之龙控制着风的流向。" />	
+					<Msg NpcID="104" ImageID="1" Info="如今，风向突变，风场紊乱，据我推断，风之龙可能遭遇不测，解除风暴的关键，想必也在于此。" />	
+					<Msg NpcID="104" ImageID="1" Info="然而我需要维持法阵运行，无法脱身，只能请你独自前往【风之洞穴】进行调查了。" />	
+					<Option Info="立即动身" />
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11201,110074" />  	<!--彼兔 -->
+    		</Event>
+		</Step>					
+			                          
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="和彼兔对话询问情况" TargetMap="11201" TargetObj="110074" TargetName="和t彼兔t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11201" ObjID="110074" TaskOption="【危机！百里狂风】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="稍…等~ 在风暴中行走，没有避风咒可是会被吹上天的哦～b" />	
+					<Msg NpcID="27" ImageID="1" Info="来，小勇士，现在跟我念：咪西咪西华米华米，如果你不华米我就不能咪西——" />	
+					<Option Info="咪西咪西华米华米——" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="来，小勇士，现在跟我念：咪西咪西华米华米，如果你不华米我就不能咪西——" />	
+					<Option Info="如果你不华米" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="来，小勇士，现在跟我念：咪西咪西华米华米，如果你不华米我就不能咪西——" />	
+					<Option Info="我就不能咪西——" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="27" ImageID="1" Info="哈哈，不错，很有魔法天赋嘛~" />	
+					<Msg NpcID="27" ImageID="1" Info="要安全归来哦~" />	
+					<Option Info="使命必达！" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21312,2" />  
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21312,110075" />  	<!--鼬西 -->
+    		</Event>
+		</Step>					
+			            
+		
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="和鼬西对话" TargetMap="21312" TargetObj="110075" TargetName="和t鼬西t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="110075" TaskOption="【危机！百里狂风】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="哈哈哈哈，你来晚了，鼹鼠。风之龙的鳞片已经融合了黑水晶的力量，接受狂风的洗礼吧！" />	
+					<Option Info="风龙鳞片？！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="5" Info="嘻嘻，这可是我费了很大力气才从参加试炼的摩尔那里偷来的。现在，毁灭吧！" />	
+					<Option Info="..." />
+				</Action>
+				<Action Type="COMMAND" Command="BGM_MUTE" />  <!-- 背景音乐静音 -->				
+				<Action Type="MOVIE" Url="task_11007_6.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="MOVIE" Url="task_11007_7.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="MOVIE" Url="task_11007_8.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="MOVIE" Url="task_11007_9.swf" MapLevel="TASK" Pos="0,0" />
+			<Action Type="COMMAND" Command="BGM_NORMAL" />  <!-- 背景音乐正常播放 -->						
+    		</Event>
+		</Step>					
+			            
+		
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >				  		
+			<Condition>
+				<Battle ID="3518" Count="1" />
+			</Condition>			  		
+    		<Event ConditionType="IN" Memo="成功击败鼬西，和鼬西对话" TargetMap="21312" TargetObj="110075" TargetName="和t鼬西t对话">			
+  				<Trigger> 
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="110075" TaskOption="【危机！百里狂风】" /> 
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="6" Info="呜呜呜，疼！疼！勇士大人饶命，我再也不敢了，只要把风龙的眼泪滴入这片黑色鳞片中，就能解除风暴了。" />										
+					<Msg NpcID="998" ImageID="7" Info="装那些东西的瓶子全都在风之洞穴一层的那个矿车里…我发誓，我说的都是实话，放过我吧！" />										
+					<Option Info="算你跑得快！" />
+				</Action> 
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21312,110075" /> 
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21501,1" /> 
+				
+    		</Event>
+			
+    		<Event ConditionType="OUT" Memo="快去击败鼬西吧！" TargetMap="21312" TargetObj="110075" TargetName="和t鼬西t对话">
+  				<Trigger> 
+					<Item Type="NPC_OPTION" MapID="21312" ObjID="110075" TaskOption="【危机！百里狂风】" /> 
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="998" ImageID="1" Info="什…什么？居然没有作用？" />	
+					<Msg NpcID="998" ImageID="1" Info="别得意，我也变强了，可恶的鼹鼠，来战！" />	
+					<Option Info="来战！" />
+					<Option Info="准备一下" NextStep="5" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3518"/>	
+    		</Event>				  		
+		</Step>			
+
+		
+		<Step ID="51" ParentList="5" ParentCost="1" >			
+    		<Event Memo="缓冲中......." TargetMap="21501"  TargetName="t进入t">
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21501,1100710" />  	<!-- 风龙的眼泪 -->
+    		</Event>			
+		</Step>		
+			            
+  		<Step ID="6" ParentList="51" ParentCost="1" >
+    		<Event Memo="找到风之洞穴一层尽头的c风龙的眼泪c，将其滴到风龙鳞片上" TargetMap="21501" TargetObj="1100710" TargetName="点击t风龙的眼泪t">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="21501" ObjID="1100710"/>									
+				</Trigger> 				
+				<Action Type="MOVIE" Url="task_11007_11.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="MOVIE" Url="task_11007_12.swf" MapLevel="TASK" Pos="0,0" />
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21501,1100713" />  	<!-- 威恩德虚影 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="21501,1100714" />  	<!-- 正义的伙伴 -->
+    		</Event>
+		</Step>					
+			            
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+			<Condition>
+				<Battle ID="3519" Count="1" />
+			</Condition>				
+
+    		<Event ConditionType="IN" Memo="击败风龙幻像了，和正义的伙伴对话" TargetMap="21501" TargetObj="1100714" TargetName="和t正义的伙伴t对话">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="21501" ObjID="1100714" />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="很好，风终于停了，赶快去风之洞穴三层看看风龙的情况吧。" />	
+					<Msg NpcID="15" ImageID="1" Info="我还要去调查那瓶东西的来源，先走一步。" />	
+					<Option Info="再会" />
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21312,1100713" /> <!-- 删除 威恩德虚影 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21312,1100714" /> <!-- 删除 正义的伙伴 -->
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2" /> 
+    		</Event>
+			
+			
+    		<Event ConditionType="OUT" Memo="和正义的伙伴对话" TargetMap="21501" TargetObj="1100714" TargetName="和t正义的伙伴t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="21501" ObjID="1100714" TaskOption="可恶…"/>									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="【@nick】，你没事吧，抱歉，我在调查过程中被黑化生物纠缠，来晚了。" />	
+					<Option Info="还好" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="【@nick】，你没事吧，抱歉，我在调查过程中被黑化生物纠缠，来晚了。" />	
+					<Option Info="那鳞片和幻象是？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="15" ImageID="1" Info="目前尚不清楚，不过可以确定的是，鼬西那瓶东西创造了这个幻象，这可能是魔王的手笔。" />	
+					<Msg NpcID="15" ImageID="1" Info="这些事情还需要进一步调查，总之，先解决眼前的麻烦吧。" />	
+					<Option Info="全力迎战！" />
+					<Option Info="准备一下" NextStep="7"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3519"/>	
+    		</Event>
+		</Step>					
+			            
+			            
+  		<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="赶快去风之洞穴三层看看风龙的情况吧。" TargetMap="21503" TargetObj="329" TargetName="和t威恩德t对话">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"/>									
+				</Trigger> 	
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="多亏汝在，不然吾恐难以独自对抗这黑暗力量。" />	
+					<Option Info="黑暗力量？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="刚才的幻象正是吾真身被黑暗侵蚀所产生的虚影……" />	
+					<Msg NpcID="329" ImageID="1" Info="多说无益，汝现在还无法理解，回去告诉汝之主，应尽快解开“时之封印”前往炎之大陆，此事关乎风之大陆安危。" />	
+					<Option Info="立刻出发" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11307,1" /> 
+    		</Event>
+		</Step>					
+			            
+			            
+  		<Step ID="9" ParentList="8" ParentCost="1" >
+    		<Event Memo="快给詹姆斯汇报情况吧" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【危机！百里狂风】"/>									
+				</Trigger> 	
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="【@nick】,你回来了。" />	
+					<Option Info="（汇报情况）" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="……唉，看来情况比我们想象的更加紧急。我会尽快召集大臣们进行商讨。" />	
+					<Msg NpcID="30" ImageID="1" Info="当然，这次【@nick】的表现真是令人惊叹。" />	
+					<Msg NpcID="30" ImageID="1" Info="这是给你的奖励，收下吧！" />	
+					<Option Info="使命必达！" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21312,4" /> 
+    		</Event>
+		</Step>					
+			            
+	
+</Procedure>
+</Task>
