@@ -79,26 +79,6 @@
  	<Title ID="1003" Name="爱玩火勇士" FunType="1" Spirit="5" Desc="精神+5" />
  	<Title ID="1004" Name="抗疫勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistPoison="10" Desc="2020年正月抗击新型冠状病毒纪念称号 抗毒性+10 生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="1005" Name="瓶盖守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="完成任务【真假牛奶瓶盖】获得 生命上限+350，魔法上限+150，回避+10" />
- 	<Title ID="1006" Name="" />
- 	<Title ID="1007" Name="" />
- 	<Title ID="1008" Name="" />
- 	<Title ID="1009" Name="" />
- 	<Title ID="1010" Name="" />
- 	<Title ID="1011" Name="" />
- 	<Title ID="1012" Name="" />
- 	<Title ID="1013" Name="" />
- 	<Title ID="1014" Name="" />
- 	<Title ID="1015" Name="" />
- 	<Title ID="1016" Name="" />
- 	<Title ID="1017" Name="" />
- 	<Title ID="1018" Name="" />
- 	<Title ID="1019" Name="" />
- 	<Title ID="1020" Name="" />
- 	<Title ID="1021" Name="" />
- 	<Title ID="1022" Name="" />
- 	<Title ID="1023" Name="" />
- 	<Title ID="1024" Name="" />
- 	<Title ID="1025" Name="" />
  	<Title ID="1026" Name="50级达人" FunType="1" HpMax="100" Mdef="10" Dodge="5" Desc="生命上限+100，抗魔+10，回避+5"/>
  	<Title ID="1027" Name="时空守护者" FunType="1" HpMax="50" Def="3" Mdef="3" Desc="生命上限+50，防御+3，抗魔+3"/>
  	<Title ID="1028" Name="时空罹难者" FunType="1" HpMax="30" Desc="生命上限+30"/>
@@ -114,7 +94,19 @@
  	<Title ID="1038" Name="未来勇士" Desc="来自未来，未来可能成为【摩尔勇士】的摩尔"/>  <!--25任务-->  
  	<Title ID="1039" Name="精灵研究员" Desc="加入【精灵G档案】调查计划获得"/>  <!--25任务-->  
  	<Title ID="1040" Name="不开玩笑勇士" Desc="愚人节向女神许下“特殊愿望”获得"/> <!--节日任务-->    
-	
+	<Title ID="1041" Name="蜜粽守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="端午节活动纪念称号 生命上限+350，魔力上限+150 回避+10，抗遗忘+5"/>
+	<Title ID="1043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1045" Name="两周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1046" Name="三周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1047" Name="四周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1048" Name="五周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1049" Name="六周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1050" Name="七周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1051" Name="八周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1052" Name="九周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1053" Name="十周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+
+
 <!--其它称号（装备专用称号） 紫色↓-->
  	<Title ID="2001" Name="希望之星" Desc="佩戴护身项链【希望之坠】时获得"/>
  	<Title ID="2002" Name="我是摩尔♂" Desc="佩戴项链【男生项链】获得"/>
@@ -124,41 +116,25 @@
  	<Title ID="2006" Name="摩尔勇士万岁" Desc="佩戴项链【信仰臂章】获得"/>
  	<Title ID="2007" Name="超时空勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
  	<Title ID="2008" Name="复兴版拓荒者" FunType="1" HpMax="500" MpMax="200" Dodge="10" Desc="复兴版高端众筹用户  生命上限+500，魔法上限+200，回避+10" />
- 	<Title ID="2009" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="2020六一国际儿童节纪念称号 抗遗忘+10 生命上限+350，魔法上限+150，回避+10"/>
+ 	<!-- <Title ID="2009" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="11" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+11"/> -->
+ 	<!-- <Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
+ 	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLethargy="5" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10 抗昏睡+5"/>
+ 	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="2020六一国际儿童节纪念称号 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
  	<Title ID="2013" Name="普天同庆中国节" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="中秋国庆双节合一，普天同庆！生命上限+350，魔法上限+150，回避+10 抗遗忘+10"/>
- 	<Title ID="2014" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2015" Name="" />
- 	<Title ID="2016" Name="" />
- 	<Title ID="2017" Name="" />
- 	<Title ID="2018" Name="" />
- 	<Title ID="2019" Name="" />
+ 	<!-- <Title ID="2014" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/> -->
+ 	<Title ID="2015" Name="风雨同舟" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="光阴似箭，岁月如梭，敬我们一起走过的时光。生命+400 魔法+200 回避+10 抗石化+5 抗昏睡+5" />
  	<Title ID="2020" Name="我是NPC" Desc="活动NPC工作称号" />
-	<Title ID="2100" Name="复兴版牛逼" FunType="1" HpMax="9999" MpMax="9999" Atk="9999" Def="9999" Mdef="9999" Speed="9999" Spirit="9999" Resume="9999" Hit="9999" Dodge="9999" Crit="9999" FightBack="9999" ResistPoison="999" ResistLithification="999" ResistLethargy="999" ResistCommination="999"  ResistConfusion="999"  ResistOblivion="999" Desc="复兴版作者专用称号"/>
+	<Title ID="2021" Name="花好月圆" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="中秋节活动纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2022" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
 	
+	
+	<Title ID="2100" Name="复兴版牛逼" FunType="1" HpMax="9999" MpMax="9999" Atk="9999" Def="9999" Mdef="9999" Speed="9999" Spirit="9999" Resume="9999" Hit="9999" Dodge="9999" Crit="9999" FightBack="9999" ResistPoison="999" ResistLithification="999" ResistLethargy="999" ResistCommination="999"  ResistConfusion="999"  ResistOblivion="999" Desc="复兴版作者专用称号"/>
 <!--战斗称号 橙色-->
  	<Title ID="3001" Name="修炼30域击破" FunType="1" HpMax="50" Def="3" Mdef="3" Speed="2" Desc="生命上限+50，防御+3，抗魔+3，速度+2"/>
  	<Title ID="3002" Name="修炼35域击破" FunType="1" HpMax="70" Def="4" Mdef="4" Speed="3" Desc="生命上限+70，防御+4，抗魔+4，速度+3"/>
  	<Title ID="3003" Name="修炼40域击破" FunType="1" HpMax="90" Def="5" Mdef="5" Speed="4" Desc="生命上限+90，防御+5，抗魔+5，速度+4"/>
  	<Title ID="3004" Name="修炼45域击破" FunType="1" HpMax="110" Def="6" Mdef="6" Speed="5" Desc="生命上限+110，防御+6，抗魔+6，速度+5"/>
- 	<Title ID="3005" Name="" />
- 	<Title ID="3006" Name="" />
- 	<Title ID="3007" Name="" />
- 	<Title ID="3008" Name="" />
- 	<Title ID="3009" Name="" />
- 	<Title ID="3010" Name="" />
- 	<Title ID="3011" Name="" />
- 	<Title ID="3012" Name="" />
- 	<Title ID="3013" Name="" />
- 	<Title ID="3014" Name="" />
- 	<Title ID="3015" Name="" />
- 	<Title ID="3016" Name="" />
- 	<Title ID="3017" Name="" />
- 	<Title ID="3018" Name="" />
- 	<Title ID="3019" Name="" />
- 	<Title ID="3020" Name="诗华墨谷" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021五一活动称号 生命上限+350，魔法上限+150，回避+10"/>
+ 	<Title ID="3020" Name="诗华墨谷" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistConfusion="5" Desc="2021五一活动称号 生命上限+350，魔法上限+150，回避+10，抗混乱+5"/>
  	<Title ID="3021" Name="初为人师" FunType="1" Dodge="1" Spirit="1" Resume="1" Desc="回避+1，精神力+1，回复力+1"/>
  	<Title ID="3022" Name="博学多才" FunType="1" Dodge="1" Spirit="2" Resume="2" Desc="回避+1，精神力+2，回复力+2"/>
  	<Title ID="3023" Name="良师益友" FunType="1" Dodge="2" Spirit="3" Resume="3" Desc="回避+2，精神力+3，回复力+3"/>
@@ -178,10 +154,13 @@
  	<Title ID="3037" Name="皇家卫队队员" BlackFilter="1" FunType="1" ClearType="1" HpMax="100" MpMax="50" Dodge="2" Desc="生命上限+100，魔力上限+50，回避+2"/>
  	<Title ID="3038" Name="皇家卫队精英" BlackFilter="1" FunType="1" ClearType="1" HpMax="110" MpMax="50" Speed="1" Spirit="1" Crit="1" Desc="生命上限+110，魔力上限+50，速度+1，精神力+1，必杀+1"/>
  	<Title ID="3039" Name="皇家卫队首席" BlackFilter="1" FunType="1" ClearType="1" HpMax="120" MpMax="50" Speed="2" Spirit="2" Crit="2" Desc="生命上限+120，魔力上限+50，速度+2，精神力+2，必杀+2"/>
- 	<Title ID="3040" Name="花好月圆" FunType="1" HpMax="100" MpMax="100" Desc="中秋节活动参赛荣誉证明 生命上限+100，魔力上限+100"/>
- 	<Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="100" MpMax="100" Desc="2020年端午节活动纪念称号 生命上限+100，魔力上限+100"/>
+ 	<Title ID="3040" Name="花好月圆" FunType="1"  HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="中秋节活动参赛荣誉证明 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
+ 	<!-- <Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="端午节活动纪念称号 生命上限+350，魔力上限+150 回避+10，抗遗忘+5"/> -->
 	<Title ID="3042" Name="破晓逐光者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="通关竞技之塔30层 生命上限+350，魔法上限+150，回避+10 抗昏睡+5 抗石化+5"/>
-	<Title ID="3043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
-	<Title ID="3044" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
-	
+	<!-- <Title ID="3043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+10"/> -->
+	<!-- <Title ID="3044" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/> -->
+	<!-- <Title ID="3045" Name="两周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
+	<Title ID="3046" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="3047" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/>
+	<Title ID="3048" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="11" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+11"/>
 </Titles>

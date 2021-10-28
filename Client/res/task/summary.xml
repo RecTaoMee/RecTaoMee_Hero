@@ -2522,7 +2522,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">			
 				<Item OutType="2" ItemId="300044" Count="10" />  <!-- 10本精灵经验笔记 -->
 				<Item OutType="2" ItemId="180068" Count="1" />  <!-- 被污染的鳞片 -->
-				<Item OutType="2" ItemId="341014" Count="1" />  <!-- 风龙变身卡 -->
+				<Item OutType="2" ItemId="341014" Count="2" />  <!-- 风龙变身卡 -->
 				<Item OutType="1" ItemId="50002" Count="20000" />  <!-- 经验 -->
 				<Item OutType="1" ItemId="50001" Count="20000" />  <!-- 星豆 -->
 			</OutItem>

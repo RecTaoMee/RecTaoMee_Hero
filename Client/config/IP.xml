@@ -1,24 +1,24 @@
 ﻿<config>
 	<!--服务器配置-->
 	<httpConfig>
-		<http url="http://106.14.29.83/ip.txt"/>
+		<http url="http://molehero.com:88/ip.txt"/>
 	</httpConfig>
 
 	<ipConfig>
-		<Email ip="106.14.29.83" port="1800"/>
-		<DirSer ip="106.14.29.83" port="1800"/>
-		<SubServer ip="106.14.29.83" port="1800"/>
+		<Email ip="game.molehero.com" port="1800"/>
+		<DirSer ip="game.molehero.com" port="1800"/>
+		<SubServer ip="game.molehero.com" port="1800"/>
 		
 		<RegistSer ip="10.1.1.5" port="3200"/>
-		<http url="http://106.14.29.83/ip.txt"/>
+		<http url="http://molehero.com:88/ip.txt"/>
 	</ipConfig>
 
 	<ipConfig2>
-		<Email ip="106.14.29.83" port="1800"/>
-		<DirSer ip="106.14.29.83" port="1800"/>
-		<SubServer ip="106.14.29.83" port="1800"/>
+		<Email ip="game.molehero.com" port="1800"/>
+		<DirSer ip="game.molehero.com" port="1800"/>
+		<SubServer ip="game.molehero.com" port="1800"/>
 		
 		<RegistSer ip="10.1.1.5" port="3200"/>
-		<http url="http://106.14.29.83/ip.txt"/>
+		<http url="http://game.molehero.com/ip.txt"/>
 	</ipConfig2>
 </config>

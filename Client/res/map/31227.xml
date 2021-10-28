@@ -16,7 +16,7 @@
 		<proAction npcID="997" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
 				<![CDATA[1#尝尝我的毒针吧！\n]]>
-				<![CDATA[(本层特性——剧毒蜂皇：灵动 刺穿；草莓蜂·改：灵动 刺穿)]]>
+				<![CDATA[(本层特性——剧毒蜂皇：灵动 刺穿 重击；草莓蜂·改：灵动 刺穿)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2427" />

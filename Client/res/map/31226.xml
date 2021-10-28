@@ -16,7 +16,7 @@
 		<proAction npcID="757" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
 				<![CDATA[1#贪吃的小摩尔都要受到惩罚！\n]]>
-				<![CDATA[(本层特性——草莓蜂后：灵动 刺穿；草莓蜂：灵动)]]>
+				<![CDATA[(本层特性——草莓蜂后：灵动 刺穿 嗜血；草莓蜂：灵动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2426" />

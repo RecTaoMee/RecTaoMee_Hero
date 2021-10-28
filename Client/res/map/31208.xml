@@ -14,7 +14,7 @@
 		<proAction npcID="317" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
 				<![CDATA[1#小勇士，展现一下你现在的能力吧！\n]]>
-				<![CDATA[(本层特性——娜蒂丝：寄生 再生；海德 豆叶：寄生；波波尔：联动)]]>
+				<![CDATA[(本层特性——娜蒂丝：吸收 再生；海德 豆叶：寄生；波波尔：联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2408" />

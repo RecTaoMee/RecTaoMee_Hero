@@ -16,7 +16,7 @@
 		<proAction npcID="814" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
 				<![CDATA[1#.......\n]]>
-				<![CDATA[(本层特性——幻羽精灵：猛禽；吉利蛋：猛禽；撒旦蝠：联动；哒哒鸟：猛禽 联动)]]>
+				<![CDATA[(本层特性——幻羽精灵：猛禽；吉利蛋：吸收 再生；撒旦蝠：联动；哒哒鸟：猛禽 联动)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2414" />

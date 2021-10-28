@@ -1,0 +1,22 @@
+<!-- 风之洞穴二层  风龙特训2F -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
+	<transport intPos="360,308">
+		<node id="1" pos="51,423" targetMapId="21504" targetTransPortId="2" name="风龙特训1F"/> 
+		<node id="2" pos="710,400" targetMapId="21506" targetTransPortId="1" name="风龙特训3F"/> 			
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+	</object>
+	<npc>
+		<node id="61" type="NPC" res="MC_npc_ManTiSi" action="11"  />		
+	</npc>
+	<actions>
+		<proAction npcID="348" id="11" type="0" answer="来战$准备一下" to="a12$o" colorID="2$0">
+			<des>
+				<![CDATA[1#......]]>
+			</des>
+		</proAction>
+		<proAction id="12" type="5" fightID="3522" />
+	</actions>
+</map>

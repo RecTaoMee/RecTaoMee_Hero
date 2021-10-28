@@ -48,10 +48,16 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
-			<proAction npcID="329" id="11" type="0" answer="风之龙你好" to="o" >
+			<proAction npcID="329" id="11" type="0" answer="特别训练$风之龙你好" to="a12$0" colorID="2$0" >
 			<des>
 				<![CDATA[1#……]]>
 			</des>
 		</proAction>					
+			<proAction npcID="329" id="12" type="0" answer="来战$准备一下" to="w2_21504_1$o" colorID="2$0" >
+			<des>
+				<![CDATA[1#脚踩【@nick】之名的摩尔，近来之事，令吾深感黑暗之恐怖。$$]]>
+				<![CDATA[1#为避免此情重现，吾准备了一场特训，准备迎战吧！]]>
+			</des>
+		</proAction>
 	</actions>			
 </map>

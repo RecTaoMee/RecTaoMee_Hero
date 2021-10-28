@@ -16,7 +16,7 @@
 		<proAction npcID="753" id="0" type="0" answer="我要挑战你！$返回斗技场大厅$摩尔勇士万岁！" event="not_pass" to="a1$w2_11218_1$o" colorID="0$0$0">
 			<des>
 				<![CDATA[1#小摩尔，你是来切磋的吗？\n]]>
-				<![CDATA[(本层特性——沃特尔王：吸收 再生；沃特尔：联动 再生；沃勒格球：再生)]]>
+				<![CDATA[(本层特性——沃特尔王：吸收 再生；沃特尔：联动 再生；沃勒格球：再生 吸收)]]>
 			</des>
 		</proAction>
 		<proAction id="1" type="5" fightID="2421" />
