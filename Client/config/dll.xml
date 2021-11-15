@@ -1,5 +1,6 @@
 <taomee>
 	<Dll>
+		<item name="勇士0" path="dll/NewDLL.swf" ver="20100601"/>
 		<item name="勇士1" path="dll/TaomeeLibraryDLL.swf" ver="20100601"/>
 		<item name="勇士2" path="dll/ClientCoreDLL.swf" ver="20100601"/>
 		<item name="勇士3" path="dll/ClientAppDLL.swf" ver="20100601"/>

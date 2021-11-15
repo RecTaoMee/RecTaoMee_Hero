@@ -162,5 +162,5 @@
 	<!-- <Title ID="3045" Name="两周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
 	<Title ID="3046" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
 	<Title ID="3047" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/>
-	<Title ID="3048" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="11" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+11"/>
+	<Title ID="3048" Name="光棍王" FunType="1" HpMax="111" MpMax="111" Dodge="11" Desc="此称号为光棍节活动纪念称号，无敌的我，又要单身了。生命上限+111，魔法上限+111，回避+11"/>
 </Titles>
