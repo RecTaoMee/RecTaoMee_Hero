@@ -392,8 +392,8 @@
 		<Item ID="220051" Name="魔鬼的眼泪III" Type="2" Target="1" Price="1000000" SalePrice="1500" Tradability="2" VipTradability="2" Vendibility="1" MaxLv="35"/>
 		<Item ID="220052" Name="魔鬼的眼泪IV" Type="2" Target="1" Price="1000000" SalePrice="2000" Tradability="2" VipTradability="2" Vendibility="1" MaxLv="45"/>
 		
-		<Item ID="350014" Name="精灵五项重组丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1"/>
-	    <Item ID="350013" Name="精灵成长重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="10" Del="1"/>
+		<Item ID="350014" Name="精灵五项重组丸" Type="22" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" DayMax="20" Del="1"/>
+	    <Item ID="350013" Name="精灵成长重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="30" Del="1"/>
 	    <Item ID="351015" Name="精灵天赋重组丸" Type="21" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="0" DayMax="10" Del="1"/>
 		
 		<Item ID="350017" Name="种族技能仙草" SkillPercent="300 0 0" Type="23" Target="2" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0"  Vendibility="1" Del="1" DayMax="20">
@@ -2202,7 +2202,7 @@
 	  <Item ID="341013" Name="琉璃翼龙变身卡" Type="31" Price="1000" SalePrice="500" Tradability="2" VipTradability="2" Vendibility="1" >
             <Attr BeastType="109" Dodge="35" MpMax="500" HpMax="1000"/>
       </Item>
-	  <Item ID="341014" Name="风龙之影变身卡" Type="31" Price="1000" SalePrice="500" Tradability="2" VipTradability="2" Vendibility="1" >
+	  <Item ID="341014" Name="风龙之影变身卡" CanNotMart="1" Type="31" Price="1000" SalePrice="500" Tradability="2" VipTradability="2" Vendibility="1" >
             <Attr BeastType="205" Def="300" Mdef="200" Atk="100" Matk="300" Spirit="24" Hit="8" Crit="8" Dodge="20" MpMax="500" HpMax="2000"/>
       </Item>
 	</Kind>
@@ -2269,7 +2269,7 @@
 		<Item ID="350047" Name="奥哇鹰精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1" BeastType="106" BeastLv="1" BeastCnt="1" RandDiff="0" RandGrowth="-10" Vendibility="1" />
 		<Item ID="350048" Name="猩猿之王精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1" BeastType="107" BeastLv="1" BeastCnt="1" RandDiff="0" RandGrowth="-10" Vendibility="1" />
 		<Item ID="350049" Name="斯巴鲁幼兽精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1" BeastType="108" BeastLv="1" BeastCnt="1" RandDiff="0" RandGrowth="-10" Vendibility="1" />
-		<Item ID="350050" Name="精灵经验笔记·改" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Vendibility="0" >
+		<Item ID="350050" Name="精灵经验笔记·改" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Vendibility="0" Quantities="1">
 			<Goods ID="50003" Rate="1000" Cnt="99999"/>	
 		</Item>
 		<Item ID="350051" Name="魔王密钥" DayMax="50" Type="29" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1"/>
