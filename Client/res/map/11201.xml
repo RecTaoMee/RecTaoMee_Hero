@@ -29,7 +29,7 @@
 		<node id="804" type="NPC" taskShowSteps="39001_22" visible="0" res="MC_npc_804" taskType="0" level="contentLevel" fun="" action="" compTaskID="" needLevel="" needKind=""/>
 	</npc>
 	<actions>
-		<proAction npcID="7" id="0" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+		<proAction npcID="7" id="0" type="0" answer="锁修塔4F$风之洞穴3F$克拉斯岩洞8F$摩尔勇士万岁！" to="w2_21704_1$w2_21503_1$w2_22208_1$o" colorID="1$1$1$0">
 			<des>
 				<![CDATA[1#你想乘坐陆行鸟旅行吗？]]>
 			</des>

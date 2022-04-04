@@ -1,5 +1,5 @@
 [Config]
-DataVer=1641878834
+DataVer=1649059971
 #BaseUrlWithout/
-DownLoadBaseUrl=http://down.molehero.com:88
-ConfigBaseUrl=http://down.molehero.com:88
+DownLoadBaseUrl=http://103.53.125.85:88
+ConfigBaseUrl=http://103.53.125.85:88

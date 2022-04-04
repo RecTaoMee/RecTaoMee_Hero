@@ -77,7 +77,9 @@
  	<Title ID="1001" Name="粘糊糊勇士" Desc="战胜下水道三层【普豆泥王】获得" />  <!--下水道称号-->
  	<Title ID="1002" Name="啃骨头勇士" FunType="1" Atk="3" Desc="物理攻击+3" />
  	<Title ID="1003" Name="爱玩火勇士" FunType="1" Spirit="5" Desc="精神+5" />
+	
  	<Title ID="1004" Name="抗疫勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistPoison="10" Desc="2020年正月抗击新型冠状病毒纪念称号 抗毒性+10 生命上限+350，魔法上限+150，回避+10"/>
+	
  	<Title ID="1005" Name="瓶盖守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="完成任务【真假牛奶瓶盖】获得 生命上限+350，魔法上限+150，回避+10" />
  	<Title ID="1026" Name="50级达人" FunType="1" HpMax="100" Mdef="10" Dodge="5" Desc="生命上限+100，抗魔+10，回避+5"/>
  	<Title ID="1027" Name="时空守护者" FunType="1" HpMax="50" Def="3" Mdef="3" Desc="生命上限+50，防御+3，抗魔+3"/>
@@ -119,14 +121,27 @@
  	<!-- <Title ID="2009" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="11" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+11"/> -->
  	<!-- <Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
  	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLethargy="5" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10 抗昏睡+5"/>
- 	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="2020六一国际儿童节纪念称号 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
+ 	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="六一国际儿童节纪念称号 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
  	<Title ID="2013" Name="普天同庆中国节" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="中秋国庆双节合一，普天同庆！生命上限+350，魔法上限+150，回避+10 抗遗忘+10"/>
  	<!-- <Title ID="2014" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/> -->
  	<Title ID="2015" Name="风雨同舟" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="光阴似箭，岁月如梭，敬我们一起走过的时光。生命+400 魔法+200 回避+10 抗石化+5 抗昏睡+5" />
  	<Title ID="2020" Name="我是NPC" Desc="活动NPC工作称号" />
-	<Title ID="2021" Name="花好月圆" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="中秋节活动纪念称号 生命上限+350，魔法上限+150，回避+10"/>
-	<Title ID="2022" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
 	
+	<Title ID="2021" Name="花好月圆" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="中秋节活动纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	
+	<Title ID="2022" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="牛年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2023" Name="子鼠开天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="鼠年年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2024" Name="虎虎生威" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="虎年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2025" Name="兔步青云" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="兔年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2026" Name="龙腾云起" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="龙年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2027" Name="银蛇狂舞" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="蛇年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2028" Name="万马奔腾" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="马年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2029" Name="喜气羊羊" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="羊年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2030" Name="机智如猴" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="猴年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2031" Name="鸡祥如意" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="鸡年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2032" Name="瑞狗旺旺" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="狗年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+	<Title ID="2033" Name="金猪拱门" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="猪年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/>
+
 	
 	<Title ID="2100" Name="复兴版牛逼" FunType="1" HpMax="9999" MpMax="9999" Atk="9999" Def="9999" Mdef="9999" Speed="9999" Spirit="9999" Resume="9999" Hit="9999" Dodge="9999" Crit="9999" FightBack="9999" ResistPoison="999" ResistLithification="999" ResistLethargy="999" ResistCommination="999"  ResistConfusion="999"  ResistOblivion="999" Desc="复兴版作者专用称号"/>
 <!--战斗称号 橙色-->
