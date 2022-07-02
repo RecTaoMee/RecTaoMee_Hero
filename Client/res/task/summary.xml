@@ -506,7 +506,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>
 	</Task>		
 	
-	<Task ID="99" Name="勇士斗技场" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="23" Job="-1" JobLevel="0" Star="2" RecomLevel="23" Order="10">
+	<Task ID="99" Name="勇士斗技场" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="200" Job="-1" JobLevel="0" Star="2" RecomLevel="23" Order="10">
 		<Node ID="1" Step="1" Memo="祝贺【15级】！*王国西街尽头的勇士斗技场的大门向你打开！">
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50001" Count="50" />
@@ -532,7 +532,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>
 	</Task>
 	
-	<Task ID="100" Name="修炼之域的挑战" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="99" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="2" RecomLevel="21" Order="10">
+	<Task ID="100" Name="修炼之域的挑战" Kind="1" DefaultTrace="1" BreakTrace="1" AcceptStep="1" ParentCost="1" ParentList="15" RepeatType="0" RepeatCnt="0" Level="21" Job="-1" JobLevel="0" Star="2" RecomLevel="21" Order="10">
 		<Node ID="1" Step="3" IsEnd="1" Memo="挑战【修炼之域】证明实力，击败c修炼之域5域c，然后回复斗技场管理处的c圣弗雷德c！">
 			<BeastGrp GrpId="3025" Count="1" Win="1" Help="1"/>			
 			<OutItem ID="1">
@@ -2529,6 +2529,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>	
 	</Task>		
+
 	
 <!-- 重复任务 -->	
 	<Task ID="20001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="盗贼克星" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="1" >

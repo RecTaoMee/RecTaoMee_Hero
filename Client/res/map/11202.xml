@@ -176,7 +176,7 @@
 				<![CDATA[1#如果你也对自己装扮有自信，欢迎报名参加。我将根据大家的投票在每周五决定胜利者。]]>
 			</des>
 		</proAction>
-		<proAction npcID="72" id="201" type="0" answer="精灵之露兑换$精灵挑战$我还有其它事！" to="f10$module_PetChallengeModule$o" colorID="1$1$0">
+		<proAction npcID="72" id="201" type="0" answer="精灵之露兑换$我还有其它事！" to="f10$o" colorID="1$0"><!--暂时关闭  精灵挑战 module_PetChallengeModule -->
 			<des>
 				<![CDATA[1#未来勇士，你只要到达20级，即可每天参与【精灵挑战赛】哦！刺激的挑战、丰厚的奖品、精灵经验，赶快拿出你们强大的精灵参与活动吧！]]>
 			</des>
@@ -194,7 +194,7 @@
 			</des>
 		</proAction>
 		
-		<proAction npcID="85" id="211" type="0" answer="抽取幸运卡片$我还有其它事！" to="module_LuckCardPanelModul$o" colorID="1$0">
+		<proAction npcID="85" id="211" type="0" answer="我还有其它事！" to="o" colorID="0"><!--暂时关闭 抽取幸运卡片  module_LuckCardPanelModul -->
 			<des>
 				<![CDATA[1#幸运卡片乐翻天活动已经全新开启，各种大奖、各种好礼等你来领！]]>
 			</des>

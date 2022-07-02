@@ -20,12 +20,12 @@
 	<actions>
 		<proAction npcID="324" id="0" type="0" answer="给大树喝水$大树和海德的故事$摩尔勇士万岁" to="k0$k2$o" colorID="1$1$0" >
 				<des>
-					<![CDATA[1#好想念【至纯之水】的味道，那能让我恢复活力，再见到【海德】的神奇之水！每周六、周日的<FONT COLOR="#E7100B">6:00-24:00</FONT>是我饮水的时间！]]>
+					<![CDATA[1#htmlMode好想念【至纯之水】的味道，那能让我恢复活力，再见到【海德】的神奇之水！每周六、周日的@cRed6:00-24:00@!cRed是我饮水的时间！]]>
 				</des>
 		</proAction>
 		<proAction npcID="324" id="1" type="0" answer="知道了" to="o" >
 				<des>
-					<![CDATA[1#每周六、周日的<FONT COLOR="#E7100B">6:00-24:00</FONT>我才喝水！到时再来吧！]]>
+					<![CDATA[1#htmlMode每周六、周日的@cRed6:00-24:00@!cRed我才喝水！到时再来吧！]]>
 				</des>
 		</proAction>	
 		<proAction npcID="324" id="2" type="0" answer="知道了" to="o" >

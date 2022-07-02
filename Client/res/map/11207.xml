@@ -31,13 +31,13 @@
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
 		<node id="13" type="NPC" res="MC_npc_13" action="1"/>
 		<node id="14" type="NPC" res="MC_npc_14" action="0$4$5$8"/>
-		<node id="302" type="NPC"  res="MC_npc_302" action="9"/>
+		<node id="302" type="NPC"  res="MC_npc_302" action="9" mouseEnabled1="0" /> <!--暂时关闭 预言球摇奖 g1 -->
 		<node id="350" type="NPC" res="MC_npc_350" action=""  taskShowSteps="35000_22|222|6" />		
 	</npc>
 	<actions>
-		<proAction npcID="14" id="0" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+		<proAction npcID="14" id="0" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_14$o" colorID="1$0">
 			<des>
-				<![CDATA[1#啾啾~请问有什么可以帮你的吗？]]>
+				<![CDATA[1#啾啾~~ 请问有什么可以帮你的吗？]]>
 			</des>
 		</proAction>
 		<proAction npcID="13" id="1" type="0" answer="信送了几次了？$和你玩游戏$旅馆聊天$摩尔勇士万岁！" to="letter_times$g11$a6$o" colorID="1$1$0$0">
@@ -62,12 +62,12 @@
 				<![CDATA[1#酒瓶收藏已经作为爱好啦~~]]>
 			</des>
 		</proAction>
-		<proAction npcID="14" id="4" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+		<proAction npcID="14" id="4" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_14$o" colorID="1$0">
 			<des>
 				<![CDATA[2#看到你总有一种很熟悉的感觉，啾啾~]]>
 			</des>
 		</proAction>
-		<proAction npcID="14" id="5" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+		<proAction npcID="14" id="5" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_14$o" colorID="1$0">
 			<des>
 				<![CDATA[1#今天来往的客人真多呢，啾啾~]]>
 			</des>
@@ -86,7 +86,7 @@
 			    <![CDATA[5#我可亲眼见过【头顶高级称号】的家伙，是怎样把一个不起眼的技能魔法发挥的强而有力~！]]>
 			</des>
 		</proAction>
-		<proAction npcID="14" id="8" type="0" answer="预言球摇奖$我要【恢复HP/MP】$摩尔勇士万岁！" to="g1$b8_14$o" colorID="1$1$0">
+		<proAction npcID="14" id="8" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_14$o" colorID="1$0"><!--暂时关闭 预言球摇奖 g1 -->
 			<des>
 				<![CDATA[2#看到你总有一种很熟悉的感觉，啾啾~]]>
 			</des>
