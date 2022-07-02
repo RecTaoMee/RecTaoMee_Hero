@@ -1,29 +1,25 @@
-<!--随机迷宫A层30121-->
+<!--随机迷宫A层30102-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
 	<transport intPos="360,308">
-		<node id="1" pos="528,609" targetMapId="21310" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="2" pos="1371,457" targetMapId="21312" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="3" pos="901,367" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="4" pos="213,263" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>		
-		<node id="5" pos="336,803" targetMapId="30141" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="6" pos="651,833" targetMapId="30142" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="7" pos="965,833" targetMapId="30143" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="8" pos="1269,793" targetMapId="30144" targetTransPortId="1" name="迷宫出现点"/>		
+		<node id="1" pos="1091,443" targetMapId="21310" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="2" pos="583,261" targetMapId="21312" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="3" pos="121,325" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="4" pos="409,469" targetMapId="30107" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="5" pos="1155,202" targetMapId="30107" targetTransPortId="2" name="迷宫出现点"/>
 	</transport>
-	<object>
-		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" transPortId="5"/><!-- 5 -->
-		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" transPortId="6"/><!-- 2 -->
-		<node id="3" type="TransPort" level="downLevel" res="MC_door_2" transPortId="7"/><!-- 3 -->
-		<node id="4" type="TransPort" level="downLevel" res="MC_door_3" transPortId="8"/><!-- 1 -->
-	</object>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
 		<node id="502" type="NPC" res="MC_npc_502" level="contentLevel" fun="" taskType="0" action="0$1" needLevel="" needKind="">
-			<point x="-585" y="-166" />
-			<point x="127" y="-104" />
+			<point x="-71" y="-143" />
+			<point x="386" y="127" />
 		</node>
-    </npc>		
+    </npc>	
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" transPortId="4"/>
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" transPortId="5"/>
+	</object>
+	
 	<actions>
 		<proAction npcID="502" id="0" type="0" answer="我想买东西$我想卖东西$《贝塔黑市商会》？$祝你好运" to="b6_502$b7_502$a2$o" colorID="1$1$0$0">
 			<des>
@@ -43,5 +39,6 @@
 			</des>
 		</proAction>				
 	</actions>	
-		
+	
+	
 </map>

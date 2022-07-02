@@ -2,9 +2,11 @@
 <map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
 	<transport intPos="145,340">
 		<node id="1" pos="314,100" targetMapId="21311" targetTransPortId="3"/> 
+		<node id="2" pos="544,421" targetMapId="30101" targetTransPortId="1"/> 
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="contentLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" visible="1" alpTaskID="251_6_1" compTaskID="251_1_0"/>
   		<node id="5131" type="Object" res="MC_shuijin"/>	
   		<node id="5132" type="Object" res="MC_xiangzi"/>				
   		<node id="5133" type="Object" res="MC_guanzi"/>									

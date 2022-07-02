@@ -5,10 +5,10 @@
 		<node id="2" pos="1371,457" targetMapId="21312" targetTransPortId="2" name="迷宫出现点"/>
 		<node id="3" pos="901,367" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>
 		<node id="4" pos="213,263" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>		
-		<node id="5" pos="336,803" targetMapId="30141" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="6" pos="651,833" targetMapId="30142" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="7" pos="965,833" targetMapId="30143" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="8" pos="1269,793" targetMapId="30144" targetTransPortId="1" name="迷宫出现点"/>		
+		<node id="5" pos="336,803" targetMapId="30145" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="6" pos="651,833" targetMapId="30145" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="7" pos="965,833" targetMapId="30145" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="8" pos="1269,793" targetMapId="30145" targetTransPortId="1" name="迷宫出现点"/>		
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" transPortId="5"/><!-- 5 -->

@@ -5,10 +5,10 @@
 		<node id="2" pos="754,368" targetMapId="30121" targetTransPortId="2" name="迷宫出现点"/>
 		<node id="3" pos="669,790" targetMapId="30103" targetTransPortId="1" name="迷宫出现点"/>
 		<node id="4" pos="669,790" targetMapId="30103" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="5" pos="320,809" targetMapId="30121" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="6" pos="1074,324" targetMapId="30102" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="7" pos="1053,813" targetMapId="30103" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="8" pos="323,306" targetMapId="30101" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="5" pos="320,809" targetMapId="30122" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="6" pos="1074,324" targetMapId="30106" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="7" pos="1053,813" targetMapId="30107" targetTransPortId="1" name="迷宫出现点"/>
+		<node id="8" pos="323,306" targetMapId="30105" targetTransPortId="1" name="迷宫出现点"/>
 		<node id="9" pos="754,368" targetMapId="30121" targetTransPortId="2" name="迷宫出现点"/>
 		<node id="10" pos="754,368" targetMapId="30121" targetTransPortId="2" name="迷宫出现点"/>
 		<node id="11" pos="669,790" targetMapId="30103" targetTransPortId="1" name="迷宫出现点"/>

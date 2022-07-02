@@ -1,27 +1,23 @@
-<!--随机迷宫A层30121-->
+<!--随机迷宫A层30103-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-202.mp3">
 	<transport intPos="360,308">
-		<node id="1" pos="528,609" targetMapId="21310" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="2" pos="1371,457" targetMapId="21312" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="3" pos="901,367" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="4" pos="213,263" targetMapId="11501" targetTransPortId="1" name="迷宫出现点"/>		
-		<node id="5" pos="336,803" targetMapId="30141" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="6" pos="651,833" targetMapId="30142" targetTransPortId="2" name="迷宫出现点"/>
-		<node id="7" pos="965,833" targetMapId="30143" targetTransPortId="1" name="迷宫出现点"/>
-		<node id="8" pos="1269,793" targetMapId="30144" targetTransPortId="1" name="迷宫出现点"/>		
+		<node id="1" pos="946,341" targetMapId="21310" targetTransPortId="2" name="迷宫出口"/>
+		<node id="2" pos="463,420" targetMapId="21312" targetTransPortId="2" name="迷宫出口"/>
+		<node id="3" pos="1405,321" targetMapId="11501" targetTransPortId="1" name="迷宫出口"/>
+		<node id="4" pos="449,190" targetMapId="30108" targetTransPortId="2" name="迷宫出现点"/>
+		<node id="5" pos="1179,190" targetMapId="30108" targetTransPortId="3" name="迷宫出现点"/>
 	</transport>
 	<object>
-		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" transPortId="5"/><!-- 5 -->
-		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" transPortId="6"/><!-- 2 -->
-		<node id="3" type="TransPort" level="downLevel" res="MC_door_2" transPortId="7"/><!-- 3 -->
-		<node id="4" type="TransPort" level="downLevel" res="MC_door_3" transPortId="8"/><!-- 1 -->
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" transPortId="4"/>
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" transPortId="5"/>
+
 	</object>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
 		<node id="502" type="NPC" res="MC_npc_502" level="contentLevel" fun="" taskType="0" action="0$1" needLevel="" needKind="">
-			<point x="-585" y="-166" />
-			<point x="127" y="-104" />
+			<point x="28" y="40" />
+			<point x="-550" y="98" />
 		</node>
     </npc>		
 	<actions>

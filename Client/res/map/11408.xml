@@ -2,9 +2,11 @@
 <map name="aaa" type="0" comment="aaa" sound="BGM-007.mp3">
 	<transport intPos="145,340">
 		<node id="1" pos="493,108" targetMapId="11401" targetTransPortId="7"/> 
+		<node id="2" pos="223,403" targetMapId="30105" targetTransPortId="1"/> 
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="contentLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		
 	</object>
 
