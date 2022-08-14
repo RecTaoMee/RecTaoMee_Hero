@@ -19,20 +19,32 @@ task_39007_1       		剧毒蜂皇
 				</Trigger>
 				<Action Type="TALK">
 					<Msg NpcID="104" ImageID="1" Info="凯西在世界树1F发出求救信号，我已通知王国其他勇士，然而他们正在筹备前往炎之大陆之事，无法立刻赶到，情况危急，我先把你传送到那里，一定要守住世界树！" />
-					<Option Info="在所不辞！" />					
+					<Option Info="在所不辞！"  SkipTrigger="Y" />					
 				</Action>
+			</Event>
+		</Step>
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="伊恩计划派遣一批黑化部队前往世界树顶，对生命之根残存的力量进行进一步破坏，请前往勇士广场向多修了解详情！" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【保卫世界树】" />
+				</Trigger>
 				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21803,1" />
-				     
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21803, 390071" />         <!-- 添加凯西 -->
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="敌人的实力异常强大，我受到女神的引领，来帮助未来的勇士…千万要小心应对！\n（小甜将会为战斗分担困难 \n[低级难度］：推荐单人50级+挑战 " />
+					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
+					<Option Info="低级难度" />					
+					<Option Info="中级难度" NextStep="5" />					
+					<Option Info="高级难度" NextStep="11" CheckRand="10003_0" />					
+				</Action>
 			</Event>
 		</Step>
 		
-		<Step ID="20" ParentList="1" ParentCost="1" >
-		<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="21803, 390071" />         <!-- 添加凯西 -->
-	    	</Event>
-	    </Step>
-		
-     	<Step ID="2" ParentList="20" ParentCost="1" >
+
+		<!-- 初级难度 -->
+
+     	<Step ID="3" ParentList="2" ParentCost="1" >
 	     	<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
 			<Trigger>
 					<Item Type="NPC_OPTION" MapID="21803" ObjID="390071"  />
@@ -49,9 +61,57 @@ task_39007_1       		剧毒蜂皇
 	    	</Event>
 	    </Step>
 		
-  		<Step ID="3" ParentList="2" ParentCost="1" >
+  		<Step ID="4" ParentList="3" ParentCost="1" >
 			<Condition>
-				<Battle ID="3506" Count="1" />
+				<Battle ID="3526" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="击败剧毒蜂皇" TargetMap="21803" TargetObj="390073" TargetName="击败t剧毒蜂皇t">			
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21803,390071" />    <!-- 移除凯西 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21803,390073" NextStep="60"/> 	<!-- 移除剧毒蜂皇 -->
+	    	</Event>
+			<Event ConditionType="OUT" Memo="击败剧毒蜂皇" TargetMap="21803" TargetObj="390073" TargetName="击败t剧毒蜂皇t">
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21803" ObjID="390073"  />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哈哈哈，不要挣扎了，尝尝我的毒刺吧！" />
+					<Option Info="来战！" />					
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3526" />         <!-- 战斗1 -->
+	    	</Event>
+		</Step>
+
+
+
+		<!-- 中级难度 -->
+		
+
+		<Step ID="5" ParentList="4" ParentCost="1" >
+		<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+		
+     	<Step ID="6" ParentList="5" ParentCost="1" >
+	     	<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21803" ObjID="390071"  />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="可恶，他们人数众多，我根本无法应对。" />
+					<Option Info="我来了！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="勇士，你来的正好，对方人员众多，我难以招架，帮忙守住我的背后，我们突围出去。" />
+					<Option Info="全力应战！" />					
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21803, 390073" />         <!-- 添加剧毒蜂皇 -->
+	    	</Event>
+	    </Step>
+		
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+			<Condition>
+				<Battle ID="3527" Count="1" />
 			</Condition>
 			<Event ConditionType="IN" Memo="击败剧毒蜂皇" TargetMap="21803" TargetObj="390073" TargetName="击败t剧毒蜂皇t">			
 				<Action Type="COMMAND" Command="NOTHING" />         <!-- 战斗1 -->
@@ -64,12 +124,12 @@ task_39007_1       		剧毒蜂皇
 					<Msg NpcID="997" ImageID="1" Info="哈哈哈，不要挣扎了，尝尝我的毒刺吧！" />
 					<Option Info="来战！" />					
 				</Action>
-				<Action Type="COMMAND" Command="BATTLE" Params="3506" />         <!-- 战斗1 -->
+				<Action Type="COMMAND" Command="BATTLE" Params="3527" />         <!-- 战斗1 -->
 	    	</Event>
 		</Step>
 		
 		
-		<Step ID="4" ParentList="3" ParentCost="1" >
+		<Step ID="8" ParentList="7" ParentCost="1" >
     		<Event Memo="打败了剧毒蜂皇了，看看他怎么说" TargetMap="21803" TargetObj="390073" TargetName="和t剧毒蜂皇t对话">
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="21803" ObjID="390073"  />
@@ -90,9 +150,9 @@ task_39007_1       		剧毒蜂皇
 		</Step>
 		
 		
-		<Step ID="5" ParentList="4" ParentCost="1" >
+		<Step ID="9" ParentList="8" ParentCost="1" >
 			<Condition>
-				<Battle ID="3507" Count="1" />
+				<Battle ID="3528" Count="1" />
 			</Condition>
     		<Event ConditionType="IN" Memo="快去阻止尤利" TargetMap="21804" TargetObj="21805" TargetName="和t尤利t对话">
 				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 战斗2 -->
@@ -112,11 +172,11 @@ task_39007_1       		剧毒蜂皇
 					<Msg NpcID="348" ImageID="1" Info="我牵扯住他的真身，剩下的就靠你了，勇士！" />  
 					<Option Info="不负使命！" />					
 				</Action>
-				<Action Type="COMMAND" Command="BATTLE" Params="3507" />         <!-- 战斗2 -->
+				<Action Type="COMMAND" Command="BATTLE" Params="3528" />         <!-- 战斗2 -->
 			</Event>
 		</Step>
 		
-		<Step ID="6" ParentList="5" ParentCost="1" >
+		<Step ID="10" ParentList="9" ParentCost="1" >
     		<Event Memo="打败尤利分身了" TargetMap="21804" TargetObj="21805" TargetName="和t尤利t对话">
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="21804" ObjID="21805"  />
@@ -139,10 +199,153 @@ task_39007_1       		剧毒蜂皇
 				</Action>
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21806" />     <!-- 移除妮娜  安德鲁 -->
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,390075" />    <!-- 移除曼提丝 -->
+			</Event>
+		</Step>
 				
+
+
+
+		<!-- 高级难度 -->
+		
+
+		<Step ID="11" ParentList="10" ParentCost="1" >
+		<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+		
+     	<Step ID="12" ParentList="11" ParentCost="1" >
+	     	<Event Memo="前往c世界树1Fc找到c凯西c" TargetMap="21803" TargetObj="390071" TargetName="找到t凯西t">
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21803" ObjID="390071"  />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="可恶，他们人数众多，我根本无法应对。" />
+					<Option Info="我来了！" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="勇士，你来的正好，对方人员众多，我难以招架，帮忙守住我的背后，我们突围出去。" />
+					<Option Info="全力应战！" />					
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21803, 390073" />         <!-- 添加剧毒蜂皇 -->
+	    	</Event>
+	    </Step>
+		
+  		<Step ID="13" ParentList="12" ParentCost="1" >
+			<Condition>
+				<Battle ID="3529" Count="1" />
+			</Condition>
+			<Event ConditionType="IN" Memo="击败剧毒蜂皇" TargetMap="21803" TargetObj="390073" TargetName="击败t剧毒蜂皇t">			
+				<Action Type="COMMAND" Command="NOTHING" />         <!-- 战斗1 -->
+	    	</Event>
+			<Event ConditionType="OUT" Memo="击败剧毒蜂皇" TargetMap="21803" TargetObj="390073" TargetName="击败t剧毒蜂皇t">
+			<Trigger>
+					<Item Type="NPC_OPTION" MapID="21803" ObjID="390073"  />
+			</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哈哈哈，不要挣扎了，尝尝我的毒刺吧！" />
+					<Option Info="来战！" />					
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3529" />         <!-- 战斗1 -->
+	    	</Event>
+		</Step>
+		
+		
+		<Step ID="14" ParentList="13" ParentCost="1" >
+    		<Event Memo="打败了剧毒蜂皇了，看看他怎么说" TargetMap="21803" TargetObj="390073" TargetName="和t剧毒蜂皇t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21803" ObjID="390073"  />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="997" ImageID="1" Info="哈哈，你以为打败我们几个就结束了吗，尤利大人已经率领部下抵达了世界树顶，我们是不会输得!" />
+					<Option Info="糟糕！得赶紧去帮忙。" />					
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="107" ImageID="1" Info="未来勇士，我帮你牵制住这些魔物，快去世界树顶！" />
+					<Option Info="去【世界树顶】" />					
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21803,390071" />    <!-- 移除凯西 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21803,390073" /> 	<!-- 移除剧毒蜂皇 -->
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21804,1" />    <!--   跳转至世界树顶 -->
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_4" Params="21804, 21805" />     <!-- 添加 尤利 -->
 			</Event>
 		</Step>
 		
+		
+		<Step ID="15" ParentList="14" ParentCost="1" >
+			<Condition>
+				<Battle ID="3530" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="快去阻止尤利" TargetMap="21804" TargetObj="21805" TargetName="和t尤利t对话">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 战斗2 -->
+			</Event>
+    		<Event ConditionType="OUT" Memo="快去阻止尤利" TargetMap="21804" TargetObj="21805" TargetName="和t尤利t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21804" ObjID="21805"  />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="又是你，可恶的鼹鼠，这次别想坏我好事，接招吧：秘技——恐惧风暴！" />
+					<Option Info="糟糕！好强大的力量！" />					
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="21804,390075" />       <!--  添加曼提丝 -->
+				<Action Type="TALK">
+					<Msg NpcID="348" ImageID="1" Info="不要怕，未来勇士，我来帮助你！" />       <!-- 曼提丝对话 -->   
+					<Msg NpcID="345" ImageID="1" Info="又来一个不怕死的，接招吧：秘技——三重分身" />  	
+					<Msg NpcID="348" ImageID="1" Info="我牵扯住他的真身，剩下的就靠你了，勇士！" />  
+					<Option Info="不负使命！" />					
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3530" />         <!-- 战斗2 -->
+			</Event>
+		</Step>
+		
+		<Step ID="16" ParentList="15" ParentCost="1" >
+    		<Event Memo="打败尤利分身了" TargetMap="21804" TargetObj="21805" TargetName="和t尤利t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21804" ObjID="21805"  />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="345" ImageID="1" Info="别挣扎了，你注定会失败的，哈哈哈哈！看招吧——恐惧吐息！" />
+					<Option Info="快撑不住了..." />					
+				</Action>
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="21804,21806" />			<!-- 添加妮娜  安德鲁-->
+				<Action Type="TALK">
+					<Msg NpcID="101" ImageID="1" Info="我们来了！" />       <!-- 妮娜 -->   
+					<Msg NpcID="105" ImageID="2" Info="我们来了！" />		<!-- 安德鲁 -->
+					<Option Info="终于得救了..." />	
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21805" />				<!-- 移除尤利 -->        
+				<Action Type="MOVIE" Url="task256_5.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />     <!-- 放动画 -->	
+				<Action Type="TALK">
+					<Msg NpcID="105" ImageID="2" Info="勇士，多亏你保护了世界树安危，但是他们定不会善罢甘休的，每周一，尤利将会集结部下入侵世界树，我们仍需要为炎之大陆的航行做准备，守护世界树的安危就交给你了！" />		<!-- 安德鲁 -->
+					<Option Info="使命必达！" CheckRand="10003_1" />					
+				</Action>
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21806" />     <!-- 移除妮娜  安德鲁 -->
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,390075" />    <!-- 移除曼提丝 -->
+			</Event>
+		</Step>
+				
+
+
+
+
+		<Step ID="60" ParentList="4" ParentCost="1" >
+		<Event Memo="缓冲" TargetMap="21803" TargetObj="390071" TargetName="缓冲">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+
+		<Step ID="61" ParentList="10" ParentCost="1" >
+		<Event Memo="缓冲" TargetMap="21803" TargetObj="390071" TargetName="缓冲">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+
+		<Step ID="62" ParentList="16" ParentCost="1" >
+		<Event Memo="缓冲" TargetMap="21803" TargetObj="390071" TargetName="缓冲">
+				<Action Type="COMMAND" Command="NOTHING"  />         <!-- 添加凯西 -->
+	    	</Event>
+	    </Step>
+
 
 	</Procedure>
 </Task>

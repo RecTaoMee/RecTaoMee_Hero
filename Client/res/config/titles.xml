@@ -178,4 +178,28 @@
 	<Title ID="3046" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
 	<Title ID="3047" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/>
 	<Title ID="3048" Name="光棍王" FunType="1" HpMax="111" MpMax="111" Dodge="11" Desc="此称号为光棍节活动纪念称号，无敌的我，又要单身了。生命上限+111，魔法上限+111，回避+11"/>
+	<Title ID="3049" Name="大鹅抡铁锤" FunType="1" HpMax="350" MpMax="150" Dodge="10" Crit="1" Desc="2022锤鹅杯比赛纪念称号，来自非洲黑鹅の鹅外暴击祝福。生命上限+350，魔法上限+150，回避+10 必杀+1"/>
+	
+	<!--动态称号//-->
+	<Title ID="3500" Name="[天梯]学员" FunType="1" HpMax="350" MpMax="200" Dodge="10" ResistOblivion="1" ResistLethargy="1" Desc="参与天梯排位动态称号。生命+350 魔法+200 回避+10 抗遗忘+1 抗昏睡+1"/>
+	<Title ID="3501" Name="[天梯]见习" FunType="1" HpMax="360" MpMax="200" Dodge="10" ResistOblivion="2" ResistLethargy="2" Desc="参与天梯排位动态称号。生命+360 魔法+200 回避+10 抗遗忘+2 抗昏睡+2"/>
+	<Title ID="3502" Name="[天梯]正统" FunType="1" HpMax="370" MpMax="200" Dodge="10" ResistOblivion="3" ResistLethargy="3" Desc="参与天梯排位动态称号。生命+370 魔法+200 回避+10 抗遗忘+3 抗昏睡+3"/>
+	<Title ID="3503" Name="[天梯]导师" FunType="1" HpMax="380" MpMax="200" Dodge="10" ResistOblivion="5" ResistLethargy="5" Desc="参与天梯排位动态称号。生命+380 魔法+200 回避+10 抗遗忘+5 抗昏睡+5"/>
+	<Title ID="3504" Name="[天梯]国王" FunType="1" HpMax="390" MpMax="200" Dodge="10" ResistOblivion="7" ResistLethargy="7" Desc="参与天梯排位动态称号。生命+390 魔法+200 回避+10 抗遗忘+7 抗昏睡+7"/>
+	<Title ID="3505" Name="[天梯]奇迹" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="9" ResistLethargy="9" Desc="参与天梯排位动态称号。生命+400 魔法+200 回避+10 抗遗忘+9 抗昏睡+9"/>
+	<Title ID="3506" Name="[天梯]勇士" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="参与天梯排位动态称号。生命+400 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<!--动态称号结束//-->
+
+	<Title ID="3510" Name="天梯[0]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3511" Name="天梯[1]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3512" Name="天梯[2]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3513" Name="天梯[3]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3514" Name="天梯[4]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3515" Name="天梯[5]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3516" Name="天梯[6]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3517" Name="天梯[7]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3518" Name="天梯[8]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3519" Name="天梯[9]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	<Title ID="3520" Name="天梯[10]赛季高手" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistOblivion="10" ResistLethargy="10" Desc="每赛季结束，前两个段位纪念称号。生命+350 魔法+200 回避+10 抗遗忘+10 抗昏睡+10"/>
+	
 </Titles>

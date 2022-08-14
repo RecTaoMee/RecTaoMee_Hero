@@ -21,16 +21,33 @@ itemtips
 				<Action Type="TALK">
 					<Msg NpcID="104" ImageID="1" Info="还记得摩尔王布置的风龙的试炼吗？近日，摩尔王与风之龙达成约定，每周二，风龙威恩德都会与小勇士们进行战斗，帮助小勇士提升实力，如果你愿意，我现在就将你传送" />
 					<Msg NpcID="104" ImageID="1" Info="到风之洞穴3F。" />
-					<Option Info="立刻出发！" />
+					<Option Info="立刻出发！" SkipTrigger="Y" />
 					<Option Info="让我再想想。" NextStep="1" />
 				</Action>
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2" />											
     			</Event>
 		</Step>
 		
   		<Step ID="2" ParentList="1" ParentCost="1" >
+    			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！\n周二 6:00-24:00" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2"  />											
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="敌人的实力异常强大，我受到女神的引领，来帮助未来的勇士…千万要小心应对！\n（小甜将会为战斗分担困难 \n[低级难度］：推荐单人50级+挑战 " />
+					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
+					<Option Info="低级难度"  />					
+					<Option Info="中级难度" NextStep="6" />					
+					<Option Info="高级难度" NextStep="9"  CheckRand="10003_0"/>					
+				</Action>
+    			</Event>
+		</Step>
+
+		<!-- 低级难度 -->
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
 			<Condition>
-				<Battle ID="3505" Count="1" />
+				<Battle ID="3531" Count="1" />
 			</Condition>
     		<Event ConditionType="IN" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
 				<Action Type="COMMAND" Command="NOTHING"  />			
@@ -43,20 +60,20 @@ itemtips
 					<Msg NpcID="329" ImageID="1" Info="你又来了。" />
 					<Msg NpcID="329" ImageID="1" Info="无畏的勇士————\n准备接受吾之锤炼吧————\n看看是否值得吾记住 汝 之 名————" />
 					<Option Info="来战吧！" />
-					<Option Info="我准备下" NextStep="2" />
+					<Option Info="我准备下" NextStep="3" />
 				</Action>				
-				<Action Type="COMMAND" Command="BATTLE" Params="3505" />			
+				<Action Type="COMMAND" Command="BATTLE" Params="3531" />			
     		</Event>
 		</Step>
 		 
-		<Step ID="3" ParentList="2" ParentCost="1" >
+		<Step ID="4" ParentList="3" ParentCost="1" >
     		<Event Memo="打败风之龙了！！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
   				<Trigger>
 					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"  />
 				</Trigger>			
 					<Action Type="TALK">
-						<Msg NpcID="329" ImageID="1" Info="你的实力已经不容小觑，然而黑水晶的力量仍然在不断增强，千万不要松懈！" ></Msg>
-						<Msg NpcID="329" ImageID="1" Info="拿着这个，回去找那个黑衣人吧！" ></Msg>
+						<Msg NpcID="329" ImageID="1" Info="你的实力已经不容小觑，然而黑水晶的力量仍然在不断增强，千万不要松懈！" />
+						<Msg NpcID="329" ImageID="1" Info="拿着这个，回去找那个黑衣人吧！" />
 						<Option Info="立刻返程！" />
 					</Action>	
 					<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260044" />    <!-- 获得风龙的鳞片 -->
@@ -66,7 +83,61 @@ itemtips
 
 
 
-  		<Step ID="4" ParentList="3" ParentCost="1">
+  		<Step ID="5" ParentList="4" ParentCost="1">
+    			<Event Memo="将风龙的鳞片带给多修吧" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="104" ImageID="1" Info="果然，你从不会让人失望。" />
+						<Msg NpcID="104" ImageID="1" Info="这是你的奖励，收下吧。" />
+						<Option Info="使命必达！"  />
+					</Action>	
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260044" NextStep="60" />        <!--   丢弃风龙的鳞片 -->
+    			</Event>
+		</Step>
+
+		<!-- 中级难度 -->
+		
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+			<Condition>
+				<Battle ID="3532" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+				<Action Type="COMMAND" Command="NOTHING"  />			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="你又来了。" />
+					<Msg NpcID="329" ImageID="1" Info="无畏的勇士————\n准备接受吾之锤炼吧————\n看看是否值得吾记住 汝 之 名————" />
+					<Option Info="来战吧！" />
+					<Option Info="我准备下" NextStep="6" />
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3532" />			
+    		</Event>
+		</Step>
+		 
+		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="打败风之龙了！！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"  />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="329" ImageID="1" Info="你的实力已经不容小觑，然而黑水晶的力量仍然在不断增强，千万不要松懈！" />
+						<Msg NpcID="329" ImageID="1" Info="拿着这个，回去找那个黑衣人吧！" />
+						<Option Info="立刻返程！" />
+					</Action>	
+					<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260044" />    <!-- 获得风龙的鳞片 -->
+					<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202,3" />
+    		</Event>
+		</Step>
+
+
+
+  		<Step ID="8" ParentList="7" ParentCost="1">
     			<Event Memo="将风龙的鳞片带给多修吧" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
@@ -76,9 +147,83 @@ itemtips
 						<Msg NpcID="104" ImageID="1" Info="这是你的奖励，收下吧。" />
 						<Option Info="使命必达！" />
 					</Action>	
-					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260044" />        <!--   丢弃风龙的鳞片 -->
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260044" NextStep="61" />        <!--   丢弃风龙的鳞片 -->
     			</Event>
 		</Step>
+
+		<!-- 高级难度 -->
+		
+  		<Step ID="9" ParentList="8" ParentCost="1" >
+			<Condition>
+				<Battle ID="3533" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+				<Action Type="COMMAND" Command="NOTHING"  />			
+    		</Event>
+    		<Event ConditionType="OUT" Memo="和风之龙对话" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="329" ImageID="1" Info="你又来了。" />
+					<Msg NpcID="329" ImageID="1" Info="无畏的勇士————\n准备接受吾之锤炼吧————\n看看是否值得吾记住 汝 之 名————" />
+					<Option Info="来战吧！" />
+					<Option Info="我准备下" NextStep="9" />
+				</Action>				
+				<Action Type="COMMAND" Command="BATTLE" Params="3533" />			
+    		</Event>
+		</Step>
+		 
+		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="打败风之龙了！！" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"  />
+				</Trigger>			
+					<Action Type="TALK">
+						<Msg NpcID="329" ImageID="1" Info="你的实力已经不容小觑，然而黑水晶的力量仍然在不断增强，千万不要松懈！" />
+						<Msg NpcID="329" ImageID="1" Info="拿着这个，回去找那个黑衣人吧！" />
+						<Option Info="立刻返程！" />
+					</Action>	
+					<Action Type="COMMAND" Command="OUTPUT_ITEM_1" Params="260044" />    <!-- 获得风龙的鳞片 -->
+					<Action Type="COMMAND" Command="CHANGE_MAP" Params="11202,3" />
+    		</Event>
+		</Step>
+
+
+
+  		<Step ID="11" ParentList="10" ParentCost="1">
+    			<Event Memo="将风龙的鳞片带给多修吧" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="104" ImageID="1" Info="果然，你从不会让人失望。" />
+						<Msg NpcID="104" ImageID="1" Info="这是你的奖励，收下吧。" />
+						<Option Info="使命必达！" CheckRand="10003_1" />
+					</Action>	
+					<Action Type="COMMAND" Command="REJECT_ITEM" Params="260044" NextStep="62" />        <!--   丢弃风龙的鳞片 -->
+    			</Event>
+		</Step>
+
+
+		<Step ID="60" ParentList="5" ParentCost="1" >
+		<Event Memo="缓冲中..." TargetMap="21803" TargetObj="390071" TargetName="缓冲中...">
+				<Action Type="COMMAND" Command="NOTHING"  />        
+	    	</Event>
+	    </Step>
+
+		<Step ID="61" ParentList="8" ParentCost="1" >
+		<Event Memo="缓冲中..." TargetMap="21803" TargetObj="390071" TargetName="缓冲中...">
+				<Action Type="COMMAND" Command="NOTHING"  />       
+	    	</Event>
+	    </Step>
+
+		<Step ID="62" ParentList="11" ParentCost="1" >
+		<Event Memo="缓冲中..." TargetMap="21803" TargetObj="390071" TargetName="缓冲中...">
+				<Action Type="COMMAND" Command="NOTHING"  />       
+	    	</Event>
+	    </Step>
+
 		
 	</Procedure>
 </Task>
