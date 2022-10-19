@@ -2206,7 +2206,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>	
 	</Task>	
 	
-	<Task ID="10103" Name="【30级副本】月之宫殿" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="30" MaxLevel="32" Job="-1" JobLevel="0" Star="1" RecomLevel="30" Order="1" >
+	<Task ID="10103" Name="【30级副本】月之宫殿" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="200" MaxLevel="32" Job="-1" JobLevel="0" Star="1" RecomLevel="30" Order="1" >
 		<Node ID="1" Step="2" Memo="去勇士广场找c薇尔c" IsEnd="1">
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="15000" />				
@@ -2529,7 +2529,29 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>	
 	</Task>		
+
+	<Task ID="11010" Name="启纪练行——开幕！" Kind="5" ParentCost="0" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="200" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="4" Memo="" >
+			<BeastGrp GrpId="3546" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="2" ItemId="300201" Count="10" /> 
+				<Item OutType="6" ItemId="1046" Count="1" />
+			</OutItem>
+		</Node>	
+		
+		<Node ID="2" Step="12" Memo="" IsEnd="1" >
+			<BeastGrp GrpId="3547" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="2" ItemId="300201" Count="66" /> 
+				<Item OutType="2" ItemId="300044" Count="66" /> 
+				<Item OutType="6" ItemId="3043" Count="1" />
+			</OutItem>
+		</Node>	
+		
+	</Task>		
 	
+
+
 <!-- 重复任务 -->	
 	<Task ID="20001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="盗贼克星" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="14" Job="-1" JobLevel="0" Star="1" RecomLevel="10" Order="1" >
 		<Node ID="1" Step="2" Memo="勇士广场的公告栏有新公告了。请向守城士兵了解今天c迪迪拉c的最新动向。">
@@ -3164,7 +3186,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
  -->	
  
 
- 	<Task ID="36000" Name="魔龙斯巴鲁" Kind="4" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="0" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1"  >			
+ 	<Task ID="36000" Name="魔龙斯巴鲁" Kind="4" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="200" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1"  >			
 		<Node ID="1" Step="3" Memo="收集十个紫焰水晶">
 			<ItemTarget ItemId="180066" Count="10" Del="1" BeastType="52"	DropOdds="1000" />
 			<OutItem ID="1">

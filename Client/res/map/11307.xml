@@ -33,7 +33,7 @@
 	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
 	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
 	<actions>
-		<proAction npcID="24" id="0" type="0" answer="关于【摩尔王国】$摩尔勇士万岁！" to="a1$o" >
+		<proAction npcID="24" id="0" type="0" answer="关于【摩尔王国】$摩尔勇士万岁！" to="a1$o" colorID="0$0" >
 			<des>
 				<![CDATA[1#像我这般优雅又不失亲切的贵族可并不常见。]]>
 			</des>
@@ -183,5 +183,12 @@
 				<![CDATA[1#勇士杯第一阶段结束，鉴于你的参赛热情，热颁发给你奖励，希望你能够再接再厉，为队伍荣誉添砖加瓦。]]>
 			</des>
 		</proAction>
+
+		<proAction npcID="24" id="27" type="0" answer="我会努力的，开始吧！$等我准备好就来" to="a28$o" colorID="1$1" >
+			<des>
+				<![CDATA[2#准备好再次试炼了吗？我会为你提供奖励的。]]>
+			</des>
+		</proAction>
+		<proAction id="28" type="5" fightID="3548" />
 	</actions>
 </map>

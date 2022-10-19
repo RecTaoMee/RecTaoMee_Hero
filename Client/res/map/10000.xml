@@ -10,9 +10,10 @@
 		<node id="2" type="AppModule" res="MC_ItemStorage" module="ItemStorageModuel" toolTip="储物箱"/>
 		<node id="3" type="AppModule" res="MC_PetHouse" module="PetStorehouseShowModule" toolTip="精灵小屋"/>
 		<node id="4" type="AppModule" res="MC_ExpTree" module="ExpTreeModule" toolTip="精灵经验树"/>
-		<node id="5" type="AppModule" res="MC_BookAndNewspaper" module="BookCaseModule" toolTip="书架"/>
+		<node id="5" type="AppModule" res="MC_BookAndNewspaper" module="BookCaseModule" toolTip="书1架"/>
 		<!--node id="6" type="AppModule" res="MC_honorBox" module="HonorBoxModule" toolTip="荣誉匣"/-->
 		<node id="7" type="AppModule" res="MC_honorMature" module="MatureExperienceModule" toolTip="勇士协会之章"/>
+		<node id="8" type="MapLib" res="MC_OpenEraPaper" lib="RES_OpenEraPaper" alpTaskID="11010_2_1" visible="0" />
 		
 	</object>
 	

@@ -7,6 +7,7 @@
 			<item id="320004" groupID="26"/>
 			<item id="320005" groupID="55"/>
 			<item id="320006" groupID="55"/>
+			<item id="320007" groupID="57"/>
 		</node>
 		<!--
 		<node name="ActivityStrangeDoctor" npcURL="res/mapObj/npc/dakela.swf" infoType="6" info="古怪的精灵研究员·达克拉在%MAP%出现了！" randomID="10002" npcID="352">

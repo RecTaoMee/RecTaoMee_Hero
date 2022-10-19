@@ -77,9 +77,7 @@
  	<Title ID="1001" Name="粘糊糊勇士" Desc="战胜下水道三层【普豆泥王】获得" />  <!--下水道称号-->
  	<Title ID="1002" Name="啃骨头勇士" FunType="1" Atk="3" Desc="物理攻击+3" />
  	<Title ID="1003" Name="爱玩火勇士" FunType="1" Spirit="5" Desc="精神+5" />
-	
  	<Title ID="1004" Name="抗疫勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistPoison="10" Desc="2020年正月抗击新型冠状病毒纪念称号 抗毒性+10 生命上限+350，魔法上限+150，回避+10"/>
-	
  	<Title ID="1005" Name="瓶盖守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="完成任务【真假牛奶瓶盖】获得 生命上限+350，魔法上限+150，回避+10" />
  	<Title ID="1026" Name="50级达人" FunType="1" HpMax="100" Mdef="10" Dodge="5" Desc="生命上限+100，抗魔+10，回避+5"/>
  	<Title ID="1027" Name="时空守护者" FunType="1" HpMax="50" Def="3" Mdef="3" Desc="生命上限+50，防御+3，抗魔+3"/>
@@ -172,6 +170,7 @@
  	<Title ID="3040" Name="花好月圆" FunType="1"  HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="中秋节活动参赛荣誉证明 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
  	<!-- <Title ID="3041" Name="蜜粽守护者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="端午节活动纪念称号 生命上限+350，魔力上限+150 回避+10，抗遗忘+5"/> -->
 	<Title ID="3042" Name="破晓逐光者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="通关竞技之塔30层 生命上限+350，魔法上限+150，回避+10 抗昏睡+5 抗石化+5"/>
+	<Title ID="3043" Name="千朝相绻" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistCommination="5" ResistOblivion="5" Desc="千朝流转，华光共瞰；三载相绻，此心如故。生命上限+350，魔法上限+150，回避+10，抗诅咒+5，抗遗忘+5" />
 	<!-- <Title ID="3043" Name="一周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+10"/> -->
 	<!-- <Title ID="3044" Name="牛气冲天" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="2021年春节纪念称号 生命上限+350，魔法上限+150，回避+10"/> -->
 	<!-- <Title ID="3045" Name="两周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
@@ -179,6 +178,8 @@
 	<Title ID="3047" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/>
 	<Title ID="3048" Name="光棍王" FunType="1" HpMax="111" MpMax="111" Dodge="11" Desc="此称号为光棍节活动纪念称号，无敌的我，又要单身了。生命上限+111，魔法上限+111，回避+11"/>
 	<Title ID="3049" Name="大鹅抡铁锤" FunType="1" HpMax="350" MpMax="150" Dodge="10" Crit="1" Desc="2022锤鹅杯比赛纪念称号，来自非洲黑鹅の鹅外暴击祝福。生命上限+350，魔法上限+150，回避+10 必杀+1"/>
+	<Title ID="3050" Name="秋空明月" FunType="1" HpMax="350" MpMax="150" Dodge="10" Hit="1" Desc="2022中秋活动纪念称号。生命上限+350，魔法上限+150，回避+10 命中+1"/>
+	
 	
 	<!--动态称号//-->
 	<Title ID="3500" Name="[天梯]学员" FunType="1" HpMax="350" MpMax="200" Dodge="10" ResistOblivion="1" ResistLethargy="1" Desc="参与天梯排位动态称号。生命+350 魔法+200 回避+10 抗遗忘+1 抗昏睡+1"/>

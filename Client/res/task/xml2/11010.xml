@@ -1,0 +1,256 @@
+<Task ID="11009" Memo="一年一度的王国纪念日将至，这一年来，你同这个国度一起经历了诸多历练与成长，国王也特地邀你参加庆典活动，据说今年的主题与以往有所不同，赶快去体验一下吧！" TargetMap="11307">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="一年一度的王国纪念日将至，这一年来，你同这个国度一起经历了诸多历练与成长，国王也特地邀你参加庆典活动，据说今年的主题与以往有所不同，赶快去体验一下吧！" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="来自未来的勇士啊，不知不觉中你又陪伴我们走过了一年，在这期间，你协助王国度过了无数的危机，向我们诠释了勇士真正的含义，在此，我代表勇士王国向你致以最崇高" />	
+					<Msg NpcID="30" ImageID="1" Info="的敬意！" />	
+					<Option Info="摩尔勇士万岁！" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="想必你已知晓王国正在欢度周年纪念日，而鉴于近来黑暗势力的频繁活动，内阁与骑士团协商决定，将今年的周年庆主题定为“启纪练行”。" />	
+					<Option Info="练行？和试炼有关吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="没错，在此期间，我们鼓励全国民众参与骑士团组织的试炼活动，为今后可能遇到的危机做准备，当然，在过程中可以获得丰厚的奖励。" />	
+					<Option Info="我已经迫不及待了" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="30" ImageID="1" Info="嗯，真是不错的斗志，想知道具体的活动内容就去找肖恩吧，愿你玩得愉快。" />	
+					<Option Info="谢谢，周年庆快乐！" />
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="与肖恩对话" TargetMap="11218" TargetObj="562" TargetName="与t肖恩t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11218" ObjID="562" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="你就是今年天梯擂台赛上崭露头角的未来勇士吧，作为上届冠军，我可是一直在期待着同你切磋呢！真可惜，现在还不是时候，这次我的任务是引导你们进行试炼。" />	
+					<Option Info="试炼要怎么开始？" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_0.swf" MapLevel="TASK" Pos="0,0"  />       
+    		</Event>
+		</Step>					
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="与肖恩对话" TargetMap="11218" TargetObj="562" TargetName="与t肖恩t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11218" ObjID="562" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="别急，先收下这份集章卷，上面有我盖的天梯之印，同系列的印章还有四个，是王国为了纪念这一年而特别发放的。" />	
+					<Option Info="其他四个去哪里集？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="我们的主题可是“启纪练行”，想要知道接下来去哪，就用实力通过试炼吧。" />	
+					<Option Info="放马过来！" />
+					<Option Info="我先准备一下" NextStep="3"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3546"/>	
+    		</Event>
+		</Step>					
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+
+			<Condition>
+				<Battle ID="3546" Count="1" />
+			</Condition>			  	
+
+    		<Event ConditionType="IN" Memo="与肖恩对话" TargetMap="11218" TargetObj="562" TargetName="与t肖恩t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11218" ObjID="562" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="精彩的战斗！我已经开始期待和你切磋的那天了，感谢每一位参与的勇士，上一年中，天梯收获了无数激情与热血，也希望未来的你们可以缔造更多辉煌。" />	
+					<Option Info="其他四个去哪里集？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="这是你的奖励，拿去吧，接下来去找铃盖章，要记得常来找我哦~" />	
+					<Option Info="@blank" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_1.swf" MapLevel="TASK" Pos="0,0"  />       
+    		</Event>
+
+    		<Event ConditionType="OUT" Memo="与肖恩对话" TargetMap="11218" TargetObj="562" TargetName="与t肖恩t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11218" ObjID="562" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="562" ImageID="1" Info="真可惜，差一点就通过了，打起精神来，我在这里等你继续。" />	
+					<Option Info="放马过来！" />
+					<Option Info="我先准备一下" NextStep="4"/>
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3546"/>	
+    		</Event>
+
+		</Step>					
+
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="与铃对话" TargetMap="11217" TargetObj="102" TargetName="与t铃t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="感谢女神指引你我相遇，你于这片琉璃下虔诚祷告的身影，已在这载时光中深深镌刻，亦会被圣堂永远铭记。" />	
+					<Option Info="谢谢" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="请于此祷告，女神会继续庇佑你的。" />	
+					<Option Info="愿王国长盛久安。" />
+				</Action>
+    			<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11217,40001" />				
+    		</Event>
+		</Step>					
+
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="与铃对话" TargetMap="11217" TargetObj="102" TargetName="与t铃t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="102" ImageID="1" Info="我已将代表圣堂的印章赠与你，去路西西那处吧。" />	
+					<Option Info="愿女神庇佑你！" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_2.swf" MapLevel="TASK" Pos="0,0"  />       
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217,40001" />				
+    		</Event>
+		</Step>					
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="与路西西对话" TargetMap="11202" TargetObj="82" TargetName="与t路西西t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="82" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="82" ImageID="1" Info="欢迎欢迎，小勇士，你有没有通关修炼之域呀~这一年来我们迎接了许多实力不凡的战士，看到大家努力战斗的身影，感觉自己都更年轻了呢~" />	
+					<Option Info="你本来就很年轻" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="82" ImageID="1" Info="嘿嘿，谢谢你的赞美，不过，想要拿到我的印章，还得先回答一个问题才行。" />	
+					<Option Info="尽管问吧！" SkipTrigger="Y"/>
+				</Action>
+    		</Event>
+		</Step>					
+
+  		<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="与路西西对话" TargetMap="11202" TargetObj="82" TargetName="与t路西西t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="82" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="82" ImageID="1" Info="在【修炼之域】的哪一层可以见到我？" />	
+					<Option Info="15层" NextStep="9" SkipTrigger="Y"/>
+					<Option Info="45层" />
+					<Option Info="100层" NextStep="9" SkipTrigger="Y"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="82" ImageID="1" Info="bingo~！你得到我的认可了，祝你在修炼中结识更多伙伴~下一站在莓可那里。" />	
+					<Option Info="再会！"/>
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_3.swf" MapLevel="TASK" Pos="0,0" NextStep="10"  />       
+    		</Event>
+		</Step>		
+
+  		<Step ID="9" ParentList="8" ParentCost="1" >
+    		<Event Memo="与路西西对话" TargetMap="11202" TargetObj="82" TargetName="与t路西西t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11202" ObjID="82" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="82" ImageID="1" Info="好像不对呢，再想一想哦~" />	
+					<Option Info="刚刚只是失误！" NextStep="8"/>
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="与莓可对话" TargetMap="11214" TargetObj="20" TargetName="与t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="我听见精灵在向你诉说它们的心声，感谢你一年来对它们的守护与关爱。" />	
+					<Option Info="也感谢你们陪伴我成长。" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="去年我们结识了许多新伙伴，它们或调皮可爱，或难以捉摸，但忠诚相伴的心却始终如一，请带着你的精灵来一同分享庆典的喜悦吧。" />	
+					<Option Info="这就将精灵召唤到身边"/>
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="50" ParentList="10" ParentCost="1" >
+    		<Event Memo="与莓可对话" TargetMap="11214" TargetObj="20" TargetName="与t莓可t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="20" ImageID="1" Info="王国纪念日快乐，愿你同精灵们缔造更多美好的回忆，最后一站在莱卡那儿。" />	
+					<Option Info="王国纪念日快乐！"/>
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_4.swf" MapLevel="TASK" Pos="0,0"  />       
+    		</Event>
+		</Step>		
+
+  		<Step ID="11" ParentList="50" ParentCost="1" >
+    		<Event Memo="与莱卡对话" TargetMap="11307" TargetObj="24" TargetName="与t莱卡t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="哎呀，看来你已经完成王国游历了，感觉怎么样，有没有开始体会到举国欢庆的澎湃？~" />	
+					<Option Info="好像有一点儿......" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="哈哈，之前的内容只是帮你们融入氛围，接下来才是“启纪练行”的正菜哦~" />	
+					<Option Info="正菜？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="没错，这可是内阁和骑士团共同举办的试炼活动，怎么能少得了最重要的试炼环节呢？在庆祝安逸生活的同时，也请不要忘记这是由无数勇士用血汗换来的。" />	
+					<Option Info="我会努力的，开始吧！" />
+					<Option Info="等我准备好就来" NextStep="11" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3547"/>	
+    		</Event>
+		</Step>		
+
+  		<Step ID="12" ParentList="11" ParentCost="1" >
+
+			<Condition>
+				<Battle ID="3547" Count="1" />
+			</Condition>			  	
+		
+    		<Event ConditionType="IN" Memo="与莱卡对话" TargetMap="11307" TargetObj="24" TargetName="与t莱卡t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="看来你适应得很不错，这是奖励，感谢你对王国的贡献，如果还想继续练习，记得来找我安排。" />	
+					<Option Info="摩尔勇士万岁！" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11010_5.swf" MapLevel="TASK" Pos="0,0"  />       
+    		</Event>
+
+    		<Event ConditionType="OUT" Memo="与莱卡对话" TargetMap="11307" TargetObj="24" TargetName="与t莱卡t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="【启纪练行——开幕！】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="24" ImageID="2" Info="看来你还需要更多的练习啊。" />	
+					<Option Info="刚刚只是热身，看我接下来的表演！" />
+					<Option Info="等我准备好就来" NextStep="12" />
+				</Action>
+				<Action Type="COMMAND" Command="BATTLE" Params="3547"/>	
+    		</Event>
+		</Step>		
+
+
+</Procedure>
+</Task>

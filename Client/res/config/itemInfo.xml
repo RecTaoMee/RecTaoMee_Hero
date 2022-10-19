@@ -1851,6 +1851,67 @@
 		
 		<Item ID="300200" Name="变身卡礼包" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="100" Tradability="2" VipTradability="3" Vendibility="1" Quantities="1" Del="1">
 		</Item>
+		<Item ID="300201" Name="启纪礼笺" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" MonthMax="100" Del="1">
+			<RandGoods Percent="300">
+				<Goods ID="320007" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370009" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370019" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370029" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370039" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370049" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370059" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370069" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370079" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370089" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370099" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="12">
+				<Goods ID="370109" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="13">
+				<Goods ID="370119" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="150">
+				<Goods ID="360040" Cnt="2"/>
+			</RandGoods>
+			<RandGoods Percent="150">
+				<Goods ID="351015" Cnt="1"/>
+			</RandGoods>
+			<RandGoods Percent="150">
+				<Goods ID="220007 220038" Cnt="1 1"/>
+			</RandGoods>
+			<RandGoods Percent="100">
+				<Goods ID="300200" Cnt="10"/>
+			</RandGoods>
+		</Item>
+		<Item ID="300202" Name="庆典礼物" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1">
+			<RandGoods Percent="500">
+				<Goods ID="350013 350014" Cnt="2 2"/>
+			</RandGoods>
+			<RandGoods Percent="500">
+				<Goods ID="350013 350014" Cnt="2 1"/>
+			</RandGoods>
+		</Item>
 	</Kind>
 
 	<Kind ID="31" Team="1" Order="2" Name="精灵蛋" Start="310001" End="319999" Max="9999">
@@ -1939,6 +2000,7 @@
 		<Item ID="320004" Name="怪盗信号弹" UseLv="1" Type="10" Target="1" Price="500" SalePrice="250" Tradability="2" VipTradability="2" Del="0" BeastGrp="26" DayMax="10"/>
 		<Item ID="320005" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="55" DayMax="10"/>
 		<Item ID="320006" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="56" DayMax="10"/>
+		<Item ID="320007" Name="周年烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="57" MonthMax="50"/>
 	</Kind>
 
 	<Kind ID="33" Team="1" Order="7" Name="装备合成图纸" Start="330001" End="339999" Max="9999">
