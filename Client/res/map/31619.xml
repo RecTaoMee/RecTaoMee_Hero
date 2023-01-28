@@ -1,0 +1,103 @@
+<!--魇渊深层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-206.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="1290,1154" targetMapId="31618" targetTransPortId="2"/> 
+		<node id="2" pos="831,316" targetMapId="31620" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="4" type="NPC" res="MC_ironDoor0"  /> 
+		<node id="5" type="NPC" res="MC_ironDoor1"  /> 
+		<node id="6" type="NPC" res="MC_peepingPupil"  /> 
+		<node id="1101212" type="NPC" res="MC_pet210_3" url="res/task/swf2/task_11012_4.swf" level="contentLevel" position="1275,795" link="item"  />
+		<node id="1101216" type="NPC" res="MC_pet3043"  level="contentLevel" position="1275,795"   />
+		<node id="1101217" type="NPC" res="MC_pet3040"  level="contentLevel" position="1275,795"  />
+		<node id="1101218" type="NPC" res="MC_pet210_4" url="res/task/swf2/task_11012_4.swf" level="contentLevel" position="389,708" link="item"  />
+	</object>
+		
+		
+	<actions>
+		<proAction npcID="1025" id="0" type="0" answer="一定会阻止你们！$我再准备一下" to="a1$o" colorID="2$1">
+			<des>
+				<![CDATA[1#曾经的家人......背弃了我......什么陪伴，什么不离......都随着谎言毁灭吧！]]>
+			</des>
+		</proAction>
+		<proAction id="1" type="5" fightID="3550" to="i3_failedSpeak2" />	
+		<proAction npcID="1021" id="2" type="0" answer="还有机会！" to="o" colorID="2">
+			<des>
+				<![CDATA[1#这个世界......拒绝了我们。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="3" type="0" answer="你们就是彼此的家人" to="i3_openRoad" colorID="2">
+			<des>
+				<![CDATA[1#似乎......不死族在生时也曾是鲜活的，死亡没能带走大家的意识，却夺走了重要之人的认同，我们是被世界拒绝的存在啊......]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="1021" id="4" type="0" answer="继续探索" to="o" colorID="2">
+			<des>
+				<![CDATA[1#吾感受到终点就在这扇门后，但机缘还不够，再仔细找找吧。]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="1026" id="5" type="0" answer="战胜我再说！$我再准备一下" to="a6$o" colorID="2$1">
+			<des>
+				<![CDATA[1#力量......给我力量！我要变强！软弱只会失去重要的一切啊！]]>
+			</des>
+		</proAction>
+		<proAction id="6" type="5" fightID="3551" to="i3_failedSpeak3" />	
+		<proAction npcID="1021" id="7" type="0" answer="一定把他们打趴下。" to="o" colorID="2">
+			<des>
+				<![CDATA[1#......吾也会失去一切吗。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="8" type="0" answer="我会帮你的！" to="i3_openIronDoor2" colorID="2">
+			<des>
+				<![CDATA[1#弱小......啊......吾好像也曾因弱小失去过什么，但，吾不会再让这样的事发生了！]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="1" level="contentLevel" name="task_11012_6" moviepos="299,555" playBGM="1" to="o"/>
+		<proAction id="10" type="1" level="contentLevel" name="task_11012_6" moviepos="830,311" playBGM="1" to="o"/>
+		<proAction id="11" type="1" level="contentLevel" name="task_11012_7" moviepos="853,748" playBGM="1" to="o"/>
+		<proAction id="12" type="1" level="contentLevel" name="task_11012_8" moviepos="853,748" playBGM="1" to="o"/>
+
+
+		<proAction npcID="1030" id="13" type="0" answer="Uwp$Nkljv$Jgtq$Urktkv$Fgcvj$获得提示" to="a19$a19$a19$a19$i3_openIronDoor3$a18" colorID="2$2$2$2$2$1">
+			<des>
+				<![CDATA[1#Qwvukfgt,vgkk og qpg vjkpi vjcv ku gvgtpcn.]]>
+			</des>
+		</proAction>
+		<proAction npcID="1030" id="14" type="0" answer="Nkljv$Jgtq$Urktkv$Fgcvj$Uwp$获得提示" to="a19$a19$a19$i3_openIronDoor3$a19$a18" colorID="2$2$2$2$2$1">
+			<des>
+				<![CDATA[1#Qwvukfgt,vgkk og qpg vjkpi vjcv ku gvgtpcn.]]>
+			</des>
+		</proAction>
+		<proAction npcID="1030" id="15" type="0" answer="Jgtq$Urktkv$Fgcvj$Uwp$Nkljv$获得提示" to="a19$a19$i3_openIronDoor3$a19$a19$a18" colorID="2$2$2$2$2$1">
+			<des>
+				<![CDATA[1#Qwvukfgt,vgkk og qpg vjkpi vjcv ku gvgtpcn.]]>
+			</des>
+		</proAction>
+		<proAction npcID="1030" id="16" type="0" answer="Urktkv$Fgcvj$Uwp$Nkljv$Jgtq$获得提示" to="a19$i3_openIronDoor3$a19$a19$a19$a18" colorID="2$2$2$2$2$1">
+			<des>
+				<![CDATA[1#Qwvukfgt,vgkk og qpg vjkpi vjcv ku gvgtpcn.]]>
+			</des>
+		</proAction>
+		<proAction npcID="1030" id="17" type="0" answer="Fgcvj$Uwp$Nkljv$Jgtq$Urktkv$获得提示" to="i3_openIronDoor3$a19$a19$a19$a19$a18" colorID="2$2$2$2$2$1">
+			<des>
+				<![CDATA[1#Qwvukfgt,vgkk og qpg vjkpi vjcv ku gvgtpcn.]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="1021" id="18" type="0" answer="按照某种规律变换吗......" to="o" colorID="2">
+			<des>
+				<![CDATA[1#吾记得这是一种密文方式，应该是将某种语言按规律变换得到的。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="19" type="0" answer="我再想想" to="o" colorID="2">
+			<des>
+				<![CDATA[1#看来答案并是这个，再好好想想吧。]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

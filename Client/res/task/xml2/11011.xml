@@ -1,0 +1,124 @@
+<Task ID="11011" Memo="c勇敢者旅馆c的c路库Kc最近遇到了些不简单的麻烦，正发布悬赏向勇士寻求帮助，去看看有什么可做的吧。" TargetMap="11207">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c勇敢者旅馆c的c路库Kc最近遇到了些不简单的麻烦，正发布悬赏向勇士寻求帮助，去看看有什么可做的吧。" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="【跨越千年的回声①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="太好了，你居然来了！说来你可能不信，但我们这个旅馆好像闹鬼了啊！半个月前，住在二楼的客人突然投诉说我们店氛围太差导致他们噩梦不断，甚至连后来入住的客人也" />	
+					<Msg NpcID="13" ImageID="1" Info="都遇到了同样的情况！" />	
+					<Option Info="集体做噩梦？！" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="c勇敢者旅馆c的c路库Kc最近遇到了些不简单的麻烦，正发布悬赏向勇士寻求帮助，去看看有什么可做的吧。" TargetMap="11207" TargetObj="13" TargetName="和t路库Kt对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="【跨越千年的回声①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="唉......可不是嘛，我自己也试着在二楼入睡，明明一开始还没什么，可后来感觉周围越来越冷，就好像掉进了某个与世隔绝的深渊一样，我试图睁眼，结果却看到自己被无" />	
+					<Msg NpcID="13" ImageID="1" Info="数鬼魂一样的东西死死缠住了！它们在我耳边不停地哀嚎！" />	
+					<Msg NpcID="13" ImageID="1" Info="接着我就被吓醒了，然后发现自己还躺在床上，鬼魂真的是世界上最难以接受的存在了！" />	
+					<Option Info="那我也去二楼看看吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="13" ImageID="1" Info="那真是太感谢了！千万帮我把鬼赶出这里啊!" />	
+					<Option Info="@blank" />
+				</Action>
+	    		<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11208, 110111" />  	
+    		</Event>
+		</Step>		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="前往【勇敢者旅馆2F】寻找线索。" TargetMap="11208" TargetObj="110111" TargetName="与t“鬼魂”t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11208" ObjID="110111" TaskOption="【跨越千年的回声①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1020" ImageID="1" Info="汝......能看见吾？请予吾帮助！" />	
+					<Option Info="你就是鬼吗？吓人是不对的" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1020" ImageID="1" Info="汝不害怕吾吗？抱歉，吾也不想伤害他人，托梦只是希望能被回应罢了......自有意识起，吾便一直试着同此世对话，但都失败了......" />	
+					<Option Info="你不伤害他人的话\n我为什么要怕你？"/>
+				</Action>
+	    		<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11208, 110111" />  	
+	    		<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11208, 110112" />  	
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="是这样吗？......应答之人，吾名为幽傀魄，除此之外皆不记得了，然而自醒来后，吾心中便一直有一个声音说——回魇渊去，守护它们......但这绝非吾凭一己之力能完成的，吾能感受到汝身上非凡的力量，可以同吾一起前往吗？" />	
+					<Option Info="魇渊？那是哪里？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="记不清了，但吾必须回到那里......吾感受到它在南方的水系处。" />	
+					<Option Info="【月光湖】？我带你去吧" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="谢谢.......汝的恩情吾将没齿难忘" />	
+					<Option Info="@blank" />
+				</Action>
+	    		<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11208, 110112" />  	
+    		</Event>
+		</Step>			
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="同c幽傀魄c前往c月光湖c" TargetMap="11502" TargetName="与t驻守骑士t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="9" TaskOption="【跨越千年的回声①】" />									
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="10" TaskOption="【跨越千年的回声①】" />									
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="11" TaskOption="【跨越千年的回声①】" />									
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="12" TaskOption="【跨越千年的回声①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1022" ImageID="1" Info="什么人？！此处凶险异常，王国已下令封锁，请回吧。" />	
+					<Option Info="这里到底发生了什么？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1022" ImageID="1" Info="等下......你明明看到那个裂缝了，怎么会没事？算了不重要，请回吧，直视裂缝的生灵都会陷入永恒的沉睡，在王国解决那可恨的源头之前不要再来了，此事切忌声张。" />	
+					<Option Info="这下可怎么办......"/>
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="应答之人，吾感受到力量有些许恢复，时间紧迫，请允许吾将他们引入暂时的幻梦。" />	
+					<Option Info="他们会陷入沉眠吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="不会，吾会控制力度，虽然感受到缝隙的力量同吾出自一脉，但吾只是短暂删去他们的记忆罢了。" />	
+					<Option Info="好吧" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+    		<Event Memo="同c幽傀魄c前往c月光湖c" TargetMap="11502" TargetName="与t幽傀魄t对话">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="11502" />									
+				</Trigger> 				
+    			<Action Type="MOVIE" Url="task_11011_3.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />
+    		</Event>
+		</Step>					
+
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="同c幽傀魄c对话" TargetMap="11502" TargetObj="110113" TargetName="与t幽傀魄t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11502" ObjID="110113" TaskOption="【跨越千年的回声①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="1" Info="我们进去吧，要小心，吾感觉到里面的情况很糟糕。" />	
+					<Option Info="出发" />
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="进入c裂缝？c" TargetMap="31618" TargetName="进入裂缝">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="31618" />									
+				</Trigger> 	
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+		</Step>		
+
+</Procedure>
+</Task>

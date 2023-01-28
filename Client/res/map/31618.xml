@@ -1,0 +1,92 @@
+<!--魇渊浅层-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-206.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="480,400" targetMapId="11502" targetTransPortId="2"/> 
+		<node id="2" pos="1956,679" targetMapId="31619" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" />	
+	</object>
+	<npc>
+		<node id="110121" type="NPC" res="MC_pet210_1" url="res/task/swf2/task_11011_2.swf" level="contentLevel" position="395,460" link="item" action="1"  />
+		<node id="110122" type="OBJECT" res="MC_AST_shadow" level="upLevel" visible="1" />
+		<node id="110123" type="NPC" res="MC_dreamingDoor" level="contentLevel" action="2" visible="1" />
+		<node id="110124" type="OBJECT" res="MC_dryBones" level="contentLevel" />
+		<node id="110125" type="NPC" res="MC_AST_flower" level="contentLevel"  visible="0"  />
+		<node id="110126" type="OBJECT" res="MC_AST_dryBones_hint" level="contentLevel" />
+		<node id="110127" type="NPC" res="MC_stoneTable" level="contentLevel" action="4"  />
+		<node id="110128" type="OBJECT" res="MC_AST_stoneTable_hint" level="contentLevel" />
+		<node id="110129" type="NPC" res="MC_pet3041" level="contentLevel" />
+		<node id="1101210" type="NPC" res="MC_ironDoor" level="downLevel"  />
+		<node id="1101211" type="OBJECT" res="MC_pet210_2" url="res/task/swf2/task_11011_2.swf" level="contentLevel" position="1780,719" link="item" action="1"  />
+	</npc>
+	<actions>
+		<proAction npcID="1022" id="0" type="0" answer="离开" to="o" colorID="0">
+			<des>
+				<![CDATA[1#…………]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="1" type="0" answer="这里是什么地方？" to="a11" colorID="2">
+			<des>
+				<![CDATA[1#这里的气息，让吾有一种怀念的感觉，但空中还混杂着许多痛苦情绪，还有外来生灵的灵魂......]]>
+			</des>
+		</proAction>
+		<proAction npcID="1023" id="2" type="0" answer="提交【沉梦石】$看来要先找到信物才行" to="i2_MapItemSubmitModule_180069|1|1|map31618swap1$o" colorID="1$0">
+			<des>
+				<![CDATA[1#进入魇渊需凭借信物。]]>
+			</des>
+		</proAction>
+		<proAction id="3" type="1" level="upLevel" name="task_11012_1" moviepos="0,0" playBGM="1" to="o"/>
+		<proAction npcID="1021" id="4" type="0" answer="提交【吉普花朵】$等我找到办法再来" to="i2_MapItemSubmitModule_180057|1|1|submitFlower$o" colorID="1$0">
+			<des>
+				<![CDATA[1#请用汝的方式助她长眠。（提示：为这位不死族战士献上花朵吧）]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+		<proAction id="6" type="1" level="downLevel" name="task_11012_3" moviepos="0,0" playBGM="1" to="o"/>
+		<proAction npcID="1024" id="7" type="0" answer="来战吧！$好可怕，我先撤了" to="a9$o" colorID="2$1">
+			<des>
+				<![CDATA[1#让一切生命都陨落吧，凭什么对世界让步的是我们！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="8" type="0" answer="我们先前进吧！" to="i3_openIronDoor" colorID="2">
+			<des>
+				<![CDATA[1#汝所见的是不死族被侵蚀后的模样，但它们的执念竟如此之深......失去过往的一切于此徘徊，即使再坚韧的心也会感到孤寂啊。]]>
+			</des>
+		</proAction>
+		<proAction id="9" type="5" fightID="3549" to="i3_failedSpeak" />	
+		<proAction npcID="1021" id="10" type="0" answer="别小看我，刚刚只是热身罢了" to="o" colorID="2">
+			<des>
+				<![CDATA[1#原来这才是他们所期望的吗......？]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="11" type="0" answer="古老不死族？污染？" to="a12" colorID="2">
+			<des>
+				<![CDATA[1#吾看到了一些回忆，此处名为【魇渊】，是神魔之战过后，亡灵与黑暗的结晶——“古老不死族”的隐匿之所，可是它被污染了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="12" type="0" answer="先四处看看吧" to="i3_highlightDryBones" colorID="2">
+			<des>
+				<![CDATA[1#......这不是一段美好的回忆，不死族自诞生起，便被生者的世界所排斥，直至被迫栖身于此......然而，【魇渊】最近被外界异常爆发的负面情绪入侵了，只有前往【魇渊】最$$]]>
+				<![CDATA[1#深处才能解决一切，应答之人，请助吾前往那里。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="13" type="0" answer="要怎么深入" to="a14" colorID="2">
+			<des>
+				<![CDATA[1#此乃不死族之乡，外来者若想入内，须获得吾族许可。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="14" type="0" answer="请安息" to="a15" colorID="2">
+			<des>
+				<![CDATA[1#......（无言沉默片刻）$$]]>
+				<![CDATA[1#看到汝左侧的遗骸了吗，吾看到了她的记忆......这孩子曾守护魇渊入口百年，直至灵魂消陨于污染暴动中的战斗......去取得她的许可吧，这也是她所希望的......]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="15" type="0" answer="@blank" to="i3_highlightStoneTable" colorID="2">
+			<des>
+				<![CDATA[1#(提示：点击枯骨右边的石台)]]>
+			</des>
+		</proAction>
+	</actions>
+</map>

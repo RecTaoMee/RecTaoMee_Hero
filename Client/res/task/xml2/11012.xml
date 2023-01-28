@@ -1,0 +1,35 @@
+<Task ID="11012" Memo="经历一番波折，你发现原来风陆上有诸多诡事正在发生，自身也同c幽傀魄c进入了不知名的裂缝中，这位临时伙伴身上的谜团似乎不少，在接下来的探险中追寻真相吧。" TargetMap="31618">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="经历一番波折，你发现原来风陆上有诸多诡事正在发生，自身也同c幽傀魄c进入了不知名的裂缝中，这位临时伙伴身上的谜团似乎不少，在接下来的探险中追寻真相吧。" TargetMap="31618" TargetObj="1101221"  TargetName="前往魇渊最深处调查">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31620" ObjID="1101221" TaskOption="【跨越千年的回声②】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1021" ImageID="2" Info="我似乎做了一个十分哀伤的梦......这是哪儿？......缺失的另一半，你现在还好吗......？" />	
+					<Msg NpcID="1029" ImageID="1" Info="这孩子是意外闯进来的，她的魂力太过虚弱，吾无法读取其记忆，但终归亏欠了她，可以托汝代为照看吗？" />	
+					<Option Info="那你呢？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1029" ImageID="2" Info="魇渊其实是吾凭借生时的眼瞳用梦创造的，过去，吾没能守护重要之人，亦失去了生者的认可......然而那件事已无需再提了，因为，如今的吾的使命，是守护族人安然无恙。" />	
+					<Msg NpcID="1029" ImageID="2" Info="恙。" />	
+					<Msg NpcID="1029" ImageID="1" Info="困于此处的灵魂已被释放，外界的人们最终会失去这段记忆，这世界对我们有太多抵触，还请汝为之保密。接下来，吾将重新回归于漫长的幻梦，但无需担心，我们终会迎" />	
+					<Msg NpcID="1029" ImageID="1" Info="来重逢的那天。" />	
+					<Option Info="再会，我永远都会回应你的" SkipTrigger="Y" CheckRand="map31620node"/>
+				</Action>
+    		</Event>
+		</Step>		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="经历一番波折，你发现原来风陆上有诸多诡事正在发生，自身也同c幽傀魄c进入了不知名的裂缝中，这位临时伙伴身上的谜团似乎不少，在接下来的探险中追寻真相吧。" TargetMap="31618" TargetObj="1101221"  TargetName="前往魇渊最深处调查">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31620" ObjID="1101221" TaskOption="【跨越千年的回声②】" />									
+				</Trigger> 	
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>		
+
+
+
+
+</Procedure>
+</Task>

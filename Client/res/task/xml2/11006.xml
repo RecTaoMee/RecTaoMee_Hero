@@ -13,7 +13,7 @@
     		</Event>
 		</Step>								
   		<Step ID="1" ParentList="50" ParentCost="1" >
-    		<Event Memo="【史诗战场】发现的封印蛋到底有什么作用呢？快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和t勇士号水手t对话">
+    		<Event Memo="【史诗战场】发现的封印蛋到底有什么作用呢？快去找莓可研究一下吧！" TargetMap="11214" TargetObj="20" TargetName="和莓可对话">
   				<Trigger>					
 					<Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="这颗蛋…" />									
 				</Trigger> 				

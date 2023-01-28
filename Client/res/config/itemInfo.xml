@@ -32,6 +32,8 @@
 	AddRate：种族技能道具使用时，产生种族技能的概率加成。
 	UseEffecURL：物品使用后播放的动画资源链接。
 	DayMax：每日最大产出数。
+	MonthMax:最近30天最大产出
+	CanNotMart:是否可以市场交易
 	DelFirstItem：打开宝箱同时优先扣除物品 DelSecondItem：打开宝箱时，优先扣除物品为0扣除的物品
 -->
 
@@ -191,6 +193,7 @@
 		<Item ID="180066" Name="紫焰水晶" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 		<Item ID="180067" Name="封印蛋" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 		<Item ID="180068" Name="被污染的鳞片" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
+		<Item ID="180069" Name="沉梦石" Price="1000000" SalePrice="0" Tradability="0" VipTradability="0" Del="0"/>
 	</Kind>
 
 	<Kind ID="19" Team="1" Order="6" Name="药剂料理配方" Start="190001" End="199999" Max="9999">
@@ -1851,7 +1854,7 @@
 		
 		<Item ID="300200" Name="变身卡礼包" UseLv="1" Type="8" Target="1" Price="1000000" SalePrice="100" Tradability="2" VipTradability="3" Vendibility="1" Quantities="1" Del="1">
 		</Item>
-		<Item ID="300201" Name="启纪礼笺" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" MonthMax="100" Del="1">
+		<Item ID="300201" Name="启纪礼笺" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" MonthMax="100" Del="1" CanNotMart="1">
 			<RandGoods Percent="300">
 				<Goods ID="320007" Cnt="1"/>
 			</RandGoods>
@@ -1904,7 +1907,7 @@
 				<Goods ID="300200" Cnt="10"/>
 			</RandGoods>
 		</Item>
-		<Item ID="300202" Name="庆典礼物" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1">
+		<Item ID="300202" Name="庆典礼物" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1" CanNotMart="1">
 			<RandGoods Percent="500">
 				<Goods ID="350013 350014" Cnt="2 2"/>
 			</RandGoods>
@@ -2000,7 +2003,7 @@
 		<Item ID="320004" Name="怪盗信号弹" UseLv="1" Type="10" Target="1" Price="500" SalePrice="250" Tradability="2" VipTradability="2" Del="0" BeastGrp="26" DayMax="10"/>
 		<Item ID="320005" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="55" DayMax="10"/>
 		<Item ID="320006" Name="梦幻烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="56" DayMax="10"/>
-		<Item ID="320007" Name="周年烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="57" MonthMax="50"/>
+		<Item ID="320007" Name="周年烟花" UseLv="1" Type="10" Target="1" Price="1000000" SalePrice="30" Tradability="2" VipTradability="3" Vendibility="1" Del="0" BeastGrp="57" MonthMax="50" CanNotMart="1"/>
 	</Kind>
 
 	<Kind ID="33" Team="1" Order="7" Name="装备合成图纸" Start="330001" End="339999" Max="9999">

@@ -1,0 +1,110 @@
+<!--灯塔外侧F-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="452,1029" targetMapId="31619" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1101213" type="NPC" res="MC_pet210_5" url="res/task/swf2/task_11012_4.swf" level="contentLevel" position="728,302" link="item" />
+		<node id="1101214" type="NPC" res="MC_pet3044_red" url="res/task/swf2/task_11012_5.swf" level="contentLevel" position="342,402" link="itemRed"  />
+		<node id="1101215" type="NPC" res="MC_pet3044_cyan" url="res/task/swf2/task_11012_5.swf" level="contentLevel" position="342,402" link="itemCyan"  />
+		<node id="1101219" type="NPC" res="MC_pet3044_cyanBroken" url="res/task/swf2/task_11012_5.swf" level="contentLevel" position="342,402" link="itemCyanBroken"  />
+		<node id="1101220" type="NPC" res="MC_pet210_6" url="res/task/swf2/task_11012_4.swf" level="contentLevel" position="728,302" link="itemSleep" />
+		<node id="1101221" type="NPC" res="MC_pet210_7" url="res/task/swf2/task_11012_4.swf" level="contentLevel" position="728,302" link="itemSleep" />
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+	</object>
+
+	<actions>
+	
+		<proAction npcID="1021" id="0" type="0" answer="你没事吧！" to="a1" colorID="2">
+			<des>
+				<![CDATA[1#这究竟是.....另一半......强大的使命......你在哪？......啊!!!]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="1" type="0" answer="不会让你得逞！$好可怕的样子，我先撤了" to="a2$o" colorID="2">
+			<des>
+				<![CDATA[1#0x000a_#^*_?(似乎是乱码)混#%沌_&#陨......^*！灭......！！！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="5" fightID="3554" to="i3_map31620register" />	
+		<proAction npcID="1021" id="3" type="0" answer="你究竟是谁？" to="a4" colorID="2">
+			<des>
+				<![CDATA[1#不论汝之目的如何，栖于吾之足下的灵魂定将获得永恒的安定！沧海桑田终无法撼动！族人们啊，莫要被痛苦蒙蔽双眼，因为，吾会赐汝归心之梦！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1021" id="4" type="0" answer="使命必达！" to="i3_map31620playCyanMovie" colorID="2">
+			<des>
+				<![CDATA[1#吾想起来了，吾为魇渊的守护者——不死族之王克恩，为逃离污染，吾寄灵魂于幽傀魄，竟被这斯钻了空子。$$]]>
+				<![CDATA[1#但现在，吾回来了，应答之人啊，是汝予吾这世间唯一的回应，请助吾纠正一切错误吧！]]>
+			</des>
+		</proAction>
+
+		<proAction id="5" type="1" level="contentLevel" name="task_11012_9" moviepos="728,302" playBGM="1" to="o"/>
+
+		<proAction npcID="1029" id="6" type="0" answer="使命必达！" to="i3_map31620toa7" colorID="2">
+			<des>
+				<![CDATA[1#吾之肉身已被污染，而它窃取了吾的力量，想要拯救魇渊，有以下两种办法：一是直接击败它，助吾夺回肉身，此法消耗过大，事成后，吾愿将部分力量同【沉梦石】结合，$$]]>
+				<![CDATA[1#htmlMode化作【@cRed沉梦之泪@!cRed】赠予汝。二是通过车轮战消耗它的力量，待吾唤醒魇瞳后再将其净化，如何抉择就靠汝了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="7" type="0" answer="直接击败你！$慢慢消耗你！$好可怕的样子，我先撤了" to="a12$a13$o" colorID="2$2$1">
+			<des>
+				<![CDATA[1#htmlMode归#%于_&#虚......^*!空......!!!\n<font color='#666666'>通关条件：</font>\n<font color='#666666'>直接击败虚空曼提诺@cRed0@!cRed/1次或消耗</font>@cRed0@!cRed<font color='#666666'>/5次</font>]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="8" type="0" answer="直接击败你！$慢慢消耗你！$好可怕的样子，我先撤了" to="a12$a13$o" colorID="2$2$1">
+			<des>
+				<![CDATA[1#htmlMode归#%于_&#虚......^*!空......!!!\n<font color='#666666'>通关条件：</font>\n<font color='#666666'>直接击败虚空曼提诺@cRed0@!cRed/1次或消耗</font>@cRed1@!cRed<font color='#666666'>/5次</font>]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="9" type="0" answer="直接击败你！$慢慢消耗你！$好可怕的样子，我先撤了" to="a12$a13$o" colorID="2$2$1">
+			<des>
+				<![CDATA[1#htmlMode归#%于_&#虚......^*!空......!!!\n<font color='#666666'>通关条件：</font>\n<font color='#666666'>直接击败虚空曼提诺@cRed0@!cRed/1次或消耗</font>@cRed2@!cRed<font color='#666666'>/5次</font>]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="10" type="0" answer="直接击败你！$慢慢消耗你！$好可怕的样子，我先撤了" to="a12$a13$o" colorID="2$2$1">
+			<des>
+				<![CDATA[1#htmlMode归#%于_&#虚......^*!空......!!!\n<font color='#666666'>通关条件：</font>\n<font color='#666666'>直接击败虚空曼提诺@cRed0@!cRed/1次或消耗</font>@cRed3@!cRed<font color='#666666'>/5次</font>]]>
+			</des>
+		</proAction>
+		<proAction npcID="1028" id="11" type="0" answer="直接击败你！$慢慢消耗你！$好可怕的样子，我先撤了" to="a12$a13$o" colorID="2$2$1">
+			<des>
+				<![CDATA[1#htmlMode归#%于_&#虚......^*!空......!!!\n<font color='#666666'>通关条件：</font>\n<font color='#666666'>直接击败虚空曼提诺@cRed0@!cRed/1次或消耗</font>@cRed4@!cRed<font color='#666666'>/5次</font>]]>
+			</des>
+		</proAction>
+
+		<proAction id="12" type="5" fightID="3552" to="i3_failedSpeak4" />	
+		<proAction id="13" type="5" fightID="3553" to="i3_failedSpeak4" />	
+
+		<proAction id="14" type="1" level="contentLevel" name="task_11012_10" moviepos="728,302" playBGM="1" to="o"/>
+
+		<proAction npcID="1028" id="15" type="0" answer="@blank" to="i3_map31620win" colorID="2">
+			<des>
+				<![CDATA[1#混......沌_&永#&......恒......]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="1029" id="16" type="0" answer="@blank" to="i3_dreamingTear" colorID="2">
+			<des>
+				<![CDATA[1#htmlMode这真是一场恶战啊......感谢汝的付出，收下那孩子的【@cRed沉梦之泪@!cRed】吧，愿她的梦带与汝安宁。]]>
+			</des>
+		</proAction>
+
+
+
+		<proAction npcID="1029" id="17" type="0" answer="一定会赢的！" to="o" colorID="2">
+			<des>
+				<![CDATA[1#振作起来，吾将助汝一臂之力。]]>
+			</des>
+		</proAction>
+		
+		<proAction npcID="1029" id="18" type="0" answer="那真正的幽傀魄......" to="i3_map31620show" colorID="2">
+			<des>
+				<![CDATA[1#吾终于明白了，这一路走来遇到的负面情绪，正是吾心中积累千年的困惑啊......居然让侵入的黑暗钻了空子......无论这一切的目的如何，吾都会守在族人身前，请允吾向汝$$]]>
+				<![CDATA[1#之回应表达崇敬，如今，吾已不再迷茫。]]>
+			</des>
+		</proAction>
+
+	</actions>
+
+
+</map>

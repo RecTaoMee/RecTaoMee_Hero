@@ -172,15 +172,11 @@
 	<Item Task="11007" Map="21501" ID="1100710" Level="CONTENT" Res="task_11007_10.swf" Pos="515,-653" TriggerType="0" /><!--风龙眼泪-->
 	<Item Task="11007" Map="21501" ID="1100713" Level="UP" Res="task_11007_13.swf" Pos="1580,-3" TriggerType="0" /><!--风龙虚像-->
 	<Item Task="11007" Map="21501" ID="1100714" Level="CONTENT" Res="task_11007_14.swf" Pos="596,-626" TriggerType="1" /><!--正义的伙伴-->
-	
-
-
-
-
-
-
-
-
+	<!-- 灯塔与占卜师 -->
+	<Item Task="11009" Map="11604" ID="110091" Level="CONTENT" Res="task_11009_1.swf" Pos="-211,-100" TriggerType="1" /><!-- 厄奎提克 弗雷基码头 -->
+	<!-- 跨越千年的回声 -->
+	<Item Task="11011" Map="11208" ID="110111" Level="CONTENT" Res="task_11011_1.swf" Pos="-500,-160" TriggerType="1" /><!--  -->
+	<Item Task="11011" Map="11208" ID="110112" Level="CONTENT" Res="task_11011_2.swf" Pos="-500,-160" TriggerType="1" /><!--  -->
 
 
 

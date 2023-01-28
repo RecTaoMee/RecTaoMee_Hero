@@ -2380,7 +2380,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>		
 	
 	<!-- 万圣节限时开放,到 11006封印蛋？ 原等级要求28,关闭时改101 -->
-	<Task ID="11003" Name="古祭坛的异动" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11003" Name="古祭坛的异动" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="50" Memo="" >
 		</Node>	
 		<Node ID="2" Step="3" Memo="" >
@@ -2410,7 +2410,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>  
 		</Node>	
 	</Task>		
-	<Task ID="11004" Name="恶战！抵抗入侵！" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11003" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11004" Name="恶战！抵抗入侵！" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11003" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="3" Memo="" >
 			<BeastGrp GrpId="3510" Count="1" Win="1"/>					
 			<OutItem ID="1">			
@@ -2454,7 +2454,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>	
 	</Task>		
 	
-	<Task ID="11005" Name="清除南瓜部队" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11005" Name="清除南瓜部队" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="3" Memo="" >
 			<BeastGrp GrpId="3515" Count="1" Win="1"/>					
 			<OutItem ID="1">			
@@ -2483,7 +2483,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>	
 	</Task>		
 
-	<Task ID="11006" Name="封印蛋？" Kind="2" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11004" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11006" Name="封印蛋？" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11004" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="2" Memo="" >
 			<OutItem ID="1">			
 				<Item OutType="1" ItemId="50002" Count="500" /> 
@@ -2547,6 +2547,33 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="6" ItemId="3043" Count="1" />
 			</OutItem>
 		</Node>	
+		
+	</Task>
+
+	<!-- 2022/11/26 魇渊 -->
+	<Task ID="11011" Name="跨越千年的回声①" Kind="5" ParentCost="2" ParentList="250 251" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="3" Memo="" >
+		</Node>	
+		<Node ID="2" Step="5" Memo="" >
+		</Node>	
+		<Node ID="3" Step="6" Memo="" >
+		</Node>	
+		<Node ID="4" Step="7" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="5000" />
+				<Item OutType="1" ItemId="50002" Count="5000" />
+				<Item OutType="1" ItemId="50003" Count="5000" />
+			</OutItem>
+		</Node>	
+		
+	</Task>		
+	<Task ID="11012" Name="跨越千年的回声②" Kind="5" ParentCost="1" ParentList="11011" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="2" Memo="" IsEnd="1" >
+			<OutItem ID="1">
+				<Item OutType="3" ItemId="210" Count="1" /> 							
+			</OutItem>
+		</Node>	
+		
 		
 	</Task>		
 	
@@ -3219,7 +3246,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>		
 	</Task>
 
-
+<!--
 	<Task ID="36001" Name="邮件快递" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="20" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1"  >			
 		<Node ID="1" Step="2" Memo="" IsEnd="1">
 			<OutItem ID="1">
@@ -3841,9 +3868,9 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>						
 		</Node>		
 	</Task>
-
+-->	
 	
-	<!--每日答题任务-->	
+	<!--每日答题任务
 	<Task ID="36505" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="10" MaxLevel="50" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
 		<Node ID="1" Step="2" Memo="" IsEnd="1">
 			<OutItem ID="1">
@@ -4009,7 +4036,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>						
 		</Node>	
 	</Task>	
-	
+	-->	
 <!--暂时废弃不用的题库，先统一定位100级-->
 <!--
 	<Task ID="36520" Name="每日答题" Kind="4" ParentCost="1" ParentList="1" AcceptStep="9" RepeatType="1" RepeatCnt="1" Level="100" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			

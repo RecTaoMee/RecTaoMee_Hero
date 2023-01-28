@@ -52,7 +52,7 @@
 			<Condition>
 				<Battle ID="3510" Count="1" />
 			</Condition>			  		
-    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口t南瓜骑士t">			
+    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="13" TargetName="击败游荡的南瓜骑士">			
 			<Action Type="COMMAND" Command="OUTPUT_ITEM_2" Params="260046" />
 				<Action Type="TALK">
 					<Msg NpcID="400" ImageID="1" Info="获得令牌了，快去挑战右侧的【南瓜三兄弟】吧" />										
@@ -74,7 +74,7 @@
 			<Condition>
 				<Battle ID="3512" Count="1" />
 			</Condition>			  		
-    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口t南瓜骑士t">			
+    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口南瓜骑士">			
 				<Action Type="TALK">
 					<Msg NpcID="1006" ImageID="1" Info="可惜，太晚咯！哈哈哈哈...." />										
 					<Msg NpcID="400" ImageID="1" Info="击败右侧入口的守卫士兵啦。这个结界真是异常坚固呢！不过，用龙族的角也许可以打破它？（小提示：击败游荡的寂灭骨龙获得龙角）" />										
@@ -99,7 +99,7 @@
 			<Condition>
 				<Battle ID="3511" Count="1" />
 			</Condition>			  		
-    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口t南瓜骑士t">			
+    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="13" TargetName="击败游荡的寂灭骨龙">			
 			<Action Type="COMMAND" Command="OUTPUT_ITEM_3" Params="260045" />
 				<Action Type="TALK">
 					<Msg NpcID="400" ImageID="1" Info="用龙角来破除结界吧" />										
@@ -122,7 +122,7 @@
 			<Condition>
 				<Battle ID="3513" Count="1" />
 			</Condition>			  		
-    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口t南瓜骑士t">			
+    		<Event ConditionType="IN" Memo="诶嘿！对方的主力果然被王国军队牵制住了，事不宜迟，让我们从右边突围吧！" TargetMap="11223" TargetObj="20" TargetName="击败右侧的南瓜小队长">			
 				<Action Type="TALK">
 					<Msg NpcID="400" ImageID="1" Info="太好了，击败右侧的南瓜小队长了。现在快去阻止南瓜公爵吧！" />										
 					<Option Info="看我的" SkipTrigger="Y" />
@@ -146,7 +146,7 @@
 			<Condition>
 				<Battle ID="3514" Count="1" />
 			</Condition>			  		
-    		<Event ConditionType="IN" Memo="成功击败南瓜公爵" TargetMap="11223" TargetObj="17" TargetName="击败右侧入口t南瓜骑士t">			
+    		<Event ConditionType="IN" Memo="成功击败南瓜公爵" TargetMap="11223" TargetObj="20" TargetName="击败南瓜公爵">			
 				<Action Type="TALK">
 					<Msg NpcID="760" ImageID="1" Info="哈哈哈哈，你以为这样能够击败我吗？" />										
 					<Option Info="就是现在！" SkipTrigger="Y" />
