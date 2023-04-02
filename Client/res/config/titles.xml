@@ -105,6 +105,7 @@
 	<Title ID="1051" Name="八周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
 	<Title ID="1052" Name="九周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
 	<Title ID="1053" Name="十周年见证者" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="生命上限+350，魔法上限+150，回避+10，抗遗忘+5"/>
+	<Title ID="1100" Name="复兴版牛逼" FunType="1" Atk="-1999" HpMax="19999" MpMax="-19999" Def="-2999" Mdef="-2999" Speed="-9999" Spirit="-299" Resume="9999" Hit="999" Dodge="-9999" Crit="9999" FightBack="80" ResistPoison="-99" ResistLithification="-99" ResistLethargy="-99" ResistCommination="-99"  ResistConfusion="-99"  ResistOblivion="-99" Desc="愚人节纪念称号"/>
 
 
 <!--其它称号（装备专用称号） 紫色↓-->

@@ -2551,7 +2551,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>
 
 	<!-- 2022/11/26 魇渊 -->
-	<Task ID="11011" Name="跨越千年的回声①" Kind="5" ParentCost="2" ParentList="250 251" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
+	<Task ID="11011" Name="跨越千年的回声①" Kind="5" ParentCost="2" ParentList="250 251" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="150" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
 		<Node ID="1" Step="3" Memo="" >
 		</Node>	
 		<Node ID="2" Step="5" Memo="" >
@@ -2567,7 +2567,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>	
 		
 	</Task>		
-	<Task ID="11012" Name="跨越千年的回声②" Kind="5" ParentCost="1" ParentList="11011" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
+	<Task ID="11012" Name="跨越千年的回声②" Kind="5" ParentCost="1" ParentList="11011" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="150" Job="-1" JobLevel="0" Star="1" Order="1" RecomTeam="1" RecomLevel="" Time="" >
 		<Node ID="1" Step="2" Memo="" IsEnd="1" >
 			<OutItem ID="1">
 				<Item OutType="3" ItemId="210" Count="1" /> 							
