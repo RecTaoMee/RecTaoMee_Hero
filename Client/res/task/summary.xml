@@ -21,6 +21,7 @@
    -->
 <!-- 
       OutItem OptionCnt: 输出奖励选项数量(1-3) 
+      Rewards: 仅用于奖励显示
 	   
 	   ParentList:前置任务列表
 	   ParentCost: ParentList中必须完成的数量
@@ -4236,28 +4237,40 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	-->		
 
 	
-	<Task ID="36538" Name="无尽的战斗" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="1:13-15 2:13-15 3:13-15 4:13-15 5:13-15 6:13-15 7:13-15">			
-		<Node ID="1" Step="3" >	
-			<BeastGrp GrpId="2620" Count="1" Win="1"/>	
-			<OutItem ID="1">
-			</OutItem>
-		</Node>	
-		<Node ID="2" Step="5" >	
-			<BeastGrp GrpId="2621" Count="1" Win="1"/>	
-			<OutItem ID="1">
-			</OutItem>
-		</Node>						
-		<Node ID="3" Step="6" IsEnd="1" >	
-			<BeastGrp GrpId="2622" Count="1" Win="1"/>	
-			<OutItem ID="1">
-				<Item OutType="2" ItemId="290018" Count="100" />
-                                <Item OutType="1" ItemId="50005" Count="21600"/>	
-				<Item OutType="2" ItemId="300046" Count="2" />	
-				<Item OutType="2" ItemId="350029" Count="1" />	
-				<Item OutType="2" ItemId="350031" Count="1" />
-			</OutItem>
-		</Node>
-	</Task>
+   <Task ID="36538" Name="无尽的战斗" Kind="4" ParentCost="1" ParentList="1" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" Time="6:5-24 7:0-24 1:0-4">
+      <Node ID="1" Step="3">
+         <BeastGrp GrpId="3558" Count="1" Win="1"/>
+         <OutItem ID="1">
+         </OutItem>
+      </Node>
+      <Node ID="2" Step="6"><!-- 战斗已完成 -->
+      </Node>
+      <Node ID="3" Step="60" Memo="" IsEnd="1" CheckGrp="2620">
+         <OutItem ID="1">
+            <Item OutType="2" ItemId="290018" Count="18" />
+            <Item OutType="2" ItemId="290027" Count="5" />
+         </OutItem>
+      </Node>
+      <Node ID="4" Step="61" Memo="" IsEnd="1" CheckGrp="2621">
+         <OutItem ID="1">
+            <Item OutType="2" ItemId="290018" Count="50" />
+            <Item OutType="2" ItemId="290027" Count="12" />
+         </OutItem>
+      </Node>
+      <Node ID="5" Step="62" Memo="" IsEnd="1" CheckGrp="2622">
+         <OutItem ID="1">
+            <Item OutType="2" ItemId="290018" Count="100" />
+            <Item OutType="2" ItemId="290027" Count="42" />
+         </OutItem>
+      </Node>
+      <Node ID="6" Step="63" ><!-- 仅用于奖励显示 节点无法完成 -->
+         <BeastGrp GrpId="2622" Count="10" Win="10"/>
+         <OutItem ID="1">
+            <Item OutType="2" ItemId="290018" Count="1" />
+            <Item OutType="2" ItemId="290027" Count="1" />
+         </OutItem>
+      </Node>
+   </Task>
 	
 	<Task ID="36539" Name="支援菠萝" Kind="3" ParentCost="1" ParentList="1"  AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="35" MaxLevel="42" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
 		<Node ID="1" Step="2" IsEnd="1" >	
@@ -4429,7 +4442,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>
 -->
 	<!--未来勇士成长修行-->	
-		<Task ID="36544" Name="未来勇士成长修行" IsCountTime="1" Kind="4" ParentCost="1" ParentList="1" Time="1:1-23 2:1-23 3:1-23 4:1-23 5:1-23 6:1-23 7:1-23" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="15" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
+		<Task ID="36544" Name="未来勇士成长修行" IsCountTime="1" Kind="4" ParentCost="1" ParentList="1" Time="" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="15" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >			
 			<Node ID="1" Step="2" >	
 				<BeastGrp GrpId="2921" Count="1" Win="1" />
 				<OutItem ID="1">
@@ -4462,12 +4475,12 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			
 			<Node ID="6" Step="7" IsEnd="1" >	
 				<OutItem ID="1">				
-					<Item OutType="2" ItemId="300045" Count="5" />
-					<Item OutType="2" ItemId="300044" Count="10" />
-					<Item OutType="2" ItemId="300079" Count="1" />
-                                        <Item OutType="1" ItemId="50002" Count="150000"/>
-                                        <Item OutType="1" ItemId="50003" Count="250000"/>
-                                        <Item OutType="1" ItemId="50005" Count="5400"/>
+                    <Item OutType="2" ItemId="300045" Count="5" />
+                    <Item OutType="2" ItemId="300044" Count="10" />
+                    <Item OutType="2" ItemId="300079" Count="1" />
+                    <Item OutType="1" ItemId="50002" Count="150000"/>
+                    <Item OutType="1" ItemId="50003" Count="250000"/>
+                    <Item OutType="1" ItemId="50005" Count="5400"/>
 				</OutItem>
 			</Node>		
 		</Task>	
@@ -4516,7 +4529,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>
  -->
 
-	<Task ID="39001" Name="尤利的逆袭" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="1:1-23 2:1-23 3:1-23 4:1-23 5:1-23 6:1-23 7:1-23" >
+	<Task ID="39001" Name="尤利的逆袭" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="30" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
 		<Node ID="1" Step="6" >
 			<BeastGrp GrpId="2901" Count="1" Win="1"/>	
 			<ItemTarget ItemId="290012" Count="1" BeastType="102009" DropOdds="1000" Check="0" Del="0" CntLimit="1" />
@@ -4656,7 +4669,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 
-		<Node ID="3" Step="60" IsEnd="1" Memo="EASY" >
+		<Node ID="3" Step="60" IsEnd="1" Memo="EASY" CheckGrp="3526">
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="600000" />
 				<Item OutType="1" ItemId="50003" Count="800000" />
@@ -4665,7 +4678,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 
-		<Node ID="4" Step="61" IsEnd="1" Memo="NORMAL">
+		<Node ID="4" Step="61" IsEnd="1" Memo="NORMAL" CheckGrp="3527 3528">
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350017" Count="3" />
 				<Item OutType="2" ItemId="350013" Count="3" />	
@@ -4673,7 +4686,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 
-		<Node ID="5" Step="62" IsEnd="1"  Memo="HARD">
+		<Node ID="5" Step="62" IsEnd="1"  Memo="HARD" Count="100 1 2" CheckGrp="3529 3530">
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350017" Count="5" />
 				<Item OutType="2" ItemId="360012" Count="1" />
@@ -4691,7 +4704,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 		
-		<Node ID="2"  Step="60" IsEnd="1" Memo="EASY" >
+		<Node ID="2"  Step="60" IsEnd="1" Memo="EASY" CheckGrp="3531" >
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="650000" />
 				<Item OutType="1" ItemId="50003" Count="650000" />
@@ -4699,14 +4712,14 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="350014" Count="1" />
 			</OutItem>
 		</Node>
-		<Node ID="3"  Step="61" IsEnd="1" Memo="NORMAL" >
+		<Node ID="3"  Step="61" IsEnd="1" Memo="NORMAL" CheckGrp="3532" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350012" Count="1" />	
 				<Item OutType="2" ItemId="350013" Count="1" />	
 				<Item OutType="2" ItemId="350014" Count="3" />	
 			</OutItem>
 		</Node>
-		<Node ID="4"  Step="62" IsEnd="1" Memo="HARD" >
+		<Node ID="4"  Step="62" IsEnd="1" Memo="HARD" Count="100 1 2" CheckGrp="3533" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350012" Count="1" />	
 				<Item OutType="2" ItemId="350013" Count="4" />	
@@ -4723,7 +4736,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">
 			</OutItem>
 		</Node>	
-		<Node ID="2" Step="60" IsEnd="1" Memo="EASY" >
+		<Node ID="2" Step="60" IsEnd="1" Memo="EASY" CheckGrp="3534">
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="500000" />
 				<Item OutType="1" ItemId="50003" Count="1000000" />
@@ -4731,7 +4744,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="220038" Count="1" />	
 			</OutItem>
 		</Node>	
-		<Node ID="3" Step="61" IsEnd="1" Memo="NORMAL" >
+		<Node ID="3" Step="61" IsEnd="1" Memo="NORMAL" CheckGrp="3535" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350015" Count="1" />	
 				<Item OutType="2" ItemId="220038" Count="3" />	
@@ -4739,7 +4752,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="350014" Count="1" />
 			</OutItem>
 		</Node>	
-		<Node ID="4" Step="62" IsEnd="1" Memo="HARD" >
+		<Node ID="4" Step="62" IsEnd="1" Memo="HARD" Count="100 1 2" CheckGrp="3536">
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350015" Count="1" />	
 				<Item OutType="2" ItemId="220038" Count="5" />	
@@ -4768,7 +4781,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>
 		
 		
-		<Node ID="3" Step="60" Memo="EASY" IsEnd="1" >
+		<Node ID="3" Step="60" Memo="EASY" IsEnd="1" CheckGrp="3537" >
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="500000" />
 				<Item OutType="1" ItemId="50003" Count="500000" />
@@ -4777,7 +4790,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="300080" Count="3" />
 			</OutItem>
 		</Node>		
-		<Node ID="4" Step="61" Memo="NORMAL" IsEnd="1" >
+		<Node ID="4" Step="61" Memo="NORMAL" IsEnd="1" CheckGrp="3538 3539" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="220052" Count="2" />
 				<Item OutType="2" ItemId="300200" Count="15" />
@@ -4785,7 +4798,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="350014" Count="1" />
 			</OutItem>
 		</Node>		
-		<Node ID="5" Step="62" Memo="HARD" IsEnd="1" >
+		<Node ID="5" Step="62" Memo="HARD" IsEnd="1" Count="100 1 2" CheckGrp="3541 3542" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="300023" Count="1" />
 				<Item OutType="2" ItemId="300200" Count="45" />
@@ -4806,14 +4819,14 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>
 		</Node>
 
-		<Node ID="2" Step="60" Memo="EASY" IsEnd="1" >
+		<Node ID="2" Step="60" Memo="EASY" IsEnd="1" CheckGrp="3543" >
 			<OutItem ID="1">
 				<Item OutType="1" ItemId="50002" Count="1000000" />
 				<Item OutType="1" ItemId="50003" Count="300000" />
 				<Item OutType="2" ItemId="360040" Count="2" />
 			</OutItem>
 		</Node>		
-		<Node ID="3" Step="61" Memo="NORMAL" IsEnd="1" >
+		<Node ID="3" Step="61" Memo="NORMAL" IsEnd="1" CheckGrp="3544" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="360040" Count="5" />
 				<Item OutType="2" ItemId="350013" Count="1" />
@@ -4821,7 +4834,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="3" ItemId="115" Count="1" />
 			</OutItem>
 		</Node>		
-		<Node ID="4" Step="62" Memo="HARD" IsEnd="1" >
+		<Node ID="4" Step="62" Memo="HARD" IsEnd="1" Count="100 1 2" CheckGrp="3545" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="360040" Count="15" />
 				<Item OutType="2" ItemId="350013" Count="4" />

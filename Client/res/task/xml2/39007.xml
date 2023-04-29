@@ -19,7 +19,7 @@ task_39007_1       		剧毒蜂皇
 				</Trigger>
 				<Action Type="TALK">
 					<Msg NpcID="104" ImageID="1" Info="凯西在世界树1F发出求救信号，我已通知王国其他勇士，然而他们正在筹备前往炎之大陆之事，无法立刻赶到，情况危急，我先把你传送到那里，一定要守住世界树！" />
-					<Option Info="在所不辞！"  SkipTrigger="Y" />					
+					<Option Info="在所不辞！"  SkipTrigger="Y" CheckRand="100_0"/>					
 				</Action>
 			</Event>
 		</Step>
@@ -36,7 +36,7 @@ task_39007_1       		剧毒蜂皇
 					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
 					<Option Info="低级难度" />					
 					<Option Info="中级难度" NextStep="5" />					
-					<Option Info="高级难度" NextStep="11" CheckRand="10003_0" />					
+					<Option Info="高级难度" NextStep="11" CheckRand="100_1" />					
 				</Action>
 			</Event>
 		</Step>
@@ -317,7 +317,7 @@ task_39007_1       		剧毒蜂皇
 				<Action Type="MOVIE" Url="task256_5.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />     <!-- 放动画 -->	
 				<Action Type="TALK">
 					<Msg NpcID="105" ImageID="2" Info="勇士，多亏你保护了世界树安危，但是他们定不会善罢甘休的，每周一，尤利将会集结部下入侵世界树，我们仍需要为炎之大陆的航行做准备，守护世界树的安危就交给你了！" />		<!-- 安德鲁 -->
-					<Option Info="使命必达！" CheckRand="10003_1" />					
+					<Option Info="使命必达！" CheckRand="100_2" />					
 				</Action>
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,21806" />     <!-- 移除妮娜  安德鲁 -->
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21804,390075" />    <!-- 移除曼提丝 -->

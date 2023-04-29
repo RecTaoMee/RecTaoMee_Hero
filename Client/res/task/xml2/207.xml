@@ -14,6 +14,7 @@
 					<Option Info="转职黑魔导士" NextStep="12" />	
 					<Option Info="转职圣言使" NextStep="13" />	
 					<Option Info="转职巫术士" NextStep="14" />	
+					<Option Info="暂不进阶" NextStep="1" />	
 				</Action>	
     		</Event>
     		<Event ConditionType="OUT" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	

@@ -28,7 +28,7 @@ taskitem
 				</Action>	
 				<Action Type="TALK">
 					<Msg NpcID="1" ImageID="1" Info="好诶!复兴冒险小分队，出发！" />
-					<Option Info="出发！" />						
+					<Option Info="出发！" CheckRand="100_0"/>						
 				</Action>	
 				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11703,1" />	
 				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11703,390081" />
@@ -70,7 +70,7 @@ taskitem
 					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
 					<Option Info="低级难度"  />					
 					<Option Info="中级难度" NextStep="5" />					
-					<Option Info="高级难度" NextStep="6"  CheckRand="10003_0"/>					
+					<Option Info="高级难度" NextStep="6"  CheckRand="100_1"/>					
 				</Action>
     		</Event>
 		</Step>	
@@ -149,7 +149,7 @@ taskitem
 				<Action Type="TALK">
 					<Msg NpcID="337" ImageID="1" Info="……青之宝玉拿去吧。" />
 					<Msg NpcID="1" ImageID="1" Info="哇!我们成功了!我终于也能进阶啦！谢谢你来陪我，这是我的小小心意，现在就送给你啦！下周我们也要一起来加固封印哦!" />
-					<Option Info="好!" CheckRand="10003_1" />
+					<Option Info="好!" CheckRand="100_2" />
 				</Action>			
 				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="21704,390083" />
 			</Event>

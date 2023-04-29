@@ -8,8 +8,8 @@
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="1" type="NPC" res="MC_npc_758" action="1" name="魔蛇"/>
-		<node id="2" type="NPC" res="MC_npc_106" action="4" name="路西欧"/>
+		<node id="1" type="NPC" res="MC_npc_758" action="" name="魔蛇"/>
+		<node id="2" type="NPC" res="MC_npc_106" action="" name="路西欧"/>
 		<node id="3" type="TransPort" res="MC_door_1" transPortId="1"/>
 
     </npc>
@@ -32,10 +32,35 @@
 			
 		<proAction npcID="106" id="4" type="0" answer="我知道了！" to="o" colorID="0">
 			<des>
-				<![CDATA[1#这个领主异常强大，能力绝不在尤利之下，如今只能每日的13:00-15:00将他封印，才能防止这个世界被彻底毁灭！$$]]>
-				<![CDATA[1#（35级以上的勇士可以每天13-15点在【废墟的勇士广场】“宾得”处接取“无尽的战斗”任务，与黄金勇士一同挑战魔蛇！）]]>
+				<![CDATA[1#这个领主异常强大，能力绝不在尤利之下，如今只能每周的周六、周日将他封印，才能防止这个世界被彻底毁灭！]]>
 			</des>
 		</proAction>			
+		<proAction npcID="106" id="5" type="0" answer="路西欧！$我知道了！" to="a6$o" colorID="2$0">
+			<des>
+				<![CDATA[1#这个领主异常强大，能力绝不在尤利之下，如今只能每周的周六、周日将他封印，才能防止这个世界被彻底毁灭！]]>
+			</des>
+		</proAction>			
+		<proAction npcID="106" id="6" type="0" answer="未来勇士前来相助！" to="a7" colorID="2">
+			<des>
+				<![CDATA[2#你是谁，我怎么从没见过你？]]>
+			</des>
+		</proAction>			
+		<proAction npcID="758" id="7" type="0" answer="@blank" to="a8" colorID="0">
+			<des>
+				<![CDATA[1#又来一个送死的，我乃魔族首领之一，巨岩魔蛇，在这个平行时空我是杀不死的，哈...哈...哈...哈！$$]]>
+				<![CDATA[1#听说尤利败在你的手上过，今天我就要替我们魔族的兄弟一雪前耻！！！就让我一起送你们上路吧！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="106" id="8" type="0" answer="我来清除附近爪牙！$我来掩护你！$助你拖住魔蛇！" to="o$a9$a10" colorID="2$2$2">
+			<des>
+				<![CDATA[3#快走，这里太危险了！这个家伙打不死的！！！只能拖延时间后将其封印！]]>
+			</des>
+		</proAction>
+
+      <proAction id="9" type="5" fightID="2621" to="" />
+      <proAction id="10" type="5" fightID="2622" to="" />
+         
+			
 
 	</actions>
 </map>

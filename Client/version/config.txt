@@ -1,5 +1,5 @@
 [Config]
-DataVer=1679634931
+DataVer=1682510605
 #BaseUrlWithout/
 DownLoadBaseUrl=http://103.19.232.93:88
 ConfigBaseUrl=http://103.19.232.93:88

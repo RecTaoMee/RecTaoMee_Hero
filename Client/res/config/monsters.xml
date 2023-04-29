@@ -147,8 +147,8 @@
 		<pos id="2" point="145,244" width="320" height="290" />
 		<pos id="3" point="686,-3" width="240" height="220" />
 
-		<monster typeID="10" groupID="10" type="0" pos="2,3"/>
-		<monster typeID="11" groupID="11" type="0" pos="2,3"/>
+		<monster typeID="10" groupID="10" walkType="2" speed="2" pos="2,3"/>
+		<monster typeID="11" groupID="11" walkType="2" speed="2" pos="2,3"/>
 		<boss typeID="7" groupID="7" type="0" pos="1" speed="4" taskID="10025" startNode="0" endNode="1"/>
 	</map>
 
@@ -157,8 +157,8 @@
 		<pos id="2" point="420,365" width="460" height="180" />
 		<pos id="3" point="856,360" width="700" height="180" />
 
-		<monster typeID="11" groupID="11" type="0" pos="1,2,3"/>
-		<monster typeID="12" groupID="12" type="0" pos="1,2,3"/>
+		<monster typeID="11" groupID="11" type="0"  pos="1,2,3"/>
+		<monster typeID="12" groupID="12" type="0"  pos="1,2,3"/>
 	</map>
 	
 	<map mapID="21308" count="6" haveElite="1">
@@ -434,25 +434,35 @@
 		<!-- <boss typeID="82" groupID="31" type="" pos="1" taskID="11004" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/> -->
 	<!-- </map> -->
 
+   <map mapID="51301" count="6"> -->
+      <pos id="1" point="759,181" width="80" height="80" />
+      <boss typeID="56" groupID="2620" type="" pos="1" taskID="36538" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/>
+      <boss typeID="1009" groupID="2620" type="" pos="1" taskID="36538" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/>
+      <boss typeID="1002" groupID="2620" type="" pos="1" taskID="36538" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/>
+      <boss typeID="12" groupID="2620" type="" pos="1" taskID="36538" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/>
+      <boss typeID="1008" groupID="2620" type="" pos="1" taskID="36538" startNode="1" endNode="2" speed="4" range="150" refreshTime="5000"/>
+   </map>
 	
 	<!-- <reverse> -->
 		<!-- <monster typeID="7" pet="8" type="1" /> -->
 	<!-- </reverse> -->
-	<map mapID="11223" count="2">
-		<pos id="1" point="759,181" width="80" height="80" />
-		 <pos id="2" point="872,341" width="80" height="80" />
-		 <pos id="3" point="751,824" width="80" height="80" />
-		 <pos id="4" point="308,696" width="80" height="80" />
-		<boss typeID="81" groupID="3510" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="81" groupID="3510" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="81" groupID="3510" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="81" groupID="3510" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="81" groupID="3510" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="85" groupID="3511" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="85" groupID="3511" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="85" groupID="3511" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-		<boss typeID="85" groupID="3511" type="0" pos="1,2,3,4"    speed="4" refreshTime="500"/>
-	</map>
+   <map mapID="11223" count="2">
+      <pos id="1" point="759,181" width="80" height="80" />
+      <pos id="2" point="872,341" width="80" height="80" />
+      <pos id="3" point="751,824" width="80" height="80" />
+      <pos id="4" point="308,696" width="80" height="80" />
+      <boss typeID="81" groupID="3510" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="81" groupID="3510" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="81" groupID="3510" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="81" groupID="3510" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="81" groupID="3510" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="85" groupID="3511" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="85" groupID="3511" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="85" groupID="3511" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+      <boss typeID="85" groupID="3511" type="0" pos="1,2,3,4" speed="4" refreshTime="500"/>
+   </map>
+
+      
 
 	
 	<reverse>

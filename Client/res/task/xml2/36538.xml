@@ -1,180 +1,168 @@
-<Task ID="36538" Memo="前往10年后废墟的勇士王国的广场找到c宾德c接取\n周六~周日：13:00-15:00" TargetMap="51202">
-   	<Procedure>
-  		<Step ID="1" ParentList="0" ParentCost="0" >
-    		<Event Memo="前往10年后废墟的勇士王国的广场找到c宾德c" TargetMap="51202" TargetObj="1" TargetName="和t宾德t对话">
-  				<Trigger>
-					<Item Type="NPC_OPTION" MapID="51202" ObjID="1" TaskOption="（…这人好眼熟…）" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="25" ImageID="1" Info="你来得正好！这里是被毁坏的勇士国度，城里已经充满了被黑化的精灵，请一定要小心！" />
-					<Option Info="宾德大人你也来了？" />					
-				</Action>							
-				<Action Type="TALK">			
-					<Msg NpcID="25" ImageID="1" Info="大批王国卫队的成员已经前往附近探查情况了，你也在四处转一转吧！" />
-					<Option Info="我这就去转转！" />																		
-				</Action>												
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="51201,1" />	
-    		</Event>		
-		</Step>		
+<Task ID="36538" Memo="前往10年后废墟的勇士王国的广场找到c宾德c接取\n周六~周日 开放" TargetMap="51202">
+   <Procedure>
+      <Step ID="1" ParentList="0" ParentCost="0">
+         <Event Memo="前往10年后废墟的勇士王国的广场找到c宾德c" TargetMap="51202" TargetObj="1" TargetName="和t宾德t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51202" ObjID="1" TaskOption="（…这人好眼熟…）" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="25" ImageID="1" Info="你来得正好！这里是被毁坏的勇士国度，城里已经充满了被黑化的精灵，请一定要小心！" />
+               <Option Info="宾德大人你也来了？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="25" ImageID="1" Info="大批王国卫队的成员已经前往附近探查情况了，你也在四处转一转吧！" />
+               <Option Info="我这就去转转！" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="51201,1" />
+         </Event>
+      </Step>
 
-  		<Step ID="2" ParentList="1" ParentCost="1" >
-    		<Event Memo="前往10年后废墟的勇士王国的南街找到c菠萝c" TargetMap="51201" TargetObj="1" TargetName="和t菠萝t对话">
-  				<Trigger>
-					<Item Type="NPC_OPTION" MapID="51201" ObjID="1" TaskOption="菠萝？" />
-				</Trigger>							
-				<Action Type="TALK">
-					<Msg NpcID="61" ImageID="1" Info="小勇士大人，我们又见面了！" />
-					<Option Info="你怎么会来这里？" />					
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="61" ImageID="1" Info="不知怎么的一觉醒来就到这里了！？" />
-					<Option Info="o(╯□╰)o" />					
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="61" ImageID="1" Info="小勇士大人，你要小心，这里的精灵非常可怕，根本无法净化！连我都无法打败他们！" />
-					<Option Info="那怎么办？" />					
-				</Action>				
-				<Action Type="TALK">
-					<Msg NpcID="61" ImageID="1" Info="你赶去毁坏的王国西街找安德鲁大人调查一下情况，我刚看到他好像在那里！" />
-					<Option Info="我这就去！" />					
-				</Action>					
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="51203,1" />	
-    		</Event>		
-		</Step>		
+      <Step ID="2" ParentList="1" ParentCost="1">
+         <Event Memo="前往10年后废墟的勇士王国的南街找到c菠萝c" TargetMap="51201" TargetObj="1" TargetName="和t菠萝t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51201" ObjID="1" TaskOption="菠萝？" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="61" ImageID="1" Info="小勇士大人，我们又见面了！" />
+               <Option Info="你怎么会来这里？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="61" ImageID="1" Info="不知怎么的一觉醒来就到这里了！？" />
+               <Option Info="o(╯□╰)o" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="61" ImageID="1" Info="小勇士大人，你要小心，这里的精灵非常可怕，根本无法净化！连我都无法打败他们！" />
+               <Option Info="那怎么办？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="61" ImageID="1" Info="你赶去毁坏的王国西街找安德鲁大人调查一下情况，我刚看到他好像在那里！" />
+               <Option Info="我这就去！" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="51203,1" />
+         </Event>
+      </Step>
 
-						
-  		<Step ID="3" ParentList="2" ParentCost="1" >		
-			<Condition>
-				<Battle ID="2620" Count="1" />
-			</Condition>
-    		<Event ConditionType="IN" Memo="你已战胜了王国卫兵的偷袭，现在可以与c安德鲁c对话" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="到底发生了什么？" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="105" ImageID="2" Info="不仅仅这里的精灵无法被彻底打败，连王国卫兵都出现了异状，你得千万小心了！" />
-					<Option Info="你也不知道真相？" />
-				</Action>				
-				<Action Type="TALK">
-					<Msg NpcID="105" ImageID="2" Info="我这里调查下来也没什么线索，不如你到毁坏的王国东街找找妮娜，她负责在那里的调查！" />
-					<Option Info="我去看看，请你小心！" />
-				</Action>	
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="51205,1" />							
-    		</Event>
-																												
-    		<Event ConditionType="OUT" Memo="前往10年后废墟的勇士王国的西街找到c安德鲁c" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="（…远处安德鲁站在那里…）" />
-				</Trigger>			
-				<Action Type="TALK">
-					<Msg NpcID="105" ImageID="2" Info="可恶！气死我了，这里的黑化精灵根本无法彻底打败，还源源不断的冒出来！" />					
-					<Option Info="安德鲁大人！" />
-				</Action>				
-				<Action Type="TALK">
-					<Msg NpcID="105" ImageID="2" Info="小勇士，小心！" />
-					<Option Info="？？？" />
-					<Option Info="准备一下" NextStep="3" />					
-				</Action>					
-				<Action Type="COMMAND" Command="BATTLE" Params="2620"/>											
-    		</Event>
-		</Step>	
-						
-  		<Step ID="4" ParentList="3" ParentCost="1" >		
-    		<Event Memo="前往10年后废墟的勇士王国的东街找到c妮娜c" TargetMap="51205" TargetObj="1" TargetName="和t妮娜t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51205" ObjID="1" TaskOption="妮娜大人！" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="101" ImageID="1" Info="小勇士，敌人的来势很凶猛，我这里已经快坚持不住了！" />							
-					<Msg NpcID="101" ImageID="1" Info="你快赶去毁坏的皇宫花园，十二勇士之一—“双刀”路西欧正在那里，他好像发现了一些线索！" />							
-					<Option Info="请妮娜大人放心！" />
-				</Action>	
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="51301,1" />			
-    		</Event>				
-		</Step>				
-		
-  		<Step ID="5" ParentList="4" ParentCost="1" >		
-			<Condition>
-				<Battle ID="2621" Count="1" />
-			</Condition>
-    		<Event ConditionType="IN" Memo="战胜王国卫兵后，与c巨岩魔蛇c对话" TargetMap="51301" TargetObj="2" TargetName="和t巨岩魔蛇t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51301" ObjID="2" TaskOption="你就这点本事？" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="小子，还不错嘛，难怪这么狂妄！不过一会你可就得哭了。" />				
-					<Option Info="……" />
-				</Action>							
-    		</Event>				
-																															
-    		<Event ConditionType="OUT" Memo="前往10年后废墟的勇士王国的皇宫花园找到c路西欧c" TargetMap="51301" TargetObj="2" TargetName="和t路西欧t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51301" ObjID="2" TaskOption="路西欧！" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="106" ImageID="2" Info="你是谁，我怎么从没见过你？" />								
-					<Option Info="未来勇士前来相助！" />
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="又来一个送死的，就让我送你们一起上路吧！" />								
-					<Option Info="……" />				
-				</Action>				
-				<Action Type="TALK">
-					<Msg NpcID="106" ImageID="3" Info="快走，这里太危险了！这个家伙打不死的！！！" />								
-					<Option Info="啊？！" />				
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="哈哈哈哈！自我介绍一下，魔族首领之一，巨岩魔蛇正是我！在这个平行空间我是杀不死的，哈…哈…哈…哈!" />								
-					<Msg NpcID="758" ImageID="1" Info="听说尤利败在你的手上过，今天我就要替我们魔族的兄弟一雪前耻！！！你准备受死吧!" />								
-					<Option Info="我偏不信！" />				
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="先让你们自相残杀一下吧，王国卫兵！给我上!" />								
-					<Option Info="糟糕！" />		
-					<Option Info="准备一下" NextStep="5" />						
-				</Action>								
-				<Action Type="COMMAND" Command="BATTLE" Params="2621"/>										
-    		</Event>
-		</Step>		
-		
-  		<Step ID="6" ParentList="5" ParentCost="1" >		
-			<Condition>
-				<Battle ID="2622" Count="1" />
-			</Condition>
-    		<Event ConditionType="IN" Memo="战胜王国卫兵后，与c巨岩魔蛇c对话" TargetMap="51301" TargetObj="1" TargetName="和t巨岩魔蛇t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51301" ObjID="1" TaskOption="不过如此！" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="可恶的鼹鼠，我居然败了！不过，你杀不死我，哈…哈…哈…哈!" />				
-					<Option Info="啊！怎么办！" />
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="106" ImageID="3" Info="别高兴的太早了，杀不死你至少我们可以封印你！" />	
-					<Msg NpcID="101" ImageID="1" Info="战神合体！定！" />	
-					<Msg NpcID="105" ImageID="2" Info="战神合体！锁！" />	
-					<Msg NpcID="106" ImageID="3" Info="战神合体！封印！！！" />													
-					<Option Info="……" />
-				</Action>	
-				<Action Type="MOVIE" Url="task36538_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />					
-				<Action Type="TALK">
-					<Msg NpcID="106" ImageID="2" Info="封印持续不了太久，如今唯一的办法只有在每日的13点-15点将打破封印的巨岩魔蛇再次封印，具体事宜你可以到时候直接找宾德大人！" />				
-					<Option Info="知道了！" />
-				</Action>							
-    		</Event>				
-																															
-    		<Event ConditionType="OUT" Memo="与c巨岩魔蛇c对话并战胜他" TargetMap="51301" TargetObj="1" TargetName="和t巨岩魔蛇t对话">
-  				<Trigger>
-				     <Item Type="NPC_OPTION" MapID="51301" ObjID="1" TaskOption="击败你！" />
-				</Trigger>
-				<Action Type="TALK">
-					<Msg NpcID="758" ImageID="1" Info="让你感受到来自未来魔族的力量！灭！" />								
-					<Option Info="来战吧！" />
-					<Option Info="先准备一下" NextStep="6" />
-				</Action>	
-				<Action Type="COMMAND" Command="BATTLE" Params="2622"/>										
-    		</Event>
-		</Step>		
-				
-	</Procedure>
+
+      <Step ID="3" ParentList="2" ParentCost="1">
+         <Condition>
+            <Battle ID="3558" Count="1" />
+         </Condition>
+         <Event ConditionType="IN" Memo="你已战胜了王国卫兵的偷袭，现在可以与c安德鲁c对话" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="到底发生了什么？" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="105" ImageID="2" Info="不仅仅这里的精灵无法被彻底打败，连王国卫兵都出现了异状，你得千万小心了！" />
+               <Option Info="你也不知道真相？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="105" ImageID="2" Info="我这里调查下来也没什么线索，不如你到毁坏的王国东街找找妮娜，她负责在那里的调查！" />
+               <Option Info="我去看看，请你小心！" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="51205,1" />
+         </Event>
+
+         <Event ConditionType="OUT" Memo="前往10年后废墟的勇士王国的西街找到c安德鲁c" TargetMap="51203" TargetObj="1" TargetName="和t安德鲁t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51203" ObjID="1" TaskOption="（远处安德鲁站在那里…）" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="105" ImageID="2" Info="可恶！气死我了，这里的黑化精灵根本无法彻底打败，还源源不断的冒出来！" />
+               <Option Info="安德鲁大人！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="105" ImageID="2" Info="小勇士，小心！" />
+               <Option Info="？？？" />
+               <Option Info="准备一下" NextStep="3" />
+            </Action>
+            <Action Type="COMMAND" Command="BATTLE" Params="3558"/>
+         </Event>
+      </Step>
+
+      <Step ID="4" ParentList="3" ParentCost="1">
+         <Event Memo="前往10年后废墟的勇士王国的东街找到c妮娜c" TargetMap="51205" TargetObj="1" TargetName="和t妮娜t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51205" ObjID="1" TaskOption="妮娜大人！" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="101" ImageID="1" Info="小勇士，敌人的来势很凶猛，我这里已经快坚持不住了！" />
+               <Msg NpcID="101" ImageID="1" Info="你快赶去毁坏的皇宫花园，十二勇士之一—“双刀”路西欧正在那里，他好像发现了一些线索！" />
+               <Option Info="请妮娜大人放心！" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="51301,1" />
+         </Event>
+      </Step>
+
+      <Step ID="5" ParentList="4" ParentCost="1">
+         <Event Memo="前往毁坏的皇宫花园，与十二勇士之一—“双刀”路西欧对话" TargetMap="51301" TargetObj="5" TargetName="和t路西欧t对话">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="challengeCompleted" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="6" ParentList="5" ParentCost="1">
+         <Event Memo="与c巨岩魔蛇c对话" TargetMap="51301" TargetObj="1" TargetName="和t巨岩魔蛇t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="51301" ObjID="1" TaskOption="不过如此！" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="758" ImageID="1" Info="可恶的鼹鼠，我居然败了！不过，你杀不死我，哈…哈…哈…哈!" />
+               <Option Info="啊！怎么办！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="106" ImageID="3" Info="别高兴的太早了，杀不死你至少我们可以封印你！" />
+               <Msg NpcID="101" ImageID="1" Info="战神合体！定！" />
+               <Msg NpcID="105" ImageID="2" Info="战神合体！锁！" />
+               <Msg NpcID="106" ImageID="3" Info="战神合体！封印！！！" />
+               <Option Info="@blank" />
+            </Action>
+            <Action Type="MOVIE" Url="task36538_1.swf" MapLevel="TASK" Pos="0,0" CloseBGM="1" />
+            <Action Type="TALK">
+               <Msg NpcID="106" ImageID="2" Info="封印持续不了太久，如今唯一的办法只有在每周的周六、周日将打破封印的巨岩魔蛇再次封印，具体事宜你可以到时候直接找宾德大人！" />
+               <Option Info="知道了！" />
+            </Action>
+            <Action Type="COMMAND" Command="EVENT" Params="talkCompleted" />
+         </Event>
+      </Step>
+
+      <Step ID="7" ParentList="6" ParentCost="1">
+         <Event Memo="缓冲中......" TargetMap="51301" TargetObj="390071">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="nothing" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+      </Step>
+
+      <Step ID="60" ParentList="4" ParentCost="1">
+         <Event Memo="缓冲中......" TargetMap="51301" TargetObj="390071">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="lowLevelCompleted" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+      </Step>
+
+      <Step ID="61" ParentList="4" ParentCost="1">
+         <Event Memo="缓冲中......" TargetMap="51301" TargetObj="390071">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="middleLevelCompleted" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+      </Step>
+
+      <Step ID="62" ParentList="4" ParentCost="1">
+         <Event Memo="缓冲中......" TargetMap="51301" TargetObj="390071">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="highLevelCompleted" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+      </Step>
+
+
+   </Procedure>
 </Task>

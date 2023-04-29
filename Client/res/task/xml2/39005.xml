@@ -20,7 +20,7 @@ taskitem.xml      #res\config    添加       				ok
 				</Trigger>
 				<Action Type="TALK">				
 					<Msg NpcID="207" ImageID="1" Info="小摩尔，糟啦！一直活跃在平原的怪盗集团突然闯进下水道了，这里可是封印”灰色情绪”精灵的地方！" />			
-					<Option Info="需要我做什么？" SkipTrigger="Y"/>	
+					<Option Info="需要我做什么？" SkipTrigger="Y" CheckRand="100_0"/>	
 					<Option Info="我很忙，下次再说" NextStep="1" />		
 				</Action>						
 			</Event>
@@ -40,7 +40,7 @@ taskitem.xml      #res\config    添加       				ok
 					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
 					<Option Info="低级难度"  />					
 					<Option Info="中级难度" NextStep="6" />					
-					<Option Info="高级难度" NextStep="10"  CheckRand="10003_0"/>					
+					<Option Info="高级难度" NextStep="10"  CheckRand="100_1"/>					
 				</Action>
     		</Event>											
 	    </Step>		
@@ -270,7 +270,7 @@ taskitem.xml      #res\config    添加       				ok
 				</Trigger>
     			<Action Type="TALK">
 					<Msg NpcID="207" ImageID="1" Info="辛苦了，这是你的奖励，下周再来找我吧。" />		
-					<Option Info="使命必达" CheckRand="10003_1" />																																							
+					<Option Info="使命必达" CheckRand="100_2" />																																							
 				</Action>					
     		</Event> 														
 	    </Step>	 

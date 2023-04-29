@@ -810,11 +810,7 @@
 		<Item ID="290025" Name="勇气徽章" Price="10" SalePrice="0" Tradability="0" VipTradability="0" Del="1"/>
 
 		<Item ID="290026" Name="勇士杯奖牌" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2"/>
-		
-		
-		
-		
-		
+		<Item ID="290027" Name="织梦灵箔" Price="1000000" SalePrice="10" Tradability="2" VipTradability="2" CanNotMart="1" />
 	</Kind>
 
 	<Kind ID="30" Team="1" Order="1" Name="礼包" Start="300001" End="309999" Max="9999">
@@ -1907,7 +1903,7 @@
 				<Goods ID="300200" Cnt="10"/>
 			</RandGoods>
 		</Item>
-		<Item ID="300202" Name="庆典礼物" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1" CanNotMart="1">
+		<Item ID="300202" Name="庆典礼物" UseLv="20" Type="17" Target="1" Price="1000000" SalePrice="5000" Tradability="2" VipTradability="3" Vendibility="1" Del="1" CanNotMart="1" MonthMax="50">
 			<RandGoods Percent="500">
 				<Goods ID="350013 350014" Cnt="2 2"/>
 			</RandGoods>
@@ -1974,6 +1970,7 @@
 		<Item ID="310054" ResID="310006" Name="噬灵鬼精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="95" BeastLv="1" BeastCnt="1"/>
 		<Item ID="310055" ResID="310055" Name="金羊狼精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="76" BeastLv="1" BeastCnt="1"/>
 		<Item ID="310056" ResID="310006" Name="库噜小队长精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="27" BeastLv="1" BeastCnt="1"/>
+		<Item ID="310057" ResID="310006" Name="波波尔精灵蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="100" Tradability="0" VipTradability="0" Vendibility="1" Del="1" BeastType="68" BeastLv="1" BeastCnt="1"/>
 		
 		<Item ID="315001" ResID="315001" Name="喵斯熊精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="24" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315002" ResID="315001" Name="撒旦蝠精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="37" BeastLv="1" BeastCnt="1" RandDiff="0"/>
@@ -1993,6 +1990,8 @@
 		<Item ID="315016" ResID="315001" Name="18K钢姆精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="34" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315017" ResID="315001" Name="伊瑟拉精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="58" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		<Item ID="315018" ResID="315001" Name="愤怒萝卜精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="60" BeastLv="1" BeastCnt="1" RandDiff="0"/>
+		<Item ID="315019" ResID="315001" Name="独眼树藤怪精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="79" BeastLv="1" BeastCnt="1" RandDiff="0"/>
+		<Item ID="315020" ResID="315001" Name="24K蜘蛛炸弹精品蛋" UseLv="1" Type="5" Target="1" Price="1000000" SalePrice="1000" Tradability="0" VipTradability="0" Del="1" BeastType="77" BeastLv="1" BeastCnt="1" RandDiff="0"/>
 		
 	</Kind>
 
