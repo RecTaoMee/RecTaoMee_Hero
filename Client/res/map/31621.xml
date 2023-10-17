@@ -1,0 +1,44 @@
+<!--荣耀之境-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-207.mp3">
+   <transport intPos="312,355">
+      <node id="1" pos="546,463" targetMapId="31612" targetTransPortId="3"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+   </object>
+   <npc>
+      <node id="3" type="NPC" res="MC_pet_3059" level="contentLevel" mapShowSteps="5|6" action="0" />
+   </npc>
+   <actions>
+      <proAction npcID="329" id="0" type="0"  answer="这就是试炼吗，我会通过的！$再给我点时间" to="a1$o" colorID="2$2">
+         <des>
+            <![CDATA[1#吾之吐息不尽，神明亦无可抵挡，妄想触怒龙之权威，先会会这些侍从吧！]]>
+         </des>
+      </proAction>
+		<proAction id="1" type="5" fightID="3563" />	
+      <proAction npcID="329" id="2" type="0"  answer="不要小瞧渺小的力量！$等我休整好再向你证明！" to="a3$o" colorID="2$2">
+         <des>
+            <![CDATA[1#哦？渺小之物竟想垂死挣扎？那就让狂风来裁定汝妄图僭越的罪孽吧！]]>
+         </des>
+      </proAction>
+		<proAction id="3" type="5" fightID="3564" />	
+      <proAction npcID="329" id="4" type="0"  answer="@blank" to="pet3059_finish" colorID="2">
+         <des>
+            <![CDATA[1#怎么会......?一定是力量太少了，无尽之魔法，永恒之力量，吾还......]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="5" type="0"  answer="你会消失吗？那瑞恩呢？\n我接下来要怎么办？" to="a6" colorID="2">
+         <des>
+            <![CDATA[1#不愧是预言选中的勇士，你身上有无限的可能，可惜，我的时间要耗尽了。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="6" type="0"  answer="谢谢，我一定会达到终点的！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#无妨，我只是他留下的幻影，使命完成已足矣，不必急躁，暂且稍作休整，命运之光自会指引你走向终点。]]>
+         </des>
+      </proAction>
+		<proAction id="7" type="7" mapID="31612" />	
+
+   </actions>
+
+</map>

@@ -1,0 +1,175 @@
+<!--泥盆沼泽-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+   <transport intPos="2159,741">
+      <node id="1" pos="124,442" targetMapId="31612" targetTransPortId="2"/>
+      <node id="2" pos="2613,587" targetMapId="31614" targetTransPortId="1"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+   </object>
+
+   <npc>
+      <node id="2" type="NPC" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" action="29"/>
+      <node id="3" type="NPC" res="MC_pet_1001_1" level="contentLevel" action="" />
+      <node id="4" type="NPC" res="MC_pet_1001_2" level="contentLevel" action="" />
+      <node id="5" type="NPC" res="MC_pet_1001_3" level="contentLevel" action="" />
+      <node id="6" type="NPC" res="MC_pet_1001_4" level="contentLevel" action="" />
+      <node id="7" type="NPC" res="MC_pet_213" level="contentLevel" mapShowSteps="5" action="" />
+      <node id="8" type="NPC" res="MC_light1" level="downLevel" mapShowSteps="0" action="" />
+      <node id="9" type="NPC" res="MC_light2" level="downLevel" mapShowSteps="1" action="" />
+      <node id="10" type="NPC" res="MC_light3" level="downLevel" mapShowSteps="2" action="" />
+      <node id="11" type="NPC" res="MC_light4" level="downLevel" mapShowSteps="3" action="" />
+      <node id="12" type="NPC" res="MC_light5" level="downLevel" mapShowSteps="4" action="" />
+      <node id="13" type="NPC" res="MC_pet_1001_5" level="downLevel" action="" />
+   </npc>
+
+
+   <actions>
+      <!-- 初次进入场景 -->
+      <proAction npcID="402" id="0" type="0" answer="试试借助坐骑?" to="a1" colorID="2">
+         <des>
+            <![CDATA[6#这一层的泥浆好深啊，直接走的话会陷进去吧！]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="1" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[6#(提示：只有骑乘坐骑才可以继续前进哦。)]]>
+         </des>
+      </proAction>
+      <!-- 无坐骑 -->
+      <proAction npcID="402" id="2" type="0" answer="......" to="o" colorID="2">
+         <des>
+            <![CDATA[6#好险，差点就陷入沼泽了！坐上坐骑再回来吧。]]>
+         </des>
+      </proAction>
+      <!-- 触碰坑 -->
+      <proAction npcID="402" id="3" type="0" answer="难道要我们种出什么？" to="a4" colorID="2">
+         <des>
+            <![CDATA[6#这个坑里的是......是种子诶！]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="4" type="0" answer="这种事吉普豆叶和豆花\n应该很擅长吧" to="a5" colorID="2">
+         <des>
+            <![CDATA[6#结合这个地方的到处都是的普豆标志，我们试试种吉普豆吧！]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="5" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[6#（提示：设置跟随精灵为【吉普豆叶】或【吉普豆花】）]]>
+         </des>
+      </proAction>
+      <!-- 再次触碰坑 -->
+      <proAction npcID="402" id="6" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[6#带【吉普豆叶】或【吉普豆花】来试试吧！]]>
+         </des>
+      </proAction>
+      <!-- 触碰成功1 -->
+      <proAction npcID="1043" id="7" type="0" answer="只能迎战了！$对不起我不是故意的\n先溜了！" to="a8$o" colorID="2$2">
+         <des>
+            <![CDATA[1#谁打扰了我们的休息，准备好承受沼泽的愤怒吧！]]>
+         </des>
+      </proAction>
+      <proAction id="8" type="5" fightID="3565" to="" />
+      <!-- 触碰成功2 -->
+      <proAction npcID="1043" id="9" type="0" answer="来战！$好可怕，快逃！" to="a10$o" colorID="2$2">
+         <des>
+            <![CDATA[1#来体验黑暗带来的窒息吧！]]>
+         </des>
+      </proAction>
+      <proAction id="10" type="5" fightID="3566" to="" />
+      <!-- 触碰成功3 -->
+      <proAction npcID="1043" id="11" type="0" answer="万物都有呼吸的自由！$我马上就离开！" to="a12$o" colorID="2$2">
+         <des>
+            <![CDATA[1#啊呜~生命的呼吸不允许在这里存在！]]>
+         </des>
+      </proAction>
+      <proAction id="12" type="5" fightID="3567" to="" />
+      <!-- 触碰成功4 -->
+      <proAction npcID="1043" id="13" type="0" answer="是它们先动手的！$对不起我还有事先走了！" to="a14$o" colorID="2$2">
+         <des>
+            <![CDATA[1#居然伤害我的同伴，迎接吞噬吧！]]>
+         </des>
+      </proAction>
+      <proAction id="14" type="5" fightID="3568" to="" />
+      <!-- 触碰成功5 -->
+      <proAction npcID="402" id="15" type="0" answer="难道这里种出来的\n吉普豆没有生命？" to="scroll_to_1001_4" colorID="2">
+         <des>
+            <![CDATA[6#这颗吉普豆为什么不发光？]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="16" type="0" answer="立刻察看！" to="o" colorID="2">
+         <des>
+            <![CDATA[6#那盏灯在闪诶！过去看看？]]>
+         </des>
+      </proAction>
+      <!-- 普豆之灵 -->
+      <proAction npcID="1044" id="17" type="0" answer="别怕，我有重生药剂！" to="i2_MapItemSubmitModule_210012|1|1|userevive" colorID="2">
+         <des>
+            <![CDATA[1#（虚弱）救救我...生命力要枯竭了...]]>
+         </des>
+      </proAction>
+      <!-- 触碰成功6 -->
+      <proAction npcID="1043" id="18" type="0" answer="放马过来吧！$不同不讲道理的家伙\n一般见识，撤了！" to="a19$o" colorID="2$2">
+         <des>
+            <![CDATA[1#即使你救助了同伴我们也不会欢迎你的！]]>
+         </des>
+      </proAction>
+      <proAction id="19" type="5" fightID="3569" to="" />
+      <!-- 触碰成功7 -->
+      <proAction npcID="1045" id="20" type="0" answer="诶...？" to="a21" colorID="2">
+         <des>
+            <![CDATA[1#呜啊~我和它们不一样，一点也不想伤害你哦~]]>
+         </des>
+      </proAction>
+      <proAction npcID="1045" id="21" type="0" answer="是...是嘛？谢谢？\n（总感觉怪怪的。）" to="a22" colorID="2">
+         <des>
+            <![CDATA[1#好久没见到这么可爱的生命了，我好喜欢你呀~]]>
+         </des>
+      </proAction>
+      <proAction npcID="1045" id="22" type="0" answer="？？？拥抱？！会窒息的吧！" to="a23" colorID="2">
+         <des>
+            <![CDATA[1#嘻嘻~来和我拥抱吧~]]>
+         </des>
+      </proAction>
+      <proAction npcID="1045" id="23" type="0" answer="完全听不进去...\n看来只能战斗了" to="a24" colorID="2">
+         <des>
+            <![CDATA[1#呜啊~我会好好珍藏你的~]]>
+         </des>
+      </proAction>
+      <proAction npcID="1045" id="24" type="0" answer="我来帮你清醒！$好可怕，快离开吧！" to="a25$o" colorID="2$2">
+         <des>
+            <![CDATA[1#来陪我玩吧！~]]>
+         </des>
+      </proAction>
+      <proAction id="25" type="5" fightID="3570" to="" />
+      <!-- 触碰7战斗失败 -->
+      <proAction npcID="1045" id="26" type="0" answer="每个存在都是自由的！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#成为我的所有物吧~]]>
+         </des>
+      </proAction>
+      <!-- 触碰8战斗胜利 -->
+      <proAction npcID="1045" id="27" type="0" answer="你只是被寂寞蒙蔽了，放下偏执，会有人喜欢你的！比如我！" to="a28" colorID="2">
+         <des>
+            <![CDATA[1#呜呜呜~我好孤独啊！为什么没人喜欢我...]]>
+         </des>
+      </proAction>
+      <proAction npcID="1045" id="28" type="0" answer="@blank" to="" colorID="2">
+         <des>
+            <![CDATA[1#真的吗？！谢谢你呜啊~]]>
+         </des>
+      </proAction>
+      <proAction id="30" type="1" level="contentLevel" name="task_11009_11" moviepos="0,0" playBGM="1" to=""/>
+
+      <!-- 点击传送门 -->
+      <proAction npcID="1041" id="29" type="0" answer="我会接着努力，摩尔勇士万岁！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#前方过于危险，现在还不是时候，继续锻炼等待时机吧。]]>
+         </des>
+      </proAction>
+
+   </actions>
+
+
+</map>

@@ -1,0 +1,34 @@
+<!--比目鱼酒馆2F-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="81,281" targetMapId="11607" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<!-- <node id="2" type="AppModule" res="MC_TheSignBook" module="TheSignBookModule"/>
+		<node id="3" type="AppModule" res="MC_TheSecretOfLavaBook" module="TheSecretOfLavaBookModule"/> -->
+	</object>
+	<npc>
+		<node id="110081" type="NPC" res="MC_npc_1016_1" action="0" taskShowSteps="11008_43"/>			
+		<node id="110082" type="NPC" res="MC_npc_1016_2" action="0" taskShowSteps="11008_49|50"/>					
+		<node id="110083" type="NPC" res="MC_npc_1016_3" action="0" taskShowSteps="11008_51|52|53|54|55"/>					
+		<node id="110084" type="NPC" res="MC_npc_998" action="1" taskShowSteps="11008_49|50"/>					
+	</npc>
+	<actions>
+		<proAction npcID="1018" id="0" type="0" answer="祝你好运！" to="o" colorID="0">
+			<des>
+				<![CDATA[2#...]]>				
+			</des>
+		</proAction>		
+		<proAction npcID="998" id="1" type="0" answer="祝你好运！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#...]]>				
+			</des>
+		</proAction>		
+		<proAction npcID="1016" id="2" type="0" answer="祝你好运！" to="o" colorID="0">
+			<des>
+				<![CDATA[2#...]]>				
+			</des>
+		</proAction>		
+	</actions>	
+</map>

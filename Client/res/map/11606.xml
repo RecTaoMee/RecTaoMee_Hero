@@ -1,0 +1,16 @@
+<!--T商会造船厂-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="2159,741" targetMapId="11604" targetTransPortId="1"/> 
+		<node id="2" pos="1837,690" targetMapId="11607" targetTransPortId="1"/> 
+		<node id="3" pos="1513,1076" targetMapId="11603" targetTransPortId="4"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="3" type="TransPort" level="downLevel" res="MC_door_2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="110081" res="MC_fish" type="NPC" taskShowSteps="11008_46"/>	
+		<node id="110082" res="MC_npc_1017" type="NPC" taskShowSteps="11008_47"/>	
+	</object>
+
+</map>

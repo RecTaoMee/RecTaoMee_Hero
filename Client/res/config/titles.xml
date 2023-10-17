@@ -116,14 +116,14 @@
  	<Title ID="2005" Name="PK达人" Desc="佩戴项链【斗士项链】获得"/>
  	<Title ID="2006" Name="摩尔勇士万岁" Desc="佩戴项链【信仰臂章】获得"/>
  	<Title ID="2007" Name="超时空勇士" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/>
- 	<Title ID="2008" Name="复兴版拓荒者" FunType="1" HpMax="500" MpMax="200" Dodge="10" Desc="复兴版高端众筹用户  生命上限+500，魔法上限+200，回避+10" />
+ 	<Title ID="2008" Name="复兴版拓荒者" FunType="1" HpMax="500" MpMax="200" Dodge="10" ResistLithification="10" ResistLethargy="10" Desc="复兴版拓荒时期重要玩家 生命上限+500，魔法上限+200，回避+10 抗石化+10 抗昏睡+10" />
  	<!-- <Title ID="2009" Name="光棍王" FunType="1" HpMax="350" MpMax="150" Dodge="11" Desc="此称号为2019年光棍节活动纪念称号，无敌的我，又要单身了。生命上限+350，魔法上限+150，回避+11"/> -->
  	<!-- <Title ID="2010" Name="我爱PVP" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="生命上限+350，魔法上限+150，回避+10"/> -->
  	<Title ID="2011" Name="劳动最光荣" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLethargy="5" Desc="最好的时光要努力奋斗，做一只勤劳上进的小鼹鼠吧！生命上限+350，魔法上限+150，回避+10 抗昏睡+5"/>
  	<Title ID="2012" Name="从前那个少年" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" Desc="六一国际儿童节纪念称号 生命上限+350，魔法上限+150，回避+10 抗遗忘+5"/>
  	<Title ID="2013" Name="普天同庆中国节" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="10" Desc="中秋国庆双节合一，普天同庆！生命上限+350，魔法上限+150，回避+10 抗遗忘+10"/>
  	<!-- <Title ID="2014" Name="国士无双" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistOblivion="5" ResistCommination="5" Desc="国庆节比赛纪念称号，寄托着摩尔王的厚望 生命上限+350，魔法上限+150，回避+10 抗诅咒+5 抗遗忘+5"/> -->
- 	<Title ID="2015" Name="风雨同舟" FunType="1" HpMax="400" MpMax="200" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="光阴似箭，岁月如梭，敬我们一起走过的时光。生命+400 魔法+200 回避+10 抗石化+5 抗昏睡+5" />
+ 	<Title ID="2015" Name="风雨同舟" FunType="1" HpMax="500" MpMax="200" Dodge="10" ResistLithification="5" ResistLethargy="5" Desc="光阴似箭，岁月如梭，敬我们一起走过的时光。生命+500 魔法+200 回避+10 抗石化+5 抗昏睡+5" />
  	<Title ID="2020" Name="我是NPC" Desc="活动NPC工作称号" />
 	
 	<Title ID="2021" Name="花好月圆" FunType="1" HpMax="350" MpMax="150" Dodge="10" Desc="中秋节活动纪念称号 生命上限+350，魔法上限+150，回避+10"/>
@@ -180,7 +180,12 @@
 	<Title ID="3048" Name="光棍王" FunType="1" HpMax="111" MpMax="111" Dodge="11" Desc="此称号为光棍节活动纪念称号，无敌的我，又要单身了。生命上限+111、魔法上限+111、回避+11"/>
 	<Title ID="3049" Name="大鹅抡铁锤" FunType="1" HpMax="350" MpMax="150" Dodge="10" Crit="1" Desc="2022锤鹅杯比赛纪念称号，来自非洲黑鹅の鹅外暴击祝福。生命上限+350、魔法上限+150，回避+10、必杀+1"/>
 	<Title ID="3050" Name="秋空明月" FunType="1" HpMax="350" MpMax="150" Dodge="10" Hit="1" Desc="2022中秋活动纪念称号。生命上限+350，魔法上限+150，回避+10 命中+1"/>
-	<Title ID="3051" Name="荣耀巅峰之境" FunType="1" HpMax="350" MpMax="150" Dodge="10" Matk="25" Resume="5" Atk="10" Desc="第一届摩勇荣耀联赛限定称号。生命上限+350，魔法上限+150，回避+10、魔攻+25、攻击力+10、恢复力+5"/>
+	<Title ID="3051" Name="荣耀巅峰之境" BlackFilter="1" FunType="1" HpMax="350" MpMax="150" Dodge="10" Matk="25" Resume="5" Atk="10" Desc="第一届摩勇荣耀联赛限定称号。生命上限+350，魔法上限+150，回避+10、魔攻+25、攻击力+10、恢复力+5"/>
+	<Title ID="3052" Name="畜生王" FunType="1" Dodge="10" Resume="40" Desc="劳动节比赛活动称号，回避+10、恢复力+40"/>
+	<Title ID="3053" Name="予夏以梦" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistLethargy="20" Desc="2023夏季纪念称号，愿那盛夏如梦般沉醉，愿那勇士如夏般热忱。生命上限+350，魔法上限+150，回避+10 抗昏睡+20"/>
+	<Title ID="3054" Name="汪汪队立大功" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistPoison="5" ResistCommination="10" Desc="比赛念称号，生命上限+350，魔法上限+150，回避+10 抗毒+5 抗诅咒+10"/>
+	<Title ID="3055" Name="无畏竞巅峰" FunType="1" HpMax="350" MpMax="150" Dodge="10" FightBack="1" Desc="英雄杯念称号，生命上限+350，魔法上限+150，回避+10 反击+1"/>
+	<Title ID="3056" Name="饮鸩止渴" FunType="1" HpMax="350" MpMax="150" Dodge="10" ResistPoison="10" ResistCommination="5" Desc="无银杯念称号，生命上限+350，魔法上限+150，回避+10 抗毒+10 抗诅咒+5"/>
 
 	
 	<!--动态称号//-->

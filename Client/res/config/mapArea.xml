@@ -112,7 +112,7 @@ items : 对应ItemIDs的物品名称
 			<node ID="11405"  MapID="11405" TipsType="1" NearMapList="11401" InitJumpPos="342,376"/>
 			<node ID="11406"  MapID="11406" TipsType="1" NearMapList="11402" InitJumpPos="490,324"/>	
 			<node ID="11407"  MapID="11407" TipsType="1" NearMapList="11402" InitJumpPos="574,283"/>	
-			<!--node ID="21303"  MapID="21303" TipsType="4" NearMapList="21303" InitJumpPos="1522,485" BossLevel="8-11" ItemIDs="150005 170003 170002" BeatsName="2002 8 9"/-->	
+			<node ID="21303"  MapID="21303" TipsType="4" NearMapList="21303" InitJumpPos="1522,485" BossLevel="8-11" ItemIDs="150005 170003 170002" BeatsName="2002 8 9"/>	
 			<node ID="21401"  MapID="21401" TipsType="4" NearMapList="21401|21402" BossLevel="10-50" ItemIDs="170002 170004" BeatsName="21 22" InitJumpPos="175,945"/> 
 		</Area>
 		
@@ -145,11 +145,14 @@ items : 对应ItemIDs的物品名称
 			   transType="1" >
 			 
 			<node ID="21306"  MapID="21306" TipsType="1"  NearMapList="21306" InitJumpPos="414,997" TaskInitJumpPos="414,997" BossLevel="35-40" ItemIDs="150007 170005 170002" BeatsName="10 11"/>
-			<node ID="11603"  MapID="11603" TipsType="1"  Name="弗雷基广场" NearMapList="11602" InitJumpPos="1009,801" TaskInitJumpPos="1348,590" />
+			<node ID="11603"  MapID="11603" TipsType="1"  Name="弗雷基广场" NearMapList="11602|11606" InitJumpPos="1009,801" TaskInitJumpPos="1348,590" />
 			<node ID="1"  	  MapID="11603"	TipsType="1"  Name="安德鲁铁匠铺"  NearMapList="11602|11603"  InitJumpPos="537,804" />
 			<node ID="11602"  MapID="11602" TipsType="1"  NearMapList="11603" InitJumpPos="861,370"/>
-			<node ID="11604"  MapID="11604" TipsType="1"  NearMapList="11603|11605" InitJumpPos="513,376"/>
+			<node ID="11604"  MapID="11604" TipsType="1"  NearMapList="11603|11605|11606" InitJumpPos="513,376"/>
 			<node ID="11605"  MapID="11605" TipsType="1"  NearMapList="11604" InitJumpPos="198,257"/>			 
+			<node ID="11606"  MapID="11606" TipsType="2"  NearMapList="11607|11608|11603|11604" InitJumpPos="2159,741" Desc="弗雷基港负责调控大陆间航行的最大码头曾建于此，大陆间航道封锁后逐渐被小而灵活的新码头取代。"/>			 
+			<node ID="11609"  MapID="11609" TipsType="1"  NearMapList="11610" InitJumpPos="623,629" Desc="古时指引行船方向的重地，亦是占卜师为航行占卜之地，自大陆封锁后人影渐稀。"/>			 
+			<node ID="11611"  MapID="31611" TipsType="1"  InitJumpPos="937,2167" />			 
 		</Area>
 	
 		<Area  ID="7" IDS="7"  Name="修隐岛"  Desc="幽静的神秘海岛，由勇士协会的银牌导师们共同守护。" 
@@ -177,8 +180,20 @@ items : 对应ItemIDs的物品名称
 			 <node ID="11804" MapID="11804" TipsType="1"  NearMapList="11801|11805" />
 			 <node ID="11805" MapID="11805" TipsType="1"  NearMapList="11804" />
 		</Area>
+
+		<Area  ID="9" IDS=""  Name="时间断层"  Desc="" 
+			 defalutFlyBirdPos="937,2167" 
+			 defalutFlyBirdMap="31611">
+			 <node ID="31611" MapID="31611" TipsType="2" InitJumpPos="1960,952"  Desc="蜿蜒盘绕的长廊如同蛇一般，守护着断层深处被尘封的秘密，吞噬着妄图窥探答案的一切生灵。" />
+			 <node ID="31612" MapID="31612" TipsType="2" InitJumpPos="1410,28"  Desc="弥漫着紫色雾气的黑暗峡谷，深不可测的狭间传出逝者的哭嚎，若是失足于此，灵魂将被永久的禁锢。" />
+			 <node ID="31613" MapID="31613" TipsType="2" InitJumpPos="124,442"  Desc="受魔法浸润而形成的沼泽群，泥泞的沼泽令踏足者寸步难行，粘稠的泥浆内充斥着未知的魔法力量......" />
+			 <node ID="31614" MapID="31614" TipsType="2" InitJumpPos="100,100"  Desc="投映着现世百态的山丘镜阵，时间的幽灵被束缚于此，在镜中观察着现世的一切。" />
+			 <node ID="31615" MapID="31615" TipsType="2" InitJumpPos="100,100"  Desc="经年流淌着黑色泉水的山涧，沾染泉水的生灵将陷入永世轮回的幻梦中，据说能让摩尔拥有通灵的能力。" />
+			 <node ID="31616" MapID="31616" TipsType="2" InitJumpPos="100,100"  Desc="沐浴于星光之下的时间之海，时间之力在此凝聚成沙，奔涌翻腾，永无止境，倘若迷失其中，或将被世界抹除。" />
+			 <node ID="31617" MapID="31617" TipsType="2" InitJumpPos="100,100"  Desc="魔王力量的核心被封印于此，黑暗之力不断地冲击着封印的边缘，使其如心脏般跳动，不断逸出的黑暗勾勒着内心深处的恐惧。" />
+		</Area>
 		
-		<Area ID="10" IDS="10"  Name="月光湖" Desc="位于格历尔大陆东南边，因为形状像月亮而得名。相传是少女女神的眼泪流成的，那情感丰富的湖水甚至让鱼儿变成了半鱼人。"
+		<Area ID="10" IDS="0"  Name="月光湖" Desc="位于格历尔大陆东南边，因为形状像月亮而得名。相传是少女女神的眼泪流成的，那情感丰富的湖水甚至让鱼儿变成了半鱼人。"
 			  defalutFlyBirdMap="11502" 
 			  haveMap="0"
 			  TipsType="0"  

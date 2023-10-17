@@ -1,0 +1,210 @@
+<Task ID="11014" Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21306">
+   <Procedure>
+      <Step ID="1" ParentList="0" ParentCost="0">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21306" TargetObj="314" TargetName="与t怪盗戈戈拉t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="哼，你终于来了，如果不是被折磨地忍无可忍，本最强怪盗才不会找你呢!" />
+               <Option Info="...到底怎么回事？" SkipTrigger="Y" />
+            </Action>
+         </Event>
+      </Step>
+      <Step ID="2" ParentList="1" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21306" TargetObj="314" TargetName="与t怪盗戈戈拉t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21306" ObjID="314" TaskOption="...到底怎么回事？" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="这要从上次的风暴说起，百里狂风结束后的某个晚上，我们忙着重建基地，一切都有条不絮，正当我例行教训笨手笨脚的小弟时，怪事出现了！" />
+               <Option Info="(ﾟOﾟ)什么？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="突然有小弟惊恐地大叫起火了，可我们根本没有生过火。" />
+               <Msg NpcID="314" ImageID="1" Info="我本想看看是哪个笨蛋恶作剧，却听到了诡异的笑声，然后，我们所有人的棒子都烧起来了！" />
+               <Option Info="鬼...鬼火？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="没错！是鬼火!我立刻让所有人将火把丢进河里，可那火居然不会熄灭，还随着木棒浮在水上！" />
+               <Option Info="什么？！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="不止如此，接下来的一幕更诡异......火焰上方浮现出一个晃动的红衣身影，仔细一看，它居然在舞蹈！" />
+               <Option Info="天哪！那接下来呢？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="咳咳，总之经过大致如此，我才不会告诉你我们马上战术撤退了呢。" />
+               <Option Info="...(逃跑？)需要我做什么？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="314" ImageID="1" Info="接下来的日子里怪事频发，听说其他精灵也为此困扰，真是太折磨人了！你能帮我们抓它吗？奖励绝对丰厚！" />
+               <Option Info="没问题，抓怪（鬼）我最擅长了！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="402" ImageID="9" Info="【格历尔平原3区】的拉拉美王似乎知道些什么，去问问吧。" />
+               <Option Info="@blank" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="3" ParentList="2" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21303" TargetObj="4" TargetName="与t拉拉美王t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21303" ObjID="4" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1048" ImageID="1" Info="哼~哼~你...你要干什么？不会又想烤我吧！" />
+               <Option Info="不不这次不烤\n我来打听红衣鬼的消息" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1048" ImageID="1" Info="提起这个我就来气！前几天晚上我在睡觉，突然被笑声吵醒，起来见到满河水火光，还以为又有勇士要来烤我！吓得我直接晕过去了。" />
+               <Msg NpcID="1048" ImageID="1" Info="醒来后才发现我最宝贝的王冠不见了，现在我真成大号拉拉美了！！！" />
+               <Option Info="红衣鬼太过分了，你有线索吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1048" ImageID="1" Info="我在晕倒前感受到了风元素的气息，和风之洞穴的很像，去那里也许会有收获。" />
+               <Option Info="帮大忙了！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1048" ImageID="1" Info="如果你帮我找回王冠，之前拿我们训练的恩怨就一笔勾销。" />
+               <Option Info="好！" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="4" ParentList="3" ParentCost="1">
+         <Condition>
+            <Battle ID="23" Count="10"/>
+         </Condition>
+         <Event ConditionType="IN" Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21312" TargetObj="222" TargetName="与t守卫士兵·Wt对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="222" ImageID="1" Info="真厉害，不愧是未来勇士，尽管问吧。" />
+               <Option Info="最近风洞有什么变动吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="222" ImageID="1" Info="（仔细回忆）大变动倒是没有，但上次鼬西制造狂风的力量残留，形成了通天传送阵，很多人进去探索后并无遇险，我便也没再留意。" />
+               <Msg NpcID="222" ImageID="1" Info="不过前段日子好像有个红色影子从里面溜出去了，也许是你要找的那个。" />
+               <Option Info="明白了！我这就去传送阵看看！" />
+            </Action>
+         </Event>
+         <Event ConditionType="OUT" Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21312" TargetObj="222" TargetName="与t守卫士兵·Wt对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21312" ObjID="222" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="222" ImageID="1" Info="百里狂风给了我们一个教训，接下来的战斗会更加艰难，先去打败10个小宅箱向我证明实力吧。" />
+               <Option Info="一起努力修习！" />
+            </Action>
+         </Event>
+      </Step>
+
+
+      <Step ID="5" ParentList="4" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="21313" TargetObj="2" TargetName="与t霞光水母t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="21313" ObjID="2" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="今天的阳光也很明媚呢~" />
+               <Option Info="你好，请问你见过\n一个红衣身影吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="你是指我的邻居吗？" />
+               <Option Info="你认识它？！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="她叫赤舞精灵，天生美丽擅舞，精于控火，但总是捉弄我！" />
+               <Msg NpcID="1049" ImageID="1" Info="我们自诞生起就生活于这片云海，却也永生受困于此，我感觉到她总是不开心，好像想要出去。" />
+               <Option Info="所以传送阵开启后她跑出去了？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="是啊，可我不想出去，外面有什么好的呢？真是想不明白，在云中晒晒太阳和她聊聊天难道不是世界上最幸福的事情了吗！" />
+               <Option Info="她在外面扮鬼恶作剧" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="恶作剧？不能让她乱来，我和你一起找。" />
+               <Msg NpcID="1049" ImageID="1" Info="她说过想见见真正的海之水母，去海边找找吧。" />
+               <Option Info="出发！" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="6" ParentList="5" ParentCost="1">
+         <Condition>
+            <Battle ID="3575" Count="1"/>
+         </Condition>
+         <Event ConditionType="IN" Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="22101" TargetObj="2" TargetName="与t赤舞精灵t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="22101" ObjID="2" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+         </Event>
+         <Event ConditionType="OUT" Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="22101" TargetObj="2" TargetName="与t赤舞精灵t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="22101" ObjID="2" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1047" ImageID="1" Info="新品种？我们把她带回去给给鼬西老大黑化然后领赏吧！" />
+               <Msg NpcID="1050" ImageID="1" Info="休想抓到我！我才刚获得自由！" />
+               <Msg NpcID="402" ImageID="9" Info="（霞光水母突然冲过去为赤舞精灵挨下一击。）" />
+               <Msg NpcID="1049" ImageID="1" Info="别想伤害她！" />
+               <Msg NpcID="1050" ImageID="1" Info="是你？！你终于来找我了！" />
+               <Msg NpcID="1047" ImageID="1" Info="又有新品种？一起抓回去！" />
+               <Option Info="休想！来战！" />
+            </Action>
+            <Action Type="COMMAND" Command="BATTLE" Params="3575" />
+         </Event>
+      </Step>
+
+      <Step ID="7" ParentList="6" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="22101" TargetObj="2" TargetName="与t霞光水母t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="22101" ObjID="2" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1050" ImageID="1" Info="呜呜你不要死啊！" />
+               <Msg NpcID="1049" ImageID="1" Info="（虚弱）虽然不理解，但如果你找到快乐了，看到朋友幸福我也满足了，不过你以后别再恶作剧欺负别人了......" />
+               <Msg NpcID="1050" ImageID="1" Info="呜呜~别留下我啊...捉弄人根本没我想的那么开心！没有重要之人，再自由也根本不快乐啊！" />
+               <Option Info="咳咳，他还不会死。" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1050" ImageID="1" Info="拜托你了一定要救他！我再也不恶作剧了呜呜！" />
+               <Msg NpcID="402" ImageID="9" Info="使用【生命之息】拯救霞光水母吧。" />
+               <Option Info="@blank" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="8" ParentList="7" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="22101" TargetObj="2" TargetName="与t霞光水母t对话">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="submitedMedicineAready" />
+            </Trigger>
+            <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22101,6,2"/>
+            <Action Type="COMMAND" Command="DELAY" Params="3000"/>
+         </Event>
+      </Step>
+
+      <Step ID="9" ParentList="8" ParentCost="1">
+         <Event Memo="近日c格历尔平原c上闹出了c红衣鬼c的传闻，精灵们整日惶惶不安，连平日横行霸道的c怪盗集团c都来找你帮忙了，小勇士，快去一探究竟吧。" TargetMap="22101" TargetObj="2" TargetName="与t霞光水母t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="22101" ObjID="2" TaskOption="【恶作剧之舞】" />
+               <Item Type="NPC_OPTION" MapID="22101" ObjID="7" TaskOption="【恶作剧之舞】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1049" ImageID="1" Info="谢谢你，我会和赤舞精灵一起向受害者们道歉的。" />
+               <Msg NpcID="1050" ImageID="1" Info="谢谢你，原来最重要的不是多么精彩纷呈的世界，而是世界上始终陪着你的人啊。" />
+               <Msg NpcID="1050" ImageID="1" Info="从今以后，我要为自己的生命、友人以及这片崇天高云而舞！" />
+               <Option Info="再会！" />
+            </Action>
+         </Event>
+      </Step>
+
+
+
+   </Procedure>
+</Task>

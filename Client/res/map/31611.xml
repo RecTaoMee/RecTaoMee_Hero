@@ -1,0 +1,140 @@
+<!--蛇行回廊 -->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+   <transport intPos="937,2167">
+      <node id="1" pos="937,2167" targetMapId="11610" targetTransPortId="1"/>
+      <node id="2" pos="1175,310" targetMapId="31612" targetTransPortId="1"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+      <node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+      <node id="3" type="" res="MC_clockHit1">
+         <event type="unlocked" hit="SpeakHit" endEvent="swap">
+            <![CDATA[前路艰险，无时空之力不得入内。$$]]>
+            <![CDATA[请出示汝之天命凭证——【命运之轮】$$]]>
+            <![CDATA[切勿违其教诲。]]>
+         </event>
+         <event type="equipped1" hit="SpeakHit">
+            <![CDATA[慈悲之心固雅，且迎严酷之境。]]>
+         </event>
+         <event type="equipped2" hit="SpeakHit">
+            <![CDATA[坚定之志但韧，需循发聩之声。]]>
+         </event>
+         <event type="equipped3" hit="SpeakHit">
+            <![CDATA[忠诚之念虽贵，愿予所效之人。]]>
+         </event>
+         <event type="unequipped" hit="SpeakHit">
+            <![CDATA[吾没有感受到时空的力量。$$]]>
+            <![CDATA[（请佩戴【命运轮盘】）]]>
+         </event>
+      </node>
+      <node id="4" type="" res="MC_clockHit2">
+         <event type="unlocked" hit="SpeakHit" endEvent="swap">
+            <![CDATA[隐藏在这个时空的黑暗实在太多，前路还请小心。]]>
+         </event>
+         <event type="unequipped" hit="SpeakHit">
+            <![CDATA[吾没有感受到时空的力量。$$]]>
+            <![CDATA[（请佩戴【命运轮盘】）]]>
+         </event>
+      </node>
+      <node id="5" type="" res="MC_clockHit3">
+         <event type="unlocked" hit="SpeakHit" endEvent="swap">
+            <![CDATA[吾感受到封印于此的魔王之力越来越狂躁了......]]>
+         </event>
+         <event type="unequipped" hit="SpeakHit">
+            <![CDATA[吾没有感受到时空的力量。$$]]>
+            <![CDATA[（请佩戴【命运轮盘】）]]>
+         </event>
+      </node>
+      <node id="6" type="" res="MC_clockHit4">
+         <event type="unlocked" hit="SpeakHit" endEvent="swap">
+            <![CDATA[汝已到达本层终点，愿前路一切顺利！]]>
+         </event>
+         <event type="unequipped" hit="SpeakHit">
+            <![CDATA[吾没有感受到时空的力量。$$]]>
+            <![CDATA[（请佩戴【命运轮盘】）]]>
+         </event>
+      </node>
+      <node id="7" type="" res="MC_trans_1">
+         <event type="enough" hit="SpeakHit" endEvent="swap">
+            <![CDATA[记录成功！以后可以通过地图传送过来了。]]>
+         </event>
+         <event type="done" hit="SpeakHit" >
+            <![CDATA[您已经记录过了，请去下一层吧。]]>
+         </event>
+         <event type="notEnough" hit="SpeakHit">
+            <![CDATA[向吾提供【羽鳞】×10，吾将化为汝航行时空之海的船。$$]]>
+            <![CDATA[（击败【噗噜蟒】掉落【羽鳞】）]]>
+         </event>
+      </node>
+   </object>
+
+
+
+   <actions>
+      <!-- 初次进入场景 -->
+      <proAction npcID="402" id="0" type="0" event="mushroomTip1" answer="有我在，不会让你有事的！" to="a1" colorID="2">
+         <des>
+            <![CDATA[6#哇啊啊！这里好阴森的样子，不会有魔王来抓我们吧？]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="1" type="0" answer="没问题，出发！" to="o" colorID="2">
+         <des>
+            <![CDATA[6#有小勇士在身边瞬间安全感满满呢~魔王封印在哪里？我们先四处看看吧，记得注意安全哦！]]>
+         </des>
+      </proAction>
+      <!-- 时钟1对话 -->
+      <proAction npcID="402" id="2" type="0" answer="我知道了" to="o" colorID="2">
+         <des>
+            <![CDATA[1#未来勇士啊，吾在此恭候多时了，将时空之力交予吾，让吾为汝开启时空之路吧。]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="3" type="0" answer="这就佩戴【命运轮盘】" to="o" colorID="2">
+         <des>
+            <![CDATA[1#吾没有感受到时空的力量。]]>
+         </des>
+      </proAction>
+      <proAction id="4" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <proAction id="5" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <!-- 时钟2对话 -->
+      <proAction npcID="402" id="6" type="0" answer="我会的" to="o" colorID="2">
+         <des>
+            <![CDATA[1#隐藏在这个时空的黑暗实在太多，前路还请小心。]]>
+         </des>
+      </proAction>
+      <proAction id="7" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <proAction id="8" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <!-- 时钟3对话 -->
+      <proAction npcID="402" id="9" type="0" answer="不会让他们得逞的！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#吾感受到封印于此的魔王之力越来越狂躁了......]]>
+         </des>
+      </proAction>
+      <proAction id="10" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <proAction id="11" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <!-- 时钟4对话 -->
+      <proAction npcID="402" id="12" type="0" answer="谢谢！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#汝已到达本层终点，愿前路一切顺利！]]>
+         </des>
+      </proAction>
+      <proAction id="13" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <proAction id="14" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <!-- 魔法传送石————对话 -->
+      <proAction npcID="402" id="15" type="0" answer="谢谢！" to="o" colorID="2">
+         <des>
+            <![CDATA[1#汝已到达本层终点，愿前路一切顺利！]]>
+         </des>
+      </proAction>
+      <proAction id="16" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+      <proAction id="17" type="1" level="upLevel" name="task_11012_2" moviepos="0,0" playBGM="1" to="o"/>
+
+
+
+
+
+   </actions>
+
+
+
+
+</map>

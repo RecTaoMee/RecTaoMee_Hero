@@ -1,8 +1,8 @@
 <!--月宫正殿-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
 	<transport intPos="400,400">
-		<node id="1" pos="98,475" targetMapId="41211" targetTransPortId="2" name="月宫前殿"/>
-		<node id="2" pos="1415,153" targetMapId="41213" targetTransPortId="1" name="月宫后殿"/>
+		<node id="1" pos="98,475" targetMapId="11202" targetTransPortId="10" name="月宫前殿"/>
+		<node id="2" pos="1415,153" targetMapId="11202" targetTransPortId="10" name="勇士广场"/>
 	</transport>
 	<object>
 		<node id="1" type="TransPort" res="MC_door_1" transPortId="1"/>
@@ -20,7 +20,7 @@
 				<![CDATA[1#哪来的小毛孩竟敢擅闯月之宫殿，看我不收拾了你！]]>
 			</des>
 		</proAction>
-		<proAction id="2" type="5" fightID="2603" />
+		<proAction id="2" type="5" fightID="2604" />
 		
 		<proAction npcID="102" id="3" type="0" answer="我这就去！" to="o" colorID="0">
 			<des>

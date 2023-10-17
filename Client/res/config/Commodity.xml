@@ -1,0 +1,216 @@
+<!--
+	ItemID:对应的游戏中道具ID
+	MerchandiseID：商品对应的ID
+
+	<Mall ItemID="147048 147049 147050 147051 147052" MerchandiseID="410147" ResourceId="360039" Name="金牛座套装"/>
+
+-->
+<Malls>
+
+  <Mall ItemID="360007" MerchandiseID="400006" Name="摩尔加点重置丸" Price="500" />
+  <Mall ItemID="360009" MerchandiseID="400008" Name="精灵五项重置丸" Price="500" />
+  <Mall ItemID="360010" MerchandiseID="400009" Name="精灵加点重置丸" Price="500" />
+  <Mall ItemID="360012" MerchandiseID="400011" Name="中级种族技能炼化丸" Price="500" />
+  <Mall ItemID="360014" MerchandiseID="400013" Name="种族技能幸运石" Price="20" />
+  
+  <Mall ItemID="360023" MerchandiseID="400020" Name="迷之钥匙" Price="100" />
+  
+  <Mall ItemID="80022" MerchandiseID="430001" Name="水之队队服" Price="500" />
+  <Mall ItemID="80024" MerchandiseID="430002" Name="火之队队服" Price="500" />
+  <Mall ItemID="80026" MerchandiseID="430003" Name="风之队队服" Price="500" />
+  <Mall ItemID="80028" MerchandiseID="430004" Name="地之队队服" Price="500" />
+  <Mall ItemID="80061" MerchandiseID="430005" Name="万圣南瓜帽" Price="3000" />
+  <Mall ItemID="80062" MerchandiseID="430006" Name="万圣女巫毡帽" Price="3000" />
+  <Mall ItemID="80063" MerchandiseID="430007" Name="万圣女巫服饰" Price="3000" />
+  <Mall ItemID="80064" MerchandiseID="430008" Name="万圣女巫手套" Price="3000" />
+  <Mall ItemID="80065" MerchandiseID="430009" Name="万圣女巫鞋子" Price="3000" />
+  <Mall ItemID="80070" MerchandiseID="430010" Name="粉色淑女毡帽" Price="1000" />
+  <Mall ItemID="80071" MerchandiseID="430011" Name="粉色淑女皮衣" Price="1000" />
+  <Mall ItemID="80072" MerchandiseID="430012" Name="粉色淑女手套" Price="1000" />
+  <Mall ItemID="80073" MerchandiseID="430013" Name="粉色淑女短靴" Price="1000" />
+  <Mall ItemID="80074" MerchandiseID="430014" Name="黑色绅士毡帽" Price="1000" />
+  <Mall ItemID="80075" MerchandiseID="430015" Name="黑色绅士皮衣" Price="1000" />
+  <Mall ItemID="80076" MerchandiseID="430016" Name="黑色绅士手套" Price="1000" />
+  <Mall ItemID="80077" MerchandiseID="430017" Name="黑色绅士短靴" Price="1000" />
+  <Mall ItemID="80078" MerchandiseID="430018" Name="炼金师面具" Price="5000" />
+  <Mall ItemID="80079" MerchandiseID="430019" Name="炼金师斗篷" Price="5000" />
+  <Mall ItemID="80080" MerchandiseID="430020" Name="炼金师手套" Price="5000" />
+  <Mall ItemID="80081" MerchandiseID="430021" Name="炼金师短靴" Price="5000" />
+  <Mall ItemID="88004" MerchandiseID="430022" Name="海军帽" Price="10000" />
+  <Mall ItemID="88005" MerchandiseID="430023" Name="波波尔帽" Price="10000" />
+  
+  <Mall ItemID="80001" MerchandiseID="410001" Name="爱丽丝发型" Price="500" />
+  <Mall ItemID="80002" MerchandiseID="410002" Name="爱丽丝服饰" Price="500" />
+  <Mall ItemID="80003" MerchandiseID="410003" Name="爱丽丝手套" Price="500" />
+  <Mall ItemID="80004" MerchandiseID="410004" Name="爱丽丝鞋" Price="500" />
+  <Mall ItemID="80005" MerchandiseID="410005" Name="爵士兔帽" Price="500" />
+  <Mall ItemID="80006" MerchandiseID="410006" Name="爵士兔服饰" Price="500" />
+  <Mall ItemID="80007" MerchandiseID="410007" Name="爵士兔手套" Price="500" />
+  <Mall ItemID="80008" MerchandiseID="410008" Name="爵士兔鞋" Price="500" />
+  <Mall ItemID="80009" MerchandiseID="410009" Name="水手帽" Price="500" />
+  <Mall ItemID="80010" MerchandiseID="410010" Name="水手服饰" Price="500" />
+  <Mall ItemID="80011" MerchandiseID="410011" Name="水手手套" Price="500" />
+  <Mall ItemID="80012" MerchandiseID="410012" Name="水手鞋" Price="500" />
+  <Mall ItemID="80013" MerchandiseID="410013" Name="白色王子帽" Price="500" />
+  <Mall ItemID="80014" MerchandiseID="410014" Name="白色王子服饰" Price="500" />
+  <Mall ItemID="80015" MerchandiseID="410015" Name="白色王子手套" Price="500" />
+  <Mall ItemID="80016" MerchandiseID="410016" Name="白色王子鞋" Price="500" />
+  <Mall ItemID="80017" MerchandiseID="410017" Name="黑色公主帽" Price="500" />
+  <Mall ItemID="80018" MerchandiseID="410018" Name="黑色公主礼服" Price="500" />
+  <Mall ItemID="80019" MerchandiseID="410019" Name="黑色公主手套" Price="500" />
+  <Mall ItemID="80020" MerchandiseID="410020" Name="黑色公主鞋" Price="500" />
+  <Mall ItemID="80029" MerchandiseID="410021" Name="吉吉帕帽" Price="500" />
+  <Mall ItemID="80030" MerchandiseID="410022" Name="吉吉帕服饰" Price="500" />
+  <Mall ItemID="80031" MerchandiseID="410023" Name="吉吉帕手套" Price="500" />
+  <Mall ItemID="80032" MerchandiseID="410024" Name="吉吉帕靴" Price="500" />
+  <Mall ItemID="80033" MerchandiseID="410025" Name="王冠卡西卡帽" Price="500" />
+  <Mall ItemID="80034" MerchandiseID="410026" Name="王冠卡西卡服饰" Price="500" />
+  <Mall ItemID="80035" MerchandiseID="410027" Name="王冠卡西卡手套" Price="500" />
+  <Mall ItemID="80036" MerchandiseID="410028" Name="王冠卡西卡皮靴" Price="500" />
+  <Mall ItemID="80037" MerchandiseID="410029" Name="拉拉美帽" Price="500" />
+  <Mall ItemID="80038" MerchandiseID="410030" Name="拉拉美皮外套" Price="500" />
+  <Mall ItemID="80039" MerchandiseID="410031" Name="拉拉美皮手套" Price="500" />
+  <Mall ItemID="80040" MerchandiseID="410032" Name="拉拉美皮靴" Price="500" />
+  <Mall ItemID="80041" MerchandiseID="410033" Name="紫恋羽帽" Price="500" />
+  <Mall ItemID="80042" MerchandiseID="410034" Name="紫恋服饰" Price="500" />
+  <Mall ItemID="80043" MerchandiseID="410035" Name="紫恋手套" Price="500" />
+  <Mall ItemID="80044" MerchandiseID="410036" Name="紫恋鞋" Price="500" />
+  <Mall ItemID="84001" MerchandiseID="410037" Name="红心之剑" Price="500" />
+  <Mall ItemID="84002" MerchandiseID="410038" Name="红心之弓" Price="500" />
+  <Mall ItemID="84003" MerchandiseID="410039" Name="红心棒棒杖" Price="500" />
+  <Mall ItemID="84004" MerchandiseID="410040" Name="红心十字刃" Price="500" />
+  <Mall ItemID="84005" MerchandiseID="410041" Name="红心护盾" Price="500" />
+  <Mall ItemID="84008" MerchandiseID="410042" Name="蓝宝石之剑" Price="500" />
+  <Mall ItemID="84009" MerchandiseID="410043" Name="粉莲弓" Price="500" />
+  <Mall ItemID="84010" MerchandiseID="410044" Name="蓝宝石星杖" Price="500" />
+  <Mall ItemID="84011" MerchandiseID="410045" Name="粉星刃" Price="500" />
+  <Mall ItemID="84012" MerchandiseID="410046" Name="白骑士盾" Price="500" />
+  <Mall ItemID="84015" MerchandiseID="410047" Name="狩猎巨剑" Price="500" />
+  <Mall ItemID="84016" MerchandiseID="410048" Name="爆刺狩猎弓" Price="500" />
+  <Mall ItemID="84017" MerchandiseID="410049" Name="粉菇杖" Price="500" />
+  <Mall ItemID="84018" MerchandiseID="410050" Name="狩猎之刃" Price="500" />
+  <Mall ItemID="84019" MerchandiseID="410051" Name="爆刺盾" Price="500" />
+  <Mall ItemID="80045" MerchandiseID="410052" Name="摇滚乐师发饰" Price="500" />
+  <Mall ItemID="80046" MerchandiseID="410053" Name="摇滚乐师服饰" Price="500" />
+  <Mall ItemID="80047" MerchandiseID="410054" Name="摇滚乐师手套" Price="500" />
+  <Mall ItemID="80048" MerchandiseID="410055" Name="摇滚乐师板鞋" Price="500" />
+  <Mall ItemID="80049" MerchandiseID="410056" Name="摇滚歌姬发饰" Price="500" />
+  <Mall ItemID="80050" MerchandiseID="410057" Name="摇滚歌姬服饰" Price="500" />
+  <Mall ItemID="80051" MerchandiseID="410058" Name="摇滚歌姬手套" Price="500" />
+  <Mall ItemID="80052" MerchandiseID="410059" Name="摇滚歌姬短靴" Price="500" />
+  <Mall ItemID="84029" MerchandiseID="410060" Name="电吉他剑" Price="500" />
+  <Mall ItemID="84030" MerchandiseID="410061" Name="电子琴弓" Price="500" />
+  <Mall ItemID="84031" MerchandiseID="410062" Name="麦克风杖" Price="500" />
+  <Mall ItemID="84032" MerchandiseID="410063" Name="摇铃忍具" Price="500" />
+  <Mall ItemID="84033" MerchandiseID="410064" Name="声乐镜盾" Price="500" />
+  <Mall ItemID="80053" MerchandiseID="410065" Name="魔术怪盗发型" Price="500" />
+  <Mall ItemID="80054" MerchandiseID="410066" Name="魔术怪盗服饰" Price="500" />
+  <Mall ItemID="80055" MerchandiseID="410067" Name="魔术怪盗护手" Price="500" />
+  <Mall ItemID="80056" MerchandiseID="410068" Name="魔术怪盗板靴" Price="500" />
+  <Mall ItemID="84036" MerchandiseID="410069" Name="摩裂大旗" Price="500" />
+  <Mall ItemID="84037" MerchandiseID="410070" Name="白麒麟弓" Price="500" />
+  <Mall ItemID="84038" MerchandiseID="410071" Name="红玫瑰杖" Price="500" />
+  <Mall ItemID="84039" MerchandiseID="410072" Name="日月回旋镖" Price="500" />
+  <Mall ItemID="84040" MerchandiseID="410073" Name="小丑盾" Price="500" />
+  <Mall ItemID="360024" MerchandiseID="410074" Name="吆喝喇叭" Price="25" />
+  <Mall ItemID="360025" MerchandiseID="410075" Name="三倍稳定剂" Price="100" NoSale="1"/>
+  <Mall ItemID="360026" MerchandiseID="410076" Name="六倍稳定剂" Price="300" NoSale="1"/>
+  <Mall ItemID="360027" MerchandiseID="410077" Name="九倍稳定剂" Price="500" NoSale="1"/>
+
+  <Mall ItemID="360032" MerchandiseID="410081" Name="摩尔3倍经验护符" Price="200" />
+  <Mall ItemID="360033" MerchandiseID="410082" Name="精灵3倍经验护符" Price="200" />
+  <Mall ItemID="360034" MerchandiseID="410083" Name="技能3倍经验护符" Price="200" />
+  <Mall ItemID="89005" MerchandiseID="410087" Name="狮面幻兽" Price="2000" />
+  <Mall ItemID="147001" MerchandiseID="410088" Name="兔茸棉帽" Price="500" />
+  <Mall ItemID="147002" MerchandiseID="410089" Name="兔茸棉衣" Price="500" />
+  <Mall ItemID="147003" MerchandiseID="410090" Name="兔茸手套" Price="500" />
+  <Mall ItemID="147004" MerchandiseID="410091" Name="兔茸棉鞋" Price="500" />
+  <Mall ItemID="147005" MerchandiseID="410092" Name="管家礼帽" Price="500" />
+  <Mall ItemID="147006" MerchandiseID="410093" Name="管家制服" Price="500" />
+  <Mall ItemID="147007" MerchandiseID="410094" Name="管家手套" Price="500" />
+  <Mall ItemID="147008" MerchandiseID="410095" Name="管家短靴" Price="500" />
+  <Mall ItemID="147009" MerchandiseID="410096" Name="女仆花帽" Price="500" />
+  <Mall ItemID="147010" MerchandiseID="410097" Name="女仆制服" Price="500" />
+  <Mall ItemID="147011" MerchandiseID="410098" Name="女仆手套" Price="500" />
+  <Mall ItemID="147012" MerchandiseID="410099" Name="女仆短靴" Price="500" />
+  <Mall ItemID="360038" MerchandiseID="410100" Name="高级精灵成长重置丸" Price="300" />
+  
+  <Mall ItemID="147017" MerchandiseID="410101" Name="黑银星帽" Price="700" />
+  <Mall ItemID="147018" MerchandiseID="410102" Name="黑银链衣" Price="700" />
+  <Mall ItemID="147019" MerchandiseID="410103" Name="黑银护手" Price="700" />
+  <Mall ItemID="147020" MerchandiseID="410104" Name="黑银刺靴" Price="700" />
+  <Mall ItemID="147021" MerchandiseID="410105" Name="黑银之盾" Price="700" />
+  <Mall ItemID="89002" MerchandiseID="410106" Name="乐比熊" Price="1000" />
+  <Mall ItemID="89003" MerchandiseID="410107" Name="摩奇" Price="1000" />
+  <Mall ItemID="89004" MerchandiseID="410108" Name="飞行扫帚" Price="1000" />
+  <Mall ItemID="147029" MerchandiseID="410110" Name="狮子座头盔" Price="700" />
+  <Mall ItemID="147030" MerchandiseID="410111" Name="狮子座甲胄" Price="700" />
+  <Mall ItemID="147031" MerchandiseID="410112" Name="狮子座护腕" Price="700" />
+  <Mall ItemID="147032" MerchandiseID="410113" Name="狮子座战靴" Price="700" />
+  <Mall ItemID="147033" MerchandiseID="410114" Name="狮子座护盾" Price="1000" />
+  <Mall ItemID="147034" MerchandiseID="410115" Name="处女座长剑" Price="500" />
+  <Mall ItemID="147035" MerchandiseID="410116" Name="处女座魔杖" Price="500" />
+  <Mall ItemID="147036" MerchandiseID="410117" Name="处女座手里剑" Price="500" />
+  <Mall ItemID="147037" MerchandiseID="410118" Name="处女座弓弩" Price="500" />
+  <Mall ItemID="147038" MerchandiseID="410119" Name="处女座头盔" Price="700" />
+  <Mall ItemID="147039" MerchandiseID="410120" Name="处女座甲胄" Price="700" />
+  <Mall ItemID="147040" MerchandiseID="410121" Name="处女座护腕" Price="700" />
+  <Mall ItemID="147041" MerchandiseID="410122" Name="处女座战靴" Price="700" />
+  <Mall ItemID="147042" MerchandiseID="410123" Name="处女座护盾" Price="1000" />
+  <Mall ItemID="147043" MerchandiseID="410127" Name="白羊座头盔" Price="700" />
+  <Mall ItemID="147044" MerchandiseID="410128" Name="白羊座甲胄" Price="700" />
+  <Mall ItemID="147045" MerchandiseID="410129" Name="白羊座护腕" Price="700" />
+  <Mall ItemID="147046" MerchandiseID="410130" Name="白羊座战靴" Price="700" />
+  <Mall ItemID="147047" MerchandiseID="410131" Name="白羊座护盾" Price="700" />
+  <Mall ItemID="360040" MerchandiseID="410134" Name="装备鉴定券" Price="200" />
+  <!--<Mall ItemID="360042" MerchandiseID="410135" Name="探险船修复券" Price="100" />-->
+  <Mall ItemID="89006" MerchandiseID="410136" Name="灵狐" Price="2000" />
+  <!--2013.05.08 组合商品调整-->
+  <Mall ItemID="360025 360026 360027" count="3 3 3" MerchandiseID="410137" ResourceId="360035" Name="稳定剂超值礼包" Des="特卖礼包装，低至5折，使用后大概率提高获得稀有精灵蛋的获得概率（原价45米币，特惠5.5折）" Price="1500"  NoSale="1"/>
+  <Mall ItemID="360032 360033 360034" count="5 5 5" MerchandiseID="410138" ResourceId="360036" Name="3倍经验超值礼包" Des="特卖礼包装，使用激活摩尔经验3倍、精灵经验3倍、技能经验3倍（原价24米币，特惠8折），爽完练级必备的极品。" Price="2500"  NoSale="1"/>
+  <Mall ItemID="360046" MerchandiseID="410140" Name="黄金锤(高级)" Price="200" />
+  <Mall ItemID="360047" MerchandiseID="410141" Name="魔王密钥" Price="50" />
+  <Mall ItemID="147048" MerchandiseID="410142" Name="金牛座头盔" Price="700" />
+  <Mall ItemID="147049" MerchandiseID="410143" Name="金牛座甲胄" Price="700" />
+  <Mall ItemID="147050" MerchandiseID="410144" Name="金牛座护腕" Price="700" />
+  <Mall ItemID="147051" MerchandiseID="410145" Name="金牛座战靴" Price="700" />
+  <Mall ItemID="147052" MerchandiseID="410146" Name="金牛座护盾" Price="1000" />
+  <Mall ItemID="270057" MerchandiseID="410148" Name="无敌万用闪灵胶片" Price="100" />
+  <Mall ItemID="89007" MerchandiseID="410150" Name="鲸头鹳" Price="2000" />
+  <!--2013.05.08 鲸头鹳套装-->
+  <Mall ItemID="80082" MerchandiseID="410151" Name="鲸头鹳毡帽" Price="500" />
+  <Mall ItemID="80083" MerchandiseID="410152" Name="鲸头鹳斗篷" Price="500" />
+  <Mall ItemID="80084" MerchandiseID="410153" Name="鲸头鹳手套" Price="500" />
+  <Mall ItemID="80085" MerchandiseID="410154" Name="鲸头鹳短靴" Price="500" />
+  <Mall ItemID="80086" MerchandiseID="410155" Name="鲸头鹳护盾" Price="500" />
+  
+  <Mall ItemID="360030" MerchandiseID="420001" Name="精灵宝石" Price="50" />
+  <Mall ItemID="360041" MerchandiseID="420002" Name="精灵属性重置药水" Price="100" />
+  <Mall ItemID="360048" MerchandiseID="420003" Name="超级精灵满成长丸" Price="6600" />
+  <Mall ItemID="360049" MerchandiseID="420004" Name="精灵等级重置丸" Price="1500" />
+    
+
+  <Mall ItemID="80117" MerchandiseID="420005" Name="圣诞帽" Price="990" NoSale="1"/> 
+  
+  <Mall ItemID="80118" MerchandiseID="420006" Name="圣诞鹿茸棉帽" Price="5000" NoSale="1"/> 
+  <Mall ItemID="80119" MerchandiseID="420007" Name="圣诞鹿绒棉衣" Price="5000" NoSale="1"/> 
+  <Mall ItemID="80120" MerchandiseID="420008" Name="圣诞鹿绒手套" Price="5000" NoSale="1"/> 
+  <Mall ItemID="80121" MerchandiseID="420009" Name="圣诞鹿绒棉鞋" Price="5000" NoSale="1"/> 
+  <Mall ItemID="89008" MerchandiseID="420010" Name="马鹿" Price="5000" NoSale="1"/> 
+  <Mall ItemID="290027" MerchandiseID="420011" Name="织梦灵箔" Price="100" NoSale="0"/> 
+  <Mall ItemID="80600" MerchandiseID="420012" Name="水手帽(白)" Price="500" NoSale="0"/> 
+  <Mall ItemID="80601" MerchandiseID="420013" Name="黑色公主帽(白)" Price="500" NoSale="0"/> 
+  <Mall ItemID="80602" MerchandiseID="420014" Name="蓝玫瑰杖" Price="500" NoSale="0"/> 
+
+  <Mall ItemID="80701" MerchandiseID="420015" Name="无畏船长帽" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80702" MerchandiseID="420016" Name="无畏船长服饰" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80703" MerchandiseID="420017" Name="无畏船长手套" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80704" MerchandiseID="420018" Name="无畏船长鞋" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80705" MerchandiseID="420019" Name="草莓蛋糕帽" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80706" MerchandiseID="420020" Name="草莓蛋糕服饰" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80707" MerchandiseID="420021" Name="草莓蛋糕手套" Price="1000" NoSale="0"/> 
+  <Mall ItemID="80708" MerchandiseID="420022" Name="草莓蛋糕鞋" Price="1000" NoSale="0"/> 
+  <Mall ItemID="84043" MerchandiseID="420023" Name="草莓十字标" Price="1000" NoSale="0"/> 
+
+
+</Malls>

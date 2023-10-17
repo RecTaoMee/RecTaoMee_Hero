@@ -1,0 +1,268 @@
+<Task ID="11013" Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11502">
+   <Procedure>
+      <Step ID="1" ParentList="0" ParentCost="0">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11502" TargetObj="110131" TargetName="与t幽傀魄t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11502" ObjID="110131" TaskOption="许久不见，最近修养得如何？" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="啊，谢......谢谢您的照顾，我已经清醒多了！只是......依旧感受不到她的存在......" />
+               <Option Info="我见到了与你相似的精灵\n（向其讲述在哭嚎狭间的经历）" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="诱发噩梦的狐之精灵，一定是她！勇士大人，请......请您带我到她身边，这是我的宿命！" />
+               <Option Info="那只精灵戒备心极强\n恐怕不会轻易出现在我面前了" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="那要怎么办......我只记得她似乎需要食用噩梦，梦的主人越胆小越美味......" />
+               <Option Info="有办法了，我们可以假扮\n成弱小精灵骗她现身！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="假扮？对不起，我没有这种能力......" />
+               <Option Info="没关系，我有勇士的秘密武器\n--精灵变身卡！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="402" ImageID="9" Info="提示：使用【吉普豆花变身卡】，将自己和幽傀魄变成【吉普豆花】。" />
+               <Option Info="@blank" />
+            </Action>
+         </Event>
+      </Step>
+      <Step ID="2" ParentList="1" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11502" TargetObj="110131" TargetName="与t幽傀魄t对话">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="isChangeBodyID2" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="烦请勇士大人替我伪装了。" />
+               <Option Info="@blank" />
+            </Action>
+            <Action Type="COMMAND" Command="MAP_EVENT" Params="submitChangeBodyCard" />
+         </Event>
+      </Step>
+      <Step ID="3" ParentList="2" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11502" TargetObj="110131" TargetName="与t幽傀魄t对话">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="submitCardAlready" />
+            </Trigger>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="31612,1" SkipTrigger="Y" />
+         </Event>
+      </Step>
+      <Step ID="4" ParentList="3" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="110131" TargetName="在哭嚎狭间找到冥傀魂">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="31612" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="唔......这里的痛苦情感浓烈到窒息。" />
+               <Option Info="你还好吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="我没事，只是有些难受而已，她......就活在这样的环境里吗？" />
+               <Option Info="找到对方就知道了\n继续前进吧" />
+            </Action>
+         </Event>
+      </Step>
+      <Step ID="5" ParentList="4" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="110131" TargetName="在哭嚎狭间找到冥傀魂">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="task11013_showPet212" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+         </Event>
+      </Step>
+      <Step ID="6" ParentList="5" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="18" TargetName="与t冥傀魂t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="18" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="这次的收获真不错，让我来尝尝梦的味道吧~" />
+               <Option Info="找到你了！" SkipTrigger="Y" />
+            </Action>
+         </Event>
+      </Step>
+      <Step ID="7" ParentList="6" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="18" TargetName="与t冥傀魂t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="18" />
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="16" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="终于......再次见到你了，我灵魂的另一半。" />
+               <Msg NpcID="1031" ImageID="1" Info="什么另一半？啊，我想起来了，是你啊......你竟然联合外族敢骗我！" />
+               <Msg NpcID="1021" ImageID="2" Info="我只是想找到你......同我离开这里吧，这是我们的宿命......" />
+               <Msg NpcID="1031" ImageID="1" Info="哈？宿命？！在这弱肉强食的世界，不论哪里，唯有力量是一切的宿命！我最讨厌你这种弱小的蝼蚁，更不会和你有任何牵扯！" />
+               <Msg NpcID="1021" ImageID="2" Info="可是......我们的灵魂是不完整的，孤寂会让痛苦加深！" />
+               <Msg NpcID="1031" ImageID="1" Info="追求完整这种无用的奢望有何意义？只要能够活下去就够了......既然你这么喜欢宿命，那我帮你见证弱者的宿命如何？" />
+               <Option Info="@blank" />
+            </Action>
+            <Action Type="MOVIE" Url="task_11013_2.swf" MapLevel="CONTENT" Pos="1115,480" SkipTrigger="Y" />
+         </Event>
+      </Step>
+
+      <Step ID="8" ParentList="7" ParentCost="1">
+         <Condition>
+            <Battle ID="3571" Count="1" />
+         </Condition>
+         <Event ConditionType="IN" Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="18" TargetName="与t冥傀魂t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="18" />
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="16" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="咳......没想到你还挺强的，这没用的家伙就随你处理吧！" />
+               <Option Info="要赶紧带她回去治疗" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="11217,1" />
+         </Event>
+         <Event ConditionType="OUT" Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="18" TargetName="击败t冥傀魂t">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="18" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="我记得你，那个难吃的红鼻子，趁我没空管你，赶紧滚开！" />
+               <Option Info="别想伤害她，来战！" />
+               <Option Info="等我准备一下再阻止你！" NextStep="8" />
+            </Action>
+            <Action Type="COMMAND" Command="BATTLE" Params="3571" />
+         </Event>
+      </Step>
+
+      <Step ID="9" ParentList="8" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11217" TargetObj="102" TargetName="与t铃t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【心有所归魂自洽】" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+         </Event>
+      </Step>
+      <Step ID="10" ParentList="9" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11217" TargetObj="102" TargetName="与t铃t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【心有所归魂自洽】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="这孩子为何昏迷中还皱着眉，你们经历了什么？" />
+               <Option Info="（向铃讲述了幽傀魄的经历\n并隐去了【魇渊】部分）" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="3" Info="真是令人悲伤的故事，让我助她恢复吧。" />
+               <Option Info="@blank" />
+            </Action>
+            <Action Type="MOVIE" Url="task_11013_3.swf" MapLevel="CONTENT" Pos="-605,-701" SkipTrigger="Y" />
+         </Event>
+      </Step>
+
+      <Step ID="11" ParentList="10" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="11217" TargetObj="102" TargetName="与t铃t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【心有所归魂自洽】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="呜呜......为何她不肯接受我？我明明感受到了她的痛苦和迷茫啊......" />
+               <Msg NpcID="102" ImageID="1" Info="可怜的孩子，别难过，她只是在黑暗的世界里迷路太久了，弱小本非罪孽，你亦拥有美丽通透的心灵，试着用你的方式向她证明强大，然后给予对方引导和温暖吧。" />
+               <Msg NpcID="1021" ImageID="2" Info="谢谢您......我明白了，那种生活绝不是我们想要的，我要尝试说服她！还请勇士大人......再陪我走一回。" />
+               <Option Info="荣幸之极！" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="愿女神眷顾你们，听说你们所赴之处生长着治愈效果极佳的药剂配方——【喵喵草】，我可以拜托你带几株回来吗？" />
+               <Option Info="使命必达！" />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="31612,1" />
+         </Event>
+      </Step>
+
+      <Step ID="12" ParentList="11" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="20" TargetName="与t迷眼蝠t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="20" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1046" ImageID="2" Info="哈哈，今天运气真好，竟然遇到冥傀魂受伤，兄弟们平时没少被这自傲的家伙欺负，今天可要好好招待招待了~" />
+               <Msg NpcID="1031" ImageID="1" Info="呵，放马过来，不过手下败将而已，还是跟蚊子一样吵啊~" />
+               <Msg NpcID="1046" ImageID="2" Info="你这是在找死！来尝尝我的流火术！" />
+               <Msg NpcID="1021" ImageID="2" Info="不要伤害她！" />
+               <Option Info="@blank" />
+            </Action>
+            <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="31612,20,2"/>
+            <Action Type="COMMAND" Command="DELAY" Params="3000"/>
+         </Event>
+      </Step>
+      <Step ID="13" ParentList="12" ParentCost="1">
+         <Condition>
+            <Battle ID="3572" Count="1" />
+         </Condition>
+         <Event ConditionType="IN" Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="20" TargetName="与t迷眼蝠t对话">
+            <!-- <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="21" />
+            </Trigger> -->
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+         <Event ConditionType="OUT" Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="20" TargetName="与t迷眼蝠t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="21" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="明明那么弱小，你怎么......还想着替我抗伤？" />
+               <Msg NpcID="1021" ImageID="2" Info="因为......我就是你啊。" />
+               <Msg NpcID="1046" ImageID="2" Info="怎么又来个送死的？不过没关系，这次你逃不掉了！" />
+               <Option Info="先过我这一关再说！" />
+               <Option Info="你们忙，我还有点事" NextStep="13" />
+            </Action>
+            <Action Type="COMMAND" Command="BATTLE" Params="3572" />
+         </Event>
+      </Step>
+      <Step ID="14" ParentList="13" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="20" TargetName="与t迷眼蝠t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="22" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="喂，醒醒！你不是还想着说服我吗？随便就倒下的话可就别妄想了啊！" />
+               <Option Info="这里的【喵喵草】\n好像可以治疗你们。" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="草？雕像下面那种？......红鼻子，不想被追杀的话就快点把草给我奉上！" />
+               <Option Info="帮助伙伴是理所当然的事" />
+            </Action>
+         </Event>
+      </Step>
+      <Step ID="15" ParentList="14" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="22" TargetName="提交喵喵草">
+            <Trigger>
+               <Item Type="EVENT" TaskOption="submitMewGrass" />
+            </Trigger>
+            <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="31612,22,2"/>
+            <Action Type="COMMAND" Command="DELAY" Params="3000"/>
+         </Event>
+      </Step>
+      <Step ID="16" ParentList="15" ParentCost="1">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="23" TargetName="与t冥傀魂t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="31612" ObjID="23" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1031" ImageID="1" Info="趁我现在心情不错，有什么想说的尽快说，我可没法保证以后不欺负你。" />
+               <Msg NpcID="1021" ImageID="2" Info="我能理解你对弱者任人欺凌的恐惧，独自在这种恶劣的环境中生存，真的辛苦你了......可这世界并非如此单一的残酷，同你分裂后，我遇到了许多美好之物。" />
+               <Msg NpcID="1021" ImageID="2" Info="比如，虽然印象模糊，我仍记得，曾有一个受尽苦难的弱者，在命运抉择之际被自认为漠视自己的同族以生命拯救，自此致力于庇佑弱者，活成了强大的存在。" />
+               <Msg NpcID="1031" ImageID="1" Info="他......算是获得救赎了？......弱者也可以得到吗？" />
+               <Msg NpcID="1021" ImageID="2" Info="是的，他找到了存在的意义。再比如，这个时空之外，有一个勇士组成的国度，国民们在慈爱的女神、温柔的祭祀和正义的勇士等的守护下，过着幸福平和的生活......" />
+               <Msg NpcID="1031" ImageID="1" Info="真的有这样的国度？" />
+               <Msg NpcID="1021" ImageID="2" Info="有的！断层之外，还有无数的生命，他们经历着各种各样的生活。束缚此处的屏障已经解除，有我的辅助后，你不必再狩猎噩梦为食，更不会困束于死亡与孤寂了。" />
+               <Msg NpcID="1021" ImageID="2" Info="同我一起离开这里，去看看过去仍是一体的我们生活的世界吧。" />
+               <Msg NpcID="1031" ImageID="1" Info="你......为什么要这样？" />
+               <Msg NpcID="1021" ImageID="2" Info="因为我们互为彼此，有着无法割舍的羁绊啊。" />
+               <Msg NpcID="1031" ImageID="1" Info="......哼，去就去，我只是怕你太弱，在外面被魔王吃掉而已，我这是......在帮助我自己！" />
+               <Msg NpcID="1021" ImageID="2" Info="果然，只有灵魂可以填补灵魂......谢谢你，另一个我，一同去寻找自由吧。" />
+               <Option Info="要说再见了吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1021" ImageID="2" Info="一路走来，多亏了勇士大人，这场被时空阻隔的遗憾终于可以满足，请放心，您是我们最重要的贵人，我们会经常来拜访的！" />
+               <Msg NpcID="1031" ImageID="1" Info="咳咳，一直保护这个麻烦的家伙也算为难你了，这是给你的报酬，记得好好活着，我可是会回来和你一决高下的哈！" />
+               <Option Info="期待与你们的再会！" />
+            </Action>
+         </Event>
+      </Step>
+
+   </Procedure>
+</Task>

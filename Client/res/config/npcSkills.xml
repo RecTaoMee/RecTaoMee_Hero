@@ -28,7 +28,7 @@
 	<Npc ID="50" MapID="11602" Desc="精灵学者·斯巴达克斯" PetStudyList="5102 5103 5106 5108 5112 5501 5703 5704 6001 8501 8701" PetStudyLv="3 3 3 3 3 3 3 3 3 3 3"/>
 	<Npc ID="53" MapID="11703" Desc="银魂·杰森" RoleStudyList="101" RoleStudyLv="1"/>
 	<Npc ID="54" MapID="11702" Desc="银魂·瑞凌" RoleStudyList="109" RoleStudyLv="1"/>
-	<Npc ID="55" MapID="11704" Desc="银魂·彼得" RoleStudyList="1801" RoleStudyLv="1"/>
+	<Npc ID="55" MapID="11704" Desc="银魂·彼得" RoleStudyList="1801 1701 1702 1703 1704" RoleStudyLv="1 1 1 1 1"/>
 	<Npc ID="56" MapID="11704" Desc="银魂·温蒂" RoleStudyList="1004" RoleStudyLv="1"/>
 	<Npc ID="59" MapID="11709" Desc="银魂·休一" RoleStudyList="113" RoleStudyLv="1"/>
 	<Npc ID="62" MapID="11709" Desc="精灵学者·拉克斯" PetStudyList="7001 7002 7003 7004 7005 7006 7007 7008" PetStudyLv="4 4 4 4 4 4 4 4"/>

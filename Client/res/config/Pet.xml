@@ -1,0 +1,1595 @@
+﻿<!--
+    Type ID：怪物类型，对应素材。
+	Name：怪物名字，不超过5个汉字。
+	Race：怪物种族【0人型，1昆虫，2植物，3特殊，4龙，5野兽，6飞行，7不死，8金属，9恶魔】
+	Style：向性【1物理型，2魔法型】
+	SpecCatch：特殊环境捕捉概率组合【原始Type+100000表示第一个捕捉概率0，原始Type+200000表示第二个捕捉概率1000，依此类推，用于Box.xml、BeastGrp.xml、Map.xml】
+	Earth：地属性，Water：水属性，Fire：火属性，Wind：风属性【取值范围0~10】
+	PhysiFactor：体质基数【星级扩大10倍】
+	StrenFactor：力量基数【星级扩大10倍】
+	EndurFactor：耐力基数【星级扩大10倍】
+	QuickFactor：敏捷基数【星级扩大10倍】
+	IntelFactor：智力基数【星级扩大10倍】
+	Price：购买价格
+    SellPrice：出售价格
+	Tradability：限制普通用户对宠物的买卖性【0不可买卖，1可买，2可卖，3可买卖，默认是0】
+    VipTradability：限制Vip用户对宠物的买卖性【0不可买卖，1可买，2可卖，3可买卖，默认是0】
+	SkillsBar：技能栏【成长总和120及以上为6，成长总和115为7，成长总和110为8，成长总和105为9，成长总和100及以下为10】
+	HandbookLV：图鉴等级
+	CaptureAdd：出没场景【地图ID】
+	CaptureArea：出没区域【图鉴册显示】
+	Desc：怪物介绍
+	CatchRate：该类怪物基本捕捉率【千分比】，优先级低于Catch
+-->
+<!--
+	BaseSkill ID：怪物/宠物普通技能【数组排列，多个技能ID中间加空格】
+	SpecSkill ID：怪物特殊技能【数组排列，多个技能ID中间加空格】
+	Percent：怪物/宠物使用技能概率【千分比】【数组排列，对应技能顺序，用空格分开】
+	Beast Lv：怪物出现等级
+	Catch：捕获系数【千分比】
+	ItemID：怪物掉落道具
+	Rate：掉落道具概率【千分比】
+	Del: 可否解约【0可以解约，1不可解约，未配置默认为0】
+-->
+<!--
+	技能规则：
+		普通物：攻、防、追、狂（毁）、崩、反、吸血、吸蓝、种族（物）、种族（辅）
+		普通魔（单属性）：攻、防、单（本）、单（反）、强（本）、强（反）、超（本）、冥、种族（魔）、种族（辅）
+		普通魔（双属性）：攻、防、单（本1）、单（本2）、强（本1）、强（本2）、超（本1）、冥、种族（魔）、种族（辅）
+		改造物：攻、防、追、狂（毁）、崩、咒（物）、吸血、吸蓝、种族（物）、种族（辅）
+		改造魔（单属性）：攻、防、单（本）、单（反）、咒（强魔）、强（反）、超（本）、冥、种族（魔）、种族（辅）
+		改造魔（双属性）：攻、防、单（本1）、单（本2）、咒（强魔）、强（本2）、超（本1）、冥、种族（魔）、种族（辅）
+		
+		单是指单体魔法攻击  强是指T范围魔法攻击  超是指全范围魔法攻击
+
+-->
+
+
+<Types>
+	<!-- 普通怪物 -->
+	<Type ID="1" Name="吉普豆叶" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="7" Water="0" Fire="0" Wind="3" PhysiFactor="25" StrenFactor="39" EndurFactor="26" QuickFactor="33" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="奇普豆区域“特产精灵”。属于小型“植物型”精灵。在地下出没，属于“地底精灵”。">
+		<TalentSkill ID="5102 5106 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240001 240002 340001" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="26" Catch="2000" ItemID="180007 180058 210003 230003 240001 240002 340001" Rate="114 80 78 78 20 20 50"/>
+		<Beast Lv="27" Catch="2000" ItemID="180007 180058 210003 230003 240001 240002 340001" Rate="114 80 78 78 20 20 50"/>
+		<Beast Lv="28" Catch="2000" ItemID="180007 180058 210003 230003 240001 240002 340001" Rate="114 80 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="2" Name="吉普豆花" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="4" Fire="6" Wind="0" PhysiFactor="24" StrenFactor="9" EndurFactor="30" QuickFactor="30" IntelFactor="40" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="奇普豆区域“特产精灵”。传说“吉普豆花”受到很多关爱便会开花。在地下出没，属于“地底精灵”。">
+		<TalentSkill ID="7003 6001 7002 7201 7007 7006 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7006 7007 7011 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240003 240004 340002" Rate="400 200 200 20 20 5"/>
+		<Beast Lv="26" Catch="2000" ItemID="180007 180057 210003 230003 240003 240004 340002" Rate="114 80 78 78 20 20 50"/>
+		<Beast Lv="27" Catch="2000" ItemID="180007 180057 210003 230003 240003 240004 340002" Rate="114 80 78 78 20 20 50"/>
+		<Beast Lv="28" Catch="2000" ItemID="180007 180057 210003 230003 240003 240004 340002" Rate="114 80 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="3" Name="小石怪" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="34" StrenFactor="34" EndurFactor="23" QuickFactor="35" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21102 21103" CaptureArea="吉普地道" Desc="走在路上的时候会不会偶尔被莫名其妙的石头差点绊倒？不用奇怪，你可能遇到“石头人”了！也就是大地中的石元素升华而成的精灵。擅长技能：扮演路边的石头。">
+		<TalentSkill ID="5106 5102 5704 8501" Percent="500 400 300 300"/>
+		<BaseSkill ID="5106" Percent="150"/>
+		<SpecSkill ID="5010 5102 5103 5108 5501 5701 5703 5704 6001" Percent="300 100 50 150 50 50 50 50 50"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240002 240003 340003" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="2" Catch="4000" ItemID="180001 210001 230001 240002 240003 340003" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="13" Catch="4000" ItemID="180004 210002 230002 240002 240003 340003" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="14" Catch="4000" ItemID="180004 210002 230002 240002 240003 340003" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="15" Catch="4000" ItemID="180004 210002 230002 240002 240003 340003" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240002 240003 340003" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240002 240003 340003" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240002 240003 340003" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="19" Catch="4000" ItemID="180005 210002 230002 240002 240003 340003" Rate="178 106 106 20 20 50"/>
+	</Type>
+
+	<Type ID="4" Name="法尔" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="20" StrenFactor="9" EndurFactor="28" QuickFactor="38" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21102 21103" CaptureArea="吉普地道" Desc="传承了“火神意志”的自然体质精灵。“燃烧”是它们存在的意义，是当地居民天气干燥时的“预防对象”。不过在寒冷的冬天外出时能带上一只小法尔却成了最幸福的事。">
+		<TalentSkill ID="6001 7001 7003 7007 7008" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7003" Percent="200"/>
+		<SpecSkill ID="5010 5701 7004 7007 7008 7011 7012 6001" Percent="200 50 200 100 100 50 50 50"/>
+		<Beast Lv="2" Catch="4000" ItemID="180001 210001 230001 240001 240004 340004" Rate="400 200 200 20 20 30"/>
+		<Beast Lv="13" Catch="4000" ItemID="180004 210002 230002 240001 240004 340004" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="14" Catch="4000" ItemID="180004 210002 230002 240001 240004 340004" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="15" Catch="4000" ItemID="180004 210002 230002 240001 240004 340004" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240001 240004 340004" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240001 240004 340004" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240004 340004" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="19" Catch="4000" ItemID="180005 210002 230002 240001 240004 340004" Rate="178 106 106 20 20 50"/>
+	</Type>
+
+	<Type ID="5" Name="库噜战士" Race="7" Style="1" SpecCatch="0 1000 3000 5000" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="38" StrenFactor="42" EndurFactor="26" QuickFactor="16" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21202 21203" CaptureArea="下水道" Desc="这看似毛骨悚然的“骷髅头”来自“古代骑士精神”之魂。别看它一身骨头，跳起舞来却非常灵活，关节还能跟着节拍发出咯咯的伴奏声。喜欢讲冷笑话，很受女孩子欢迎。">
+		<TalentSkill ID="5102 5106 5703 8501 8701" Percent="500 400 200 200 200"/>
+		<BaseSkill ID="5102" Percent="100"/>
+		<SpecSkill ID="5010 5103 5106 5108 5501 5701 5703 5704 6001" Percent="300 50 150 150 50 50 50 50 50"/>
+		<Beast Lv="3" Catch="4000" ItemID="180001 210001 230001 240001 240002 340005" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="4" Catch="4000" ItemID="180001 210001 230001 240001 240002 340005" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="5" Catch="4000" ItemID="180002 210001 230001 240001 240002 340005" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="6" Catch="4000" ItemID="180002 210001 230001 240001 240002 340005" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="7" Catch="4000" ItemID="180002 210001 230001 240001 240002 340005" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="8" Catch="4000" ItemID="180002 210001 230001 240001 240002 340005" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="9" Catch="4000" ItemID="180003 210001 230001 240001 240002 340005" Rate="261 200 200 20 20 50"/>
+		<Beast Lv="10" Catch="4000" ItemID="180003 210001 230001 240001 240002 340005" Rate="261 200 200 20 20 50"/>
+		<Beast Lv="11" Catch="4000" ItemID="180003 210002 230002 240001 240002 340005" Rate="261 106 106 20 20 50"/>
+		<Beast Lv="12" Catch="4000" ItemID="180003 210002 230002 240001 240002 340005" Rate="261 106 106 20 20 50"/>
+		<Beast Lv="13" Catch="4000" ItemID="180004 210002 230002 240001 240002 340005" Rate="210 106 106 20 20 50"/>
+	</Type>
+
+	<Type ID="6" Name="吉普豆泥" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="6" Water="4" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="9" EndurFactor="30" QuickFactor="33" IntelFactor="41" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21202 21203" CaptureArea="下水道" Desc="路边的小型吉普豆泥总被不知情的小朋友当做玩闹的道具，有着很深的童年阴影。成为大型吉普豆泥后变得更加没有存在感。">
+		<TalentSkill ID="7001 7002 7005 7006 6001" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7001" Percent="200"/>
+		<SpecSkill ID="5010 5701 7002 7005 7006 7010 7011 6001" Percent="200 50 200 100 100 50 50 50"/>
+		<Beast Lv="3" Catch="4000" ItemID="180001 210001 230001 240003 240004 341001" Rate="400 200 200 20 20 20"/>
+		<Beast Lv="4" Catch="4000" ItemID="180001 210001 230001 240003 240004 341001" Rate="400 200 200 20 20 20"/>
+		<Beast Lv="5" Catch="4000" ItemID="180002 210001 230001 240003 240004 341001" Rate="354 200 200 20 20 20"/>
+		<Beast Lv="6" Catch="4000" ItemID="180002 210001 230001 240003 240004 341001" Rate="354 200 200 20 20 20"/>
+		<Beast Lv="7" Catch="4000" ItemID="180002 210001 230001 240003 240004 341001" Rate="354 200 200 20 20 20"/>
+		<Beast Lv="8" Catch="4000" ItemID="180002 210001 230001 240003 240004 341001" Rate="354 200 200 20 20 20"/>
+		<Beast Lv="9" Catch="4000" ItemID="180003 210001 230001 240003 240004 341001" Rate="261 200 200 20 20 20"/>
+		<Beast Lv="10" Catch="4000" ItemID="180003 210001 230001 240003 240004 341001" Rate="261 200 200 20 20 20"/>
+		<Beast Lv="11" Catch="4000" ItemID="180003 210002 230002 240003 240004 341001" Rate="261 106 106 20 20 20"/>
+	</Type>
+
+	<Type ID="7" Name="怪盗迪迪拉" Race="0" Style="1" SpecCatch="0 0 3000 5000" Earth="6" Water="4" Fire="0" Wind="0" PhysiFactor="30" StrenFactor="39" EndurFactor="22" QuickFactor="30" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21301 21302 21305" CaptureArea="格历尔平原" Desc="传说中体内流淌着“盗贼血液”的人型精灵，即使睡觉也从不摘下帽子面巾——好像从来没人看到过它的真面目。抢劫只是兴趣，抢你没商量，旅行路上的各位可要小心了！">
+		<TalentSkill ID="5108 5102 5103 6001" Percent="500 400 300 300"/>
+		<BaseSkill ID="5108" Percent="150"/>
+		<SpecSkill ID="5010 5102 5103 5106 5501 5701 5703 5704" Percent="300 100 50 150 50 50 50 50"/>
+		<Beast Lv="4" Catch="4000" ItemID="180001 210001 230001" Rate="400 200 200"/>
+		<Beast Lv="5" Catch="4000" ItemID="180002 210001 230001" Rate="354 200 200"/>
+		<Beast Lv="6" Catch="4000" ItemID="180002 210001 230001" Rate="354 200 200"/>
+		<Beast Lv="7" Catch="4000" ItemID="180002 210001 230001 240002 240003 340006" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="8" Catch="4000" ItemID="180002 210001 230001 240002 240003 340006" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="9" Catch="4000" ItemID="180003 210001 230001 240002 240003 340006" Rate="261 200 200 20 20 50"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240002 240003 340006" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240002 240003 340006" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240002 240003 340006" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="20" Catch="4000" ItemID="180005 210002 230002 240002 240003 340006" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="21" Catch="4000" ItemID="180006 210003 230003 240002 240003 340006" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240002 240003 340006" Rate="138 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="8" Name="假面吉吉帕" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="7" Fire="3" Wind="0" PhysiFactor="28" StrenFactor="5" EndurFactor="30" QuickFactor="27" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21302 21303 21304" CaptureArea="格历尔平原" Desc="害羞特质很强的小型菌菇精灵。张扬的“菌盖”是用来恐吓陌生人的伪装，其实盖下的“本体”十分可爱。">
+		<TalentSkill ID="7002 6001 7003 7201 7007 7006 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7006 7007 7010 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="7" Catch="4000" ItemID="180002 210001 230001 240003 240004 340007" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="8" Catch="4000" ItemID="180002 210001 230001 240003 240004 340007" Rate="354 200 200 20 20 50"/>
+		<Beast Lv="9" Catch="4000" ItemID="180003 210001 230001 240003 240004 340007" Rate="261 200 200 20 20 50"/>
+		<Beast Lv="10" Catch="4000" ItemID="180003 210001 230001 240003 240004 340007" Rate="261 200 200 20 20 50"/>
+		<Beast Lv="11" Catch="4000" ItemID="180003 210002 230002 240003 240004 340007" Rate="261 106 106 20 20 50"/>
+		<Beast Lv="12" Catch="4000" ItemID="180003 210002 230002 240003 240004 340007" Rate="261 106 106 20 20 50"/>
+	</Type>
+
+	<Type ID="9" Name="草莓蜂" Race="1" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="24" StrenFactor="41" EndurFactor="22" QuickFactor="41" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21303 21304" CaptureArea="格历尔平原" Desc="遇到危险时会投掷屁股上的草莓，散发香甜的气息来麻痹对手。不过也因此一直被喜欢吃草莓的家伙们投以耐人寻味的目光。">
+		<TalentSkill ID="8701 5102 5106 8803" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6203 8701 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001 240004 340008" Rate="400 200 200 20 20 30"/>
+		<Beast Lv="10" Catch="4000" ItemID="180003 210001 230001 240001 240004 340008" Rate="261 200 200 20 20 30"/>
+		<Beast Lv="11" Catch="4000" ItemID="180003 210002 230002 240001 240004 340008" Rate="261 106 106 20 20 30"/>
+		<Beast Lv="12" Catch="4000" ItemID="180003 210002 230002 240001 240004 340008" Rate="261 106 106 20 20 30"/>
+		<Beast Lv="13" Catch="4000" ItemID="180004 210002 230002 240001 240004 340008" Rate="210 106 106 20 20 30"/>
+		<Beast Lv="14" Catch="4000" ItemID="180004 210002 230002 240001 240004 340008" Rate="210 106 106 20 20 30"/>
+		<Beast Lv="15" Catch="4000" ItemID="180004 210002 230002 240001 240004 340008" Rate="210 106 106 20 20 30"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240001 240004 340008" Rate="210 106 106 20 20 30"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240001 240004 340008" Rate="178 106 106 20 20 30"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240004 340008" Rate="178 106 106 20 20 30"/>
+	</Type>
+
+	<Type ID="10" Name="迷唇爱丝" Race="1" Style="1" SpecCatch="0 1000 3000 5000" Earth="4" Water="6" Fire="0" Wind="0" PhysiFactor="41" StrenFactor="41" EndurFactor="22" QuickFactor="24" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21305 21306" CaptureArea="格历尔平原" Desc="“蜘蛛型”精灵。迷人的眼睛、迷人的嘴巴，在你甜甜的梦里，迷唇爱丝轻轻的吻了你……爱好：吐丝、编织。">
+		<TalentSkill ID="5108 5102 8701 8803 6001" Percent="500 400 300 300 400"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6203 8701 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240002 240003 340009" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240002 240003 340009" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240002 240003 340009" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="19" Catch="4000" ItemID="180005 210002 230002 240002 240003 340009" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="20" Catch="4000" ItemID="180005 210002 230002 240002 240003 340009" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="21" Catch="4000" ItemID="180006 210003 230003 240002 240003 340009" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240002 240003 340009" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="23" Catch="4000" ItemID="180006 210003 230003 240002 240003 340009" Rate="138 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="11" Name="拉拉美" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="26" StrenFactor="42" EndurFactor="27" QuickFactor="34" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21307" CaptureArea="格历尔平原" Desc="“拉拉美”是本地语，意为美味。拉拉美精力充沛，跑动时附近草地都会轰轰作响，性情急躁易冲动，平日不要去激怒它唷。村里调皮的男孩子叫你“拉拉美”可千万不要误以为在夸赞你美丽了。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001 240004 340010" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240004 340010" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="19" Catch="4000" ItemID="180005 210002 230002 240001 240004 340010" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="20" Catch="4000" ItemID="180005 210002 230002 240001 240004 340010" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="21" Catch="4000" ItemID="180006 210003 230003 240001 240004 340010" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240001 240004 340010" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="23" Catch="4000" ItemID="180006 210003 230003 240001 240004 340010" Rate="138 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="12" Name="怪盗戈戈拉" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="4" Wind="6" PhysiFactor="25" StrenFactor="41" EndurFactor="22" QuickFactor="34" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21307" CaptureArea="格历尔平原" Desc="传说中体内流淌着“盗贼血液”的人型精灵，即使睡觉也从不摘下帽子面巾——好像从来没人看到过它的真面目。抢劫只是兴趣，抢你没商量，旅行路上的各位可要小心了！">
+		<TalentSkill ID="5106 5102 5103 5703 6001" Percent="500 400 200 200 200"/>
+		<BaseSkill ID="5106" Percent="150"/>
+		<SpecSkill ID="5010 5102 5103 5108 5501 5701 5703 5704" Percent="300 100 50 150 50 50 50 50"/>
+		<Beast Lv="20" Catch="0" ItemID="180005 210002 230002 240001 240004 340011" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="21" Catch="0" ItemID="180006 210003 230003 240001 240004 340011" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="22" Catch="0" ItemID="180006 210003 230003 240001 240004 340011" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="23" Catch="0" ItemID="180006 210003 230003 240001 240004 340011" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="31" Catch="0" ItemID="180008 210004 230004 240001 240004 340011" Rate="98 63 63 20 20 50"/>
+		<Beast Lv="32" Catch="0" ItemID="180008 210004 230004 240001 240004 340011" Rate="98 63 63 20 20 50"/>
+		<Beast Lv="33" Catch="0" ItemID="180009 210004 230004 240001 240004 340011" Rate="87 63 63 20 20 50"/>
+	</Type>
+
+	<Type ID="13" Name="盯眼蝠" Race="6" Style="1" SpecCatch="0 1000 3000 5000" Earth="4" Water="0" Fire="0" Wind="6" PhysiFactor="32" StrenFactor="44" EndurFactor="24" QuickFactor="26" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21308 21309" CaptureArea="格历尔平原" Desc="“盯眼蝠”大多出没于黑暗地区。目前我们所知的眼蝙蝠有“盯眼蝠”和“迷眼蝠”。盯眼蝠的“大眼睛”在黑暗中视如白昼。">
+		<TalentSkill ID="8701 5102 6001 5703 5106" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="8701" Percent="100"/>
+		<SpecSkill ID="5010 5102 5103 5106 5108 5501 5701 5703 5704" Percent="300 100 50 100 100 100 50 50 50"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="21" Catch="4000" ItemID="180006 210003 230003 240001 240002 340020" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240001 240002 340020" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="23" Catch="4000" ItemID="180006 210003 230003 240001 240002 340020" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="24" Catch="4000" ItemID="180006 210003 230003 240001 240002 340020" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="25" Catch="4000" ItemID="180007 210003 230003 240001 240002 340020" Rate="114 78 78 20 20 50"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 210003 230003 240001 240002 340020" Rate="114 78 78 20 20 50"/>
+		<Beast Lv="31" Catch="3000" ItemID="180008 210004 230004 240001 240002 340020" Rate="98 63 63 20 20 50"/>
+		<Beast Lv="32" Catch="3000" ItemID="180008 210004 230004 240001 240002 340020" Rate="98 63 63 20 20 50"/>
+		<Beast Lv="33" Catch="3000" ItemID="180009 210004 230004 240001 240002 340020" Rate="87 63 63 20 20 50"/>
+		<Beast Lv="34" Catch="2000" ItemID="180009 210004 230004 240001 240002 340020" Rate="87 63 63 20 20 50"/>
+		<Beast Lv="35" Catch="2000" ItemID="180009 210004 230004 240001 240002 340020" Rate="87 63 63 20 20 50"/>
+		<Beast Lv="36" Catch="2000" ItemID="180009 210004 230004 240001 240002 340020" Rate="87 63 63 20 20 50"/>
+		<Beast Lv="43" Catch="2000" ItemID="180011 240001 240002 340020" Rate="68 20 20 50"/>
+		<Beast Lv="44" Catch="2000" ItemID="180011 240001 240002 340020" Rate="68 20 20 50"/>
+		<Beast Lv="45" Catch="2000" ItemID="180012 240001 240002 340020" Rate="61 20 20 50"/>
+	</Type>
+
+	<Type ID="14" Name="曼陀萝卜" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="33" StrenFactor="5" EndurFactor="26" QuickFactor="27" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="有着“惊讶”特质的小型植物精灵。时常被误认为“萝卜”被粗暴拔起，叶子下震惊的表情并伴随着刺耳的尖叫。是个身心容易受伤的“脆弱萝卜”请大家多多关照！">
+		<TalentSkill ID="7003 6001 7002 7201 7007 7006 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7006 7007 7011 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240003 240004 340012" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="24" Catch="4000" ItemID="180006 210003 230003 240003 240004 340012" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="25" Catch="4000" ItemID="180007 210003 230003 240003 240004 340012" Rate="114 78 78 20 20 50"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 210003 230003 240003 240004 340012" Rate="114 78 78 20 20 50"/>
+		<Beast Lv="43" Catch="2000" ItemID="180011 240003 240004 340012" Rate="68 20 20 50"/>
+		<Beast Lv="44" Catch="2000" ItemID="180011 240003 240004 340012" Rate="68 20 20 50"/>
+		<Beast Lv="45" Catch="2000" ItemID="180012 240003 240004 340012" Rate="61 20 20 50"/>
+	</Type>
+
+	<Type ID="15" Name="迷眼蝠" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="2" Fire="8" Wind="0" PhysiFactor="16" StrenFactor="7" EndurFactor="28" QuickFactor="43" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21310 21311 21312" CaptureArea="格历尔平原" Desc="“眼蝙蝠”大多出没于黑暗地区。目前我们所知的眼蝙蝠有“盯眼蝠”和“迷眼蝠”。盯眼蝠的“大眼睛”在黑暗中视如白昼。">
+		<TalentSkill ID="7003 7002 7007 6001 5703" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7003" Percent="200"/>
+		<SpecSkill ID="5010 5701 7002 7006 7007 7010 7011 6001" Percent="200 50 200 100 100 50 50 50"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240003 240004 341002" Rate="400 200 200 20 20 20"/>
+		<Beast Lv="20" Catch="4000" ItemID="180005 210002 230002 240003 240004 341002" Rate="178 106 106 20 20 20"/>
+		<Beast Lv="21" Catch="4000" ItemID="180006 210003 230003 240003 240004 341002" Rate="138 78 78 20 20 20"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240003 240004 341002" Rate="138 78 78 20 20 20"/>
+		<Beast Lv="23" Catch="4000" ItemID="180006 210003 230003 240003 240004 341002" Rate="138 78 78 20 20 20"/>
+		<Beast Lv="24" Catch="4000" ItemID="180006 210003 230003 240003 240004 341002" Rate="138 78 78 20 20 20"/>
+		<Beast Lv="25" Catch="4000" ItemID="180007 210003 230003 240003 240004 341002" Rate="114 78 78 20 20 20"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 210003 230003 240003 240004 341002" Rate="114 78 78 20 20 20"/>
+		<Beast Lv="32" Catch="2000" ItemID="180008 210004 230004 240003 240004 341002" Rate="98 63 63 20 20 20"/>
+		<Beast Lv="33" Catch="2000" ItemID="180009 210004 230004 240003 240004 341002" Rate="87 63 63 20 20 20"/>
+		<Beast Lv="34" Catch="2000" ItemID="180009 210004 230004 240003 240004 341002" Rate="87 63 63 20 20 20"/>
+	</Type>
+
+	<Type ID="16" Name="王冠卡西卡" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="4" Water="0" Fire="0" Wind="6" PhysiFactor="26" StrenFactor="44" EndurFactor="26" QuickFactor="32" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21311 21312" CaptureArea="格历尔平原" Desc="外表推断为“猫型”的迷之精灵。但谁知道它们面具下的真正面貌？每只卡西卡都有一顶自己的“王冠”，摩尔王都得甘拜下风。想打卡西卡王冠的主意？小心“尾巴铁锤”的滋味。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001 240002 340013" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240001 240002 340013" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240001 240002 340013" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240002 340013" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="22" Catch="4000" ItemID="180006 210003 230003 240001 240002 340013" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="23" Catch="4000" ItemID="180006 210003 230003 240001 240002 340013" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="24" Catch="4000" ItemID="180006 210003 230003 240001 240002 340013" Rate="138 78 78 20 20 50"/>
+		<Beast Lv="25" Catch="4000" ItemID="180007 210003 230003 240001 240002 340013" Rate="114 78 78 20 20 50"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 210003 230003 240001 240002 340013" Rate="114 78 78 20 20 50"/>
+	</Type>
+
+	<Type ID="17" Name="星锤兔" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="3" Wind="7" PhysiFactor="22" StrenFactor="43" EndurFactor="20" QuickFactor="43" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="“兔子型”精灵。最讨厌被人说可爱，一不高兴就会敲锤子。不过只要被抱住就会停止攻击，所以对星锤兔的评价还是“太可爱了啊！”——好想被一只星锤兔追着打啊，哈哈。">
+		<TalentSkill ID="5102 5106 8701 8802" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240001 240004" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="18" Name="电波兔" Race="5" Style="2" SpecCatch="0 1000 3000 5000" Earth="6" Water="4" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="5" EndurFactor="29" QuickFactor="43" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="“兔子型”精灵。外表可爱其实是喜欢制造混乱的“危险”精灵。">
+		<TalentSkill ID="7001 7006 7005 7202" Percent="500 400 400 300"/>
+		<BaseSkill ID="7001 7002" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6202 7005 7006 7009 7202" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="19" Name="咕噜蝶" Race="1" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="6" Fire="4" Wind="0" PhysiFactor="22" StrenFactor="41" EndurFactor="23" QuickFactor="39" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="11301" CaptureArea="皇宫花园" Desc="“咕噜族蝴蝶型”小型精灵。大家知道，凡是“蝴蝶”都会有“羽化”的经历，小精灵也不例外。羽化后的咕噜蝶拥有远超自身强度的攻击力。老爷爷常说：“不要小看小昆虫的力量”。">
+		<TalentSkill ID="5102 5106 8701 8803" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6203 8701 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="20" Name="弗雷基" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="2" Water="0" Fire="0" Wind="8" PhysiFactor="27" StrenFactor="5" EndurFactor="24" QuickFactor="37" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="多出现在海洋或沿海区，弗雷基是当地语，意为“爱飞的鸡”。弗雷基具有“迁徙”的特性。航海家爱德仑的小说《弗雷基旅行日记》在格历尔大陆十分畅销。">
+		<TalentSkill ID="7004 7001 7005 7008 5703 7012" Percent="500 250 250 250 250 250"/>
+		<BaseSkill ID="7001 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7005 7008 7012 6001 7502 7508" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240003 240004" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="21" Name="钢姆" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="30" StrenFactor="5" EndurFactor="33" QuickFactor="22" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21401" CaptureArea="海底洞穴" Desc="金属和岩石的特性让钢姆有“天然呆”的特质。碰到超出想象力的事就会陷入石化状态。要是惊吓它或者给它上课，它可能会永远石化下去了，哎呀呀。">
+		<TalentSkill ID="7001 7004 7008 5703 7005" Percent="250 250 250 250 250"/>
+		<BaseSkill ID="7001 7008" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7004 7005 7009 6001 7501 7502" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001 240002 341003" Rate="400 200 200 20 20 20"/>
+		<Beast Lv="15" Catch="4000" ItemID="180004 210002 230002 240001 240002 341003" Rate="210 106 106 20 20 20"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240001 240002 341003" Rate="210 106 106 20 20 20"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240001 240002 341003" Rate="178 106 106 20 20 20"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240002 341003" Rate="178 106 106 20 20 20"/>
+	</Type>
+
+	<Type ID="22" Name="小宅罐" Race="3" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="35" StrenFactor="42" EndurFactor="28" QuickFactor="23" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21401" CaptureArea="海底洞穴" Desc="你家有没有闲置的空罐子呢？！可能已经有个小宅罐精灵住在里面了！小宅罐精灵们喜爱整洁的家。如果想留住他们一定记得时常打扫卫生哦。">
+		<TalentSkill ID="5106 5102 5703 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5106" Percent="150"/>
+		<SpecSkill ID="5010 5102 5103 5108 5501 5701 5703 5704 8701" Percent="250 50 100 150 50 50 100 50 50"/>
+		<Beast Lv="15" Catch="4000" ItemID="180004 210002 230002 240003 240004 341004" Rate="210 106 106 20 20 20"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240003 240004 341004" Rate="210 106 106 20 20 20"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240003 240004 341004" Rate="178 106 106 20 20 20"/>
+	</Type>
+
+	<Type ID="23" Name="小宅箱" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="34" StrenFactor="5" EndurFactor="30" QuickFactor="24" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21501 21502 21503" CaptureArea="风之洞穴" Desc="你家有没有闲置的空箱子呢？！可能已经有个小宅箱精灵住在里面了！小宅箱精灵们喜爱整洁的家。如果想留住他们一定记得时常打扫卫生哦。">
+		<TalentSkill ID="7004 7003 7008 5703 7007" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7004" Percent="200"/>
+		<SpecSkill ID="5010 5701 7003 7007 7008 7011 7012 6001" Percent="200 50 200 100 100 50 50 50"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 210003 230003 240001 240004 341005" Rate="114 78 78 20 20 20"/>
+		<Beast Lv="27" Catch="4000" ItemID="180007 210003 230003 240001 240004 341005" Rate="114 78 78 20 20 20"/>
+		<Beast Lv="28" Catch="4000" ItemID="180007 210003 230003 240001 240004 341005" Rate="114 78 78 20 20 20"/>
+		<Beast Lv="29" Catch="4000" ItemID="180008 210003 230003 240001 240004 341005" Rate="98 78 78 20 20 20"/>
+		<Beast Lv="30" Catch="4000" ItemID="180008 210003 230003 240001 240004 341005" Rate="98 78 78 20 20 20"/>
+		<Beast Lv="31" Catch="4000" ItemID="180008 210004 230004 240001 240004 341005" Rate="98 63 63 20 20 20"/>
+		<Beast Lv="32" Catch="4000" ItemID="180008 210004 230004 240001 240004 341005" Rate="98 63 63 20 20 20"/>
+	</Type>
+
+	<Type ID="24" Name="喵斯熊" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="35" StrenFactor="42" EndurFactor="30" QuickFactor="21" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21501 21502 21503" CaptureArea="风之洞穴" Desc="“猫熊型”大体积精灵。表面看似难以接近但其实是性情温和。有喵斯熊的保护真是充满安全感呐。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 180059 210001 230001 240002 240003 340014" Rate="400 30 200 200 20 20 10"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 180059 210002 230002 240002 240003 340014" Rate="210 100 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 180059 210002 230002 240002 240003 340014" Rate="178 100 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 180059 210002 230002 240002 240003 340014" Rate="178 100 106 106 20 20 50"/>
+		<Beast Lv="26" Catch="4000" ItemID="180007 180059 210003 230003 240002 240003 340014" Rate="114 100 78 78 20 20 50"/>
+		<Beast Lv="27" Catch="4000" ItemID="180007 180059 210003 230003 240002 240003 340014" Rate="114 100 78 78 20 20 50"/>
+		<Beast Lv="28" Catch="4000" ItemID="180007 180059 210003 230003 240002 240003 340014" Rate="114 100 78 78 20 20 50"/>
+		<Beast Lv="29" Catch="4000" ItemID="180008 180059 210003 230003 240002 240003 340014" Rate="98 100 78 78 20 20 50"/>
+		<Beast Lv="30" Catch="4000" ItemID="180008 180059 210003 230003 240002 240003 340014" Rate="98 100 78 78 20 20 50"/>
+		<Beast Lv="31" Catch="4000" ItemID="180008 180059 210004 230004 240002 240003 340014" Rate="98 100 63 63 20 20 50"/>
+		<Beast Lv="32" Catch="4000" ItemID="180008 180059 210004 230004 240002 240003 340014" Rate="98 100 63 63 20 20 50"/>
+	</Type>
+
+	<Type ID="25" Name="黑魅鬼脸箱" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="22" StrenFactor="5" EndurFactor="34" QuickFactor="33" IntelFactor="41" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱的谜之精灵。最喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动不便。耐心等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="7004 7003 6001 5703 8501" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7004 6001" Percent="150 50"/>
+		<SpecSkill ID="5010 5701 7003 7007 7008 7012 6001 5001" Percent="100 50 150 100 100 100 200 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240001 240004" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="26" Name="白魅鬼脸箱" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="2" Water="8" Fire="0" Wind="0" PhysiFactor="18" StrenFactor="42" EndurFactor="21" QuickFactor="40" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱的谜之精灵。最喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动不便。耐心等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="5106 5102 5703 5704 8501" Percent="500 400 200 200 200"/>
+		<BaseSkill ID="5106 8701" Percent="50 100"/>
+		<SpecSkill ID="5010 5102 5103 5108 5701 5703 5704 6001 5001" Percent="200 150 50 50 50 50 100 200 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+
+	<Type ID="27" Name="库噜小队长" Race="7" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="30" StrenFactor="40" EndurFactor="24" QuickFactor="30" IntelFactor="6" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="在残酷厮杀中残留下来的骑士灵魂，领导能力出众，行事冷肃刻板，是库噜战士们不敢触怒的存在。">
+		<TalentSkill ID="5102 5106 8701 6001" Percent="500 400 300 300"/>
+		<BaseSkill ID="5103" Percent="175"/>
+		<SpecSkill ID="5010 5102 5106 5108 5501 5701 5703 5704 6001" Percent="175 100 150 150 50 50 50 50 50"/>
+		<Beast Lv="12" Catch="0" ItemID="210002 230002 280002" Rate="106 106 1000"/>
+	</Type>
+	
+	<Type ID="28" Name="地之鬼脸箱" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="37" StrenFactor="42" EndurFactor="30" QuickFactor="12" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱内的谜之精灵。喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动，行动不便。一般长期守在选定地点等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="5108 5102 5704 8501 6001" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5108" Percent="100"/>
+		<SpecSkill ID="5010 5102 5103 5106 5701 5703 5704 6001 6001 5001" Percent="200 150 50 100 50 50 50 50 200 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001" Rate="400 200 200 20"/>
+	</Type>
+	
+	<Type ID="29" Name="水之鬼脸箱" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="27" StrenFactor="5" EndurFactor="33" QuickFactor="24" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱内的谜之精灵。喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动不便。耐心等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="7002 7006 6001 5703 8501 7010" Percent="500 400 200 200 200 200"/>
+		<BaseSkill ID="7002" Percent="200"/>
+		<SpecSkill ID="5010 5701 7006 7010 6001 6001 5001" Percent="150 50 200 100 100 200 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240002" Rate="400 200 200 20"/>
+	</Type>
+	
+	<Type ID="30" Name="火之鬼脸箱" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="10" Wind="0" PhysiFactor="32" StrenFactor="38" EndurFactor="21" QuickFactor="34" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱内的谜之精灵。喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动不便。耐心等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="5108 5102 5703 8501 6001" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5108" Percent="100"/>
+		<SpecSkill ID="5010 5102 5103 5106 5701 5703 5704 6001 5001" Percent="200 150 50 100 50 50 50 200 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240003" Rate="400 200 200 20"/>
+	</Type>
+	
+	<Type ID="31" Name="风之鬼脸箱" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="16" StrenFactor="5" EndurFactor="34" QuickFactor="38" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只寄生于宝箱内的谜之精灵。喜欢宝箱的味道，爱好是看人从惊喜变成失望，吓起人来干劲十足。因为和箱子一起行动不便。耐心等待贪婪的寻宝者自己上钩。">
+		<TalentSkill ID="7004 7001 7005 6001 5703 7012" Percent="500 250 250 250 250 250"/>
+		<BaseSkill ID="7004" Percent="200"/>
+		<SpecSkill ID="5010 5701 7008 7012 6001 5001" Percent="150 50 200 100 200 100"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240004" Rate="400 200 200 20"/>
+	</Type>
+	
+	<Type ID="32" Name="恐恐鸟" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="7" Fire="3" Wind="0" PhysiFactor="17" StrenFactor="5" EndurFactor="30" QuickFactor="42" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="鸟型宠物类小精灵。“咕~咕”的叫声拥有让人安心的奇异力量。晚上喜欢用羽毛把自己挂在树梢上随风摇晃。白天两两结伴，危险时紧紧抱在一起，就能缩小成一枚坚硬的蛋。">
+		<TalentSkill ID="7002 7004 7006 7007 6001 5703" Percent="500 250 250 250 250 250"/>
+		<BaseSkill ID="7002 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7003 7007 7010 6001 7502 7508" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="33" Name="沃特尔" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="30" StrenFactor="5" EndurFactor="34" QuickFactor="28" IntelFactor="38" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="泡沫型水精灵。受不了一切脏东西，但是为了维护“干净的世界”却经常用自己的身体去清洗别人，就算因此被讨厌也在所不惜！">
+		<TalentSkill ID="7002 7004 7006 7008 6001" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7002" Percent="200"/>
+		<SpecSkill ID="5701 5703 6002 6801 7006 7010 8001" Percent="50 50 100 150 200 150 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002" Rate="400 200 200 20"/>
+	</Type>
+	
+	<Type ID="34" Name="18K钢姆" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="4" Wind="6" PhysiFactor="22" StrenFactor="5" EndurFactor="41" QuickFactor="21" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="21401" CaptureArea="海底洞穴" Desc="非常罕见的精灵。比起一般的钢姆，外壳放佛被镀了一层18K黄金，因此被称为18K钢姆。">
+		<TalentSkill ID="7004 7003 7007 7008 6001" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7004 7008" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7003 7007 7012 6001 7501 7507" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="210001 230001 240003 240004" Rate="200 200 20 20"/>
+	</Type>
+	
+	<Type ID="35" Name="哒哒鸟" Race="6" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="25" StrenFactor="41" EndurFactor="20" QuickFactor="40" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="11202" CaptureArea="王国勇士广场" Desc="鸟型宠物类小精灵。总是喜欢成群而伴，看似弱小，配合极为默契，多方位的攻击往往让对手防不胜防。">
+		<TalentSkill ID="5102 5106 5703 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 7509 8701 8704" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180044 210001 230001 240003 240004" Rate="1000 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="36" Name="巨石怪" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="7" Water="3" Fire="0" Wind="0" PhysiFactor="45" StrenFactor="35" EndurFactor="32" QuickFactor="14" IntelFactor="4" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="时间缝隙" Desc="小石怪的升级版。虽然体型有所增大，但爱装普通石块的恶作剧本性依然难改，可惜太过显眼，想要再遇到傻乎乎被绊倒的人可就难了。">
+		<TalentSkill ID="5108 5102 5704 8501" Percent="500 400 300 300"/>
+		<BaseSkill ID="5108 5704" Percent="150 50"/>
+		<SpecSkill ID="5010 5102 5103 5106 5501 5701 5703 6001" Percent="300 100 50 150 50 50 50 50"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240001 240002 340019" Rate="400 200 200 20 20 50"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240001 240002 340019" Rate="210 106 106 20 20 50"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240001 240002 340019" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240001 240002 340019" Rate="178 106 106 20 20 50"/>
+		<Beast Lv="36" Catch="2000" ItemID="180009 210004 230004 240001 240002 340019" Rate="87 63 63 20 20 50"/>
+		<Beast Lv="37" Catch="2000" ItemID="180010 210004 230004 240001 240002 340019" Rate="78 63 63 20 20 50"/>
+		<Beast Lv="38" Catch="2000" ItemID="180010 210004 230004 240001 240002 340019" Rate="78 63 63 20 20 50"/>
+		<Beast Lv="100" Catch="0" ItemID="180010 210004 230004 240001 240002 340019" Rate="78 63 63 20 20 50"/>
+	</Type>
+	
+	<Type ID="37" Name="撒旦蝠" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="17" StrenFactor="5" EndurFactor="28" QuickFactor="42" IntelFactor="45" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="时间缝隙" Desc="撒旦蝠也称为“恶魔清除者”，它的出现被看作“不详的预兆”“恶魔的化身”……">
+		<TalentSkill ID="7003 7004 7008 7007 6001" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7003 7007" Percent="200 100"/>
+		<SpecSkill ID="5010 5701 7004 7008 7011 7012 6001" Percent="200 50 200 100 50 50 50"/>
+		<Beast Lv="1" Catch="2500" ItemID="180001 210001 230001 240003 240004" Rate="400 200 200 20 20"/>
+		<Beast Lv="16" Catch="4000" ItemID="180004 210002 230002 240003 240004" Rate="210 106 106 20 20"/>
+		<Beast Lv="17" Catch="4000" ItemID="180005 210002 230002 240003 240004" Rate="178 106 106 20 20"/>
+		<Beast Lv="18" Catch="4000" ItemID="180005 210002 230002 240003 240004" Rate="178 106 106 20 20"/>
+		<Beast Lv="38" Catch="2000" ItemID="180010 210004 230004 240003 240004" Rate="78 63 63 20 20"/>
+		<Beast Lv="39" Catch="2000" ItemID="180010 210004 230004 240003 240004" Rate="78 63 63 20 20"/>
+		<Beast Lv="40" Catch="2000" ItemID="180010 210004 230004 240003 240004" Rate="78 63 63 20 20"/>
+		<Beast Lv="100" Catch="0" ItemID="180010 210004 230004 240003 240004" Rate="78 63 63 20 20"/>
+	</Type>
+	
+	<Type ID="38" Del="1" Name="摇铃兔" Race="5" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="19" StrenFactor="9" EndurFactor="36" QuickFactor="38" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="--" Desc="女神侍卫【兔铃】最爱的宠物，好奇是它的天性，经常“神秘失踪”，让【兔铃】也深感头疼。">
+		<TalentSkill ID="7002 7003 6001 7007 7202 7006" Percent="500 300 300 400 300 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6202 7006 7007 7010 7202" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="39" Del="1" Name="新生普泥王" ResID="2001" Race="3" Style="2" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="38" StrenFactor="9" EndurFactor="28" QuickFactor="17" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21205" CaptureArea="普豆泥王BOSS领域" Desc="祓除暗黑诅咒后灵肉重塑获得新生的普豆泥王，似乎在为豆泥含量减少后流动更费力而烦恼。">
+		<TalentSkill ID="7001 7005 7009" Percent="500 500 500"/>
+		<BaseSkill ID="5703 7001" Percent="100 200"/>
+		<SpecSkill ID="5010 5701 6001 7005 7009 8001" Percent="150 50 50 200 150 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+
+	<Type ID="40" Del="1" Name="新生拉美王" ResID="2002" Race="5" Style="1" Earth="0" Water="0" Fire="3" Wind="7" PhysiFactor="32" StrenFactor="42" EndurFactor="26" QuickFactor="32" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21303" CaptureArea="格历尔平原" Desc="祓除暗黑诅咒后灵肉重塑获得新生的拉拉美王，肉质似乎变得更加鲜嫩了，要不要试试看呢？">
+		<TalentSkill ID="5102 5106 8701 8802" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="341006" Rate="20"/>
+	</Type>
+	
+	<Type ID="41" Del="1" Name="新生巨石蟹" ResID="2006" Race="8" Style="2" Earth="0" Water="7" Fire="3" Wind="0" PhysiFactor="22" StrenFactor="8" EndurFactor="40" QuickFactor="20" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="21402" CaptureArea="海底洞穴二层" Desc="祓除暗黑诅咒后灵肉重塑获得新生的巨石蟹，被拯救的经历减少了其对摩尔的偏见，然而面对渔船的眼神依旧哀怨。">
+		<TalentSkill ID="7002 7003 6001 7006" Percent="500 500 500 500"/>
+		<BaseSkill ID="5703 7002" Percent="50 100"/>
+		<SpecSkill ID="5010 7003 7006 7007 7010 7011 6001" Percent="50 100 150 150 150 150 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+
+	<Type ID="42" Name="海德" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="31" StrenFactor="40" EndurFactor="27" QuickFactor="27" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="21302" CaptureArea="格历尔平原" Desc="植物系小精灵。爱好是假扮树木、捉迷藏。不过因为长得实在太像树，经常连续几天都不会被同伴找到。唉，一个人的捉迷藏真是寂寞啊~~">
+		<TalentSkill ID="5108 5102 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1000" ItemID="180001 210001 230001 240001 240004" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="43" Name="假面奇奇帕" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="24" StrenFactor="5" EndurFactor="40" QuickFactor="20" IntelFactor="44" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="21303" CaptureArea="格历尔平原" Desc="【假面**帕】家族精灵，激动时会散播令人狂笑3小时的“奇奇帕粉”。曾在【格历尔平原3区】【红色土堆】中令发现者笑到肚子疼。据历史记录每天只出现一次。">
+		<TalentSkill ID="7003 7004 7201 7007 7008 6201 7011" Percent="500 400 300 300 400 300 300"/>
+		<BaseSkill ID="7003 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7007 7008 7011 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1000" ItemID="180001 210001 230001 240003 240004" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="44" Del="1" Name="新生沃特王" ResID="2007" Race="3" Style="1" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="40" StrenFactor="39" EndurFactor="27" QuickFactor="20" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11501" CaptureArea="西之时光井底" Desc="祓除暗黑诅咒后灵肉重塑获得新生的沃特尔王，也因此获得了更强大的净化之力，洁癖指数也飙升到了新的高度。">
+		<TalentSkill ID="5108 6001" Percent="500 1000"/>
+		<BaseSkill ID="5102 5103 5106 5108" Percent="100 50 150 150"/>
+		<SpecSkill ID="5010 5701 5703 5704 6001 8701" Percent="150 50 50 150 100 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="45" Del="1" Name="新生章界王" ResID="2008" Race="5" Style="1" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="35" StrenFactor="40" EndurFactor="31" QuickFactor="25" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11604" CaptureArea="弗雷基码头" Desc="祓除暗黑诅咒后灵肉重塑获得新生的章界王，已经可以在淡水中生存，因此踏上了更广阔的“称霸水域”之路。">
+		<TalentSkill ID="5102 5106 8701 8802" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="46" Name="马沙虾" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="32" StrenFactor="44" EndurFactor="20" QuickFactor="37" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="格里尔大陆上有很多虾，分辨马沙虾的方法很简单：红色、有角、逃跑三倍速。浑身天然的锯齿钳子和多功能钻头，有些摩尔贵族雇佣马沙虾开启罐头和酒瓶。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+		<Beast Lv="41" Catch="2000" ItemID="180011 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+		<Beast Lv="42" Catch="2000" ItemID="180011 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+		<Beast Lv="43" Catch="2000" ItemID="180011 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+	</Type>
+	
+	<Type ID="47" Name="忽悠喵" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="17" StrenFactor="7" EndurFactor="26" QuickFactor="43" IntelFactor="44" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="小型猫科精灵。远古时代，猫咪一族曾经是让鼹鼠们闻风丧胆的天敌。和摩尔祖先长期的亲密接触，甚至使它们长出了相似的红鼻子！">
+		<TalentSkill ID="7004 7003 7008 7007" Percent="500 400 300 300"/>
+		<BaseSkill ID="7004 7008" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7003 7007 7012 6001 7503 7509" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240003 240004" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="48" Name="海神马" Race="3" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="38" StrenFactor="42" EndurFactor="25" QuickFactor="24" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="21401" CaptureArea="海底洞穴" Desc="来自“海洋星”,不知道是“神马”的外星精灵。即使海啸来临，也无法改变它淡定的表情。最擅长用头上的闪电球“吸引”马沙虾。">
+		<TalentSkill ID="5102 5108 5704 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5108" Percent="100 100 100"/>
+		<SpecSkill ID="5001 5010 5703 5704 7508 8701 8703" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240001 240002" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="49" Del="1" Name="新生库噜王" ResID="2004" Race="7" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="39" StrenFactor="40" EndurFactor="27" QuickFactor="22" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21208" CaptureArea="库噜王BOSS领域" Desc="祓除暗黑诅咒后灵肉重塑获得新生的库噜王，对自己崭新的骨架耿耿于怀，致力于寻找强者战斗，企图再现身上“无敌帅气”的战损痕迹。">
+		<TalentSkill ID="5108 5104 5102 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 50 150 150"/>
+		<SpecSkill ID="5010 5107 5701 5703 5704 8701" Percent="150 150 50 50 100 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="50" Del="1" Name="新生法尔王" ResID="2005" Race="3" Style="2" Earth="0" Water="0" Fire="9" Wind="1" PhysiFactor="25" StrenFactor="9" EndurFactor="22" QuickFactor="39" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="21212" CaptureArea="法尔王BOSS领域" Desc="祓除暗黑诅咒后灵肉重塑获得新生的法尔王，重燃的火焰似乎更加旺盛，誓要焚毁每一寸黑暗。">
+		<TalentSkill ID="7003 7004 7007 7008 7011" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5703 7003" Percent="50 200"/>
+		<SpecSkill ID="5010 5701 7004 7007 7008 7011 7012 6001" Percent="50 50 200 150 150 50 50 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="51" Name="幽光战士" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="24" StrenFactor="42" EndurFactor="26" QuickFactor="33" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21701" CaptureArea="锁修塔F1" Desc="比起库噜战士，幽光战士手持蓝光剑，在黑暗的地方才可以发挥全部实力，有黑暗才有光明。">
+		<TalentSkill ID="5106 5704 5103 8701" Percent="500 350 300 350"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5101 5103 5105 5501 5704 8701 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" />
+		<Beast Lv="3" Catch="2500" />
+		<Beast Lv="4" Catch="2500" />
+		<Beast Lv="5" Catch="2500" />
+		<Beast Lv="32" Catch="2000" ItemID="170010 180008 180051 210004 230004 340018" Rate="1000 98 1000 63 63 50"/>
+		<Beast Lv="33" Catch="2000" ItemID="170010 180009 180051 210004 230004 340018" Rate="1000 87 1000 63 63 50"/>
+		<Beast Lv="34" Catch="2000" ItemID="170010 180009 180051 210004 230004 340018" Rate="1000 87 1000 63 63 50"/>
+	</Type>
+	
+	<Type ID="52" Name="噬魂鬼" Race="7" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="8" Fire="2" Wind="0" PhysiFactor="22" StrenFactor="5" EndurFactor="34" QuickFactor="30" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21702" CaptureArea="锁修塔F2" Desc="吸收“痛苦”“悲伤”等负面情绪的特殊精灵。过多伤感的情绪使自己变得比女孩子还要感性，经常泪流满面。">
+		<TalentSkill ID="7002 7003 7006 7007" Percent="500 400 350 250"/>
+		<BaseSkill ID="7002 7007" Percent="100 100"/>
+		<SpecSkill ID="5010 7003 7006 7010 7011 6801 7504 7510" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="5" Catch="2500" />
+		<Beast Lv="6" Catch="2500" />
+		<Beast Lv="7" Catch="2500" />
+		<Beast Lv="34" Catch="2000" ItemID="150010 180009 210004 230004 340016" Rate="1000 87 63 63 50"/>
+		<Beast Lv="35" Catch="2000" ItemID="150010 180009 210004 230004 340016" Rate="1000 87 63 63 50"/>
+		<Beast Lv="36" Catch="2000" ItemID="150010 180009 210004 230004 340016" Rate="1000 87 63 63 50"/>
+	</Type>
+	
+	<Type ID="53" Name="无脸隐者" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="6" Fire="4" Wind="0" PhysiFactor="31" StrenFactor="5" EndurFactor="35" QuickFactor="19" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21703" CaptureArea="锁修塔F3" Desc="生活在远古森林中的隐居精灵。很少有人实际见过它们。传说有操纵植物的神奇力量……">
+		<TalentSkill ID="7002 7003 7201 7007 7006 6201" Percent="500 400 300 300 400 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7006 7007 7010 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="36" Catch="2000" ItemID="180009 180050 210004 230004" Rate="87 500 63 63"/>
+		<Beast Lv="37" Catch="2000" ItemID="180010 180050 210004 230004" Rate="78 500 63 63"/>
+		<Beast Lv="38" Catch="2000" ItemID="180010 180050 210004 230004" Rate="78 500 63 63"/>
+	</Type>
+	
+	<Type ID="54" Name="石头人" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="34" StrenFactor="41" EndurFactor="39" QuickFactor="13" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21704" CaptureArea="锁修塔F4" Desc="破坏力非常强的石头型精灵。走到哪儿都会引起小型“地震”。轰隆轰隆的巨响让它非常兴奋！擅长的特技是“力量铁锤”。">
+		<TalentSkill ID="5108 5102 5704 8501" Percent="500 350 350 300"/>
+		<BaseSkill ID="5108 5704" Percent="150 100"/>
+		<SpecSkill ID="5010 5102 5103 5106 5501 5701 5703 8501" Percent="200 100 100 150 50 50 50 50"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="38" Catch="2000" ItemID="180010 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+		<Beast Lv="39" Catch="2000" ItemID="180010 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+		<Beast Lv="40" Catch="2000" ItemID="180010 210004 230004 240002 240003" Rate="78 63 63 20 20"/>
+	</Type>
+	
+	<Type ID="55" Name="沃勒格球" Race="3" Style="1" SpecCatch="0 1000 3000 5000" Earth="1" Water="9" Fire="0" Wind="0" PhysiFactor="39" StrenFactor="43" EndurFactor="26" QuickFactor="14" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="马沙虾海域" Desc="大海中的水元素升华而成的精灵。祖先是远古时代的海洋之神。平时很安静、没有存在感，可是一旦爆发连大海都会颤抖！">
+		<TalentSkill ID="5106 5102 5703 6001" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5106" Percent="100 100 100"/>
+		<SpecSkill ID="5010 5703 5704 6001 6008 7510 8705" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="56" Name="蜘蛛炸弹" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="8" Wind="2" PhysiFactor="24" StrenFactor="5" EndurFactor="36" QuickFactor="26" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="魔法攻击方式是喷火，物理攻击方式是“自爆”。">
+		<TalentSkill ID="7003 7004 7007 7008" Percent="500 400 350 250"/>
+		<BaseSkill ID="7003 7008" Percent="150 150"/>
+		<SpecSkill ID="5010 7004 7007 7011 7012 6001" Percent="50 150 150 120 120 110"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240001 240004" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="57" Del="1" Name="新生卡拉兽" ResID="2011" Race="3" Style="1" Earth="0" Water="8" Fire="2" Wind="0" PhysiFactor="27" StrenFactor="40" EndurFactor="22" QuickFactor="37" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="30208" CaptureArea="卡拉兽BOSS领域" Desc="祓除暗黑诅咒后灵肉重塑获得新生的卡拉兽，因守护之物已被净化而失业，总是迷茫地在异时空中游荡，遇到它记得打个招呼哦。">
+		<TalentSkill ID="5108 5104 5102 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 50 150 150"/>
+		<SpecSkill ID="5010 5107 5701 5703 5704 8701" Percent="150 150 50 50 100 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="58" Del="1" Name="伊瑟拉" Race="4" Style="2" Earth="0" Water="2" Fire="8" Wind="0" PhysiFactor="18" StrenFactor="6" EndurFactor="37" QuickFactor="32" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="原本为龙界无名龙族后裔，偶然获得火神伊芙利特的一丝火焰，拥有了自然神灵的气息。">
+		<TalentSkill ID="7007 7002 7003 6001 7011" Percent="500 300 400 300 300"/>
+		<BaseSkill ID="7003 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 7002 7007 7010 7011 6001 7514 7518" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="59" Del="1" Name="刺尾龙蜥" Race="4" Style="1" Earth="2" Water="0" Fire="0" Wind="8" PhysiFactor="24" StrenFactor="42" EndurFactor="25" QuickFactor="39" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="亚龙族的一员。动作敏捷，疾若电闪；尾巴如钢针般坚韧有力，穿透性极强。">
+		<TalentSkill ID="5102 5104 5108 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="150 150 150 150"/>
+		<SpecSkill ID="5106 5107 5703 5704 7509 8704" Percent="125 150 25 100 150 150"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="60" Name="愤怒萝卜" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="4" Water="0" Fire="0" Wind="6" PhysiFactor="25" StrenFactor="42" EndurFactor="22" QuickFactor="34" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="11205" CaptureArea="王国东街" Desc="有着“愤怒”特质的小型萝卜精灵。时常被当做“萝卜”粗暴拔起，发出愤怒的尖叫。">
+		<TalentSkill ID="5106 5102 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="15" Catch="1500"/>
+	</Type>
+	<Type ID="61" Del="1" Name="新生蜂后" ResID="2012" Race="1" Style="1" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="25" StrenFactor="41" EndurFactor="23" QuickFactor="41" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21304" CaptureArea="格历尔平原" Desc="祓除暗黑诅咒后灵肉重塑获得新生的草莓蜂后，催生草莓的力量似乎更强大了，但目前还不能随意控制，如果你在家中发现新鲜草莓，请不要惊讶。">
+		<TalentSkill ID="5102 8701 8707 8803 5108" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5102 5103" Percent="100 100"/>
+		<SpecSkill ID="5010 5501 5701 5704 6203 8701 8707 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="62" Del="1" Name="雪米菈" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="7" Water="3" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="5" EndurFactor="33" QuickFactor="28" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="冰雪极地的自然精灵，蕴含着不可思议的魔法力量。">
+		<TalentSkill ID="7001 6001 7002 7201 7005 7006 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7001 7002" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7005 7006 7009 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="63" Name="星星布鲁" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="1" Water="0" Fire="0" Wind="9" PhysiFactor="22" StrenFactor="5" EndurFactor="30" QuickFactor="38" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="明亮、灵动、活泼的精灵，让人联想到闪耀的星星。">
+		<TalentSkill ID="7004 7005 7008 6001" Percent="500 600 600 400"/>
+		<BaseSkill ID="7004 7008" Percent="100 100"/>
+		<SpecSkill ID="5010 7001 7005 7012 6001 7508 7509 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="64" Name="呆呆鸟" Race="6" Style="1" SpecCatch="0 1000 3000 5000" Earth="7" Water="0" Fire="0" Wind="3" PhysiFactor="33" StrenFactor="41" EndurFactor="20" QuickFactor="34" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="天然呆，不擅长飞翔，但天生有强烈的自保意识，奔跑速度极快。">
+		<TalentSkill ID="5108 8701 8703 6001 8501" Percent="300 300 300 300 300"/>
+		<BaseSkill ID="5102 5103 5108" Percent="100 100 100"/>
+		<SpecSkill ID="5010 5701 8701 8703 8704 8705 8707" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="65" Name="三代目" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="7" Water="3" Fire="0" Wind="0" PhysiFactor="34" StrenFactor="41" EndurFactor="28" QuickFactor="25" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="谣传祖先是某环游大陆的著名马戏团所培养的精灵，拥有绝对的平衡感。">
+		<TalentSkill ID="5108 6001 8501 5102" Percent="500 500 500 500"/>
+		<BaseSkill ID="5108 5704" Percent="100 100"/>
+		<SpecSkill ID="5010 5102 5103 5501 5703 6001 8501 8702" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="66" Del="1" Name="蓝迷你龙" Race="4" Style="1" Earth="0" Water="8" Fire="2" Wind="0" PhysiFactor="29" StrenFactor="43" EndurFactor="26" QuickFactor="30" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="迷你龙家族的一员，娇小的身体中隐藏着强大的力量。">
+		<TalentSkill ID="5102 8705 8706 5106" Percent="500 500 500 500"/>
+		<BaseSkill ID="5102 5103" Percent="175 50"/>
+		<SpecSkill ID="5106 5107 5501 5704 7510 7511 8705 8706" Percent="175 200 50 100 125 125 125 125"/>
+		<Beast Lv="1" Catch="0" ItemID="340021" Rate="50" />
+		<Beast Lv="2" Catch="0" ItemID="340021" Rate="50"/>
+		
+	</Type>
+	<Type ID="67" Name="夜月喵" Race="6" Style="2" SpecCatch="0 1000 3000 5000" Earth="6" Water="4" Fire="0" Wind="0" PhysiFactor="17" StrenFactor="7" EndurFactor="26" QuickFactor="44" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="小型猫科精灵，夜间出没的它们行踪难以捉摸，喜欢在月光之下舞蹈，据说观赏过其翩翩舞姿的摩尔会收获好运哦。">
+		<TalentSkill ID="7001 7002 7005 7006" Percent="500 400 300 300"/>
+		<BaseSkill ID="7001 7005" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 7002 7006 7009 6001 7503 7509" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="68" Name="波波尔" Race="2" Style="2" SpecCatch="0 1000 3000 5000" Earth="4" Water="0" Fire="0" Wind="6" PhysiFactor="30" StrenFactor="5" EndurFactor="36" QuickFactor="20" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11503" CaptureArea="草木树海" Desc="草木树海的独特精灵，受女神之泪的灵气滋养而生。">
+		<TalentSkill ID="7004 7001 7201 7005 7008 6201 8501" Percent="500 400 300 300 400 300 300"/>
+		<BaseSkill ID="7001 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7005 7008 7012 7201" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="69" Name="侍卫月饼" Race="3" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="6" Wind="4" PhysiFactor="26" StrenFactor="42" EndurFactor="28" QuickFactor="30" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="41211" CaptureArea="月宫前殿" Desc="月饼王倾力培养的忠实侍卫，担负着守卫月之宫殿的重任。">
+		<TalentSkill ID="5102 5108 8701 8703" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5103" Percent="100 100"/>
+		<SpecSkill ID="5010 5107 5108 5701 5704 8701 8703 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="70" Name="宫女月饼" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="4" Water="6" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="4" EndurFactor="31" QuickFactor="33" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="41211" CaptureArea="月宫前殿" Desc="月之宫殿的侍女，长日打理着月宫的事务，同样拥有不弱的技艺。">
+		<TalentSkill ID="7002 6001 7001 7006" Percent="500 300 400 300"/>
+		<BaseSkill ID="7001 7002" Percent="100 100"/>
+		<SpecSkill ID="5701 6001 7005 7006 7010" Percent="100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="71" Name="月饼王" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="23" StrenFactor="9" EndurFactor="41" QuickFactor="20" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="41213" CaptureArea="月宫后殿" Desc="月之宫殿的统领，凡是侵入月宫的外来者，一律会被月饼王清理出月宫。">
+		<TalentSkill ID="7004 6001 7001 7005" Percent="500 300 400 300"/>
+		<BaseSkill ID="7001 7004" Percent="100 100"/>
+		<SpecSkill ID="6003 6004 7005 7008 7503 7509 8001 8002" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="72" Name="雪绒草" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="39" EndurFactor="24" QuickFactor="32" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="飘落到【草木树海】的雪花渐渐与此处特有的“介绒草”合二为一，诞生出了神奇的植物系精灵“雪绒草”！">
+		<TalentSkill ID="5102 5106 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="73" Del="1" Name="土著吉普豆" Race="2" Style="1" Earth="2" Water="0" Fire="0" Wind="8" PhysiFactor="32" StrenFactor="42" EndurFactor="26" QuickFactor="24" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="远古吉普豆家族的后裔，拥有不俗的能力！">
+		<TalentSkill ID="5102 5108 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="74" Name="库洛喵" Race="5" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="31" StrenFactor="5" EndurFactor="35" QuickFactor="32" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="猫科精灵，因其天然的灵气，被兽王帕瑞留在身边监护峡谷的安宁。">
+		<TalentSkill ID="7002 7007 7202 6202 7006" Percent="500 400 200 200 200"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6202 7006 7007 7010 7202" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="75" Name="电斯尼" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="0" Fire="0" Wind="7" PhysiFactor="21" StrenFactor="40" EndurFactor="26" QuickFactor="44" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="犬科精灵，动作迅捷，嗅觉敏锐。只接受一流对手的挑战，否则只会投以犀利的眼神。">
+		<TalentSkill ID="5102 5106 8701 8802" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="76" Name="金羊狼" Race="5" Style="1" SpecCatch="0 1000 3000 5000" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="28" StrenFactor="44" EndurFactor="27" QuickFactor="30" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11504" CaptureArea="兽王峡谷" Desc="披着金色羊皮的狼型精灵。体形不大但非常具有攻击性，战斗实力很强。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="100" Catch="0"/>
+	</Type>
+	<Type ID="77" Name="24K蜘蛛炸弹" Race="8" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="14" StrenFactor="9" EndurFactor="37" QuickFactor="33" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="蜘蛛炸弹中的王者，魔法攻击方式是喷火，物理攻击方式是“自爆”。">
+		<TalentSkill ID="7004 6001 7003 7008" Percent="500 300 400 300"/>
+		<BaseSkill ID="7004 7007" Percent="100 100"/>
+		<SpecSkill ID="5010 5703 6001 7003 7008 7011 7012 7507" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="78" Name="纳尼" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="30" StrenFactor="42" EndurFactor="31" QuickFactor="18" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11604" CaptureArea="弗雷基码头" Desc="人形精灵，粗暴鲁莽神经简单，强而有力的四肢外包裹着奇异蓬松的毛发。惯用石器武器。">
+		<TalentSkill ID="5102 5106 8701 8704" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5703 5704 6001 8701 8704 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="79" Name="独眼树藤怪" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="36" StrenFactor="41" EndurFactor="28" QuickFactor="17" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="魔化的树藤怪，所有被缠绕的生物，都会慢慢被它融为一体吧。">
+		<TalentSkill ID="5704 5103 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5103 5104" Percent="100 100"/>
+		<SpecSkill ID="5010 5107 5501 5703 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="80" Name="食人樱" Race="2" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="26" StrenFactor="40" EndurFactor="27" QuickFactor="29" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11503" CaptureArea="草木树海" Desc="很可怕的花。魔法口臭攻击。物理碾碎攻击。冬天要注意预防嘴唇干裂啊，食人樱小姐！">
+		<TalentSkill ID="5102 5106 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6201 8701 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="38" Catch="2000"/>
+		<Beast Lv="39" Catch="2000"/>
+		<Beast Lv="40" Catch="2000"/>
+	</Type>
+	<Type ID="81" Name="南瓜骑士" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="24" StrenFactor="40" EndurFactor="25" QuickFactor="32" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="史诗战场" Desc="南瓜军团的中坚战力。因感觉头戴战盔、手持长枪的王国骑士很帅气，所以也向南瓜公爵提议打造了一副。">
+		<TalentSkill ID="5102 5106 8701 8705 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5703 5704 6001 8701 8703 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="82" Name="电锯小丑" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="40" EndurFactor="25" QuickFactor="41" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="史诗战场" Desc="南瓜公爵的得力助手，狂热的“锯断”爱好者，看到的东西都想用手中的电锯试一下。">
+		<TalentSkill ID="5108 5104 8701 8704" Percent="500 300 400 300"/>
+		<BaseSkill ID="5103 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5104 5703 5704 6001 8701 8704 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="83" Name="伪南瓜公爵" Race="0" Style="2" SpecCatch="0 1000 3000 5000" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="5" EndurFactor="40" QuickFactor="30" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="史诗战场" Desc="南瓜军团的统领替身，以南瓜公爵的野心作为自己的生存动力。">
+		<TalentSkill ID="7003 7002 7006 6001 7009" Percent="500 300 400 300 300"/>
+		<BaseSkill ID="7003 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 7002 7007 7010 7011 6001 7510 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="84" Name="萌萌收割者" Race="6" Style="1" SpecCatch="0 1000 3000 5000" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="26" StrenFactor="40" EndurFactor="18" QuickFactor="40" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="史诗战场" Desc="南瓜军团飞行部队所属，不要因为镰刀短小而轻视了它的战斗力，它也有另一个让人畏惧的称谓——生命收割者。">
+		<TalentSkill ID="5102 5106 8701 8706" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 7509 8701 8706" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="85" Name="寂灭骨龙" Race="4" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="30" StrenFactor="43" EndurFactor="30" QuickFactor="26" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="史诗战场" Desc="龙族旁支，长年生活在寂灭之地，全身散发出灭亡的气息。">
+		<TalentSkill ID="5102 8701 8705 8706 6001 5108" Percent="500 400 300 300 400 400"/>
+		<BaseSkill ID="5102 5103" Percent="100 100"/>
+		<SpecSkill ID="5010 5107 5701 5704 7516 8701 8705 8706" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="86" Name="炎石巨人" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="35" StrenFactor="41" EndurFactor="34" QuickFactor="12" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="--" Desc="未知天外灵性陨石，受魔王感召而来。">
+		<TalentSkill ID="5106 5703 5102 8501 8702" Percent="300 400 300 400 300"/>
+		<BaseSkill ID="7003 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7007 7008 7011 7012 7507" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="87" Name="雪哈莉" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="4" Water="6" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="8" EndurFactor="41" QuickFactor="24" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="22101" CaptureArea="克拉斯海岸" Desc="贝壳型小精灵。平时半梦半醒，储存生命能量。随便打扰它们睡觉是会被讨厌的！">
+		<TalentSkill ID="7002 7001 7005 6001" Percent="500 300 400 300"/>
+		<BaseSkill ID="7002 7005" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7001 7006 7009 7010 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="50" Catch="1500"/>
+		<Beast Lv="51" Catch="1500"/>
+		<Beast Lv="52" Catch="1500"/>
+		<Beast Lv="53" Catch="1500"/>
+	</Type>
+	<Type ID="88" Name="趴趴贝" Race="3" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="31" StrenFactor="41" EndurFactor="30" QuickFactor="25" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="12101" CaptureArea="克拉斯海滩" Desc="最爱懒洋洋地趴在沙滩上享受阳光浴，因而体型越来越肥胖，常常堵住海边一些主要通道。">
+		<TalentSkill ID="5102 5108 8701 8707 6001" Percent="500 300 400 300 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 7512 8701 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="89" Name="梦幻瓢虫" Race="1" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="32" StrenFactor="5" EndurFactor="24" QuickFactor="41" IntelFactor="41" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="21805" CaptureArea="世界树2F" Desc="昆虫族中出色的战士，身手敏捷且擅长使用魔法攻击敌人，是昆虫系之王的得力助手。">
+		<TalentSkill ID="7003 7006 7203 6203 7007" Percent="500 400 200 200 200"/>
+		<BaseSkill ID="7003 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6203 7002 7007 7011 7203" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="38" Catch="2000"/>
+		<Beast Lv="39" Catch="2000"/>
+		<Beast Lv="40" Catch="2000"/>
+	</Type>
+	<Type ID="90" Name="巴布" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="1" Water="9" Fire="0" Wind="0" PhysiFactor="30" StrenFactor="41" EndurFactor="30" QuickFactor="20" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="--" Desc="粗暴鲁莽神经简单，强而有力的四肢外包裹着奇异蓬松的毛发，惯用石器武器。">
+		<TalentSkill ID="5106 8701 5102 8703" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 8701 8703 8704" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="91" Name="比安" Race="0" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="8" Wind="2" PhysiFactor="22" StrenFactor="42" EndurFactor="20" QuickFactor="41" IntelFactor="10" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="--" Desc="喜欢在圣诞树上睡觉的精灵，越漂亮的圣诞树越能得到它的青睐。">
+		<TalentSkill ID="5108 5102 8701 8703" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6002 8701 8703" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="100" Catch="0"/>
+	</Type>
+	<Type ID="92" Name="翡翠晶龙" Race="4" Style="1" SpecCatch="0 10 10 10" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="40" StrenFactor="40" EndurFactor="35" QuickFactor="13" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="亚龙族的一员，借助大地的力量让它拥有坚韧的体魄。">
+		<TalentSkill ID="5102 8701 5108 8702 8501" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 7513 8701 8702" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="93" Name="积木傀儡" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="44" EndurFactor="30" QuickFactor="28" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="通过精神感应操控的机关木偶，只要机关还能运转，就会将主人的指令进行到底。">
+		<TalentSkill ID="5106 5703 5704 8704" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5703 5704 6001 8704" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="44" Catch="2000" ItemID="180011 240002 240003" Rate="68 20 20"/>
+		<Beast Lv="45" Catch="2000" ItemID="180012 240002 240003" Rate="61 20 20"/>
+		<Beast Lv="46" Catch="2000" ItemID="180012 240002 240003" Rate="61 20 20"/>
+		<Beast Lv="47" Catch="2000" ItemID="180012 240002 240003" Rate="61 20 20"/>
+		<Beast Lv="48" Catch="2000" ItemID="180012 240002 240003" Rate="61 20 20"/>
+		<Beast Lv="49" Catch="2000" ItemID="180013 240002 240003" Rate="55 20 20"/>
+		<Beast Lv="50" Catch="2000" ItemID="180013 240002 240003" Rate="55 20 20"/>
+		<Beast Lv="51" Catch="2000" ItemID="180013 240002 240003" Rate="55 20 20"/>
+		<Beast Lv="52" Catch="2000" ItemID="180013 240002 240003" Rate="55 20 20"/>
+		<Beast Lv="53" Catch="2000" ItemID="180014 240002 240003" Rate="50 20 20"/>
+		<Beast Lv="54" Catch="2000" ItemID="180014 240002 240003" Rate="50 20 20"/>
+		<Beast Lv="55" Catch="2000" ItemID="180014 240002 240003" Rate="50 20 20"/>
+		<Beast Lv="56" Catch="2000" ItemID="180014 240002 240003" Rate="50 20 20"/>
+		<Beast Lv="57" Catch="2000" ItemID="180015 240002 240003" Rate="46 20 20"/>
+		<Beast Lv="58" Catch="2000" ItemID="180015 240002 240003" Rate="46 20 20"/>
+		<Beast Lv="59" Catch="2000" ItemID="180015 240002 240003" Rate="46 20 20"/>
+		<Beast Lv="60" Catch="2000" ItemID="180015 240002 240003" Rate="46 20 20"/>
+	</Type>
+	<Type ID="94" Name="花食兽" Race="3" Style="2" SpecCatch="0 1000 3000 5000" Earth="0" Water="7" Fire="3" Wind="0" PhysiFactor="28" StrenFactor="5" EndurFactor="38" QuickFactor="21" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="22201" CaptureArea="克拉斯岩洞" Desc="有液化特性的精灵，情绪失控就会液化成一滩水，热爱新鲜美丽的献花。">
+		<TalentSkill ID="7002 6001 7003 7006" Percent="500 300 400 300"/>
+		<BaseSkill ID="7002 7003" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7006 7007 7010 7011 7514" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="44" Catch="2000" ItemID="180011 240003 240004" Rate="68 20 20"/>
+		<Beast Lv="45" Catch="2000" ItemID="180012 240003 240004" Rate="61 20 20"/>
+		<Beast Lv="46" Catch="2000" ItemID="180012 240003 240004" Rate="61 20 20"/>
+		<Beast Lv="47" Catch="2000" ItemID="180012 240003 240004" Rate="61 20 20"/>
+		<Beast Lv="48" Catch="2000" ItemID="180012 240003 240004" Rate="61 20 20"/>
+		<Beast Lv="49" Catch="2000" ItemID="180013 240003 240004" Rate="55 20 20"/>
+		<Beast Lv="50" Catch="2000" ItemID="180013 240003 240004" Rate="55 20 20"/>
+		<Beast Lv="51" Catch="2000" ItemID="180013 240003 240004" Rate="55 20 20"/>
+		<Beast Lv="52" Catch="2000" ItemID="180013 240003 240004" Rate="55 20 20"/>
+		<Beast Lv="53" Catch="2000" ItemID="180014 240003 240004" Rate="50 20 20"/>
+		<Beast Lv="54" Catch="2000" ItemID="180014 240003 240004" Rate="50 20 20"/>
+		<Beast Lv="55" Catch="2000" ItemID="180014 240003 240004" Rate="50 20 20"/>
+		<Beast Lv="56" Catch="2000" ItemID="180014 240003 240004" Rate="50 20 20"/>
+		<Beast Lv="57" Catch="2000" ItemID="180015 240003 240004" Rate="46 20 20"/>
+		<Beast Lv="58" Catch="2000" ItemID="180015 240003 240004" Rate="46 20 20"/>
+		<Beast Lv="59" Catch="2000" ItemID="180015 240003 240004" Rate="46 20 20"/>
+		<Beast Lv="60" Catch="2000" ItemID="180015 240003 240004" Rate="46 20 20"/>
+	</Type>
+	<Type ID="95" Name="噬灵鬼" Race="7" Style="1" SpecCatch="0 1000 3000 5000" Earth="2" Water="0" Fire="0" Wind="8" PhysiFactor="20" StrenFactor="40" EndurFactor="23" QuickFactor="38" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="吸收“悔恨”“憎恶”等负面情绪的特殊精灵。仇视一切鲜活的生灵，为自己无法恢复的生命悲痛不绝。">
+		<TalentSkill ID="5102 8701 5106 8705" Percent="500 400 350 250"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 7510 8701 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" ItemID="340017" Rate="50"/>
+		<Beast Lv="100" Catch="0" ItemID="340017" Rate="50"/>
+	</Type>
+	<Type ID="96" Del="1" Name="新生毒蜂王" Race="1" Style="1" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="32" StrenFactor="41" EndurFactor="27" QuickFactor="32" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="30210" CaptureArea="世界树底" Desc="祓除暗黑诅咒后灵肉重塑获得新生的剧毒蜂皇，自愿投靠黑暗的它对被净化之事怀恨在心，要小心其剧毒的偷袭哦。">
+		<TalentSkill ID="5102 8701 8706 8803 6001" Percent="400 400 300 300 300"/>
+		<BaseSkill ID="5102 5103" Percent="100 100"/>
+		<SpecSkill ID="5010 5501 5701 6203 8701 8703 8706 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="97" Del="1" Name="焰鳞小白龙" Race="4" Style="2" Earth="0" Water="0" Fire="6" Wind="4" PhysiFactor="14" StrenFactor="9" EndurFactor="42" QuickFactor="22" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="拥有火焰鳞覆盖的小白龙，是摩尔王国新发现的超强龙系精灵，拥有的高耐力是其无比强大的基础">
+		<TalentSkill ID="6002 7008 7003 7007" Percent="500 350 350 300"/>
+		<BaseSkill ID="7003 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5501 7012 7011 6001 7514 7518" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="98" Name="始祖雷伊兽" Race="5" Style="1" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="31" StrenFactor="44" EndurFactor="22" QuickFactor="36" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="远古时代就存在的始祖雷伊兽，有着天生的强势技能，超强属性让其站在精灵之巅，可以从对对碰机器中获取。">
+		<TalentSkill ID="5102 5106 8701 8802" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="99" Name="幻灵蝶" Race="1" Style="2" SpecCatch="0 1000 3000 5000" Earth="1" Water="9" Fire="0" Wind="0" PhysiFactor="19" StrenFactor="5" EndurFactor="30" QuickFactor="47" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="从对对碰机器中发现的昆虫系的统治级精灵，拥有出色的属性，作为昆虫系的代表精灵">
+		<TalentSkill ID="7006 7008 6001 7203 " Percent="500 400 300 300"/>
+		<BaseSkill ID="7003 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6203 7002 7007 7011 7203" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="100" Name="幻羽精灵" Race="6" Style="1" Earth="5" Water="0" Fire="5" Wind="0" PhysiFactor="34" StrenFactor="45" EndurFactor="35" QuickFactor="14" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="物理系的王者精灵，从对对碰中获取，似乎是从远古空间中释放的精灵，飞行系的骄傲。">
+		<TalentSkill ID="5102 5106 8701 8706" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 7509 8701 8706" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+		<Beast Lv="100" Catch="0"/>
+	</Type>
+	<Type ID="101" Name="愤怒的吉利蛋" Race="6" Style="1" Earth="0" Water="8" Fire="0" Wind="2" PhysiFactor="34" StrenFactor="43" EndurFactor="26" QuickFactor="21" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="无意中发现的原始精灵，很有趣的样子，会生气的蛋。对于飞行系精灵有着历史性的影响。">
+		<TalentSkill ID="5106 5102 8701 8706" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 7509 8701 8706" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="102" Name="红斑领主" Race="1" Style="1" Earth="3" Water="0" Fire="7" Wind="0" PhysiFactor="42" StrenFactor="39" EndurFactor="39" QuickFactor="10" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="21805" CaptureArea="暂无资料" Desc="锋利的前肢让它拥有极强的战斗能力，美艳的外形不能掩饰其凶恶的本性，驯服它就能主宰一切。">
+		<TalentSkill ID="5704 5108 6001 7203 8501 5703" Percent="400 400 300 300 300 300"/>
+		<BaseSkill ID="5108 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6203 7002 8501 8705" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="103" Name="风马兽" Race="5" Style="1" Earth="0" Water="3" Fire="0" Wind="7" PhysiFactor="41" StrenFactor="42" EndurFactor="33" QuickFactor="15" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="神奇的精灵，有着优雅的外形，性格温顺，喜欢和勇士并肩作战，只是数量非常稀少，拥有它的勇士需要非常好的运气">
+		<TalentSkill ID="5102 5106 8701 8802 8501" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="104" Name="怪盗魔力潘" Race="0" Style="2" SpecCatch="0 1000 3000 5000" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="6" EndurFactor="36" QuickFactor="39" IntelFactor="41" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="--" Desc="怪盗魔力潘因为生性胆小，从小就喜欢用布蒙着自己的脸。身材的劣势让其自小熟悉魔法类的技能，并且能够熟练的释放这些技能。">
+		<TalentSkill ID="7002 7001 7005 6001 7012" Percent="500 300 400 300 400"/>
+		<BaseSkill ID="7002 7005" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7001 7006 7009 7010 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="105" Name="魔光使徒" Race="7" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="27" StrenFactor="38" EndurFactor="18" QuickFactor="38" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="暂无资料" Desc="未知领域的不死系精灵，它的历史像其名字一样神秘，无法探究其来自何处，实力也是迷一样。拥有无限的潜力。">
+		<TalentSkill ID="5102 8701 5106 8705" Percent="500 400 350 250"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 7510 8701 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="106" Name="奥哇鹰" Race="6" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="5" Fire="0" Wind="5" PhysiFactor="25" StrenFactor="41" EndurFactor="22" QuickFactor="37" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="11223" CaptureArea="暂无资料" Desc="拥有可爱的外形，喜欢用眼镜去瞄准然后释放攻击，身材小，但是性格缺十分的火爆，要小心它的进攻哦">
+		<TalentSkill ID="5102 5106 8701 8706" Percent="500 300 300 400"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 7509 8701 8706" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="107" Name="猩猿之王" Race="5" Style="1" Earth="9" Water="1" Fire="0" Wind="0" PhysiFactor="41" StrenFactor="40" EndurFactor="31" QuickFactor="22" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="它是主宰力量之源的圣兽精灵，拥有远古超强能力。">
+		<TalentSkill ID="5102 5106 8701 8802 8501" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5704 6202 8701 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="108" Del="1" Name="斯巴鲁幼兽" Race="7" Style="1" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="25" StrenFactor="37" EndurFactor="26" QuickFactor="43" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="魔龙斯巴鲁的幼兽阶段，还没成熟就拥有非常迅猛的作战能力，一旦成年进化，个性会变得异常残暴。">
+		<TalentSkill ID="5102 5104 5108 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 100 100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 7513 8701" Percent="100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="109" Name="琉璃翼龙" Race="4" Style="1" SpecCatch="0 10 10 10" Earth="8" Water="0" Fire="2" Wind="0" PhysiFactor="24" StrenFactor="41" EndurFactor="29" QuickFactor="34" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="生活在地底的珍稀龙类，是摩尔王的多年心愿。">
+		<TalentSkill ID="5102 8702 5104 8701 5106" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5102 5103 5108" Percent="100 100 100"/>
+		<SpecSkill ID="5010 5107 5701 5704 7513 8701 8706" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="115" Name="凛风吓人箱" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="5" Fire="0" Wind="5" PhysiFactor="30" StrenFactor="43" EndurFactor="29" QuickFactor="25" IntelFactor="6" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="只与凛风吓人箱冰冷的外表不同的是他有一颗顽皮的心，这种行动迅速且酷爱捣乱的箱子精灵总喜欢躲在隐秘的角落里，当人路过时突然出现吓人一跳。">
+		<TalentSkill ID="5102 5106 5704 5703 8501" Percent="400 300 300 300 300"/>
+		<BaseSkill ID="5106 8701" Percent="50 100"/>
+		<SpecSkill ID="5010 5102 5103 5108 5701 5703 5704 6001 5001" Percent="200 150 50 50 50 50 100 200 100"/>
+		<Beast Lv="1" Catch="0" ItemID="180001 210001 230001 240002 240003" Rate="400 200 200 20 20"/>
+	</Type>
+	
+	<Type ID="200" Del="1" Name="斗气库噜王" ResID="2004" Race="7" Style="1" SpecCatch="0 10 10 10" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="39" StrenFactor="40" EndurFactor="27" QuickFactor="22" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="内测玩家满级奖励" Desc="传说是一只可以满足童年愿望的库噜王。">
+		<TalentSkill ID="5107 5104 5102 8701" Percent="1000 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 50 150 150"/>
+		<SpecSkill ID="5010 5107 5701 5703 5704 8701" Percent="150 150 50 50 100 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="201" Name="金甲之魂" CanNotMart="0" Race="8" Style="1" SpecCatch="0 10 10 10" Earth="0" Water="0" Fire="3" Wind="7" PhysiFactor="24" StrenFactor="40" EndurFactor="26" QuickFactor="40" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="竞技之塔" Desc="金甲的一缕魂魄，实力虽然不及主体，但是依然强大~">
+		<TalentSkill ID="5106 5102 5104 5704 8701 8702" Percent="100 100 100 100 100 100"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 50 150 150"/>
+		<SpecSkill ID="5010 5107 5701 5703 5704 8701" Percent="150 150 50 50 100 50"/>
+	</Type>
+	
+	<Type ID="202" Name="南瓜队长" Race="0" Style="1"  Earth="5" Water="0" Fire="5" Wind="0" PhysiFactor="24" StrenFactor="42" EndurFactor="22" QuickFactor="40" IntelFactor="7" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的初级指挥，是整个军队得以运作的基石。">
+		<TalentSkill ID="5102 5103 5104 5106 5703 5704 6001" Percent="150 100 200 200 100 100 200"/>
+        <BaseSkill ID="5105 5107 5501" Percent="100 100 100"/>
+        <SpecSkill ID="7513 7515 6004" Percent="100 100 100"/>
+	</Type>
+								
+	
+	<Type ID="203" Name="赤舞精灵" Race="6" Style="2" SpecCatch="0" Earth="0" Water="0" Fire="6" Wind="4" PhysiFactor="25" StrenFactor="7" EndurFactor="37" QuickFactor="24" IntelFactor="44" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="格历尔云境" Desc="极其罕见的生物，生活在云端，轻盈灵动。饮朝露而食清风，若仙子般翩翩起舞">
+		<TalentSkill ID="7001 7004 7005 7008 6001 5703" Percent="350 350 250 250 250 250"/>
+		<BaseSkill ID="7003 7004 6001" Percent="200 200 200"/>
+		<SpecSkill ID="5501 6001 6004 7011 7012 7502 7514" Percent="200 50 200 100 100 50 50"/>
+		<Beast Lv="1" Catch="9000" />
+	</Type>
+								
+	
+		<Type ID="204" Name="霞光水母" Race="3" Style="1" SpecCatch="0" Earth="0" Water="6" Fire="4" Wind="0" PhysiFactor="25" StrenFactor="39" EndurFactor="27" QuickFactor="37" IntelFactor="7" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="格历尔云境" Desc="生活在云端的生物，拥有朝霞般绚丽的色彩。">
+		<TalentSkill ID="5102 5103 5106 5703 6001 8701 8706" Percent="250 150 250 250 250 200 150"/>
+		<BaseSkill ID="5102 5108 5501" Percent="200 200 200"/>
+		<SpecSkill ID="5104 5703 5704 6001 7501 7507 7513 9004" Percent="200 50 200 100 100 50 50 50"/>
+		<Beast Lv="1" Catch="9000" />
+	</Type>
+								
+	
+	<Type ID="205" Name="风龙之影" CanNotMart="1" Race="4" Style="2" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="25" StrenFactor="45" EndurFactor="30" QuickFactor="25" IntelFactor="75"  SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="风之洞穴" Desc="因未知原因形成的庞大的风之龙威恩德的倒影">
+		<TalentSkill ID="5102 5103 5104 5106 5703 5704 6001" Percent="150 100 200 200 100 100 200"/>
+        <BaseSkill ID="5105 5107 5501" Percent="100 100 100"/>
+        <SpecSkill ID="7513 7515 6004" Percent="100 100 100"/>
+	</Type>
+	
+	
+	<Type ID="206" Name="假人皮克" CanNotMart="1" Race="0" Style="1"  Earth="0" Water="0" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="42" EndurFactor="22" QuickFactor="40" IntelFactor="7" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="被施以魔法，拥有生命和无限再生能力，却无法行动的稻草人，供王国军队训练使用。“哦，我的老伙计，我今天已经被他们拆散了556677次了你知道吗，他们居然一点也不心疼我在，真是一帮自私的家伙”,米拉拉常听到稻草人如此抱怨。">
+		<TalentSkill ID="5102 5103 5104 5106 5703 5704 6001" Percent="150 100 200 200 100 100 200"/>
+        <BaseSkill ID="5008" Percent="100"/>
+	</Type>
+
+
+	<Type ID="207" Name="马鹿" Race="5" Style="1" SpecCatch="0 10 10 10" Earth="2" Water="0" Fire="8" Wind="0" PhysiFactor="33" StrenFactor="40" EndurFactor="29" QuickFactor="31" IntelFactor="7" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="- -" Desc="体态娇小的生物，生活在寒冷的北方，驯化后渐渐融入摩尔们日常生活的方方面面。“不要被它可爱的外表欺骗哦，虽然看起来人畜无害，但这家伙生气起来可是极其恐怖的”驯养马鹿的专家陌路如是说道。">
+		<TalentSkill ID="5106 5102 8701 8802 8704" Percent="200 200 200 200 200"/>
+        <BaseSkill ID="5008" Percent="100"/>
+	</Type>
+
+	<Type ID="208" Name="22K巨石怪" Race="8" Style="1"  Earth="0" Water="0" Fire="4" Wind="6" PhysiFactor="37" StrenFactor="40" EndurFactor="31" QuickFactor="18" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="--" CaptureArea="时间缝隙" Desc="时间缝隙中新发现的稀有精灵，表面覆盖了缝隙特有的钛矿，闪亮亮的它们接受了自己太显眼的事实，已经放弃恶作剧了。">
+		<TalentSkill ID="5102 5108 8501 8701 8702" Percent="200 200 200 200 200"/>
+		<BaseSkill ID="5108 5704" Percent="150 50"/>
+		<SpecSkill ID="5010 5102 5103 5106 5501 5701 5703 6001" Percent="300 100 50 150 50 50 50 50"/>
+		<Beast Lv="1" Catch="2000" />
+		<Beast Lv="100" Catch="0" />
+	</Type>
+
+	<Type ID="209" Name="铜锣蚌" Race="3" Style="2"  Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="23" StrenFactor="6" EndurFactor="34" QuickFactor="30" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="时间缝隙" Desc="非常胆小的精灵，对自己与某种点心类似这点十分在意，随时担心会被吃掉，最喜欢躲在石缝中观察世界。">
+		<TalentSkill ID="7003 7002 7006 7007 6001" Percent="200 200 200 200 200"/>
+		<BaseSkill ID="7002 7005" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7001 7006 7009 7010 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2000" />
+		<Beast Lv="100" Catch="0" />
+	</Type>
+
+	<Type ID="210" Name="幽傀魄" Race="7" Style="1"  Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="30" StrenFactor="41" EndurFactor="23" QuickFactor="36" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="时间缝隙" Desc="冥傀魂的另一半，偶然卷入错乱时空遭受灵魂分裂，继承魂力较弱的部分，感知迟钝，因此只能依附傀儡肉搏，穷尽一生都在寻找自己残缺的另一半">
+		<TalentSkill ID="6001 5106 5102 8705 8701" Percent="200 200 200 200 200"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 100 100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 7513 8701" Percent="100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2000" />
+		<Beast Lv="100" Catch="0" />
+	</Type>
+
+	<Type ID="211" Name="噗噜蟒" Race="6" Style="1"  Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="39" EndurFactor="26" QuickFactor="41" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="蛇形回廊" Desc="裂缝浅层的巨蟒，阴冷广阔的环境让它们进化出了颊窝和翅膀，擅长追踪温度狩猎，进攻时会发出噗噜的叫声。">
+		<TalentSkill ID="5106 5102 8701 8707 5704 6001" Percent="200 200 200 200 100 100"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 100 100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 7513 8701" Percent="100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2000" />
+		<Beast Lv="100" Catch="1000" ItemID="180070 180008 180010 180012" Rate="1000 50 40 30" />
+	</Type>
+	<Type ID="212" Name="冥傀魂" Race="5" Style="2"  Earth="3" Water="0" Fire="0" Wind="7" PhysiFactor="22" StrenFactor="7" EndurFactor="31" QuickFactor="42" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="黑水晶力量催生出的幽灵，常寄生于狐兽体内，以魅惑之术诱发噩梦，恐惧的情绪是它的最爱，不要被可爱的外表欺骗哦。">
+		<TalentSkill ID="7202 6202 7010 7004 7001" Percent="200 200 200 200 200"/>
+		<BaseSkill ID="7002 7005" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7001 7006 7009 7010 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0" />
+		<Beast Lv="100" Catch="0" ItemID="180010 180012 180014" Rate="50 40 30" />
+	</Type>
+	<Type ID="213" Name="趴趴布朗" Race="2" Style="1"  Earth="0" Water="4" Fire="6" Wind="0" PhysiFactor="28" StrenFactor="44" EndurFactor="27" QuickFactor="26" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="泥盆沼泽" Desc="普豆泥族古老的近亲，因意外被封印于时间断层，长久的孤独让它们渴望温暖的怀抱，可拥抱的对象好像都不见了呢。">
+		<TalentSkill ID="5108 5102 8701 5704 8501" Percent="200 200 200 200 200"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="100 100 100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 7513 8701" Percent="100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2000" />
+		<Beast Lv="100" Catch="1000" ItemID="180012 180014 180016" Rate="50 40 30" />
+	</Type>
+										
+	<Type ID="1001" Name="普豆泥·改" Race="3" Style="2" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="22" StrenFactor="9" EndurFactor="38" QuickFactor="24" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的普豆泥，存在感大增，自己也变得更有信心了^0^。PS.紫色的土豆泥看上去很有营养的样子……">
+		<TalentSkill ID="7003 7002 7006 7007 6001" Percent="500 250 250 250 250"/>
+		<BaseSkill ID="7003" Percent="100"/>
+		<SpecSkill ID="5010 5701 7002 7006 7007 7501 7507 6001 8002" Percent="100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1002" Name="库噜·改" Race="7" Style="1" Earth="0" Water="0" Fire="3" Wind="7" PhysiFactor="36" StrenFactor="41" EndurFactor="24" QuickFactor="21" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的库噜战士。净化后白里透红的健康肤色和帅气的金色战衣使它受到更多女孩的追捧。">
+		<TalentSkill ID="5704 5106 5703 8501 6001" Percent="500 300 200 200 300"/>
+		<BaseSkill ID="5108" Percent="100"/>
+		<SpecSkill ID="5010 5103 5501 5701 5703 5704 6001 8501 8705" Percent="100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="9" Catch="0"/>
+		<Beast Lv="10" Catch="0"/>
+		<Beast Lv="11" Catch="0"/>
+	</Type>
+
+	<Type ID="1003" Name="迪迪拉·改" Race="0" Style="1" Earth="3" Water="0" Fire="0" Wind="7" PhysiFactor="24" StrenFactor="40" EndurFactor="26" QuickFactor="36" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造后，身心都受到净化的怪盗迪迪拉，加入了正义的“反怪盗集团”。">
+		<TalentSkill ID="5108 5102 5103 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5106" Percent="100"/>
+		<SpecSkill ID="5010 5102 5103 5501 5701 5703 8701 8704" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1004" Name="法尔·改" Race="3" Style="2" Earth="0" Water="3" Fire="7" Wind="0" PhysiFactor="31" StrenFactor="5" EndurFactor="26" QuickFactor="33" IntelFactor="40" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改良后的法尔火焰温度不再灼烫，反而透出一丝寒意。">
+		<TalentSkill ID="7003 7002 7006 7007 5703" Percent="500 400 350 250 250"/>
+		<BaseSkill ID="7003 7006" Percent="100 100"/>
+		<SpecSkill ID="5010 7002 7007 7010 7011 7502 7508 6001" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1005" Name="普豆叶·改" Race="2" Style="1" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="32" StrenFactor="41" EndurFactor="29" QuickFactor="23" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的普豆叶，身体坚硬度大增，绿叶中蕴含着浓烈的毒性。">
+		<TalentSkill ID="5102 5108 8701 8801" Percent="500 300 400 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6201 8701 8706 8801" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1006" Name="普豆花·改" Race="2" Style="2" Earth="6" Water="4" Fire="0" Wind="0" PhysiFactor="22" StrenFactor="5" EndurFactor="39" QuickFactor="24" IntelFactor="43" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的普豆花，艳丽的花朵也是致命的武器，不要被它迷倒哦。">
+		<TalentSkill ID="7001 6001 7002 7201 7005 7006 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7001 7002" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7006 7009 7201 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1007" Name="小石怪·改" Race="8" Style="1" Earth="0" Water="0" Fire="2" Wind="8" PhysiFactor="28" StrenFactor="40" EndurFactor="14" QuickFactor="39" IntelFactor="9" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的小石怪，看似坚硬的外表却异常脆弱，不敢堂皇在大路上睡觉，以免被踩碎。">
+		<TalentSkill ID="5106 5102 5103 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5103 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5102 5501 5701 6001 7507 8701 8702" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1008" Name="吉吉帕·改" Race="2" Style="2" Earth="3" Water="0" Fire="0" Wind="7" PhysiFactor="12" StrenFactor="7" EndurFactor="33" QuickFactor="42" IntelFactor="41" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的吉吉帕，别对它产出“好吃”的想法，否则你会忘了自己是谁。">
+		<TalentSkill ID="7004 6001 7001 7201 7005 7008 6201" Percent="500 300 400 300 300 400 300"/>
+		<BaseSkill ID="7001 7004" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 6201 7005 7012 7201 7508" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+
+	<Type ID="1009" Name="草莓蜂·改" Race="1" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="25" StrenFactor="42" EndurFactor="22" QuickFactor="43" IntelFactor="5" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的草莓蜂，若被它的尾针刺中，短时间内会变得心神混乱。">
+		<TalentSkill ID="5102 8701 8706 8803 5108" Percent="500 400 300 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6203 8701 8706 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1010" Name="迷唇丝·改" Race="1" Style="1" Earth="0" Water="0" Fire="4" Wind="6" PhysiFactor="43" StrenFactor="25" EndurFactor="16" QuickFactor="44" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的迷唇丝，千万别给它缠上哦，它的蛛丝围攻避无可避。">
+		<TalentSkill ID="5108 8701 8705 8803" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5108" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6203 8701 8706 8803" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1011" Name="拉拉美·改" Race="5" Style="1" Earth="7" Water="0" Fire="0" Wind="3" PhysiFactor="32" StrenFactor="43" EndurFactor="32" QuickFactor="24" IntelFactor="6" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的拉拉美，猛烈的冲击经常把其他精灵撞得晕头转向。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6202 8701 8704 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1012" Name="盯眼蝠·改" Race="6" Style="1" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="30" StrenFactor="40" EndurFactor="27" QuickFactor="30" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的盯眼蝠，被它的眼睛长时间盯视，全身感到乏力。">
+		<TalentSkill ID="8701 5102 6001 5703" Percent="500 400 300 300"/>
+		<BaseSkill ID="5106 8701" Percent="100 100"/>
+		<SpecSkill ID="5010 5101 5102 5103 5501 5704 7510 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1013" Name="迷眼蝠·改" Race="6" Style="2" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="5" EndurFactor="30" QuickFactor="41" IntelFactor="41" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的迷眼蝠，妖魅的独眼散发出阵阵催眠的波动。">
+		<TalentSkill ID="6001 7001 7002 7005 7006" Percent="300 500 400 300 300"/>
+		<BaseSkill ID="7001 7002" Percent="100 100"/>
+		<SpecSkill ID="5010 5701 6001 7005 7006 7009 7506 7512" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	
+	<Type ID="1014" Name="卡西卡·改" Race="5" Style="1" Earth="0" Water="6" Fire="4" Wind="0" PhysiFactor="28" StrenFactor="43" EndurFactor="27" QuickFactor="31" IntelFactor="8" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的卡西卡，重新磨炼了尾锤的力量，攻势锐不可挡。">
+		<TalentSkill ID="5102 5106 8701 8802 6001" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6202 8701 8707 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+		<Beast Lv="19" Catch="0"/>
+		<Beast Lv="20" Catch="0"/>
+		<Beast Lv="21" Catch="0"/>
+	</Type>
+	
+	<Type ID="1015" Name="喵斯熊·改" Race="5" Style="1" Earth="7" Water="0" Fire="0" Wind="3" PhysiFactor="42" StrenFactor="42" EndurFactor="30" QuickFactor="17" IntelFactor="6" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="--" CaptureArea="暂无资料" Desc="G计划改造而成的喵斯熊，再温顺的喵斯熊也有愤怒的时候，别去惹火它哦。">
+		<TalentSkill ID="5102 5106 8701 8802 8501" Percent="400 300 400 300 300"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5103 5501 5701 6202 8701 8703 8802" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="1500"/>
+	</Type>
+	<Type ID="1016" Name="幽光·改" Race="8" Style="1" SpecCatch="0 1000 3000 5000" Earth="0" Water="6" Fire="4" Wind="0" PhysiFactor="26" StrenFactor="42" EndurFactor="25" QuickFactor="35" IntelFactor="7" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="1" CaptureAdd="21701" CaptureArea="锁修塔F1" Desc="G计划改造而成的幽光战士，金色的光剑经改造过后削铁如泥，招摇的发色似乎是在为摆脱黑暗而庆祝。现在，他终于能在阳光下行侠仗义了。">
+		<TalentSkill ID="5108 5102 8701 5104 8703" Percent="500 300 400 500 500"/>
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+		<SpecSkill ID="5010 5101 5103 5105 5501 5704 8701 8705" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="2500" />
+		<Beast Lv="3" Catch="2500" />
+		<Beast Lv="4" Catch="2500" />
+		<Beast Lv="5" Catch="2500" />
+		<Beast Lv="32" Catch="2000" ItemID="170010 180008 180051 210004 230004" Rate="1000 98 1000 63 63"/>
+		<Beast Lv="33" Catch="2000" ItemID="170010 180009 180051 210004 230004" Rate="1000 87 1000 63 63"/>
+		<Beast Lv="34" Catch="2000" ItemID="170010 180009 180051 210004 230004" Rate="1000 87 1000 63 63"/>
+	</Type>
+	
+	<Type ID="1801" Name="伊影" ResID="2010" Race="3" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="23" StrenFactor="43" EndurFactor="22" QuickFactor="42" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="传说中【伊恩大魔王】在阳光下的一次显形，投射出的影子化成了精灵。它被分开封印在宝箱精灵体内，只有集齐6色宝箱精灵，才能将它复形。">
+		<TalentSkill ID="5108 5104 5112 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5104 5108" Percent="125 100 125 125"/>
+		<SpecSkill ID="5010 5101 5107 5112 5703 8701" Percent="100 100 125 100 50 50"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+
+	<!-- Boss -->
+	<Type ID="2001" Name="普豆泥王" Race="3" Style="2" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="28" StrenFactor="24" EndurFactor="22" QuickFactor="22" IntelFactor="24" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21205" CaptureArea="普豆泥王BOSS领域" Desc="大量吉普豆泥的集合体。完全“泥化”，带有很强的“流质”体质。看上去就让人“无从下手”啊~ ">
+		<SpecSkill ID="5010 5701 5703 6001 7001 7005 7009 8001 7507 7513" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0" ItemID="180003 341007" Rate="261 10"/>
+		<Beast Lv="31" Catch="0"/>
+	</Type>
+	<Type ID="2002" Name="拉拉美王" Race="5" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="20" StrenFactor="39" EndurFactor="24" QuickFactor="34" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21303" CaptureArea="格历尔平原" Desc="喜欢带着一群小弟们在草原上奔跑，肆无忌惮、横冲直撞！">
+		<SpecSkill ID="5010 5102 5103 5106 5501 5701 6202 8701 8703 8802" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="12" Catch="0" ItemID="180003 341006 341009" Rate="210 20 20"/>
+		<Beast Lv="15" Catch="0" ItemID="180003 341006 341009" Rate="210 20 20"/>
+	</Type>
+	<Type ID="2003" Name="暗黑沃特尔" Race="3" Style="2" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="10" EndurFactor="25" QuickFactor="30" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11408" CaptureArea="东之时光井底" Desc="原本是时光之井的守护精灵，受黑水晶污染后，反占据了时光之井作为自己的领地！">
+		<SpecSkill ID="5010 5701 5703 6002 6801 7002 7006 7010 7516 8001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="15" Catch="0" ItemID="180004" Rate="178"/>
+	</Type>
+	<Type ID="2004" Name="库噜王" Race="7" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="28" StrenFactor="42" EndurFactor="26" QuickFactor="23" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21208" CaptureArea="库噜王领域" Desc="传说库噜战士族每百年有一次比武竞选，最终得胜的库噜战士就会晋升为种族王者。">
+		<SpecSkill ID="5010 5102 5103 5501 5107 5701 5704 8701 8702 8705" Percent="100 100 100 100 200 100 100 100 100 100"/>
+		<Beast Lv="15" Catch="0" ItemID="180003 341011 341010" Rate="210 30 20"/>
+		<Beast Lv="30" Catch="0" ItemID="341011 341010" Rate="30 20"/>
+	</Type>
+	<Type ID="2005" Name="法尔王" Race="3" Style="2" Earth="0" Water="0" Fire="9" Wind="1" PhysiFactor="17" StrenFactor="18" EndurFactor="23" QuickFactor="26" IntelFactor="41" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="21212" CaptureArea="法尔王领域" Desc="“火神意志”的极端体现，焚尽一切是它的目标。">
+		<SpecSkill ID="5010 5701 6001 6801 7003 7004 7007 7008 7011 7514" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="20" Catch="0" ItemID="180005 341009 341007" Rate="178 15 25"/>
+		<Beast Lv="25" Catch="0"/>
+	</Type>
+	<Type ID="2006" Name="巨石蟹" Race="8" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="23" StrenFactor="12" EndurFactor="40" QuickFactor="8" IntelFactor="42" Price="0" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="3" CaptureAdd="21402" CaptureArea="海底洞穴二层" Desc="身为格历尔大陆排名第一的“神秘食材”，大部分巨石蟹都有“被害妄想症”，被它的巨齿钳夹住了的东西还是别打算拿回来了。">
+		<SpecSkill ID="5010 5701 6801 7002 7003 7006 7007 7010 7011 7518" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="15" Catch="0" ItemID="180004 341011 341007" Rate="210 20 25"/>
+		<Beast Lv="32" Catch="0" ItemID="180004 341011 341007" Rate="210 20 25"/>
+	</Type>
+	<Type ID="2007" Name="沃特尔王" Race="3" Style="1" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="46" StrenFactor="37" EndurFactor="16" QuickFactor="15" IntelFactor="11" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11501" CaptureArea="西之时光井底" Desc="月光湖的水之精灵王，被黑水晶感染后依然保留着一丝神智，逃往西之时光之井底，避免了月光湖的进一步污染！">
+		<SpecSkill ID="5010 5102 5103 5108 5701 5704 6001 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="20" Catch="0" ItemID="180005 341010 341009" Rate="178 20 20"/>
+		<Beast Lv="25" Catch="0"/>
+	</Type>
+	<Type ID="2008" Name="章界王" Race="5" Style="1" Earth="3" Water="7" Fire="0" Wind="0" PhysiFactor="22" StrenFactor="47" EndurFactor="24" QuickFactor="23" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11604" CaptureArea="弗雷基码头" Desc="掌管格历尔海界的海洋精灵。传说它是格历尔海界的“第一海味”，所经过的海域海水都变得小当家海鲜汤般鲜美……（?﹃?）口水。最喜欢【弗雷基海港】边会吹萨克斯的随船护士【蟹娜】。">
+		<SpecSkill ID="5010 5102 5103 5106 5701 5704 6202 8701 8704 8802" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="20" Catch="0"/>
+		<Beast Lv="25" Catch="0" ItemID="180007 341007 341009" Rate="114 30 30"/>
+	</Type>
+	<Type ID="2009" Name="金甲剑魂" Race="8" Style="1" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="28" StrenFactor="45" EndurFactor="32" QuickFactor="22" IntelFactor="8" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="锁修塔" Desc="与“十二勇士”一起与“伊恩大魔王”大战过的精灵，在塔里四处游荡的它会毫不留情的击败所有企图闯入锁修塔的生物。">
+		<SpecSkill ID="5010 5102 5103 5108 5501 5701 5704 8701 8702 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="33" Catch="0"/>
+		<Beast Lv="35" Catch="0" ItemID="180009" Rate="87"/>
+	</Type>
+	<Type ID="2010" Name="伊影" Race="3" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="20" StrenFactor="42" EndurFactor="19" QuickFactor="40" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21704" CaptureArea="锁修塔F4" Desc="传说中【伊恩大魔王】在阳光下的一次显形，投射出的影子化成了精灵。它被分开封印在宝箱精灵体内，只有集齐6色宝箱精灵，才能将它复形。">
+		<SpecSkill ID="5112 5101 5102 5103 5106 5107 5701 5704 8701 8703" Percent="100 150 100 100 100 200 100 100 100 150"/>
+		<Beast Lv="34" Catch="0"/>
+		<Beast Lv="40" Catch="0" ItemID="180010" Rate="78"/>
+	</Type>
+	<Type ID="2011" Name="卡拉兽" Race="3" Style="1" Earth="0" Water="8" Fire="2" Wind="0" PhysiFactor="25" StrenFactor="25" EndurFactor="25" QuickFactor="25" IntelFactor="25" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="30208" CaptureArea="卡拉兽领域" Desc="时间隧道的看守者，受到黑水晶的波及后只记得坚守自己的岗位，变得不分敌我。">
+		<SpecSkill ID="5010 5102 5103 5108 5501 5701 5704 8701 8705 8706" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="2012" Name="草莓蜂后" Race="1" Style="1" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="25" StrenFactor="40" EndurFactor="20" QuickFactor="41" IntelFactor="4" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21304" CaptureArea="格历尔平原" Desc="特别喜欢草莓的蜂王，因格历尔平原四区盛产草莓，最终定居于此。">
+		<SpecSkill ID="5010 5102 5103 5501 5701 6203 8701 8704 8707 8803" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="25" Catch="0" ItemID="341007 341009 341010 341011" Rate="50 45 35 25"/>
+	</Type>
+	<Type ID="2013" Name="娜蒂丝" Race="2" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="8" EndurFactor="41" QuickFactor="18" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11503" CaptureArea="草木树海" Desc="偶获女神之泪的力量进化为草系之王的精灵，它的觉醒带来了草系精灵新的力量。">
+		<SpecSkill ID="6003 6004 6201 7005 7006 7009 7010 7201 7511 7512" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="2014" Name="邪风月轮" Race="3" Style="2" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="25" StrenFactor="45" EndurFactor="30" QuickFactor="25" IntelFactor="75" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="41213" CaptureArea="月之后殿" Desc="异空间孕育的精灵，偶然卷入时空乱流进入了月之宫殿，用邪恶力量操控了月宫的守卫者。">
+		<BaseSkill ID="5010 5103 5106 5107 6001 7006 7007 7513 7518 6003" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="30" Catch="0"/>
+	</Type>
+	<Type ID="2015" Name="剧毒蜂皇" Race="1" Style="1" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="38" EndurFactor="26" QuickFactor="27" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="长期受剧毒感染而变异的蜂皇，不但拥有强大的杀伤力，全身硬甲的也为其带来铜墙铁壁般的防御能力。">
+		<SpecSkill ID="5010 5102 5103 5501 5701 6203 8701 8703 8706 8803" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="35" Catch="0" ItemID="341007 341009 341010 341011" Rate="50 55 55 35"/>
+	</Type>
+	<Type ID="2016" Name="火焰领主" Race="3" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="25" StrenFactor="40" EndurFactor="30" QuickFactor="25" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="受魔王召唤从异界侵入的火焰魔物。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="2017" Name="曼提斯" Race="1" Style="1" Earth="8" Water="0" Fire="0" Wind="2" PhysiFactor="22" StrenFactor="45" EndurFactor="27" QuickFactor="26" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21805" CaptureArea="世界树2F" Desc="偶获女神之泪进化为昆虫系之王的精灵，他的觉醒带来了昆虫系精灵的新力量。">
+		<SpecSkill ID="5010 5102 5103 5501 5701 6203 8701 8704 8706 8803" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="45" Catch="0"/>
+	</Type>
+	<Type ID="2018" Name="灭特" Race="8" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="30" StrenFactor="41" EndurFactor="31" QuickFactor="18" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="22204" CaptureArea="克拉斯山洞" Desc="偶获女神之泪进化为金属系之王的精灵，他的觉醒带来了金属系精灵的新力量。">
+		<SpecSkill ID="5010 5102 5103 5501 5701 5704 6001 8701 8702 8703" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="25" Catch="0"/>
+	</Type>
+	<Type ID="2019" Name="巨岩魔蛇" Race="8" Style="1" Earth="0" Water="4" Fire="6" Wind="0" PhysiFactor="25" StrenFactor="44" EndurFactor="33" QuickFactor="18" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="远古巨蜥的一种，因为长期沉睡导致躯体岩石化，最强攻击为扫尾，力量可达千钧。">
+		<SpecSkill ID="5010 5102 5103 5107 5501 5701 5704 8701 8702 8704" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="35" Catch="0"/>
+	</Type>
+	<Type ID="2020" Name="帕瑞" Race="5" Style="1" Earth="6" Water="0" Fire="0" Wind="4" PhysiFactor="22" StrenFactor="47" EndurFactor="24" QuickFactor="23" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11505" CaptureArea="兽王洞穴" Desc="偶获女神之泪的力量进化为野兽系之王的精灵，它的觉醒带来了野兽系精灵新的力量。">
+		<SpecSkill ID="5010 5102 5103 5107 5701 5704 6202 8701 8704 8802" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="35" Catch="0"/>
+	</Type>
+	<Type ID="2021" Name="南瓜公爵" Race="0" Style="2" Earth="0" Water="5" Fire="0" Wind="5" PhysiFactor="30" StrenFactor="40" EndurFactor="40" QuickFactor="30" IntelFactor="42" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11223" CaptureArea="史诗战场" Desc="南瓜军团的统领，无限的野心令他妄图将所有的生物都变成南瓜。">
+		<SpecSkill ID="5010 5703 7006 7008 7010 7012 6003 6004 7516 7518" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<Type ID="2022" Name="斯巴鲁" Race="7" Style="1" Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="29" StrenFactor="36" EndurFactor="38" QuickFactor="23" IntelFactor="41" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="" CaptureArea="斯巴鲁洞穴" Desc="被摩尔始祖封印了千年的恶魔,拥有恐怖的力量,天性凶残的生物。">
+		<BaseSkill ID="5103 5105" Percent="100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 8701 8703 8705 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="45" Catch="0"/>
+	</Type>
+	<Type ID="2023" Name="琉璃翼龙" Race="4" Style="1" Earth="8" Water="0" Fire="2" Wind="0" PhysiFactor="24" StrenFactor="41" EndurFactor="30" QuickFactor="31" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="生活在地底的珍稀龙类，是摩尔王的多年心愿。">
+		<TalentSkill ID="5102 8702 5104 8701" Percent="500 400 300 300"/>
+		<BaseSkill ID="5102 5103 5108" Percent="100 100 100"/>
+		<SpecSkill ID="5010 5107 5701 5704 7513 8701 8706" Percent="100 100 100 100 100 100 100"/>
+		<Beast Lv="1" Catch="0"/>
+	</Type>
+	<!--
+	<Type ID="2022" Name="积木关亡灵" Race="7" Style="1" Earth="7" Water="0" Fire="0" Wind="3" PhysiFactor="29" StrenFactor="36" EndurFactor="31" QuickFactor="23" IntelFactor="6" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="" CaptureArea="暂无资料" Desc="守护世界之树的亡灵机关，职责是排除任何进入世界树的陌生对象。">
+		<BaseSkill ID="5103 5105" Percent="100 100"/>
+		<SpecSkill ID="5010 5107 5703 5704 8701 8703 8705 8707" Percent="100 100 100 100 100 100 100 100"/>
+		<Beast Lv="35" Catch="0"/>
+	</Type>
+	-->	
+	<!-- Npc -->
+	<Type ID="3001" Name="彼兔" Race="0" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="30" StrenFactor="10" EndurFactor="15" QuickFactor="30" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11304" CaptureArea="魔法师协会" Desc="摩尔王国魔法师协会导师，因常常变幻成兔子又被冠名“彼兔”，魔力深不见底……">
+		<BaseSkill ID="6801 7001 7002 7003 7004 7005 7008 7010 7011" Percent="200 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3002" Name="杰森" Race="0" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="30" StrenFactor="40" EndurFactor="20" QuickFactor="20" IntelFactor="15" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11305" CaptureArea="剑士协会" Desc="摩尔王国剑士协会导师，虽未成为“黄金勇士”，但他高超的剑术依旧赢得了国民的尊敬！">
+		<BaseSkill ID="5101 5102 5103 5104 5106 5108 5112 5501 5704 6001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3003" Name="瑞凌" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="30" StrenFactor="35" EndurFactor="15" QuickFactor="30" IntelFactor="15" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11303" CaptureArea="弓箭手协会" Desc="摩尔王国弓箭手协会导师，据说百步以内的活动目标从未逃过他的鹰眼，没人知道他的弓术学自何处……">
+		<BaseSkill ID="5109 5110 5111 6001" Percent="300 300 200 200"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3004" Name="温蒂" Race="0" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="40" StrenFactor="15" EndurFactor="15" QuickFactor="20" IntelFactor="35" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11217" CaptureArea="女神大圣堂" Desc="摩尔王国传教士协会导师，秉承大祭司“铃”的优秀教导，将女神之爱遍布摩尔王国……">
+		<BaseSkill ID="6002 6005 6008 7001 7002 7005 7006 7009 7010 8001" Percent="100 50 50 100 100 100 100 150 150 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3005" Name="瑞贝卡" Race="0" Style="2" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="40" StrenFactor="15" EndurFactor="15" QuickFactor="20" IntelFactor="35" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11217" CaptureArea="女神大圣堂" Desc="摩尔王国传教士协会导师，秉承大祭司“铃”的优秀教导，将女神之爱遍布摩尔王国……">
+		<BaseSkill ID="6002 6005 6008 7003 7004 7007 7008 7011 7012 8001" Percent="100 50 50 100 100 100 100 150 150 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3006" Name="鼬西" Race="0" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="22" StrenFactor="31" EndurFactor="15" QuickFactor="35" IntelFactor="10" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="从小身为“狐狸？鼬？黄鼠狼？族”被其它森林的居民排斥，一心想要闯出一番作为让那些人瞧瞧！于是离开家乡，却在旅行的路上遭遇了暴走的野猪，误打误撞因为黑龙卡尔加布获救，从此决心一生跟随“加布老大”。">
+		<BaseSkill ID="5010 5102 5103 5108 5112 5501 5701 5703 5704 6001" Percent="100 150 50 100 200 50 50 100 100 100"/>
+		<Beast Lv="15" Catch="0"/>
+	</Type>
+	<Type ID="3007" Name="王国骑士" Race="0" Style="1" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="25" StrenFactor="40" EndurFactor="30" QuickFactor="20" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5010 5102 5103 5106 5501 5701 5703 5704 6001" Percent="100 100 200 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3008" Name="王国骑士" Race="0" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="5" EndurFactor="35" QuickFactor="20" IntelFactor="45" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5703 6801 7005 7006 7007 7008 7009 7010 7011 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3009" Name="王国骑士" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="20" StrenFactor="40" EndurFactor="20" QuickFactor="35" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5010 5107 5703 8701 8702 8703 8704 8705 8706 8707" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3010" Name="王国骑士" Race="0" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="40" StrenFactor="5" EndurFactor="25" QuickFactor="20" IntelFactor="30" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5703 6002 6003 6006 6008 7001 7002 7003 7004 8002" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3011" Name="王国剑士" Race="0" Style="1" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="40" EndurFactor="35" QuickFactor="15" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="修炼之域" Desc="摩尔王国剑士协会成员，也是妮娜同好会的会员……">
+		<BaseSkill ID="5101 5102 5103 5104 5106 5108 5112 5501 5704 6001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3012" Name="王国魔法师" Race="0" Style="2" Earth="0" Water="0" Fire="5" Wind="5" PhysiFactor="15" StrenFactor="5" EndurFactor="20" QuickFactor="30" IntelFactor="45" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="修炼之域" Desc="摩尔王国魔法师协会成员，在导师“彼兔”的教导下，对元素的操控了如指掌……">
+		<BaseSkill ID="5701 6801 7001 7002 7003 7004 7005 7006 7007 7008" Percent="50 50 125 125 125 125 100 100 100 100"/>
+	</Type>
+	<Type ID="3013" Name="王国弓术士" Race="0" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="15" StrenFactor="40" EndurFactor="15" QuickFactor="40" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="修炼之域" Desc="摩尔王国弓箭手协会成员，在精灵之森中历练出敏锐的狩猎感觉……">
+		<BaseSkill ID="5109 5110 5111 6001" Percent="300 275 275 150"/>
+	</Type>
+	<Type ID="3014" Name="王国祭祀" Race="0" Style="2" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="40" StrenFactor="5" EndurFactor="20" QuickFactor="20" IntelFactor="30" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="修炼之域" Desc="摩尔王国传教士协会成员，秉承大祭司“铃”的优秀教导，将女神之爱遍布摩尔王国……">
+		<BaseSkill ID="6002 6003 6005 6006 6008 7001 7002 7003 7004 8001" Percent="120 120 80 80 60 110 110 110 110 100"/>
+	</Type>
+	<Type ID="3015" Name="妮娜" Race="0" Style="1" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="30" StrenFactor="40" EndurFactor="30" QuickFactor="20" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="第一位女皇家骑士团团长。努力坚定。从勇士学员开始，她和瑞恩、多修，就一直是最默契的朋友。">
+		<BaseSkill ID="5010 5101 5102 5108 5112 5701 5703 5704 6001 6003" Percent="100 100 150 100 100 50 50 150 100 100"/>
+		<Beast Lv="50" Catch="0"/>
+	</Type>
+	<Type ID="3016" Name="宾德" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="40" StrenFactor="40" EndurFactor="20" QuickFactor="20" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="摩尔王近卫骑士，年轻时也是一位叱咤战场的英雄人物。">
+		<BaseSkill ID="5010 5101 5102 5107 5112 5701 5703 5704 6001 6003" Percent="100 100 150 100 100 50 50 150 100 100"/>
+	</Type>
+	<Type ID="3017" Name="威恩德" Race="4" Style="2" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="25" StrenFactor="45" EndurFactor="30" QuickFactor="25" IntelFactor="75" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21503" CaptureArea="风之洞穴" Desc="格历尔大陆是四大陆中的风之大陆，风之龙·威恩德就在格历尔平原风之矿洞深处中，常年吹出由北向南的神圣大风。注：通过风之龙的试炼可以成为勇士协会【正统】职称。">
+		<BaseSkill ID="5101 5102 5103 5106 5107 6001 7008 7515 8001 8003" Percent="175 100 25 125 200 100 100 125 125 125"/>
+		<Beast Lv="35" Catch="0"/>
+	</Type>
+	<Type ID="3018" Name="休一" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="20" StrenFactor="40" EndurFactor="20" QuickFactor="40" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11306" CaptureArea="忍者协会" Desc="摩尔王国忍者协会导师，酷酷的外表下隐藏着强大的爆发力。">
+		<BaseSkill ID="5103 5106 5108 5112 5113 5114 5115 5116 5501 6001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3019" Name="尤利" Race="7" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="35" StrenFactor="35" EndurFactor="35" QuickFactor="40" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="大魔王【伊恩】手下五天王（恐惧、黑暗、剧毒、幻影、巨厉）之一，擅用恐惧之力压迫对方的精神意志，让人失去理智。">
+		<BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="30" Catch="0"/>
+	</Type>
+	<Type ID="3020" Name="精灵族剑客" Race="0" Style="1" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="24" StrenFactor="42" EndurFactor="35" QuickFactor="24" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21801" CaptureArea="永恒林荫" Desc="守护永恒之森的精灵族剑士，剑术造诣极高。">
+		<TalentSkill ID="5106 5102 5103 5104 5703 5501" Percent="300 400 300 400 300 300"/>
+		<BaseSkill ID="5101 5102 5103 5105 5106 5501 5704 6001 7507 7509" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="33" Catch="0"/>
+		<Beast Lv="34" Catch="0"/>
+		<Beast Lv="35" Catch="0"/>
+		<Beast Lv="36" Catch="0"/>
+		<Beast Lv="37" Catch="0"/>
+	</Type>
+	<Type ID="3021" Name="精灵族射手" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="25" StrenFactor="41" EndurFactor="18" QuickFactor="41" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21801" CaptureArea="永恒林荫" Desc="守护永恒之森的精灵族弓箭手，身手矫健，射术精准无比。">
+		<TalentSkill ID="5102 5106 6001 5703 8501" Percent="300 400 300 400 300"/>
+		<BaseSkill ID="5109 5110 5111 6001 7504 7505 7510 7511" Percent="125 125 125 125 125 125 125 125"/>
+		<Beast Lv="33" Catch="0"/>
+		<Beast Lv="34" Catch="0"/>
+		<Beast Lv="35" Catch="0"/>
+		<Beast Lv="36" Catch="0"/>
+		<Beast Lv="37" Catch="0"/>
+	</Type>
+	<Type ID="3022" Name="精灵族贤者" Race="0" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="18" StrenFactor="5" EndurFactor="36" QuickFactor="33" IntelFactor="45" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="21801" CaptureArea="永恒林荫" Desc="守护永恒之森的精灵族魔法师，与生俱来拥有操控自然元素的力量。">
+		<TalentSkill ID="7010 7003 7002 7006 7007 6001" Percent="300 400 300 300 400 300"/>
+		<BaseSkill ID="5701 6801 7001 7002 7003 7004 7006 7007 7508 7512" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="33" Catch="0"/>
+		<Beast Lv="34" Catch="0"/>
+		<Beast Lv="35" Catch="0"/>
+		<Beast Lv="36" Catch="0"/>
+		<Beast Lv="37" Catch="0"/>
+	</Type>
+	<Type ID="3023" Name="王国骑士" Race="0" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="20" StrenFactor="40" EndurFactor="10" QuickFactor="45" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5010 5112 5113 5114 5115 5116 5501 5701 6001 8001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3024" Name="王国骑士" Race="0" Style="2" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="30" StrenFactor="5" EndurFactor="30" QuickFactor="15" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="摩尔王国" Desc="长期效命于王国骑士团，也是与黑化魔物顽强斗争的先锋。">
+		<BaseSkill ID="5703 6003 6004 7513 7514 7515 7516 7517 7518 8002" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3025" Name="莱卡" Race="0" Style="2" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="20" StrenFactor="5" EndurFactor="40" QuickFactor="15" IntelFactor="45" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="摩尔王国执行大臣，具有睿智的头脑，也是战场上优秀的参谋官。">
+		<BaseSkill ID="5010 5703 7006 7007 7009 7012 6003 6004 7515 7516" Percent="50 50 100 100 100 100 100 100 150 150"/>
+	</Type>
+	<Type ID="3026" Name="路西西" Race="0" Style="1" Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="30" StrenFactor="40" EndurFactor="62" QuickFactor="20" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="拥有高超的剑艺，曾被邀请加入王国军，但因性格不喜拘束，最后当上了新生勇士们的引导者。">
+		<BaseSkill ID="5010 5101 5102 5104 5501 5704 6001 8701 8703 8705" Percent="50 50 100 100 100 100 100 100 150 150"/>
+	</Type>
+	<Type ID="3027" Name="基姆" Race="8" Style="1" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="40" StrenFactor="40" EndurFactor="40" QuickFactor="40" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="大魔王【伊恩】手下五天王（恐惧、黑暗、剧毒、幻影、巨厉）之一，本体是一团黑暗物质，喜欢隐藏于黑暗中，擅长幕后操作，很难对其造成实质性的伤害后，拥有惊人的破坏力。">
+		<BaseSkill ID="5010 5102 5103 5107 5701 6001 7006 7008 8702 8703" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="25" Catch="0"/>
+	</Type>
+	<Type ID="3028" Name="伊夫特" Race="4" Style="2" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="45" EndurFactor="30" QuickFactor="25" IntelFactor="75" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="22209" CaptureArea="克拉斯岩洞" Desc="上古龙族的后裔，风之龙·威恩德的族人，因护佑自己的孩子长眠于克拉斯洞穴深处。">
+		<BaseSkill ID="5107 7518 6001 7002 7006 7010 7517 8001 8003 8707" Percent="300 150 100 100 100 300 150 200 200 150"/>
+		<Beast Lv="25" Catch="0"/>
+	</Type>
+	<Type ID="3029" Name="尤利-恐惧" Race="7" Style="2" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="35" StrenFactor="35" EndurFactor="35" QuickFactor="40" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="大魔王【伊恩】手下五天王之一召唤的令人恐惧的分身">
+		<BaseSkill ID="6001 7514 7515 7516 7517 7518 8003" Percent="100 300 300 300 300 300 150"/>
+		<Beast Lv="30" Catch="0"/>
+	</Type>
+	<Type ID="3030" Name="尤利-力量" Race="7" Style="2" Earth="0" Water="0" Fire="10" Wind="0" PhysiFactor="35" StrenFactor="35" EndurFactor="35" QuickFactor="40" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="大魔王【伊恩】手下五天王之一召唤的拥有强大力量的分身">
+		<BaseSkill ID="5101 5104 5105 5107 5115 6001 6004 8702" Percent="250 100 100 500 250 150 250 200"/>
+		<Beast Lv="30" Catch="0"/>
+	</Type>
+	<Type ID="3031" Name="尤利-智慧" Race="7" Style="2" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="35" StrenFactor="35" EndurFactor="35" QuickFactor="40" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="大魔王【伊恩】手下五天王之一召唤的蕴含智慧的分身">
+		<BaseSkill ID="6001 7001 7002 7003 7004 7009 7010 7011 7012 6801" Percent="100 50 50 50 50 150 150 150 150 200"/>
+		<Beast Lv="30" Catch="0"/>
+	</Type>
+	<Type ID="3032" Name="南瓜小队长" Race="0" Style="1"  Earth="5" Water="0" Fire="5" Wind="0" PhysiFactor="24" StrenFactor="42" EndurFactor="22" QuickFactor="38" IntelFactor="9" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的初级指挥，是整个军队得以运作的基石。">
+		<TalentSkill ID="5102 5103 5104 5106 5703 5704 6001" Percent="100 100 100 100 100 100 100"/>
+                                <BaseSkill ID="5105 5107 5501" Percent="100 100 100"/>
+                                <SpecSkill ID="7513 7515 6004" Percent="100 100 100"/>
+	</Type>
+	<Type ID="3033" Name="南瓜剑客" Race="0" Style="1"  Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="25" StrenFactor="45" EndurFactor="26" QuickFactor="25" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团冲锋陷阵的力量之一，因感觉头戴战盔、手持长剑的王国剑士很帅气，所以也向南瓜公爵提议打造了一副。">
+		<BaseSkill ID="5101 5102 5103 5104 5105 5106 5108 5703 5704 6001" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>	
+	<Type ID="3034" Name="南瓜弩手" Race="0" Style="1"  Earth="5" Water="0" Fire="0" Wind="5" PhysiFactor="20" StrenFactor="40" EndurFactor="18" QuickFactor="43" IntelFactor="9" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的冲锋陷阵的力量之一，因感觉头戴战盔、手握长弓的王国弓术士很帅气，所以也向南瓜公爵提议打造了一副。">
+		<BaseSkill ID="5106 5112 5108 5109 5110 5111 6001" Percent="100 100 100 300 300 200 200"/>
+	</Type>
+	<!-- 流星锤+盾 -->
+	<Type ID="3035" Name="南瓜护卫" Race="0" Style="1"  Earth="7" Water="3" Fire="0" Wind="0" PhysiFactor="45" StrenFactor="30" EndurFactor="40" QuickFactor="10" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的中坚战力，负责保护南瓜公爵，是南瓜公爵的左膀右臂">
+		<BaseSkill ID="5106 5108 5501 5703 5704 8703" Percent="100 100 100 100 100 100"/>
+	</Type>
+	<Type ID="3036" Name="南瓜战士" Race="0" Style="1"  Earth="0" Water="0" Fire="7" Wind="3" PhysiFactor="30" StrenFactor="36" EndurFactor="30" QuickFactor="28" IntelFactor="4" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的中坚战力，构成了军团坚不可摧的前排，拥有极高的力量，是南瓜公爵的特殊兵团之一">
+		<BaseSkill ID="5106 5108" Percent="100 100"/>
+	</Type>
+	<!-- 剑+盾 -->
+	<Type ID="3037" Name="南瓜守卫" Race="0" Style="1"  Earth="3" Water="0" Fire="0" Wind="7" PhysiFactor="36" StrenFactor="38" EndurFactor="32" QuickFactor="20" IntelFactor="4" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的中坚战力，构成了军团坚不可摧的前排，拥有极强的防御力，是南瓜公爵的特殊兵团之一">
+		<BaseSkill ID="5102 5106" Percent="100 100"/>
+	</Type>
+	<Type ID="3038" Name="南瓜巫师" Race="0" Style="2"  Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="18" StrenFactor="5" EndurFactor="32" QuickFactor="32" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="史诗战场" Desc="南瓜军团的冲锋陷阵的力量之一，因感觉头戴战盔、手持法杖的王国魔法师很帅气，所以也向南瓜公爵提议打造了一副。">
+		<BaseSkill ID="7001 7002 7003 7004 7005 7006 7007 7008 7010 7011" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<SpecSkill ID="7507 7509 7513 7514 7515 8001 8002 6002 6003 6004" Percent="100 100 100 100 100 100 100 100 100 100"/>
+	</Type>
+	<!-- 时间裂缝2022/05/26 -->
+	<Type ID="3039" Name="冥焰领主" Race="3" Style="1" Earth="0" Water="5" Fire="5" Wind="0" PhysiFactor="25" StrenFactor="40" EndurFactor="30" QuickFactor="25" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="暂无资料" Desc="受魔王召唤从异界侵入的火焰魔物。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<!-- 魇渊 2022/9/17 -->
+	<Type ID="3040" Name="惑心蛊" Race="7" Style="0" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="5" EndurFactor="35" QuickFactor="30" IntelFactor="40" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="魇渊" Desc="被黑暗力量污染的古老不死族，擅长魅惑敌人的心智。出于某种原因，其似乎十分畏惧目光接触。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3041" Name="蚀愿蛊" Race="7" Style="1" Earth="4" Water="6" Fire="0" Wind="0" PhysiFactor="20" StrenFactor="40" EndurFactor="30" QuickFactor="35" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="魇渊" Desc="被黑暗力量污染的古老不死族，也许因为曾经的失去，沉沦于侵蚀愿望的乐趣中。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3042" Name="噬魇蛊" Race="7" Style="0" Earth="0" Water="1" Fire="0" Wind="9" PhysiFactor="20" StrenFactor="5" EndurFactor="35" QuickFactor="25" IntelFactor="45" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="魇渊" Desc="被黑暗力量污染的古老不死族，总是因为无尽欲望得不到满足而痛苦，梦魇是它们最爱的美味。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3043" Name="蛀梦蛊" Race="7" Style="1" Earth="7" Water="0" Fire="3" Wind="0" PhysiFactor="32" StrenFactor="45" EndurFactor="20" QuickFactor="18" IntelFactor="5" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="魇渊" Desc="被黑暗力量污染的古老不死族，常流连于美梦难以自拔，终在不自觉中将其蛀空。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3044" Name="虚空曼缇诺" Race="7" Style="1" Earth="8" Water="2" Fire="0" Wind="0" PhysiFactor="27" StrenFactor="42" EndurFactor="22" QuickFactor="34" IntelFactor="75" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="魇渊" Desc="诞生于混沌的未知存在，行事诡谲且危险，不知为何，竟拥有与不死之王克恩同源的力量。">
+		<BaseSkill ID="5010 5102 5103 5106 5107 6001 8002 8701 8703 8705" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<!-- 启纪练行 2022/9/17 -->
+	<Type ID="3045" Name="马鹿" ResID="207" Race="5" Style="1" SpecCatch="0 10 10 10" Earth="2" Water="0" Fire="8" Wind="0" PhysiFactor="33" StrenFactor="40" EndurFactor="29" QuickFactor="31" IntelFactor="7" SellPrice="0" Tradability="2" VipTradability="2" SkillsBar="10" HandbookLV="2" CaptureAdd="- -" CaptureArea="- -" Desc="体态娇小的生物，生活在寒冷的北方，驯化后渐渐融入摩尔们日常生活的方方面面。“不要被它可爱的外表欺骗哦，虽然看起来人畜无害，但这家伙生气起来可是极其恐怖的”驯养马鹿的专家陌路如是说道。">
+		<TalentSkill ID="5106 5102 8701 8802 8704" Percent="200 200 200 200 200"/>
+        <BaseSkill ID="5008" Percent="100"/>
+		<Beast Lv="1" Catch="0" ItemID="300202" Rate="2000"/>
+	</Type>
+    <!-- 草木树海 2023/3/1 -->
+	<Type ID="3046" Name="虚影·犀楯" Race="2" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="8" EndurFactor="41" QuickFactor="18" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11503" CaptureArea="草木树海" Desc="草系精灵王娜蒂丝为试炼而分化的幻影之一，拥有强大的巨树之盾，冷兵器是无法伤其分毫的。">
+		<SpecSkill ID="6003 6004 6201 7005 7006 7009 7010 7201 7511 7512" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3047" Name="虚影·蜃气" Race="2" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="8" EndurFactor="41" QuickFactor="18" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11503" CaptureArea="草木树海" Desc="草系精灵王娜蒂丝为试炼而分化的幻影之一，周身环绕着浓厚的蜃气法阵，可以抵御一切魔法攻击。">
+		<SpecSkill ID="6003 6004 6201 7005 7006 7009 7010 7201 7511 7512" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+	<Type ID="3048" Name="虚影·磐石" Race="2" Style="2" Earth="5" Water="5" Fire="0" Wind="0" PhysiFactor="15" StrenFactor="8" EndurFactor="41" QuickFactor="18" IntelFactor="43" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="11503" CaptureArea="草木树海" Desc="草系精灵王娜蒂丝为试炼而分化的幻影之一，获得强化的身躯宛若磐石般坚韧，令人无从下手。">
+		<SpecSkill ID="6003 6004 6201 7005 7006 7009 7010 7201 7511 7512" Percent="100 100 100 100 100 100 100 100 100 100"/>
+		<Beast Lv="10" Catch="0"/>
+	</Type>
+
+
+   <Type ID="3049" Name="史利姆茧·风" Race="3" Style="2" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="23" StrenFactor="33" EndurFactor="39" QuickFactor="28" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="哭嚎狭间扭曲时空的结症所在，似乎有着明显的风元素偏好，用哭嚎假面加以掩饰的茧中，也许束缚着某些秘辛。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+   <Type ID="3050" Name="史利克茧·风" Race="3" Style="2" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="27" StrenFactor="37" EndurFactor="35" QuickFactor="44" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="摄入足够风元素养分的史利姆茧成体，形成微弱感知后因剧烈的痛苦而发狂，企图吞噬一切存在并与之共沉沦。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+
+   <Type ID="3051" Name="史利姆茧·地" Race="3" Style="2" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="28" StrenFactor="33" EndurFactor="39" QuickFactor="23" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="哭嚎狭间扭曲时空的结症所在，似乎有着明显的地元素偏好，用哭嚎假面加以掩饰的茧中，也许束缚着某些秘辛。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+   <Type ID="3052" Name="史利克茧·地" Race="3" Style="2" Earth="10" Water="0" Fire="0" Wind="0" PhysiFactor="44" StrenFactor="37" EndurFactor="35" QuickFactor="27" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="摄入足够地元素养分的史利姆茧成体，形成微弱感知后因剧烈的痛苦而发狂，企图吞噬一切存在并与之共沉沦。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+
+   <Type ID="3053" Name="史利姆茧·水" Race="3" Style="2" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="23" StrenFactor="7" EndurFactor="33" QuickFactor="23" IntelFactor="39" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="哭嚎狭间扭曲时空的结症所在，似乎有着明显的水元素偏好，用哭嚎假面加以掩饰的茧中，也许束缚着某些秘辛。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+   <Type ID="3054" Name="史利克茧·水" Race="3" Style="2" Earth="0" Water="10" Fire="0" Wind="0" PhysiFactor="27" StrenFactor="7" EndurFactor="33" QuickFactor="39" IntelFactor="44" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="摄入足够水元素养分的史利姆茧成体，形成微弱感知后因剧烈的痛苦而发狂，企图吞噬一切存在并与之共沉沦。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+
+   <Type ID="3055" Name="史利姆茧·火" Race="3" Style="2" Earth="0" Water="0" Fire="10" Wind="0" PhysiFactor="23" StrenFactor="38" EndurFactor="39" QuickFactor="23" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="哭嚎狭间扭曲时空的结症所在，似乎有着明显的火元素偏好，用哭嚎假面加以掩饰的茧中，也许束缚着某些秘辛。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+   <Type ID="3056" Name="史利克茧·火" Race="3" Style="2" Earth="0" Water="0" Fire="10" Wind="0" PhysiFactor="34" StrenFactor="45" EndurFactor="35" QuickFactor="29" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="哭嚎狭间" Desc="摄入足够火元素养分的史利姆茧成体，形成微弱感知后因剧烈的痛苦而发狂，企图吞噬一切存在并与之共沉沦。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+
+   <Type ID="3057" Name="幻甲龙蜥" Race="4" Style="1" Earth="9" Water="0" Fire="0" Wind="1" PhysiFactor="38" StrenFactor="43" EndurFactor="32" QuickFactor="17" IntelFactor="7" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="鎏风圣堂" Desc="拥有龙之高贵血统的旁支，负责护卫龙族长老，坚韧的战甲誓将抵御所有僭越行为。">
+      <TalentSkill ID="5108 5102 5704 8501" Percent="500 400 300 300"/>
+      <BaseSkill ID="5108 5704" Percent="150 50"/>
+      <SpecSkill ID="5010 5102 5103 5106 5501 5701 5703 6001" Percent="300 100 50 150 50 50 50 50"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+   <Type ID="3058" Name="灵圣龙蜥" Race="4" Style="2" Earth="1" Water="0" Fire="0" Wind="9" PhysiFactor="21" StrenFactor="5" EndurFactor="37" QuickFactor="30" IntelFactor="44" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="鎏风圣堂" Desc="龙族长老钦定的魔法吟咏者，天性冷酷高傲，蔑视一切罪孽之存在，纵使职责为将其净化亦是如此。">
+      <BaseSkill ID="5010 6001 7001 7002 7003 7004 7005 7007 7010 7012" Percent="100 100 100 100 100 100 100 100 100 100"/>
+      <Beast Lv="30" Catch="0"/>
+   </Type>
+
+   <Type ID="3059" Name="千风裁定者" Race="4" Style="1" Earth="0" Water="0" Fire="0" Wind="10" PhysiFactor="25" StrenFactor="45" EndurFactor="30" QuickFactor="25" IntelFactor="75" Price="0" SellPrice="0" Tradability="0" VipTradability="0" SkillsBar="10" HandbookLV="3" CaptureAdd="--" CaptureArea="鎏风圣堂" Desc="千年前管辖格历尔大陆的龙族代理者，强大威严恍若神明，风息亘古不止，经流万物，所及之际即是其对众生的审视。">
+      <BaseSkill ID="5101 5102 5103 5106 5107 6001 7008 7515 8001 8003" Percent="175 100 25 125 200 100 100 125 125 125"/>
+      <Beast Lv="35" Catch="0"/>
+   </Type>
+
+
+</Types>

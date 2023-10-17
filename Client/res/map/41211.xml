@@ -2,7 +2,8 @@
 <map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
 	<transport intPos="400,400">
 		<node id="1" pos="399,906" targetMapId="11202" targetTransPortId="10" name="传入点"/>
-		<node id="2" pos="393,282" targetMapId="41212" targetTransPortId="1" name="月宫正殿"/>
+		<node id="2" pos="393,282" targetMapId="11202" targetTransPortId="10" name="传出点"/>
+		<!-- <node id="2" pos="393,282" targetMapId="41212" targetTransPortId="1" name="月宫正殿"/> -->
 	</transport>
 	<object>
 		<node id="1" type="" res="MC_door_0" pods="WalkToTransPortPod,TransTipPod" transPortId="2"/>

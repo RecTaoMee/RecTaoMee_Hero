@@ -1,0 +1,32 @@
+<!--灯塔内侧-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="605,866" targetMapId="11609" targetTransPortId="2"/> 
+		<node id="2" pos="472,896" targetMapId="30101" targetTransPortId="1"/> 
+		<node id="3" pos="127,441" targetMapId="30101" targetTransPortId="1"/> 
+		<node id="4" pos="472,896" targetMapId="31611" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="OBJECT" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" taskShowSteps="11009_5|7|8" />	
+		<node id="3" type="TransPort" level="contentLevel" res="MC_door_2" name="bbb" transPortId="4" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" visible="0" alpTaskID="11009_2_0" />	
+		<node id="4" type="NPC" level="contentLevel" res="MC_npc_1017"  visible="0" alpTaskID="11009_3_0" action="0" />	
+		<node id="110094" type="OBJECT" level="upLevel" res="MC_110094"  taskShowSteps="11009_5|7|8"  />	
+		<node id="1100911" type="NPC" level="contentLevel" res="MC_npc_1100911"  taskShowSteps="11009_15|16|17|18"  />	
+		<node id="1100912" type="NPC" level="contentLevel" res="MC_npc_1100912"  taskShowSteps="11009_5|7|8"  />	
+		<node id="1100913" type="OBJECT" level="upLevel" res="MC_light"  visible="0" alpTaskID="11009_2_0" mouseEnabled1="0" mouseChildren1="0" />	
+		<!-- <node id="2" type="AppModule" res="MC_TheSignBook" module="TheSignBookModule"/>
+		<node id="3" type="AppModule" res="MC_TheSecretOfLavaBook" module="TheSecretOfLavaBookModule"/> -->
+	</object>
+
+	<actions>
+		<proAction npcID="1017" id="0" type="0" answer="一定可以的，你已经很努力了！" to="o" colorID="0">
+			<des>
+				<![CDATA[4#老爸最近又催我练占卜，虽然很想守护家族意志，但我真的不适合这种事啊！唉……你说……我能做到吗？]]>				
+			</des>
+		</proAction>		
+	</actions>	
+
+
+
+</map>

@@ -1,0 +1,275 @@
+<Task ID="11009" Memo="经过一番波折，我们终于找到了前往c时间断层c的方法，现在，c厄奎提克c已经回来，继续前进吧！" TargetMap="11607">  
+	<Procedure>   
+  		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="经过一番波折，我们终于找到了前往c时间断层c的方法，现在，c厄奎提克c已经回来，继续前进吧！" TargetMap="11607" TargetObj="1016" TargetName="和t斯格弗斯t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11607" ObjID="1016" TaskOption="【灯塔与占卜师】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1016" ImageID="1" Info="勇士，你来啦！" />	
+					<Msg NpcID="1016" ImageID="1" Info="厄奎提克已经回来了，就在弗雷基码头等你。" />	
+					<Option Info="立刻出发！" />
+				</Action>
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11604, 1" />															
+    		</Event>
+		</Step>		
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="与厄奎提克对话" TargetMap="11604" TargetObj="110091" TargetName="与t厄奎提克t对话">
+   				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11604,110091" /> <!--添加 厄奎提克 -->
+    		</Event>
+		</Step>			
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+    		<Event Memo="与厄奎提克对话" TargetMap="11604" TargetObj="110091" TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11604" ObjID="110091" TaskOption="【灯塔与占卜师】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="啊，你就是传说中的未来勇士吧，之前错把你当成偷鱼的贼了，真是不好意思…毕竟弗雷基东岸的码头已经废弃多年，很少有人再来东岸啦。" />	
+					<Option Info="怎么前往灯塔？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="哦豁，原来你是要去灯塔，那你可问对人咯，作为灯塔的第52代占卜师，也是灯塔实际掌控人，没有人比我更懂灯塔。" />	
+					<Msg NpcID="1017" ImageID="1" Info="想当年，天地混沌初开，海上魔物横行…" />	
+					<Option Info="能说重点吗-_-||" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="咳咳…总之，灯塔曾经是为了船队在不同大陆往返而建立，出海之前，灯塔的掌控者，也就是占卜师会为整个船队占卜，看看本次航行是吉是凶，以便船队做好应对。" />	
+					<Msg NpcID="1017" ImageID="1" Info="然而不知何时起，大陆间被奇怪的屏障阻断，远航的船队渐渐消隐，灯塔也就名存实亡了，然而占卜师的传承从未断绝。我爷爷曾告诉我：“灯塔曾在黑暗中为大家明灯指" />	
+					<Msg NpcID="1017" ImageID="1" Info="路，即使现在无人问津，但它总有一天将重新燃起灯光，再次为大家照亮前方。”当然，这只是他这么认为啦。一辈子守在灯塔，还不如去捕鱼呢，你说是吧，哈哈哈。" />	
+					<Msg NpcID="1017" ImageID="1" Info="好了，接下来，我就带你前往灯塔吧，准备好了吗？" />	
+					<Option Info="立即出发！" />
+				</Action>
+   				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11604,110091" />  <!-- 移除 厄奎提克 -->
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11609, 1" />	
+    		</Event>
+		</Step>					
+
+  		<Step ID="4" ParentList="3" ParentCost="1" >
+    		<Event Memo="进入灯塔" TargetMap="11609"  TargetName="进入灯塔">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  />									
+				</Trigger> 		
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y" />
+    		</Event>
+		</Step>		
+
+					
+  		<Step ID="5" ParentList="4" ParentCost="1" >
+			<Condition>
+				<Person Equipment="110030" />	
+			</Condition>
+
+    		<Event ConditionType="IN" Memo="进入灯塔" TargetMap="11606"  TargetName="进入灯塔">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  /><!-- 点击法阵 -->
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110093"  /><!-- 点击厄奎提克 -->
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="提前说一下啊，这里面我也没进过，遇到什么都有可能，你可做好准备哈。" />	
+					<Option Info="……你怎么不早说" />
+				</Action>
+				<Action Type="MOVIE" Url="task_11009_3.swf" MapLevel="CONTENT" Pos="110,7" />       <!-- 法阵解开 -->
+				<Action Type="COMMAND" Command="STAGE_SHOCK" Params="map,5" />
+				<Action Type="COMMAND" Command="DELAY" Params="2000" />
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11610, 1"   />	
+				<Action Type="COMMAND" Command="DELAY" Params="1000" NextStep="7"/>
+    		</Event>
+
+
+    		<Event ConditionType="OUT" Memo="进入灯塔" TargetMap="11606"  TargetName="进入灯塔">
+  				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  /><!-- 点击法阵 -->
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110093"  /><!-- 点击厄奎提克 -->
+				</Trigger>
+				<Action Type="MOVIE" Url="task_11009_2.swf" MapLevel="CONTENT" Pos="110,7" />       <!-- 法阵阻拦 -->
+				<Action Type="COMMAND" Command="NOTHING" NextStep="6" />    <!-- 动画 -->
+			</Event>			
+		</Step>	
+
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="与厄奎提克对话" TargetMap="11609" TargetObj="110093"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110093"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="咳咳咳…实不相瞒，灯塔内部已经很久没人进去过了。" />	
+					<Option Info="你不是掌控者吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="我虽然是灯塔的掌控者，可是从第19代占卜师过后，就没有人再能进去了…根据记载历史的羊皮卷显示，在时间缝隙出现后，灯塔内部似乎也发生了什么变化，第19代占卜师" />	
+					<Msg NpcID="1017" ImageID="2" Info="曾强行进入并失踪，之后便无人敢进入了。" />	
+					<Option Info="那怎么办？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="据神谕上说，只有佩戴命运之轮的人才能再次打开这扇门。" />	
+					<Option Info="我有命运之轮" NextStep="4" />
+				</Action>
+    		</Event>
+		</Step>		
+
+  		<Step ID="7" ParentList="6" ParentCost="1" >
+    		<Event Memo="查看法阵" TargetMap="11609"  TargetName="查看法阵">
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="这是……传送法阵？我好像在家里的古籍上见到过。" />	
+					<Option Info="要去看看吗？" />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="看起来也没别的可选了。" />	
+					<Option Info="去观察一下吧。" />
+				</Action>
+				<Action Type="COMMAND" Command="NOTHING"   />	
+    		</Event>
+		</Step>		
+
+  		<Step ID="8" ParentList="7" ParentCost="1" >
+    		<Event Memo="点击法阵" TargetMap="11610"  TargetName="点击法阵">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="11610" ObjID="110094"  />									
+					<Item Type="OBJ_CLICK" MapID="11610" ObjID="2"  />									
+				</Trigger> 		
+				<Action Type="MOVIE" Url="task_11009_4.swf" MapLevel="UP" Pos="0,410"  />       <!-- 吸入裂缝 -->
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="30109, 4"  SkipTrigger="Y" />	
+    		</Event>
+		</Step>		
+
+  		<Step ID="9" ParentList="8" ParentCost="1" >
+    		<Event Memo="吸入裂缝" TargetMap="30109"  TargetName="吸入裂缝">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="30109"  />									
+				</Trigger> 		
+				<Action Type="MOVIE" Url="task_11009_5.swf" MapLevel="TASK" Pos="0,0"  />   
+    		</Event>
+		</Step>		
+
+  		<Step ID="10" ParentList="9" ParentCost="1" >
+    		<Event Memo="与c厄奎提克c对话" TargetMap="30109"  TargetObj="110094"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110094"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="见鬼…这是什么鸟地方…" />	
+					<Msg NpcID="1017" ImageID="2" Info="看来只能往前走了…真倒霉…" />	
+					<Option Info="@blank" />
+				</Action>
+   				<Action Type="COMMAND" Command="WALK_TO_POS" Params="543,283"    />	
+				<Action Type="MOVIE" Url="task_11009_7.swf" MapLevel="CONTENT" Pos="0,0" SkipTrigger="Y"  />   
+    		</Event>
+		</Step>		
+
+
+  		<Step ID="11" ParentList="10" ParentCost="1" >
+    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与黑化精灵战斗">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="30109"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="黑化精灵居然出现在这里？而且看起来很强的样子！我们要不要先跑啊……？" />	
+					<Option Info="别怕，我来击退他们！" />
+				</Action>
+
+   				<!-- <Action Type="COMMAND" Command="BATTLE" Params="3525" NextStep="4" />	 -->
+    		</Event>
+		</Step>		
+
+  		<Step ID="12" ParentList="11" ParentCost="1" >
+    		<Event Memo="点击黑化精灵进入战斗" TargetMap="30109"  TargetObj="110096"  TargetName="点击黑化精灵进入战斗">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110096" />									
+					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110097" />									
+					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110098" />									
+				</Trigger> 	
+   				<Action Type="COMMAND" Command="BATTLE" Params="3525"  SkipTrigger="Y" />	
+    		</Event>
+		</Step>	
+
+  		<Step ID="13" ParentList="12" ParentCost="1" >
+    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与黑化精灵战斗">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="30109"  />									
+				</Trigger> 	
+				<Action Type="COMMAND" Command="DELAY" Params="1500" />   
+				<Action Type="MOVIE" Url="task_11009_8.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />   
+    		</Event>
+		</Step>		
+
+  		<Step ID="14" ParentList="13" ParentCost="1" >
+    		<Event Memo="与c厄奎提克c对话" TargetMap="30109"  TargetObj="110095"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110095"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="太可怕了太可怕了！这地方不能待了，前面那个法阵好像是出口，我们快过去啊！" />	
+					<Option Info="没空思考那么多了，先离开吧！" />
+				</Action>
+    		</Event>
+		</Step>		
+
+
+
+  		<Step ID="15" ParentList="14" ParentCost="1" >
+    		<Event Memo="前往出口离开裂缝" TargetMap="11610"   TargetName="前往出口离开裂缝">
+  				<Trigger>					
+					<Item Type="ENTER_MAP" MapID="11610"  />									
+				</Trigger> 		
+				<Action Type="COMMAND" Command="NOTHING" />   
+    		</Event>
+		</Step>		
+
+  		<Step ID="16" ParentList="15" ParentCost="1" >
+    		<Event Memo="与c厄奎提克c对话" TargetMap="11610"  TargetObj="1100911"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11610" ObjID="1100911" TaskOption="【灯塔与占卜师】"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="谢天谢地，终于得救了。" />	
+					<Option Info="刚才的红光是？"  />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="啊，你说的是我脖子上的灯芯吗？那就是我们占卜师的传承之物，将它放进灯内，就能让灯塔重新亮起来。没想到这玩意居然还能把我们从裂缝里救出来，真是不可思议。" />	
+					<Option Info="怎么才能再次进入裂缝？"  />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="啥啥啥？我没听错吧，我们都差点死了，你居然还要回那鬼地方？" />	
+					<Option Info="(向厄奎提克讲述了经过)"  />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="2" Info="原来如此，能把羊皮卷给我看看吗？" />	
+					<Option Info="(拿出羊皮卷)"  />
+				</Action>
+				<Action Type="MOVIE" Url="task_11008_5.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />       <!-- 灯塔图 -->
+    		</Event>
+		</Step>		
+
+  		<Step ID="17" ParentList="16" ParentCost="1" >
+    		<Event Memo="与c厄奎提克c对话" TargetMap="11610"  TargetObj="1100911"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11610" ObjID="1100911" TaskOption="【灯塔与占卜师】" />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="看起来，应该要重新点亮灯塔才能进入。" />	
+					<Option Info="@blank"  />
+				</Action>
+				<Action Type="MOVIE" Url="task_11009_9.swf" MapLevel="TASK" Pos="0,0"/>       <!-- 灯塔图 -->
+    		</Event>
+		</Step>		
+
+  		<Step ID="18" ParentList="17" ParentCost="1" >
+    		<Event Memo="与c厄奎提克c对话" TargetMap="11610"  TargetObj="1100911"  TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11610" ObjID="1100911" TaskOption="【灯塔与占卜师】"  />									
+				</Trigger> 		
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="3" Info="“沉寂的火把重燃之际，亦是希望的烈焰撕破绝望之时”哈哈哈，原来如此、原来如此啊！"  />	
+					<Msg NpcID="1017" ImageID="3" Info="出发吧，未来勇士，去探寻真正的希望吧！" />	
+					<Option Info="那你呢？"   />
+				</Action>
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="3" Info="嘿嘿，我就不陪你去了，毕竟这底下的危险我实在应付不来…那么，祝你好运，后会有期。"  />	
+					<Option Info="再会"    />
+				</Action>
+    		</Event>
+		</Step>		
+</Procedure>
+</Task>

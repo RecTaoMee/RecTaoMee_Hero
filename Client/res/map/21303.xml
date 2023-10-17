@@ -9,6 +9,10 @@
 		<node id="1" type="TransPort" level="contentLevel" res="MC_enter0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="contentLevel" res="MC_enter1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="3" type="TransPort" level="contentLevel" res="MC_enter2" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+
+      <node id="4" type="NPC" res="MC_11014_1" url="res/task/swf2/task_11014_1.swf" level="contentLevel" position="-967,-775" link="item" action="" taskShowSteps="11014_3" />
+
+
 	</object>
 	<npc>		
 		<node id="703" type="NPC" res="MC_npc_703" action=""  taskShowSteps="35007_4|5|6|7|8|9|10|11" />				

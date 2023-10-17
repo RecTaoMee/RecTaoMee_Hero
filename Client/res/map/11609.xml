@@ -1,0 +1,16 @@
+<!--灯塔外侧-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="623,629" targetMapId="11604" targetTransPortId="2"/> 
+		<node id="2" pos="448,394" targetMapId="11610" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" visible="0" alpTaskID="11009_1_0" />	
+		<node id="110092" type="NPC" level="downLevel" res="MC_110092"  taskShowSteps="11009_4|5" toolTip="灯塔内侧" />	
+		<node id="110093" type="NPC" level="contentLevel" res="MC_npc_1017"  taskShowSteps="11009_4|5|6" />	
+		<!-- <node id="2" type="AppModule" res="MC_TheSignBook" module="TheSignBookModule"/>
+		<node id="3" type="AppModule" res="MC_TheSecretOfLavaBook" module="TheSecretOfLavaBookModule"/> -->
+	</object>
+
+</map>

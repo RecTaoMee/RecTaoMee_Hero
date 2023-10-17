@@ -25,7 +25,7 @@
 				<![CDATA[1#0x000a_#^*_?(似乎是乱码)混#%沌_&#陨......^*！灭......！！！]]>
 			</des>
 		</proAction>
-		<proAction id="2" type="5" fightID="3554" to="i3_map31620register" />	
+         <proAction id="2" type="5" fightID="3554" to="i3_map31620register" />	
 		<proAction npcID="1021" id="3" type="0" answer="你究竟是谁？" to="a4" colorID="2">
 			<des>
 				<![CDATA[1#不论汝之目的如何，栖于吾之足下的灵魂定将获得永恒的安定！沧海桑田终无法撼动！族人们啊，莫要被痛苦蒙蔽双眼，因为，吾会赐汝归心之梦！]]>

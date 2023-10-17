@@ -1,0 +1,240 @@
+<!--哭嚎狭间-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+   <transport intPos="47,1773">
+      <node id="1" pos="47,1773" targetMapId="31611" targetTransPortId="2"/>
+      <node id="2" pos="1410,28" targetMapId="31613" targetTransPortId="1"/>
+      <node id="3" pos="1157,447" targetMapId="31621" targetTransPortId="1"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+      <node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>
+   </object>
+
+   <npc>
+      <node id="3" type="OBJECT" res="MC_npc_pipikeke" level="contentLevel" action="0" />
+      <node id="4" type="OBJECT" res="MC_pet_212" level="contentLevel" action="6" />
+      <node id="5" type="OBJECT" res="MC_crystal" level="contentLevel" action="" />
+      <node id="6" type="OBJECT" res="MC_pet_3050" level="contentLevel" action="" />
+      <node id="7" type="OBJECT" res="MC_pet_3052" level="contentLevel" action="" />
+      <node id="8" type="OBJECT" res="MC_pet_3054" level="contentLevel" action="" />
+      <node id="9" type="OBJECT" res="MC_pet_3056" level="contentLevel" action="" />
+      <node id="10" type="OBJECT" res="MC_npc_1041" level="contentLevel" action="" />
+      <node id="11" type="OBJECT" res="MC_AST_bridge_1" level="downLevel" action="" />
+      <node id="12" type="OBJECT" res="MC_AST_bridge_2" level="downLevel" action="" />
+      <node id="13" type="OBJECT" res="MC_AST_bridge_3" level="downLevel" action="" />
+      <node id="14" type="OBJECT" res="MC_AST_bridge_4" level="downLevel" action="" />
+      <node id="15" type="OBJECT" res="MC_slientStatue" level="contentLevel" action="" />
+
+      <node id="16" type="NPC" res="MC_11013_1" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="1115,480" link="item" action="" taskShowSteps="11013_7" />
+      <node id="17" type="NPC" res="MC_11013_2" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="1115,480" link="item2" action="" taskShowSteps="11013_6" />
+      <node id="18" type="NPC" res="MC_11013_3" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="1200,478" link="item3" action="" taskShowSteps="11013_6|7|8" />
+      <node id="19" type="NPC" res="MC_11013_4" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="1115,480" link="item4" action="" taskShowSteps="11013_8" />
+      <node id="20" type="OBJECT" res="MC_11013_5" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item" action="" taskShowSteps="11013_12" />
+      <node id="21" type="OBJECT" res="MC_11013_6" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item2" action="" taskShowSteps="11013_13" />
+      <node id="22" type="OBJECT" res="MC_11013_7" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item3" action="" taskShowSteps="11013_14|15" />
+      <node id="23" type="OBJECT" res="MC_11013_8" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item4" action="" taskShowSteps="11013_16" />
+
+   </npc>
+
+   <actions>
+      <!-- 初次进入场景 -->
+      <proAction npcID="1" id="0" type="0" event="pipikeke1" answer="你为什么会出现在这里？！" to="a1" colorID="2">
+         <des>
+            <![CDATA[7#大坏蛋，尽管过来吧！就算你们统治了王国，作为见习勇士，我也绝不会屈服的！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1" id="1" type="0" answer="我是魔王？怎么可能？\n吉普豆村发生了什么？" to="a2" colorID="2">
+         <des>
+            <![CDATA[7#别狡辩了，你这个魔王！把吉普豆村的大家还给我！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1" id="2" type="0" answer="大家都不在了？\n因为我是......魔王？" to="a3" colorID="2">
+         <des>
+            <![CDATA[7#尤利从未来召唤的魔王，你一出现就毁灭了吉普豆村，琪琪姐姐，村长......大家都被你......都是因为你！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1" id="3" type="0" answer="等等，如果土豆村已毁\n为什么你一点事也没有？\n召唤我的魔王呢？" to="a4" colorID="2">
+         <des>
+            <![CDATA[7#我要给他们报仇！]]>
+         </des>
+      </proAction>
+
+      <proAction npcID="1" id="4" type="0" answer="我认识的皮皮克克绝不\n会抛下同伴，你在说谎！" to="pipikeke2" colorID="2">
+         <des>
+            <![CDATA[7#魔王......魔王施完法就离开了，我是侥幸逃出来的！]]>
+         </des>
+      </proAction>
+      <proAction id="5" type="1" event="pipikeke2" level="taskLevel" name="task_11009_5" moviepos="0,0" playBGM="1" to="a6"/>
+
+      <proAction npcID="1031" id="6" type="0" answer="你的样子怎么有点像\n......？等等！" to="pipikeke3" colorID="2">
+         <des>
+            <![CDATA[7#切，真倒霉，美味的噩梦打水漂了。]]>
+         </des>
+      </proAction>
+      <proAction id="7" type="1" event="pipikeke3" level="contentLevel" name="task_11009_12" moviepos="0,0" playBGM="1" to="a8"/>
+
+      <proAction npcID="402" id="8" type="0" answer="我没事，只是做了个噩梦" to="a9" colorID="2">
+         <des>
+            <![CDATA[9#呜呜~你一进来就晕倒了，怎么也叫不醒，真是吓死我了！]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="9" type="0" answer="继续探索吧" to="pipikeke4" colorID="2">
+         <des>
+            <![CDATA[9#因为刚刚那个家伙？看来我们要更小心了。]]>
+         </des>
+      </proAction>
+      <!-- 风 -->
+      <proAction npcID="1032" id="10" type="0" answer="这就佩戴称号——【未来勇士】" to="o" colorID="2">
+         <des>            <!-- 叹息之盏 -->
+            <![CDATA[1#只有神谕上的【未来勇士】才能通过这里，否则其将无法承受紊乱时空的压迫。（提示:佩戴称号-【未来勇士】）]]>
+         </des>
+      </proAction>
+
+      <proAction npcID="1033" id="11" type="0" answer="本源规则，是指元素相克\n的法则吗？" to="a12" colorID="2">
+         <des>            <!-- 晶石不对 -->
+            <![CDATA[1#此间紊乱不堪，吾辈囿束无举，唯循本源之仪，方勘虚妄终焉。]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="12" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[9#（提示：佩戴含有克制【风】元素的水晶再来吧。）]]>
+         </des>
+      </proAction>
+      <proAction npcID="1033" id="13" type="0" answer="为了前行，只能与之一战了$好危险的感觉，先离开吧" to="a34$o" colorID="2$2">
+         <des>            <!-- 晶石正确 -->
+            <![CDATA[1#灾变...倾塌...不会退缩！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1037" id="14" type="0" answer="这是某段历史的残影吗" to="pet3050_finish" colorID="2">
+         <des>            <!-- 战斗胜利 -->
+            <![CDATA[1#不敬...惩罚...]]>
+         </des>
+      </proAction>
+      <!-- 地 -->
+      <proAction npcID="1034" id="15" type="0" answer="本源规则，是指元素相克\n的法则吗？" to="a16" colorID="2">
+         <des>            <!-- 晶石不对 -->
+            <![CDATA[1#此间紊乱不堪，吾辈囿束无举，唯循本源之仪，方勘虚妄终焉。]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="16" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[9#（提示：佩戴含有克制【地】元素的水晶再来吧。）]]>
+         </des>
+      </proAction>
+      <proAction npcID="1034" id="17" type="0" answer="看来这个残影被污染了\n我会将你净化！$战术性撤退！" to="a35$o" colorID="2$2">
+         <des>            <!-- 晶石正确 -->
+            <![CDATA[1#契约...侵蚀...吾来净化！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1038" id="18" type="0" answer=" 这是谁的故事呢" to="pet3052_finish" colorID="2">
+         <des>            <!-- 战斗胜利 -->
+            <![CDATA[1#禁锢...轮回...]]>
+         </des>
+      </proAction>
+      <!-- 水 -->
+      <proAction npcID="1035" id="19" type="0" answer="本源规则，是指元素相克\n的法则吗？" to="a20" colorID="2">
+         <des>            <!-- 晶石不对 -->
+            <![CDATA[1#此间紊乱不堪，吾辈囿束无举，唯循本源之仪，方勘虚妄终焉。]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="20" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[9#（提示：佩戴含有克制【水】元素的水晶再来吧。）]]>
+         </des>
+      </proAction>
+      <proAction npcID="1035" id="21" type="0" answer="陷入狂暴了...来战吧！$我并不想伤害什么，告辞。" to="a36$o" colorID="2$2">
+         <des>            <!-- 晶石正确 -->
+            <![CDATA[1#薇拉...不要伤害...！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1039" id="22" type="0" answer="薇拉...是它的伴侣吗？" to="pet3054_finish" colorID="2">
+         <des>            <!-- 战斗胜利 -->
+            <![CDATA[1#对不起...孩子...守护...]]>
+         </des>
+      </proAction>
+      <!-- 火 -->
+      <proAction npcID="1036" id="23" type="0" answer="本源规则，是指元素相克\n的法则吗？" to="a24" colorID="2">
+         <des>            <!-- 晶石不对 -->
+            <![CDATA[1#此间紊乱不堪，吾辈囿束无举，唯循本源之仪，方勘虚妄终焉。]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="24" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[9#（提示：佩戴含有克制【火】元素的水晶再来吧。）]]>
+         </des>
+      </proAction>
+      <proAction npcID="1036" id="25" type="0" answer="把我当作敌人了？来战！$这一定是误会！打扰了！" to="a37$o" colorID="2$2">
+         <des>            <!-- 晶石正确 -->
+            <![CDATA[1#罪业...绝不姑息！]]>
+         </des>
+      </proAction>
+      <proAction npcID="1040" id="26" type="0" answer="赎罪...是指什么呢？" to="pet3056_finish" colorID="2">
+         <des>            <!-- 战斗胜利 -->
+            <![CDATA[1#宿命...恶果...赎罪...]]>
+         </des>
+      </proAction>
+
+      <!-- 瑞恩部分 -->
+      <proAction npcID="1042" id="27" type="0" answer="你是谁？" to="a28" colorID="2">
+         <des>
+            <![CDATA[1#未来勇士，你好，我受时之力感召而来。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="28" type="0" answer="瑞恩？！" to="a29" colorID="2">
+         <des>
+            <![CDATA[1#我是瑞恩之影，等候你多时了。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="29" type="0" answer="怎样才可以穿过它？" to="a30" colorID="2">
+         <des>
+            <![CDATA[1#呈现在此的不过是一份残存记录，时间所剩无几了，想要解开封印，就照我说的做吧。$$]]>
+            <![CDATA[1#我们的世界是时间与空间的融合产物，时间像一条存在于空间中的单行线，任何一段时间与空间的组合即为时空。$$]]>
+            <![CDATA[1#时间本由女神管理，可神魔之战本就夺走了时之女神太多力量，再加上设下魔王封印的消耗。最终，祂难以维持时间的平衡，原本连续的时间因此被割裂成许多单独的片段，$$]]>
+            <![CDATA[1#各大陆也被分隔成不同的时空。$$]]>
+            <![CDATA[1#时之断层正处于时间片段的断裂处，也就是时空的边缘......]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="30" type="0" answer="怎样接受试炼？" to="a31" colorID="2">
+         <des>
+            <![CDATA[1#进入隔绝大陆的裂缝，解除魔王封印，将断裂的时空复原。来自遥远时空的你不受时间约束，因此也只有你才可以解开封印。$$]]>
+            <![CDATA[1#看到我脚下的法阵了吗？类似的存在一共有三个，分别代表过去、现在与未来，是时间法则赋予你的考验。$$]]>
+            <![CDATA[1#现在，击败代表过去的力量，证明你能继续走下去。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="31" type="0" answer="我准备好了！" to="a32" colorID="2">
+         <des>
+            <![CDATA[1#为了考验，我会为你开启第一层封印的门，至于另外两个，若你拥有足以匹配的资格，自会于断层中相会。]]>
+         </des>
+      </proAction>
+      <proAction id="32" type="1" level="bottomLevel" name="task_11009_10" moviepos="0,0" playBGM="1" to="a33"/>
+      <proAction id="33" type="7" mapID="31621" />
+      <proAction id="34" type="5" fightID="3559" />
+      <proAction id="35" type="5" fightID="3560" />
+      <proAction id="36" type="5" fightID="3561" />
+      <proAction id="37" type="5" fightID="3562" />
+
+      <proAction npcID="402" id="38" type="0" answer="@blank" to="i2_MapItemSubmitModule_150001|1|1|wateringStatue" colorID="2">
+         <des>
+            <![CDATA[9#这上面画的是【至纯之水】？这是要我们带给它一瓶的意思吗？]]>
+         </des>
+      </proAction>
+      <proAction id="39" type="1" level="contentLevel" name="task_11009_13" moviepos="1202,417" playBGM="1" to="water_end"/>
+
+      <proAction npcID="1021" id="40" type="0" answer="你还好吗？" to="a41" colorID="2">
+         <des>
+            <![CDATA[2#唔......这里的痛苦情感浓烈到窒息。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1021" id="41" type="0" answer="找到对方就知道了\n继续前进吧。" to="a42" colorID="2">
+         <des>
+            <![CDATA[2#我没事，只是有些难受而已，她......就活在这样的环境里吗？]]>
+         </des>
+      </proAction>
+      <proAction npcID="402" id="42" type="0" answer="@blank" to="o" colorID="2">
+         <des>
+            <![CDATA[9#用“吉普豆花”的形态继续前进，“诱捕”狐型精灵。]]>
+         </des>
+      </proAction>
+
+   </actions>
+</map>

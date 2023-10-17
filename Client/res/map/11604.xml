@@ -4,11 +4,13 @@
 		<node id="1" pos="117,251" targetMapId="11603"  targetTransPortId="3"/>
 		<node id="2" pos="1380,394" targetMapId="11605" targetTransPortId="1"/>
 		<node id="3" pos="471,150" targetMapId="11705" targetTransPortId="1"/>
+		<node id="4" pos="117,251" targetMapId="11606"  targetTransPortId="1"/>
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="downLevel" res="MC_door2" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
 		<node id="3" type="Disable" level="downLevel" res="MC_ship" alpTaskID="152_2" visible="0"/>
+		<node id="4" type="TransPort" level="downLevel" res="MC_door3" name="bbb" transPortId="4" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>	
 		<node id="11001" res="MC_BlackCat"/>
 		<node id="11002" res="MC_FishTank"/>
 		<node id="11003" res="MC_Captain"/>

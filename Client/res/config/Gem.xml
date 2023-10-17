@@ -1,0 +1,385 @@
+﻿<!-- 
+	Price：购买价格；SellPrice：出售价格；RepairPrice：修理价格。【以上参数未配置默认为0】
+	Tradability：普通用户买卖可能性；VipTradability：VIP用户买卖可能性。【0不可买卖，1可买，2可卖，3可买卖，未配置默认为0】
+	Vendibility：摆摊出售可能性。【0不可摆摊交易，1可摆摊交易，未配置默认是0】
+	VipOnly：仅VIP用户可装备。【0不限制身份，1仅Vip可装备，未配置默认为0】
+	Del：物品可删除性。【0本人删除，1不可删除，2队长删除，未配置默认为0】
+	Duration：装备初始最大耐久。
+	Earth：地属性数值；Water：水属性数值；Fire：火属性数值；Wind：风属性数值。【以上参数取值范围0~10】
+	HpMax：生命上限增加；MpMax：魔力上限增加；Atk：攻击力；Matk：魔法攻击力；Def：防御力；Mdef：魔法防御力；Speed：速度；Spirit：精神；Resume：恢复；Hit：命中；Dodge：闪躲；Crit：必杀；FightBack：反击；ResistPoison：抗毒；ResistLithification：抗石化；ResistLethargy：抗昏睡；ResistCommination：抗诅咒；ResistConfusion：抗混乱；ResistOblivion：抗遗忘。【以上参数未配置默认是0】
+	ShowerDepth: 装饰品的层级。
+	energyCost:镶嵌消耗精力
+	moneyCost:镶嵌消耗游戏币
+-->
+<!--
+NextItemID下一级的物品
+RequireItemID：需要升级的物品ID，以空格分隔多个物品
+RequireItemNum：需要升级物品对应的数量，以空格分隔多个物品
+RequireLv：升级此物品所需的用户角色等级
+moneyCost：升级所需星豆
+-->
+
+<Items settingMoneyCost="100">
+
+
+	<Item ID="370000" Name="生命石1级" HpMax="15" >
+		<Upgrade  NextItemID="370001" RequireItemID="370000" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370001" Name="生命石2级" HpMax="30" >
+		<Upgrade  NextItemID="370002" RequireItemID="370001" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370002" Name="生命石3级" HpMax="45" >
+		<Upgrade  NextItemID="370003" RequireItemID="370002" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370003" Name="生命石4级" HpMax="60" >
+		<Upgrade  NextItemID="370004" RequireItemID="370003" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370004" Name="生命石5级" HpMax="75" >
+		<Upgrade  NextItemID="370005" RequireItemID="370004" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370005" Name="生命石6级" HpMax="90" >
+		<Upgrade  NextItemID="370006" RequireItemID="370005" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370006" Name="生命石7级" HpMax="105" >
+		<Upgrade  NextItemID="370007" RequireItemID="370006" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370007" Name="生命石8级" HpMax="120" >
+		<Upgrade  NextItemID="370008" RequireItemID="370007" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370008" Name="生命石9级" HpMax="135" >
+		<Upgrade  NextItemID="370009" RequireItemID="370008" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370009" Name="生命石10级" HpMax="150" >
+	</Item>
+
+	<Item ID="370010" Name="魔法石1级" MpMax="10" >
+		<Upgrade  NextItemID="370011" RequireItemID="370010" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370011" Name="魔法石2级" MpMax="20" >
+		<Upgrade  NextItemID="370012" RequireItemID="370011" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370012" Name="魔法石3级" MpMax="30" >
+		<Upgrade  NextItemID="370013" RequireItemID="370012" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370013" Name="魔法石4级" MpMax="40" >
+		<Upgrade  NextItemID="370014" RequireItemID="370013" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370014" Name="魔法石5级" MpMax="50" >
+		<Upgrade  NextItemID="370015" RequireItemID="370014" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370015" Name="魔法石6级" MpMax="60" >
+		<Upgrade  NextItemID="370016" RequireItemID="370015" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370016" Name="魔法石7级" MpMax="70" >
+		<Upgrade  NextItemID="370017" RequireItemID="370016" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370017" Name="魔法石8级" MpMax="80" >
+		<Upgrade  NextItemID="370018" RequireItemID="370017" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370018" Name="魔法石9级" MpMax="90" >
+		<Upgrade  NextItemID="370019" RequireItemID="370018" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370019" Name="魔法石10级" MpMax="100" >
+	</Item>
+
+	<Item ID="370020" Name="力量石1级" Atk="3" >
+		<Upgrade  NextItemID="370021" RequireItemID="370020" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370021" Name="力量石2级" Atk="6" >
+		<Upgrade  NextItemID="370022" RequireItemID="370021" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370022" Name="力量石3级" Atk="9" >
+		<Upgrade  NextItemID="370023" RequireItemID="370022" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370023" Name="力量石4级" Atk="12" >
+		<Upgrade  NextItemID="370024" RequireItemID="370023" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370024" Name="力量石5级" Atk="15" >
+		<Upgrade  NextItemID="370025" RequireItemID="370024" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370025" Name="力量石6级" Atk="18" >
+		<Upgrade  NextItemID="370026" RequireItemID="370025" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370026" Name="力量石7级" Atk="21" >
+		<Upgrade  NextItemID="370027" RequireItemID="370026" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370027" Name="力量石8级" Atk="24" >
+		<Upgrade  NextItemID="370028" RequireItemID="370027" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370028" Name="力量石9级" Atk="27" >
+		<Upgrade  NextItemID="370029" RequireItemID="370028" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370029" Name="力量石10级" Atk="30" >
+	</Item>
+
+	<Item ID="370030" Name="智慧石1级" Matk="7" >
+		<Upgrade  NextItemID="370031" RequireItemID="370030" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370031" Name="智慧石2级" Matk="14" >
+		<Upgrade  NextItemID="370032" RequireItemID="370031" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370032" Name="智慧石3级" Matk="21" >
+		<Upgrade  NextItemID="370033" RequireItemID="370032" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370033" Name="智慧石4级" Matk="28" >
+		<Upgrade  NextItemID="370034" RequireItemID="370033" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370034" Name="智慧石5级" Matk="35" >
+		<Upgrade  NextItemID="370035" RequireItemID="370034" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370035" Name="智慧石6级" Matk="42" >
+		<Upgrade  NextItemID="370036" RequireItemID="370035" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370036" Name="智慧石7级" Matk="49" >
+		<Upgrade  NextItemID="370037" RequireItemID="370036" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370037" Name="智慧石8级" Matk="56" >
+		<Upgrade  NextItemID="370038" RequireItemID="370037" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370038" Name="智慧石9级" Matk="63" >
+		<Upgrade  NextItemID="370039" RequireItemID="370038" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370039" Name="智慧石10级" Matk="70" >
+	</Item>
+
+	<Item ID="370040" Name="防护石1级" Def="10" >
+		<Upgrade  NextItemID="370041" RequireItemID="370040" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370041" Name="防护石2级" Def="20" >
+		<Upgrade  NextItemID="370042" RequireItemID="370041" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370042" Name="防护石3级" Def="30" >
+		<Upgrade  NextItemID="370043" RequireItemID="370042" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370043" Name="防护石4级" Def="40" >
+		<Upgrade  NextItemID="370044" RequireItemID="370043" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370044" Name="防护石5级" Def="50" >
+		<Upgrade  NextItemID="370045" RequireItemID="370044" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370045" Name="防护石6级" Def="60" >
+		<Upgrade  NextItemID="370046" RequireItemID="370045" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370046" Name="防护石7级" Def="70" >
+		<Upgrade  NextItemID="370047" RequireItemID="370046" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370047" Name="防护石8级" Def="80" >
+		<Upgrade  NextItemID="370048" RequireItemID="370047" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370048" Name="防护石9级" Def="90" >
+		<Upgrade  NextItemID="370049" RequireItemID="370048" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370049" Name="防护石10级" Def="100" >
+	</Item>
+
+	<Item ID="370050" Name="消魔石1级" Mdef="10" >
+		<Upgrade  NextItemID="370051" RequireItemID="370050" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370051" Name="消魔石2级" Mdef="20" >
+		<Upgrade  NextItemID="370052" RequireItemID="370051" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370052" Name="消魔石3级" Mdef="30" >
+		<Upgrade  NextItemID="370053" RequireItemID="370052" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370053" Name="消魔石4级" Mdef="40" >
+		<Upgrade  NextItemID="370054" RequireItemID="370053" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370054" Name="消魔石5级" Mdef="50" >
+		<Upgrade  NextItemID="370055" RequireItemID="370054" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370055" Name="消魔石6级" Mdef="60" >
+		<Upgrade  NextItemID="370056" RequireItemID="370055" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370056" Name="消魔石7级" Mdef="70" >
+		<Upgrade  NextItemID="370057" RequireItemID="370056" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370057" Name="消魔石8级" Mdef="80" >
+		<Upgrade  NextItemID="370058" RequireItemID="370057" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370058" Name="消魔石9级" Mdef="90" >
+		<Upgrade  NextItemID="370059" RequireItemID="370058" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370059" Name="消魔石10级" Mdef="100" >
+	</Item>
+	
+	<Item ID="370060" Name="活络石1级" ResistLithification="1" >
+		<Upgrade  NextItemID="370061" RequireItemID="370060" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370061" Name="活络石2级" ResistLithification="2" >
+		<Upgrade  NextItemID="370062" RequireItemID="370061" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370062" Name="活络石3级" ResistLithification="3" >
+		<Upgrade  NextItemID="370063" RequireItemID="370062" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370063" Name="活络石4级" ResistLithification="4" >
+		<Upgrade  NextItemID="370064" RequireItemID="370063" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370064" Name="活络石5级" ResistLithification="5" >
+		<Upgrade  NextItemID="370065" RequireItemID="370064" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370065" Name="活络石6级" ResistLithification="6" >
+		<Upgrade  NextItemID="370066" RequireItemID="370065" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370066" Name="活络石7级" ResistLithification="7" >
+		<Upgrade  NextItemID="370067" RequireItemID="370066" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370067" Name="活络石8级" ResistLithification="8" >
+		<Upgrade  NextItemID="370068" RequireItemID="370067" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370068" Name="活络石9级" ResistLithification="9" >
+		<Upgrade  NextItemID="370069" RequireItemID="370068" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370069" Name="活络石10级" ResistLithification="10" >
+	</Item>
+	
+	<Item ID="370070" Name="解毒石1级" ResistPoison="1" >
+		<Upgrade  NextItemID="370071" RequireItemID="370070" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370071" Name="解毒石2级" ResistPoison="2" >
+		<Upgrade  NextItemID="370072" RequireItemID="370071" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370072" Name="解毒石3级" ResistPoison="3" >
+		<Upgrade  NextItemID="370073" RequireItemID="370072" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370073" Name="解毒石4级" ResistPoison="4" >
+		<Upgrade  NextItemID="370074" RequireItemID="370073" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370074" Name="解毒石5级" ResistPoison="5" >
+		<Upgrade  NextItemID="370075" RequireItemID="370074" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370075" Name="解毒石6级" ResistPoison="6" >
+		<Upgrade  NextItemID="370076" RequireItemID="370075" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370076" Name="解毒石7级" ResistPoison="7" >
+		<Upgrade  NextItemID="370077" RequireItemID="370076" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370077" Name="解毒石8级" ResistPoison="8" >
+		<Upgrade  NextItemID="370078" RequireItemID="370077" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370078" Name="解毒石9级" ResistPoison="9" >
+		<Upgrade  NextItemID="370079" RequireItemID="370078" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370079" Name="解毒石10级" ResistPoison="10" >
+	</Item>
+
+	<Item ID="370080" Name="清凉石1级" ResistLethargy="1" >
+		<Upgrade  NextItemID="370081" RequireItemID="370080" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370081" Name="清凉石2级" ResistLethargy="2" >
+		<Upgrade  NextItemID="370082" RequireItemID="370081" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370082" Name="清凉石3级" ResistLethargy="3" >
+		<Upgrade  NextItemID="370083" RequireItemID="370082" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370083" Name="清凉石4级" ResistLethargy="4" >
+		<Upgrade  NextItemID="370084" RequireItemID="370083" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370084" Name="清凉石5级" ResistLethargy="5" >
+		<Upgrade  NextItemID="370085" RequireItemID="370084" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370085" Name="清凉石6级" ResistLethargy="6" >
+		<Upgrade  NextItemID="370086" RequireItemID="370085" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370086" Name="清凉石7级" ResistLethargy="7" >
+		<Upgrade  NextItemID="370087" RequireItemID="370086" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370087" Name="清凉石8级" ResistLethargy="8" >
+		<Upgrade  NextItemID="370088" RequireItemID="370087" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370088" Name="清凉石9级" ResistLethargy="9" >
+		<Upgrade  NextItemID="370089" RequireItemID="370088" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370089" Name="清凉石10级" ResistLethargy="10" >
+	</Item>
+	
+	<Item ID="370090" Name="圣光石1级" ResistCommination="1" >
+		<Upgrade  NextItemID="370091" RequireItemID="370090" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370091" Name="圣光石2级" ResistCommination="2" >
+		<Upgrade  NextItemID="370092" RequireItemID="370091" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370092" Name="圣光石3级" ResistCommination="3" >
+		<Upgrade  NextItemID="370093" RequireItemID="370092" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370093" Name="圣光石4级" ResistCommination="4" >
+		<Upgrade  NextItemID="370094" RequireItemID="370093" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370094" Name="圣光石5级" ResistCommination="5" >
+		<Upgrade  NextItemID="370095" RequireItemID="370094" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370095" Name="圣光石6级" ResistCommination="6" >
+		<Upgrade  NextItemID="370096" RequireItemID="370095" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370096" Name="圣光石7级" ResistCommination="7" >
+		<Upgrade  NextItemID="370097" RequireItemID="370096" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370097" Name="圣光石8级" ResistCommination="8" >
+		<Upgrade  NextItemID="370098" RequireItemID="370097" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370098" Name="圣光石9级" ResistCommination="9" >
+		<Upgrade  NextItemID="370099" RequireItemID="370098" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370099" Name="圣光石10级" ResistCommination="10" >
+	</Item>
+	
+	<Item ID="370100" Name="定智石1级" ResistConfusion="1" >
+		<Upgrade  NextItemID="370101" RequireItemID="370100" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370101" Name="定智石2级" ResistConfusion="2" >
+		<Upgrade  NextItemID="370102" RequireItemID="370101" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370102" Name="定智石3级" ResistConfusion="3" >
+		<Upgrade  NextItemID="370103" RequireItemID="370102" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370103" Name="定智石4级" ResistConfusion="4" >
+		<Upgrade  NextItemID="370104" RequireItemID="370103" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370104" Name="定智石5级" ResistConfusion="5" >
+		<Upgrade  NextItemID="370105" RequireItemID="370104" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370105" Name="定智石6级" ResistConfusion="6" >
+		<Upgrade  NextItemID="370106" RequireItemID="370105" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370106" Name="定智石7级" ResistConfusion="7" >
+		<Upgrade  NextItemID="370107" RequireItemID="370106" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370107" Name="定智石8级" ResistConfusion="8" >
+		<Upgrade  NextItemID="370108" RequireItemID="370107" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370108" Name="定智石9级" ResistConfusion="9" >
+		<Upgrade  NextItemID="370109" RequireItemID="370108" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370109" Name="定智石10级" ResistConfusion="10" >
+	</Item>
+	
+	<Item ID="370110" Name="铭记石1级" ResistOblivion="1" >
+		<Upgrade  NextItemID="370111" RequireItemID="370110" RequireItemNum="3" moneyCost="100"  RequireLv="15"/>
+	</Item>
+	<Item ID="370111" Name="铭记石2级" ResistOblivion="2" >
+		<Upgrade  NextItemID="370112" RequireItemID="370111" RequireItemNum="3" moneyCost="150" RequireLv="20" />
+	</Item>
+	<Item ID="370112" Name="铭记石3级" ResistOblivion="3" >
+		<Upgrade  NextItemID="370113" RequireItemID="370112" RequireItemNum="3" moneyCost="200" RequireLv="25" />
+	</Item>
+	<Item ID="370113" Name="铭记石4级" ResistOblivion="4" >
+		<Upgrade  NextItemID="370114" RequireItemID="370113" RequireItemNum="3" moneyCost="250" RequireLv="30" />
+	</Item>
+	<Item ID="370114" Name="铭记石5级" ResistOblivion="5" >
+		<Upgrade  NextItemID="370115" RequireItemID="370114" RequireItemNum="3" moneyCost="300" RequireLv="35" />
+	</Item>
+	<Item ID="370115" Name="铭记石6级" ResistOblivion="6" >
+		<Upgrade  NextItemID="370116" RequireItemID="370115" RequireItemNum="3" moneyCost="350" RequireLv="40" />
+	</Item>
+	<Item ID="370116" Name="铭记石7级" ResistOblivion="7" >
+		<Upgrade  NextItemID="370117" RequireItemID="370116" RequireItemNum="3" moneyCost="400" RequireLv="40" />
+	</Item>
+	<Item ID="370117" Name="铭记石8级" ResistOblivion="8" >
+		<Upgrade  NextItemID="370118" RequireItemID="370117" RequireItemNum="3" moneyCost="450" RequireLv="50" />
+	</Item>
+	<Item ID="370118" Name="铭记石9级" ResistOblivion="9" >
+		<Upgrade  NextItemID="370119" RequireItemID="370118" RequireItemNum="3" moneyCost="500" RequireLv="55" />
+	</Item>
+	<Item ID="370119" Name="铭记石10级" ResistOblivion="10" >
+	</Item>
+	
+</Items>

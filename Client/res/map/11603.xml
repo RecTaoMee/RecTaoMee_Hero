@@ -3,11 +3,13 @@
 		<node id="1" pos="150,354" targetMapId="21306"  targetTransPortId="2"/> 
 		<node id="2" pos="1348,590" targetMapId="11602" targetTransPortId="1"/> 
 		<node id="3" pos="1150,330" targetMapId="11604" targetTransPortId="1"/>
+		<node id="4" pos="1150,330" targetMapId="11606" targetTransPortId="3"/>
 	</transport>
 	<object>
 		<node id="1" type="TransPort" level="downLevel" res="MC_door0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door2" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="3" type="TransPort" level="downLevel" res="MC_door3" name="bbb" transPortId="3" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="4" type="TransPort" level="contentLevel" res="MC_door4" name="bbb" transPortId="4" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
         <node id="11004" res="MC_CrownFish"/>		
 	</object>
 	

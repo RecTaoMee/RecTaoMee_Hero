@@ -1,20 +1,26 @@
 <!--克拉斯海岸-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-011.mp3">
-	<transport intPos="90,398">
-		<node id="1" pos="90,398" targetMapId="" targetTransPortId="" name="默认传送点"/>
-		<node id="2" pos="1467,114" targetMapId="12101" targetTransPortId="1" name="克拉斯海滩"/>
-	</transport>
-	<object>
-		<node id="1" type="TransPort" res="MC_door_0" transPortId="2"/>
-	</object>
-	<npc>
-		<node id="60" type="NPC" name="勇士号水手" res="MC_npc_60" action="60" />
-	</npc>
-	<actions>
-		<proAction npcID="60" id="60" type="0" answer="我要去弗雷基码头$我要去克拉斯岩洞外$摩尔勇士万岁！" to="w2_11604_1$w2_22102_2$o" colorID="1$1$0" >
-			<des>
-				<![CDATA[1#热情为您服务！您要我帮您传送到哪里呢？~~]]>
-			</des>
-		</proAction>	
-	</actions>		
+   <transport intPos="90,398">
+      <node id="1" pos="90,398" targetMapId="" targetTransPortId="" name="默认传送点"/>
+      <node id="2" pos="1467,114" targetMapId="12101" targetTransPortId="1" name="克拉斯海滩"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" res="MC_door_0" transPortId="2"/>
+   </object>
+   <npc>
+      <node id="58" type="NPC" name="勇士号水手" res="MC_npc_60" action="58" />
+      <node id="2" type="NPC" res="MC_11014_1" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="580,200" link="item2" action="" taskShowSteps="11014_6|7|8|9" />
+      <node id="3" type="NPC" res="MC_11014_2" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="500,200" link="item3" action="" taskShowSteps="11014_6" />
+      <node id="4" type="NPC" res="MC_11014_3" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="660,250" link="item4" action="" taskShowSteps="11014_6" />
+      <node id="5" type="NPC" res="MC_11014_4" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="600,250" link="item5" action="" taskShowSteps="11014_6" />
+      <node id="6" type="OBJECT" res="MC_11014_5" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="500,200" link="item6" action="" taskShowSteps="11014_7|8" />
+      <node id="7" type="NPC" res="MC_11014_6" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="500,200" link="item" action="" taskShowSteps="11014_9" />
+   </npc>
+   <actions>
+      <proAction npcID="58" id="58" type="0" answer="我要去弗雷基码头$我要去克拉斯岩洞外$摩尔勇士万岁！" to="w2_11604_1$w2_22102_2$o" colorID="1$1$0">
+         <des>
+            <![CDATA[2#热情为您服务！您要我帮您传送到哪里呢？~~]]>
+         </des>
+      </proAction>
+   </actions>
 </map>

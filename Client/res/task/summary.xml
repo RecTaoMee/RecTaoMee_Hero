@@ -2531,6 +2531,42 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>	
 	</Task>		
 
+	<!-- 2022/6/2 -->
+	<Task ID="11008" Name="破局" Kind="1" ParentCost="1" ParentList="11007" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="60" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="3" Memo="" >
+		</Node>	
+		
+		<Node ID="2" Step="7" Memo="" >
+			<BeastGrp GrpId="3524" Count="1" Win="1"/>					
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50001" Count="500" /> 
+			</OutItem>
+		</Node>	
+		
+		<Node ID="3" Step="55" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="20000" />  <!-- 经验 -->
+				<Item OutType="1" ItemId="50001" Count="32000" />  <!-- 星豆 -->
+			</OutItem>
+		</Node>	
+	</Task>		
+
+	<!-- 2022/6/11 -->
+	<Task ID="11009" Name="灯塔与占卜师" Kind="1" ParentCost="1" ParentList="11008" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="60" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="7" Memo="" >  
+		</Node>	
+		
+		<Node ID="2" Step="17" Memo="" >
+		</Node>	
+
+		<Node ID="3" Step="18" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="10000" />  <!-- 经验 -->
+				<Item OutType="1" ItemId="50001" Count="20000" />  <!-- 星豆 -->
+			</OutItem>
+		</Node>	
+	</Task>		
+
 	<Task ID="11010" Name="启纪练行——开幕！" Kind="5" ParentCost="0" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="200" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
 		<Node ID="1" Step="4" Memo="" >
 			<BeastGrp GrpId="3546" Count="1" Win="1"/>					
@@ -2578,6 +2614,58 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		
 	</Task>		
 	
+   <Task ID="11013" Name="心有所归魂自洽" Kind="2" ParentCost="1" ParentList="11009" RandCondition="10016_0" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="60" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="">
+      <Node ID="1" Step="8" Memo="">
+         <BeastGrp GrpId="3571" Count="1" Win="1"/>
+      </Node>
+
+      <Node ID="2" Step="13" Memo="">
+         <BeastGrp GrpId="3572" Count="1" Win="1"/>
+      </Node>
+
+      <Node ID="3" Step="16" Memo="" IsEnd="1">
+         <OutItem ID="1">
+            <Item OutType="1" ItemId="50002" Count="10000" />
+            <!-- 经验 -->
+            <Item OutType="1" ItemId="50001" Count="20000" />
+            <!-- 星豆 -->
+            <Item OutType="2" ItemId="341013" Count="2" />
+            <Item OutType="3" ItemId="212" Count="1" /> 							
+         </OutItem>
+      </Node>
+   </Task>		
+	<Task ID="11014" Name="恶作剧之舞" Kind="2" ParentCost="1" ParentList="11007" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="4" Memo="" >  
+         <BeastTarget BeastType="23" Count="10" Win="1"/>				
+		</Node>	
+		
+		<Node ID="2" Step="6" Memo="" >
+         <BeastGrp GrpId="3575" Count="1" Win="1"/>
+		</Node>	
+
+		<Node ID="3" Step="9" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="10000" />  <!-- 经验 -->
+				<Item OutType="1" ItemId="50001" Count="20000" />  <!-- 星豆 -->
+			</OutItem>
+		</Node>	
+	</Task>		
+	<Task ID="11015" Name="出发前的准备" Kind="2" ParentCost="1" ParentList="11002" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="50" Job="-1" JobLevel="0" Star="1" Order="1" RecomLevel="" Time="" >
+		<Node ID="1" Step="7" Memo="" >  
+         <BeastGrp GrpId="3573" Count="1" Win="1"/>
+		</Node>	
+		
+		<Node ID="2" Step="8" Memo="" >
+         <BeastGrp GrpId="3574" Count="1" Win="1"/>
+		</Node>	
+
+		<Node ID="3" Step="10" Memo="" IsEnd="1" >
+			<OutItem ID="1">			
+				<Item OutType="1" ItemId="50002" Count="10000" />  <!-- 经验 -->
+				<Item OutType="1" ItemId="50001" Count="20000" />  <!-- 星豆 -->
+			</OutItem>
+		</Node>	
+	</Task>		
 
 
 <!-- 重复任务 -->	
@@ -4690,9 +4778,9 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350017" Count="5" />
 				<Item OutType="2" ItemId="360012" Count="1" />
-				<Item OutType="2" ItemId="350013" Count="4" />
-				<Item OutType="2" ItemId="350014" Count="4" />
-				<Item OutType="2" ItemId="351015" Count="2" />	
+				<Item OutType="2" ItemId="350013" Count="6" />
+				<Item OutType="2" ItemId="350014" Count="5" />
+				<Item OutType="2" ItemId="351015" Count="1" />	
 			</OutItem>
 		</Node>
 	</Task>
@@ -4722,9 +4810,9 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		<Node ID="4"  Step="62" IsEnd="1" Memo="HARD" Count="100 1 2" CheckGrp="3533" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350012" Count="1" />	
-				<Item OutType="2" ItemId="350013" Count="4" />	
+				<Item OutType="2" ItemId="350013" Count="5" />	
 				<Item OutType="2" ItemId="350014" Count="6" />	
-				<Item OutType="2" ItemId="351015" Count="2" />	
+				<Item OutType="2" ItemId="351015" Count="1" />	
 			</OutItem>
 		</Node>
 	</Task>		
@@ -4755,10 +4843,10 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		<Node ID="4" Step="62" IsEnd="1" Memo="HARD" Count="100 1 2" CheckGrp="3536">
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350015" Count="1" />	
-				<Item OutType="2" ItemId="220038" Count="5" />	
-				<Item OutType="2" ItemId="350013" Count="4" />
+				<Item OutType="2" ItemId="220038" Count="6" />	
+				<Item OutType="2" ItemId="350013" Count="5" />
 				<Item OutType="2" ItemId="350014" Count="5" />
-				<Item OutType="2" ItemId="351015" Count="2" />
+				<Item OutType="2" ItemId="351015" Count="1" />
 			</OutItem>
 		</Node>	
 	</Task>	
@@ -4802,9 +4890,9 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="300023" Count="1" />
 				<Item OutType="2" ItemId="300200" Count="45" />
-				<Item OutType="2" ItemId="350013" Count="6" />
+				<Item OutType="2" ItemId="350013" Count="5" />
 				<Item OutType="2" ItemId="350014" Count="6" />
-				<Item OutType="2" ItemId="351015" Count="2" />
+				<Item OutType="2" ItemId="351015" Count="1" />
 			</OutItem>
 		</Node>		
 	</Task>
@@ -4836,10 +4924,10 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>		
 		<Node ID="4" Step="62" Memo="HARD" IsEnd="1" Count="100 1 2" CheckGrp="3545" >
 			<OutItem ID="1">
-				<Item OutType="2" ItemId="360040" Count="15" />
-				<Item OutType="2" ItemId="350013" Count="4" />
+				<Item OutType="2" ItemId="360040" Count="12" />
+				<Item OutType="2" ItemId="350013" Count="5" />
 				<Item OutType="2" ItemId="350014" Count="4" />
-				<Item OutType="2" ItemId="351015" Count="2" />
+				<Item OutType="2" ItemId="351015" Count="1" />
 				<Item OutType="3" ItemId="115" Count="1" />
 			</OutItem>
 		</Node>		

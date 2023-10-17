@@ -1,0 +1,886 @@
+<!--
+	第一位区分战斗区域：1非战斗，2~3、5~9战斗，4全服通副本 3时间裂缝/竞技 4比赛 5废弃的王国 
+	第二位区分大陆：0不独属任何大陆，1格历尔大陆，2克拉斯环岛，3拉瓦大陆
+	第三位区分大陆内部区域
+	最后两位为区域场景
+-->
+<!--
+	Type：0表示大陆万能跳。
+	Area：10001以下相同代场景相互直接跳转，不同代号场景不可直接跳转；10001起所有场景不可直接跳转。【100摩尔王国互通，200麦田村互通，300港口镇互通；101~199摩尔王国不通，201~299麦田村不通，301~399港口镇不通；10001~20000野外不通场景，20001~30000村镇不通场景】
+	TaskGo：特别任务（ID）允许跳转至地图
+	TeamLeaderLv：（队长）进入场景等级
+	Chocobo：陆行鸟传送点，1设置，0未设置，不配置默认为未设置
+	BattleField：战场背景，不配置默认为PK背景
+	Receive：打飞回归场景标记，1可被打飞回，0不可被打飞回，不配置默认为不可被打飞回
+	MonsterType1：遇敌类型【0明雷，1暗雷，未配置默认为0】
+    BasicValue：遇敌基数【0~BasicValue之间，1个单位4.5像素】
+    RandomValue：遇敌浮动数【1个单位4.5像素】
+	MinBeastCnt：遇敌时出现的怪物数量下限
+    MaxBeastCnt：遇敌时出现的怪物数量上限
+	CompTaskID：任务限制进入该场景的条件
+-->
+<!--
+    Type ID：怪物种类
+	Lv：怪物出现等级
+	Percent：单种怪物出现概率【千分比】
+	TaskBeasts：任务怪物组
+    TaskID：任务ID
+	SpecialBeasts：稀有怪物组
+	GrpID：怪物组ID
+	ClothesID：穿指定装备免疫遇到该怪物组
+    Probability：遇怪概率【千分比】
+-->
+<!--
+	ReturnMap ID：强制传送场景
+	X：传出点横坐标
+	Y：传出点纵坐标
+-->
+
+<Maps FirstMap="1" TopMax="1">
+<Map ID="11101" Name="地下？？？" Area="10001" Type="0" SingleMode="1">
+	<AdjacentMap ID="21101" CurX="1454" CurY="248" DesX="112" DesY="207" />
+</Map>
+<Map ID="11102" Name="吉普豆村" Area="300" Type="0" Receive="1" />
+<Map ID="11103" Name="奇普力村长家" Area="300" Type="0" TransMap="11204" TransId="1" CompTaskID="1" CompTaskNode="1" >
+	<AdjacentMap ID="21102" CurX="540" CurY="412" DesX="172" DesY="207" />
+</Map>
+<Map ID="11104" Name="皮克小屋" Area="300" Type="0" />
+<Map ID="11201" Name="摩尔王国南街" Area="100" Type="0" Chocobo="1" HomeRet="1" MonsterType1="0"/>
+<Map ID="11202" Name="勇士广场" Area="100" Type="0" Receive="1" HomeRet="1" MonsterType1="0">
+	<AdjacentMap ID="51202" CurX="-1" CurY="-1" DesX="400" DesY="400" />
+	<AdjacentMap ID="11504" CurX="-1" CurY="-1" DesX="400" DesY="400" />
+</Map>
+<Map ID="11203" Name="摩尔王国西街" Area="100" Type="0" HomeRet="1" MonsterType1="0"/>
+<Map ID="11204" Name="摩尔城堡吊桥" Area="100" Type="0" HomeRet="1" TransMap="11103" TransId="2" MonsterType1="0"/>
+<Map ID="11205" Name="摩尔王国东街" Area="100" Type="0" HomeRet="1" MonsterType1="0"/>
+<Map ID="11206" Name="皮克司研究所" Area="100" Type="0" >
+	<AdjacentMap ID="21102" CurX="660" CurY="399" DesX="1419" DesY="811" />
+</Map>
+<Map ID="11207" Name="勇敢者旅馆1楼" Area="100" Type="0" HomeRet="1" />
+<Map ID="11208" Name="勇敢者旅馆2楼"  Area="100" Type="0" HomeRet="1" />
+<Map ID="11209" Name="贝塔商会装备店" Area="100" Type="0" HomeRet="1" />
+<Map ID="11210" Name="贝塔商会道具店" Area="100" Type="0" HomeRet="1" />
+<Map ID="11211" Name="勇士杯斗技场" Type="0" Area=""/>
+<Map ID="11213" Name="贝多罗面包店" Area="100" Type="0" HomeRet="1" />
+<Map ID="11214" Name="爱精灵协会" Area="100" Type="0" HomeRet="1" />
+<Map ID="11215" Name="勇士学院" Area="100" Type="0" HomeRet="1" />
+<Map ID="11216" Name="交易大厅" Area="100" Type="0" HomeRet="1" />
+<Map ID="11217" Name="女神大圣堂" Area="100" Type="0" HomeRet="1" BattleField="504"/>
+<Map ID="11218" Name="斗技场大厅" Area="100" Type="0"  HomeRet="1" >
+	<AdjacentMap ID="21601" CurX="-1" CurY="-1" DesX="400" DesY="400" />
+</Map>
+<Map ID="11219" Name="斗技场管理处" Area="100" Type="0"  HomeRet="1" />
+<Map ID="11220" Name="下水道入口" Area="100" Type="0"  >
+	<AdjacentMap ID="21202" CurX="450" CurY="225" DesX="92" DesY="114" />
+</Map>
+<Map ID="11221" Name="皇家卫队校场" Type="0" Area="100" />
+<Map ID="11222" Name="王国军营" Type="0" Area="100" BattleField="8" />
+
+<Map ID="11223" Name="史诗战场" Type="0" Area="100" BattleField="8"/> 
+<!--
+<Map ID="11221" Name="勇士杯斗技场" Type="0" Area="100" >
+	<AdjacentMap ID="31201" CurX="-1" CurY="-1" DesX="400" DesY="400" />
+</Map>
+-->
+<Map ID="11301" Name="皇宫花园" Area="100" Type="0" HomeRet="1" />
+<Map ID="11302" Name="勇士大厅" Area="100" Type="0"  HomeRet="1" />
+<Map ID="11303" Name="弓箭手协会" Area="100" Type="0" HomeRet="1"  BattleField="502"/>
+<Map ID="11304" Name="魔法师协会" Area="100" Type="0" HomeRet="1"  BattleField="501"/>
+<Map ID="11305" Name="剑士协会" Area="100" Type="0" HomeRet="1"  BattleField="503"/>
+<Map ID="11306" Name="忍者协会" Area="100" Type="0"  BattleField="505"/>	
+<Map ID="11307" Name="国王呈见厅" Area="100" Type="0" HomeRet="1" />
+<Map ID="11308" Name="时空俱乐部" Type="0" Area="100" HomeRet="1"/>
+<Map ID="11309" Name="自习室" Type="0" Area="" HomeRet="1" />
+<Map ID="11310" Name="训练房" Type="0" Area="" HomeRet="1" />
+<Map ID="11311" Name="精灵坊" Type="0" Area="" HomeRet="1" />
+<Map ID="11401" Name="麦田村广场" Area="200" Type="0" Receive="1" Chocobo="2" >
+	<AdjacentMap ID="21401" CurX="434" CurY="221" DesX="160" DesY="956" />
+	<AdjacentMap ID="11408" CurX="822" CurY="491" DesX="493" DesY="108" />
+</Map>
+<Map ID="11402" Name="麦田小道" Area="200" Type="0" />
+<Map ID="11403" Name="麦兜仓库" Area="200" Type="0" />
+<Map ID="11404" Name="尼康康餐厅" Area="200" Type="0" />
+<Map ID="11405" Name="民宅" Area="200" Type="0" />
+<Map ID="11406" Name="瑞恩的家" Area="200" Type="0" />
+<Map ID="11407" Name="尼康康村长家" Area="200" Type="0" />
+<Map ID="11408" Name="东之时光井底" Area="206" Type="0" BattleField="1002"/>
+<Map ID="11501" Name="西之时光井底" Area="10002" Type="0" BattleField="1002" />
+<Map ID="11502" Name="月光湖" Area="200" Type="0" BattleField="1002" >
+		<AdjacentMap ID="21308" CurX="93" CurY="197" DesX="674" DesY="321" />
+</Map>
+<Map ID="11503" Name="草木树海" BattleField="1005" Area="200" Check="0" Type="0" MinBeastCnt="3" MaxBeastCnt="7" MonsterType1="0">
+		<Type ID="5" Lv="9 10 11" Percent="160 180 160"/>
+		<Type ID="1002" Lv="9 10 11" Percent="160 180 160"/>
+</Map>
+<Map ID="11504" Name="兽王峡谷" Type="0" Area="100" BattleField="4" MonsterType1="0" Check="0"  MinBeastCnt="3" MaxBeastCnt="7"  >
+	<Type ID="11" Lv="19 20 21" Percent="160 180 160"/>
+	<Type ID="1014" Lv="19 20 21" Percent="160 180 160"/>
+	<AdjacentMap ID="11505" CurX="474" CurY="204" DesX="400" DesY="400" />
+	<AdjacentMap ID="21312" CurX="50" CurY="1000" DesX="360" DesY="308" />
+</Map>
+<Map ID="11505" Name="兽王洞穴" Type="0" Area="100" BattleField="4" MonsterType1="0" >
+	<AdjacentMap ID="11504" CurX="105" CurY="555" DesX="50" DesY="1000" />
+</Map>
+
+<Map ID="11602" Name="弗雷基商会" Type="0" Area="400" >
+	<AdjacentMap ID="11603" CurX="1136" CurY="366" DesX="1348" DesY="590" />
+</Map>
+<Map ID="11603" Name="弗雷基广场" Type="0" Area="400" Chocobo="3" />
+<Map ID="11604" Name="弗雷基码头" Type="0" Area="400" />
+<Map ID="11605" Name="T商会造船厂" Type="0" Area="400"/>
+<Map ID="11606" Name="弗雷基东岸" Type="0" Area="400"/> 
+<Map ID="11607" Name="比目鱼酒馆1F" Type="0" Area="400"/> 
+<Map ID="11608" Name="比目鱼酒馆2F" Type="0" Area="400"/> 
+<Map ID="11609" Name="迷津灯塔外侧" Type="0" Area="400"/> 
+<Map ID="11610" Name="迷津灯塔内侧" Type="0" Area="400"/> 
+<Map ID="11701" Name="修隐岛海岸" Type="0" Area="700"/>
+<Map ID="11702" Name="修隐岛中心地带" Type="0" Area="700" >
+	<AdjacentMap ID="21751" CurX="819" CurY="751" DesX="136" DesY="241" />
+</Map>
+<Map ID="11703" Name="锁修塔桥" Type="0" Area="700"/>
+<Map ID="11704" Name="锁修塔底层" Type="0" Area="700" >
+	<AdjacentMap ID="21701" CurX="397" CurY="178" DesX="799" DesY="971" />
+</Map>
+<Map ID="11705" Name="勇士号船头" Type="0" Area=""/>	
+<Map ID="11706" Name="勇士号船尾" Type="0" Area=""/>
+<Map ID="11707" Name="勇士号船头" Type="0" Area=""/>
+<Map ID="11708" Name="勇士号船尾" Type="0" Area=""/>
+<Map ID="11709" Name="废弃的土豆村" Type="0" Area="" BattleField="1">
+	<AdjacentMap ID="21751" CurX="108" CurY="204" DesX="1454" DesY="802" />
+</Map>
+
+<Map ID="11801" Name="永夜村" Type="0" Area="800">
+	<AdjacentMap ID="21802" CurX="72" CurY="319" DesX="720" DesY="365" />
+</Map>
+<Map ID="11802" Name="永夜村武器道具店" Type="0" Area="800"/>
+<Map ID="11803" Name="永夜村民宅" Type="0" Area="800"/>
+<Map ID="11804" Name="永夜村村长家" Type="0" Area="800"/>
+<Map ID="11805" Name="世界树底" Type="0" BattleField="3" Area="800"/>
+
+<Map ID="12101" Name="克拉斯海滩"  Type="0" Area="" BattleField="9"/>
+<Map ID="22101" Name="克拉斯海岸" Type="0" Area="" BattleField="9" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="46" Lv="40 41 42 43 44 45" Percent="160 180 160 160 180 160" />
+	<Type ID="87" Lv="40 41 42 43 44 45" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22102" Name="克拉斯岩洞外" Type="0" Area="" BattleField="3" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="13" Lv="45 46 47 48 49 50" Percent="160 180 160 160 180 160" />
+	<Type ID="14" Lv="45 46 47 48 49 50" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22103" Name="克拉斯外滩Ⅰ" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="50 51 52 53 54 55" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="50 51 52 53 54 55" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22104" Name="斯巴鲁洞穴" BasicValue="100"  BattleField="4" MonsterType1="1" RandomValue="40" Area="10022" Type="0"  MinBeastCnt="6" MaxBeastCnt="10" >
+	<Type ID="51" Lv="3 4 5" Percent="160 180 160"/>
+	<Type ID="52" Lv="5 6 7" Percent="160 180 160"/>
+</Map>
+<Map ID="22201" Name="克拉斯岩洞一层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="55 56 57 58 59 60" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="55 56 57 58 59 60" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22202" Name="克拉斯岩洞二层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="60 61 62 63 64 65" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="60 61 62 63 64 65" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22203" Name="克拉斯岩洞三层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="65 66 67 68 69 70" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="65 66 67 68 69 70" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22204" Name="克拉斯岩洞四层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="70 71 72 73 74 75" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="70 71 72 73 74 75" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22205" Name="克拉斯岩洞五层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="75 76 77 78 79 80" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="75 76 77 78 79 80" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22206" Name="克拉斯岩洞六层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="80 81 82 83 84 85" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="80 81 82 83 84 85" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22207" Name="克拉斯岩洞七层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="85 86 87 88 89 90" Percent="160 180 160" />
+	<Type ID="94" Lv="85 86 87 88 89 90" Percent="160 180 160" />
+</Map>
+<Map ID="22208" Name="克拉斯岩洞八层" Type="0" Area="" BattleField="10" MonsterType1="0" MinBeastCnt="6" MaxBeastCnt="10" Check="0" >
+	<Type ID="93" Lv="90 91 92 93 94 95" Percent="160 180 160 160 180 160" />
+	<Type ID="94" Lv="90 91 92 93 94 95" Percent="160 180 160 160 180 160" />
+</Map>
+<Map ID="22209" Name="克拉斯岩洞九层" Type="0" Area="" BattleField="1003" Check="0" />
+
+<Map ID="21101" Name="神秘地道" Area="10003" Type="0" SingleMode="1">
+	<AdjacentMap ID="11102" CurX="643" CurY="1016" DesX="270" DesY="380" />
+</Map>
+<Map ID="21102" Name="吉普1号地道" BasicValue="100" RandomValue="20" BattleField="1" MonsterType1="1" Area="10004" Type="0" MinLv="1" MaxLv="2" MinBeastCnt="1" MaxBeastCnt="1" >
+	<Type ID="1" Lv="2" Percent="1000"/>
+	<Type ID="2" Lv="2" Percent="1000"/>
+	<Type ID="3" Lv="2" Percent="1000"/>
+	<Type ID="4" Lv="2" Percent="1000"/>
+	<AdjacentMap ID="11103" CurX="172" CurY="207" DesX="540" DesY="412" />
+	<AdjacentMap ID="21103" CurX="929" CurY="193" DesX="1440" DesY="816" />
+</Map>
+<Map ID="21103" Name="吉普2号地道" BasicValue="100" RandomValue="20" BattleField="1" MonsterType1="1" Area="10005" Type="0" MinLv="1" MaxLv="2" MinBeastCnt="1" MaxBeastCnt="1" >
+	<Type ID="1" Lv="2" Percent="1000"/>
+	<Type ID="2" Lv="2" Percent="1000"/>
+	<Type ID="3" Lv="2" Percent="1000"/>
+	<Type ID="4" Lv="2" Percent="1000"/>
+	<AdjacentMap ID="21102" CurX="1440" CurY="816" DesX="929" DesY="193" />
+</Map>
+<Map ID="21202" Name="下水道一层" BasicValue="100" RandomValue="30" BattleField="2" MonsterType1="1" Area="101" Type="0" MinLv="3" MaxLv="5" AnimationTask="7" ANode="1" TransMap="11220" TransId="3" MinBeastCnt="1" MaxBeastCnt="2" >
+	<Type ID="5" Lv="3 4 5" Percent="160 180 160"/>
+	<Type ID="6" Lv="3 4 5" Percent="160 180 160"/>
+	<AdjacentMap ID="21203" CurX="1160" CurY="900" DesX="222" DesY="220" />
+</Map>
+<Map ID="21203" Name="下水道二层" BasicValue="100" RandomValue="30" BattleField="2" MonsterType1="1" TeamLeaderLv="10" Area="102" Type="0" MinLv="5" MaxLv="7" TransMap="11220" TransId="4" MinBeastCnt="1" MaxBeastCnt="3" >
+	<Type ID="5" Lv="5 6 7" Percent="160 180 160"/>
+	<Type ID="6" Lv="5 6 7" Percent="160 180 160"/>
+	<AdjacentMap ID="21202" CurX="222" CurY="220" DesX="1160" DesY="900" />
+	<AdjacentMap ID="21204" CurX="1374" CurY="220" DesX="786" DesY="226" />
+</Map>
+<Map ID="21204" Name="下水道三层" BasicValue="100" RandomValue="30" BattleField="2" MonsterType1="1" Area="103" Type="0" MinLv="7" MaxLv="9" TransMap="11220" TransId="5" MinBeastCnt="1" MaxBeastCnt="4" >
+	<Type ID="5" Lv="7 8 9" Percent="160 180 160"/>
+	<Type ID="6" Lv="7 8 9" Percent="160 180 160"/>
+	<AdjacentMap ID="21203" CurX="786" CurY="226" DesX="1374" DesY="220" />
+	<AdjacentMap ID="21205" CurX="798" CurY="897" DesX="400" DesY="404" />
+	<AdjacentMap ID="21206" CurX="1081" CurY="556" DesX="1481" DesY="108" />
+</Map>
+<Map ID="21205" Name="普豆泥王BOSS领域" Area="104" Type="0" BattleField="1001">
+	<ReturnMap ID="11220" X="450" Y="225" />
+	<AdjacentMap ID="21204" CurX="-1" CurY="-1" DesX="540" DesY="852" />
+	<AdjacentMap ID="21204" CurX="637" CurY="273" DesX="789" DesY="436" />
+</Map>
+<Map ID="21206" Name="下水道四层" BasicValue="100" RandomValue="30" Area="105" Type="0" BattleField="2" MonsterType1="1" MinLv="9" MaxLv="11" TransMap="11220" TransId="6" MinBeastCnt="1" MaxBeastCnt="5">
+   <Type ID="5" Lv="9 10 11" Percent="160 180 160"/>
+   <Type ID="6" Lv="9 10 11" Percent="160 180 160"/>
+   <AdjacentMap ID="21207" CurX="430" CurY="890" DesX="797" DesY="214" />
+   <AdjacentMap ID="21204" CurX="1481" CurY="108" DesX="789" DesY="436" />
+</Map>
+<Map ID="21207" Name="下水道五层" BasicValue="100" RandomValue="30" Area="106" Type="0" BattleField="2" MonsterType1="1" MinLv="9" MaxLv="12" TransMap="11220" TransId="7" MinBeastCnt="3" MaxBeastCnt="5">
+   <Type ID="5" Lv="9 10 11" Percent="280 280 280"/>
+   <Type ID="27" Lv="12" Percent="160"/>
+   <AdjacentMap ID="21206" CurX="797" CurY="214" DesX="430" DesY="890" />
+   <AdjacentMap ID="21208" CurX="798" CurY="870" DesX="400" DesY="404" />
+   <AdjacentMap ID="21209" CurX="1081" CurY="556" DesX="195" DesY="236" />
+</Map>
+<Map ID="21208" Name="库噜王BOSS领域" Area="107" Type="0" BattleField="1001">
+	<ReturnMap ID="11220" X="450" Y="225"/>
+	<AdjacentMap ID="21207" CurX="-1" CurY="-1" DesX="540" DesY="852" />
+	<AdjacentMap ID="21207" CurX="637" CurY="257" DesX="789" DesY="436" />
+</Map>
+<Map ID="21209" Name="下水道六层" BasicValue="150" RandomValue="30" MinBeastCnt="1" MaxBeastCnt="5" BattleField="2" MinLv="13" MaxLv="15" MonsterType1="1" Type="0" Area="108">
+	<Type ID="3" Lv="13 14 15" Percent="160 180 160"/>
+	<Type ID="4" Lv="13 14 15" Percent="160 180 160"/>
+	<Object ID="1" Default="0" States="0 1" ToState="1 0" Events="0 60" />
+	<Object ID="2" Default="0" States="0 1" ToState="1 0" Events="0 60" />
+	<Object ID="3" Default="0" States="0 1" ToState="1 0" Events="0 60" />
+	<AdjacentMap ID="21207" CurX="195" CurY="236" DesX="789" DesY="436" />
+	<AdjacentMap ID="21210" CurX="1407" CurY="236" DesX="200" DesY="130" />
+</Map>
+<Map ID="21210" Name="下水道七层" BasicValue="150" RandomValue="30" MinBeastCnt="3" MaxBeastCnt="5" BattleField="2" MinLv="15" MaxLv="17" MonsterType1="1" Type="0" Area="109">
+	<Object ID="1" Default="0" States="0 1" ToState="1 0" Events="0 90" />
+	<Object ID="2" Default="0" States="0 1" ToState="1 0" Events="0 90" />
+	<Type ID="3" Lv="15 16 17" Percent="160 180 160"/>
+	<Type ID="4" Lv="15 16 17" Percent="160 180 160"/>
+	<AdjacentMap ID="21209" CurX="200" CurY="130" DesX="1407" DesY="236" />
+	<AdjacentMap ID="21211" CurX="802" CurY="211" DesX="797" DesY="214" />
+</Map>
+<Map ID="21211" Name="下水道八层" BasicValue="150" RandomValue="30" MinBeastCnt="3" MaxBeastCnt="5" BattleField="2" MonsterType1="1" MinLv="17" MaxLv="19" Type="0" Area="110" TransMap="11220" TransId="14">
+	<Type ID="3" Lv="17 18 19" Percent="160 180 160"/>
+	<Type ID="4" Lv="17 18 19" Percent="160 180 160"/>
+	<AdjacentMap ID="21210" CurX="797" CurY="214" DesX="802" DesY="211" />
+	<AdjacentMap ID="21212" CurX="798" CurY="870" DesX="400" DesY="404" />
+</Map>	
+<Map ID="21212" Name="法尔王BOSS领域" BattleField="1001" Type="0" Area="111">
+	<ReturnMap ID="21201" X="450" Y="225"/>
+	<AdjacentMap ID="21211" CurX="-1" CurY="-1" DesX="789" DesY="436" />
+	<AdjacentMap ID="21211" CurX="-1" CurY="-1" DesX="540" DesY="852" />
+</Map>	
+<Map ID="21301" Name="格历尔平原1区" Check="0" BasicValue="100"  BattleField="3" MonsterType1="0" RandomValue="40" Area="100" Type="0"  MinBeastCnt="2" MaxBeastCnt="4" ax="300 1300" ay="400 800">
+	<Type ID="7" Lv="4 5 6" Percent="320 360 320" />
+</Map>
+<Map ID="21302" Name="格历尔平原2区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="100" Type="0"  MinBeastCnt="2" MaxBeastCnt="4" ax="300 1300" ay="400 800">
+	<Type ID="7" Lv="7 8 9" Percent="160 180 160"/>
+	<Type ID="8" Lv="7 8 9" Percent="160 180 160"/>
+</Map>
+<Map ID="21303" Name="格历尔平原3区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="100" Type="0"  MinBeastCnt="3" MaxBeastCnt="5" ax="300 1300" ay="400 800">
+	<Type ID="8" Lv="10 11 12" Percent="160 180 160"/>
+	<Type ID="9" Lv="10 11 12" Percent="160 180 160"/>
+	<AdjacentMap ID="11401" CurX="1522" CurY="485" DesX="228" DesY="894" />
+</Map>
+<Map ID="21304" Name="格历尔平原4区" Area="10013" Check="0" Type="0" BasicValue="120"  BattleField="3" MonsterType1="0" RandomValue="40" MinBeastCnt="3" MaxBeastCnt="5" ax="160 600" ay="180 400">
+	<Type ID="9" Lv="13 14 15 1" Percent="330 330 330 10"/>
+</Map>
+<Map ID="21305" Name="格历尔平原5区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="100" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="7" Lv="16 17 18" Percent="160 180 160"/>
+	<Type ID="10" Lv="16 17 18" Percent="160 180 160"/>
+</Map>
+<Map ID="21306" Name="格历尔平原6区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="400" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="10" Lv="18 19 20" Percent="160 180 160"/>
+	<Type ID="11" Lv="18 19 20" Percent="160 180 160"/>
+	<AdjacentMap ID="21305" CurX="724" CurY="74" DesX="314" DesY="100" />
+	<AdjacentMap ID="11603" CurX="414" CurY="997" DesX="150" DesY="354" />
+	<AdjacentMap ID="21307" CurX="132" CurY="105" DesX="150" DesY="354" />
+	<AdjacentMap ID="21308" CurX="1520" CurY="715" DesX="104" DesY="298" />
+</Map>
+<Map ID="21307" Name="格历尔平原7区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10016" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="11" Lv="20 21 22 23" Percent="120 120 140 120"/>
+	<Type ID="12" Lv="20 21 22 23" Percent="120 120 140 120"/>
+</Map>
+<Map ID="21308" Name="格历尔平原8区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10017" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="12" Lv="31 32 33" Percent="160 180 160"/>
+	<Type ID="13" Lv="31 32 33" Percent="160 180 160"/>
+	<AdjacentMap ID="11502" CurX="674" CurY="321" DesX="93" DesY="197" />
+	<AdjacentMap ID="21306" CurX="104" CurY="298" DesX="1025" DesY="715" />
+	<AdjacentMap ID="21801" CurX="1250" CurY="281" DesX="65" DesY="368" />
+</Map>
+<Map ID="21309" Name="格历尔平原9区" Check="0" BasicValue="100"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10018" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="13" Lv="24 25 26" Percent="160 170 160"/>
+	<Type ID="14" Lv="1 24 25 26" Percent="20 160 170 160"/>
+</Map>
+<Map ID="21310" Name="格历尔平原10区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10019" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="7" Lv="20 21 22" Percent="160 170 160"/>
+	<Type ID="15" Lv="1 20 21 22" Percent="20 160 170 160"/>
+</Map>
+<Map ID="21311" Name="格历尔平原11区" Check="0" BasicValue="150"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10020" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="15" Lv="22 23 24" Percent="160 180 160"/>
+	<Type ID="16" Lv="22 23 24" Percent="160 180 160"/>
+	<AdjacentMap ID="11501" CurX="797" CurY="478" DesX="314" DesY="100" />
+</Map>
+<Map ID="21312" Name="格历尔平原12区" Check="0" BasicValue="150" Chocobo="4"  BattleField="3" MonsterType1="0" RandomValue="40" Area="10021" Type="0"  MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="15" Lv="24 25 26" Percent="160 180 160"/>
+	<Type ID="16" Lv="24 25 26" Percent="160 180 160"/>
+	<AdjacentMap ID="21501" CurX="759" CurY="303" DesX="229" DesY="271" />
+	<AdjacentMap ID="11504" CurX="1288" CurY="215" DesX="50" DesY="1000" />
+</Map>
+
+<Map ID="21313" Name="格历尔云境Ⅰ" Check="0" BasicValue="150" Chocobo="4"  BattleField="11" MonsterType1="0" RandomValue="40" Area="10021" Type="0"  MinBeastCnt="1" MaxBeastCnt="6" >
+	<Type ID="203" Lv="65 67 69 71 73 75" Percent="160 180 160 160 180 160"/>
+	<Type ID="204" Lv="50 51 52 53 54 55" Percent="160 180 160 160 180 160"/>
+</Map>
+
+<Map ID="21401" Name="海底洞穴一" BasicValue="100"  BattleField="4" MonsterType1="1" RandomValue="40" Area="10022" Type="0" MinLv="15" MaxLv="17" MinBeastCnt="4" MaxBeastCnt="6" >
+	<Type ID="21" Lv="15 16 17" Percent="160 180 160"/>
+	<Type ID="22" Lv="15 16 17" Percent="160 180 160"/>
+	<TaskBeasts GrpID="4" TaskID="20011" StartNodes="0" EndNodes="3" Probability="80"/>
+	<AdjacentMap ID="21402" CurX="1388" CurY="288" DesX="58" DesY="470" />
+	<AdjacentMap ID="11401" CurX="160" CurY="956" DesX="822" DesY="491" />
+</Map>
+<Map ID="21402" Name="海底洞穴二" BasicValue="100"  BattleField="4"  RandomValue="40" Area="10023" Type="0" > 
+	<AdjacentMap ID="21401" CurX="58" CurY="470" DesX="1388" DesY="288" />
+</Map>
+<Map ID="21501" Name="风之洞穴一层" BasicValue="100"  BattleField="5" MonsterType1="1" RandomValue="40" Area="10024" Type="0" MinLv="26" MaxLv="28" MinBeastCnt="3" MaxBeastCnt="5" >
+	<Type ID="23" Lv="26 27 28" Percent="160 180 160"/>
+	<Type ID="24" Lv="26 27 28" Percent="160 180 160"/>
+	<AdjacentMap ID="21502" CurX="1379" CurY="239" DesX="622" DesY="146" />
+	<AdjacentMap ID="21312" CurX="229" CurY="271" DesX="759" DesY="303" />
+</Map>
+<Map ID="21502" Name="风之洞穴二层" BasicValue="100"  BattleField="5" MonsterType1="1" RandomValue="40" Area="10025" Type="0" MinLv="28" MaxLv="30" MinBeastCnt="3" MaxBeastCnt="7" >
+	<Type ID="23" Lv="28 29 30" Percent="160 180 160"/>
+	<Type ID="24" Lv="28 29 30" Percent="160 180 160"/>
+	<AdjacentMap ID="21501" CurX="622" CurY="146" DesX="1379" DesY="239" />
+	<AdjacentMap ID="21503" CurX="1507" CurY="762" DesX="234" DesY="141" />
+</Map>
+<Map ID="21503" Name="风之洞穴三层" BasicValue="100"  BattleField="5" MonsterType1="1" RandomValue="40" Area="10026" Type="0" MinLv="30" MaxLv="32" MinBeastCnt="5" MaxBeastCnt="7" >
+	<Type ID="23" Lv="30 31 32" Percent="160 180 160"/>
+	<Type ID="24" Lv="30 31 32" Percent="160 180 160"/>
+	<AdjacentMap ID="21502" CurX="234" CurY="141" DesX="1507" DesY="762" />
+</Map>
+<!-- 风龙特训地图2021/09/29 -->
+<Map ID="21504" Name="风之秘境1F" BasicValue="100"  BattleField="5"  RandomValue="40" Area="10025" Type="1" >
+</Map>
+<Map ID="21505" Name="风之秘境2F" BasicValue="100"  BattleField="5"  RandomValue="40" Area="10025" Type="1"  >
+</Map>
+<Map ID="21506" Name="风之秘境3F" BasicValue="100"  BattleField="5"  RandomValue="40" Area="10025" Type="1"  >
+</Map>
+
+<Map ID="21601" Name="修炼之域1层" BattleField="0" Type="1" Team="1" Area="20001" TransId="8" >
+	<AdjacentMap ID="21602" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3011" />
+</Map>
+<Map ID="21602" Name="修炼之域2层" BattleField="0" Type="1" Team="1" Area="20002" >
+	<AdjacentMap ID="21603" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3012" />
+</Map>
+<Map ID="21603" Name="修炼之域3层" BattleField="0" Type="1" Team="1" Area="20003" >
+	<AdjacentMap ID="21604" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3013" />
+</Map>
+<Map ID="21604" Name="修炼之域4层" BattleField="0" Type="1" Team="1" Area="20004" >
+	<AdjacentMap ID="21605" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3014" />
+</Map>
+<Map ID="21605" Name="修炼之域5层" BattleField="0" Type="1" Team="1" Area="20005" >
+	<AdjacentMap ID="21606" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3015" />
+</Map>
+<Map ID="21606" Name="修炼之域6层" BattleField="0" Type="1" Team="1" Area="20006" TransMap="11218" TransId="9" >
+	<AdjacentMap ID="21607" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3016" />
+</Map>
+<Map ID="21607" Name="修炼之域7层" BattleField="0" Type="1" Team="1" Area="20007">
+	<AdjacentMap ID="21608" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3017" />
+</Map>
+<Map ID="21608" Name="修炼之域8层" BattleField="0" Type="1" Team="1" Area="20008">
+	<AdjacentMap ID="21609" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3018" />
+</Map>
+<Map ID="21609" Name="修炼之域9层" BattleField="0" Type="1" Team="1" Area="20009">
+	<AdjacentMap ID="21610" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3019" />
+</Map>
+<Map ID="21610" Name="修炼之域10层" BattleField="0" Type="1" Team="1" Area="20010">
+	<AdjacentMap ID="21611" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3020" />
+</Map>
+<Map ID="21611" Name="修炼之域11层" BattleField="0" Type="1" Team="1" Area="20011" TransMap="11218" TransId="10">
+	<AdjacentMap ID="21612" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3021" />
+</Map>
+<Map ID="21612" Name="修炼之域12层" BattleField="0" Type="1" Team="1" Area="20012">
+	<AdjacentMap ID="21613" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3022" />
+</Map>
+<Map ID="21613" Name="修炼之域13层" BattleField="0" Type="1" Team="1" Area="20013">
+	<AdjacentMap ID="21614" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3023" />
+</Map>
+<Map ID="21614" Name="修炼之域14层" BattleField="0" Type="1" Team="1" Area="20014">
+	<AdjacentMap ID="21615" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3024" />
+</Map>
+<Map ID="21615" Name="修炼之域15层" BattleField="0" Type="1" Team="1" Area="20015">
+	<AdjacentMap ID="21616" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3025" />
+</Map>
+<Map ID="21616" Name="修炼之域16层" BattleField="0" Type="1" Team="1" Area="20016" TransMap="11218" TransId="11" >
+	<AdjacentMap ID="21617" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3026" />
+</Map>
+<Map ID="21617" Name="修炼之域17层" BattleField="0" Type="1" Team="1" Area="20017">
+	<AdjacentMap ID="21618" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3027" />
+</Map>
+<Map ID="21618" Name="修炼之域18层" BattleField="0" Type="1" Team="1" Area="20018">
+	<AdjacentMap ID="21619" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3028" />
+	<AdjacentMap ID="11218" CurX="-1" CurY="-1" DesX="680" DesY="280" />
+</Map>
+<Map ID="21619" Name="修炼之域19层" BattleField="0" Type="1" Team="1" Area="20019">
+	<AdjacentMap ID="21620" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3029" />
+</Map>
+<Map ID="21620" Name="修炼之域20层" BattleField="0" Type="1" Team="1" Area="20020">
+	<AdjacentMap ID="21621" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3030" />
+</Map>
+<Map ID="21621" Name="修炼之域21层" BattleField="0" Type="1" Team="1" Area="20021" TransMap="11218" TransId="12">
+	<AdjacentMap ID="21622" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3031" />
+</Map>
+<Map ID="21622" Name="修炼之域22层" BattleField="0" Type="1" Team="1" Area="20022">
+	<AdjacentMap ID="21623" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3032" />
+</Map>
+<Map ID="21623" Name="修炼之域23层" BattleField="0" Type="1" Team="1" Area="20023">
+	<AdjacentMap ID="21624" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3033" />
+</Map>
+<Map ID="21624" Name="修炼之域24层" BattleField="0" Type="1" Team="1" Area="20024">
+	<AdjacentMap ID="21625" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3034" />
+</Map>
+<Map ID="21625" Name="修炼之域25层" BattleField="0" Type="1" Team="1" Area="20025">
+	<AdjacentMap ID="21626" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3035" />
+</Map>
+<Map ID="21626" Name="修炼之域26层" BattleField="0" Type="1" Team="1" Area="20026" TransMap="11218" TransId="13">
+	<AdjacentMap ID="21627" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3036" />
+</Map>
+<Map ID="21627" Name="修炼之域27层" BattleField="0" Type="1" Team="1" Area="20027">
+	<AdjacentMap ID="21628" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3037" />
+</Map>
+<Map ID="21628" Name="修炼之域28层" BattleField="0" Type="1" Team="1" Area="20028">
+	<AdjacentMap ID="21629" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3038" />
+</Map>
+<Map ID="21629" Name="修炼之域29层" BattleField="0" Type="1" Team="1" Area="20029">
+	<AdjacentMap ID="21630" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3039" />
+</Map>
+<Map ID="21630" Name="修炼之域30层" BattleField="0" Type="1" Team="1" Area="20030" >
+	<AdjacentMap ID="21631" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3040" />
+</Map>
+<Map ID="21631" Name="修炼之域31域" BattleField="0" Type="1" Team="1" Area="20031" TransMap="11218" TransId="15">
+	<AdjacentMap ID="21632" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21632" Name="修炼之域32域" BattleField="0" Type="1" Team="1" Area="" >
+	<AdjacentMap ID="21633" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21633" Name="修炼之域33域" BattleField="0" Type="1" Team="1" Area="" >
+	<AdjacentMap ID="21634" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21634" Name="修炼之域34域" BattleField="0" Type="1" Team="1" Area="" >
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21635" Name="修炼之域35域" BattleField="0" Type="1" Team="1" Area="" >
+	<AdjacentMap ID="21641" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3045" />
+	<AdjacentMap ID="21636" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+	<AdjacentMap ID="21637" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+	<AdjacentMap ID="21638" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+	<AdjacentMap ID="21639" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+	<AdjacentMap ID="21640" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21636" Name="剑术试炼之间" BattleField="503" Type="1" Team="1" Area="">
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21637" Name="弓术试炼之间" BattleField="502" Type="1" Team="1" Area="">
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21638" Name="魔法试炼之间" BattleField="501" Type="1" Team="1" Area="">
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21639" Name="信仰试炼之间" BattleField="504" Type="1" Team="1" Area="">
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21640" Name="忍术试炼之间" BattleField="505" Type="1" Team="1" Area="">
+	<AdjacentMap ID="21635" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="21641" Name="修炼之域36域" BattleField="0" Type="1" Team="1" Area="" TransMap="11218" TransId="21">
+    <AdjacentMap ID="21642" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21642" Name="修炼之域37域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21643" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21643" Name="修炼之域38域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21644" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21644" Name="修炼之域39域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21645" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21645" Name="修炼之域40域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21646" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3055" />
+</Map>
+<Map ID="21646" Name="修炼之域41域" BattleField="0" Type="1" Team="1" Area="" TransMap="11218" TransId="22">
+    <AdjacentMap ID="21647" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21647" Name="修炼之域42域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21648" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21648" Name="修炼之域43域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21649" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21649" Name="修炼之域44域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21650" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="0" />
+</Map>
+<Map ID="21650" Name="修炼之域45域" BattleField="0" Type="1" Team="1" Area="">
+    <AdjacentMap ID="21650" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="3060" />
+</Map>
+
+
+<Map ID="21701" Name="锁修塔F1"  BattleField="7" MonsterType1="1"  BasicValue="150" RandomValue="20" MinLv="32" MaxLv="34" MinBeastCnt="3" MaxBeastCnt="7" Type="0" Area="">
+	<Type ID="15" Lv="32 33 34" Percent="165 170 165"/>
+	<Type ID="51" Lv="32 33 34" Percent="165 170 165"/>
+	<AdjacentMap ID="11704" CurX="799" CurY="971" DesX="397" DesY="178" />
+	<AdjacentMap ID="21702" CurX="824" CurY="109" DesX="747" DesY="991" />
+	<SpecBeasts GrpID="2009" ClothesID="100005" Probability="300"/>
+</Map>
+<Map ID="21702" Name="锁修塔F2" BattleField="7" MonsterType1="0" Check="0" BasicValue="150" RandomValue="20" MinBeastCnt="3" MaxBeastCnt="7" Type="0" Area="">
+	<Type ID="13" Lv="34 35 36" Percent="165 170 165"/>
+	<Type ID="52" Lv="34 35 36" Percent="165 170 165"/>
+	<AdjacentMap ID="21701" CurX="747" CurY="991" DesX="824" DesY="109" />
+	<AdjacentMap ID="21703" CurX="604" CurY="61" DesX="754" DesY="1004" />
+	<SpecBeasts GrpID="2009" ClothesID="100005" Probability="300"/>
+</Map>
+<Map ID="21703" Name="锁修塔F3" BattleField="7" MonsterType1="1" BasicValue="150" RandomValue="20" MinLv="36" MaxLv="38" MinBeastCnt="3" MaxBeastCnt="7" Type="0" Area="">
+	<ReturnMap ID="21703" X="754" Y="1004" />
+	<AdjacentMap ID="21702" CurX="754" CurY="1004" DesX="604" DesY="61" />
+	<AdjacentMap ID="21704" CurX="420" CurY="190" DesX="800" DesY="830" />
+	<SpecBeasts GrpID="2009" ClothesID="100005" Probability="300"/>
+	<Type ID="36" Lv="36 37 38" Percent="165 170 165"/>
+	<Type ID="53" Lv="36 37 38" Percent="165 170 165"/>
+</Map>
+<Map ID="21704" Name="锁修塔F4" BattleField="7" MonsterType1="1" BasicValue="150" RandomValue="20" MinLv="38" MaxLv="40" MinBeastCnt="3" MaxBeastCnt="7" Type="0" Area="">
+	<Type ID="37" Lv="38 39 40" Percent="165 170 165"/>
+	<Type ID="54" Lv="38 39 40" Percent="165 170 165"/>
+	<AdjacentMap ID="21703" CurX="800" CurY="830" DesX="420" DesY="190" />
+	<SpecBeasts GrpID="2009" ClothesID="100005" Probability="300"/>
+</Map>
+<Map ID="21751" Name="吉普3号地道"  BattleField="1" MonsterType1="1"  BasicValue="150" RandomValue="20" MinLv="26" MaxLv="28" MinBeastCnt="3" MaxBeastCnt="7" Type="0" Area="">
+	<Type ID="1" Lv="26 27 28" Percent="165 170 165"/>
+	<Type ID="2" Lv="26 27 28" Percent="165 170 165"/>
+	<AdjacentMap ID="11702" CurX="136" CurY="241" DesX="593" DesY="603" />
+	<AdjacentMap ID="11709" CurX="1454" CurY="802" DesX="108" DesY="204" />
+</Map>
+
+<Map ID="21801" Name="永恒林荫1" MinBeastCnt="5" MaxBeastCnt="8" BattleField="3" MonsterType1="0" Type="0" Area="" Check="0">
+	<Type ID="3020" Lv="33 34 35" Percent="111 111 111"/>
+	<Type ID="3021" Lv="33 34 35" Percent="111 112 111"/>
+	<Type ID="3022" Lv="33 34 35" Percent="111 111 111"/>
+	<AdjacentMap ID="21308" CurX="65" CurY="368" DesX="1250" DesY="281" />
+	<AdjacentMap ID="21802" CurX="1283" CurY="246" DesX="167" DesY="284" />
+</Map>
+<Map ID="21802" Name="永恒林荫2" MinBeastCnt="5" MaxBeastCnt="8" BattleField="3" MonsterType1="0" Type="0" Area="" Check="0">
+	<Type ID="3020" Lv="35 36 37" Percent="111 111 111"/>
+	<Type ID="3021" Lv="35 36 37" Percent="111 112 111"/>
+	<Type ID="3022" Lv="35 36 37" Percent="111 111 111"/>
+	<AdjacentMap ID="21801" CurX="167" CurY="284" DesX="1283" DesY="246" />
+	<AdjacentMap ID="11801" CurX="720" CurY="365" DesX="72" DesY="319" />
+</Map>
+
+<Map ID="21803" Name="世界树1F" Type="0" Check="0" Area="" BattleField="3" MonsterType1="0" MinBeastCnt="5" MaxBeastCnt="10">
+	<Type ID="80" Lv="38 39 40" Percent="165 170 165"/>
+	<Type ID="89" Lv="38 39 40" Percent="165 170 165"/>
+</Map>
+<Map ID="21804" Name="世界树顶" Type="0" Area="" BattleField="3"/>
+<Map ID="21805" Name="世界树2F" Type="0" Area="" BattleField="3"/>
+<!--0=普通地图 CopyType=1 单人副本,不可组队不发送别人消息  2=可组队副本允许组队,只发送队伍信息//-->
+<!-- 新前四层 -->
+<Map ID="30101" Name="时间缝隙"  BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="91" Lv="100" Percent="150"/>
+	<Type ID="100" Lv="100" Percent="150"/>
+	<Type ID="76" Lv="100" Percent="150"/>
+	<Type ID="99" Lv="100" Percent="150"/>
+	<Type ID="208" Lv="100" Percent="150"/>
+	<Type ID="209" Lv="100" Percent="150"/>
+	<Type ID="97" Lv="100" Percent="150"/>
+	<Type ID="105" Lv="100" Percent="150"/>
+	<Type ID="79" Lv="100" Percent="150"/>
+</Map>
+
+<Map ID="30102" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="91" Lv="100" Percent="150"/>
+	<Type ID="100" Lv="100" Percent="150"/>
+	<Type ID="76" Lv="100" Percent="150"/>
+	<Type ID="99" Lv="100" Percent="150"/>
+	<Type ID="208" Lv="100" Percent="150"/>
+	<Type ID="209" Lv="100" Percent="150"/>
+	<Type ID="97" Lv="100" Percent="150"/>
+	<Type ID="105" Lv="100" Percent="150"/>
+	<Type ID="79" Lv="100" Percent="150"/>
+</Map>
+<Map ID="30103" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="91" Lv="100" Percent="150"/>
+	<Type ID="100" Lv="100" Percent="150"/>
+	<Type ID="76" Lv="100" Percent="150"/>
+	<Type ID="99" Lv="100" Percent="150"/>
+	<Type ID="208" Lv="100" Percent="150"/>
+	<Type ID="209" Lv="100" Percent="150"/>
+	<Type ID="97" Lv="100" Percent="150"/>
+	<Type ID="105" Lv="100" Percent="150"/>
+	<Type ID="79" Lv="100" Percent="150"/>
+</Map>
+<Map ID="30104" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="91" Lv="100" Percent="150"/>
+	<Type ID="100" Lv="100" Percent="150"/>
+	<Type ID="76" Lv="100" Percent="150"/>
+	<Type ID="99" Lv="100" Percent="150"/>
+	<Type ID="208" Lv="100" Percent="150"/>
+	<Type ID="209" Lv="100" Percent="150"/>
+	<Type ID="97" Lv="100" Percent="150"/>
+	<Type ID="105" Lv="100" Percent="150"/>
+	<Type ID="79" Lv="100" Percent="150"/>
+</Map>
+
+<!-- 老前四层 -->
+
+<Map ID="30105" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="100" Percent="150"/>
+	<Type ID="37" Lv="100" Percent="150"/>
+</Map>
+<Map ID="30106" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="100" Percent="150"/>
+	<Type ID="37" Lv="100" Percent="150"/>
+</Map>
+<Map ID="30107" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="100" Percent="150"/>
+	<Type ID="37" Lv="100" Percent="150"/>
+</Map>
+<Map ID="30108" Name="时间缝隙" BattleField="6" MonsterType1="0"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+</Map>
+<!-- 灯塔与占卜师 2023.04.23 -->
+<Map ID="30109" Name="时间缝隙" BattleField="6" MonsterType1="0"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+</Map>
+
+
+
+<!-- 新第五层 -->
+<Map ID="30121" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="91" Lv="100" Percent="150"/>
+	<Type ID="100" Lv="100" Percent="150"/>
+	<Type ID="76" Lv="100" Percent="150"/>
+	<Type ID="99" Lv="100" Percent="150"/>
+	<Type ID="208" Lv="100" Percent="150"/>
+	<Type ID="209" Lv="100" Percent="150"/>
+	<Type ID="97" Lv="100" Percent="150"/>
+	<Type ID="105" Lv="100" Percent="150"/>
+	<Type ID="79" Lv="100" Percent="150"/>
+</Map>
+<!-- 老第五层 -->
+<Map ID="30122" Name="时间缝隙" BattleField="6" MonsterType1="1"  BasicValue="70" RandomValue="70" MinLv="25" MaxLv="100" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="100" Percent="150"/>
+	<Type ID="37" Lv="100" Percent="150"/>
+</Map>
+
+<!-- 新最深处 -->
+<Map ID="30141" Name="时间缝隙最深处" BattleField="6" MonsterType1="1"  BasicValue="20" RandomValue="50" MinLv="1" MaxLv="1" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="1" Percent="150"/>
+</Map>
+<Map ID="30142" Name="时间缝隙最深处" BattleField="6" MonsterType1="1"  BasicValue="20" RandomValue="50" MinLv="1" MaxLv="1" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="37" Lv="1" Percent="150"/>
+</Map>
+<Map ID="30143" Name="时间缝隙最深处" BattleField="6" MonsterType1="1"  BasicValue="20" RandomValue="50" MinLv="1" MaxLv="1" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="208" Lv="1" Percent="150"/>
+</Map>		
+<Map ID="30144" Name="时间缝隙最深处" BattleField="6" MonsterType1="1"  BasicValue="20" RandomValue="50" MinLv="1" MaxLv="1" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="209" Lv="1" Percent="150"/>
+</Map>		
+<!-- 老最深处 -->
+<Map ID="30145" Name="时间缝隙最深处" BattleField="6" MonsterType1="1"  BasicValue="20" RandomValue="50" MinLv="1" MaxLv="1" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="">
+	<Type ID="36" Lv="1" Percent="150"/>
+	<Type ID="37" Lv="1" Percent="150"/>
+</Map>
+
+<Map ID="30201" Name="普豆泥王BOSS领域" Type="0" Team="1" Area="10044" BattleField="1001" SingleMode="0"/><!-- 普豆泥王BOSS领域 -->
+<Map ID="30202" Name="格历尔平原" Type="0" Team="1" Area="10045" BattleField="3" /><!-- 拉拉美王BOSS领域 -->
+<Map ID="30203" Name="海底洞穴二层" Type="0" Team="1" Area="10046" BattleField="4" /><!-- 巨石蟹BOSS领域 -->
+<Map ID="30204" Name="西之时光井底" Type="0" Team="1" Area="10047" BattleField="1001" /><!-- 沃特尔王BOSS领域 -->
+<Map ID="30205" Name="弗雷基码头" Type="0" Team="1" Area="10048" BattleField="1001" SingleMode="0"/><!-- 章界王BOSS领域 -->
+<Map ID="30206" Name="库噜王BOSS领域" Type="0" Team="1" Area="10049" BattleField="1001" SingleMode="0"/><!-- 库噜王BOSS领域 -->
+<Map ID="30207" Name="法尔王BOSS领域" Type="0" Team="1" Area="10049" BattleField="1001" SingleMode="0"/><!-- 法尔王BOSS领域 -->
+<Map ID="30208" Name="卡拉兽BOSS领域" Type="0" Team="1" Area="10049" BattleField="1001" SingleMode="1"/><!-- 卡拉兽BOSS领域 -->
+<Map ID="30209" Name="格历尔平原" Type="0" Team="1" Area="10049" BattleField="3" SingleMode="0"/><!-- 蜂后BOSS领域 -->
+<Map ID="30210" Name="世界树底" Type="0" Team="1" Area="10049" BattleField="508" SingleMode="0"/><!-- 剧毒蜂皇BOSS领域 -->
+
+<Map ID="30301" Name="基姆秘密基地" Type="0" Area="" BattleField="1003" Check="0" />
+<Map ID="30400" Name="勇士广场" Type="0" Area="" BattleField="1003" Check="0" />	 <!--  琉璃翼龙的召唤 所在的勇士广场 -->
+
+<Map ID="31201" Name="竞技之塔1F" BattleField="1002" Type="0" Team="1" Area="">
+	<AdjacentMap ID="31202" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31202" Name="竞技之塔2F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31203" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31203" Name="竞技之塔3F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31204" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31204" Name="竞技之塔4F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31205" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31205" Name="竞技之塔5F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31206" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31206" Name="竞技之塔6F" BattleField="1002" Type="1" Team="1" Area="" TransMap="11221" TransId="16">
+	<AdjacentMap ID="31207" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31207" Name="竞技之塔7F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31208" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31208" Name="竞技之塔8F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31209" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31209" Name="竞技之塔9F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31210" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31210" Name="竞技之塔10F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31211" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31211" Name="竞技之塔11F" BattleField="1002" Type="1" Team="1" Area="" TransMap="11221" TransId="17">
+	<AdjacentMap ID="31212" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31212" Name="竞技之塔12F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31213" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31213" Name="竞技之塔13F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31214" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31214" Name="竞技之塔14F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31215" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31215" Name="竞技之塔15F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31216" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31216" Name="竞技之塔16F" BattleField="1002" Type="1" Team="1" Area="" TransMap="11221" TransId="18">
+	<AdjacentMap ID="31217" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31217" Name="竞技之塔17F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31218" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31218" Name="竞技之塔18F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31219" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31219" Name="竞技之塔19F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31220" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31220" Name="竞技之塔20F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31221" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31221" Name="竞技之塔21F" BattleField="1002" Type="1" Team="1" Area="" TransMap="11221" TransId="19">
+	<AdjacentMap ID="31222" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31222" Name="竞技之塔22F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31223" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31223" Name="竞技之塔23F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31224" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31224" Name="竞技之塔24F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31225" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31225" Name="竞技之塔25F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31226" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31226" Name="竞技之塔26F" BattleField="1002" Type="1" Team="1" Area="" TransMap="11221" TransId="20">
+	<AdjacentMap ID="31227" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31227" Name="竞技之塔27F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31228" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31228" Name="竞技之塔28F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31229" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31229" Name="竞技之塔29F" BattleField="1002" Type="1" Team="1" Area="">
+	<AdjacentMap ID="31230" CurX="-1" CurY="-1" DesX="400" DesY="400" KillBeastGrp="" />
+</Map>
+<Map ID="31230" Name="竞技之塔30F" BattleField="1002" Type="1" Team="1" Area="">
+</Map>
+<Map ID="31611" Name="蛇形回廊" BattleField="1009" MonsterType1="1" BasicValue="100" RandomValue="60" MinLv="50" MaxLv="60" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="" >
+	<Type ID="211" Lv="100" Percent="200"/>
+	<Type ID="211" Lv="1" Percent="20"/>
+	<Type ID="36" Lv="100" Percent="100"/>
+	<Type ID="37" Lv="100" Percent="100"/>
+</Map>
+<Map ID="31612" Name="哭嚎狭间" BattleField="1011" MonsterType1="1" BasicValue="100" RandomValue="60" MinLv="50" MaxLv="60" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="" >
+	<Type ID="212" Lv="100" Percent="150"/>
+	<Type ID="1002" Lv="100" Percent="150"/>
+</Map>
+<Map ID="31613" Name="泥盆沼泽" BattleField="1015" MonsterType1="1" BasicValue="100" RandomValue="60" MinLv="50" MaxLv="60" MinBeastCnt="2" MaxBeastCnt="10" Type="0" Area="" >
+	<Type ID="213" Lv="100" Percent="150"/>
+	<Type ID="1001" Lv="100" Percent="150"/>
+</Map>
+<Map ID="31614" Name="倒影山丘" Type="0" Area="" BattleField="1003" Check="0" />
+<Map ID="31615" Name="黑泉通径" Type="0" Area="" BattleField="1003" Check="0" />
+<Map ID="31616" Name="时之沙海" Type="0" Area="" BattleField="1003" Check="0" />
+<Map ID="31617" Name="恐惧之心" Type="0" Area="" BattleField="1003" Check="0" />
+
+<Map ID="31618" Name="魇渊浅层" Type="0" Area="" BattleField="1006" Check="0" />
+<Map ID="31619" Name="魇渊深层" Type="0" Area="" BattleField="1007" Check="0" />
+<Map ID="31620" Name="魇之核" Type="0" Area="" BattleField="1004" Check="0" />
+
+<Map ID="31621" Name="鎏风圣堂" Type="0" Area="" BattleField="1013" Check="0" />
+
+<Map ID="41201" Name="巨石战场" Type="1" Team="1" Area="">
+	<ReturnMap ID="11221" X="796" Y="270" />
+</Map>
+<Map ID="41202" Name="地之队准备室" Type="0" Area="">
+	<ReturnMap ID="11221" X="796" Y="270" />
+</Map>
+<Map ID="41203" Name="水之队准备室" Type="0" Area="">
+	<ReturnMap ID="11221" X="796" Y="270" />
+</Map>
+<Map ID="41204" Name="火之队准备室" Type="0" Area="">
+	<ReturnMap ID="11221" X="796" Y="270" />
+</Map>
+<Map ID="41205" Name="风之队准备室" Type="0" Area="">
+	<ReturnMap ID="11221" X="796" Y="270" />
+</Map>
+
+<Map ID="41211" Name="月宫前殿" Type="1" Team="1" Area="" BattleField="1002" MonsterType1="0"/>
+<Map ID="41212" Name="月宫正殿" Type="1" Team="1" Area="" BattleField="1002" MonsterType1="0"/>
+<Map ID="41213" Name="月宫后殿" Type="1" Team="1" Area="" BattleField="1002"/>
+<Map ID="41214" Name="月宫后殿" Type="1" Team="1" Area="" BattleField="1002"/>
+
+<Map ID="41221" Name="皇家卫队赛场PVP" Type="0" Area="" BattleField="0"/>
+<Map ID="41222" Name="皇家卫队赛场GVG" Type="0" Area="" BattleField="0"/>
+
+<Map ID="51201" Name="废弃的王国南街"  Type="0" Area="100" BattleField="1002" MonsterType1="0"  >
+	<SpecBeasts GrpID="2607"   Probability="1000"/>
+    <SpecBeasts GrpID="2608"   Probability="1000"/>
+    <SpecBeasts GrpID="2609"   Probability="1000"/>
+</Map>
+<Map ID="51202" Name="废弃的勇士广场" Type="0" Area="100" BattleField="1002" />
+<Map ID="51203" Name="废弃的王国西街" Type="0" Area="100" BattleField="1002" MonsterType1="0" >
+	<SpecBeasts GrpID="2610" Probability="1000"/>
+    <SpecBeasts GrpID="2611" Probability="1000"/>
+    <SpecBeasts GrpID="2612" Probability="1000"/>
+</Map>
+<Map ID="51205" Name="废弃的王国东街" Type="0" Area="100" BattleField="1002" MonsterType1="0"  >
+    <SpecBeasts GrpID="2613" Probability="1000"/>
+    <SpecBeasts GrpID="2614" Probability="1000"/>
+    <SpecBeasts GrpID="2615" Probability="1000"/>
+</Map>
+<Map ID="51301" Name="废弃的皇宫花园" Type="0"  Area="100" BattleField="1002"/>
+</Maps>

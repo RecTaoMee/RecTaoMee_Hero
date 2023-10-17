@@ -1,0 +1,146 @@
+<!--
+	Suit：套装
+	Prof：装备职业。【-1全职业，2剑士，4弓箭手，8魔法师，16传教士，32忍者】
+	HpMax：生命上限增加，MpMax：魔力上限增加，Atk：攻击力，Matk：魔法攻击力，Def：防御力，Mdef：魔法防御力，Speed：速度，Spirit：精神，Resume：恢复，Hit：命中，Dodge：闪躲，Crit：必杀，FightBack：反击，ResistPoison：抗毒，ResistLithification：抗石化，ResistLethargy：抗昏睡，ResistCommination：抗诅咒，ResistConfusion：抗混乱，ResistOblivion：抗遗忘。【以上参数未配置的属性默认是0】
+-->
+
+<Suits>
+	<!-- 风龙套装 -->
+	<Suit ID="7" Prof="-1" ItemID="110011 110012 110013 110014 110015 110016" Name="风之祝福·剑" HpMax="1200" Atk="245" Crit="4" Hit="8" Def="180" Mdef="0" Resume="15"/>
+	<Suit ID="8" Prof="-1" ItemID="110017 110019 110021 110022 110023" Name="风之祝福·弓" HpMax="350" Atk="200" Hit="14" Dodge="5" Mdef="170" Resume="15" Def="280"/>
+	<Suit ID="9" Prof="-1" ItemID="110018 110020 110021 110022 110024" Name="风之祝福·魔＆传" HpMax="300" Spirit="50" Resume="10" Dodge="0" Def="140" Matk="220" MpMax="150"/>
+	<Suit ID="13" Prof="-1" ItemID="110021 110022 110025 110026 110027" Name="风之祝福·忍" HpMax="500" MpMax="50" Atk="150" Hit="5" Dodge="10" Mdef="170" Def="300" Crit="10" Resume="10" FightBack="6" />
+
+
+	<!-- 处女座套装 -->
+	<Suit ID="17" Prof="-1" ItemID="147042 147041 147040 147039 147038" Name="处女座套装" HpMax="600" Dodge="20" Spirit="4" Resume="4" Hit="16" Crit="10" FightBack="0" Mdef="100"/>
+	<Suit ID="18" Prof="-1" ItemID="147017 147018 147019 147020 147021" Name="黑银套装" HpMax="500" Def="300" Spirit="30" Mdef="250" Dodge="24" Crit="5" Hit="12"/>
+		<!-- 狮子座套装	-->
+	<Suit ID="100" Prof="-1" ItemID="147029 147030 147031 147032 147033" Name="狮子座套装"  Matk="60" HpMax="410" MpMax="160" Def="130" Speed="79" Resume="82" Spirit="131" Dodge="25"/>
+
+	<!-- 白羊座套装 -->
+	<Suit ID="19" Prof="-1" ItemID="147043 147044 147045 147046 147047" Name="白羊座套装"  HpMax="200" FightBack="0" Def="550" Hit="2" Dodge="22" Crit="2" Mdef="100"/>
+	<Suit ID="20" Prof="-1" ItemID="147048 147049 147050 147051 147052" Name="金牛座套装"  HpMax="520" MpMax="90" Def="350" Speed="30" Spirit="100" Resume="25" Dodge="25"/>
+	<!-- Lv15竞技场套装 -->
+	<Suit ID="4" Prof="-1" ItemID="90015 90016 90017 90018 90019 90020" Name="白钢套装" Hit="8" FightBack="8"/>
+	<Suit ID="5" Prof="-1" ItemID="90021 90023 90025 90026 90027" Name="圣特鲁套装·物" Crit="8" Dodge="8"/>
+	<Suit ID="6" Prof="-1" ItemID="90022 90024 90025 90026 90028" Name="圣特鲁套装·魔" Spirit="2" Dodge="8"/>
+	<Suit ID="14" Prof="-1" ItemID="90127 90128 90129 90025 90026" Name="圣特鲁套装·物" Crit="8" Dodge="8"/>
+	<!-- Lv25竞技场套装 -->
+	<Suit ID="1" Prof="-1" ItemID="90001 90002 90003 90004 90005 90006" Name="星耀套装" Hit="13" FightBack="13"/>
+	<Suit ID="2" Prof="-1" ItemID="90007 90009 90011 90012 90013" Name="星闪套装·物" Crit="13" Dodge="13"/>
+	<Suit ID="3" Prof="-1" ItemID="90008 90010 90011 90012 90014" Name="星闪套装·魔" Spirit="3" Dodge="13"/>
+	<Suit ID="15" Prof="-1" ItemID="90130 90131 90132 90011 90012" Name="星闪套装·物" Crit="13" Dodge="13"/>
+
+	<!-- Lv30职业套装 -->
+	<Suit ID="40" Prof="-1" ItemID="140059 140060 140061 140062 140063 140064" Name="陆行鸟套装" HpMax="1475" Atk="50" Def="275" Mdef="125" Resume="30" Crit="20" FightBack="14" Hit="17"  />
+	<Suit ID="41" Prof="-1" ItemID="140065 140067 140069 140070 140071 140036" Name="狩猎套装·弓" HpMax="600" Atk="50" Def="50" Speed="20" MpMax="100" Mdef="255" Crit="13" Hit="19" Dodge="10" Resume="15" />
+	<Suit ID="42" Prof="-1" ItemID="140066 140068 140069 140070 140072 140036" Name="狩猎套装·魔＆传" HpMax="450" Def="50" MpMax="200" Spirit="65" Matk="200" Resume="33" Dodge="10" />
+	<Suit ID="43" Prof="-1" ItemID="140280 140281 140069 140070 140282 140036" Name="狩猎套装·忍" HpMax="650" Def="50" Speed="20" MpMax="100" Mdef="375" Resume="20" Crit="15" FightBack="10" Hit="12" Dodge="12" />
+	<Suit ID="44" Prof="-1" ItemID="141001 141002 141003 141004 141005 140036" Name="维京套装" HpMax="700" Atk="30" Mdef="160" Resume="16" Crit="12" FightBack="17" Hit="15" Dodge="12"  />
+	<Suit ID="45" Prof="-1" ItemID="141501 141502 141503 141504 141505 140036" Name="转换套装" HpMax="800" Def="50" MpMax="175" Spirit="60" Matk="80" Resume="16" Dodge="12" />
+	<Suit ID="46" Prof="-1" ItemID="142001 142002 142003 142004 142005 140036" Name="祈福套装" HpMax="1000" Def="40" MpMax="110" Spirit="40" Matk="60" Resume="30" Dodge="11" />
+	<Suit ID="47" Prof="-1" ItemID="142501 142502 142503 142504 142505 140036" Name="紫炼套装" HpMax="750" Atk="30" MpMax="120" Resume="22" Crit="7" FightBack="10" Hit="16" Dodge="10" />
+
+	<!-- Lv35职业套装 -->
+	<Suit ID="48" Prof="-1" ItemID="140073 140074 140075 140076 140077 140078" Name="月弧套装" HpMax="1550" Atk="60" Def="375" Mdef="150" Resume="33" Crit="20" FightBack="15" Hit="17"  />
+	<Suit ID="49" Prof="-1" ItemID="140079 140081 140083 140084 140085 140036" Name="星灵套装·弓" HpMax="650" Atk="55" Def="50" Speed="20" MpMax="100" Mdef="270" Crit="14" Hit="21" Dodge="12" Resume="18" />
+	<Suit ID="50" Prof="-1" ItemID="140080 140082 140083 140084 140086 140036" Name="星灵套装·魔＆传" HpMax="500" Def="65" MpMax="200" Spirit="80" Matk="200" Resume="36" Dodge="10" />
+	<Suit ID="51" Prof="-1" ItemID="140283 140284 140083 140084 140285 140036" Name="星灵套装·忍" HpMax="700" Def="50" Speed="20" MpMax="100" Mdef="425" Resume="22" Crit="17" FightBack="10" Hit="14" Dodge="12" />
+	<Suit ID="52" Prof="-1" ItemID="141006 141007 141008 141009 141010 140036" Name="瓦隆套装" HpMax="775" Atk="30" Mdef="170" Resume="18" Crit="12" FightBack="18" Hit="17" Dodge="13" />
+	<Suit ID="53" Prof="-1" ItemID="141506 141507 141508 141509 141510 140036" Name="炼金套装" HpMax="875" Def="50" MpMax="175" Spirit="75" Matk="80" Resume="19" Dodge="12" ResistConfusion="5" />
+	<Suit ID="54" Prof="-1" ItemID="142006 142007 142008 142009 142010 140036" Name="辉耀套装" HpMax="1075" Def="50" MpMax="125" Spirit="50" Matk="60" Resume="34" Dodge="12" />
+	<Suit ID="55" Prof="-1" ItemID="142506 142507 142508 142509 142510 140036" Name="琉璃套装" HpMax="825" Atk="40" MpMax="135" Resume="25" Crit="9" FightBack="11" Hit="19" Dodge="10" />
+	
+   <!-- Lv40职业套装 -->
+	<Suit ID="56" Prof="-1" ItemID="140087 140088 140089 140090 140091 140092" Name="红莲套装" HpMax="1625" Atk="65" Def="325" Mdef="150" Resume="36" Crit="21" FightBack="16" Hit="17"  />
+	<Suit ID="57" Prof="-1" ItemID="140093 140095 140097 140098 140099 140036" Name="复合套装·弓" HpMax="700" Atk="65" Def="55" Speed="20" MpMax="125" Mdef="285" Crit="15" Hit="23" Dodge="13" Resume="21"  />
+	<Suit ID="58" Prof="-1" ItemID="140094 140096 140097 140098 140100 140036" Name="复合套装·魔＆传" HpMax="550" Def="80" MpMax="200" Spirit="95" Matk="200" Resume="39" Dodge="10" />
+	<Suit ID="59" Prof="-1" ItemID="140286 140287 140097 140098 140288 140036" Name="复合套装·忍" HpMax="775" Def="55" Speed="20" MpMax="125" Mdef="475" Resume="24" Crit="18" FightBack="11" Hit="16" Dodge="14" />
+	<Suit ID="60" Prof="-1" ItemID="141011 141012 141013 141014 141015 140036" Name="荒芜套装" HpMax="850" Atk="40" Mdef="180" Resume="20" Crit="14" FightBack="19" Hit="19" Dodge="14" />
+	<Suit ID="61" Prof="-1" ItemID="141511 141512 141513 141514 141515 140036" Name="幻视套装" HpMax="950" Def="50" MpMax="175" Spirit="90" Matk="80" Resume="22" Dodge="12" ResistConfusion="5" />
+	<Suit ID="62" Prof="-1" ItemID="142011 142012 142013 142014 142015 140036" Name="先知套装" HpMax="1150" Def="50" MpMax="140" Spirit="60" Matk="60" Resume="38" Dodge="12"   />
+	<Suit ID="63" Prof="-1" ItemID="142511 142512 142513 142514 142515 140036" Name="激炎套装" HpMax="900" Atk="40" MpMax="150" Resume="28" Crit="11" FightBack="12" Hit="21" Dodge="10"  />
+ 
+   <!-- Lv45职业套装 -->
+	<Suit ID="64" Prof="-1" ItemID="140101 140102 140103 140104 140105 140106" Name="苍纹套装" HpMax="1700" Atk="75" Def="425" Mdef="150" Resume="38" Crit="21" FightBack="18" Hit="19"  />
+	<Suit ID="65" Prof="-1" ItemID="140107 140109 140111 140112 140113 140036" Name="绯玉套装·弓" HpMax="800" Atk="70" Def="70" Speed="20" MpMax="125" Mdef="300" Crit="16" Hit="25" Dodge="15" Resume="24" />
+	<Suit ID="66" Prof="-1" ItemID="140108 140110 140111 140112 140114 140036" Name="绯玉套装·魔＆传" HpMax="600" Def="95" MpMax="225" Spirit="110" Matk="200" Resume="44" Dodge="10" />
+	<Suit ID="67" Prof="-1" ItemID="140289 140290 140111 140112 140291 140036" Name="绯玉套装·忍" HpMax="850" Def="70" Speed="20" MpMax="125" Mdef="525" Resume="26" Crit="20" FightBack="12" Hit="18" Dodge="16" />
+	<Suit ID="68" Prof="-1" ItemID="141016 141017 141018 141019 141020 140036" Name="丛云套装" HpMax="925" Atk="40" Mdef="190" Resume="22" Crit="14" FightBack="20" Hit="21" Dodge="15"  />
+	<Suit ID="69" Prof="-1" ItemID="141516 141517 141518 141519 141520 140036" Name="以太套装" HpMax="1025" Def="50" MpMax="175" Spirit="110" Matk="80" Resume="25" Dodge="12" ResistConfusion="5" />
+	<Suit ID="70" Prof="-1" ItemID="142016 142017 142018 142019 142020 140036" Name="圣音套装" HpMax="1225" Def="50" MpMax="155" Spirit="75" Matk="60" Resume="42" Dodge="12" />
+	<Suit ID="71" Prof="-1" ItemID="142516 142517 142518 142519 142520 140036" Name="胧影套装" HpMax="975" Atk="50" MpMax="175" Resume="31" Crit="13" FightBack="13" Hit="24" Dodge="10" />
+   
+   <!-- Lv50职业套装 -->
+	<Suit ID="72" Prof="-1" ItemID="140115 140116 140117 140118 140119 140120" Name="碎魂套装" HpMax="1775" Atk="90" Def="475" Mdef="175" Resume="40" Crit="22" FightBack="19" Hit="21" />
+	<Suit ID="73" Prof="-1" ItemID="140121 140123 140125 140126 140127 140036" Name="织梦套装·弓" HpMax="925" Atk="80" Def="85" Speed="20" MpMax="125" Mdef="315" Crit="17" Hit="27" Dodge="16" Resume="27" />
+	<Suit ID="74" Prof="-1" ItemID="140122 140124 140125 140126 140128 140036" Name="织梦套装·魔＆传" HpMax="650" Def="110" MpMax="225" Spirit="130" Matk="200" Resume="49" Dodge="12" ResistPoison="5" ResistLithification="5" ResistLethargy="5" ResistCommination="5" ResistConfusion="5" ResistOblivion="5" />
+	<Suit ID="75" Prof="-1" ItemID="140292 140293 140125 140126 140294 140036" Name="织梦套装·忍" HpMax="950" Def="85" Speed="20" MpMax="150" Mdef="575" Resume="28" Crit="21" FightBack="12" Hit="20" Dodge="16" />
+	<Suit ID="76" Prof="-1" ItemID="141021 141022 141023 141024 141025 140036" Name="弧风套装" HpMax="1000" Atk="50" Mdef="200" Resume="24" Crit="16" FightBack="21" Hit="23" Dodge="16" />
+	<Suit ID="77" Prof="-1" ItemID="141521 141522 141523 141524 141525 140036" Name="掠夺者套装" HpMax="1100" Def="50" MpMax="190" Spirit="130" Matk="80" Resume="28" Dodge="13" ResistConfusion="10" />
+	<Suit ID="78" Prof="-1" ItemID="142021 142022 142023 142024 142025 140036" Name="守望者套装" HpMax="1300" Def="50" MpMax="170" Spirit="90" Matk="60" Resume="46" Dodge="13" />
+	<Suit ID="79" Prof="-1" ItemID="142521 142522 142523 142524 142525 140036" Name="轰招雷套装" HpMax="1050" Atk="50" MpMax="190" Resume="34" Crit="15" FightBack="14" Hit="26" Dodge="11" />
+   
+   <!-- Lv55职业套装 -->
+	<Suit ID="80" Prof="-1" ItemID="140129 140130 140131 140132 140133 140134" Name="辛克莱套装" HpMax="1850" Atk="105" Def="575" Mdef="175" Resume="40" Crit="24" FightBack="21" Hit="23" />
+	<Suit ID="81" Prof="-1" ItemID="140135 140137 140139 140140 140141 140036" Name="幻风套装·弓" HpMax="1050" Atk="85" Def="100" Speed="20" MpMax="150" Mdef="330" Crit="18" Hit="29" Dodge="18" Resume="30" />
+	<Suit ID="82" Prof="-1" ItemID="140136 140138 140139 140140 140142 140036" Name="幻风套装·魔＆传" HpMax="800" Def="125" MpMax="255" Spirit="155" Matk="200" Resume="55" Dodge="12" ResistPoison="5" ResistLithification="5" ResistLethargy="5" ResistCommination="5" ResistConfusion="5" ResistOblivion="5" />
+	<Suit ID="83" Prof="-1" ItemID="140295 140296 140139 140140 140297 140036" Name="幻风套装·忍" HpMax="1150" Def="100" Speed="20" MpMax="150" Mdef="575" Resume="30" Crit="23" FightBack="13" Hit="22" Dodge="18" />
+	<Suit ID="84" Prof="-1" ItemID="141026 141027 141028 141029 141030 140036" Name="傲斩套装" HpMax="1075" Atk="50" Mdef="210" Resume="26" Crit="18" FightBack="22" Hit="25" Dodge="17" />
+	<Suit ID="85" Prof="-1" ItemID="141526 141527 141528 141529 141530 140036" Name="复仇者套装" HpMax="1175" Def="50" MpMax="205" Spirit="155" Matk="80" Resume="31" Dodge="13" ResistConfusion="10" />
+	<Suit ID="86" Prof="-1" ItemID="142026 142027 142028 142029 142030 140036" Name="祷告者套装" HpMax="1375" Def="50" MpMax="185" Spirit="110" Matk="60" Resume="50" Dodge="13" />
+	<Suit ID="87" Prof="-1" ItemID="142526 142527 142528 142529 142530 140036" Name="天驱凤套装" HpMax="1125" Atk="60" MpMax="205" Resume="37" Crit="17" FightBack="15" Hit="29" Dodge="11" />
+  
+   <!-- Lv60职业套装 -->
+	<Suit ID="88" Prof="-1" ItemID="140143 140144 140145 140146 140147 140148" Name="布鲁士套装" HpMax="1925" Atk="120" Def="625" Mdef="175" Resume="41" Crit="27" FightBack="22" Hit="25" />
+	<Suit ID="89" Prof="-1" ItemID="140149 140151 140153 140154 140155 140036" Name="猩红套装·弓" HpMax="1175" Atk="95" Def="100" Speed="20" MpMax="150" Mdef="345" Crit="19" Hit="32" Dodge="19" Resume="30" />
+	<Suit ID="90" Prof="-1" ItemID="140150 140152 140153 140154 140156 140036" Name="猩红套装·魔＆传" HpMax="975" Def="125" MpMax="255" Spirit="185" Matk="200" Resume="65" Dodge="12" ResistPoison="5" ResistLithification="5" ResistLethargy="5" ResistCommination="5" ResistConfusion="5" ResistOblivion="5"  />
+	<Suit ID="91" Prof="-1" ItemID="140298 140299 140153 140154 140300 140036" Name="猩红套装·忍" HpMax="1250" Def="100" Speed="20" MpMax="150" Mdef="625" Resume="32" Crit="26" FightBack="14" Hit="24" Dodge="20"  />
+	<Suit ID="92" Prof="-1" ItemID="141031 141032 141033 141034 141035 140036" Name="月镰套装" HpMax="1150" Atk="50" Mdef="225" Resume="28" Crit="20" FightBack="23" Hit="27" Dodge="18" />
+	<Suit ID="93" Prof="-1" ItemID="141531 141532 141533 141534 141535 140036" Name="破坏者套装" HpMax="1250" Def="50" MpMax="220" Spirit="185" Matk="80" Resume="34" Dodge="13" ResistConfusion="10" />
+	<Suit ID="94" Prof="-1" ItemID="142031 142032 142033 142034 142035 140036" Name="倾诉者套装" HpMax="1450" Def="50" MpMax="200" Spirit="135" Matk="60" Resume="54" Dodge="13" />
+	<Suit ID="95" Prof="-1" ItemID="142531 142532 142533 142534 142535 140036" Name="晨曦梦套装" HpMax="1200" Atk="60" MpMax="220" Resume="40" Crit="19" FightBack="16" Hit="32" Dodge="11"  />
+
+   <!-- Lv65职业套装(Lv65武器) -->
+	<Suit ID="96" Prof="-1" ItemID="140157 140158 140159 140160 140161 140162" Name="阿巴敦套装" HpMax="2000" Atk="135" Def="673" Mdef="200" Resume="41" Crit="29" FightBack="25" Hit="28" />
+	<Suit ID="97" Prof="-1" ItemID="140163 140165 140167 140168 140169 140036" Name="夏隆套装·弓" HpMax="1200" Atk="100" Def="100" Speed="25" MpMax="150" Mdef="360" Crit="20" Hit="35" Dodge="21" Resume="30" />
+	<Suit ID="98" Prof="-1" ItemID="140164 140166 140167 140168 140170 140036" Name="夏隆套装·魔＆传" HpMax="1025" Def="125" MpMax="265" Spirit="215" Matk="200" Resume="65" Dodge="12" ResistPoison="5" ResistLithification="10" ResistLethargy="10" ResistCommination="5" ResistConfusion="5" ResistOblivion="5" />
+	<Suit ID="99" Prof="-1" ItemID="140301 140302 140167 140168 140303 140036" Name="夏隆套装·忍" HpMax="1250" Atk="45" Def="100" Speed="20" MpMax="155" Mdef="675" Resume="35" Crit="29" FightBack="15" Hit="26" Dodge="23" />
+	<Suit ID="101" Prof="-1" ItemID="141036 141037 141038 141039 141040 140036" Name="铬光套装" HpMax="1225" Atk="60" MpMax="50" Mdef="225" Resume="28" Crit="22" FightBack="25" Hit="29" Dodge="18" />
+	<Suit ID="102" Prof="-1" ItemID="141536 141537 141538 141539 141540 140036" Name="灭绝者套装" HpMax="1350" Def="50" MpMax="245" Spirit="220" Matk="100" Resume="34" Dodge="14" ResistConfusion="15" />
+	<Suit ID="103" Prof="-1" ItemID="142036 142037 142038 142039 142040 140036" Name="编织者套装" HpMax="1575" Def="75" MpMax="200" Spirit="165" Matk="60" Resume="64" Dodge="14" />
+	<Suit ID="104" Prof="-1" ItemID="142536 142537 142538 142539 142540 140036" Name="缥缈裂套装" HpMax="1200" Atk="60" MpMax="220" Resume="40" Crit="21" FightBack="17" Hit="33" Dodge="12"  />
+   
+   <!-- Lv65职业套装(Lv75武器) -->
+	<Suit ID="105" Prof="-1" ItemID="140157 140158 140159 140160 143161 140162" Name="阿巴敦套装" HpMax="2000" Atk="135" Def="673" Mdef="200" Resume="41" Crit="29" FightBack="25" Hit="28" />
+	<Suit ID="106" Prof="-1" ItemID="140163 140165 140167 140168 143169 140036" Name="夏隆套装·弓" HpMax="1200" Atk="100" Def="100" Speed="25" MpMax="150" Mdef="360" Crit="20" Hit="35" Dodge="21" Resume="30" />
+	<Suit ID="107" Prof="-1" ItemID="140164 140166 140167 140168 143170 140036" Name="夏隆套装·魔＆传" HpMax="1025" Def="125" MpMax="265" Spirit="215" Matk="200" Resume="65" Dodge="12" ResistPoison="5" ResistLithification="10" ResistLethargy="10" ResistCommination="5" ResistConfusion="5" ResistOblivion="5" />
+	<Suit ID="108" Prof="-1" ItemID="140301 140302 140167 140168 143303 140036" Name="夏隆套装·忍" HpMax="1250" Atk="45" Def="100" Speed="20" MpMax="155" Mdef="675" Resume="35" Crit="29" FightBack="15" Hit="26" Dodge="23" />
+	<Suit ID="109" Prof="-1" ItemID="141036 141037 141038 141039 144040 140036" Name="铬光套装" HpMax="1225" Atk="60" MpMax="50" Mdef="225" Resume="28" Crit="22" FightBack="25" Hit="29" Dodge="18" />
+	<Suit ID="110" Prof="-1" ItemID="141536 141537 141538 141539 144540 140036" Name="灭绝者套装" HpMax="1350" Def="50" MpMax="245" Spirit="220" Matk="100" Resume="34" Dodge="14" ResistConfusion="15" />
+	<Suit ID="111" Prof="-1" ItemID="142036 142037 142038 142039 145040 140036" Name="编织者套装" HpMax="1575" Def="75" MpMax="200" Spirit="165" Matk="60" Resume="64" Dodge="14" />
+	<Suit ID="112" Prof="-1" ItemID="142536 142537 142538 142539 145540 140036" Name="缥缈裂套装" HpMax="1200" Atk="60" MpMax="220" Resume="40" Crit="21" FightBack="17" Hit="33" Dodge="12"  />
+
+
+
+
+	<!-- Lv50职业套装 -->
+	<Suit ID="10" Prof="-1" ItemID="90029 90030 90031 90032 90033 90034" Name="龙牙套装" HpMax="1725" Resume="40" Def="115" Atk="123" Crit="25" Hit="20" FightBack="18"/>
+	<Suit ID="11" Prof="-1" ItemID="90035 90037 90039 90040 90041" Name="安德鲁套装·弓" HpMax="600" Resume="20" Atk="70" Def="125" Speed="40" Crit="12" Hit="18" Mdef="360" Dodge="20" MpMax="200"/>
+	<Suit ID="12" Prof="-1" ItemID="90036 90038 90039 90040 90042" Name="安德鲁套装·魔＆传" HpMax="515" MpMax="300" Spirit="120" Resume="45" Matk="150" Def="480" Dodge="16"/>
+	<Suit ID="16" Prof="-1" ItemID="90133 90134 90135 90039 90040" Name="安德鲁套装·忍" HpMax="865" Resume="20" Atk="125" Def="312" Crit="12" Hit="16" FightBack="13" Mdef="240" Dodge="17" MpMax="150" Speed="20"/>
+	<Suit ID="36" Prof="-1" ItemID="141041 141042 141043 141044 141045" Name="弧光套装" Atk="30" HpMax="1200" MpMax="150" Def="50" Resume="30" Dodge="15" Hit="18" Crit="14" Mdef="332" FightBack="14"/>
+	<Suit ID="37" Prof="-1" ItemID="142541 142542 142543 142544 142545" Name="雷鸣套装" HpMax="690" MpMax="350" Resume="22" Dodge="17" Hit="19" Crit="11" Mdef="450" FightBack="10" Def="70" Speed="10"/>
+	<Suit ID="38" Prof="-1" ItemID="141541 141542 141543 141544 141545" Name="掠夺套装" HpMax="640" MpMax="400" Resume="15" Dodge="22" Spirit="120" Matk="200"/>
+	<Suit ID="39" Prof="-1" ItemID="142041 142042 142043 142044 142045" Name="守望套装" HpMax="540" MpMax="600" Resume="22" Dodge="18" Spirit="120"/>
+	
+	<!-- 新套装 -->
+	<Suit ID="30" Prof="-1" ItemID="147005 147006 147007 147008" Name="管家套装" Def="900" Mdef="200" Hit="8" Crit="7" FightBack="10" HpMax="300" MpMax="150"/>
+	<Suit ID="31" Prof="-1" ItemID="147009 147010 147011 147012 130043" Name="女仆套装" Def="1000" Mdef="50" HpMax="600" MpMax="500" Spirit="70" Resume="100" Speed="125" Matk="60" Crit="16"/>
+	<Suit ID="32" Prof="-1" ItemID="147001 147002 147003 147004 100012" Name="兔绒套装" HpMax="1000" MpMax="200" Spirit="270" Matk="60" Speed="55" Def="1500" Dodge="4"/>
+	<Suit ID="33" Prof="-1" ItemID="147013 147014 147015 147016" Name="小丑套装" Dodge="21" Hit="14" Mdef="100" Def="640" HpMax="300" MpMax="100"/>
+	<Suit ID="34" Prof="-1" ItemID="130001 130002 130003 130004 130006" Name="新手装" HpMax="500" MpMax="200" Atk="150" Matk="200" Def="300" Mdef="200" Speed="50"/>
+	<Suit ID="35" Prof="-1" ItemID="147022 147023 147024 147025 147026" Name="龙鳞套装" HpMax="650" MpMax="150" Mdef="50" Speed="135" Resume="10"  FightBack="5"/>
+
+</Suits>

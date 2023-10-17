@@ -176,7 +176,7 @@
 				<![CDATA[1#如果你也对自己装扮有自信，欢迎报名参加。我将根据大家的投票在每周五决定胜利者。]]>
 			</des>
 		</proAction>
-		<proAction npcID="72" id="201" type="0" answer="精灵之露兑换$我还有其它事！" to="f10$o" colorID="1$0"><!--暂时关闭  精灵挑战 module_PetChallengeModule -->
+		<proAction npcID="72" id="201" type="0" answer="精灵挑战赛$精灵之露兑换$我还有其它事！" to="module_PetChallengeModule$f10$o" colorID="1$1$0"><!--暂时关闭  精灵挑战 module_PetChallengeModule -->
 			<des>
 				<![CDATA[1#未来勇士，你只要到达20级，即可每天参与【精灵挑战赛】哦！刺激的挑战、丰厚的奖品、精灵经验，赶快拿出你们强大的精灵参与活动吧！]]>
 			</des>
@@ -194,7 +194,7 @@
 			</des>
 		</proAction>
 		
-		<proAction npcID="85" id="211" type="0" answer="我还有其它事！" to="o" colorID="0"><!--暂时关闭 抽取幸运卡片  module_LuckCardPanelModul -->
+		<proAction npcID="85" id="211" type="0" answer="我还有其它事！" to="o" colorID="0"><!--暂时关闭 抽取幸运卡片  module_LuckCardPanelModule -->
 			<des>
 				<![CDATA[1#幸运卡片乐翻天活动已经全新开启，各种大奖、各种好礼等你来领！]]>
 			</des>
@@ -217,13 +217,23 @@
 			</des>
 		</proAction>
 		<proAction id="232" type="1" level="taskLevel" name="11202_1" moviepos="0,0" to=""/>
-		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$离开" to="module_AnswerExchangeModule$f14$o" colorID="0$0$0$0">
+		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$离开" to="module_AnswerExchangeModule$f14$f17$o" colorID="0$0$0$0">
 			<des>
 				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
 				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
             </des>
 		</proAction>
-		
+		<proAction npcID="227" id="244" type="0" answer="学员级$见习级$正统级$导师级$离开" to="a245$a246$a247$a248$o" colorID="2$2$2$2$0">
+			<des>
+				<![CDATA[1#htmlMode王国调查发现这次盛夏王国区域内极为反常，调节气候的水元素似乎在迅速消失，派遣各位未来勇士前去调查。完成调查可获得一定数量的@cRed夏日礼品券@!cRed。$$]]>
+				<![CDATA[1#htmlMode可以在我这里换取奖励。调查难度越高，奖励越丰厚！\n<font color='#666666'>学员级调查：@cRed限单人@!cRed、消耗@cRed75@!cRed精力\n见习级调查：@cRed限双人@!cRed、消耗@cRed100@!cRed精力</font>$$]]>
+				<![CDATA[1#htmlMode<font color='#666666'>正统级调查：消耗@cRed150@!cRed精力\n导师级调查：消耗@cRed240@!cRed精力</font>]]>
+            </des>
+		</proAction>
+		<proAction id="245" type="5" fightID="3576"/>	
+		<proAction id="246" type="5" fightID="3577"/>	
+		<proAction id="247" type="5" fightID="3578"/>	
+		<proAction id="248" type="5" fightID="3579"/>	
 <!--兔铃↓-->
 		<proAction npcID="318" id="13" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
 			<des>
@@ -246,15 +256,16 @@
 				<![CDATA[1#小勇士，我是飞行系精灵嫦娥，谢谢你中秋的帮助，9月16号-9月22号期间，还没兑换月饼的勇士请尽快兑换哦，本周结束，月饼兑换就会关闭。]]>
 			</des>
 		</proAction>	
-		<proAction npcID="1001" id="238" type="0" answer="现在出发$玩法规则$找帮手组队" to="j5$a239$o" colorID="1$0$0">
+		<proAction npcID="1001" id="238" type="0" answer="月宫前殿$月宫正殿$月宫后殿$离开" to="w2_41211_1$w2_41212_1$w2_41213_1$o" colorID="1$1$1$0">
 			<des>
-				<![CDATA[1#点击“现在出发”，可开始匹配进入月之宫殿（单人则进入匹配界面，多人则直接进入）\n点击“找帮手组队”，则离开当前界面，可以找其他勇士组队再进宫殿哦]]>
+				<![CDATA[1#htmlMode月之宫殿传来异动，王国正在派遣骑士团进行调查，【@nick】，认为祸源出自哪一处？<font color='#666666'>难度:月宫前殿＜月宫正殿＜月宫后殿\n周末每天仅有@cRed1@!cRed次机会进入月之宫殿获取奖励</font>$$]]>
+				<![CDATA[1#htmlMode<font color='#666666'>调查月宫后殿需要消耗10个兔尾巴和10个损坏的月饼。</font>]]>
 			</des>
 		</proAction>		
 		
 		<proAction npcID="1001" id="239" type="0" answer="返回上层$离开" to="a238$o" colorID="0$0">
 			<des>
-				<![CDATA[1#30级以上的勇士周末每天有2次机会进入月之宫殿，要珍惜哦\n组队进入宫殿后若断线，再重新登录同一号服务器，则依然在该宫殿中\n进入宫殿后不可以换线，换线则退出宫殿！]]>
+				<![CDATA[1#30级以上的勇士周末每天有1次机会进入月之宫殿，要珍惜哦\n组队进入宫殿后若断线，再重新登录同一号服务器，则依然在该宫殿中\n进入宫殿后不可以换线，换线则退出宫殿！]]>
 			</des>
 		</proAction>	
 				
@@ -268,13 +279,13 @@
 		<proAction npcID="1001" id="241" type="0" answer="王国军营$了解了" to="changeMap_11222$o" colorID="1$0">
 			<des>
 				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”$$]]>
-				<![CDATA[1#目前已开放30级副本【月之宫殿】，每日可以进入2次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>				
+				<![CDATA[1#目前已开放30级副本【月之宫殿】，每日可以进入1次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>				
 			</des>
 		</proAction>
 
 		<proAction npcID="1001" id="242" type="0" answer="月之宫殿（周末开放）$离开" to="a238$o" colorID="1$0">
 			<des>
-				<![CDATA[1#你好，我是副本管理员薇尔。周末每日可以进入2次副本，从中可以帮你快速提升你的等级，并且以后还会有丰富的奖励等你获得，建议找上你的伙伴们一起来挑战哦！$$]]>
+				<![CDATA[1#你好，我是副本管理员薇尔。周末每日可以进入1次副本，从中可以帮你快速提升你的等级，并且以后还会有丰富的奖励等你获得，建议找上你的伙伴们一起来挑战哦！$$]]>
 				<![CDATA[1#目前已开放30级副本【月之宫殿】，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
 			</des>
 		</proAction>	
@@ -282,7 +293,7 @@
 		<proAction npcID="1001" id="243" type="0" answer="勇士广场（琉璃翼龙）$王国军营$毁坏的勇士国度(35-53级)$月之宫殿（周末开放）$斯巴鲁洞穴(3人副本)$离开" to="changeMap_30400$changeMap_11222$changeMap_51202$a238$changeMap_22104$o" colorID="1$1$1$1$1$0">
 			<des>
 				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”。$$]]>
-				<![CDATA[1#目前已开放30级副本【月之宫殿】，周末每日可以进入2次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
+				<![CDATA[1#目前已开放30级副本【月之宫殿】，周末每日可以进入1次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
 			</des>
 		</proAction>	
 	</actions>

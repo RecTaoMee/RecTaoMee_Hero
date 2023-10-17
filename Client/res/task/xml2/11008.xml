@@ -1,0 +1,960 @@
+<Task ID="11008" Memo="风暴过后，前往c炎之大陆c迫在眉睫，然而大陆间尚无法通行。形势危急，威恩德口中的c时之封印c是什么呢？去找国王詹姆斯问问吧！" TargetMap="11307">
+   <Procedure>
+      <Step ID="1" ParentList="0" ParentCost="0">
+         <Event Memo="风暴过后，前往c炎之大陆c迫在眉睫，然而大陆间尚无法通行。形势危急，威恩德口中的c时之封印c是什么呢？去找国王詹姆斯问问吧！" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="30" ImageID="1" Info="【@nick】，谢谢你上次协助王国战胜了风暴" />
+               <Msg NpcID="30" ImageID="1" Info="看起来，你似乎有一些问题要问。" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="30" ImageID="1" Info="【时之封印】？" />
+               <Option Info="没错" SkipTrigger="Y" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="2" ParentList="1" ParentCost="1">
+         <Event Memo="和国王詹姆斯对话" TargetMap="11307" TargetObj="30" TargetName="和t詹姆斯t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="1" Info="(向国王详细讲述了事情的经过......)" />
+               <Msg NpcID="30" ImageID="1" Info="呵......原来如此。" />
+               <Msg NpcID="30" ImageID="1" Info="我不确定【时之封印】究竟是什么，但它可能与时间缝隙有关。" />
+               <Option Info="时间缝隙？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="30" ImageID="1" Info="是的。" />
+               <Msg NpcID="30" ImageID="1" Info="在很久以前，大陆间还能自由通行，不同大陆的摩尔靠船只往来。然而有一天，一道无形的墙突然出现，阻挡了所有远航的船只，切断了大陆间的往来。与此同时，时间缝隙开始出现在格历尔平原。" />
+               <Msg NpcID="30" ImageID="1" Info="开始出现在格历尔平原。我所了解的只有这些了，也许你可以找其他人询问一下。" />
+               <Msg NpcID="400" ImageID="1" Info="友情提醒：在摩尔王国内（例如勇士广场、勇敢者旅馆、女神大圣堂）通过【与NPC对话】收集关于【时之封印】的信息" />
+               <Option Info="我知道了。" NotUpdateBuffer="Y" />
+            </Action>
+         </Event>
+      </Step>
+
+
+      <Step ID="3" ParentList="2" ParentCost="1">
+         <Event Memo="缓冲中......." TargetMap="11201" TargetName="缓冲中.......">
+            <Action Type="COMMAND" Command="NOTHING" NotUpdateBuffer="Y"/>
+         </Event>
+      </Step>
+
+      <!-- 以下为平行对话部分 -->
+      <!-- 不知情NPC： -->
+
+
+      <!-- 路西西 -->
+      <Step ID="4" ParentList="3" ParentCost="1">
+         <Event Memo="在c摩尔王国c范围内（例如贝塔商会道具店、贝塔商会装备店、勇士广场、勇敢者旅馆、女神大圣堂等）通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82" TargetName="在摩尔王国内询问信息">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="82" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="82" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="82" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="82" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+
+      <!-- 精灵学者 拉尼克斯 -->
+      <Step ID="5" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="316" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="316" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="316" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="316" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 精灵竞技管理员 库噜噜-->
+      <Step ID="6" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="72" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="72" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="72" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="72" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 活动引导员 卢西奥 -->
+      <Step ID="7" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="317" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="227" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="227" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="227" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 幸运卡片领取人 波德罗 -->
+      <Step ID="8" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="85" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="85" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="85" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="85" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 副本引导员 薇儿 -->
+      <Step ID="9" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="319" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1001" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1001" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="1001" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 精灵研究员 皮克斯 -->
+      <Step ID="10" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11206" ObjID="12" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="12" ImageID="7" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="12" ImageID="7" Info="【时之封印】？" />
+               <Msg NpcID="12" ImageID="7" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 面包师 贝多罗 -->
+      <Step ID="11" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11213" ObjID="18" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="18" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="18" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="18" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 陆行鸟训练师 艾比 -->
+      <Step ID="12" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11201" ObjID="7" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="7" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="7" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="7" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 组队集结员 啦啦 -->
+      <Step ID="13" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11201" ObjID="701" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="701" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="701" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="701" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 路库K -->
+      <Step ID="14" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11207" ObjID="13" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="13" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="13" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="13" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 服务生护士 蒂蒂拉 -->
+      <Step ID="15" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11207" ObjID="14" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="14" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="14" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="14" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 药剂调配师 瑞贝卡 -->
+      <Step ID="16" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="23" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="23" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="23" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="23" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 传教士导师 温蒂 -->
+      <Step ID="17" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="22" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="22" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="22" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 神秘人 -->
+      <Step ID="18" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11208" ObjID="21" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="21" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="21" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="21" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 斗技场大厅 -->
+      <Step ID="19" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11218" ObjID="39" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="39" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="39" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="39" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="20" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11218" ObjID="40" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="40" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="40" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="40" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="21" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11218" ObjID="45" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="45" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="45" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="45" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="22" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11218" ObjID="702" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="702" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="702" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="702" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="23" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11218" ObjID="562" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="562" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="562" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="562" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 斗技场管理处 -->
+      <Step ID="24" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11219" ObjID="38" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="38" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="38" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="38" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="25" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11219" ObjID="44" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="44" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="44" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="44" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 空无一物 -->
+      <Step ID="26" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11203" ObjID="64" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="64" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="64" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="64" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 装备 贝利 -->
+      <Step ID="27" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11209" ObjID="16" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="16" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="16" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="16" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 道具店 -->
+      <Step ID="28" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11210" ObjID="17" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="17" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="17" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="17" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="29" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11210" ObjID="84" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="84" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="84" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="84" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 勇士学院 -->
+      <Step ID="30" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11215" ObjID="69" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="69" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="69" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="69" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="31" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11215" ObjID="73" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="73" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="73" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="73" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 爱精灵协会 莓可 -->
+      <Step ID="32" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11214" ObjID="20" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="20" ImageID="1" Info="你好，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="20" ImageID="1" Info="【时之封印】？" />
+               <Msg NpcID="20" ImageID="1" Info="抱歉，我不清楚。" />
+               <Option Info="好吧，谢谢。" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+
+      <!-- 知情NPC -->
+      <!-- 多修 -->
+      <Step ID="33" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="104" ImageID="1" Info="你好，未来勇士，有什么事吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="104" ImageID="1" Info="根据你的描述，【时之封印】指的很可能是时间缝隙深处的【魔王封印】。" />
+               <Option Info="【魔王封印】？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="104" ImageID="1" Info="神魔之战中，虽然五位魔王的形体全部毁灭，但仍残存部分力量与意识。时之女神在大战中遭受重创，逐渐力微，对时间的掌握也越发困难。而五大魔王过早的再次联手必" />
+               <Msg NpcID="104" ImageID="1" Info="将导致生灵涂炭，同时外逸的力量也会侵蚀生灵，于是时之女神不得已在大陆间设下【魔王封印】，将五大魔王的大部分力量封印在【时间断层】之中，也是在那个时期，" />
+               <Msg NpcID="104" ImageID="1" Info="大陆间的沟通被切断。早期，时间缝隙并不存在，然而魔王的力量为了逃逸不断冲击封印，撕裂了附近的时空，于是时间缝隙出现了。" />
+               <Msg NpcID="104" ImageID="1" Info="据悉，【魔王封印】极其危险，如果你想解开封印，将会直面魔王的力量，你真的要这样做吗。" />
+               <Option Info="我准备好了！" />
+               <Option Info="我再想想..." TalkOver="Y" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="104" ImageID="1" Info="勇气可嘉" />
+               <Msg NpcID="104" ImageID="1" Info="遗憾的是，我已很久没有进入过【时间缝隙】，无法告知你如何前往封印处。" />
+               <Msg NpcID="104" ImageID="1" Info="但据我的老友说，已经废弃的【弗雷基港东岸】码头有你想要的答案。" />
+               <Option Info="立刻出发！" />
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 乔依 -->
+      <Step ID="34" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11202" ObjID="111" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="111" ImageID="1" Info="你好，勇士，要我为你占卜一下吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="111" ImageID="1" Info="居然已经走到这一步了吗…" />
+               <Msg NpcID="111" ImageID="1" Info="很久之前，五位魔王的形体虽然在神魔之战中全部毁灭，但根据当时最伟大的占卜师的占卜结果显示，其残存力量仍会在不久的未来卷土重来，祸乱人间。时之女神在神魔之" />
+               <Msg NpcID="111" ImageID="1" Info="战后过于虚弱，为保护大陆上的生灵，不得不在大陆之间设下封印，将五大魔王的残存力量分别封印在五个【时间断层】中。" />
+               <Option Info="如何解除封印？" />
+               <Option Info="我再想想..." TalkOver="Y" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="111" ImageID="1" Info="这些封印中的力量极其恐怖。如果要解开封印，就要直面魔王的力量，请三思而后行。" />
+               <Msg NpcID="111" ImageID="1" Info="如果确定继续走下去，就前往【弗雷基港东岸】寻找答案吧。" />
+               <Option Info="立刻出发" />
+               <Option Info="我再想想..." TalkOver="Y" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+         </Event>
+      </Step>
+
+      <!-- 铃 -->
+      <Step ID="35" ParentList="3" ParentCost="1">
+         <Event Memo="在摩尔王国内通过c与NPC对话c收集关于c时之封印c的信息" TargetMap="11202" TargetObj="82">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11217" ObjID="102" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="你也是来祈祷的么？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="是【魔王封印】吗？" />
+               <Option Info="【魔王封印】？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="嗯，它封印着极其恐怖的力量呢…" />
+               <Msg NpcID="102" ImageID="1" Info="神魔之战后，五位魔王的形体毁灭，但他们太过强大，仍然残存部分力量与意识。" />
+               <Msg NpcID="102" ImageID="1" Info="时之女神已经十分虚弱，已经难以掌控时间。担心五大魔王恢复力量后联手祸乱人间的祂，不忍见到生灵涂炭，在大陆之间设下封印，将五大魔王的残存力量分别封印在五" />
+               <Msg NpcID="102" ImageID="1" Info="个【时间断层】中，避免他们联合。然而它们的力量不断冲击着封印，撕裂了附近的时空，时间缝隙就是力量外逸的表现…" />
+               <Msg NpcID="102" ImageID="1" Info="想要调查封印，就要前往时间缝隙的最深处，那里有许多未知的危险，甚至将直面魔王的力量……" />
+               <Msg NpcID="102" ImageID="1" Info="你真的要去吗？" />
+               <Option Info="我确定" />
+               <Option Info="我再想想..." TalkOver="Y" NextStep="3" NotUpdateBuffer="Y"/>
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="102" ImageID="1" Info="无畏的勇士，愿时之女神保佑你。" />
+               <Msg NpcID="102" ImageID="1" Info="接下来，去已经荒废的【弗雷基港东岸】吧，那里应该有你需要的线索。" />
+               <Option Info="立刻出发" />
+            </Action>
+
+         </Event>
+      </Step>
+
+      <Step ID="36" ParentList="33,34,35" ParentCost="1">
+         <Event Memo="缓冲中......." TargetMap="11201" TargetName="缓冲中.......">
+            <Action Type="COMMAND" Command="NOTHING" />
+         </Event>
+      </Step>
+
+      <Step ID="37" ParentList="4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,36" ParentCost="1">
+         <Event Memo="缓冲中......." TargetMap="11201" TargetName="缓冲中.......">
+            <Action Type="COMMAND" Command="NOTHING" />
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="11606, 1" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+
+      <Step ID="38" ParentList="37" ParentCost="1">
+         <Event Memo="前往弗雷基港东岸" TargetMap="11606" TargetObj="" TargetName="前往t弗雷基港东岸t">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="1" Info="没想到王国还有这样一个地方，有点荒凉啊……" />
+               <Msg NpcID="400" ImageID="1" Info="这里真的有人知道答案吗？" />
+               <Option Info="..." />
+            </Action>
+            <Action Type="MOVIE" Url="task_11008_1.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="39" ParentList="38" ParentCost="1">
+         <Event Memo="前往弗雷基港东岸" TargetMap="11606" TargetObj="" TargetName="前往t弗雷基港东岸t">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+            <!-- 动画 -->
+         </Event>
+      </Step>
+
+      <Step ID="40" ParentList="39" ParentCost="1">
+         <Event Memo="好冷...先去前面的酒馆看看吧，正好暖和一下。" TargetMap="11607" TargetObj="" TargetName="前往t比目鱼酒馆1Ft">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="6" Info="好冷...先去前面的酒馆看看吧，正好暖和一下。" />
+               <Option Info="..." />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="41" ParentList="40" ParentCost="1">
+         <Event Memo="好冷...先去前面的酒馆看看吧，正好暖和一下。" TargetMap="11607" TargetObj="" TargetName="前往t比目鱼酒馆1Ft">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11607" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="10000" ImageID="1" Info="咳咳咳，有人吗?" TalkOver="Y"/>
+               <Option Info="..." />
+            </Action>
+            <Action Type="COMMAND" Command="ROLL_CAMERA" Params="0, 0" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="42" ParentList="41" ParentCost="1">
+         <Event Memo="好冷...先去前面的酒馆看看吧，正好暖和一下。" TargetMap="11607" TargetObj="" TargetName="前往t比目鱼酒馆1Ft">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11607" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="100" ImageID="1" Info="马上来!上楼坐吧。" />
+               <Option Info="好" />
+            </Action>
+            <Action Type="COMMAND" Command="RESTORE_CAMERA" />
+         </Event>
+      </Step>
+
+      <Step ID="43" ParentList="42" ParentCost="1">
+         <Event Memo="与酒馆老板对话" TargetMap="11608" TargetObj="110081" TargetName="与t酒馆老板t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110081" TaskOption="你好!"/>
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1018" ImageID="2" Info="要来点什么？啤酒还是威士忌？" />
+               <Option Info="我不喝酒..." />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1018" ImageID="2" Info="不是来喝酒的…那是来吃饭的？来碟鱼香肠如何？今天新做的，再配几片烤吐司，很好吃的。" />
+               <Option Info="我不吃饭..." />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1018" ImageID="2" Info="不吃饭？那就快点走，没看我忙着吗？" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1018" ImageID="2" Info="什么【时之封印】，不吃饭就滚，听不懂吗？" />
+               <Option Info="..." />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="11606, 2" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="44" ParentList="43" ParentCost="1">
+         <Event Memo="离开酒馆" TargetMap="11606" TargetObj="11608" TargetName="离开酒馆">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="6" Info="酒馆老板好凶啊...我们还是先找找别的线索吧。" />
+               <Option Info="..." />
+            </Action>
+            <Action Type="COMMAND" Command="ROLL_CAMERA" Params="809,965" />
+            <Action Type="COMMAND" Command="DELAY" Params="1000" />
+            <Action Type="MOVIE" Url="task_11008_2.swf" MapLevel="CONTENT" Pos="624,783" />
+            <Action Type="COMMAND" Command="RESTORE_CAMERA" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="45" ParentList="44" ParentCost="1">
+         <Event Memo="那边是什么东西？过去看看吧！" TargetMap="11608" TargetObj="11608" TargetName="点击晒鱼">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="6" Info="那边是什么东西？过去看看吧！【提示：点击晒鱼。】" />
+               <Option Info="前去查看" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="46" ParentList="45" ParentCost="1">
+         <Event Memo="点击晾晒的鱼" TargetMap="11606" TargetObj="110081" TargetName="点击t晾晒的鱼t">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="11606" ObjID="110081"/>
+               <!-- 晾晒的鱼 -->
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+            <!-- 厄奎提克登场 -->
+         </Event>
+      </Step>
+
+      <Step ID="47" ParentList="46" ParentCost="1">
+         <Event Memo="与渔夫对话" TargetMap="11606" TargetObj="110082" TargetName="与t渔夫t对话">
+            <Trigger>
+               <Item Type="OBJ_CLICK" MapID="11606" ObjID="110082"/>
+               <!-- 点击 厄奎提克 -->
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1019" ImageID="2" Info="喂，小子！你动我的鱼干什么？" />
+               <Msg NpcID="1019" ImageID="2" Info="我知道了，你一定是小偷。" />
+               <Option Info="不是的，您误会了。" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1019" ImageID="2" Info="误会？如果不是贼，谁会来这鸟地方？罢了，不管你干什么，如果敢偷我的鱼，有你好果子吃。" />
+               <Msg NpcID="1019" ImageID="1" Info="嗯…既然你不是来偷鱼的，那肯定是来买鱼的。嘿嘿嘿，要买鱼，你可找对人咯，我这儿的鱼可都是刚捕的，保证新鲜哟~" />
+               <Option Info="您知道【时之封印】吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1019" ImageID="2" Info="什么什么封印？你不是买鱼的啊。那可惜咯，这么新鲜的鱼，别人都抢着要呢~" />
+               <Option Info="喂！等等……" />
+            </Action>
+            <Action Type="COMMAND" Command="ROLL_CAMERA" Params="1837,690" SkipTrigger="Y"/>
+         </Event>
+      </Step>
+
+      <Step ID="48" ParentList="47" ParentCost="1">
+         <Event Memo="返回酒馆" TargetMap="11606" TargetObj="110082" TargetName="返回酒馆">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11606" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="400" ImageID="6" Info="（酒馆传来混乱的打斗声）什么声音？！酒馆好像发生了什么？快回去看看！" />
+               <Option Info="这就返回！" />
+            </Action>
+            <Action Type="COMMAND" Command="RESTORE_CAMERA" />
+         </Event>
+      </Step>
+
+      <Step ID="49" ParentList="48" ParentCost="1">
+         <Event Memo="返回酒馆" TargetMap="11608" TargetName="t返回酒馆t">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11608" />
+            </Trigger>
+            <Action Type="MOVIE" Url="task_11008_3.swf" MapLevel="TASK" Pos="0,0" />
+         </Event>
+      </Step>
+
+      <Step ID="50" ParentList="49" ParentCost="1">
+         <Condition>
+            <Battle ID="3524" Count="1" />
+         </Condition>
+
+         <Event ConditionType="IN" Memo="击败鼬西了，和酒馆老板对话" TargetMap="11608" TargetObj="110084" TargetName="和t酒馆老板t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110084" TaskOption="住手"/>
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+            <!--  -->
+         </Event>
+
+
+         <Event ConditionType="OUT" Memo="和鼬西对话" TargetMap="11608" TargetObj="110084" TargetName="和t鼬西t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110084" TaskOption="住手"/>
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="998" ImageID="1" Info="嗯？哪来的鼹鼠。那么喜欢多管闲事，那就一起死吧！" />
+               <Option Info="来战" />
+               <Option Info="准备一下" NextStep="50"/>
+            </Action>
+            <Action Type="COMMAND" Command="BATTLE" Params="3524"/>
+         </Event>
+      </Step>
+
+      <Step ID="51" ParentList="50" ParentCost="1">
+         <Event Memo="和鼬西对话" TargetMap="11608" ObjID="11008" TargetName="t返回酒馆t">
+            <Trigger>
+               <Item Type="ENTER_MAP" MapID="11608" />
+            </Trigger>
+            <Action Type="MOVIE" Url="task_11008_4.swf" MapLevel="TASK" Pos="0,0" />
+         </Event>
+      </Step>
+
+      <Step ID="52" ParentList="51" ParentCost="1">
+         <Event Memo="和酒馆老板对话" TargetMap="11608" TargetObj="110083" TargetName="和t酒馆老板t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="你没事吧"/>
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1018" ImageID="2" Info="哈哈哈，不过再添一道疤而已，我已经有一道了，再多一道也无妨。" />
+               <Msg NpcID="1016" ImageID="2" Info="我是斯格弗斯，多谢你的救命之恩。想必你就是神谕中的那位未来勇士吧。" />
+               <Msg NpcID="1016" ImageID="2" Info="你是为【时之封印】而来？请带上你的命运轮盘，我会告诉你有关信息。" />
+               <Option Info="准备一下" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="53" ParentList="52" ParentCost="1">
+         <Condition>
+            <Person Equipment="110030" />
+         </Condition>
+
+         <Event ConditionType="IN" Memo="带上命运轮盘III" TargetMap="11606" TargetObj="110083" TargetName="带上命运轮盘III">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+            <!-- 动画 -->
+         </Event>
+
+
+         <Event ConditionType="OUT" Memo="带上命运轮盘III" TargetMap="11606" TargetObj="110083" TargetName="带上命运轮盘III">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1016" ImageID="2" Info="你是为【时之封印】而来？请带上你的命运轮盘，我会告诉你有关信息。" />
+               <Option Info="准备一下" />
+            </Action>
+         </Event>
+      </Step>
+
+      <Step ID="54" ParentList="53" ParentCost="1">
+         <Event Memo="和斯格弗斯对话" TargetMap="11608" TargetObj="110083" TargetName="和t斯格弗斯t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="【破局】" />
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1016" ImageID="2" Info="果然是未来勇士啊，真令人羡慕。" />
+               <Msg NpcID="1016" ImageID="2" Info="曾经的我是一名黑市商人，活跃在时间缝隙之间，因为时空紊乱，这里常有极其稀有的东西出现。而缝隙越深，好东西就越多，凭借着不错的身手，我不断往返与时间缝隙之" />
+               <Msg NpcID="1016" ImageID="2" Info="间，收获颇丰。不过我们黑市商人群体内也有个不成文的规矩——不要走得太深。" />
+               <Msg NpcID="1016" ImageID="2" Info="然而有一次，一位顾客开出非常高的价格，希望我到时间缝隙的深处寻找一种珍贵的黯晶魄。他的价格高到让我无法拒绝，毕竟，如果不是为了钱，谁会做黑商呢？" />
+               <Msg NpcID="1016" ImageID="2" Info="然而在时间缝隙深处，我被黑化严重的精灵袭击了，我脸上的刀疤也是那时留下的。在我即将失去意识之时，一名红发勇士突然出现，击退怪物并救下了我。" />
+               <Option Info="红发？是瑞恩吗？" />
+            </Action>
+            <Action Type="TALK">
+               <Msg NpcID="1016" ImageID="2" Info="我不知道他是谁，但他让我在这里等你到来，并给你转达一段话：" />
+               <Msg NpcID="1016" ImageID="2" Info="“【魔王封印】已经松动，我们的敌人已经蠢蠢欲动，我已经暂时将其加固，但这只是缓兵之计，终有一天，他们会突破封印。若要避免生灵涂炭，就要再次将它打败。”" />
+               <Msg NpcID="1016" ImageID="2" Info="他嘱托我要守住这个秘密，只有遇到神谕中的那位未来勇士才可告知，并把这个给你。" />
+               <Option Info="..." />
+            </Action>
+            <Action Type="MOVIE" Url="task_11008_5.swf" MapLevel="TASK" Pos="0,0" />
+            <!-- 灯塔图 -->
+         </Event>
+      </Step>
+
+      <Step ID="55" ParentList="54" ParentCost="1">
+         <Event Memo="和斯格弗斯对话" TargetMap="11608" TargetObj="110083" TargetName="和t斯格弗斯t对话">
+            <Trigger>
+               <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="灯塔？"/>
+            </Trigger>
+            <Action Type="TALK">
+               <Msg NpcID="1016" ImageID="2" Info="是的，如果你需要，我的老朋友厄奎提克可以带你前往。" />
+               <Msg NpcID="1016" ImageID="2" Info="不过现在，我们要先等他回来。" />
+               <Msg NpcID="1016" ImageID="2" Info="对了，谢谢你的救命之恩，这些就当做谢礼了，请你务必收下。" />
+               <Option Info="..." />
+            </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="11607, 1" />
+         </Event>
+      </Step>
+   </Procedure>
+</Task>

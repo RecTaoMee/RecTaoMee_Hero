@@ -1,7 +1,7 @@
 <!--月宫后殿-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-203.mp3">
 	<transport intPos="400,400">
-		<node id="1" pos="162,1028" targetMapId="41212" targetTransPortId="2" name="月宫正殿"/>
+		<node id="1" pos="162,1028" targetMapId="11202" targetTransPortId="10" name="月宫正殿"/>
 	</transport>
 	<object>
 		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
@@ -9,9 +9,9 @@
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="1" type="NPC" res="MC_npc_1" grpID="2604" action="1" needType="winCount" need="1" needAction="3"/>
+		<node id="1" type="NPC" res="MC_npc_1" grpID="2605" action="1" needType="winCount" need="1" needAction="3"/>
 		<node id="2" type="NPC" res="MC_npc_2" grpID="2606" action="4" needType="winCount,winCount" need="0,1" needAction="5,7"/>
-		<node id="3" type="NPC" res="MC_npc_3" grpID="2605" action="8" needType="winCount,winCount" need="0,1" needAction="9,11"/>
+		<node id="3" type="NPC" res="MC_npc_3" grpID="2624" action="8" needType="winCount,winCount" need="0,1" needAction="9,11"/>
 		<node id="4" type="NPC" res="MC_npc_102" action="12" />	
     </npc>
     <actions>
@@ -20,7 +20,7 @@
 				<![CDATA[1#你是哪来的摩尔，竟敢擅自闯入正殿，看我不把你扁成月饼形状！]]>
 			</des>
 		</proAction>
-		<proAction id="2" type="5" fightID="2604" />
+		<proAction id="2" type="5" fightID="2605" />
 		<proAction npcID="722" id="3" type="0" answer="......" to="o" colorID="0">
 			<des>
 				<![CDATA[1#哇哇哇！好痛，月饼陷都要露出来了！]]>
@@ -54,7 +54,7 @@
 				<![CDATA[1#那个擅闯进来的【雪绒草】就在我的手中，有本事就击败我啊！哇哈哈哈！]]>
 			</des>
 		</proAction>
-		<proAction id="10" type="5" fightID="2605" />
+		<proAction id="10" type="5" fightID="2624" />
 		<proAction npcID="724" id="11" type="0" answer="胜利啦，立即过去！$摩尔勇士万岁！" to="changeMap_41214$o" colorID="1$0">
 			<des>
 				<![CDATA[1#呜哇呜，不要打我了，【雪绒草】被我藏在密室中了，我放你过去就是了！]]>

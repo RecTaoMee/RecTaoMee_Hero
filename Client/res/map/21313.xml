@@ -1,9 +1,21 @@
 <!--平原12区-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-016.mp3">
-	<transport intPos="360,308">
-		<node id="1" pos="96,527" targetMapId="21312" targetTransPortId="4" name="神秘地道"/>
-	</transport>
-	<object>
-		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="200,200" depth="auto" pos="96,527" tip="aaa"/>
-	</object>
+   <transport intPos="360,308">
+      <node id="1" pos="96,527" targetMapId="21312" targetTransPortId="4" name="神秘地道"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="200,200" depth="auto" pos="96,527" tip="aaa"/>
+   </object>
+   <npc>
+      <node id="2" type="NPC" res="MC_11014_1" url="res/task/swf2/task_11014_2.swf" level="contentLevel" position="500,600" link="item" action="0" taskShowSteps="11014_5" />
+   </npc>
+   <actions>
+      <proAction npcID="1049" id="0" type="0" answer="离开" to="o" colorID="0">
+         <des>
+            <![CDATA[1#······]]>
+         </des>
+      </proAction>
+
+   </actions>
+
 </map>

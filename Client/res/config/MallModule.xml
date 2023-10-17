@@ -1,0 +1,307 @@
+<!--
+	PayItemID：交付物品ID
+	PayItemCnt：交付物品的数量
+	GetItemID：获得物品ID
+	GetItemCnt：获得物品的数量
+	RoleLv:兑换等级
+	JustOnce：仅可兑换1次，0代表：否，1代表：是
+	type：1帽子，2衣服，3手套，4鞋子，5武器，6盾牌，7挂件，8属性水晶，9预留，10预留，11精灵类，12人物类, 13其它
+	MerchandiseID：商品对应的ID
+	count：物品数量
+	<Mall ID="60" type="6" MerchandiseID="410155"/>
+	<Mall ID="61" type="4" MerchandiseID="410154"/>
+	<Mall ID="62" type="3" MerchandiseID="410153"/>
+	<Mall ID="63" type="2" MerchandiseID="410152"/>
+	<Mall ID="64" type="1" MerchandiseID="410151"/>
+-->
+<Malls>
+	<!-- ID：1~1000为推荐商品 -->
+	<type name="推荐商品" kind="0">
+
+	<Mall ID="13040" type="13" MerchandiseID="420011" Name1="织梦灵箔"/>
+
+<!-- 		<Mall ID="21" type="13" MerchandiseID="420010" Name1="马鹿"/>
+		<Mall ID="22" type="1" MerchandiseID="420006" Name1="圣诞鹿茸棉帽"/>
+		<Mall ID="23" type="2" MerchandiseID="420007" Name1="圣诞鹿绒棉衣"/>
+		<Mall ID="24" type="3" MerchandiseID="420008" Name1="圣诞鹿绒手套"/>
+		<Mall ID="25" type="4" MerchandiseID="420009" Name1="圣诞鹿绒棉鞋"/> -->
+
+		<Mall ID="2" type="13" MerchandiseID="410148" Name1="无敌闪灵胶片"/>
+		<Mall ID="3" type="11" MerchandiseID="410100" Name1="高级精灵成长重置丸"/>
+		
+<!-- 		<Mall ID="4" type="13" MerchandiseID="410138" Name1="3倍经验超值礼包"/>
+		<Mall ID="5" type="13" MerchandiseID="410137" Name1="稳定剂超值礼包"/> -->
+		
+		<Mall ID="3100" type="11" MerchandiseID="420001" Name1="精灵宝石"/>
+		<Mall ID="3009" type="11" MerchandiseID="400008" Name1="精灵初始重置丸"/>
+		<Mall ID="11" type="11" MerchandiseID="420002" Name1="精灵属性重置药水"/>
+		<Mall ID="11" type="11" MerchandiseID="420003" Name1="精灵属性重置药水"/>
+		
+<!--
+<Mall ID="12" type="11" MerchandiseID="420003" Name1="超级精灵满成长丸"/>
+		<Mall ID="1" type="13" MerchandiseID="410150" Name1="鲸头鹳"/>
+		<Mall ID="6" type="6" MerchandiseID="410155" Name1="鲸头鹳护盾"/>
+		<Mall ID="7" type="1" MerchandiseID="410151" Name1="鲸头鹳毡帽"/>
+		<Mall ID="8" type="2" MerchandiseID="410152" Name1="鲸头鹳斗篷"/>
+		<Mall ID="9" type="3" MerchandiseID="410153" Name1="鲸头鹳手套"/>
+		<Mall ID="10" type="4" MerchandiseID="410154" Name1="鲸头鹳短靴"/>
+		<Mall ID="11" type="13" MerchandiseID="410087" Name1="师面幻兽坐骑"/>
+-->
+	
+	</type>
+	<!-- ID：1001~2000为热卖商品 -->
+	<type name="热卖商品" kind="1">
+
+		<Mall ID="1035" type="13" MerchandiseID="410136"/>
+		<Mall ID="1034" type="13" MerchandiseID="410150" Name1="鲸头鹳"/>
+		<Mall ID="1033" type="13" MerchandiseID="410148"/>
+<!-- 		<Mall ID="1026" type="13" MerchandiseID="410138" Name1="3倍经验超值礼包"/> -->
+		<Mall ID="1025" type="13" MerchandiseID="410107"/>
+		<Mall ID="1023" type="13" MerchandiseID="410087" Name1="师面幻兽坐骑"/>
+		<Mall ID="2218" type="1" MerchandiseID="430018" Name1="炼金师面具"/>
+		<Mall ID="2219" type="2" MerchandiseID="430019" Name1="炼金师斗篷"/>
+		<Mall ID="2220" type="3" MerchandiseID="430020" Name1="炼金师手套"/>
+		<Mall ID="2221" type="4" MerchandiseID="430021" Name1="炼金师短靴"/>
+		<Mall ID="1022" type="11" MerchandiseID="410100"/>
+		<Mall ID="1021" type="1" MerchandiseID="410142"/>
+		<Mall ID="1020" type="2" MerchandiseID="410143"/>
+		<Mall ID="1019" type="3" MerchandiseID="410144"/>
+		<Mall ID="1018" type="4"  MerchandiseID="410145"/>
+		<Mall ID="1017" type="6" MerchandiseID="410146"/>
+		<!-- <Mall ID="1016" type="13" MerchandiseID="410137" Name1="稳定剂超值礼包"/> -->
+<!-- 		<Mall ID="1011" type="13" MerchandiseID="410077"/> -->
+		<Mall ID="1010" type="12" MerchandiseID="400006"/>
+		<Mall ID="1009" type="6" MerchandiseID="410105"/>
+		<Mall ID="1007" type="1" MerchandiseID="410092"/>
+		<Mall ID="1006" type="2" MerchandiseID="410102"/>
+<!-- 		<Mall ID="1005" type="13" MerchandiseID="410076"/> -->
+		<Mall ID="1004" type="1" MerchandiseID="410101"/>
+<!-- 		<Mall ID="1003" type="13" MerchandiseID="410075"/> -->
+		<Mall ID="1002" type="3" MerchandiseID="410103"/>
+		<Mall ID="1001" type="4" MerchandiseID="410104"/>
+	</type>
+	
+	<!-- ID：2001~3000为时装商品-->
+	<type name="时装商品" kind="2">
+
+
+
+		<Mall ID="2206" type="1" MerchandiseID="430006" Name1="万圣女巫毡帽"/>
+		<Mall ID="2207" type="2" MerchandiseID="430007" Name1="万圣女巫服饰"/>
+		<Mall ID="2208" type="3" MerchandiseID="430008" Name1="万圣女巫手套"/>
+		<Mall ID="2209" type="4" MerchandiseID="430009" Name1="万圣女巫鞋子"/>
+		<Mall ID="2210" type="1" MerchandiseID="430010" Name1="粉色淑女毡帽"/>
+		<Mall ID="2211" type="2" MerchandiseID="430011" Name1="粉色淑女皮衣"/>
+		<Mall ID="2212" type="3" MerchandiseID="430012" Name1="粉色淑女手套"/>
+		<Mall ID="2213" type="4" MerchandiseID="430013" Name1="粉色淑女短靴"/>
+		<Mall ID="2214" type="1" MerchandiseID="430014" Name1="黑色绅士毡帽"/>
+		<Mall ID="2215" type="2" MerchandiseID="430015" Name1="黑色绅士皮衣"/>
+		<Mall ID="2216" type="3" MerchandiseID="430016" Name1="黑色绅士手套"/>
+		<Mall ID="2217" type="4" MerchandiseID="430017" Name1="黑色绅士短靴"/>
+		<Mall ID="2218" type="1" MerchandiseID="430018" Name1="炼金师面具"/>
+		<Mall ID="2219" type="2" MerchandiseID="430019" Name1="炼金师斗篷"/>
+		<Mall ID="2220" type="3" MerchandiseID="430020" Name1="炼金师手套"/>
+		<Mall ID="2221" type="4" MerchandiseID="430021" Name1="炼金师短靴"/>
+		<Mall ID="2222" type="1" MerchandiseID="430022" Name1="海军帽"/>
+		<Mall ID="2223" type="1" MerchandiseID="430023" Name1="波波尔帽"/>
+		<Mall ID="2201" type="2" MerchandiseID="430001" Name1="水之队队服"/>
+		<Mall ID="2202" type="2" MerchandiseID="430002" Name1="火之队队服"/>
+		<Mall ID="2203" type="2" MerchandiseID="430003" Name1="风之队队服"/>
+		<Mall ID="2204" type="2" MerchandiseID="430004" Name1="地之队队服"/>
+		<Mall ID="2205" type="1" MerchandiseID="430005" Name1="万圣南瓜帽"/>
+		<Mall ID="2224" type="1" MerchandiseID="420012" Name1="水手帽(白)"/>
+		<Mall ID="2225" type="1" MerchandiseID="420013" Name1="黑色公主帽(白)"/>
+		<Mall ID="2226" type="5" MerchandiseID="420014" Name1="蓝玫瑰杖"/>
+
+		<Mall ID="2227" type="1" MerchandiseID="420015" Name1="无畏船长帽"/>
+		<Mall ID="2228" type="2" MerchandiseID="420016" Name1="无畏船长服饰"/>
+		<Mall ID="2229" type="3" MerchandiseID="420017" Name1="无畏船长手套"/>
+		<Mall ID="2230" type="4" MerchandiseID="420018" Name1="无畏船长鞋"/>
+		<Mall ID="2231" type="1" MerchandiseID="420019" Name1="草莓蛋糕帽"/>
+		<Mall ID="2232" type="2" MerchandiseID="420020" Name1="草莓蛋糕服饰"/>
+		<Mall ID="2233" type="3" MerchandiseID="420021" Name1="草莓蛋糕手套"/>
+		<Mall ID="2234" type="4" MerchandiseID="420022" Name1="草莓蛋糕鞋"/>
+		<Mall ID="2235" type="5" MerchandiseID="420023" Name1="草莓十字标"/>
+
+		<Mall ID="2119" type="6" MerchandiseID="410155" Name1="鲸头鹳护盾"/>
+		<Mall ID="2118" type="1" MerchandiseID="410151" Name1="鲸头鹳毡帽"/>
+		<Mall ID="2117" type="2" MerchandiseID="410152" Name1="鲸头鹳斗篷"/>
+		<Mall ID="2116" type="3" MerchandiseID="410153" Name1="鲸头鹳手套"/>
+		<Mall ID="2115" type="4" MerchandiseID="410154" Name1="鲸头鹳短靴"/>
+
+		<Mall ID="2114" type="1" MerchandiseID="410142" Name1="金牛座头盔"/>
+		<Mall ID="2113" type="2" MerchandiseID="410143"/>
+		<Mall ID="2112" type="3" MerchandiseID="410144"/>
+		<Mall ID="2111" type="4" MerchandiseID="410145"/>
+		<Mall ID="2110" type="6" MerchandiseID="410146"/>
+
+		<Mall ID="2109" type="1" MerchandiseID="410127"/>
+		<Mall ID="2108" type="2" MerchandiseID="410128"/>
+		<Mall ID="2107" type="3" MerchandiseID="410129"/>
+		<Mall ID="2106" type="4" MerchandiseID="410130"/>
+		<Mall ID="2105" type="6" MerchandiseID="410131"/>
+
+		<Mall ID="2104" type="1" MerchandiseID="410110"/>
+		<Mall ID="2103" type="2" MerchandiseID="410111"/>
+		<Mall ID="2102" type="3" MerchandiseID="410112"/>
+		<Mall ID="2101" type="4" MerchandiseID="410113"/>
+		<Mall ID="2100" type="6" MerchandiseID="410114"/>
+
+		<Mall ID="2099" type="1" MerchandiseID="410119"/>
+		<Mall ID="2098" type="2" MerchandiseID="410120"/>
+		<Mall ID="2097" type="3" MerchandiseID="410121"/>
+		<Mall ID="2096" type="4" MerchandiseID="410122"/>
+		<Mall ID="2095" type="6" MerchandiseID="410123"/>
+		<Mall ID="2094" type="5" MerchandiseID="410115"/>
+		<Mall ID="2093" type="5" MerchandiseID="410116"/>
+		<Mall ID="2092" type="5" MerchandiseID="410117"/>
+		<Mall ID="2091" type="5" MerchandiseID="410118"/>
+
+		<Mall ID="2090" type="1" MerchandiseID="410101"/>
+		<Mall ID="2089" type="2" MerchandiseID="410102"/>
+		<Mall ID="2088" type="3" MerchandiseID="410103"/>
+		<Mall ID="2087" type="4" MerchandiseID="410104"/>
+		<Mall ID="2086" type="6" MerchandiseID="410105"/>
+
+		<Mall ID="2085" type="4" MerchandiseID="410099"/>
+		<Mall ID="2084" type="3" MerchandiseID="410098"/>
+		<Mall ID="2083" type="2" MerchandiseID="410097"/>
+		<Mall ID="2082" type="1" MerchandiseID="410096"/>
+		<Mall ID="2081" type="4" MerchandiseID="410095"/>
+		<Mall ID="2080" type="3" MerchandiseID="410094"/>
+		<Mall ID="2079" type="2" MerchandiseID="410093"/>
+		<Mall ID="2078" type="1" MerchandiseID="410092"/>
+		<Mall ID="2077" type="4" MerchandiseID="410091"/>
+		<Mall ID="2076" type="3" MerchandiseID="410090"/>
+		<Mall ID="2075" type="2" MerchandiseID="410089"/>
+		<Mall ID="2074" type="1" MerchandiseID="410088"/>
+
+		<Mall ID="2073" type="6" MerchandiseID="410073"/>
+		<Mall ID="2072" type="5" MerchandiseID="410072"/>
+		<Mall ID="2071" type="5" MerchandiseID="410071"/>
+		<Mall ID="2070" type="5" MerchandiseID="410070"/>
+		<Mall ID="2069" type="5" MerchandiseID="410069"/>
+		<Mall ID="2068" type="4" MerchandiseID="410068"/>
+		<Mall ID="2067" type="3" MerchandiseID="410067"/>
+		<Mall ID="2066" type="2" MerchandiseID="410066"/>
+		<Mall ID="2065" type="1" MerchandiseID="410065"/>
+		<Mall ID="2064" type="6" MerchandiseID="410064"/>
+		<Mall ID="2063" type="5" MerchandiseID="410063"/>
+		<Mall ID="2062" type="5" MerchandiseID="410062"/>
+		<Mall ID="2061" type="5" MerchandiseID="410061"/>
+		<Mall ID="2060" type="5" MerchandiseID="410060"/>
+		<Mall ID="2059" type="4" MerchandiseID="410059"/>
+		<Mall ID="2058" type="3" MerchandiseID="410058"/>
+		<Mall ID="2057" type="2" MerchandiseID="410057"/>
+		<Mall ID="2056" type="1" MerchandiseID="410056"/>
+		<Mall ID="2055" type="4" MerchandiseID="410055"/>
+		<Mall ID="2054" type="3" MerchandiseID="410054"/>
+		<Mall ID="2053" type="2" MerchandiseID="410053"/>
+		<Mall ID="2052" type="1" MerchandiseID="410052"/>
+		<Mall ID="2051" type="6" MerchandiseID="410046"/>
+		<Mall ID="2050" type="5" MerchandiseID="410045"/>
+		<Mall ID="2049" type="5" MerchandiseID="410044"/>
+		<Mall ID="2048" type="5" MerchandiseID="410043"/>
+		<Mall ID="2047" type="5" MerchandiseID="410042"/>
+		<Mall ID="2046" type="4" MerchandiseID="410024"/>
+		<Mall ID="2045" type="3" MerchandiseID="410023"/>
+		<Mall ID="2044" type="2" MerchandiseID="410022"/>
+		<Mall ID="2043" type="1" MerchandiseID="410021"/>
+		<Mall ID="2042" type="4" MerchandiseID="410008"/>
+		<Mall ID="2041" type="3" MerchandiseID="410007"/>
+		<Mall ID="2040" type="2" MerchandiseID="410006"/>
+		<Mall ID="2039" type="1" MerchandiseID="410005"/>
+		<Mall ID="2038" type="4" MerchandiseID="410004"/>
+		<Mall ID="2037" type="3" MerchandiseID="410003"/>
+		<Mall ID="2036" type="2" MerchandiseID="410002"/>
+		<Mall ID="2035" type="1" MerchandiseID="410001"/>
+		<Mall ID="2034" type="4" MerchandiseID="410036"/>
+		<Mall ID="2033" type="3" MerchandiseID="410035"/>
+		<Mall ID="2032" type="2" MerchandiseID="410034"/>
+		<Mall ID="2031" type="1" MerchandiseID="410033"/>
+		<Mall ID="2030" type="4" MerchandiseID="410032"/>
+		<Mall ID="2029" type="3" MerchandiseID="410031"/>
+		<Mall ID="2028" type="2" MerchandiseID="410030"/>
+		<Mall ID="2027" type="1" MerchandiseID="410029"/>
+		<Mall ID="2026" type="4" MerchandiseID="410028"/>
+		<Mall ID="2025" type="3" MerchandiseID="410027"/>
+		<Mall ID="2024" type="2" MerchandiseID="410026"/>
+		<Mall ID="2023" type="1" MerchandiseID="410025"/>
+		<Mall ID="2022" type="4" MerchandiseID="410020"/>
+		<Mall ID="2021" type="3" MerchandiseID="410019"/>
+		<Mall ID="2020" type="2" MerchandiseID="410018"/>
+		<Mall ID="2019" type="1" MerchandiseID="410017"/>
+		<Mall ID="2018" type="4" MerchandiseID="410016"/>
+		<Mall ID="2017" type="3" MerchandiseID="410015"/>
+		<Mall ID="2016" type="2" MerchandiseID="410014"/>
+		<Mall ID="2015" type="1" MerchandiseID="410013"/>
+		<Mall ID="2014" type="4" MerchandiseID="410012"/>
+		<Mall ID="2013" type="3" MerchandiseID="410011"/>
+		<Mall ID="2012" type="2" MerchandiseID="410010"/>
+		<Mall ID="2011" type="1" MerchandiseID="410009"/>
+		<Mall ID="2010" type="6" MerchandiseID="410051"/>
+		<Mall ID="2009" type="5" MerchandiseID="410050"/>
+		<Mall ID="2008" type="5" MerchandiseID="410049"/>
+		<Mall ID="2007" type="5" MerchandiseID="410048"/>
+		<Mall ID="2006" type="5" MerchandiseID="410047"/>
+		<Mall ID="2005" type="6" MerchandiseID="410041"/>
+		<Mall ID="2004" type="5" MerchandiseID="410040"/>
+		<Mall ID="2003" type="5" MerchandiseID="410039"/>
+		<Mall ID="2002" type="5" MerchandiseID="410038"/>
+		<Mall ID="2001" type="5" MerchandiseID="410037"/>
+
+
+
+	</type>
+	<!-- ID：3001~4000为消耗品 -->
+	<type name="消耗品" kind="3">
+		<Mall ID="3036" type="12" MerchandiseID="410141"/>
+		<Mall ID="3035" type="12" MerchandiseID="410140"/>
+		<Mall ID="3034" type="12" MerchandiseID="410134"/>
+		<Mall ID="3032" type="11" MerchandiseID="410100"/>
+		<Mall ID="3030" type="11" MerchandiseID="420003" Name1="超级精灵满成长丸"/>
+<!-- 		<Mall ID="3031" type="13" MerchandiseID="410138" Name1="3倍经验超值礼包"/>
+		<Mall ID="3030" type="13" MerchandiseID="410137" Name1="稳定剂超值礼包"/> -->
+		<Mall ID="3027" type="12" MerchandiseID="410083"/>
+		<Mall ID="3026" type="11" MerchandiseID="410082"/>
+		<Mall ID="3025" type="12" MerchandiseID="410081"/>
+<!-- 		<Mall ID="3023" type="13" MerchandiseID="410077"/>
+		<Mall ID="3022" type="13" MerchandiseID="410076"/>
+		<Mall ID="3021" type="13" MerchandiseID="410075"/> -->
+		<Mall ID="3020" type="12" MerchandiseID="410074"/>
+		<Mall ID="3019" type="12" MerchandiseID="400020"/>
+		<Mall ID="3013" type="11" MerchandiseID="400013"/>
+		<Mall ID="3012" type="11" MerchandiseID="400011"/>
+		<Mall ID="3010" type="11" MerchandiseID="400009"/>
+		<Mall ID="3009" type="11" MerchandiseID="400008"/>
+		<Mall ID="3100" type="11" MerchandiseID="420001"/>
+		<Mall ID="3041" type="12" MerchandiseID="400006"/>
+		<Mall ID="3101" type="11" MerchandiseID="420002" Name1="精灵属性重置药水"/>
+		<Mall ID="3030" type="11" MerchandiseID="420004" Name1="精灵等级重置丸"/>
+		<Mall ID="3040" type="13" MerchandiseID="420011" Name1="织梦灵箔"/>
+		
+	</type>
+	
+	<!-- 
+	ID：其它类id号 -->
+	<type name="其它类" kind="4">
+		<Mall ID="4010" type="13" MerchandiseID="410150" Name1="鲸头鹳"/>
+		<Mall ID="4009" type="13" MerchandiseID="410148"/>
+		<Mall ID="4007" type="13" MerchandiseID="410136"/>
+		<Mall ID="4004" type="13" MerchandiseID="410087" Name1="师面幻兽坐骑"/>
+		<Mall ID="4003" type="13" MerchandiseID="410108"/>
+		<Mall ID="4002" type="13" MerchandiseID="410107"/>
+		<Mall ID="4001" type="13" MerchandiseID="410106"/>
+
+	</type>
+
+	<!-- ID：特殊隐藏id段 -->
+	<type name="特殊隐藏" kind="9">
+		<Mall ID="9005" type="13" MerchandiseID="410135"/>
+		<Mall ID="9004" type="13" MerchandiseID="410132"/>
+		<Mall ID="9003" type="13" MerchandiseID="410126"/>
+		<Mall ID="9002" type="13" MerchandiseID="410125"/>
+		<Mall ID="9001" type="13" MerchandiseID="410109"/>
+	</type>
+ 
+ </Malls>

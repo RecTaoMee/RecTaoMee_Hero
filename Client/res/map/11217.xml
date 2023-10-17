@@ -1,85 +1,99 @@
 <!--教堂-->
 <map name="aaa" type="0" comment="aaa" sound="BGM-008.mp3">
-	<transport intPos="360,490">
-		<node id="1" pos="370,981" targetMapId="11203" targetTransPortId="2" name="王国广场"/>
-	</transport>
-	<object>
-		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
-		<node id="2" type="AppModule" res="MC_churchHandBook" module="ChurchmanBookModule" />
-		
-	</object>
-    <npc>
-		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
-		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
-		<node id="102" type="NPC" res="MC_npc_102" level="contentLevel" fun="" taskType="0" action="0" needLevel="" needKind=""/>
-		<node id="22" type="NPC" res="MC_npc_22" level="contentLevel" fun="" taskType="0" action="3$4" needLevel="" needKind=""/>
-        <node id="23" type="NPC" res="MC_npc_23" level="contentLevel" fun="" taskType="0" action="13$14" need="7" needType="level" needAction="11$12"/>
-	</npc>
-	<actions>
-		<proAction npcID="102" id="0" type="0" answer="我要【恢复HP/MP】$你也很可爱$摩尔勇士万岁！" to="b8_102$a1$o" colorID="1$0$0">
-			<des>
-				<![CDATA[1#大家祈祷时认真的表情真可爱~]]>
-			</des>
-		</proAction>
-		<proAction npcID="102" id="1" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_102$o" colorID="1$0">
-			<des>
-				<![CDATA[2#     …… $$]]>
-				<![CDATA[2#我听见了神的声音————$$]]>
-				<![CDATA[1#【@nick】啊，还需要一些经验才可以到达下一等级。加油^^]]>
-			</des>
-		</proAction>
-		<proAction npcID="102" id="2" type="0" answer="我要【恢复HP/MP】$你也很可爱$摩尔勇士万岁！" to="b8_102$a1$o" colorID="1$0$0">
-			<des>
-				<![CDATA[2#伟大的神啊！请庇护您的子民们吧！]]>
-			</des>
-		</proAction>
-		<proAction npcID="22" id="3" type="0" answer="【学习技能】$传教士体验$摩尔勇士万岁！" to="b9_22$a5$o" colorID="1$1$0" >
-			<des>
-				<![CDATA[2#神一定可以指引我们……有什么可以帮你的吗？]]>
-			</des>
-		</proAction>
-		<proAction npcID="22" id="4" type="0" answer="【学习技能】$传教士体验$摩尔勇士万岁！" to="b9_22$a5$o" colorID="1$1$0" >
-			<des>
-				<![CDATA[1#投入神的怀抱，拥抱片刻的宁静……有什么可以帮你的吗？]]>
-			</des>
-		</proAction>
-		<proAction npcID="22" id="5" type="0" answer="准备好了！" to="a6">
-			<des>
-				<![CDATA[2#我感受到了你的善良^_^，请和我一起感受一下传教士是如何用爱帮助队友吧^_^，拿起【练习法杖】我们开始吧！]]>
-			</des>
-		</proAction>
-		<proAction id="6" type="1" outMap="1" level="taskLevel" name="skill_4" moviepos="0,0"  to="o"/>
-		<proAction npcID="22" id="7" type="0" answer="我准备好了！$以后再说吧。" to="a8$o" colorID="0$0" >
-			<des>
-				<![CDATA[2#很好，来感受一样女神之力的威力吧！]]>
-			</des>
-		</proAction>
-		<proAction id="8" type="5" fightID="" />
-		<proAction npcID="23" id="9" type="0" answer="开始吧！$还是算了吧..." to="a10$o" colorID="0$0" >
-			<des>
-				<![CDATA[2#我和姐姐一起侍奉女神，我要和姐姐一起接受战斗^_^！]]>
-			</des>
-		</proAction>
-		<proAction id="10" npcID="22" type="5" fightID="3004" />
-		<proAction npcID="23" id="11" type="0" answer="我要调配药剂$摩尔勇士万岁！" to="b14_23$o" colorID="1$0">
-			<des>
-				<![CDATA[1#传教士协会由姐姐负责入学管理，我不是温蒂姐姐，我是姐姐的孪生妹妹。]]>
-			</des>
-		</proAction>
-		<proAction npcID="23" id="12" type="0" answer="我要调配药剂$摩尔勇士万岁！" to="b14_23$o" colorID="1$0">
-			<des>
-				<![CDATA[1#以后我一定会负责更重要的工作，成为圣堂祭祀，成为女神大人的眼睛。]]>
-			</des>
-		</proAction>
-		<proAction npcID="23" id="13" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
-			<des>
-				<![CDATA[1#传教士协会由姐姐负责入学管理，我不是温蒂姐姐，我是姐姐的孪生妹妹。]]>
-			</des>
-		</proAction>
-		<proAction npcID="23" id="14" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
-			<des>
-				<![CDATA[1#以后我一定会负责更重要的工作，成为圣堂祭祀，成为女神大人的眼睛。]]>
-			</des>
-		</proAction>
-	</actions>
+   <transport intPos="360,490">
+      <node id="1" pos="370,981" targetMapId="11203" targetTransPortId="2" name="王国广场"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+      <node id="2" type="AppModule" res="MC_churchHandBook" module="ChurchmanBookModule" />
+
+   </object>
+   <npc>
+      <!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
+      <!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
+      <node id="102" type="NPC" res="MC_npc_102" level="contentLevel" fun="" taskType="0" action=""  />
+      <node id="22" type="NPC" res="MC_npc_22" level="contentLevel" fun="" taskType="0" action="3$4" needLevel="" needKind=""/>
+      <node id="23" type="NPC" res="MC_npc_23" level="contentLevel" fun="" taskType="0" action="13$14" need="7" needType="level" needAction="11$12"/>
+
+      <node id="24" type="NPC" res="MC_110131" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="-605,-701" link="item5" action="" taskShowSteps="11013_10" />
+      <node id="25" type="NPC" res="MC_110132" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="-605,-701" link="item6" action="" taskShowSteps="11013_11|12" />
+
+   </npc>
+   <actions>
+      <proAction npcID="102" id="0" type="0" answer="我要【恢复HP/MP】$你也很可爱$摩尔勇士万岁！" to="b8_102$a1$o" colorID="1$0$0">
+         <des>
+            <![CDATA[1#大家祈祷时认真的表情真可爱~]]>
+         </des>
+      </proAction>
+      <proAction npcID="102" id="1" type="0" answer="我要【恢复HP/MP】$摩尔勇士万岁！" to="b8_102$o" colorID="1$0">
+         <des>
+            <![CDATA[2#     …… $$]]>
+            <![CDATA[2#我听见了神的声音————$$]]>
+            <![CDATA[1#【@nick】啊，还需要一些经验才可以到达下一等级。加油^^]]>
+         </des>
+      </proAction>
+      <proAction npcID="102" id="2" type="0" answer="我要【恢复HP/MP】$你也很可爱$摩尔勇士万岁！" to="b8_102$a1$o" colorID="1$0$0">
+         <des>
+            <![CDATA[2#伟大的神啊！请庇护您的子民们吧！]]>
+         </des>
+      </proAction>
+      <proAction npcID="22" id="3" type="0" answer="【学习技能】$传教士体验$摩尔勇士万岁！" to="b9_22$a5$o" colorID="1$1$0">
+         <des>
+            <![CDATA[2#神一定可以指引我们……有什么可以帮你的吗？]]>
+         </des>
+      </proAction>
+      <proAction npcID="22" id="4" type="0" answer="【学习技能】$传教士体验$摩尔勇士万岁！" to="b9_22$a5$o" colorID="1$1$0">
+         <des>
+            <![CDATA[1#投入神的怀抱，拥抱片刻的宁静……有什么可以帮你的吗？]]>
+         </des>
+      </proAction>
+      <proAction npcID="22" id="5" type="0" answer="准备好了！" to="a6">
+         <des>
+            <![CDATA[2#我感受到了你的善良^_^，请和我一起感受一下传教士是如何用爱帮助队友吧^_^，拿起【练习法杖】我们开始吧！]]>
+         </des>
+      </proAction>
+      <proAction id="6" type="1" outMap="1" level="taskLevel" name="skill_4" moviepos="0,0" to="o"/>
+      <proAction npcID="22" id="7" type="0" answer="我准备好了！$以后再说吧。" to="a8$o" colorID="0$0">
+         <des>
+            <![CDATA[2#很好，来感受一样女神之力的威力吧！]]>
+         </des>
+      </proAction>
+      <proAction id="8" type="5" fightID="" />
+      <proAction npcID="23" id="9" type="0" answer="开始吧！$还是算了吧..." to="a10$o" colorID="0$0">
+         <des>
+            <![CDATA[2#我和姐姐一起侍奉女神，我要和姐姐一起接受战斗^_^！]]>
+         </des>
+      </proAction>
+      <proAction id="10" npcID="22" type="5" fightID="3004" />
+      <proAction npcID="23" id="11" type="0" answer="我要调配药剂$摩尔勇士万岁！" to="b14_23$o" colorID="1$0">
+         <des>
+            <![CDATA[1#传教士协会由姐姐负责入学管理，我不是温蒂姐姐，我是姐姐的孪生妹妹。]]>
+         </des>
+      </proAction>
+      <proAction npcID="23" id="12" type="0" answer="我要调配药剂$摩尔勇士万岁！" to="b14_23$o" colorID="1$0">
+         <des>
+            <![CDATA[1#以后我一定会负责更重要的工作，成为圣堂祭祀，成为女神大人的眼睛。]]>
+         </des>
+      </proAction>
+      <proAction npcID="23" id="13" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+         <des>
+            <![CDATA[1#传教士协会由姐姐负责入学管理，我不是温蒂姐姐，我是姐姐的孪生妹妹。]]>
+         </des>
+      </proAction>
+      <proAction npcID="23" id="14" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+         <des>
+            <![CDATA[1#以后我一定会负责更重要的工作，成为圣堂祭祀，成为女神大人的眼睛。]]>
+         </des>
+      </proAction>
+      <proAction npcID="102" id="15" type="0" answer="提交喵喵草$我要【恢复HP/MP】$你也很可爱$摩尔勇士万岁！" to="submitMewGrass$b8_102$a1$o" colorID="2$1$0$0">
+         <des>
+            <![CDATA[1#大家祈祷时认真的表情真可爱~]]>
+         </des>
+      </proAction>
+      <proAction npcID="102" id="16" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+         <des>
+            <![CDATA[1#感谢你带来的稀有草药，这是谢礼，愿女神庇佑你。]]>
+         </des>
+      </proAction>
+   </actions>
 </map>

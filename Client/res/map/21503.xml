@@ -48,7 +48,7 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
-			<proAction npcID="329" id="11" type="0" answer="特别训练$风之龙你好" to="a12$0" colorID="2$0" >
+			<proAction npcID="329" id="11" type="0" answer="特别训练$风之龙你好" to="a12$o" colorID="2$0" >
 			<des>
 				<![CDATA[1#……]]>
 			</des>

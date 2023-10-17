@@ -1,10 +1,10 @@
-<Task ID="207" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307">
+<Task ID="207" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。c主线【迈向新职业】的完成与否不影响其他任务的解锁，若无意进阶可忽略此任务。c" TargetMap="11307">
    	<Procedure> 
 		<Step ID="1" ParentList="0" ParentCost="0" >
   			<Condition>
 				<Item ID="290024" Count="1" />
 			</Condition>
-    		<Event ConditionType="IN" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
+    		<Event ConditionType="IN" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。c主线【迈向新职业】的完成与否不影响其他任务的解锁，若无意进阶可忽略此任务。c" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您找我？" />																											
 				</Trigger>	
@@ -17,7 +17,7 @@
 					<Option Info="暂不进阶" NextStep="1" />	
 				</Action>	
     		</Event>
-    		<Event ConditionType="OUT" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
+    		<Event ConditionType="OUT" Memo="对进阶的方向有决定了吧，去c国王呈见厅c告诉c詹姆斯c国王吧。c主线【迈向新职业】的完成与否不影响其他任务的解锁，若无意进阶可忽略此任务。c" TargetMap="11307" TargetObj="30" TargetName="与t詹姆斯t对话"> 	
   				<Trigger>
 					<Item Type="NPC_OPTION" MapID="11307" ObjID="30" TaskOption="国王您找我？" />																											
 				</Trigger>	

@@ -1,12 +1,20 @@
 <!---->
 <map name="21401" type="0" comment="aaa" sound="BGM-201.mp3">
-	<transport intPos="387,630">
-		<node id="1" pos="160,956" targetMapId="11401" targetTransPortId="2" name="麦田村"/>
-		<node id="2" pos="1388,288" targetMapId="21402" targetTransPortId="1" name="海地洞穴深处"/>
-	</transport>
-	<object>
-		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
-		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
-		<!--node id="3" type="Object" level="downLevel" res="MC_sign1" name="" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/-->
-	</object>
+   <transport intPos="387,630">
+      <node id="1" pos="160,956" targetMapId="11401" targetTransPortId="2" name="麦田村"/>
+      <node id="2" pos="1388,288" targetMapId="21402" targetTransPortId="1" name="海地洞穴深处"/>
+   </transport>
+   <object>
+      <node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+      <node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+      <!--node id="3" type="Object" level="downLevel" res="MC_sign1" name="" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/-->
+   </object>
+
+   <npc>
+      <node id="4" type="NPC" res="MC_11015_1" url="res/task/swf2/task_11015_1.swf" level="contentLevel" position="400,0" link="item2" action="" taskShowSteps="11015_8" />
+   </npc>
+
+
+
+
 </map>
