@@ -6,7 +6,7 @@
 		<item name="勇士3" path="dll/ClientAppDLL.swf" ver="20100601"/>
 		<item name="勇士4" path="res/config/Pet.xml" ver="20100601"/>
 		<item name="勇士5" path="res/config/item_equip.xml" ver="20100601"/>
-		<!-- <item name="勇士6" path="res/config/Beastgrp.xml" ver="20100601"/> -->
+		<item name="勇士6" path="res/config/Beastgrp.xml" ver="20100601"/>
 		<item name="勇士7" path="res/config/Commodity.xml" ver="20100601"/>
 		<item name="勇士8" path="res/config/RarityConfig.xml" ver="20100601"/>
 		<item name="勇士9" path="res/config/ExchangeItem.xml" ver="20100601"/>

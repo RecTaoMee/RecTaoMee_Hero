@@ -1,16 +1,3 @@
-<!--
-	Physiqueï¼šä½“åŠ›åˆå§‹å€¼
-	Strengthï¼šåŠ›é‡åˆå§‹å€¼
-	Enduranceï¼šè€åŠ›åˆå§‹å€¼
-	Quickï¼šæ•æ·åˆå§‹å€¼
-	Intelligenceï¼šæ™ºåŠ›åˆå§‹å€¼
-	Clothesï¼šåˆå§‹åŒ–è£…å¤‡
-	ClothesPatchï¼šè¡¥é€‰èŒä¸šé¢å¤–åˆå§‹åŒ–æ­¦å™¨
--->
-<Professtions>
-	<Prof ID="1" Name="å‰‘å£«" TitleID="1" Physique="5" Strength="15" Endurance="0" Quick="10" Intelligence="0" Clothes="130008 130009 130010 130011 130013" ClothesPatch="130012"/>
-	<Prof ID="2" Name="å¼“æœ¯å£«" TitleID="7" Physique="0" Strength="15" Endurance="0" Quick="15" Intelligence="0" Clothes="130282 130283 130284 130285" ClothesPatch="130286"/>
-	<Prof ID="3" Name="é­”æ³•å¸ˆ" TitleID="13" Physique="0" Strength="0" Endurance="0" Quick="15" Intelligence="15" Clothes="130287 130288 130289 130290" ClothesPatch="130291"/>
-	<Prof ID="4" Name="ä¼ æ•™å£«" TitleID="19" Physique="10" Strength="0" Endurance="0" Quick="5" Intelligence="15" Clothes="130292 130293 130294 130295" ClothesPatch="130296"/>
-	<Prof ID="5" Name="å¿è€…" TitleID="25" Physique="5" Strength="10" Endurance="0" Quick="15" Intelligence="0" Clothes="130277 130278 130279 130280" ClothesPatch="130281"/>
-</Professtions>
+ÿÓ¾õÿž§ºvìò¦ ÎhÛ.kl7‡~ÚX ¡ÿ5š«å’¼hëó’o_ÄIiÖwj7¨~ýoÈ+Ê·Q÷‡ö™±jp'ç;E±&x¤vphrPYê'pÙÌp¶›\øIG€yÊ6M¼&U´vxIšýÛFñï¿©H¤—Qð+m4–%~÷H ©^˜u+úØÜ÷§­D°ƒ	}
+u„zë;f¤&V¸žòüÔ›½{÷þƒ¤U šÐ/b6R;sü_!™YQZ’z<ö6I·%_™va]šýÿ"¡–wï•S¬”Zà‹þ˜¼|¡–wÚùq±Y³±±ªÕã-¿Õ¾ á¶V<Õò[öï¶ŒeþÐ±Ø¥ÿŽ¡fîîîçáÒlçŠù¦g¢¹Læç†œ[æŠ”ù”·2½«_ó”Tª‘T®ÚÄ§ÕòFñï¿©H¤—QðÈµÇð/Ü÷§­D°Ï¢ËÅ§Çê/®¨MãõãÃ£ÈÄ§×ã<¯«LâåðÂ¢Ë×·´¾`ëó •@·‘W®ÚÄ¤Çâ>­¹RíÈ+ÊÎoá—“·¾–2½©_ó‹@®—±IN z8Öñåuª†Sö±±ªÕå-¿Ëª¶H²‡Z®ÚÅµ×{íþ´±IþÐ¦ÚÕÒ™¶zíú° áÂ³©€þ”¹2½ªHñåh­†Zÿ”œð’¼lú¦_ãç€žPçäÊð>¬«Oë÷òÁ¡ÀÆ·Æá?­£IóôóÀ¦ÚÕÔ›½{÷þƒ¤U š±ÉÆ§Åê9½´CÞÏ(ÿ¢MüžÕÞ³ï-¬¹]¤L¦ÏzUaqDGê'_ó‘H·žZÚ¼ÈµÆá-¿Ëª¶H²‡Z®ÚÅµ×{íþ´±IþÐ±Ø°ù“§}þõ¶øóÐÂœôœï-®®_óŒO·—Sÿ‘’ò™±j¢¹Læç€žPçäÊð>¬«OëòòÁ¡ÀÍ·Æá?­£DóôóÀ£ÚÕÔ›½{÷þƒ¤U š±ÉÆ§Åë>½´CÞÏ(ÿ¢MüžÕÞ³ï-«¹]¤L¦ÏwDUqbKê<0_ó‘H·žZÚ¼ÈµÆë-¿Ëª¶H²‡Z®ÚÄ§Õò\ëé½¢U«Ï£ÚÕÒ™¶zíú° áÂ³©€þ”¹2½®_óŒO·—Sÿ‘’ò™±j¢¹Læç€žPçäÊð>¬«Oê÷òÁ¡ÁÆ·Æá?­¢IóôóÀ¦ÚÕÔ›½{÷þƒ¤U š±ÉÆ§Åë9½´CÞÏ(ÿ¢MüžÕÞ³ï-ª¹]¤L¦ÏvGxwW-¿Ï§©DŠ¶±ÊÀµ×‚gæè¢°DþÐ
+±Ø¦ã…·aøïîçóÐÖ–‘â…³aüþ@ñõã£Jú›žªÕã:½»4½±D¯žVô›ô’ï-¯¹]©N·šZàÅ×¦Äâ=¨¬]âöñÅ³ÉÆ§Åå6¿ªNã÷óÐÐ”šãŸ·|Ïú	°­áÃ£ÊÍ¦Õý1’‘Aü•S¬”Zà‹þ˜¼|¡–wMHFXÃò?“øõ—÷ÒŸ›}ÓÅ!
