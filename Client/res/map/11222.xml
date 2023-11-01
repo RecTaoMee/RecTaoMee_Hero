@@ -13,7 +13,7 @@
 		<node id="2" type="NPC" res="MC_npc_203" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_204" action="2" name="士兵"/>
 		<node id="2" type="NPC" res="MC_npc_205" action="2" name="士兵"/>
-		<node id="4" type="NPC" res="MC_nina" action="" alpTaskID="11003_5_0" compTaskID="11004_1_1" visible="0"/>
+		<node id="4" type="NPC" res="MC_nina" action="3" alpTaskID="11003_5_0,11004_6_2" compTaskID="11004_1_1" visible="0"/>
 		
 	</npc>		
 	<actions>
@@ -27,6 +27,13 @@
 		<proAction npcID="200" id="2" type="0" answer="我知道了" to="o" >
 			<des>
 				<![CDATA[1#1...2...1为了保卫家园，为了王国的荣誉，我们一定要加紧操练，尽快提升自己的能力，对抗南瓜军！！！]]>
+			</des>
+		</proAction>			
+	</actions>
+	<actions>
+		<proAction npcID="101" id="3" type="0" answer="万圣糖果兑换$摩尔勇士万岁！" to="f18$o" colorID="1$0" >
+			<des>
+				<![CDATA[1#...]]>
 			</des>
 		</proAction>			
 	</actions>

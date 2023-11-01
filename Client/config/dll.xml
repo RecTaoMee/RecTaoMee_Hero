@@ -17,6 +17,7 @@
 		<item name="勇士14" path="res/config/BattleActionListConfig.xml" ver="20100601"/>
 		<item name="勇士15" path="res/config/Map.xml" ver="20100601"/>
 		<item name="勇士16" path="res/config/MallModule.xml" ver="20100601"/>
+		<item name="勇士17" path="res/config/GroupAI.xml" ver="20100601"/>
 	</Dll>
 	<Bean>
 		<!--=====================core=====================-->

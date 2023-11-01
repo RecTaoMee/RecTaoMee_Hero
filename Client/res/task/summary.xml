@@ -2381,7 +2381,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 	</Task>		
 	
 	<!-- 万圣节限时开放,到 11006封印蛋？ 原等级要求28,关闭时改101 -->
-	<Task ID="11003" Name="古祭坛的异动" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11003" Name="古祭坛的异动" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="50" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="50" Memo="" >
 		</Node>	
 		<Node ID="2" Step="3" Memo="" >
@@ -2411,7 +2411,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			</OutItem>  
 		</Node>	
 	</Task>		
-	<Task ID="11004" Name="恶战！抵抗入侵！" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11003" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11004" Name="恶战！抵抗入侵！" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="11003" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="3" Memo="" >
 			<BeastGrp GrpId="3510" Count="1" Win="1"/>					
 			<OutItem ID="1">			
@@ -2451,11 +2451,12 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="350014" Count="10" />	
 				<Item OutType="2" ItemId="360049" Count="1" />					
 				<Item OutType="2" ItemId="180067" Count="1" />					
+				<Item OutType="2" ItemId="290029" Count="88" />					
 			</OutItem>  
 		</Node>	
 	</Task>		
 	
-	<Task ID="11005" Name="清除南瓜部队" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="101" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
+	<Task ID="11005" Name="清除南瓜部队" Kind="5" DefaultTrace="1" BreakTrace="1" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="28" Job="-2" JobLevel="0" Star="4" Order="1" RecomLevel="28" >
 		<Node ID="1" Step="3" Memo="" >
 			<BeastGrp GrpId="3515" Count="1" Win="1"/>					
 			<OutItem ID="1">			
@@ -2480,6 +2481,7 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 				<Item OutType="2" ItemId="350035" Count="1" /> 
 				<Item OutType="2" ItemId="350036" Count="1" />
 				<Item OutType="2" ItemId="315004" Count="1" />  
+				<Item OutType="2" ItemId="290029" Count="12" />  
 			</OutItem>
 		</Node>	
 	</Task>		
