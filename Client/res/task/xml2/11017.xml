@@ -1,0 +1,15 @@
+<!--恶龙-莱托姆  -->
+<Task ID="11017" Memo="恶龙c莱托姆c虽已被击败，但其残留的魔力仍然对游龙川产生了影响。活动期间可挑战c游龙川c的游荡敌人以获取大量奖励。c注：（此任务无法完成）c" TargetMap="22105">
+    <Procedure>
+
+        <Step ID="1" ParentList="0" ParentCost="0">
+            <Event Memo="恶龙c莱托姆c虽已被击败，但其残留的魔力仍然对游龙川产生了影响。活动期间可挑战c游龙川c的游荡敌人以获取大量奖励。c注：（此任务无法完成）c" TargetMap="22105" TargetObj="104" TargetName="前往t游龙川t">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="104" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+        </Step>
+
+    </Procedure>
+</Task>

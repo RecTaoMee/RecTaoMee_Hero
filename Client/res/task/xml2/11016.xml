@@ -1,0 +1,468 @@
+<!--恶龙-莱托姆  -->
+<Task ID="11016" Memo="c多修c好像有事找你，快去看看吧！" TargetMap="11202">
+    <Procedure>
+
+        <Step ID="1" ParentList="0" ParentCost="0">
+            <Event Memo="c多修c好像有事找你，快去看看吧！" TargetMap="11202" TargetObj="104" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="【@nick】，你来了。乔依通过水晶球占卜，发现有两位服装怪异的摩尔前往了克拉斯环岛附近的一处。我怀疑此事与数百年前的【恶龙-莱托姆】事件有关。" />
+                    <Option Info="恶龙-莱托姆？" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="是的，数百年前，王国卫队曾经驱逐过一条恶龙，其名为莱托姆，而占卜中两位可疑摩尔前往之处正是当年的战斗地点———游龙川" />
+                    <Msg NpcID="104" ImageID="1" Info="麻烦你去游龙川查看一下情况。如遇意外就启用这枚水晶，届时我会赶来。" />
+                    <Option Info="这就出发" />
+                </Action>
+                <Action Type="COMMAND" Command="CHANGE_MAP" Params="22105, 1" />
+            </Event>
+        </Step>
+
+        <Step ID="2" ParentList="1" ParentCost="1">
+            <Event Memo="抵达c游龙川c啦。那边两位就是占卜中的陌生人吧，似乎与旁边的精灵发生了争吵，快去看看吧" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101605" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1056" ImageID="1" Info="快把龙骨交出来！我为族内兢兢业业这么多年，那份恩赐应该属于我！" />
+                    <Msg NpcID="1059" ImageID="1" Info="龙骨不在我身上！" />
+                    <Msg NpcID="1056" ImageID="1" Info="拒不承认么，看来我得送你们去见先祖了。" />
+                    <Msg NpcID="1057" ImageID="1" Info="那边的勇士，快来救救我们。这群怪物真是蛮不讲理！" />
+                    <Option Info="住手！" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1056" ImageID="1" Info="哪里来的圆头耗子，劝你不要多管闲事，不然连你一起灭了！" />
+                    <Msg NpcID="1052" ImageID="1" Info="咕~" />
+                    <Option Info="准备一下" />
+                </Action>
+            </Event>
+        </Step>
+
+        <Step ID="3" ParentList="2" ParentCost="1">
+            <Condition>
+                <Battle ID="3580" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="成功击败1队帕菲啦，但是还剩下3队帕菲" TargetMap="22105" TargetObj="1101606" TargetName="与帕菲对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101606" TargetName="与t帕菲t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101606" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1052" ImageID="1" Info="咕~" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="3" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3580" />
+            </Event>
+        </Step>
+
+        <Step ID="4" ParentList="3" ParentCost="1">
+            <Condition>
+                <Battle ID="3581" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="成功击败2队帕菲啦，但是还剩下2队帕菲" TargetMap="22105" TargetObj="1101607" TargetName="与帕菲对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101607" TargetName="与t帕菲t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101607" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1052" ImageID="1" Info="咕~" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="4" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3581" />
+            </Event>
+        </Step>
+
+        <Step ID="5" ParentList="4" ParentCost="1">
+            <Condition>
+                <Battle ID="3582" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="成功击败3队帕菲啦，但是还剩下1队帕菲" TargetMap="22105" TargetObj="1101608" TargetName="与帕菲对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101608" TargetName="与t帕菲t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101608" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1052" ImageID="1" Info="咕~" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="5" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3582" />
+            </Event>
+        </Step>
+
+        <Step ID="6" ParentList="5" ParentCost="1">
+            <Condition>
+                <Battle ID="3583" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="成功击败4队帕菲啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101609" TargetName="与帕菲对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101609" TargetName="与t帕菲t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101609" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1052" ImageID="1" Info="咕~" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="6" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3583" />
+            </Event>
+        </Step>
+
+        <Step ID="7" ParentList="6" ParentCost="1">
+            <Condition>
+                <Battle ID="3584" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="成功击败帕菲斯特啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101605" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1056" ImageID="1" Info="为什么？恩赐明明是我的！" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101605,3"/>
+                <Action Type="COMMAND" Command="DELAY" Params="2000"/>
+            </Event>
+            <Event ConditionType="OUT" Memo="成功击败4队帕菲啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101605" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1056" ImageID="1" Info="没想到你这圆头耗子竟然要逼我亲自出手！" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="7" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3584" />
+            </Event>
+        </Step>
+
+        <Step ID="8" ParentList="7" ParentCost="1">
+            <Event Memo="成功击退帕菲群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="尊敬的勇士，多亏了您解救了我们，我是瑕因，这位是桑普。我们是通过裂缝游历世界的旅客，只为找到我们先祖侍奉的神灵。" />
+                    <Option Info="先祖侍奉的神灵？" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="是的，很久以前，我们族群的祖先曾侍奉着一位神灵，拜祂所赐，我们在部落之间的斗争中所向披靡。然而有一天，神灵大人消失了，从此我们族群遭到众多部族的疯狂报" />
+                    <Msg NpcID="1058" ImageID="1" Info="复，现如今我们只能过着隐居流亡的生活。" />
+                    <Msg NpcID="1060" ImageID="1" Info="只要找回我们的神灵，才能结束族群流亡之旅。" />
+                    <Option Info="原来如此" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+
+        <Step ID="9" ParentList="8" ParentCost="1">
+            <Event Memo="成功击退帕菲群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="（刚才帕菲斯特的生命力被这片沙滩吸收了，看来神灵大人就被封印在此处。)" />
+                    <Msg NpcID="1060" ImageID="1" Info="（古籍上的线索果然没错，不过解除封印看来还需要更多祭品。)" />
+                    <Msg NpcID="1058" ImageID="1" Info="（这里荒无人烟，去哪里找？)" />
+                    <Msg NpcID="1060" ImageID="1" Info="（桑普看向了你）" />
+                    <Option Info="@blank" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+
+        <Step ID="10" ParentList="9" ParentCost="1">
+            <Condition>
+                <Battle ID="3585" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="与c桑普c对话" TargetMap="22105" TargetObj="1101613" TargetName="与桑普对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="与c桑普c对话" TargetMap="22105" TargetObj="1101613" TargetName="与t桑普t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101613" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1060" ImageID="1" Info="勇士大人，既然您已帮我们击退了那群怪物，不如好人做到底，再帮我们一把！" />
+                    <Option Info="什么？" />
+                    <Option Info="等一下我肚子痛" NextStep="10" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3585" />
+            </Event>
+        </Step>
+
+        <Step ID="11" ParentList="10" ParentCost="1">
+            <Condition>
+                <Battle ID="3586" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="与c桑普c对话" TargetMap="22105" TargetObj="1101613" TargetName="与t桑普t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101613" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1060" ImageID="1" Info="怎……会如此！瑕……因……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101613,3"/>
+                <Action Type="COMMAND" Command="DELAY" Params="2000"/>
+            </Event>
+            <Event ConditionType="OUT" Memo="与c桑普c对话" TargetMap="22105" TargetObj="1101613" TargetName="与t桑普t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101613" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1060" ImageID="1" Info="还真有两下子，就让我来会会你吧！" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="11" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3586" />
+            </Event>
+        </Step>
+
+
+        <Step ID="12" ParentList="11" ParentCost="1">
+            <Condition>
+                <Battle ID="3587" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Action Type="COMMAND" Command="NOTHING" />
+            </Event>
+            <Event ConditionType="OUT" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="不！桑普！古籍上说神灵大人会赋予破除封印之人【力量与长生】，说好了我们要一起接收恩赐的呢？为何要离我而去！" />
+                    <Msg NpcID="1058" ImageID="1" Info="竟敢把我的桑普……我要让你血债血偿！" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="12" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3587" />
+            </Event>
+        </Step>
+
+        <Step ID="13" ParentList="12" ParentCost="1">
+            <Condition>
+                <Battle ID="3588" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="我输了吗？计划失败了啊……桑……普……我来了……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101612,3"/>
+                <Action Type="COMMAND" Command="DELAY" Params="4000" />
+                <Action Type="COMMAND" Command="STAGE_SHOCK" Params="map,10" />
+                <Action Type="COMMAND" Command="EVENT" Params="map22105ChangeBg2"/>
+                <Action Type="MOVIE" Url="task_11016_9.swf" MapLevel="UP" Pos="406,255" />
+            </Event>
+            <Event ConditionType="OUT" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1058" ImageID="1" Info="不可饶恕！" />
+                    <Option Info="来战！" />
+                    <Option Info="等一下我肚子痛" NextStep="13" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3588" />
+            </Event>
+        </Step>
+
+        <Step ID="14" ParentList="13" ParentCost="1">
+            <Event Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="1" Info="吾自由了——果然如里克所料,封印自会破除!" />
+                    <Msg NpcID="1061" ImageID="1" Info="嗯？汝……怎么有时之女神的气息，以前没见过汝，汝是未来勇士？" />
+                    <Option Info="正是！" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="1" Info="哈哈哈哈哈哈哈！没想到得来全不费功夫！未来勇士，吾找的就是汝，吾要汝的命！" />
+                    <Option Info="(启用多修给予的水晶)" NextStep="15" SkipTrigger="Y" />
+                    <Option Info="准备迎战" NextStep="17" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+
+        <Step ID="15" ParentList="14" ParentCost="1">
+            <Event Memo="准备启用多修给予的水晶" TargetMap="22105" TargetObj="1101614" TargetName="准备启用多修给予的水晶">
+                <Trigger>
+                    <Item Type="ENTER_MAP" MapID="22105" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="400" ImageID="1" Info="使用水晶将视为跳过最终战，可能会错过奖励，确定使用吗" />
+                    <Option Info="确定" />
+                    <Option Info="我再想想" NextStep="14" />
+                </Action>
+                <Action Type="MOVIE" Url="task_11016_10.swf" MapLevel="TASK" Pos="0,0" />
+                <Action Type="COMMAND" Command="EVENT" Params="map22105ChangeBg3"/>
+            </Event>
+        </Step>
+
+        <Step ID="16" ParentList="15" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="哼，给它逃掉了……" />
+                    <Msg NpcID="104" ImageID="1" Info="不过刚刚那一招，已经让莱托姆身负重伤，短时间内它没法再兴风作浪了。" />
+                    <Msg NpcID="104" ImageID="1" Info="【@nick】，水晶使用的很及时。若是让莱托姆靠近居住区，后果不堪设想。" />
+                    <Msg NpcID="104" ImageID="1" Info="莱托姆虽已离开，但封印破除时逸散的魔力仍然影响着游龙川附近区域，不可放松警惕！" />
+                    <Msg NpcID="104" ImageID="1" Info="（莱托姆此次出现究竟有什么目的？……）" />
+                    <Option Info="@blank" />
+                </Action>
+            </Event>
+        </Step>
+
+        <Step ID="17" ParentList="14" ParentCost="1">
+            <Condition>
+                <Battle ID="3589" Count="1" />
+            </Condition>
+            <Event ConditionType="IN" Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="COMMAND" Command="EVENT" Params="addRecallBg"/>
+                <Action Type="TALK">
+                    <Msg NpcID="1062" ImageID="1" Info="【生命之根】已被破坏。精灵族要修复它，必然需要炎之大陆的圣物————【永恒之花】。我推演圣物的地点，不曾想是一片混沌。" />
+                    <Msg NpcID="1062" ImageID="1" Info="未来勇士【@nick】，是推演中的扰动，是伊恩大人计划中的变数。" />
+                    <Msg NpcID="1062" ImageID="1" Info="我的力量尚未恢复，莱托姆，你去除掉未来勇士。至于你的封印,自有人破除。" />
+                    <Msg NpcID="1062" ImageID="1" Info="如果失败了，后果你应当清楚！" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="COMMAND" Command="EVENT" Params="removeRecallBg"/>
+                <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101614,3"/>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="2" Info="吾竟然失败了……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="2" Info="……里克……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="2" Info="放……过吾……的……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="2" Info="……家……人……" />
+                    <Option Info="@blank" />
+                </Action>
+                <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101614,5"/>
+                <Action Type="COMMAND" Command="DELAY" Params="4000"/>
+                <Action Type="COMMAND" Command="EVENT" Params="map22105ChangeBg3"/>
+            </Event>
+            <Event ConditionType="OUT" Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="1061" ImageID="1" Info="今天汝逃不掉了，受死吧，未来勇士！" />
+                    <Option Info="(启用多修给予的水晶)" NextStep="15" SkipTrigger="Y" />
+                    <Option Info="来战" />
+                    <Option Info="准备一下" NextStep="17" />
+                </Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3589" />
+            </Event>
+        </Step>
+
+        <Step ID="18" ParentList="17" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="【@nick】，情况如何？克拉斯环岛的卫兵报告岛屿西南产生了极强的魔力波动。得知后我便火速前往此地。" />
+                    <Option Info="（描述事情经过）" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="……" />
+                    <Msg NpcID="104" ImageID="1" Info="竟然独自击败了莱托姆，真是了不起。这条恶龙终究为自己所做之事付出了代价。" />
+                    <Option Info="……代价？" />
+                </Action>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="那已经是数百年前的事了……" />
+                    <Option Info="关于莱托姆" NextStep="19" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="关于里克" NextStep="20" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+                    <Option Info="关于克拉斯环岛" NextStep="21" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="我没有疑问了" NextStep="22" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+        <Step ID="19" ParentList="18" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="莱托姆，数百年前突然出现在克拉斯环岛上，其身形与我们以往见过的龙族都不同。我们也不知道它来自何处，即便身为十二勇士之一，也不可能踏足这片世界的每一个角" />
+                    <Msg NpcID="104" ImageID="1" Info="落。" />
+                    <Option Info="关于里克" NextStep="20" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+                    <Option Info="关于克拉斯环岛" NextStep="21" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="我没有疑问了" NextStep="22" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+        <Step ID="20" ParentList="18" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="里克……上一次听到这个名字还是神魔之战时期。【剧毒魔王】里克，是伊恩大魔王麾下五天王之一，擅长推演和用毒，据说会用毒魔法让其他势力屈服于自己，是相当难缠" />
+                    <Msg NpcID="104" ImageID="1" Info="的对手。五天王的身形在神魔之战中都已溃散，最近复活大概是因为【生命之根】被毁，好在它的力量还没有恢复到可以独自行动。我们必须加快脚步。" />
+                    <Option Info="关于莱托姆" NextStep="19" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="关于克拉斯环岛" NextStep="21" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="我没有疑问了" NextStep="22" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+        <Step ID="21" ParentList="18" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="克拉斯环岛在数百年前并非荒无人烟，这里曾有一个村落，氛围如麦田村一般祥和。但一切都在莱托姆出现的那天结束了。大火吞噬了这里的一切，王国卫队赶到时，所见皆" />
+                    <Msg NpcID="104" ImageID="1" Info="为焦土。" />
+                    <Msg NpcID="104" ImageID="1" Info="……空中还弥漫着那股魔力。【@nick】，看来你已经见过莱托姆的那个魔法了。当年见过那个魔法的卫队成员，大多永远留在这里了，能回去的十不存一。" />
+                    <Msg NpcID="104" ImageID="1" Info="……当时我若能早一点到，……也许就不会有这么……多卫队成员…………" />
+                    <Msg NpcID="104" ImageID="1" Info="…………" />
+                    <Option Info="关于莱托姆" NextStep="19" NotUpdateBuffer="Y" SkipTrigger="Y" />
+                    <Option Info="关于里克" NextStep="20" NotUpdateBuffer="Y" SkipTrigger="Y"/>
+                    <Option Info="我没有疑问了" NextStep="22" SkipTrigger="Y" />
+                </Action>
+            </Event>
+        </Step>
+        <Step ID="22" ParentList="18" ParentCost="1">
+            <Event Memo="与c多修c对话" TargetMap="22105" TargetObj="1101615" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="22105" ObjID="1101615" TaskOption="【恶龙-莱托姆】" />
+                </Trigger>
+                <Action Type="TALK">
+                    <Msg NpcID="104" ImageID="1" Info="王国会表彰你这次行动，休整一下去勇士广场找【卢西奥】。" />
+                    <Msg NpcID="104" ImageID="1" Info="莱托姆虽已被击败，但封印破除时逸散的魔力仍然影响着游龙川及其附近区域，不可放松警惕！" />
+                    <Option Info="@blank" />
+                </Action>
+            </Event>
+        </Step>
+
+    </Procedure>
+</Task>

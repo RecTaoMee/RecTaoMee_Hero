@@ -18,7 +18,7 @@
 		<node id="110127" type="NPC" res="MC_stoneTable" level="contentLevel" action="4"  />
 		<node id="110128" type="OBJECT" res="MC_AST_stoneTable_hint" level="contentLevel" />
 		<node id="110129" type="NPC" res="MC_pet3041" level="contentLevel" />
-		<node id="1101210" type="NPC" res="MC_ironDoor" level="downLevel"  />
+		<node id="1101210" type="NPC" res="MC_ironDoor" level="contentLevel"  />
 		<node id="1101211" type="OBJECT" res="MC_pet210_2" url="res/task/swf2/task_11011_2.swf" level="contentLevel" position="1780,719" link="item" action="1"  />
 	</npc>
 	<actions>
@@ -55,7 +55,7 @@
 				<![CDATA[1#汝所见的是不死族被侵蚀后的模样，但它们的执念竟如此之深......失去过往的一切于此徘徊，即使再坚韧的心也会感到孤寂啊。]]>
 			</des>
 		</proAction>
-		<proAction id="9" type="5" fightID="3549" to="i3_failedSpeak" />	
+		<proAction id="9" type="5" fightID="3549" to="failedSpeak" />	
 		<proAction npcID="1021" id="10" type="0" answer="别小看我，刚刚只是热身罢了" to="o" colorID="2">
 			<des>
 				<![CDATA[1#原来这才是他们所期望的吗......？]]>

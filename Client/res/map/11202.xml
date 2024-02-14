@@ -217,9 +217,14 @@
 			</des>
 		</proAction>
 		<proAction id="232" type="1" level="taskLevel" name="11202_1" moviepos="0,0" to=""/>
-		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$离开" to="module_AnswerExchangeModule$f14$f17$o" colorID="0$0$0$0">
+		<proAction npcID="227" id="235" type="0" answer="情人节活动挑战$答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$圣诞袜兑换$春节活动兑换$情人节活动兑换$离开" to="a249$module_AnswerExchangeModule$f14$f17$f19$a237$f23$o" colorID="2$0$0$0$0$0$0">
 			<des>
 				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
+				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
+            </des>
+		</proAction>
+		<proAction npcID="227" id="237" type="0" answer="火药兑换$提灯兑换$帕菲的刺兑换$雪花兑换$离开" to="f20$f21$f22$f24$o" colorID="0$0$0$0$0">
+			<des>
 				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
             </des>
 		</proAction>
@@ -234,6 +239,15 @@
 		<proAction id="246" type="5" fightID="3577"/>	
 		<proAction id="247" type="5" fightID="3578"/>	
 		<proAction id="248" type="5" fightID="3579"/>	
+		<proAction npcID="227" id="249" type="0" answer="情人节-执子之手$情人节-中夜相从$情人节-蓦然回首$离开" to="a251$a252$a253$o" colorID="2$2$2$0">
+			<des>
+				<![CDATA[1#htmlMode欢迎各位勇士前来参加情人节挑战活动，完成挑战可获得一定数量的@cRed玫瑰@!cRed。\n可以在我这里换取奖励。挑战难度越高，奖励越丰厚！$$]]>
+				<![CDATA[1#htmlMode<font color='#666666'>执子之手：@cRed限双人@!cRed、消耗@cRed75@!cRed精力\n中夜相从：消耗@cRed125@!cRed精力\n蓦然回首：消耗@cRed150@!cRed精力</font>]]>
+            </des>
+		</proAction>
+		<proAction id="251" type="5" fightID="3594"/>	
+		<proAction id="252" type="5" fightID="3595"/>	
+		<proAction id="253" type="5" fightID="3596"/>	
 <!--兔铃↓-->
 		<proAction npcID="318" id="13" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
 			<des>

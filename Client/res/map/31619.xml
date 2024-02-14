@@ -23,7 +23,7 @@
 				<![CDATA[1#曾经的家人......背弃了我......什么陪伴，什么不离......都随着谎言毁灭吧！]]>
 			</des>
 		</proAction>
-		<proAction id="1" type="5" fightID="3550" to="i3_failedSpeak2" />	
+		<proAction id="1" type="5" fightID="3550" to="failedSpeak2" />	
 		<proAction npcID="1021" id="2" type="0" answer="还有机会！" to="o" colorID="2">
 			<des>
 				<![CDATA[1#这个世界......拒绝了我们。]]>
@@ -46,7 +46,7 @@
 				<![CDATA[1#力量......给我力量！我要变强！软弱只会失去重要的一切啊！]]>
 			</des>
 		</proAction>
-		<proAction id="6" type="5" fightID="3551" to="i3_failedSpeak3" />	
+		<proAction id="6" type="5" fightID="3551" to="failedSpeak3" />	
 		<proAction npcID="1021" id="7" type="0" answer="一定把他们打趴下。" to="o" colorID="2">
 			<des>
 				<![CDATA[1#......吾也会失去一切吗。]]>
