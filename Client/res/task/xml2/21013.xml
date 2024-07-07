@@ -24,7 +24,7 @@
 		
   		<Step ID="3" ParentList="2" ParentCost="1" >
 			<Condition>
-				<Skill ID="1003" Times="5" />
+				<Skill ID="1002" Times="5" />
 			</Condition>
     		<Event ConditionType="IN" Memo="达成目标，快回去找c温蒂老师c吧！" TargetMap="11217" TargetObj="22" TargetName="和t温蒂t对话">
   				<Trigger>

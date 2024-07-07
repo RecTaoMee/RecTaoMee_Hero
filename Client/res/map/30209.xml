@@ -23,12 +23,12 @@
 			</des>
 		</proAction>
 		<proAction id="3" type="5" fightID="2510" />
-		<proAction npcID="757" id="4" type="0" answer="让我准备一下！$我要净化你" to="o$a3" colorID="0$1" >
+		<proAction npcID="757" id="4" type="0" answer="小甜的提示$让我准备一下！$我要净化你" to="a20$o$a3" colorID="0$0$1" >
 			<des>
 				<![CDATA[1#一会你就知道为什么喵斯熊的屁股那么大了！]]>
 			</des>
 		</proAction>
-		<proAction npcID="757" id="5" type="0" answer="让我准备一下！$我要挑战你" to="o$a3" colorID="0$1" >
+		<proAction npcID="757" id="5" type="0" answer="小甜的提示$让我准备一下！$我要挑战你" to="a21$o$a3" colorID="0$0$1" >
 			<des>
 				<![CDATA[1#与我一战，你的实力和战斗技巧可以获得更大的提升。\n希望所有的精灵王可以获得净化，解救精灵世界……]]>
 			</des>
@@ -100,5 +100,17 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
+
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a4" colorID="0">
+			<des>
+				<![CDATA[1#htmlModehtmlMode小甜偷偷告诉你，【净化之路第8站】是昆虫种族的草莓蜂后与其带领的草莓蜂，开启@cRed飞行变身卡@!cRed，携带@cRed风火晶石@!cRed，挑战将更轻松哦。（飞行种族克制昆虫种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        <proAction npcID="400" id="21" type="0" answer="知道了" to="a5" colorID="0">
+			<des>
+				<![CDATA[1#htmlModehtmlMode小甜偷偷告诉你，【净化之路第8站】是昆虫种族的草莓蜂后与其带领的草莓蜂，开启@cRed飞行变身卡@!cRed，携带@cRed风火晶石@!cRed，挑战将更轻松哦。（飞行种族克制昆虫种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        
 	</actions>
 </map>

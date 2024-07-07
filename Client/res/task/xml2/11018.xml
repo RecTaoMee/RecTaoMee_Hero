@@ -1,0 +1,21 @@
+<!--地狱影犬的咆哮  -->
+<Task ID="11018" Memo="王国已经探明劳动节期间黑化精灵暴乱的真相，先去找c多修c问问吧！c注：（此任务仅作为活动入口,无法完成）c" TargetMap="11202" TargetObj="104" TargetName="与t多修t对话">
+    <Procedure>
+
+        <Step ID="1" ParentList="0" ParentCost="0">
+            <Event Memo="王国已经探明劳动节期间黑化精灵暴乱的真相，先去找c多修c问问吧！c注：（此任务仅作为活动入口,无法完成）c" TargetMap="11202" TargetObj="104" TargetName="与t多修t对话">
+                <Trigger>
+                    <Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【地狱影犬的咆哮】" />
+                </Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="104" ImageID="1" Info="【@nick】，你来了。王国已经探明劳动节期间黑化精灵暴乱的真相：由于一种黑化程度极高的犬科精灵不分敌我的攻击，大量精灵放弃原有的领地沿途逃窜。皮克斯将这种犬科精灵命名为“地狱影犬”。 " />
+					<Msg NpcID="104" ImageID="1" Info="王国卫队正在对地狱影犬进行镇压，未来勇士可以通过我直接传送到站场或者寻找被袭击的普通精灵来协助王国卫队。 " />
+					<Option Info="这就出发！" />
+					<Option Info="我有事先走了" NextStep="1" />
+				</Action>            
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="31612, 1" NextStep="1" />			
+            </Event>
+        </Step>
+
+    </Procedure>
+</Task>

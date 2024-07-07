@@ -33,6 +33,7 @@
       <node id="21" type="OBJECT" res="MC_11013_6" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item2" action="" taskShowSteps="11013_13" />
       <node id="22" type="OBJECT" res="MC_11013_7" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item3" action="" taskShowSteps="11013_14|15" />
       <node id="23" type="OBJECT" res="MC_11013_8" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item4" action="" taskShowSteps="11013_16" />
+      <node id="24" type="NPC" res="MC_pet_3070" url="res/task/swf2/task_11018_1.swf" level="contentLevel" position="399,1730" link="item" action="43" taskShowSteps="11018_1|2" />
 
    </npc>
 
@@ -212,6 +213,7 @@
       <proAction id="35" type="5" fightID="3560" />
       <proAction id="36" type="5" fightID="3561" />
       <proAction id="37" type="5" fightID="3562" />
+      <proAction id="44" type="5" fightID="3597" />
 
       <proAction npcID="402" id="38" type="0" answer="@blank" to="i2_MapItemSubmitModule_150001|1|1|wateringStatue" colorID="2">
          <des>
@@ -235,6 +237,18 @@
             <![CDATA[9#用“吉普豆花”的形态继续前进，“诱捕”狐型精灵。]]>
          </des>
       </proAction>
+      <proAction npcID="1063" id="43" type="0" answer="小甜的提示$来战！$战术性撤退！" to="a45$a44$o" colorID="1$1$0">
+         <des>
+            <![CDATA[1#你好像……很美味……]]>
+         </des>
+      </proAction>
+      <proAction npcID="400" id="45" type="0" answer="知道了" to="a43" colorID="0">
+         <des>
+               <![CDATA[1#htmlMode影犬有潜入虚空的特殊能力，未来勇士只有集中火力，击溃身形显现的影犬，才能将其击败，根据小甜的观察，影犬会按照炼狱影犬-深渊影犬-地狱影犬的顺序依次显现身形。$$]]>
+               <![CDATA[1#htmlMode开启@cRed人形变身卡@!cRed携带@cRed风火晶石@!cRed更容易击败影犬哦。]]>
+         </des>
+      </proAction>
+
 
    </actions>
 </map>

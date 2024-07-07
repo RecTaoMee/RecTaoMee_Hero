@@ -1,0 +1,60 @@
+<Task ID="10262" Memo="c休一c有事情找你，去c忍者协会c看看吧~" TargetMap="11306">
+   	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c休一c有事情找你，去c忍者协会c看看吧~" TargetMap="11306" TargetObj="29" TargetName="与t休一t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11306" ObjID="29" TaskOption="【忍术的试炼Ⅷ】" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+            <Condition>
+				<Battle ID="3608" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="c休一c有事情找你，去c忍者协会c看看吧~" TargetMap="11306" TargetObj="29" TargetName="与t休一t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11306" ObjID="29" TaskOption="【忍术的试炼Ⅷ】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="29" ImageID="1" Info="这是你的奖励，希望下次见到你时，你能找到自己的忍道。" />
+					<Option Info="@blank"/>					
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="c休一c有事情找你，去c忍者协会c看看吧~" TargetMap="11306" TargetObj="29" TargetName="与t休一t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11306" ObjID="29" TaskOption="【忍术的试炼Ⅷ】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="29" ImageID="1" Info="忍道就是忍者的信念，坚定的信念是变强的动力！" />
+					<Msg NpcID="29" ImageID="1" Info="既然你还没找到自己的忍道，请接受我的挑战，在战斗中寻找自己的忍道吧！" />
+					<Option Info="小甜的提示" NextStep="4" SkipTrigger="Y"/>					
+					<Option Info="来战"/>					
+					<Option Info="准备一下" NextStep="2"  />					
+				</Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3608" />			
+    		</Event>
+		</Step>
+
+  		<Step ID="4" ParentList="2" ParentCost="1" >
+    			<Event Memo="c休一c有事情找你，去c忍者协会c看看吧~" TargetMap="11306" TargetObj="29" TargetName="与t休一t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11306" ObjID="29" TaskOption="【忍术的试炼Ⅷ】"  />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="htmlMode小甜偷偷告诉你，导师大人试炼的试题是【对超高闪避敌方单位的处理】，敌方幻灵蝶闪避极高，几乎只有带有必中效果才能造成伤害，开启@cRed飞行变身卡@!cRed，携带@cRed风地晶石@!cRed。" />
+					<Msg NpcID="400" ImageID="1" Info="通过合击（不少于2个的己方单位对同一目标使用普攻，且这些己方单位需要出手顺序连贯）、双星箭（第二箭必中）、魔法技能（必中）就可以轻松过关啦~~~" />
+					<Option Info="@blank" NextStep="2"  />					
+				</Action>
+    			</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+		<Event Memo="缓冲中..." TargetMap="11306" TargetObj="29" TargetName="缓冲中...">
+				<Action Type="COMMAND" Command="NOTHING"  />       
+	    	</Event>
+	    </Step>
+    		
+    	
+	</Procedure>
+</Task>

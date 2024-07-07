@@ -1,0 +1,56 @@
+<!-- 净化之路Ⅸ -->
+<Task ID="263" Memo="关于c净化之路第9站c的事，\n去问问nc村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" > 
+   	<Procedure> 
+  		<Step ID="9" ParentList="0" ParentCost="0" >
+    		<Event Memo="关于c净化之路第9站c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >
+    			<Action Type="COMMAND" Command="NOTHING" />																						
+    		</Event>
+		</Step>
+  		<Step ID="1" ParentList="9" ParentCost="1" >
+    		<Event Memo="关于c净化之路第9站c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >  						
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="我要挑战【净化之路第9站】！" />
+				</Trigger>
+ 				<Action Type="TALK">
+					<Msg NpcID="5" ImageID="1" Info="哦嚯？\n【净化之路】是“穿越时空”的试炼，\n只有“时之女神”大人能指引你前往。" />	
+					<Msg NpcID="5" ImageID="1" Info="妈妈咪呀噜噜西亚——" />						 
+					<Option Info="(⊙o⊙）？" />
+				</Action>	
+    			<Action Type="MOVIE" Url="task_13_2.swf" MapLevel="TASK" Pos="0,0" SkipTrigger="Y" />	 
+    		</Event>
+		</Step>			  <!-- 节点2↓ -->
+  		<Step ID="4" ParentList="1" ParentCost="1" >
+    		<Event Memo="关于c净化之路第9站c的事，\n去问问c村长c爷爷吧！" TargetMap="11103" TargetObj="5" TargetName="和t村长t对话" >  						
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11103" ObjID="5" TaskOption="我要挑战【净化之路第9站】！" />
+				</Trigger>		   										 
+ 				<Action Type="TALK">					 
+					<Msg NpcID="2" ImageID="10" Info="尊敬的【奇普力】——\n你召唤我——？ " />	
+					<Msg NpcID="5" ImageID="1" Info="请允许【@nick】挑战【净化之路第9站】。" />
+					<Msg NpcID="2" ImageID="10" Info="我明白了……\n那么，准备好启程了吗？" />										 
+					<Option Info="准备好了！" />
+				</Action>	 
+    			<Action Type="MOVIE" Url="task_13_1.swf" MapLevel="TASK" Pos="0,0" />
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="30207, 1" SkipTrigger="Y" />			
+    		</Event>
+		</Step>		 
+  		<Step ID="2" ParentList="4" ParentCost="1" >                                   
+ 			<Condition>
+				<Battle ID="2508" Count="1" />
+			</Condition>				                      
+    		<Event ConditionType="IN" Memo="c净化之路第9站c挑战成功↖(^ω^)↗，\n快去告诉c女神c大人吧！" TargetMap="30207" TargetObj="701" TargetName="和t女神t对话" >	
+  				<!-- <Trigger>
+					<Item Type="NPC_OPTION" MapID="30207" ObjID="701" TaskOption="战胜法尔王了！" />
+				</Trigger> -->
+                <Action Type="COMMAND" Command="NOTHING" />												
+    		</Event>                                  
+    		<Event ConditionType="OUT" Memo="c净化之路第9站c挑战开始！\n快打败c法尔王c吧！" TargetMap="30207" TargetObj="701" TargetName="打败t法尔王t" >  						
+  				<Trigger>
+					<Item Type="ENTER_MAP" MapID="30207" />
+				</Trigger>
+                <Action Type="COMMAND" Command="NOTHING" />												
+    		</Event>		  
+		</Step>			   		   	    		
+</Procedure>
+</Task>
+

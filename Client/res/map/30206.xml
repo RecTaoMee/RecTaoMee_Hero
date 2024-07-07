@@ -14,12 +14,12 @@
 	</npc>	
 	<actions>
 		<!--1是第一次打的boss，2是再次打BOSS-->
-		<proAction npcID="309" id="1" type="0" answer="……？" to="a3" >
+		<proAction npcID="309" id="1" type="0" answer="小甜的提示$……？" to="a20$a3" >
 			<des>
 				<![CDATA[2#\n是谁——俘虏了我的战士们——！库噜战士们——！\n让吵醒我的人感受死者的气息——！]]>
 			</des>
 		</proAction>
-		<proAction npcID="309" id="2" type="0" answer="啊！！！" to="a3" >
+		<proAction npcID="309" id="2" type="0" answer="小甜的提示$啊！！！" to="a20$a3" >
 			<des>
 				<![CDATA[1#\n我的骨头……在咯咯响……库噜战士们——！队列——战斗吧——！]]>
 			</des>
@@ -82,6 +82,18 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
+
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第6站】是不死种族的库噜王与其带领的库噜小队长，开启@cRed植物变身卡@!cRed，携带@cRed地水晶石@!cRed，挑战将更轻松哦。（植物种族克制不死种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        <proAction npcID="400" id="21" type="0" answer="知道了" to="a2" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第6站】是不死种族的库噜王与其带领的库噜小队长，开启@cRed植物变身卡@!cRed，携带@cRed地水晶石@!cRed，挑战将更轻松哦。（植物种族克制不死种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+
 		
 		
 		

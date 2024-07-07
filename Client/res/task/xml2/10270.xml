@@ -1,0 +1,59 @@
+<Task ID="10270" Memo="c温蒂c有事情找你，去c女神大圣堂c看看吧~" TargetMap="11217">
+   	<Procedure>
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="c温蒂c有事情找你，去c女神大圣堂c看看吧~" TargetMap="11217" TargetObj="22" TargetName="与t温蒂t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="【信仰的试炼Ⅸ】" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		<Step ID="2" ParentList="1" ParentCost="1" >
+            <Condition>
+				<Battle ID="3612" Count="1" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="c温蒂c有事情找你，去c女神大圣堂c看看吧~" TargetMap="11217" TargetObj="22" TargetName="与t温蒂t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="【信仰的试炼Ⅸ】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="22" ImageID="1" Info="你做的很不错!看来你平日修炼非常刻苦。这是你的奖励，愿女神的祝福与你同在。" />
+					<Option Info="@blank"/>					
+				</Action>
+    		</Event>
+    		<Event ConditionType="OUT" Memo="c温蒂c有事情找你，去c女神大圣堂c看看吧~" TargetMap="11217" TargetObj="22" TargetName="与t温蒂t对话">
+				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="【信仰的试炼Ⅸ】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="22" ImageID="1" Info="传教士最重要的就是在帮助队友的同时要保护好自己。" />
+					<Msg NpcID="22" ImageID="1" Info="那么，请接受我的挑战，让我看看你是否真正领会了这一句话。" />
+					<Option Info="小甜的提示" NextStep="4" SkipTrigger="Y"/>					
+					<Option Info="来战"/>					
+					<Option Info="准备一下" NextStep="2"  />					
+				</Action>
+                <Action Type="COMMAND" Command="BATTLE" Params="3612" />			
+    		</Event>
+		</Step>
+
+  		<Step ID="4" ParentList="2" ParentCost="1" >
+    			<Event Memo="c温蒂c有事情找你，去c女神大圣堂c看看吧~" TargetMap="11217" TargetObj="22" TargetName="与t温蒂t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11217" ObjID="22" TaskOption="【信仰的试炼Ⅸ】"  />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="htmlMode小甜偷偷告诉你，温蒂和瑞贝卡老师会不断使用状态技能，开启@cRed不死变身卡@!cRed，携带@cRed风地晶石@!cRed，小摩尔使用传教士的职业技能【冰清之阵】、【冰清领域】或【冰清结界】就可以轻松过关啦~~~" />
+					<Option Info="@blank" NextStep="2"  />					
+				</Action>
+    			</Event>
+		</Step>
+
+		<Step ID="3" ParentList="2" ParentCost="1" >
+		<Event Memo="缓冲中..." TargetMap="11217" TargetObj="22" TargetName="缓冲中...">
+				<Action Type="COMMAND" Command="NOTHING"  />       
+	    	</Event>
+	    </Step>
+    		
+    	
+	</Procedure>
+</Task>

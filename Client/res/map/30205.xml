@@ -12,12 +12,12 @@
 	</object>	
 	<actions>
 		<!--1是第一次打的boss，2是再次打BOSS-->
-		<proAction npcID="327" id="1" type="0" answer="……？" to="a16" >
+		<proAction npcID="327" id="1" type="0" answer="小甜的提示$……？" to="a20$a16" >
 			<des>
 				<![CDATA[1#\n…沙——丁——鱼——！]]>
 			</des>
 		</proAction>
-		<proAction npcID="327" id="2" type="0" answer="啊！！！" to="a16" >
+		<proAction npcID="327" id="2" type="0" answer="小甜的提示$啊！！！" to="a21$a16" >
 			<des>
 				<![CDATA[1#\n触手触手触手————！！]]>
 			</des>
@@ -92,6 +92,21 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
+
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第7站】是野兽种族的章界王与其带领的马沙虾，开启@cRed人形变身卡@!cRed（小摩尔的种族就是人形哦），携带@cRed地水晶石@!cRed，挑战将更轻松哦。（人形种族克制野兽种族，存在30%的伤害提高与受伤$$]]>
+				<![CDATA[1#htmlMode降低效果！！！）]]>
+			</des>
+		</proAction>
+        <proAction npcID="400" id="21" type="0" answer="知道了" to="a2" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第7站】是野兽种族的章界王与其带领的马沙虾，开启@cRed人形变身卡@!cRed（小摩尔的种族就是人形哦），携带@cRed地水晶石@!cRed，挑战将更轻松哦。（人形种族克制野兽种族，存在30%的伤害提高与受伤$$]]>
+				<![CDATA[1#htmlMode降低效果！！！）]]>
+			</des>
+		</proAction>
+
+        
 	</actions>
 	<speak>
 		<node id="1">

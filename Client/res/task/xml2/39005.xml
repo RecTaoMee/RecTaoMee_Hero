@@ -38,13 +38,27 @@ taskitem.xml      #res\config    添加       				ok
 				<Action Type="TALK">
 					<Msg NpcID="400" ImageID="1" Info="敌人的实力异常强大，我受到女神的引领，来帮助未来的勇士…千万要小心应对！\n（小甜将会为战斗分担困难 \n[低级难度］：推荐单人50级+挑战 " />
 					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
-					<Option Info="低级难度"  />					
+					<Option Info="小甜的提示" NextStep="14" SkipTrigger="Y" />					
+					<Option Info="我再考虑一下" NextStep="2" />					
+					<Option Info="低级难度" NextStep="3" />					
 					<Option Info="中级难度" NextStep="6" />					
 					<Option Info="高级难度" NextStep="10"  CheckRand="100_1"/>					
 				</Action>
     		</Event>											
 	    </Step>		
 		
+		<Step ID="14" ParentList="2" ParentCost="1" >
+			<Event Memo="下水道遭到怪盗集团的入侵了？怪盗躲在罐子里伺机破坏，只有砸破罐子才有机会抓住，快去用砸罐子的方法拯救下水道吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >  	
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="【下水道的入侵者Ⅰ】" />
+				</Trigger>	
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="htmlMode怪盗戈戈拉率领怪盗魔力潘、怪盗迪迪拉入侵下水道，怪盗魔力潘拥有特性@cRed【咒怨】@!cRed。推荐使用@cRed不死变身卡@!cRed，携带@cRed风地晶石@!cRed，优先AOE击倒怪盗魔力潘，而后依次单体集火怪盗迪迪拉、怪盗戈戈拉，传教士/圣言使" />
+					<Msg NpcID="400" ImageID="1" Info="优先全体解除状态。" />
+					<Option Info="@blank" NextStep="2" />					
+				</Action>
+			</Event>
+		</Step>
 		<!-- 低级难度 -->
 
  
@@ -87,7 +101,7 @@ taskitem.xml      #res\config    添加       				ok
 		
 		
   		<Step ID="5" ParentList="4" ParentCost="1"  >
-    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" ObjID="207" TargetName="和t守卫士兵•Ht对话" >
+    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >
   				<Trigger>	
  					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="净化完毕" />	 <!--  净化完毕	 -->			
 				</Trigger>
@@ -174,7 +188,7 @@ taskitem.xml      #res\config    添加       				ok
 
 		
   		<Step ID="9" ParentList="8" ParentCost="1"  >
-    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" ObjID="207" TargetName="和t守卫士兵•Ht对话" >
+    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >
   				<Trigger>	
  					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="净化完毕" />	 <!--  净化完毕	 -->			
 				</Trigger>
@@ -264,7 +278,7 @@ taskitem.xml      #res\config    添加       				ok
 		
 		
   		<Step ID="13" ParentList="12" ParentCost="1"  >
-    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" ObjID="207" TargetName="和t守卫士兵•Ht对话" >
+    		<Event Memo="清理完毕，回到【下水道入口】找【守卫士兵•H】领取奖励吧！" TargetMap="11220" TargetObj="207" TargetName="和t守卫士兵•Ht对话" >
   				<Trigger>	
  					<Item Type="NPC_OPTION" MapID="11220" ObjID="207" TaskOption="净化完毕" />	 <!--  净化完毕	 -->			
 				</Trigger>

@@ -11,7 +11,7 @@
 	</object>	
 	<actions>
 		<!--1是强的boss，2是吃荷花变弱的boss，3是再次打BOSS-->
-		<proAction npcID="753" id="1" type="0" answer="月光湖？" to="a2" >
+		<proAction npcID="753" id="1" type="0" answer="小甜的提示$月光湖？" to="a20$a2" >
 			<des>
 				<![CDATA[2#…这是哪里？……月光湖……]]>
 			</des>
@@ -94,6 +94,12 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第4站】是特殊种族的沃特尔王与其带领的沃特尔，开启@cRed昆虫变身卡@!cRed，携带@cRed地之晶石@!cRed，挑战将更轻松哦。（昆虫种族克制特殊种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+
 	</actions>
 	<speak>
 		<node id="1">

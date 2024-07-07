@@ -3016,140 +3016,211 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>
 	</Task>	
 
-	<Task ID="21001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·追击" SkillLimit="102 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21001" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·追击" SkillLimit="102 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="102" Count="5"/>	
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="102" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="102" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>			
 	
-	<Task ID="21002" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·毁伤" SkillLimit="108 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21002" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·毁伤" SkillLimit="108 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="108" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="108" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="108" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21003" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·狂击" SkillLimit="106 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21003" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·狂击" SkillLimit="106 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="106" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="106" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="106" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
+
 	
-	<Task ID="21004" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·多重箭" SkillLimit="109 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21004" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·多重箭" SkillLimit="109 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="109" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="109" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="109" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21005" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·凝神箭" SkillLimit="111 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21005" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·凝神箭" SkillLimit="111 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="111" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="111" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="111" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21006" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·双星箭" SkillLimit="110 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21006" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·双星箭" SkillLimit="110 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="110" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="110" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="110" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21007" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·流火术" SkillLimit="2003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21007" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·流火术" SkillLimit="2003 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="2003" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="2003" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="2003" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21008" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·霜冻术" SkillLimit="2002 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21008" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·霜冻术" SkillLimit="2002 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="2002" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="2002" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="2002" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21009" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·陨石术" SkillLimit="2001 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21009" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·陨石术" SkillLimit="2001 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="2001" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="2001" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="2001" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21010" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·旋风术" SkillLimit="2004 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21010" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·旋风术" SkillLimit="2004 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="2004" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="2004" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="2004" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21011" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·救赎" SkillLimit="1008 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21011" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·救赎" SkillLimit="1008 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="1008" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="1008" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="1008" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>	
 	
-	<Task ID="21012" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈领域" SkillLimit="1003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21012" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈领域" SkillLimit="1003 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="1003" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="1003" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="1003" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21013" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈之阵" SkillLimit="1003 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21013" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·治愈之阵" SkillLimit="1002 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="4" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="1002" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="1002" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="1002" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>		
 	
-	<Task ID="21014" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·瞬杀" SkillLimit="116 1 4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21014" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·瞬杀" SkillLimit="116 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="116" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="116" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="116" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>	
 	
-	<Task ID="21015" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·飞叶剑" SkillLimit="114 1 4"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+	<Task ID="21015" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·飞叶剑" SkillLimit="114 1 8"  ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
 		<Node ID="1" Step="3" IsEnd="1">
 			<SkillTarget SkillID="114" Count="5"/>
 			<OutItem ID="1">
-				<Item OutType="1" ItemId="50004" SubID="114" Count="500"/>
+				<Item OutType="1" ItemId="50004" SubID="114" Count="20000"/>
 			</OutItem>
 		</Node>
 	</Task>			
+
+	<Task ID="21016" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·斗气" SkillLimit="107 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="107" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="107" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>		
+
+	<Task ID="21017" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·先制" SkillLimit="101 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="1" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="101" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="101" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>		
+
+	<Task ID="21018" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·狂击" SkillLimit="106 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="106" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="106" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>		
+	<Task ID="21019" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·分裂箭" SkillLimit="118 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="2" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="118" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="118" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>		
+
+	<Task ID="21020" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·生命汲取" SkillLimit="1801 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="3" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="1801" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="1801" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>		
+
+	<Task ID="21021" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·狂击" SkillLimit="106 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="106" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="106" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="21022" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·木叶遁" SkillLimit="115 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="115" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="115" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>	
+	<Task ID="21023" Kind="3" DefaultTrace="1" BreakTrace="1" Name="技能训练·三叶矢" SkillLimit="113 1 8" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="1" RepeatCnt="1" Level="1" Job="5" JobLevel="0" Star="1" RecomLevel="26" >
+		<Node ID="1" Step="3" IsEnd="1">
+			<SkillTarget SkillID="113" Count="5"/>
+			<OutItem ID="1">
+				<Item OutType="1" ItemId="50004" SubID="113" Count="20000"/>
+			</OutItem>
+		</Node>
+	</Task>	
+
 <!--				
 	<Task ID="30001" Name="关于“海德”问问皮克司吧！" Kind="4" ParentCost="1" ParentList="15" AcceptStep="1" RepeatType="0" RepeatCnt="0" Level="1" Job="-2" JobLevel="0" Star="1" Order="2" RecomLevel="1" >
 		<Node ID="1" Step="2" Memo="关于c海德c问问皮克司吧！">
@@ -4804,9 +4875,8 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350017" Count="5" />
 				<Item OutType="2" ItemId="360012" Count="1" />
-				<Item OutType="2" ItemId="350013" Count="6" />
-				<Item OutType="2" ItemId="350014" Count="5" />
-				<Item OutType="2" ItemId="351015" Count="1" />	
+				<Item OutType="2" ItemId="350013" Count="8" />
+				<Item OutType="2" ItemId="350014" Count="6" />
 				<!-- <Item OutType="2" ItemId="290034" Count="10" /> -->
 			</OutItem>
 		</Node>
@@ -4839,8 +4909,8 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		<Node ID="4"  Step="62" IsEnd="1" Memo="HARD" Count="100 1 2" CheckGrp="3533" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350012" Count="1" />	
-				<Item OutType="2" ItemId="350013" Count="5" />	
-				<Item OutType="2" ItemId="350014" Count="6" />	
+				<Item OutType="2" ItemId="350013" Count="6" />	
+				<Item OutType="2" ItemId="350014" Count="8" />	
 				<Item OutType="2" ItemId="351015" Count="2" />	
 				<!-- <Item OutType="2" ItemId="290034" Count="10" /> -->
 			</OutItem>
@@ -4876,8 +4946,8 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="350015" Count="1" />	
 				<Item OutType="2" ItemId="220038" Count="6" />	
-				<Item OutType="2" ItemId="350013" Count="5" />
-				<Item OutType="2" ItemId="350014" Count="5" />
+				<Item OutType="2" ItemId="350013" Count="6" />
+				<Item OutType="2" ItemId="350014" Count="6" />
 				<Item OutType="2" ItemId="351015" Count="1" />
 				<!-- <Item OutType="2" ItemId="290034" Count="10" /> -->
 			</OutItem>
@@ -4923,11 +4993,10 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		</Node>		
 		<Node ID="5" Step="62" Memo="HARD" IsEnd="1" Count="100 1 2" CheckGrp="3541 3542" >
 			<OutItem ID="1">
-				<Item OutType="2" ItemId="300023" Count="1" />
+				<Item OutType="2" ItemId="220007" Count="5" />
 				<Item OutType="2" ItemId="300200" Count="45" />
 				<Item OutType="2" ItemId="350013" Count="5" />
 				<Item OutType="2" ItemId="350014" Count="6" />
-				<Item OutType="2" ItemId="351015" Count="1" />
             <!-- <Item OutType="2" ItemId="290034" Count="10" /> -->
 			</OutItem>
 		</Node>		
@@ -4963,9 +5032,8 @@ EndTask：环任务的结束任务，不计算在完成的子任务数目内，�
 		<Node ID="4" Step="62" Memo="HARD" IsEnd="1" Count="100 1 2" CheckGrp="3545" >
 			<OutItem ID="1">
 				<Item OutType="2" ItemId="360040" Count="12" />
-				<Item OutType="2" ItemId="350013" Count="5" />
-				<Item OutType="2" ItemId="350014" Count="4" />
-				<Item OutType="2" ItemId="351015" Count="1" />
+				<Item OutType="2" ItemId="350013" Count="6" />
+				<Item OutType="2" ItemId="350014" Count="5" />
 				<Item OutType="3" ItemId="115" Count="1" />
 				<!-- <Item OutType="2" ItemId="290034" Count="10" /> -->
 			</OutItem>

@@ -1,0 +1,49 @@
+<Task ID="21016" Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="斗气！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c杰森c老师吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="斗气！" />
+				</Trigger>
+				<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="斗气可以同时攻击多个敌人，是我们剑士唯一的远程群攻技能！" />
+						<Msg NpcID="26" ImageID="2" Info="看上去，你似乎不太擅长使用这个技能呀？这样吧！你在战斗中使用【5次斗气】再回来找我，我会传授一些我的心得给你！" />
+						<Option Info="好的！" />
+					</Action>
+    		</Event>
+		</Step>
+		
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Skill ID="102" Times="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快回去找杰森老师吧！" TargetMap="11305" TargetObj="26" TargetName="和t杰森t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="达成目标！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="干的不错，我就传授一些心得给你帮助你更好的掌握这个技能吧！" />
+						<Option Info="谢谢杰森老师！" />
+					</Action>
+				</Event>
+				<Event ConditionType="OUT" Memo="按照c杰森老师c的要求在战斗中c使用5次斗气c吧！" TargetMap="" TargetObj="" TargetName="使用斗气">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11305" ObjID="26" TaskOption="小提示！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="26" ImageID="2" Info="当以后遇到一群敌人时，斗气就可以发挥它的威力了！" />
+						<Option Info="明白了！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>

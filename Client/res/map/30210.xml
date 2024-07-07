@@ -10,11 +10,18 @@
 		<node id="381" type="NPC" res="MC_npc_381" level="contentLevel" action="1" />
 	</npc>
 	<actions>
-		<proAction npcID="997" id="1" type="0" answer="切…你等着$折断你的针" to="o$a2" colorID="0$1" >
+		<proAction npcID="997" id="1" type="0" answer="小甜的提示$切…你等着$折断你的针" to="a20$o$a2" colorID="0$0$1" >
 			<des>
 				<![CDATA[1#基姆大人送我的这只针真漂亮！来，让我蛰一下吧，一点都不疼的。^_^]]>
 			</des>
 		</proAction>
 		<proAction id="2" type="5" fightID="2511" />
+
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第10站】是昆虫种族的剧毒蜂王与其带领的草莓蜂·改，开启@cRed飞行变身卡@!cRed，携带@cRed地水晶石@!cRed，挑战将更轻松哦。（飞行种族克制昆虫种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        
 	</actions>
 </map>

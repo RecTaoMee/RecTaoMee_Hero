@@ -13,12 +13,12 @@
 	</object>	
 	<actions>
 		<!--1是强的boss，2是吃荷花变弱的boss，3是再次打BOSS-->
-		<proAction npcID="310" id="1" type="0" answer="来吧，我不怕你！$再想想办法！" to="a16$o" >
+		<proAction npcID="310" id="1" type="0" answer="小甜的提示$来吧，我不怕你！$再想想办法！" to="a20$a16$o" >
 			<des>
 				<![CDATA[1#我是这个池塘中的霸王，咕咕咔！]]>
 			</des>
 		</proAction>
-		<proAction npcID="310" id="2" type="0" answer="正是现在！$等会再来收拾你！" to="a17$o" >
+		<proAction npcID="310" id="2" type="0" answer="小甜的提示$正是现在！$等会再来收拾你！" to="a21$a17$o" >
 			<des>
 				<![CDATA[1#可恶，离开了池塘身体变的僵硬了……]]>
 			</des>
@@ -97,6 +97,20 @@
 				<![CDATA[1#等级达到【8级】的摩尔，可以来我这里更方便的参加组队呢！~快去努力吧！]]>
 			</des>
 		</proAction>
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第5站】是金属种族的巨石蟹与其带领的钢姆，开启@cRed特殊变身卡@!cRed，携带@cRed风火晶石@!cRed，挑战将更轻松哦。（处于水中的巨石蟹十分强大，点击岸边的荷花可以诱导巨石蟹上岸，大大降低巨石蟹的战斗力）（特殊种族克制金属种族，存在30%的伤害提高与受伤降低效果！！！）$$]]>
+				<![CDATA[1#的战斗力）（特殊种族克制金属种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        <proAction npcID="400" id="21" type="0" answer="知道了" to="a2" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第5站】是金属种族的巨石蟹与其带领的钢姆，开启@cRed特殊变身卡@!cRed，携带@cRed风火晶石@!cRed，挑战将更轻松哦。（处于水中的巨石蟹十分强大，点击岸边的荷花可以诱导巨石蟹上岸，大大降低巨石蟹的战斗力）（特殊种族克制金属种族，存在30%的伤害提高与受伤降低效果！！！）$$]]>
+				<![CDATA[1#的战斗力）（特殊种族克制金属种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+
+        
 	</actions>
 	<speak>
 		<node id="1">

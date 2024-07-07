@@ -31,7 +31,7 @@
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "|" 分开-->
 		<node id="13" type="NPC" res="MC_npc_13" action="1"/>
 		<node id="14" type="NPC" res="MC_npc_14" action="0$4$5$8"/>
-		<node id="302" type="NPC"  res="MC_npc_302" action="9" mouseEnabled1="0" /> <!--暂时关闭 预言球摇奖 g1 -->
+		<node id="302" type="NPC"  res="MC_npc_302" action="9"  /> <!-- 预言球摇奖 g1 -->
 		<node id="350" type="NPC" res="MC_npc_350" action=""  taskShowSteps="35000_22|222|6" />		
 	</npc>
 	<actions>

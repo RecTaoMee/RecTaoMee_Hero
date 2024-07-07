@@ -49,7 +49,7 @@
 				<![CDATA[1#可恶的未来勇士，先击败我的左右手（月饼王）之后再来与我一战吧！]]>
 			</des>
 		</proAction>
-		<proAction npcID="724" id="9" type="0" answer="休要嚣张，来战！$我先准备一下" to="a10$o" colorID="0$0">
+		<proAction npcID="724" id="9" type="0" answer="小甜的提示$休要嚣张，来战！$我先准备一下" to="a13$a10$o" colorID="0$0">
 			<des>
 				<![CDATA[1#那个擅闯进来的【雪绒草】就在我的手中，有本事就击败我啊！哇哈哈哈！]]>
 			</des>
@@ -64,6 +64,12 @@
 		<proAction npcID="102" id="12" type="0" answer="请【铃】大人也注意安全！" to="o" colorID="0">
 			<des>
 				<![CDATA[1#刚才一定累坏了吧，终于来到月宫后殿了，那令人讨厌的“邪风月轮”就在这里，先去打败他的左右手（月饼王）然后击败它吧！我先潜行去救“雪绒草”！]]>
+			</des>
+		</proAction>		
+		<proAction npcID="400" id="13" type="0" answer="@blank" to="a9" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode邪风月轮率领月饼王、侍卫月饼、宫女月饼在月宫后殿肆虐，宫女月饼拥有特性@cRed【咒怨】@!cRed，邪风月轮防御极高，推荐对物理输出使用[弱点透析]进行辅助。推荐使用@cRed昆虫变身卡@!cRed，携带@cRed水火晶石@!cRed，依次单体集火宫女月$$]]>
+				<![CDATA[1#htmlMode饼（侍卫月饼）、月饼王、邪风月轮，传教士/圣言使优先全体解除状态。]]>
 			</des>
 		</proAction>		
 		

@@ -8,8 +8,18 @@
 	<object>
 		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="contentLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>		
-	</object>
+    </object>
 	<npc>		
 		<node id="362" type="NPC" res="MC_npc_362" action=""  taskShowSteps="35007_5|6|7|8" />				
+        <node id="3" type="NPC" res="MC_pet_10" url="res/task/swf2/task_11019_1.swf" level="contentLevel" position="-150,-350" link="item" action="5" taskShowSteps="11019_1" />
 	</npc>		
+    <actions>
+        <proAction id="4" type="5" fightID="3600" />
+      <proAction npcID="816" id="5" type="0" answer="来战！$战术性撤退！" to="a4$o" colorID="1$0">
+         <des>
+            <![CDATA[1#……]]>
+         </des>
+      </proAction>
+    </actions>
+
 </map>

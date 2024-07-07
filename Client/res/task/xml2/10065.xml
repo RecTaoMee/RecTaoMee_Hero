@@ -173,7 +173,7 @@
 				     <Item Type="NPC_OPTION" MapID="11307" ObjID="24" TaskOption="答对啦!" />
 				</Trigger>
 					<Action Type="TALK">
-						<Msg NpcID="24" ImageID="1" Info="完美的答案。\n在战斗中属性【克制】对方，\n可以得到【1.5倍】的伤害。" />		
+						<Msg NpcID="24" ImageID="1" Info="完美的答案。\n在战斗中属性【克制】对方，\n可以得到【1.2倍】的伤害。" />		
 						<Msg NpcID="24" ImageID="2" Info="等你达到【15级】以后，请经常去【勇士斗技场•修炼之域】第30域挑战宾德大人。" />		
 						<Msg NpcID="24" ImageID="1" Info="我会感谢你的^^" />			
 						<Msg NpcID="25" ImageID="1" Info="……" />	

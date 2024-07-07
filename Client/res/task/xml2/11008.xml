@@ -898,7 +898,7 @@
             <Person Equipment="110030" />
          </Condition>
 
-         <Event ConditionType="IN" Memo="带上命运轮盘III" TargetMap="11606" TargetObj="110083" TargetName="带上命运轮盘III">
+         <Event ConditionType="IN" TargetMap="11608" TargetObj="110083" TargetName="和t斯格弗斯t对话">
             <Trigger>
                <Item Type="NPC_OPTION" MapID="11608" ObjID="110083" TaskOption="【破局】" />
             </Trigger>

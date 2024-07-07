@@ -1,0 +1,53 @@
+<Task ID="21019" Memo="每日技能训练开始了！小主人快去找c瑞凌c老师吧！" TargetMap="11303">
+	<Procedure> 
+		<Step ID="1" ParentList="0" ParentCost="0" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c瑞凌c老师吧！" TargetMap="11303" TargetObj="28" TargetName="和t瑞凌t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="分裂箭！" />
+				</Trigger>
+				<Action Type="COMMAND" Command="NOTHING" SkipTrigger="Y"/>
+    		</Event>
+		</Step>
+		
+  		<Step ID="2" ParentList="1" ParentCost="1" >
+    		<Event Memo="每日技能训练开始了！小主人快去找c瑞凌c老师吧！" TargetMap="11303" TargetObj="28" TargetName="和t瑞凌t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="分裂箭！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="28" ImageID="2" Info="分裂箭是对纵列目标进行攻击的技巧！" />
+						<Msg NpcID="28" ImageID="2" Info="隔壁那个拿剑的，他一使用追击就和无头苍蝇一样到处乱窜。我们弓箭手的分裂箭可是任何位置都能打到的技巧！" />
+						<Msg NpcID="28" ImageID="2" Info="看上去，你似乎不太擅长使用这个技能呀？这样吧！你在战斗中使用【5次分裂箭】再回来找我，我会传授一些我的心得给你！" />
+						<Option Info="还不错" />
+					</Action>
+    		</Event>
+		</Step>
+		
+
+  		<Step ID="3" ParentList="2" ParentCost="1" >
+			<Condition>
+				<Skill ID="118" Times="5" />
+			</Condition>
+    		<Event ConditionType="IN" Memo="达成目标，快回去找c瑞凌老师c吧！" TargetMap="11303" TargetObj="28" TargetName="和t瑞凌t对话">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="打赢啦！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="28" ImageID="2" Info="干的不错，我就传授一些心得给你帮助你更好的掌握这个技能吧！" />
+					<Option Info="谢谢瑞凌老师！" />
+					</Action>
+    		</Event>
+			<Event ConditionType="OUT" Memo="按照c瑞凌老师c的要求在战斗中c使用5次分裂箭c吧！" TargetMap="" TargetObj="" TargetName="使用分裂箭">
+  				<Trigger>
+				     <Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="小提示！" />
+				</Trigger>
+					<Action Type="TALK">
+						<Msg NpcID="28" ImageID="2" Info="虽然分裂箭会攻击纵列目标，对主要目标造成较高的伤害，对次要目标造成较低的伤害" />
+						<Option Info="好的！" />
+					</Action>
+    		</Event>
+		</Step>
+	</Procedure>
+</Task>
+
+

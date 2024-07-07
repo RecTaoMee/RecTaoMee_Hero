@@ -12,12 +12,12 @@
 	</npc>	
 	<actions>
 		<!--1是第一次打的boss，2是再次打BOSS-->
-		<proAction npcID="322" id="1" type="0" answer="我要净化你$燃烧万岁！" to="a3$o" >
+		<proAction npcID="322" id="1" type="0" answer="小甜的提示$我要净化你$燃烧万岁！" to="a20$a3$o" >
 			<des>
 				<![CDATA[1#只有最不畏惧水系精灵【沃特尔】的法尔才能成为【法尔王】——\n黑化后我的力量变得更强——你确定可以净化我吗？——]]>
 			</des>
 		</proAction>
-		<proAction npcID="322" id="2" type="0" answer="我要挑战你$燃烧万岁！" to="a3$o" >
+		<proAction npcID="322" id="2" type="0" answer="小甜的提示$我要挑战你$燃烧万岁！" to="a21$a3$o" >
 			<des>
 				<![CDATA[1#风地水火等各种精灵用自己的方式守护着世界……\n【伊恩魔王】和魔族的愿望是破坏精灵的秩序，给世界带来永远的混乱……\n希望所有的精灵王可以获得净化，解救精灵世界……]]>
 			</des>
@@ -88,7 +88,17 @@
 			</des>
 		</proAction>
 		
-		
+        <proAction npcID="400" id="20" type="0" answer="知道了" to="a1" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第9站】是特殊种族的法尔王与其带领的法尔，开启@cRed昆虫变身卡@!cRed，携带@cRed水火晶石@!cRed，挑战将更轻松哦。（昆虫种族克制特殊种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+        <proAction npcID="400" id="21" type="0" answer="知道了" to="a2" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode小甜偷偷告诉你，【净化之路第9站】是特殊种族的法尔王与其带领的法尔，开启@cRed昆虫变身卡@!cRed，携带@cRed水火晶石@!cRed，挑战将更轻松哦。（昆虫种族克制特殊种族，存在30%的伤害提高与受伤降低效果！！！）]]>
+			</des>
+		</proAction>
+
 		
 		
 		

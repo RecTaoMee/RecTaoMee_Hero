@@ -51,9 +51,15 @@
 				<![CDATA[1#听说尤利败在你的手上过，今天我就要替我们魔族的兄弟一雪前耻！！！就让我一起送你们上路吧！！]]>
 			</des>
 		</proAction>
-		<proAction npcID="106" id="8" type="0" answer="我来清除附近爪牙！$我来掩护你！$助你拖住魔蛇！" to="o$a9$a10" colorID="2$2$2">
+		<proAction npcID="106" id="8" type="0" answer="小甜的提示$我来清除附近爪牙！$我来掩护你！$助你拖住魔蛇！" to="a11$o$a9$a10" colorID="0$2$2$2">
 			<des>
 				<![CDATA[3#快走，这里太危险了！这个家伙打不死的！！！只能拖延时间后将其封印！]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="11" type="0" answer="@blank" to="a8" colorID="2">
+			<des>
+				<![CDATA[1#htmlMode巨岩魔蛇率领魔蛇爪牙在毁坏的勇士国度肆虐，副本中己方全员的恢复力将快速降低，@cRed魔蛇爪牙存在越多，巨岩魔蛇生存能力越强，反之则输出能力越强@!cRed，推荐留下1-2个魔蛇爪牙后单体集火巨岩魔蛇。$$]]>
+				<![CDATA[1#htmlMode推荐使用@cRed特殊变身卡@!cRed，携带@cRed地水晶石@!cRed，传教士/圣言使优先全体解除状态。]]>
 			</des>
 		</proAction>
 

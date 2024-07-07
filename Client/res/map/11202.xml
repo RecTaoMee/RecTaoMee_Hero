@@ -163,7 +163,7 @@
 			</des>
 		</proAction>
 		
-		<proAction npcID="104" id="200" type="0" answer="紫焰龙鳞兑换$魔力水晶兑换$我还有其它事！" to="module_LongLinExchangeModule$module_YouLiExchangeModule$o" colorID="1$0">
+		<proAction npcID="104" id="200" type="0" answer="紫焰龙鳞兑换$魔力水晶兑换$我还有其它事！" to="module_LongLinExchangeModule$module_YouLiExchangeModule$o" colorID="1$1$0">
 			<des>
 				<![CDATA[1#恐惧、黑暗魔王相继出动，各大陆的形势越来越严峻了，我们一定要团结起来，粉碎它们的阴谋！]]>
 			</des>
@@ -217,7 +217,7 @@
 			</des>
 		</proAction>
 		<proAction id="232" type="1" level="taskLevel" name="11202_1" moviepos="0,0" to=""/>
-		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$圣诞袜兑换$春节活动兑换$情人节活动兑换$离开" to="module_AnswerExchangeModule$f14$f17$f19$a237$f23$o" colorID="2$0$0$0$0$0$0">
+		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$圣诞袜兑换$春节活动兑换$情人节活动兑换$六一活动兑换$离开" to="module_AnswerExchangeModule$f14$f17$f19$a237$f23$f25$o" colorID="2$0$0$0$0$0$0$0">
 			<des>
 				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
 				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>

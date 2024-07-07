@@ -24,21 +24,35 @@ itemtips
 					<Option Info="立刻出发！" SkipTrigger="Y" CheckRand="100_0"/>
 					<Option Info="让我再想想。" NextStep="1" />
 				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2"  />											
     			</Event>
 		</Step>
 		
   		<Step ID="2" ParentList="1" ParentCost="1" >
-    			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！\n周二 6:00-24:00" TargetMap="11202" TargetObj="104" TargetName="和t多修t对话">
+    			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！\n周二 6:00-24:00" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
   				<Trigger>
-					<Item Type="NPC_OPTION" MapID="11202" ObjID="104" TaskOption="【风龙的锤炼】" />
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【风龙的锤炼】" />
 				</Trigger>
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="21503,2"  />											
 				<Action Type="TALK">
 					<Msg NpcID="400" ImageID="1" Info="敌人的实力异常强大，我受到女神的引领，来帮助未来的勇士…千万要小心应对！\n（小甜将会为战斗分担困难 \n[低级难度］：推荐单人50级+挑战 " />
 					<Msg NpcID="400" ImageID="1" Info="htmlMode［中级难度］：推荐多人组队挑战 \n［高级难度］：推荐五人组队挑战，注意特性。该系列周一至周五的运营任务，其［高级难度］奖励@cRed每周只可获取2次@!cRed）" />
-					<Option Info="低级难度"  />					
+					<Option Info="小甜的提示" NextStep="12" SkipTrigger="Y" />					
+					<Option Info="我再考虑一下" NextStep="2" />					
+                	<Option Info="低级难度" NextStep="3"  />					
 					<Option Info="中级难度" NextStep="6" />					
 					<Option Info="高级难度" NextStep="9"  CheckRand="100_1"/>					
+				</Action>
+    			</Event>
+		</Step>
+  		<Step ID="12" ParentList="2" ParentCost="1" >
+    			<Event Memo="打败过“一整条”风之龙的摩尔，多修有任务布置给你，快去勇士广场找多修了解详情吧！\n周二 6:00-24:00" TargetMap="21503" TargetObj="329" TargetName="和t风之龙t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="21503" ObjID="329" TaskOption="【风龙的锤炼】" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="400" ImageID="1" Info="htmlMode风之龙带领幻甲龙蜥、灵圣龙蜥、迅猛（刺尾）龙蜥对未来勇士进行考验，灵圣龙蜥拥有特性@cRed【奉献】@!cRed。推荐使用@cRed金属变身卡@!cRed，携带@cRed风火晶石@!cRed，优先集火灵圣龙蜥，而后AOE击倒迅猛（刺尾）龙蜥，单体先后集火幻甲" />
+					<Msg NpcID="400" ImageID="1" Info="htmlMode龙蜥、风之龙，传教士/圣言使优先全体解除状态。" />
+					<Option Info="@blank" NextStep="2"  />					
 				</Action>
     			</Event>
 		</Step>
