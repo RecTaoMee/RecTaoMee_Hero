@@ -34,6 +34,8 @@
       <node id="22" type="OBJECT" res="MC_11013_7" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item3" action="" taskShowSteps="11013_14|15" />
       <node id="23" type="OBJECT" res="MC_11013_8" url="res/task/swf2/task_11013_4.swf" level="contentLevel" position="926,1467" link="item4" action="" taskShowSteps="11013_16" />
       <node id="24" type="NPC" res="MC_pet_3070" url="res/task/swf2/task_11018_1.swf" level="contentLevel" position="399,1730" link="item" action="43" taskShowSteps="11018_1|2" />
+      
+      <node id="25" type="NPC" res="MC_npc_2" url="res/task/swf2/map_31612_1.swf" level="contentLevel" position="1118,343" link="item" action="" taskShowSteps="11020_4|5|6|7|8" />
 
    </npc>
 

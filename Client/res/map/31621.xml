@@ -8,6 +8,11 @@
    </object>
    <npc>
       <node id="3" type="NPC" res="MC_pet_3059" level="contentLevel" mapShowSteps="5|6" action="0" />
+
+      <!-- <node id="4" type="NPC" res="MC_pet_3057" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="170,404" link="item1" action="12" taskShowSteps="11021_1" />
+      <node id="5" type="NPC" res="MC_pet_3058" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="410,223" link="item2" action="13" taskShowSteps="11021_1" />
+      <node id="6" type="NPC" res="MC_pet_59" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="500,203" link="item3" action="14" taskShowSteps="11021_1" /> -->
+
    </npc>
    <actions>
       <proAction npcID="329" id="0" type="0"  answer="这就是试炼吗，我会通过的！$再给我点时间" to="a1$o" colorID="2$2">
@@ -38,6 +43,86 @@
          </des>
       </proAction>
 		<proAction id="7" type="7" mapID="31612" />	
+
+      <proAction npcID="329" id="8" type="0"  answer="又见面了！$居然是你" to="a10$a10" colorID="2$2">
+         <des>
+            <![CDATA[1#来了，鼹鼠。让吾见识下汝真正的力量吧。]]>
+         </des>
+      </proAction>
+      <proAction npcID="329" id="9" type="0"  answer="又见面了！$居然是你" to="a11$a11" colorID="2$2">
+         <des>
+            <![CDATA[1#来了，鼹鼠。让吾见识下汝真正的力量吧。]]>
+         </des>
+      </proAction>
+      <proAction npcID="329" id="10" type="0"  answer="挑战$小甜的提示$奖励兑换$千风裁定者万岁！" to="a19$a15$a24$cancel_329" colorID="2$1$1$0">
+         <des>
+            <![CDATA[1#这次可不像上次那样轻松，稍有松懈便交出性命吧。]]>
+         </des>
+      </proAction>
+      <proAction npcID="329" id="11" type="0"  answer="挑战$究极挑战$小甜的提示$奖励兑换$千风裁定者万岁！" to="a19$a25$a15$a24$o" colorID="2$2$1$1$0">
+         <des>
+            <![CDATA[1#这次可不像上次那样轻松，稍有松懈便交出性命吧。]]>
+         </des>
+      </proAction>
+
+      <proAction npcID="1069" id="12" type="0"  answer="挑战$小甜的提示$千风裁定者万岁！" to="a20$a16$o" colorID="2$1$0">
+         <des>
+            <![CDATA[1#……]]>
+         </des>
+      </proAction>
+      <proAction npcID="1070" id="13" type="0"  answer="挑战$小甜的提示$千风裁定者万岁！" to="a21$a17$o" colorID="2$1$0">
+         <des>
+            <![CDATA[1#……]]>
+         </des>
+      </proAction>
+      <proAction npcID="1071" id="14" type="0"  answer="挑战$小甜的提示$千风裁定者万岁！" to="a22$a18$o" colorID="2$1$0">
+         <des>
+            <![CDATA[1#……]]>
+         </des>
+      </proAction>
+
+
+      <proAction npcID="400" id="15" type="0"  answer="@blank" to="o" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode小甜的提示：未来勇士千万小心，千风裁定者掌握风的力量，小甜的精灵都被“@cRed风之吐息@!cRed”吹飞了，小甜自己也被吹晕了QAQ。$$]]>
+            <![CDATA[1#htmlMode@cRed风之吐息@!cRed：吹飞我方场上的全部精灵，使其强制替换为随机备战，并吹晕我方所有留在场上的单位，使其本回合将陷入“@cRed风昏@!cRed”状态，所有被强制换下的精灵默认@cRed待机@!cRed状态。$$]]>
+            <![CDATA[1#htmlMode@cRed风昏@!cRed：风暴中自保已是不易，无法进行@cRed防御@!cRed、@cRed幻盾@!cRed以外的行动。$$]]>
+            <![CDATA[1#htmlMode@cRed风眼@!cRed：千风裁定者使用风的力量，每回合末我方全体概率陷入“@cRed眩晕@!cRed”状态，千风裁定者对处于眩晕状态的单位造成少量额外伤害，处于@cRed眩晕@!cRed状态的单位有概率无法对千风裁定者造成伤害。]]>
+         </des>
+      </proAction>
+      <proAction npcID="400" id="16" type="0"  answer="@blank" to="a12" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode小甜的提示：每日可以挑战@cRed5@!cRed次幻甲龙蜥，每次消耗@cRed125@!cRed精力，幻甲龙蜥会使用劲透斩+技能，并且优先集火队长前排位置。]]>
+         </des>
+      </proAction>
+      <proAction npcID="400" id="17" type="0"  answer="@blank" to="a13" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode小甜的提示：每日可以挑战@cRed5@!cRed次灵圣龙蜥，每次消耗@cRed125@!cRed精力，灵圣龙蜥会高频率使用t形魔法，并且依次集火忍者、狂战士、魔法师、黑魔导士、剑士。]]>
+         </des>
+      </proAction>
+      <proAction npcID="400" id="18" type="0"  answer="@blank" to="a14" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode小甜的提示：单日最高挑战@cRed5@!cRed次、每次消耗@cRed125@!cRed精力]]>
+         </des>
+      </proAction>
+      <proAction npcID="400" id="25" type="0"  answer="挑战$离开" to="a23$o" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode小甜的提示：本挑战异常艰难（并未通过完整测试），意为给部分勇士挑战极限的途径，不是常规的获取奖励途径，请未来勇士慎重选择]]>
+         </des>
+      </proAction>
+
+
+		<proAction id="19" type="5" fightID="3618" />	
+		<proAction id="20" type="5" fightID="3619" />	
+		<proAction id="21" type="5" fightID="3620" />	
+		<proAction id="22" type="5" fightID="3630" />	
+		<proAction id="23" type="5" fightID="3629" />	
+
+      <proAction npcID="329" id="24" type="0" answer="兑换幻甲龙鳞$兑换灵圣龙鳞$兑换千风龙魂$离开" to="f27$f28$f29$o" colorID="1$1$1$0">
+         <des>
+            <![CDATA[1#……]]>
+         </des>
+      </proAction>
 
    </actions>
 

@@ -33,7 +33,7 @@
 	<actions>
 		<proAction npcID="101" id="3" type="0" answer="万圣糖果兑换$摩尔勇士万岁！" to="f18$o" colorID="1$0" >
 			<des>
-				<![CDATA[1#...]]>
+				<![CDATA[1#htmlMode@cRed（活动代币【万圣糖果】将于活动结束时失效，请各位勇士及时兑换！）@!cRed]]>
 			</des>
 		</proAction>			
 	</actions>

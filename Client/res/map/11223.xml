@@ -15,6 +15,7 @@
 		
 	</object>
 	<npc>
+		<node id="22" type="NPC" res="MC_npc_400" url="res/task/swf2/task_11004_1.swf" level="contentLevel" position="870,509" link="item" action="3"/>
 		<!-- 11003 -->
 		<node id="11" type="Object" res="MC_pumpkin_hairpin" alpTaskID="11003_1_1" compTaskID="11003_2_2" visible="0"/>
 		<node id="12" type="NPC" res="MC_pumpkin_0" alpTaskID="11003_1_1" compTaskID="11003_4_2" visible="0"/>
@@ -63,11 +64,30 @@
 		
 	</npc>		
 	<actions>
-			<proAction npcID="1000" id="1" type="0" answer="来战$准备一下" to="a2$o" >
+		<proAction npcID="1000" id="1" type="0" answer="来战$准备一下" to="a2$o">
 			<des>
 				<![CDATA[1#休想阻止我们释放南瓜公爵大人。]]>
 			</des>
-			</proAction>	
-			<proAction id="2" type="5" fightID="3509" />			
+		</proAction>
+		<proAction id="2" type="5" fightID="3509" />
+		<proAction npcID="400" id="3" type="0" answer="我想知道怎样获得\n额外的万圣糖果$我想知道怎样抵抗\n南瓜军团的入侵$我要兑换万圣糖果$离开" to="a5$a4$f18$o" colorID="1$1$1$0" >
+			<des>
+				<![CDATA[1#htmlMode未来勇士有什么问题呢？\n@cRed（活动代币【万圣糖果】将于活动结束时失效，请各位勇士及时兑换！）@!cRed]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="4" type="0" answer="@blank" to="o" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode经过小甜的观察，右侧入口的南瓜三兄弟会依次集火我方@cRed传教士→圣言使→魔法师→黑魔导士@!cRed，守卫南瓜公爵的南瓜小队长队伍主要集火我方@cRed弓箭手→忍者→剑士→巫术士@!cRed$$]]>
+				<![CDATA[1#htmlMode而南瓜公爵本人则会通过“@cRed号令@!cRed”指挥南瓜军团集火我方队伍，携带高血量的@cRed不死@!cRed种族宠物护卫我方被集火的单位更容易获胜哦~]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="5" type="0" answer="@blank" to="o" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode击败史诗战场中游荡的寂灭骨龙将获得随机数量的万圣糖果，每次挑战将消耗@cRed100@!cRed点人物精力。]]>
+			</des>
+		</proAction>
+				
+
+
 	</actions>
 </map>

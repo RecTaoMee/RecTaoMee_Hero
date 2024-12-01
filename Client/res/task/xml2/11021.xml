@@ -1,0 +1,16 @@
+<!--来自过去的试炼①  -->
+<Task ID="11020" Memo="试炼的第一战，是来自过去的龙。你将再度遇上龙之试炼的难关，祝你好运。c注：（此任务无法完成）c" TargetMap="31621" TargetObj="110093" TargetName="与t千风裁定者t对话">
+    <Procedure>
+
+        <Step ID="1" ParentList="0" ParentCost="0">
+            <Event Memo="试炼的第一战，是来自过去的龙。你将再度遇上龙之试炼的难关，祝你好运。c注：（此任务无法完成）c" TargetMap="31621" TargetObj="110093" TargetName="与t千风裁定者t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31621" ObjID="10000" TaskOption="【来自过去的试炼②】" />									
+				</Trigger> 				
+    			<Action Type="COMMAND" Command="NOTHING" />
+    		</Event>
+        </Step>
+    
+
+    </Procedure>
+</Task>

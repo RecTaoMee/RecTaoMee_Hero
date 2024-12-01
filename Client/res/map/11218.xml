@@ -127,9 +127,9 @@
 				<![CDATA[1#【修炼之域】是训练预备勇士的场所，等级达到20级才可以进入【修炼之域】！]]>
 			</des>
 		</proAction>
-		<proAction id="25" npcID="45"  type="0" answer="交出十字勋章！$摩尔勇士万岁！" to="g22$o" colorID="1$0">
+		<proAction id="25" npcID="45"  type="0" answer="转动十字轮盘1次$转动十字轮盘10次$转动十字轮盘100次$转动十字轮盘500次$摩尔勇士万岁！" to="g22$g23$g24$g25$o" colorID="1$1$1$1$0">
 			<des>
-				<![CDATA[1#请你提供5个象征荣耀的【十字勋章】给我，证明你有转动十字轮盘的力量！]]>
+				<![CDATA[1#请你提供象征荣耀的【十字勋章】给我，证明你有转动十字轮盘的力量！每5个十字勋章可转动十字轮盘1次。]]>
 			</des>
 		</proAction>
 		<proAction id="26" npcID="45"  type="0" answer="我这就去！$摩尔勇士万岁！" event="medal_not_enough" to="o$o" colorID="1$0">

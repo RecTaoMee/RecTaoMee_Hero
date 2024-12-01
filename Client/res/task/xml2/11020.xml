@@ -1,0 +1,112 @@
+<!--来自过去的试炼①  -->
+<Task ID="11020" Memo="c厄奎提克c好像有事情要找你，想让你来到c迷津灯塔外侧c一趟，一起去看看吧！" TargetMap="11609" TargetObj="110093" TargetName="与t厄奎提克t对话">
+    <Procedure>
+
+        <Step ID="1" ParentList="0" ParentCost="0">
+            <Event Memo="c厄奎提克c好像有事情要找你，想让你来到c迷津灯塔外侧c一趟，一起去看看吧！" TargetMap="11609" TargetObj="110093" TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11609" ObjID="110093" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="我们又见面啦，未来勇士！" />	
+					<Option Info="找我有事？" SkipTrigger="Y" />
+					<Option Info="你还有戏份？" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="2" ParentList="1" ParentCost="1">
+            <Event Memo="c厄奎提克c好像有事情要找你，想让你来到c迷津灯塔外侧c一趟，一起去看看吧！" TargetMap="11609" TargetObj="110093" TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11609" ObjID="110093" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="事实上这次找你来，是因为灯塔最近似乎又出现了一些变化。" />	
+					<Msg NpcID="1017" ImageID="1" Info="作为灯塔的第52代传人的我，自然是浅浅的占卜了下情况。" />	
+					<Msg NpcID="1017" ImageID="1" Info="得到的信息居然是【传未来勇士，试炼之门再开】" />	
+					<Option Info="(O_o)??" SkipTrigger="Y" />
+					<Option Info="什么意思" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="3" ParentList="2" ParentCost="1">
+            <Event Memo="c厄奎提克c好像有事情要找你，想让你来到c迷津灯塔外侧c一趟，一起去看看吧！" TargetMap="11609" TargetObj="110093" TargetName="与t厄奎提克t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="11609" ObjID="110093" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="1017" ImageID="1" Info="哈哈哈，看着好像就是叫你来的意思。" />	
+					<Msg NpcID="1017" ImageID="1" Info="裂缝的异变就拜托你查看啦！" />	
+					<Option Info="好吧"  />
+					<Option Info="使命必达"  />
+				</Action>
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="31612,3" />			
+
+    		</Event>
+        </Step>
+        <Step ID="4" ParentList="3" ParentCost="1">
+            <Event Memo="前往c哭嚎狭间c与c时之女神c对话" TargetMap="31612" TargetObj="25" TargetName="与t时之女神t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31612" ObjID="25" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="来了啊，【@nick】。" />	
+					<Option Info="是女神！" SkipTrigger="Y" />
+					<Option Info="好久没看见女神了！" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="5" ParentList="4" ParentCost="1">
+            <Event Memo="前往c哭嚎狭间c与c时之女神c对话" TargetMap="31612" TargetObj="25" TargetName="与t时之女神t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31612" ObjID="25" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="经世界树那次之后，我的力量似乎也有所减弱。所以有一段时间没有再出来了。" />	
+					<Msg NpcID="2" ImageID="2" Info="这次叫【@nick】来，是想再度开启时间的试炼。" />	
+					<Option Info="我之前不是已经试炼过了吗？" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="6" ParentList="5" ParentCost="1">
+            <Event Memo="前往c哭嚎狭间c与c时之女神c对话" TargetMap="31612" TargetObj="25" TargetName="与t时之女神t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31612" ObjID="25" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="拉瓦大陆的情况比预想更加恶劣，你将面对的也许不只是魔族，也可能会卷入原住民的战火之中。" />	
+					<Msg NpcID="2" ImageID="2" Info="所以我想再次开启试炼，亲眼见证下【@nick】目前的力量。" />	
+					<Option Info="我明白了。" SkipTrigger="Y" />
+					<Option Info="我会赢的！" SkipTrigger="Y" />
+					<Option Info="我是最强的！" SkipTrigger="Y" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="7" ParentList="6" ParentCost="1">
+            <Event Memo="前往c哭嚎狭间c与c时之女神c对话" TargetMap="31612" TargetObj="25" TargetName="与t时之女神t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31612" ObjID="25" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="(￣︶￣)有自信是好事，祝愿你在这次试炼获得不一样的收获。" />	
+					<Msg NpcID="2" ImageID="2" Info="准备好接受新的考验了吗？" />	
+					<Option Info="我准备好了" SkipTrigger="Y" />
+					<Option Info="还得再等一会儿" NextStep="7" />
+				</Action>
+    		</Event>
+        </Step>
+        <Step ID="8" ParentList="7" ParentCost="1">
+            <Event Memo="前往c哭嚎狭间c与c时之女神c对话" TargetMap="31612" TargetObj="25" TargetName="与t时之女神t对话">
+  				<Trigger>					
+					<Item Type="NPC_OPTION" MapID="31612" ObjID="25" TaskOption="【来自过去的试炼①】" />									
+				</Trigger> 				
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="试炼的第一战，是来自过去的龙。你将再度遇上龙之试炼的难关，祝你好运。" />	
+					<Option Info="@blank"  />
+				</Action>
+				<Action Type="MOVIE" Url="task_11009_10.swf" MapLevel="BOTTOM" Pos="-755,-170" />
+   				<Action Type="COMMAND" Command="CHANGE_MAP" Params="31621,1" />			
+    		</Event>
+        </Step>
+
+    </Procedure>
+</Task>
