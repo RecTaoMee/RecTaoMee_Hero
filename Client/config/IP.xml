@@ -1,24 +1,24 @@
 ﻿<config>
 	<!--服务器配置-->
 	<httpConfig>
-		<http url="http://103.19.232.93/ip.txt"/>
+		<http url="http://45.125.47.110/ip.txt"/>
 	</httpConfig>
 
 	<ipConfig>
-		<Email ip="103.19.232.93" port="1800"/>
-		<DirSer ip="103.19.232.93" port="1800"/>
-		<SubServer ip="103.19.232.93" port="1800"/>
+		<Email ip="45.125.47.110" port="1800"/>
+		<DirSer ip="45.125.47.110" port="1800"/>
+		<SubServer ip="45.125.47.110" port="1800"/>
 		
 		<RegistSer ip="10.1.1.5" port="3200"/>
-		<http url="http://103.19.232.93/ip.txt"/>
+		<http url="http://45.125.47.110/ip.txt"/>
 	</ipConfig>
 
 	<ipConfig2>
-		<Email ip="103.19.232.93" port="1800"/>
-		<DirSer ip="103.19.232.93" port="1800"/>
-		<SubServer ip="103.19.232.93" port="1800"/>
+		<Email ip="45.125.47.110" port="1800"/>
+		<DirSer ip="45.125.47.110" port="1800"/>
+		<SubServer ip="45.125.47.110" port="1800"/>
 		
 		<RegistSer ip="10.1.1.5" port="3200"/>
-		<http url="http://103.19.232.93/ip.txt"/>
+		<http url="http://45.125.47.110/ip.txt"/>
 	</ipConfig2>
 </config>
