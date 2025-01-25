@@ -1,5 +1,5 @@
 <!--城堡吊桥-->
-<map name="aaa" type="0" comment="aaa" sound="BGM-004.mp3">
+<map name="aaa" type="0" comment="aaa" sound="BGM-019.mp3">
 	<transport intPos="397,635">
 		<node id="1" pos="390,997" targetMapId="11202" targetTransPortId="2" name="王国广场"/>
 		<node id="2" pos="397,325" targetMapId="11301" targetTransPortId="2" name="勇士大厅"/>

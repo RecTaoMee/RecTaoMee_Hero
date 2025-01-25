@@ -1,5 +1,5 @@
 <!--南街-->
-<map name="摩尔王国南街" type="0" comment="aaa" sound="BGM-004.mp3">
+<map name="摩尔王国南街" type="0" comment="aaa" sound="BGM-019.mp3">
 	<transport intPos="387,590">
 		<node id="1" pos="492,339" targetMapId="11206" targetTransPortId="2" name="研究所"/>
 		<node id="2" pos="427,229" targetMapId="11202" targetTransPortId="1" name="王国广场"/>

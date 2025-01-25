@@ -1,5 +1,5 @@
 <!--交易大厅-->
-<map name="aaa" type="0" comment="aaa" sound="BGM-004.mp3">
+<map name="aaa" type="0" comment="aaa" sound="BGM-019.mp3">
 	<transport intPos="360,308">
 		<node id="1" pos="800,476" targetMapId="11205" targetTransPortId="5" name="王国东街"/>
 		<node id="101" pos="80,366" targetMapId="11216" targetTransPortId="102" name="上一个交易厅"/>
