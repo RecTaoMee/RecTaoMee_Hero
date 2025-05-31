@@ -13,8 +13,8 @@
 		<node id="51" type="NPC" res="MC_npc_51" action="" taskShowSteps="251_3|4"/>
 		<node id="307" type="NPC" res="MC_npc_307" action="" taskShowSteps="251_4|50"/>		
 		<!-- 2022/11/26 -->
-		<node id="7" type="NPC" res="MC_AST_Crack" url="res/mapObj/nightmareCrack.swf" level="downLevel" position="-742,19" link="Crack" alpTaskID="11011_1_0" compTaskID="11012_1_1" visible="0" />
-		<node id="8" type="TransPort" res="MC_door_1" transPortId="2" url="res/mapObj/nightmareCrack.swf" level="downLevel" position="-742,19" link="CrackBox" alpTaskID="11011_3_0" compTaskID="11012_1_1" visible="1" />
+		<node id="7" type="NPC" res="MC_AST_Crack" url="res/mapObj/nightmareCrack.swf" level="downLevel" position="-742,19" link="Crack" alpTaskID="11011_1_0" compTaskID="11012_1_1" playingTaskID="11012" visible="0" />
+		<node id="8" type="TransPort" res="MC_door_1" transPortId="2" url="res/mapObj/nightmareCrack.swf" level="downLevel" position="-742,19" link="CrackBox" alpTaskID="11011_3_0" compTaskID="11012_1_1" playingTaskID="11012" visible="1" />
 		<node id="9" type="NPC" res="MC_Knight_1" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="543,354" link="normalLeft" action="0" taskShowSteps="11011_4" compTaskID="11012_1_1"  />
 		<node id="10" type="NPC" res="MC_Knight_2" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="623,373" link="normalLeft" action="0" taskShowSteps="11011_4" compTaskID="11012_1_1" />
 		<node id="11" type="NPC" res="MC_Knight_3" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="723,372" link="normalRight" action="0" taskShowSteps="11011_4" compTaskID="11012_1_1" />
@@ -23,10 +23,10 @@
 		<node id="110113" type="NPC" res="MC_110113" url="res/task/swf2/task_11011_2.swf" level="contentLevel" position="464,198" link="item" action="1" taskShowSteps="11011_4|5|6" />
 		<node id="110131" type="NPC" res="MC_110131" url="res/task/swf2/task_11013_1.swf" level="contentLevel" position="351,315" link="item" action="2" taskShowSteps="11013_1|2|3" />
 		
-		<node id="13" type="NPC" res="MC_AST_Knight_1s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="543,354" link="sleepLeft" alpTaskID="11011_2_0" compTaskID="11012_1_1" visible="0" />
-		<node id="14" type="NPC" res="MC_AST_Knight_2s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="623,373" link="sleepLeft" alpTaskID="11011_2_0" compTaskID="11012_1_1" visible="0" />
-		<node id="15" type="NPC" res="MC_AST_Knight_3s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="723,372" link="sleepRight" alpTaskID="11011_2_0" compTaskID="11012_1_1" visible="0" />
-		<node id="16" type="NPC" res="MC_AST_Knight_4s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="799,353" link="sleepRight" alpTaskID="11011_2_0" compTaskID="11012_1_1" visible="0" />
+		<node id="13" type="NPC" res="MC_AST_Knight_1s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="543,354" link="sleepLeft" alpTaskID="11011_2_0" compTaskID="11012_1_1" playingTaskID="11012" visible="0" />
+		<node id="14" type="NPC" res="MC_AST_Knight_2s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="623,373" link="sleepLeft" alpTaskID="11011_2_0" compTaskID="11012_1_1" playingTaskID="11012" visible="0" />
+		<node id="15" type="NPC" res="MC_AST_Knight_3s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="723,372" link="sleepRight" alpTaskID="11011_2_0" compTaskID="11012_1_1" playingTaskID="11012" visible="0" />
+		<node id="16" type="NPC" res="MC_AST_Knight_4s" url="res/mapObj/stationedKnight.swf" level="contentLevel" position="799,353" link="sleepRight" alpTaskID="11011_2_0" compTaskID="11012_1_1" playingTaskID="11012" visible="0" />
 	</npc>	
 	<actions>
 		<proAction npcID="1022" id="0" type="0" answer="离开" to="o" colorID="0">

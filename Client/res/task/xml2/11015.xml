@@ -51,11 +51,15 @@
       </Step>
 
       <Step ID="4" ParentList="2,3" ParentCost="2">
-         <Event Memo="(就差c黄金麦c了，先去麦兜仓库寻找线索吧！)" TargetMap="11307" TargetObj="24" TargetName="与t路迪t对话">
+         <Event Memo="(就差c黄金麦c了，先去麦兜仓库寻找线索吧！)" TargetMap="11401" TargetObj="0" TargetName="前往t麦田村t">
+              <Trigger>
+               <Item Type="ENTER_MAP" MapID="11401" />					  
+            </Trigger>
             <Action Type="TALK">
                <Msg NpcID="402" ImageID="9" Info="(就差黄金麦了，先去麦兜仓库寻找线索吧！)" />
                <Option Info="@blank" />
             </Action>
+            <Action Type="COMMAND" Command="CHANGE_MAP" Params="11403, 1" />			
          </Event>
       </Step>
 

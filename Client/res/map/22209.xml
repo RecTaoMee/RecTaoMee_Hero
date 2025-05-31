@@ -6,5 +6,6 @@
 	<object>
 		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
 		<node id="10" type="Object" res="MC_stone"/>
+		<node id="3" type="OBJECT" res="MC_transportHint_1" url="res/mapObj/transportHint.swf" level="contentLevel" position="387,798" link="item" mouseEnabled1="0" mouseChildren1="0" />
 	</object>
 </map>

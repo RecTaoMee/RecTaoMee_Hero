@@ -114,6 +114,7 @@ taskitem
 				<Action Type="TALK">
 					<Msg NpcID="337" ImageID="1" Info="黑水晶的力量又变强了！感受黑暗阴影的笼罩吧!" />
 					<Option Info="不会让你得逞的!来战!" />
+					<Option Info="准备一下" NextStep="4" />
 				</Action>	
 				<Action Type="COMMAND" Command="BATTLE" Params="3543" />  
 			</Event>
@@ -145,6 +146,7 @@ taskitem
 				<Action Type="TALK">
 					<Msg NpcID="337" ImageID="1" Info="黑水晶的力量又变强了！感受黑暗阴影的笼罩吧!" />
 					<Option Info="不会让你得逞的!来战!" />
+					<Option Info="准备一下" NextStep="5" />
 				</Action>	
 				<Action Type="COMMAND" Command="BATTLE" Params="3544" />  
 			</Event>
@@ -175,6 +177,7 @@ taskitem
 				<Action Type="TALK">
 					<Msg NpcID="337" ImageID="1" Info="黑水晶的力量又变强了！感受黑暗阴影的笼罩吧!" />
 					<Option Info="不会让你得逞的!来战!" />
+					<Option Info="准备一下" NextStep="6" />
 				</Action>	
 				<Action Type="COMMAND" Command="BATTLE" Params="3545" />  
 

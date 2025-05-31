@@ -7,16 +7,28 @@
 	<object>
 		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
 		<node id="2" type="TransPort" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="-500,130" tip="aaa"/>
+		<node id="3" type="OBJECT" res="MC_collect_hoe_20" spawnGrpIDWithEmpty="3631"  />		
 	</object>
 	<npc>
 		<node id="61" type="NPC" res="MC_npc_firelord" action="11"  />		
 	</npc>
 	<actions>
-		<proAction npcID="812" id="11" type="0" answer="来战$准备一下" to="a12$o" colorID="2$0">
+		<proAction npcID="812" id="11" type="0" answer="小甜的提示（BOSS）$小甜的提示（晶矿战斗）$来战$准备一下" to="a13$a14$a12$o" colorID="1$1$2$0">
 			<des>
 				<![CDATA[1#......]]>
 			</des>
 		</proAction>
 		<proAction id="12" type="5" fightID="3521" />
+		<proAction npcID="400" id="13" type="0" answer="@blank" to="a11" colorID="2">
+			<des>
+				<![CDATA[1#htmlMode关卡推荐携带水晶为@cRed水火@!cRed、@cRed地水@!cRed混合，关卡中炎石巨人@cRed防御极高@!cRed，推荐用魔法职业处理，暗黑沃特尔@cRed魔抗极高@!cRed，推荐用物理职业处理，幽光·改将依次集火@cRed弓箭手、传教士、圣言使、狂战士、魔法师@!cRed。]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="14" type="0" answer="@blank" to="a11" colorID="2">
+			<des>
+				<![CDATA[1#htmlMode晶矿战斗每日最多获得@cRed6@!cRed次奖励，每次采集晶矿消耗@cRed14@!cRed精力，晶矿战斗将出现数量随机的盯眼蝠、王冠卡西卡、弗雷基、忽悠喵；盯眼蝠、王冠卡西卡依次集火@cRed魔法师、黑魔导士、巫术士、剑士@!cRed；弗雷基、忽悠喵依次集$$]]>
+				<![CDATA[1#htmlMode@cRed火忍者、狂战士、传教士、圣言使@!cRed。怪物速度为@cRed2800@!cRed。]]>
+			</des>
+		</proAction>
 	</actions>
 </map>

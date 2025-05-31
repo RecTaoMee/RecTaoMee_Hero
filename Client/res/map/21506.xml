@@ -12,11 +12,16 @@
 		<node id="61" type="NPC" res="MC_npc_DragonShadow" action="11"  />		
 	</npc>
 	<actions>
-		<proAction npcID="329" id="11" type="0" answer="来战$准备一下" to="a12$o" colorID="2$0">
+		<proAction npcID="329" id="11" type="0" answer="小甜的提示（BOSS）$来战$准备一下" to="a13$a12$o" colorID="1$2$0">
 			<des>
 				<![CDATA[1#......]]>
 			</des>
 		</proAction>
 		<proAction id="12" type="5" fightID="3523" />
+		<proAction npcID="400" id="13" type="0" answer="@blank" to="a11" colorID="2">
+			<des>
+				<![CDATA[1#htmlMode关卡推荐水晶为@cRed风火@!cRed、@cRed地水@!cRed混合，关卡中刺尾龙蜥、蓝迷你龙将依次集火@cRed魔法师、忍者、传教士、圣言使@!cRed。]]>
+			</des>
+		</proAction>
 	</actions>
 </map>

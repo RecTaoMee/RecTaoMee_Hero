@@ -19,6 +19,7 @@
         <node id="310" type="NPC" res="MC_kuluking" action="10"/>
         <node id="60" type="NPC" res="MC_npc_60" action="20"/>
         <node id="309" type="NPC" res="MC_npc_309" action="50" needType="level_return,beastGroup,beastGroup" need="25,2908,2909" needAction="60,62,63"/>
+		<node id="333" type="NPC" res="MC_collect_hand_3050" spawnGrpIDWithEmpty="3601" url="res/mapObj/treasure/grass.swf" level="downLevel" position="650,700" link="treasure"  />
         <!--奇异之花下架了！（以后可以再开捕捉）
 		<node id="802" name="奇异之花" type="NPC" res="MC_npc_1" action="80" visible="0">
 			<event type="a83" hit="FunctionHit" func="gotoAndStop" params="3"/>
@@ -27,7 +28,7 @@
 
     </npc>
     <actions>
-        <proAction npcID="317" id="1" type="0" answer="挑战低级难度$挑战中级难度$挑战高级难度$击败你的奖励$好的" to="a85$a86$challenge_boss$a6$o" colorID="1$1$1$1$0$0">
+        <proAction npcID="317" id="1" type="0" answer="挑战低级难度$挑战中级难度$挑战高级难度$击败你的奖励$好的" to="a65$a66$a67$a6$o" colorID="1$1$1$1$0$0">
             <des>
                 <![CDATA[1#很高兴又见到你，勇敢的未来勇士。如果想获得“织梦灵箔”就来挑战我吧！]]>
             </des>
@@ -164,6 +165,22 @@
                 <![CDATA[1#呜哇呜…奇异之花的花蕊果然是美味无比啊，那香甜的味道是我们食人樱的最爱！]]>
             </des>
         </proAction> -->
+
+        <proAction npcID="317" id="65" type="0" answer="挑战$准备一下" to="a85$o" colorID="1$0">
+            <des>
+                <![CDATA[1#确定挑战低级难度？]]>
+            </des>
+        </proAction>
+        <proAction npcID="317" id="66" type="0" answer="挑战$准备一下" to="a86$o" colorID="1$0">
+            <des>
+                <![CDATA[1#确定挑战中级难度？]]>
+            </des>
+        </proAction>
+        <proAction npcID="317" id="67" type="0" answer="挑战$准备一下" to="challenge_boss$o" colorID="1$0">
+            <des>
+                <![CDATA[1#确定挑战高级难度？]]>
+            </des>
+        </proAction>
 
         <!-- 2023.03.10 19:49 时装副本 -->
         <proAction id="85" type="5" fightID="3555" />

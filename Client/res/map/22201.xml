@@ -7,5 +7,7 @@
 	<object>
 		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
 		<node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
+		<node id="3" type="OBJECT" res="MC_transportHint_1" url="res/mapObj/transportHint.swf" level="contentLevel" position="-312,493" link="item" mouseEnabled1="0" mouseChildren1="0" />
+		<node id="4" type="OBJECT" res="MC_transportHint_2" url="res/mapObj/transportHint.swf" level="contentLevel" position="-597,-371" link="item" mouseEnabled1="0" mouseChildren1="0" />
 	</object>
 </map>

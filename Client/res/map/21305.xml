@@ -15,9 +15,17 @@
 	</npc>		
     <actions>
         <proAction id="4" type="5" fightID="3600" />
-      <proAction npcID="816" id="5" type="0" answer="来战！$战术性撤退！" to="a4$o" colorID="1$0">
+      <proAction npcID="816" id="5" type="0" answer="小甜的提示$来战！$战术性撤退！" to="a6$a4$o" colorID="1$2$0">
          <des>
             <![CDATA[1#……]]>
+         </des>
+      </proAction>
+    </actions>
+    <actions>
+      <proAction npcID="400" id="6" type="0" answer="@blank" to="a5" colorID="0">
+         <des>
+            <![CDATA[1#htmlMode关卡每次挑战消耗@cRed150@!cRed精力，单日最多通关@cRed5@!cRed次，关卡中“迷路的摇铃兔”拥有特性“@cRed人质@!cRed”，需要在击败其余怪物后再将其击败。$$]]>
+            <![CDATA[1#（注：黑化精灵的幕后黑手将在6.1现身，届时将再次开启此活动任务，恶犬长牙及相应奖励的兑换次数将一直保持到6.1活动结束后）]]>
          </des>
       </proAction>
     </actions>

@@ -1,5 +1,5 @@
 <!--西街-->
-<map name="aaa" type="0" comment="aaa" sound="BGM-019.mp3">
+<map name="aaa" type="0" comment="aaa" sound="BGM-004.mp3">
 	<transport intPos="1031,444">
 		<node id="1" pos="1474,450" targetMapId="11202" targetTransPortId="3" name="王国广场"/>
 		<node id="2" pos="1024,313" targetMapId="11217" targetTransPortId="1" name="教堂"/>

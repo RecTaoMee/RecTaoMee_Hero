@@ -61,7 +61,7 @@
 				<Person Equipment="110030" />	
 			</Condition>
 
-    		<Event ConditionType="IN" Memo="进入灯塔" TargetMap="11606"  TargetName="进入灯塔">
+    		<Event ConditionType="IN" Memo="进入灯塔" TargetMap="11609"  TargetName="t进入灯塔t">
   				<Trigger>
 					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  /><!-- 点击法阵 -->
 					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110093"  /><!-- 点击厄奎提克 -->
@@ -78,7 +78,7 @@
     		</Event>
 
 
-    		<Event ConditionType="OUT" Memo="进入灯塔" TargetMap="11606"  TargetName="进入灯塔">
+    		<Event ConditionType="OUT" Memo="进入灯塔" TargetMap="11609"  TargetName="t进入灯塔t">
   				<Trigger>
 					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  /><!-- 点击法阵 -->
 					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110093"  /><!-- 点击厄奎提克 -->
@@ -110,7 +110,7 @@
 		</Step>		
 
   		<Step ID="7" ParentList="6" ParentCost="1" >
-    		<Event Memo="查看法阵" TargetMap="11609"  TargetName="查看法阵">
+    		<Event Memo="查看法阵" TargetMap="11610"  TargetName="t查看法阵t">
 				<Action Type="TALK">
 					<Msg NpcID="1017" ImageID="1" Info="这是……传送法阵？我好像在家里的古籍上见到过。" />	
 					<Option Info="要去看看吗？" />
@@ -124,7 +124,7 @@
 		</Step>		
 
   		<Step ID="8" ParentList="7" ParentCost="1" >
-    		<Event Memo="点击法阵" TargetMap="11610"  TargetName="点击法阵">
+    		<Event Memo="点击法阵" TargetMap="11610"  TargetName="t点击法阵t">
   				<Trigger>					
 					<Item Type="OBJ_CLICK" MapID="11610" ObjID="110094"  />									
 					<Item Type="OBJ_CLICK" MapID="11610" ObjID="2"  />									
@@ -160,7 +160,7 @@
 
 
   		<Step ID="11" ParentList="10" ParentCost="1" >
-    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与黑化精灵战斗">
+    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与t黑化精灵t战斗">
   				<Trigger>					
 					<Item Type="ENTER_MAP" MapID="30109"  />									
 				</Trigger> 		
@@ -174,7 +174,7 @@
 		</Step>		
 
   		<Step ID="12" ParentList="11" ParentCost="1" >
-    		<Event Memo="点击黑化精灵进入战斗" TargetMap="30109"  TargetObj="110096"  TargetName="点击黑化精灵进入战斗">
+    		<Event Memo="点击黑化精灵进入战斗" TargetMap="30109"  TargetObj="110096"  TargetName="点击t黑化精灵t进入战斗">
   				<Trigger>					
 					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110096" />									
 					<Item Type="OBJ_CLICK" MapID="30109" ObjID="110097" />									
@@ -185,7 +185,7 @@
 		</Step>	
 
   		<Step ID="13" ParentList="12" ParentCost="1" >
-    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与黑化精灵战斗">
+    		<Event Memo="与黑化精灵战斗" TargetMap="30109"  TargetObj="110096"  TargetName="与t黑化精灵t战斗">
   				<Trigger>					
 					<Item Type="ENTER_MAP" MapID="30109"  />									
 				</Trigger> 	
@@ -209,7 +209,7 @@
 
 
   		<Step ID="15" ParentList="14" ParentCost="1" >
-    		<Event Memo="前往出口离开裂缝" TargetMap="11610"   TargetName="前往出口离开裂缝">
+    		<Event Memo="前往出口离开裂缝" TargetMap="11610"   TargetName="前往t出口t离开裂缝">
   				<Trigger>					
 					<Item Type="ENTER_MAP" MapID="11610"  />									
 				</Trigger> 		

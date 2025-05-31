@@ -1,5 +1,5 @@
 <!--王国广场-->
-<map name="王国广场" type="0" comment="aaa" sound="BGM-019.mp3">
+<map name="王国广场" type="0" comment="aaa" sound="BGM-004.mp3">
 	<process>
 		<node name="TeacherStudentMapProcess"/>
 	</process>
@@ -217,7 +217,7 @@
 			</des>
 		</proAction>
 		<proAction id="232" type="1" level="taskLevel" name="11202_1" moviepos="0,0" to=""/>
-		<proAction npcID="227" id="235" type="0" answer="答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$圣诞袜兑换$春节活动兑换$情人节活动兑换$六一活动兑换$千风活动兑换$离开" to="module_AnswerExchangeModule$f14$f17$f19$a237$f23$f25$a254$o" colorID="2$0$0$0$0$0$0$0$0">
+		<proAction npcID="227" id="235" type="0" answer="劳动节活动$答题证明兑换$遗迹的碎片兑换$夏日礼品券兑换$圣诞袜兑换$春节活动兑换$情人节活动兑换$恶犬长牙兑换$千风活动兑换$离开" to="a255$module_AnswerExchangeModule$f14$f17$f19$a237$f23$f25$a254$o" colorID="2$2$0$0$0$0$0$0$0$0">
 			<des>
 				<![CDATA[1#每周六、周日的14:30开启【遗迹的碎片】兑换珍稀精灵/收费道具啦！兑换只有每周六、周日下午14：30开放哦！数量有限！先到先得！$$]]>
 				<![CDATA[1#（“遗迹的碎片”可以周1-周日每天下午13：00-15：00在【废墟的摩尔王国】击杀蜘蛛炸弹、纳尼、独眼树怪、24K蜘蛛炸弹，或者开启“迷之宝箱”获得。）]]>
@@ -242,7 +242,7 @@
 		<proAction npcID="227" id="249" type="0" answer="情人节-执子之手$情人节-中夜相从$情人节-蓦然回首$离开" to="a251$a252$a253$o" colorID="2$2$2$0">
 			<des>
 				<![CDATA[1#htmlMode欢迎各位勇士前来参加情人节挑战活动，完成挑战可获得一定数量的@cRed玫瑰@!cRed。\n可以在我这里换取奖励。挑战难度越高，奖励越丰厚！$$]]>
-				<![CDATA[1#htmlMode<font color='#666666'>执子之手：@cRed限双人@!cRed、消耗@cRed75@!cRed精力\n中夜相从：消耗@cRed125@!cRed精力\n蓦然回首：消耗@cRed150@!cRed精力</font>]]>
+				<![CDATA[1#htmlMode<font color='#666666'>执子之手：@cRed限双人@!cRed、消耗@cRed75@!cRed精力\n中夜相从：消耗@cRed125@!cRed精力\n蓦然回首：消耗@cRed150@!cRed精力\n@cRed各个难度每天最多可获得5次奖励@!cRed</font>]]>
             </des>
 		</proAction>
 		<proAction id="251" type="5" fightID="3594"/>	
@@ -254,6 +254,25 @@
 				<![CDATA[1#……]]>
 			</des>
 		</proAction>		
+		<!-- 劳动节活动 -->
+		<proAction npcID="227" id="255" type="0" answer="田地摧毁者$广袤无垠大森林$离开" to="a256$a257$o" colorID="1$1$0">
+			<des>
+				<![CDATA[1#劳动节本该是王国内欢庆的日子，但不知为何，突然出现了一批黑化程度极重的精灵，它们在王国内大肆破坏并搜刮了大量珍贵道具。$$]]>
+				<![CDATA[1#现在王国军已经将它们控制在了特定区域，协助王国平息暴乱可以获取丰厚奖励。]]>
+			</des>
+		</proAction>		
+		<proAction npcID="400" id="256" type="0" answer="来战！$离开" to="a258$o" colorID="1$0">
+			<des>
+				<![CDATA[1#htmlMode摧毁田地的拉拉美好可怕，小甜的精灵全部都被击倒了，感觉@cRed只有防御才能存活下来@!cRed呢？未来勇士准备好迎战了吗？]]>
+			</des>
+		</proAction>		
+		<proAction npcID="400" id="257" type="0" answer="来战！$离开" to="a259$o" colorID="1$0">
+			<des>
+				<![CDATA[1#htmlMode@cRed发芽的吉普豆拥有人质特性并且被治愈会扣血@!cRed哦，未来勇士准备好迎战了吗？]]>
+			</des>
+		</proAction>		
+		<proAction id="258" type="5" fightID="3598"/>	
+		<proAction id="259" type="5" fightID="3599"/>	
 <!--兔铃↓-->
 		<proAction npcID="318" id="13" type="0" answer="我要【封印节★礼物】$封印节快乐！" to="E1$o" colorID="1$0">
 			<des>
@@ -312,8 +331,8 @@
 		
 		<proAction npcID="1001" id="243" type="0" answer="勇士广场（琉璃翼龙）$王国军营$毁坏的勇士国度(35-53级)$月之宫殿（周末开放）$斯巴鲁洞穴(3人副本)$离开" to="changeMap_30400$changeMap_11222$changeMap_51202$a238$changeMap_22104$o" colorID="1$1$1$1$1$0">
 			<des>
-				<![CDATA[1#你好，我是副本管理员薇尔。“王国军营”位于勇士王国的东侧，从我这里可以传送过去哦。王国军营的右侧放即为“史诗战场”。$$]]>
-				<![CDATA[1#目前已开放30级副本【月之宫殿】，周末每日可以进入1次副本，适合30级以上的玩家参与，且有机会获得35级、40级的装备合成配方哦！建议找上你的伙伴们一起来挑战！]]>		
+				<![CDATA[1#[月之宫殿]周末开放，周末每日可进入1次副本，副本分为前殿（低级难度）、正殿（中级难度）、后殿（高级难度），正殿与后殿推荐满级后组队挑战，有机会获得各类月饼、精灵天赋重组丸等珍贵道具！和你的伙$$]]>		
+				<![CDATA[1#伴一起来挑战吧！\n[斯巴鲁洞穴]持续开放中，副本推荐满级后挑战，至多三人组队，成功挑战后将获得〈紫焰龙鳞〉，可于多修处兑换珍贵奖励！]]>		
 			</des>
 		</proAction>	
 	</actions>
