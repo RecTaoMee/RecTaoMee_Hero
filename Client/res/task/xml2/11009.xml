@@ -47,7 +47,7 @@
 		</Step>					
 
   		<Step ID="4" ParentList="3" ParentCost="1" >
-    		<Event Memo="进入灯塔" TargetMap="11609"  TargetName="进入灯塔">
+    		<Event Memo="进入灯塔" TargetMap="11609"  TargetName="t进入灯塔t">
   				<Trigger>					
 					<Item Type="OBJ_CLICK" MapID="11609" ObjID="110092"  />									
 				</Trigger> 		

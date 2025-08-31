@@ -1,0 +1,85 @@
+<!--静水灵殿-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="662,1074" targetMapId="31614" targetTransPortId="3"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="contentLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+	</object>
+	<npc>
+		<node id="2" type="NPC" name="镜像玩家" res="MC_mirroredPlayer" action="onTalkWithMirroredPlayer" />
+	</npc>
+
+	<actions>
+		<!-- 初见 -->
+		<proAction npcID="402" id="1" type="0" answer="什么？！$这个家伙…$难道是" to="a2$a2$a2" colorID="2$2$2">
+			<des>
+				<![CDATA[6#【@nick】...从水中现身了？！$$]]>
+				<![CDATA[6#啊——又开始了，像之前那样要冒充【@nick】对吧！]]>
+			</des>
+		</proAction>
+		<!-- 第一次对战 -->
+		<proAction npcID="1072" id="2" type="0" answer="来战！$你等下我肚子疼" to="a3$o" colorID="2$0">
+			<des>
+				<![CDATA[1#放心吧，我并不打算蒙混过关。$$]]>
+				<![CDATA[1#因为【@nick】只有我一个，你只是一个冒牌货罢了，接招！]]>
+			</des>
+		</proAction>
+        <proAction id="3" type="5" fightID="3623" to="onMirroredGrpEnd" />
+		<!-- 战败1次 -->
+		<proAction npcID="10000" id="4" type="0" answer="@blank" to="a5" colorID="2">
+			<des>
+				<![CDATA[1#（这冒牌货与我实力相当，基本上找不出破绽。我用的技能他也会！）]]>
+			</des>
+		</proAction>
+			<!-- 战败超过一次，点击镜像触发此对话 -->
+		<proAction npcID="1072" id="5" type="0" answer="你才是冒牌货！\n来战！$你等下我肚子疼" to="a3$o" colorID="2$0">
+			<des>
+				<![CDATA[1#就凭你这个冒牌货也想打败我，真是痴心妄想。]]>
+			</des>
+		</proAction>
+		<!-- 战败2次及以上 -->
+		<proAction npcID="1072" id="6" type="0" answer="我有属于我自己的信念$我才不愿意做坏事\n我要依靠自己$投奔魔王好像还不错？" to="a7$a7$o" colorID="2$2$0">
+			<des>
+				<![CDATA[1#勇士过家家很有意思吗？！都过去多长时间了，你还想拯救世界？$$]]>
+				<![CDATA[1#换做我，就已经去投奔魔王了，时间女神有什么希望吗，她只会空口说一堆无法兑现的承诺而已。$$]]>
+				<![CDATA[1#你永远无法成为【十三勇士】，因为你实在太过无能！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1072" id="7" type="0" answer="来战！$你等下我肚子疼" to="a3$o" colorID="2$0">
+			<des>
+				<![CDATA[1#哼，看来彼此都不能认同，唯有你死我活！]]>
+			</des>
+		</proAction>
+		<!-- 战胜 -->
+		<proAction npcID="1072" id="8" type="0" answer="我会成为勇士的$你还早两万年呢$因为我不会被你的鬼话动摇" to="a9$a9$a9" colorID="2$2$2">
+			<des>
+				<![CDATA[1#不可能，我居然会输给你这个冒牌货啊啊啊啊啊!!!]]>
+			</des>
+		</proAction>
+		<proAction npcID="1072" id="9" type="0" answer="@blank" to="onMirroredPlayerFading" colorID="2">
+			<des>
+				<![CDATA[1#你不要得意，只要你内心的黑暗还存在，我们还会再见面的。]]>
+			</des>
+		</proAction>
+		<!-- 登场动画 -->
+		<proAction id="10" type="8" point="650,673" immediately="0" to="a11"/>
+		<proAction id="11" type="1" level="contentLevel" name="map_31622_1" moviepos="0,0" playBGM="1" hideUI="1" to="onShowMirroredPlayer"/>
+		<proAction id="12" type="9" immediately="0" to="a1"/>
+
+		<!-- 更换装备/时装 -->
+		<proAction npcID="1072" id="13" type="0" answer="@blank" to="o" colorID="2">
+			<des>
+				<![CDATA[1#以为换了衣服就能区别出你和我吗，冒牌货——不论变成什么样，我都会取代你。]]>
+			</des>
+		</proAction>
+		<!-- 更换肤色 -->
+
+		<!--  -->
+		
+
+
+	</actions>
+
+
+</map>

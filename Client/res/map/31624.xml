@@ -1,0 +1,50 @@
+<!--勇士大厅?来自断层4f梦境-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<process>
+		<!--
+		<node name="ActivityHeroCupMovie"/>
+		-->
+	</process>
+	<transport intPos="360,308">
+		<node id="1" pos="800,1021" targetMapId="316" targetTransPortId="1" name="皇宫花园"/>
+		<!-- <node id="2" pos="214,518" targetMapId="11303" targetTransPortId="1" name="弓"/>
+		<node id="3" pos="490,403" targetMapId="11305" targetTransPortId="1" name="剑"/>
+		<node id="4" pos="1111,416" targetMapId="11304" targetTransPortId="1" name="魔"/> -->
+		<node id="5" pos="786,260" targetMapId="31625" targetTransPortId="1" name=""/>
+		<!-- <node id="6" pos="1398,525" targetMapId="11306" targetTransPortId="1" name="忍"/> -->
+	</transport>
+	<object>              
+		<!-- <node id="1" type="TransPort" res="MC_door_0" transPortId="1" /> -->
+		<!-- <node id="2" type="TransPort" res="MC_door_1" transPortId="2" />
+		<node id="3" type="TransPort" res="MC_door_2" transPortId="3" />
+		<node id="4" type="TransPort" res="MC_door_3" transPortId="4" /> -->
+		<node id="5" type="TransPort" res="MC_door_6" transPortId="5" />
+		<!-- <node id="7" type="TransPort" res="MC_door_5" transPortId="6" /> -->
+		<!-- <node id="6" type="AppModule" res="MC_mature" module="boards/MatureExperiencePanelModule"/> -->
+		<!-- <node id="5200" res="MC_clock" mouseEnable1="0" mouseChildren1="0"  />		 -->
+	</object>
+	<npc>
+		<node id="401" type="NPC" res="MC_npc_401" name="味神蘑·小甜" action="0"/>
+		<node id="402" type="NPC" res="MC_npc_402" name="味神蘑·小咸" action="11"/>
+		<node id="212" type="NPC" res="MC_npc_212" action="16"/>
+		<node id="214" type="NPC" res="MC_npc_214" action="18"/>
+		<node id="211" type="NPC" res="MC_npc_211" action="20"/>
+		<node id="204" type="NPC" res="MC_npc_204" action="22"/>
+	</npc>
+	<actions>
+		
+		<proAction npcID="10000" id="1" type="0" answer="@blank" to="a2" colorID="2"  >
+			<des>
+				<![CDATA[1#诶，这里为什么这么眼熟，这不是勇士大厅吗！]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="8" point="791,213" immediately="0" to="a3"/>
+		<proAction npcID="25" id="3" type="0" answer="(⊙_⊙)? $总之先进去看一下吧" to="a4$a4" colorID="2$2"  >
+			<des>
+				<![CDATA[1#【@nick】可以进来了！]]>
+			</des>
+		</proAction>
+		<proAction id="4" type="9" immediately="0" to="o"/>
+		
+	</actions>
+</map>

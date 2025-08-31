@@ -100,7 +100,7 @@
             </des>
         </proAction>
 
-        <proAction npcID="60" id="20" type="0" answer="织梦灵箔兑换奖励$织梦灵箔兑换秘宝$库噜骨头兑换奖励$如何学习种族技能$离开" to="f16$getting_treasure$f11$a64$o" colorID="0$0$0$0$0">
+        <proAction npcID="60" id="20" type="0" answer="织梦灵箔兑换奖励$织梦灵箔兑换秘宝$库噜骨头兑换奖励$如何学习种族技能$离开" to="f16$f32$f11$a64$o" colorID="0$0$0$0$0">
             <des>
                 <![CDATA[1#htmlMode我叫娜莲，是娜蒂丝女王的贴身侍女，你若是高于25级，便可与娜蒂丝大人一较高下，获取“织梦灵箔”，兑换时装奖励！$$]]>
                 <![CDATA[1#也可以挑战库噜王获取“库噜骨头”，在我这里兑换奖励哦！]]>

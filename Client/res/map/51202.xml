@@ -12,7 +12,7 @@
 		<node id="4" type="TransPort" res="MC_door_1" transPortId="5"/>
 		<node id="5" type="TransPort" res="MC_door_2" transPortId="3"/>
 		<node id="6" type="TransPort" res="MC_door_3" transPortId="4"/>
-		<node id="11" type="AppModule" res="MC_roadSign" module="boards/LostKingdomBoardModule"/>
+		<!-- <node id="11" type="AppModule" res="MC_roadSign" module="boards/LostKingdomBoardModule"/> -->
 	</object>
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->

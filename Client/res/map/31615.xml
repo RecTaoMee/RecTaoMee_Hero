@@ -1,0 +1,233 @@
+<!--黑泉通径-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="1206,243" targetMapId="31614" targetTransPortId="2"/> 
+		<node id="2" pos="267,1058" targetMapId="31616" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="3" type="OBJECT" res="MC_AST_2" level="upLevel" position="912,257" name="出口光" />
+		<node id="4" type="OBJECT" res="MC_focusRegion" level="contentLevel" pods="FocusRegionPod" focusPos="250,1048"  />
+
+		<node id="12" type="Disable" res="MC_floorLight1" level="downLevel" visible="0"  />
+		<node id="13" type="Disable" res="MC_floorLight2" level="downLevel" visible="0"  />
+		<node id="14" type="Disable" res="MC_floorLight3" level="downLevel" visible="0"  />
+		<node id="15" type="OBJECT" res="MC_fire1" level="contentLevel" alpha="0" pods="MapStateActionPod,ArrowHintPosPod" mapStateActions="onState9" mapStateSteps="8" />
+		<node id="16" type="OBJECT" res="MC_fire2" level="contentLevel" alpha="0" pods="MapStateActionPod" mapStateActions="onState10" mapStateSteps="9" />
+		<node id="17" type="OBJECT" res="MC_fire3" level="contentLevel" alpha="0" pods="MapStateActionPod" mapStateActions="onState10" mapStateSteps="9" />
+		<node id="18" type="OBJECT" res="MC_fire4" level="contentLevel" alpha="0" pods="MapStateActionPod" mapStateActions="onState11" mapStateSteps="10" />
+		<node id="19" type="Disable" res="MC_shadow1" level="upLevel" />
+		<node id="20" type="Disable" res="MC_shadow2" level="upLevel" />
+		<node id="21" type="Disable" res="MC_shadow3" level="upLevel" />
+		<node id="22" type="Disable" res="MC_sunlight1" level="upLevel" />
+		<node id="23" type="Disable" res="MC_sunlight2" level="upLevel" />
+
+	</object>
+	<npc>
+		<node id="2" type="NPC" level="downLevel" res="MC_door_1" action="on_transport_unlock" />	
+		<node id="5" type="NPC" url="res/task/swf2/map_31615_2.swf" res="MC_pet3073_2" level="contentLevel" position="912,257" link="item2" name="吉力姆尔" mapStateActions="14" mapStateSteps="7"  mapShowSteps="7" />
+		<node id="6" type="NPC" url="res/task/swf2/map_31615_2.swf" res="MC_pet3073_1" level="contentLevel" position="912,257" link="item1" name1="？？？(吉力姆尔)" mapStateActions="5|5|w3_3624_1_a10_a8" mapStateSteps="2|3|4" mapShowSteps="2|3|4|5|6"   />
+		<node id="7" type="NPC" url="res/task/swf2/map_31615_10.swf" res="MC_bind1" level="downLevel" position="273,1204" link="item1" name="藤蔓受光" walkPos="396,1059" mapStateActions="onClickBind" mapStateSteps="11" />
+		<node id="8" type="NPC" url="res/task/swf2/map_31615_10.swf" res="MC_bind2" level="downLevel" position="273,1204" link="item2" name="藤蔓缩水" walkPos="396,1059" visible="0" mapStateActions="a28" mapStateSteps="11"  />
+		<node id="9" type="NPC" url="res/task/swf2/map_31615_1.swf" res="MC_mushroom2" level="contentLevel"  position="998,233" link="item2" name="小咸睡着" mapStateActions="2" mapStateSteps="1"  mapShowSteps="1|2|3|4|5"  />
+		<node id="10" type="NPC" url="res/task/swf2/map_31615_1.swf" res="MC_mushroom1" level="contentLevel"  position="998,233" link="item1" name="小咸醒" mapStateActions="12" mapStateSteps="6"   mapShowSteps="6|7"  />
+		<node id="11" type="NPC" url="res/task/swf2/map_31615_10.swf" res="MC_leafHolding" level="upLevel" position="232,1268" link="item3" name="无脸" mouseEnabled1="0" mouseChildren1="0"  action="0" visible="0" />
+	</npc>
+
+
+
+	<actions>
+		<!-- 初次进入场景 node0 step1 -->
+		<proAction npcID="1041" id="1" type="0" answer="这里好黑$我突然感觉好困$我看见金羊狼在跳圈" to="a2$a2$a2" colorID="2$2$2">
+			<des>
+				<![CDATA[1#这里就是黑泉通径，接下来就交给你了。]]>
+			</des>
+		</proAction>	
+		<proAction npcID="1075" id="2" type="0" answer="@blank" to="a3" colorID="2">
+			<des>
+				<![CDATA[1#zzzzz....咸咸的蘑菇才是最好吃的——]]>
+			</des>
+		</proAction>	
+		<proAction npcID="10000" id="3" type="0" answer="@blank" to="a18" colorID="2">
+			<des>
+				<![CDATA[1#小咸你怎么睡着了！蘑菇不是只有白天才会睡觉的嘛？$$]]>
+				<![CDATA[1#怎么感觉身上有点湿湿的。$$]]>
+				<![CDATA[1#完了，我也有点想睡觉zzzzzzzzz]]>
+			</des>
+		</proAction>	
+		<proAction id="18" type="1" level="taskLevel" name="map_31615_4" moviepos="0,0" playBGM="1" to="a19"/>
+		<proAction id="19" type="7" mapID="31624" transPortID="1" />
+		<proAction id="20" type="1" level="taskLevel" name="map_31615_3" moviepos="0,0" playBGM="1" to="onState2"/>
+
+		<!-- 从梦境醒来 node1 step2 -->
+		<proAction npcID="10000" id="4" type="0" answer="@blank" to="onState3" colorID="2">
+			<des>
+				<![CDATA[1#（哎，为什么我感到那么失落。有种从天上摔下来的感觉，让人感到苦闷）]]>
+			</des>
+		</proAction>		
+		<!-- step3 -->	
+		<proAction npcID="1073" id="5" type="0" answer="哎，又幻想了$就是你让我做梦的吗$我王冠还没戴上呢！" to="a6$a6$a6" colorID="2$2$2">
+			<des>
+				<![CDATA[1#可恶，居然自己从梦中醒来了吗？]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1073" id="6" type="0" answer="没有办法$这个梦太好了$太假了一看就知道是梦" to="a7$a7$a7" colorID="2$2$2">
+			<des>
+				<![CDATA[1#哈哈哈哈，现在才发现自己做梦了吗？$$]]>
+				<![CDATA[1#看你这么不情愿的样子，看起来不大想醒来啊。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1073" id="7" type="0" answer="可恶$你这个家伙$我的摩尔王身份就这么没了TT" to="onState4$onState4$onState4" colorID="2$2$2">
+			<des>
+				<![CDATA[1#不过你做的梦也挺好吃的，我已经吃饱了。]]>
+			</des>
+		</proAction>			
+		<!-- step4 -->	
+		<proAction npcID="1073" id="8" type="0" answer="来战！$准备一下" to="a21$o" colorID="2$2">
+			<des>
+				<![CDATA[1#为了感谢你让我饱餐一顿，现在就送你上路吧！]]>
+			</des>
+		</proAction>			
+		<!-- 战斗 -->
+		<proAction id="21" type="5" fightID="3624" to="o"/>
+		<!-- 战斗胜利  step5 -->
+		<proAction npcID="1073" id="10" type="0" answer="再让我做一次梦！$我还没揍过瘾$再来打一架" to="a11$a11$a11" colorID="2$2$2">
+			<des>
+				<![CDATA[1#哎哟，大人饶命，我错了。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1073" id="11" type="0" answer="@blank" to="onState6" colorID="2">
+			<des>
+				<![CDATA[1#别别别别，我把你同伴也唤醒了，饶了我吧！$$]]>
+				<![CDATA[1#……%&%￥￥……#]]>
+			</des>
+		</proAction>
+		<!-- step6 -->			
+		<proAction npcID="402" id="12" type="0" answer="小咸，终于醒来了吗！" to="a13" colorID="2">
+			<des>
+				<![CDATA[9#？小咸为什么会在这里，小咸明明在美味的咸味之海里面呀。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1073" id="13" type="0" answer="哼$下不为例$下次再揍你" to="onState7$onState7$onState7" colorID="2$2$2">
+			<des>
+				<![CDATA[1#【@nick】大人，我错了。你饶了我吧，我教你怎么过去。]]>
+			</des>
+		</proAction>		
+		<!-- 名字显现 step7 -->	
+		<proAction npcID="1074" id="14" type="0" answer="@blank" to="a15" colorID="2">
+			<des>
+				<![CDATA[1#小弟名叫【吉力姆尔】，你只要依次点亮这里的火把，就可以继续通往向前的路了。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="402" id="15" type="0" answer="@blank" to="a16" colorID="2">
+			<des>
+				<![CDATA[1#小咸偷偷告诉【@nick】，将法尔设置为跟随就可以轻松点燃火把哦。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1074" id="16" type="0" answer="@blank" to="a17" colorID="2">
+			<des>
+				<![CDATA[1#对对就是那个，全部燃烧吧....神圣火焰呱呱。]]>
+			</des>
+		</proAction>			
+		<proAction npcID="1074" id="17" type="0" answer="知道了$别再出现在我的面前。$你走吧" to="onState8$onState8$onState8" colorID="2$2$2">
+			<des>
+				<![CDATA[1#大人慢走，这里路途很短，小弟就不送了=-=小心其他想吃你梦的族人。]]>
+			</des>
+		</proAction>
+		<!-- node2 step8-->	
+
+		<!-- 火焰1 node3 step9 -->	
+		<!-- 火焰2,3 node4 step10-->	
+		<!-- 火焰4 node5 step11-->	
+
+		<proAction npcID="340" id="22" type="0" answer="@blank" to="o" colorID="2">
+			<des>
+				<![CDATA[1#（黑化藤蔓挡住了去路。让你的精灵【幽光战士】跟随身边试试吧...）]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="23" type="0" answer="@blank" to="a24" colorID="2">
+			<des>
+				<![CDATA[9#哇！居然【幽光战士】都无法砍掉这个藤蔓...）]]>
+			</des>
+		</proAction>
+		<proAction npcID="340" id="24" type="0" answer="你怎么知道$这藤蔓居然会说话？！$你跟锁修塔的藤蔓是什么关系？" to="a25$a25$a25" colorID="2$2$2">
+			<des>
+				<![CDATA[1#居然知道拿【幽光战士】对付我，你肯定有去过锁修塔吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="340" id="25" type="0" answer="好惨$其实我都是绕道走的$我错了" to="a26$a26$a26" colorID="2$2$2">
+			<des>
+				<![CDATA[1#锁修塔的藤蔓可是我的兄弟，可惜他没有强壮的身躯，路过的摩尔常常带着【幽光战士】把他砍下楼梯。悲剧啊TT]]>
+			</des>
+		</proAction>
+		<proAction npcID="340" id="26" type="0" answer="哪有这样堵路的$我晕$看来得想想别的方法。" to="a27$a27$a27" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我拥有强壮的身躯，就算是【金甲剑魂】都无法把我砍掉，你还是放弃过去吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="10000" id="27" type="0" answer="@blank" to="o" colorID="2">
+			<des>
+				<![CDATA[1#（这株藤蔓沐浴在阳光下………唔…尝试让【无脸隐者】跟随在身边吧。）]]>
+			</des>
+		</proAction>
+		<proAction npcID="340" id="28" type="0" answer="@blank" to="a29" colorID="2">
+			<des>
+				<![CDATA[1#这不科学！你怎么能看透我真正的能量来源。]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="29" type="0" answer="不要迷恋我$没错$你答对了。" to="a30$a30$a30" colorID="2$2$2">
+			<des>
+				<![CDATA[2#哇，【@nick】好厉害啊！小咸才反应过来，锁修塔上所生长的藤蔓基本都被阳光照射，只要遮住了光，就不用害怕啦！）]]>
+			</des>
+		</proAction>
+		<proAction npcID="340" id="30" type="0" answer="嘿嘿(*^▽^*)" to="onState12" colorID="2">
+			<des>
+				<![CDATA[1#算你聪明..这路就让你过去吧！]]>
+			</des>
+		</proAction>
+		<!-- node6 step12 -->
+
+
+		<proAction npcID="1041" id="31" type="0" answer="真是一场难以忘记的梦" to="a32" colorID="2">
+			<des>
+				<![CDATA[1#黑泉通径的泉水，拥有着让人会一直做梦的效果。$$]]>
+				<![CDATA[1#而吉力姆和吉力姆尔就是在黑泉里面诞生出来的精灵，他们以别人的梦为食物。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="32" type="0" answer="我梦到自己成了摩尔王$成为了摩尔勇士$抓到了尤利魔王" to="a33$a33$a33" colorID="2$2$2">
+			<des>
+				<![CDATA[1#嗯？可以跟我说说你梦到了什么吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="33" type="0" answer="@blank" to="onState13" colorID="2">
+			<des>
+				<![CDATA[1#哈哈..这还真是有意思的梦,怪不得你现在是这个表情。$$]]>
+				<![CDATA[1#当自己的梦想实现时,那种喜悦，真的无法用语言来形容。$$]]>
+				<![CDATA[1#沉浸在这份喜悦之中便会迷失自我，拒绝诱惑，并且保持清醒的认知,这就是来自第五层的考验。$$]]>
+				<![CDATA[1#接下来就是时之断层的终点了，加油！]]>
+			</des>
+		</proAction>
+		<!-- node7 step13 -->
+
+		<!-- 金甲砍飞藤曼后 -->
+		<proAction npcID="340" id="34" type="0" answer="@blank" to="onState12" colorID="2">
+			<des>
+				<![CDATA[1#这不可能…！你竟然……有……]]>
+			</des>
+		</proAction>
+
+		<!-- 无脸动画 -->
+		<proAction id="35" type="1" level="contentLevel" name="map_31615_11" moviepos="273,1204" playBGM="1" hideUI="1" to="o"/>
+		<proAction id="36" type="1" level="upLevel" name="map_31615_12" moviepos="232,1268" playBGM="1" hideUI="1" to="onLeafMovieEnd"/>
+
+		<!-- 点火失败 -->
+		<proAction npcID="402" id="37" type="0" answer="@blank" to="o" colorID="2">
+			<des>
+				<![CDATA[1#小咸偷偷告诉【@nick】，将法尔设置为跟随就可以轻松点燃火把哦。]]>
+			</des>
+		</proAction>	
+
+
+	</actions>
+
+</map>

@@ -1,0 +1,232 @@
+<!--倒影山丘-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+	<transport intPos="312,355">
+		<node id="1" pos="312,280" targetMapId="31613" targetTransPortId="2"/> 
+		<node id="2" pos="1456,1525" targetMapId="31615" targetTransPortId="1"/> 
+		<node id="3" pos="828,1055" targetMapId="31622" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		
+	</object>
+
+	<npc>
+	  <node id="6" type="NPC" res="MC_door_1" level="contentLevel" action="" />	
+	  <node id="7" type="NPC" res="MC_door_2" level="contentLevel" action="" mapShowSteps="8|9" />	
+      <node id="2" type="NPC" res="MC_npc_402" url="res/task/swf2/map_31614_1.swf" level="contentLevel" position="373,410" link="item1" action="" mapStateActions="0|followHit|18" mapStateSteps="1|3|5" mapShowSteps="1|2|3|4|5" />
+      <node id="3" type="NPC" res="MC_npc_1064" url="res/task/swf2/map_31614_1.swf" level="contentLevel" position="447,416" link="item2" action="" mapStateActions="0|followHit" mapStateSteps="1|3" mapShowSteps="1|2|3" />
+      <node id="4" type="NPC" res="MC_npc_314" url="res/task/swf2/map_31614_1.swf" level="contentLevel" position="381,343" link="item3" action="9" mapShowSteps="2" />
+      <node id="4" type="NPC" res="MC_npc_1065" url="res/task/swf2/map_31614_1.swf" level="contentLevel" position="445,416" link="item4" mapStateActions="w3_3621_1_a16_a14" mapStateSteps="4" mapShowSteps="4" />
+	  <node id="5" type="NPC" res="MC_Altar" level="contentLevel" mapStateActions="24" mapStateSteps="7" mapShowSteps="7" />	
+	  <node id="6" type="NPC" res="MC_AST_Altar2" level="contentLevel"  mapShowSteps="8|9" />	
+	</npc>
+
+   <actions>
+      <!-- 初次进入场景 -->
+      <!-- 添加2个小咸 -->
+		<proAction npcID="402" id="0" type="0" event="enter_map" answer="@blank" to="a1" colorID="2">
+			<des>
+				<![CDATA[6#哇，这些水晶都能映出我们的样子,看着头昏眼花的（-m-）]]>
+			</des>
+		</proAction>
+		<proAction npcID="1064" id="1" type="0" answer="小咸有两个？！" to="a2" colorID="2">
+			<des>
+				<![CDATA[6#这里感觉好危险=-=]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="402" id="2" type="0" answer="@blank" to="a3" colorID="2">
+			<des>
+				<![CDATA[6#你这个冒牌货！为什么冒充小咸！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1064" id="3" type="0" answer="你们不要再吵啦！" to="a4" colorID="2">
+			<des>
+				<![CDATA[6#你才是冒牌货！你为什么要冒充小咸！]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="4" type="0" answer="@blank" to="a5" colorID="2">
+			<des>
+				<![CDATA[6#那【@nick】说说谁才是真的小咸！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1064" id="5" type="0" answer="（看了半天俩蘑菇长得一毛一样）" to="add_click_Mushroom" colorID="2">
+			<des>
+				<![CDATA[6#没错！【快点找找看！】]]>
+			</des>
+		</proAction>
+
+		<proAction id="6" type="4" alert="点击找出假冒的小甜" to="o" />
+
+
+		<proAction npcID="402" id="7" type="0" event="click_mushroom_1" answer="囧$怎么办$我投降TT" to="goto_state_2$goto_state_2$goto_state_2" colorID="2$2$2">
+			<des>
+				<![CDATA[6#【@nick】有没有搞错！明明我才是真的，他才是假的！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1064" id="8" type="0" event="click_mushroom_2" answer="囧$怎么办$我投降TT" to="goto_state_2$goto_state_2$goto_state_2" colorID="2$2$2">
+			<des>
+				<![CDATA[6#【@nick】是笨蛋！以后小咸不给你提示了！】]]>
+			</des>
+		</proAction>
+		<!-- 添加戈戈拉 -->
+
+		<proAction npcID="314" id="9" type="0" answer="戈戈拉！$你怎么跟过来了？$请教导我！" to="a10$a10$a10" colorID="2$2$2">
+			<des>
+				<![CDATA[1#哈哈哈哈，【@nick】你真是笨蛋，这都看不出来哪个是假的吗？]]>
+			</des>
+		</proAction>
+		<proAction npcID="314" id="10" type="0" answer="你先告诉我他们哪个是真的。" to="a11" colorID="2">
+			<des>
+				<![CDATA[1#炎之大陆肯定有很多值钱的财宝，做怪盗哪有不拿的道理！]]>
+			</des>
+		</proAction>
+		<proAction npcID="314" id="11" type="0" answer="那财宝你别想了$炎之大陆我不去了=-=$我找到财宝也不给你" to="a12$a12$a12" colorID="2$2$2">
+			<des>
+				<![CDATA[1#很简单，你给我星豆我就告诉你。]]>
+			</des>
+		</proAction>
+		<proAction npcID="314" id="12" type="0" answer="我都是交易市场买的\n哪里会记得。$原来如此$使命必达！" to="a30$a30$a30" colorID="2$2$2">
+			<des>
+				<![CDATA[1#wait！I真是服了YOU了。你的忽悠猫是不是白抓了？把我的小弟迪迪拉设置跟随就可以找到了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="314" id="30" type="0" answer="@blank" to="remove_npc_314" colorID="2">
+			<des>
+				<![CDATA[1#哈哈哈哈，找到了财宝别忘记告诉我。我先回箱子等你好消息！]]>
+			</des>
+		</proAction>
+
+		<!-- 跟随后点击触发事件 -->
+		<proAction npcID="1064" id="13" type="0" answer="真相只有一个，你是冒牌货！" to="doActionA14" colorID="2">
+			<des>
+				<![CDATA[6#……]]>
+			</des>
+		</proAction>
+		<proAction npcID="1065" id="14" type="0" answer="来战！$看！有弗雷基！" to="a15$o" colorID="2$0">
+			<des>
+				<![CDATA[6#被发现了，真没意思嘻嘻。既然这样就先干掉你们吧！]]>
+			</des>
+		</proAction>
+		<proAction id="15" type="5" fightID="3621" to="w3_3621_1_a16_o"/>
+		<!-- 胜利 -->
+		<proAction npcID="1065" id="16" type="0" answer="哼，想逃？" to="onGrp3621Won" colorID="2">
+			<des>
+				<![CDATA[6#可恶啊！打不过我跑还不成！]]>
+			</des>
+		</proAction>
+		<!-- 动画 -->
+		<!-- <proAction npcID="1065" id="17" type="0" answer="哼，想逃？" to="o" colorID="2">
+			<des>
+				<![CDATA[6#可恶啊！打不过我跑还不成！]]>
+			</des>
+		</proAction> -->
+
+		
+		<!-- 动画结束 -->
+		<proAction npcID="402" id="18" type="0" answer="@blank" to="onState6" colorID="2">
+			<des>
+				<![CDATA[6#可恶的冒牌货，居然伪装独一无二的小咸...]]>
+			</des>
+		</proAction>
+
+		<!-- 走到祭坛附近 -->
+		<proAction npcID="402" id="19" type="0" answer="去看看" to="o" colorID="2">
+			<des>
+				<![CDATA[6#快看！那里好像有个祭坛！]]>
+			</des>
+		</proAction>
+		<!-- 点击祭坛 -->
+		<!--  -->
+		<proAction npcID="10000" id="24" type="0" puzzle="res/task/swf2/recallBg.swf" hideMap="1" answer="@blank" to="a20" colorID="2">
+			<des>
+				<![CDATA[1#（四周好黑，有什么声音在我耳边盘旋！）]]>
+			</des>
+		</proAction>
+		<proAction npcID="1066" id="20" type="0" puzzle="res/task/swf2/recallBg.swf" hideMap="1" answer="@blank" to="a21" colorID="2">
+			<des>
+				<![CDATA[1#你的妻子是被奥西斯族杀死的。跟我签订契约，向可憎的奥西斯族复仇吧！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1067" id="21" type="0" puzzle="res/task/swf2/recallBg.swf" hideMap="1" answer="（这是什么声音？\n我为什么不能动也不能说话？）" to="a22" colorID="2">
+			<des>
+				<![CDATA[1#我愿意，为了向他们复仇不惜一切代价。]]>
+			</des>
+		</proAction>
+
+		<proAction npcID="1066" id="22" type="0" puzzle="res/task/swf2/recallBg.swf" hideMap="1" answer="@blank" to="a23" colorID="2">
+			<des>
+				<![CDATA[1#对你力量的质疑，是不可容忍，不可允许的。你的力量注定得到至高无上的圣物，拔出你的剑证明你是正确的。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1068" id="23" type="0" puzzle="res/task/swf2/recallBg.swf" hideMap="1" answer="（跟刚刚不是一个人？！）" to="a25" colorID="2">
+			<des>
+				<![CDATA[1#那是当然，只有力量才能决定一切！奥西斯算得上什么！]]>
+			</des>
+		</proAction>
+
+		<!-- 背景关闭 -->
+
+		<proAction npcID="10000" id="25" type="0" answer="@blank" to="a26" colorID="2">
+			<des>
+				<![CDATA[6#刚刚的影像是什么情况？]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="26" type="0" answer="（告诉小咸刚刚的事情）" to="a27" colorID="2">
+			<des>
+				<![CDATA[6#【@nick】怎么突然一动不动，小咸好担心！]]>
+			</des>
+		</proAction>
+		<proAction npcID="402" id="27" type="0" answer="伏笔神马都是寂寞$我会注意的" to="onState8$onState8" colorID="2$2">
+			<des>
+				<![CDATA[6#小咸也不知道这会是谁，但是这里是时间断层，应该是时间碎片里的片段对你进行了影响，应该是想告诉你一些事情吧？]]>
+			</des>
+		</proAction>
+
+		<!-- 未解锁时点击传送阵 -->
+		<proAction npcID="402" id="28" type="0" answer="@blank" to="o" colorID="2">
+			<des>
+				<![CDATA[6#看起来我们似乎还没有通过试炼，先看看还有什么机关吧！]]>
+			</des>
+		</proAction>
+
+		<!-- 走到镜阵附近 -->
+
+		<proAction npcID="402" id="29" type="0" answer="会不是陷阱？$算了先去看看$look一下" to="o$o$o" colorID="2$2$2">
+			<des>
+				<![CDATA[6#快看！那里好像也有个祭坛！]]>
+			</des>
+		</proAction>
+
+
+		<!-- 点击镜阵 传送 -->
+		<proAction id="31" type="1" level="downLevel" name="map_31614_2" moviepos="0,0" playBGM="1" to="a33"/>
+		<proAction id="32" type="1" level="upLevel" name="map_31614_3" moviepos="0,0" playBGM="1" to="a33"/>
+		<proAction id="33" type="7" mapID="31622" transPortID="1" />
+
+		<!-- 现在试炼已完成 -->
+
+		<proAction npcID="1041" id="34" type="0" answer="轻轻松松$棘手的冒牌货…$这个冒牌货是？" to="a35$a35$a35" colorID="2$2$2">
+			<des>
+				<![CDATA[1#结束了啊，你通过魔镜的试炼了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="35" type="0" answer="嘿嘿$我看这家伙不爽$总算跨越试炼了" to="a36$a36$a36" colorID="2$2$2">
+			<des>
+				<![CDATA[1#这是倒影山丘的魔镜所产生出来的，完全一比一复刻的【你】。$$]]>
+				<![CDATA[1#倒影会印照自己不想面对的黑暗面，它拥有本体同样的实力，会不断折磨你的心智，不断映照内心深处的阴影。$$]]>
+				<![CDATA[1#这就是【现在】的试炼。$$]]>
+				<![CDATA[1#正所谓“最大的敌人就是自己”啊。你能在这一瞬间超越自我，并且直面自己内心的黑暗——做得很漂亮。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="36" type="0" answer="@blank" to="on_transport_unlock" colorID="2">
+			<des>
+				<![CDATA[1#稍作休息一下，然后继续前进吧。]]>
+			</des>
+		</proAction>
+
+
+
+   </actions>
+
+</map>

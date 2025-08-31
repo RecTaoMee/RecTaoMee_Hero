@@ -195,7 +195,7 @@
 			            
 			            
   		<Step ID="8" ParentList="7" ParentCost="1" >
-    		<Event Memo="赶快去风之洞穴三层看看风龙的情况吧。" TargetMap="21503" TargetObj="329" TargetName="和t威恩德t对话">
+    		<Event Memo="赶快去风之洞穴三层看看风龙的情况吧。" TargetMap="21503" TargetObj="329" TargetWalkEndMapAction="checkNpc329Visible" TargetName="和t威恩德t对话">
   				<Trigger>					
 					<Item Type="OBJ_CLICK" MapID="21503" ObjID="329"/>									
 				</Trigger> 	

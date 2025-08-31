@@ -726,7 +726,7 @@
                <Item Type="ENTER_MAP" MapID="11607" />
             </Trigger>
             <Action Type="TALK">
-               <Msg NpcID="100" ImageID="1" Info="马上来!上楼坐吧。" />
+               <Msg NpcID="1072" ImageID="1" Info="马上来!上楼坐吧。" />
                <Option Info="好" />
             </Action>
             <Action Type="COMMAND" Command="RESTORE_CAMERA" />

@@ -1,0 +1,163 @@
+<!--时间虚域-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-206.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="502,444" targetMapId="31616" targetTransPortId="2"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="downLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+	</object>
+
+	<npc>
+		<node id="6" type="NPC" res="MC_npc_1086" url="res/task/swf2/map_31623_1.swf" level="contentLevel" position="250,300" link="item" mapStateActions="a3|onClick_npc_1086" mapStateSteps="2|4" visible="0"  /> 
+		<node id="7" type="NPC" res="MC_npc_1085" url="res/task/swf2/map_31623_4.swf" level="contentLevel" position="331,339" link="item1" mapStateActions="w3_3627_1_onState4_a6" mapStateSteps="3"  visible="0"  /> 
+		<node id="8" type="NPC" res="MC_pet_52_1" url="res/task/swf2/map_31623_4.swf" level="contentLevel" position="260,350" link="item2"  visible="0"  /> 
+		<node id="9" type="NPC" res="MC_pet_52_2" url="res/task/swf2/map_31623_4.swf" level="contentLevel" position="381,305" link="item2"  visible="0"  /> 
+	</npc>
+
+	<actions>
+		<proAction npcID="1041" id="1" type="0" answer="我准备好了$为了踏上新的旅程$加油！" to="a2$a2$a2" colorID="2$2$2">
+			<des>
+				<![CDATA[1#此处为【时间虚域】，也是这时间断层的尽头。$$]]>
+				<![CDATA[1#我会好好地见证这一刻的，加油——【@nick】。]]>
+			</des>
+		</proAction>
+		<proAction id="2" type="1" level="contentLevel" name="map_31623_2" moviepos="250,300" playBGM="1" hideUI="1" to="onState2"/>
+
+		<!-- step2 -->
+		<!-- 残影出现 -->
+
+		<proAction npcID="10000" id="3" type="0" answer="@blank" to="a4" colorID="2">
+			<des>
+				<![CDATA[1#这股强大的黑暗气息？！你是尤利魔王！！]]>
+			</des>
+		</proAction>
+		<proAction npcID="1086" id="4" type="0" answer="@blank" to="a5" colorID="2">
+			<des>
+				<![CDATA[1#卑微的鼹鼠——竟敢呼唤吾之名讳，吾会让你感受到比死亡更加深刻的恐惧。$$]]>
+				<![CDATA[1#出现吧,接受吾之赐福的使徒们，歼灭亵渎魔王之名的蝼蚁。]]>
+			</des>
+		</proAction>
+		<proAction id="5" type="1" level="contentLevel" name="map_31623_5" moviepos="331,339" playBGM="1" hideUI="1" to="onState3"/>
+		<!-- step3 -->
+		<!-- 魔光 噬魂鬼出现 -->
+		<proAction npcID="1085" id="6" type="0" answer="来战！$准备一下" to="a7$o" colorID="2$0">
+			<des>
+				<![CDATA[1#我会享受你的恐惧……]]>
+			</des>
+		</proAction>
+        <proAction id="7" type="5" fightID="3627" to="o" />
+		<!-- 魔光 噬魂鬼消失 -->
+		<proAction id="18" type="1" level="contentLevel" name="map_31623_6" moviepos="331,339" playBGM="1" hideUI="1" to="o"/>
+		<!-- stetp4 -->
+		<proAction npcID="1086" id="8" type="0" answer="来战！$准备一下" to="a9$o" colorID="2$0">
+			<des>
+				<![CDATA[1#有趣，你确实有着被吾亲手摧毁的资格。使出你生平所有的本事，尽情挣扎吧。]]>
+			</des>
+		</proAction>
+        <proAction id="9" type="5" fightID="3628" to="onUliGrpEnd" />
+
+		<proAction npcID="1086" id="10" type="0" answer="我胜利了！$魔王就这点实力？$知道我的厉害了吧！" to="onState5$onState5$onState5" colorID="2$2$2">
+			<des>
+				<![CDATA[1#该死的鼹鼠..居然敢如此...]]>
+			</des>
+		</proAction>
+		<!-- 尤利 消失 -->
+		<proAction id="19" type="1" level="contentLevel" name="map_31623_3" moviepos="250,300" playBGM="1" hideUI="1" to="a11"/>
+		<!-- stetp5 -->
+		<proAction npcID="1041" id="11" type="0" answer="谢谢" to="a12" colorID="2">
+			<des>
+				<![CDATA[1#【魔王】，这是在你未来必须面对的强大敌人。即使这只是魔王封印所留下的残渣，在这【时间虚域】之中也拥有强大的实力。$$]]>
+				<![CDATA[1#恭喜你，通过所有的试炼。这下子【拉瓦大陆】与【格历尔大陆】的时之封印即将消失，历史崭新的篇章即将展开。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="12" type="0" answer="我也期待这一天$肯定会有这一天的$再见！！" to="a13$a13$a13" colorID="2$2$2">
+			<des>
+				<![CDATA[1#再见了，【@nick】。很荣幸能够认识你，希望我们能有并肩作战的一天。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="13" type="0" answer="@blank" to="onPlayEndMovie" colorID="2">
+			<des>
+				<![CDATA[1#祝你在【拉瓦大陆】有着一段精彩的冒险，勇士的荣耀与你同在。]]>
+			</des>
+		</proAction>
+
+
+		<!-- 魔王残影失败一次 -->
+		<proAction npcID="1086" id="14" type="0" answer="到此为止了吗$我不能就这样结束$好强.." to="a15$a15$a15" colorID="2$2$2">
+			<des>
+				<![CDATA[1#不值一提的存在——你从身心到灵魂的恐惧吾将照单全收。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="15" type="0" answer="我还要前往【炎陆】呢$我不会放弃的$魔王神马都是浮云！！" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#要是放弃了，一切才会真正结束。我相信你的旅途，不会终结于此——]]>
+			</des>
+		</proAction>
+		<proAction npcID="1086" id="16" type="0" answer="来战！$准备一下" to="a9$o" colorID="2$2">
+			<des>
+				<![CDATA[1#可笑...那你就继续挣扎吧！]]>
+			</des>
+		</proAction>
+		<!-- 魔王残影失败两次及以上 -->
+		<proAction npcID="1086" id="17" type="0" answer="来战！$准备一下" to="a9$o" colorID="2$2">
+			<des>
+				<![CDATA[1#不知天高地厚的蠢货——就这样被恐惧所侵蚀吧。]]>
+			</des>
+		</proAction>
+
+
+
+		<!-- 尾声 -->
+
+		<!-- 时间裂缝解体动画 -->
+		<proAction id="38" type="1" level="taskLevel" name="map_31616_9" moviepos="0,0" playBGM="0" hideUI="1" hideMap="1" to="a26"/>
+		<!--  -->
+		<proAction npcID="1072" id="26" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a27" colorID="2">
+			<des>
+				<![CDATA[1#时光飞逝，世代交替。自神魔大战之后的数百年，五个大陆被名为【时间断层】的巨大屏障所阻隔，从此再无往来。$$]]>
+				<![CDATA[1#未来勇士【@nick】成功跨越了试炼，并且解除了封印。此时此刻——位于【格历尔大陆】与【拉瓦大陆】之间的巨大屏障，渐渐开始破裂。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1084" id="27" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a28" colorID="2">
+			<des>
+				<![CDATA[1#快看——领主阁下，那个巨大的屏障居然破碎了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1083" id="28" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a29" colorID="2">
+			<des>
+				<![CDATA[1#偏偏选在这个节骨眼上破除封印，还真是造化弄摩啊。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1084" id="29" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a30" colorID="2">
+			<des>
+				<![CDATA[1#魔族的动作越来越多，现在城内的氛围更是忐忑不安呢…]]>
+			</des>
+		</proAction>
+		<proAction npcID="1083" id="30" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a31" colorID="2">
+			<des>
+				<![CDATA[1#【四大部族】各扫门前雪…我们也要做好相应的准备。不能再让城内继续散播如此不详的气氛了。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1084" id="31" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="a32" colorID="2">
+			<des>
+				<![CDATA[1#遵命，我已经交代过【骑士长】加强戒备了。$$]]>
+				<![CDATA[1#然而…从这大陆前来的到底会是我们的救星，亦或是魔族带来的灾星呢？]]>
+			</des>
+		</proAction>
+		<proAction npcID="1083" id="32" type="0" puzzle="res/task/swf2/map_31616_10.swf" hideMap="1" answer="@blank" to="onTimeFaultCompleted" colorID="2">
+			<des>
+				<![CDATA[1#呵呵呵…谁知道呢。]]>
+			</des>
+		</proAction>
+
+
+
+
+
+
+
+
+
+	</actions>
+
+</map>

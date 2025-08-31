@@ -1,0 +1,209 @@
+<!--国王呈见厅?来自断层4f梦境-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-201.mp3">
+	<process>
+
+	</process>
+	<transport intPos="407,676">
+		<node id="1" pos="404,754" targetMapId="31624" targetTransPortId="5" name=""/>
+	</transport>
+	<object>
+		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
+		<node id="2" type="AppModule" res="MC_heroBook" module="MoleHeroBookModule"/>
+		<node id="3" type="OBJECT" res="MC_focusGodness" level="contentLevel" pods="FocusRegionPod" focusPos="400,154" scrollSpeed="0.05,0.15" />
+	</object>
+	<npc>
+		<!-- alpTaskID:完成某任务某【节点】显示,compTaskID:完成某任务某【节点】不显示-->
+		<node id="47" type="NPC" res="MC_npc_2" level="contentLevel" walkPos="399,373" mapStateActions="22" mapStateSteps="6" />
+		
+		<node id="24" type="NPC" res="MC_npc_24" name="莱卡" mapStateActions="2|21" mapStateSteps="100|6" />
+		<node id="25" type="NPC" res="MC_npc_25" action="7$8$9"/>
+		<node id="30" type="NPC" res="MC_npc_30" action="5$6" name="摩尔王"/>
+
+
+		<node id="34" type="NPC" res="MC_npc_1" mapStateActions="5" mapStateSteps="1" name="皮皮克克"/>
+		<node id="35" type="NPC" res="MC_npc_5" mapStateActions="5" mapStateSteps="1" name="村长"/>
+		<node id="36" type="NPC" res="MC_npc_6" mapStateActions="5" mapStateSteps="1" name="琪琪姐姐"/>
+
+		<node id="37" type="NPC" res="MC_npc_20602" mapStateActions="8" mapStateSteps="2" name="水龙"/>
+		<node id="38" type="NPC" res="MC_npc_329"   mapStateActions="8" mapStateSteps="2" name="风龙"/>
+
+		<node id="39" type="NPC" res="MC_npc_27" mapStateActions="10" mapStateSteps="3" name="彼兔"/>
+		<node id="40" type="NPC" res="MC_npc_26" mapStateActions="10" mapStateSteps="3" name="杰森"/>
+		<node id="41" type="NPC" res="MC_npc_28" mapStateActions="10" mapStateSteps="3" name="瑞凌"/>
+		<node id="42" type="NPC" res="MC_npc_29" mapStateActions="10" mapStateSteps="3" name="休一"/>
+		<node id="43" type="NPC" res="MC_npc_22" mapStateActions="10" mapStateSteps="3" name="温蒂"/>
+
+		<node id="44" type="NPC" res="MC_npc_337" mapStateActions="15" mapStateSteps="4" name="伊影"/>
+		<node id="45" type="NPC" res="MC_npc_345" mapStateActions="15" mapStateSteps="4" name="尤利"/>
+		<node id="46" type="NPC" res="MC_npc_350" mapStateActions="15" mapStateSteps="4" name="基姆"/>
+
+		<node id="32" type="NPC" res="MC_npc_104" mapStateActions="18" mapStateSteps="5"  name="多修"/>
+		<node id="31" type="NPC" res="MC_npc_100" mapStateActions="18" mapStateSteps="5"  name="瑞恩"/>
+		<node id="33" type="NPC" res="MC_npc_101" mapStateActions="18" mapStateSteps="5"  name="妮娜"/>
+
+		
+	</npc>
+	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
+	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
+	<actions>
+		<!-- 相机移动至国王 -->
+		<!-- <proAction id="1" type="8" point="100,100" immediately="0" to="" /> -->
+		<!-- 入场 -->
+		<proAction npcID="30" id="1" type="0" answer="@blank" to="a2" colorID="2"  >
+			<des>
+				<![CDATA[1#【@nick】等你很久了！]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="2" type="0" answer="@blank" to="onChangeBgm" colorID="2"  >
+			<des>
+				<![CDATA[2#肃静！现在摩尔王继承仪式正式开始！]]>
+			</des>
+		</proAction>
+		<!-- 切换背景音乐 -->
+		<proAction npcID="24" id="3" type="0" answer="@blank" to="onPlayApplause1" colorID="2"  >
+			<des>
+				<![CDATA[1#欢迎我们智慧与实力并肩的，第十三勇士。兼现任摩尔王继承人——【@nick】入场。]]>
+			</des>
+		</proAction>
+		<!-- 掌声 -->
+		<proAction npcID="10000" id="4" type="0" answer="@blank" to="onState1" colorID="2"  >
+			<des>
+				<![CDATA[1#什么？？？？我是在做梦吗？]]>
+			</des>
+		</proAction>
+		<!-- state1 -->
+		<proAction npcID="1" id="5" type="0" answer="@blank" to="a6" colorID="2"  >
+			<des>
+				<![CDATA[1#嘿嘿，这才是我信赖的好朋友。]]>
+			</des>
+		</proAction>
+		<proAction npcID="6" id="6" type="0" answer="@blank" to="a7" colorID="2"  >
+			<des>
+				<![CDATA[1#【@nick】实在是太厉害了，你是大家的榜样。]]>
+			</des>
+		</proAction>
+		<proAction npcID="5" id="7" type="0" answer="大家别说了我害羞TT$低调低调$不要迷恋我" to="onState2$onState2$onState2" colorID="2$2$2"  >
+			<des>
+				<![CDATA[1#嚯嚯，刚冒险的时候还是我教【@nick】的技能。]]>
+			</des>
+		</proAction>
+		<!-- state2 -->
+		<!-- 龙 -->
+		<proAction npcID="20602" id="8" type="0" answer="@blank" to="a9" colorID="2"  >
+			<des>
+				<![CDATA[1#【@nick】大人救了我的孩子，他是最善良的王者。]]>
+			</des>
+		</proAction>
+		<proAction npcID="329" id="9" type="0" answer="连龙族都来了！$这到底啥情况$风之龙快来当主战！" to="onState3$onState3$onState3" colorID="2$2$2"  >
+			<des>
+				<![CDATA[1#【@nick】大人，吾愿意每天在您旁边当电风扇。]]>
+			</des>
+		</proAction>
+		<!-- state3 -->
+		<!-- 导师 -->
+		<proAction npcID="26" id="10" type="0" answer="@blank" to="a11" colorID="2"  >
+			<des>
+				<![CDATA[1#真不愧是我看中的摩尔，言行举止都能迷倒万千少女。]]>
+			</des>
+		</proAction>
+		<proAction npcID="28" id="11" type="0" answer="@blank" to="a12" colorID="2"  >
+			<des>
+				<![CDATA[2#何等敏锐的目光，这就是新的王者啊。]]>
+			</des>
+		</proAction>
+		<proAction npcID="27" id="12" type="0" answer="@blank" to="a13" colorID="2"  >
+			<des>
+				<![CDATA[2#这澎湃的魔力，你身上带有星辰的眷顾。]]>
+			</des>
+		</proAction>
+		<proAction npcID="22" id="13" type="0" answer="@blank" to="a14" colorID="2"  >
+			<des>
+				<![CDATA[1#愿圣光赐福，为你铺就王者之路。]]>
+			</des>
+		</proAction>
+		<proAction npcID="29" id="14" type="0" answer="感谢老师们的教诲$不会忘记自己的使命的！$yeah！" to="onState4$onState4$onState4" colorID="2$2$2"  >
+			<des>
+				<![CDATA[1#成了国王也不要忘记修炼啊！]]>
+			</des>
+		</proAction>
+		<!-- state4 -->
+		<!-- 魔王 -->
+		<proAction npcID="337" id="15" type="0" answer="@blank" to="a16" colorID="2"  >
+			<des>
+				<![CDATA[1#我，伊恩大魔王——的影子承认你是我伟大的契约者。]]>
+			</des>
+		</proAction>
+		<proAction npcID="345" id="16" type="0" answer="@blank" to="a17" colorID="2"  >
+			<des>
+				<![CDATA[1#我愿意与【@nick】签订契约，为您做牛做马。]]>
+			</des>
+		</proAction>
+		<proAction npcID="350" id="17" type="0" answer="魔王们？！$正确的选择$臣服于我才是正道！" to="onState5$onState5$onState5" colorID="2$2$2"  >
+			<des>
+				<![CDATA[1#【@nick】大人，这是我给您献上的财宝！]]>
+			</des>
+		</proAction>
+		<!-- state5 -->
+		<!-- 勇士 -->
+		<proAction npcID="104" id="18" type="0" answer="@blank" to="a19" colorID="2"  >
+			<des>
+				<![CDATA[1#我就知道你能成为摩尔王。]]>
+			</des>
+		</proAction>
+		<proAction npcID="101" id="19" type="0" answer="@blank" to="a20" colorID="2"  >
+			<des>
+				<![CDATA[1#恭喜...]]>
+			</des>
+		</proAction>
+		<proAction npcID="100" id="20" type="0" answer="非常感谢$嘻嘻$三克油" to="onState6$onState6$onState6" colorID="2$2$2"  >
+			<des>
+				<![CDATA[1#恭喜你，【@nick】]]>
+			</des>
+		</proAction>
+		<!-- 掌声 -->
+		<!-- state6 -->
+		<proAction npcID="24" id="21" type="0" answer="@blank" to="addWalkTarget1" colorID="2"  >
+			<des>
+				<![CDATA[2#【@nick】请来到台前。]]>
+			</des>
+		</proAction>
+		<!-- 来到台前 -->
+		<!-- 转视角，女神出现 -->
+		<proAction npcID="2" id="22" type="0" answer="@blank" to="a23" colorID="2"  >
+			<des>
+				<![CDATA[1#你成为了独当一面的第十三勇士，并且现在要成为这个国家的领袖。$$]]>
+				<![CDATA[1#你的冒险结束了，请尽情享受成为国王的日子吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="30" id="23" type="0" answer="摩尔王国万岁！" to="a24" colorID="2"  >
+			<des>
+				<![CDATA[1#在女神的见证下，今日我们齐聚一堂，见证十三勇士兼国王的加冕仪式。$$]]>
+				<![CDATA[1#现在我正式把摩尔王的王位传给【@nick】]]>
+			</des>
+		</proAction>
+		<proAction npcID="24" id="24" type="0" answer="摩尔王国万岁！" to="onDoActionA25" colorID="2"  >
+			<des>
+				<![CDATA[2#再次为我们新任摩尔王【@nick】送上最高的敬意！]]>
+			</des>
+		</proAction>
+		<!-- 掌声 -->
+		<proAction npcID="10000" id="25" type="0" answer="这是梦吧$我还在时间断层里呢$这就是真的" to="onDreamEnd$onDreamEnd$a26" colorID="2$2$1"  >
+			<des>
+				<![CDATA[1#你们的心意本王感受到了，感谢各位对本王的爱戴！$$]]>
+				<![CDATA[1#没有大家的支持，我现在也不可能当上摩尔王。$$]]>
+				<![CDATA[1#感谢亲爱的女神，感谢亲爱的导师，感谢兔兔TV（以下省略几百万字）$$]]>
+				<![CDATA[1#（真是太爽了，感觉摩生达到巅峰了）$$]]>
+				<![CDATA[1#（不过好像有点不对劲啊？）]]>
+			</des>
+		</proAction>
+		<proAction npcID="10000" id="26" type="0" answer="不行，我还没前往炎之大陆呢。$我还没有拯救世界$这些都是梦" to="onDreamEnd$onDreamEnd$onDreamEnd" colorID="2$2$2" >
+			<des>
+				<![CDATA[1#不对，我不能逃避现实。]]>
+			</des>
+		</proAction>
+		<proAction id="27" type="7" mapID="31615" transPortID="1" />
+
+
+
+	</actions>
+</map>

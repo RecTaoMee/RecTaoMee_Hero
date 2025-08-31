@@ -21,6 +21,7 @@
 		<item name="勇士18" path="res/config/RandItem.xml" ver="20100601"/>
 		<item name="勇士19" path="res/config/task_summary.xml" ver="20100601"/>
 		<item name="勇士20" path="res/config/LoadingAwards.xml" ver="20100601"/>
+		<item name="勇士21" path="res/config/BattleMonsterTalk.xml" ver="20100601"/>
 	</Dll>
 	<Bean>
 		<!--=====================core=====================-->

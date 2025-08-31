@@ -7,7 +7,7 @@
 	<object>
 		<node id="1" type="TransPort" res="MC_door_0" transPortId="1"/>
 		<node id="2" type="TransPort" res="MC_door_1" transPortId="2" speakID="2"/>
-		<node id="3" type="TowerShuteng" res="MC_shuteng" followPetID="51">
+		<node id="3" type="TowerShuteng" res="MC_shuteng" >
 			<event type="pet_not_match" hit="NPCDialogHit" id="3"/>
 		</node>
 		<node id="5180" type="TowerCrystal" res="MC_crystal" bufferID="21701" bufferIndex="0" itemID="180051" itemCount="10" passSpeakID="4" failSpeakID="1">

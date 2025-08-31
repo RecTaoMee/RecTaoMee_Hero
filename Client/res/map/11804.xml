@@ -10,6 +10,8 @@
 	</object>
 	<npc>
 		<node id="74" type="NPC" res="MC_npc_74" action="1"/>
+		<!-- <node id="11804" type="NPC" res="MC_npc_11804" url="res/task/swf2/task_11804_11804.swf" level="contentLevel" position="498,99" link="item" taskShowSteps="255_2" /> -->
+		
 	</npc>
 	
 	<actions>

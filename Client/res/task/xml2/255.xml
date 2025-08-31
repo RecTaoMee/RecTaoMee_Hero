@@ -28,13 +28,13 @@
 					<Item Type="NPC_OPTION" MapID="11804" ObjID="74" TaskOption="生命之树在哪？" />
 				</Trigger>
 				<Action Type="MOVIE" Url="task255_1.swf" MapLevel="CONTENT" Pos="278,-29" />	
- 		     	<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11804,11804" />								
+ 		     	<!-- <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11804,11804" />								 -->
 				<Action Type="TALK">
 					<Msg NpcID="74" ImageID="1" Info="从这里下去，往左走就能到达生命之树的入口。这是永夜村的精灵勇士，赤胆忠心，他们将协助你一同前去查探，切记小心！" />
 					<Option Info="我这就去！" />					
 				</Action>															
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11805,11808" />	
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11805" />
+				<!-- <Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11805,11808" />	
+				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11805" /> -->
 				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11805,1" />	
 				<Action Type="MOVIE" Url="task255_3.swf" MapLevel="TASK" Pos="0,0" />	
     		</Event>		
@@ -51,7 +51,7 @@
   				<Trigger>
 				     <Item Type="NPC_OPTION" MapID="11805" ObjID="11806" TaskOption="还打不打！" />
 				</Trigger>
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11804,11804" />
+				<!-- <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11804,11804" /> -->
 				<Action Type="TALK">
 					<Msg NpcID="998" ImageID="6" Info="哎呦！轻一点，疼死我了！" />
 					<Option Info="你简直是找打！" />
@@ -61,7 +61,7 @@
 					<Option Info="你给我让开！" />
 				</Action>	
 				<Action Type="MOVIE" Url="task255_4.swf" MapLevel="TASK" Pos="0,0" />
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11805,11807" />							
+				<!-- <Action Type="COMMAND" Command="ADD_MAP_OBJ_3" Params="11805,11807" />							 -->
     		</Event>
 																												
     		<Event ConditionType="OUT" Memo="前往c世界树底c调查，与精灵族长c塔西里亚c对话" TargetMap="11805" TargetObj="11808" TargetName="和t塔西里亚t对话">
@@ -78,7 +78,7 @@
 					<Msg NpcID="74" ImageID="1" Info="小勇士，你是命运中注定的那个人吧，请替我们保护“生命之根”免受破坏吧！" />
 					<Option Info="义不容辞！" />
 				</Action>	
-				<Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11806" />																			
+				<!-- <Action Type="COMMAND" Command="ADD_MAP_OBJ_2" Params="11805,11806" />																			 -->
 				<Action Type="TALK">
 					<Msg NpcID="998" ImageID="1" Info="小摩尔，你终于来啦！哈哈哈哈！" />
 					<Option Info="鼬西，你怎么在这里！" />
@@ -149,26 +149,12 @@
 					<Option Info="别跑……" />
 				</Action>					
 				<Action Type="MOVIE" Url="task255_5.swf" MapLevel="TASK" Pos="0,0" />	
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11806" />					
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11807" />				
+				<!-- <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11806" />					
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11807" />				 -->
 				
 												
-				<Action Type="TALK">
-					<Msg NpcID="74" ImageID="1" Info="感谢你对我们精灵族的帮助，我们无以为报！" />
-					<Option Info="这是我应该做的！" />
-				</Action>					
-				<Action Type="MOVIE" Url="task255_6.swf" MapLevel="TASK" Pos="0,0" />					
-				<Action Type="TALK">
-					<Msg NpcID="74" ImageID="1" Info="世界树……不知还能支撑多久……" />
-					<Option Info="要不要我进去看看？" />
-				</Action>	
-				<Action Type="TALK">
-					<Msg NpcID="74" ImageID="1" Info="小勇士，既然已经化解了危机，暂时还是不要进去了，世界树的门是不能轻易开启的，我们会尽快把它修复好。" />
-					<Option Info="好，那我先走了。" />
-				</Action>
-				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11804,1" />	
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11808" />	
-				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11805" />	
+				<!-- <Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11808" />	
+				<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11805,11805" />	 -->
     		</Event>				
 																															
     		<Event ConditionType="OUT" Memo="战胜偷袭世界树的c剧毒蜂皇c" TargetMap="11805" TargetObj="11807" TargetName="和t剧毒蜂皇t对话">
@@ -183,6 +169,31 @@
 				<Action Type="COMMAND" Command="BATTLE" Params="2015"/>										
     		</Event>
 		</Step>			
+
+  		<Step ID="6" ParentList="5" ParentCost="1" >
+    		<Event Memo="战胜偷袭世界树的c剧毒蜂皇c啦，和c塔西里亚c对话" TargetMap="11805" TargetObj="11808" TargetName="和t塔西里亚t对话">
+  				<Trigger>
+					<Item Type="NPC_OPTION" MapID="11805" ObjID="11808" TaskOption="族长，有什么事？" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="感谢你对我们精灵族的帮助，我们无以为报！" />
+					<Option Info="这是我应该做的！" />
+				</Action>					
+				<Action Type="MOVIE" Url="task255_6.swf" MapLevel="TASK" Pos="0,0" />					
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="世界树……不知还能支撑多久……" />
+					<Option Info="要不要我进去看看？" />
+				</Action>	
+				<Action Type="TALK">
+					<Msg NpcID="74" ImageID="1" Info="小勇士，既然已经化解了危机，暂时还是不要进去了，世界树的门是不能轻易开启的，我们会尽快把它修复好。" />
+					<Option Info="好，那我先走了。" />
+				</Action>
+				<Action Type="COMMAND" Command="CHANGE_MAP" Params="11804,1" />	
+
+    		</Event>		
+		</Step>		
+
+
 				
 	</Procedure>
 </Task>

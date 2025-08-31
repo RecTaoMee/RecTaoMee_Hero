@@ -9,7 +9,7 @@
         <node id="2" type="TransPort" res="MC_door_1" transPortId="2"/>
     </object>
 	<npc>
-		<node id="337" type="NPC" res="MC_npc_337" action="0"/>
+		<node id="337" type="NPC" res="MC_npc_337" action="0" walkPos="-24,272" />
 	</npc>	
 	<actions>
         <proAction npcID="337" id="1" type="0" answer="我要挑战你！$回锁修塔底层$下次再见" to="a10$a11$o" colorID="1$1$0">

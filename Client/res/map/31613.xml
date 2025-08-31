@@ -9,7 +9,7 @@
    </object>
 
    <npc>
-      <node id="2" type="NPC" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" action="29"/>
+      <node id="2" type="NPC" level="downLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" action="on_transport_click"/>
       <node id="3" type="NPC" res="MC_pet_1001_1" level="contentLevel" action="" />
       <node id="4" type="NPC" res="MC_pet_1001_2" level="contentLevel" action="" />
       <node id="5" type="NPC" res="MC_pet_1001_3" level="contentLevel" action="" />
@@ -155,7 +155,7 @@
             <![CDATA[1#呜呜呜~我好孤独啊！为什么没人喜欢我...]]>
          </des>
       </proAction>
-      <proAction npcID="1045" id="28" type="0" answer="@blank" to="" colorID="2">
+      <proAction npcID="1045" id="28" type="0" answer="@blank" to="o" colorID="2">
          <des>
             <![CDATA[1#真的吗？！谢谢你呜啊~]]>
          </des>
@@ -163,9 +163,29 @@
       <proAction id="30" type="1" level="contentLevel" name="task_11009_11" moviepos="0,0" playBGM="1" to=""/>
 
       <!-- 点击传送门 -->
-      <proAction npcID="1041" id="29" type="0" answer="我会接着努力，摩尔勇士万岁！" to="o" colorID="2">
+      <!-- <proAction npcID="1041" id="29" type="0" answer="我会接着努力，摩尔勇士万岁！" to="o" colorID="2">
          <des>
-            <![CDATA[1#前方过于危险，现在还不是时候，继续锻炼等待时机吧。 ]]>
+            <![CDATA[1#前方过于危险，现在还不是时候，继续锻炼等待时机吧。]]>
+         </des>
+      </proAction> -->
+      <proAction npcID="1041" id="29" type="0" answer="准备好了$还没准备好" to="a31$o" colorID="2$2">
+         <des>
+            <![CDATA[1#久等了，已经做好前往下一层的准备了吗？]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="31" type="0" answer="原来如此（⊙ˍ⊙）$真可怜$（点头）" to="a32$a32$a32" colorID="2$2$2">
+         <des>
+            <![CDATA[1#就如我之前所说，时间断层原本就是不同的空间与时间被切割的片段。【泥盆沼泽】原本就是上次神魔大战被分割出去的吉普豆村所演化而成。$$]]>
+            <![CDATA[1#这里的【吉普豆泥.改】们已经与世隔绝，性格变得狂乱，在时间断层徘徊，最后失去了生命力不断地消亡。$$]]>
+            <![CDATA[1#他们消亡的身躯被时间断层的魔法浸润，最终化作粘稠的泥浆与沼泽。即使有活人来访，也只会遭受到他们怨念的袭击。$$]]>
+            <![CDATA[1#包括【趴趴布朗】也是只有仅存自己拥抱人的习性，不知道自己的拥抱对其他生物是致命的。]]>
+         </des>
+      </proAction>
+      <proAction npcID="1041" id="32" type="0" answer="@blank" to="on_transport_unlock" colorID="2">
+         <des>
+            <![CDATA[1#上一次的神魔大战，牺牲太多了...$$]]>
+            <![CDATA[1#话说多了，现在你将前往时间断层F4，接受来自【现在】的试炼。$$]]>
+            <![CDATA[1#加油，以你的实力一定可以通过的。]]>
          </des>
       </proAction>
 

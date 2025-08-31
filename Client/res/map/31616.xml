@@ -1,0 +1,217 @@
+<!--时之沙海-->
+<map name="aaa" type="0" comment="aaa" sound="BGM-205.mp3">
+	<transport intPos="2159,741">
+		<node id="1" pos="1163,1071" targetMapId="31615" targetTransPortId="2"/> 
+		<node id="2" pos="725,577" targetMapId="31623" targetTransPortId="1"/> 
+	</transport>
+	<object>
+		<node id="1" type="TransPort" level="upLevel" res="MC_door_0" name="bbb" transPortId="1" regPoint="15,50" depth="auto" pos="0,0" tip="aaa"/>	
+		<node id="2" type="TransPort" level="upLevel" res="MC_door_1" name="bbb" transPortId="2" regPoint="15,50" depth="auto" pos="0,0" tip="aaa" visible="0"/>	
+	</object>
+	<npc>
+		<node id="3" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_A" level="contentLevel" position="213,403" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_A" />
+		<node id="4" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_B" level="contentLevel" position="651,1025" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_B" />
+		<node id="5" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_C" level="contentLevel" position="769,135" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_C" />
+		<node id="6" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_D" level="contentLevel" position="1273,154" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_D" />
+		<node id="7" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_E" level="contentLevel" position="1323,535" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_E" />
+		<node id="8" type="NPC" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_F" level="contentLevel" position="1229,971" link="item" pods="ArrowHintPosPod" mapShowSteps="2" action="onClick_hourGlass_F" />
+		<node id="14" type="Disable" url="res/task/swf2/map_31616_1.swf" res="MC_hourGlass_F_2" level="upLevel" position="1229,971" link="item2" mapShowSteps="2" action="" />
+		
+		<node id="9" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1076" level="contentLevel" position="213,463" link="item1" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_A" visible="0" />
+		<node id="10" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1077" level="contentLevel" position="651,1085" link="item2" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_B" visible="0" />
+		<node id="11" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1078" level="contentLevel" position="769,195" link="item3" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_C" visible="0" />
+		<node id="12" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1079" level="contentLevel" position="1273,214" link="item4" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_D" visible="0" />
+		<node id="13" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1080" level="contentLevel" position="1323,595" link="item5" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_E" visible="0" />
+		<node id="13" type="NPC" url="res/task/swf2/map_31616_2.swf" res="MC_npc_1082" level="contentLevel" position="736,630" link="item6" pods="NPCTalkHeadIconPod" action="onClick_hourGlass_Submit" visible="0" />
+	
+	</npc>
+
+	<actions>
+		<!-- 进入场景 node0 step1 -->
+		<proAction npcID="1041" id="1" type="0" answer="包在我身上$不会辜负你的$总算要去炎陆了TT" to="a2$a2$a2" colorID="2$2$2">
+			<des>
+				<![CDATA[1#这便是时间断层的最后一层【时之沙海】，通过这里就可以解除通往【拉瓦大陆】的封印。$$]]>
+				<![CDATA[1#你是女神所认可的勇士，我相信你可以做到。$$]]>
+				<![CDATA[1#前进吧【@nick】，用你的智慧与力量战胜难关。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="2" type="0" answer="炎之大陆跟我们格历尔\n有什么不一样吗？" to="a3" colorID="2">
+			<des>
+				<![CDATA[1#拉瓦大陆，之前我也挺向往这个地方的。因为某些事情，最终我也来到这里..并且留下了印记。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="3" type="0" answer="O_o？$有虾米区别$有点好奇" to="a4$a4$a4" colorID="2$2$2">
+			<des>
+				<![CDATA[1#不一样的地方多着呢。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="4" type="0" answer="快说快说" to="a5" colorID="2">
+			<des>
+				<![CDATA[1#冒险的内容说出来就没意思了，还是留给你自己探索吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="5" type="0" answer="谢谢瑞恩！" to="a6" colorID="2">
+			<des>
+				<![CDATA[1#哈哈哈，真是没办法..稍微跟你讲讲吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="6" type="0" answer="还有别的情报吗？" to="a7" colorID="2">
+			<des>
+				<![CDATA[1#炎之大陆原本也有一个王国，但是因为氏族之间的纷争，开始在一次次内战中不断地分化，最后划分成四个氏族。$$]]>
+				<![CDATA[1#四大种族分别占据了内地的各个区域，逐渐演化成各个势力。至今为止...偶尔也会产生纠纷。$$]]>
+				<![CDATA[1#在那边也要注意一下，不要被卷入各种各样的纷争了。那边的居民们在打架这件事上可是相当认真的...]]>
+			</des>
+		</proAction>
+		<proAction npcID="1041" id="7" type="0" answer="好吧" to="a42" colorID="2">
+			<des>
+				<![CDATA[1#等你到了那边的【港头】，会有人给你介绍相关事宜的。现在先完成该完成的事情吧。]]>
+			</des>
+		</proAction>
+		<proAction id="42" type="8" point="742,561" immediately="0" to="a8"/>
+		<proAction npcID="1041" id="8" type="0" hideCloseBtn="1" answer="@blank" to="a43" colorID="2">
+			<des>
+				<![CDATA[1#你看那个魔法阵，若是要启动它，就要集齐六个时之沙漏，沙漏就散布在这层的各处，找到他们便可以激活这个魔法阵。]]>
+			</des>
+		</proAction>
+		<proAction id="43" type="9" immediately="0" to="a9"/>
+		<!-- 移动镜头 -->
+		<proAction npcID="402" id="9" type="0" answer="@blank" to="onState2" colorID="2">
+			<des>
+				<![CDATA[1#哼哼，【@nick】还没记住沙漏的位子，小咸已经把位置标注好了。【@nick】忘记了拿去看一看！]]>
+			</des>
+		</proAction>
+		<!-- 沙漏显现 -->
+		<!--  node1 step2 -->
+
+
+		<!-- 【沙漏A找到场景】 -->
+		<!-- （出现一只莱恩） -->
+		<proAction npcID="1076" id="10" type="0" answer="来战$我肚子疼" to="a34$o" colorID="2$0">
+			<des>
+				<![CDATA[1#向时间法则证明你自己的实力吧！]]>
+			</des>
+		</proAction>
+		<proAction id="34" type="5" fightID="3625" to="o"/>
+		<!-- （进入战斗，胜利后获得沙漏A） -->
+
+
+		<!-- 【沙漏B找到场景】 -->
+		<!-- （出现一只莱恩） -->
+		<proAction npcID="1077" id="11" type="0" answer="你干脆直接给我吧$现在就下班吧$反正还要打五个不差你一个" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="12" type="0" answer="你干脆直接给我吧$现在就下班吧$反正还要打四个不差你一个" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="13" type="0" answer="你干脆直接给我吧$现在就下班吧$反正还要打三个不差你一个" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="14" type="0" answer="你干脆直接给我吧$现在就下班吧$反正还要打两个不差你一个" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="15" type="0" answer="你干脆直接给我吧$现在就下班吧$反正还要打一个不差你一个" to="a16$a16$a16" colorID="2$2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="33" type="0" answer="你干脆直接给我吧$现在就下班吧" to="a16$a16" colorID="2$2">
+			<des>
+				<![CDATA[1#我只是个龙套，打完就下班了，你轻点。]]>
+			</des>
+		</proAction>
+		<proAction npcID="1077" id="16" type="0" answer="@blank" to="onClick_hourGlass_B_Completed" colorID="2">
+			<des>
+				<![CDATA[1#有道理，那我先撤了]]>
+			</des>
+		</proAction>
+
+		<!-- （不用进入战斗，直接获得沙漏B） -->
+
+
+		<!-- 【沙漏C找到场景】 -->
+		<proAction npcID="1078" id="17" type="0" answer="来战！$快看库噜王在天上飞！" to="a35$o" colorID="2$0">
+			<des>
+				<![CDATA[1#这一刻终于到了，时间终将解开枷锁！]]>
+			</des>
+		</proAction>
+		<proAction id="35" type="5" fightID="3632" to="o"/>
+		<!-- （进入战斗，胜利后获得沙漏C） -->
+		
+
+		<!-- 【沙漏D找到场景】 -->
+		<proAction npcID="1079" id="18" type="0" answer="(把它拍醒)$（偷偷拿走沙漏）$（蹑手蹑脚走过去）" to="a19$onClick_hourGlass_D_Completed$onClick_hourGlass_D_Completed" colorID="2$2$2">
+			<des>
+				<![CDATA[1#zzzzzzzzzz]]>
+			</des>
+		</proAction>
+		<proAction npcID="1079" id="19" type="0" answer="（拿走沙漏）" to="onClick_hourGlass_D_Completed" colorID="2">
+			<des>
+				<![CDATA[1#(没有动静)zzzzzzzzzz]]>
+			</des>
+		</proAction>
+		<!-- （不用进入战斗，直接获得沙漏D） -->
+
+
+		<!-- 【沙漏E找到场景】 -->
+		<proAction npcID="1080" id="20" type="0" answer="准备好了$我最近中暑" to="a36$o" colorID="2$0">
+			<des>
+				<![CDATA[1#准备好感受炎之大陆的火热吗？]]>
+			</des>
+		</proAction>
+		<proAction id="36" type="5" fightID="3633" to="o"/>
+		<!-- （进入战斗，胜利后拿到沙漏E） -->
+
+		<!-- 【沙漏F找到场景】 -->
+		<proAction npcID="402" id="21" type="0" answer="是啊$没想到$我早就猜到了" to="onClick_hourGlass_F_Completed$onClick_hourGlass_F_Completed$onClick_hourGlass_F_Completed" colorID="2$2$2">
+			<des>
+				<![CDATA[1#没想到居然藏在这里面！]]>
+			</des>
+		</proAction>
+		<!-- （直接获得沙漏F） -->
+
+
+		<!-- 【集齐所有时之沙漏后】 -->
+		<proAction npcID="402" id="22" type="0" answer="累死我了$总算能通往炎陆了$i’m comming！" to="onNode2$onNode2$onNode2" colorID="2$2$2">
+			<des>
+				<![CDATA[1#终于找齐所有沙漏啦！]]>
+			</des>
+		</proAction>
+		<!-- 进入场景 node2 step3 -->
+
+		<!-- 注：交付沙漏后，魔法阵开始震动。从中跑出来一只莱威斯。 -->
+		<proAction npcID="1082" id="23" type="0" answer="来战！$我累了，先让我歇一会儿" to="a37$o" colorID="2$0">
+			<des>
+				<![CDATA[1#做得好，勇士【@nick】——你成功集齐了所有的【时之沙漏】！$$]]>
+				<![CDATA[1#你即将迎来最终的【未来】的试炼，在这之前让我来确认你的实力！]]>
+			</des>
+		</proAction>
+		<proAction id="37" type="5" fightID="3626" to="o"/>
+		<!-- 战斗胜利 -->
+		<proAction npcID="1082" id="24" type="0" answer="@blank" to="onOpenTransportDoor" colorID="2">
+			<des>
+				<![CDATA[1#精彩的对决，我认可你的实力了！$$]]>
+				<![CDATA[1#接下来，我将把你传送进【时间虚域】，进行最后的【未来】试炼，祝你好运！]]>
+			</des>
+		</proAction>
+		<proAction id="39" type="1" level="downLevel" name="map_31616_8" moviepos="0,0" playBGM="1" hideUI="1" />
+		<proAction id="40" type="1" level="contentLevel" name="map_31616_7" moviepos="749,678" playBGM="1" hideUI="1" to="a41"/>
+		<proAction id="41" type="7" mapID="31623" transPortID="1" />
+
+
+		<!-- 进入场景 node3 step4 -->
+
+
+
+	</actions>
+
+
+
+</map>
