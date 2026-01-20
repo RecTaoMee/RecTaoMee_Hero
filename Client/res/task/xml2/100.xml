@@ -26,7 +26,7 @@
 		</Step>
 		
 		<Step ID="3" ParentList="2" ParentCost="1">
-		<!--
+		
 			<Condition>
 				<Battle ID="3015" Count="1" />
 			</Condition>
@@ -40,7 +40,7 @@
 					<Option Info="...." />
 				</Action>
 			</Event>
-			-->
+			
 			
 			<Event Memo="通过5域了，快去c斗技场管理处c回复c圣弗雷德c吧！" TargetMap="11219" TargetObj="38" TargetName="和t圣弗雷德t对话">
 				<Trigger>

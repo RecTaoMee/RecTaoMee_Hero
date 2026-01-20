@@ -33,7 +33,7 @@
 	<!-- a+id:跳到相应动作 b+id:打开相应商店 -->
 	<!-- 商店ID:0:买卖 1:卖道具 2:买武器装备 3: 4:补蓝补红，5:任务公告面版-->
 	<actions>
-		<proAction npcID="24" id="0" type="0" answer="关于【摩尔王国】$摩尔勇士万岁！" to="a1$o" colorID="0$0" >
+		<proAction npcID="24" id="0" type="0" answer="【启纪练行——开幕！】$关于【摩尔王国】$摩尔勇士万岁！" to="a27$a1$o" colorID="2$0$0" >
 			<des>
 				<![CDATA[1#像我这般优雅又不失亲切的贵族可并不常见。]]>
 			</des>
@@ -63,7 +63,17 @@
 				<![CDATA[1#勇士精神——为了维护和平与正义拿出勇气！]]>
 			</des>
 		</proAction>
-		<proAction npcID="30" id="5" type="0" answer="兑换被夺走的宝物$摩尔勇士万岁！" to="f15$o" colorID="1$0">
+		<proAction npcID="30" id="5" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#勇士们和未来的勇士们，我相信你们。]]>
+			</des>
+		</proAction>
+		<proAction npcID="30" id="6" type="0" answer="摩尔勇士万岁！" to="o" colorID="0">
+			<des>
+				<![CDATA[1#我相信勇气会带给我们力量。]]>
+			</des>
+		</proAction>
+		<!-- <proAction npcID="30" id="5" type="0" answer="兑换被夺走的宝物$摩尔勇士万岁！" to="f15$o" colorID="1$0">
 			<des>
 				<![CDATA[1#勇士们和未来的勇士们，我相信你们。]]>
 			</des>
@@ -72,7 +82,7 @@
 			<des>
 				<![CDATA[1#我相信勇气会带给我们力量。]]>
 			</des>
-		</proAction>
+		</proAction> -->
 		<proAction npcID="25" id="7" type="0" answer="摩尔勇士万岁！" to="o">
 			<des>
 				<![CDATA[6#跟着我说！1 2 3————绝不轻言放弃！]]>
@@ -184,11 +194,12 @@
 			</des>
 		</proAction>
 
-		<proAction npcID="24" id="27" type="0" answer="我会努力的，开始吧！$等我准备好就来" to="a28$o" colorID="1$1" >
+		<proAction npcID="24" id="27" type="0" answer="高级难度$低级难度$准备一下" to="a29$a28$o" colorID="2$2$1" >
 			<des>
 				<![CDATA[2#准备好再次试炼了吗？我会为你提供奖励的。]]>
 			</des>
 		</proAction>
 		<proAction id="28" type="5" fightID="3548" />
+		<proAction id="29" type="5" fightID="3547" />
 	</actions>
 </map>

@@ -154,7 +154,7 @@
 				<Action Type="MOVIE" Url="task_11004_mov1.swf" MapLevel="TASK" Pos="0,0" />
 				<Action Type="COMMAND" Command="ADD_MAP_OBJ_1" Params="11223,112237" />  	
     		</Event>	
-    		<Event ConditionType="OUT" Memo="太好了，现在快去阻止南瓜公爵吧！" TargetMap="11223" TargetObj="20" TargetName="击败t南瓜公爵t">
+    		<Event ConditionType="OUT" Memo="太好了，现在快去阻止南瓜公爵吧！c此任务难度极高，推荐满级后五人组队挑战，如果卡关，可以参考小甜的提示哦。c" TargetMap="11223" TargetObj="20" TargetName="击败t南瓜公爵t">
   				<Trigger>
 					<Item Type="OBJ_CLICK" MapID="11223" ObjID="19"  />
 				</Trigger>				

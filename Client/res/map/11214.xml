@@ -9,10 +9,10 @@
 	<npc>
 		<!-- type:根据TYPE值来判断，随机：0，等级：1，亲密度：2 -->
 		<!-- 等级：1，亲密度：2 要与动作对应 用 "$" 分开-->
-		<node id="20" type="NPC" res="MC_npc_20" level="contentLevel" fun="" taskType="0" action="10" needLevel="" needKind=""/>
+		<node id="20" type="NPC" res="MC_npc_20" level="contentLevel" action="13" needType="task" need="11006" needAction="14" />
 	</npc>
 	<actions>
-		<proAction npcID="20" id="0" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0" >
+		<!-- <proAction npcID="20" id="0" type="0" answer="我要孵化【波波尔】$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a8$a13$b0_20$o" colorID="1$1$1$0" >
 			<des>
 				<![CDATA[1#如果你的精灵更强一些，我就可以教给它更强的技能]]>
 			</des>
@@ -42,28 +42,33 @@
 				<![CDATA[1#你了解精灵的天赋吗？种族不同的精灵资质也不同，选择适当的培养路线才能发挥精灵伙伴的力量。]]>
 			</des>
 		</proAction>
-		<proAction npcID="20" id="8" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="c2$a13$b0_20$o" colorID="0$1$1$1$0">
+		<proAction npcID="20" id="8" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="o$a13$b0_20$o" colorID="0$1$1$1$0">
 			<des>
 				<![CDATA[1#我把你的【波波尔精灵蛋】放在左侧栏子里了，每天来摸摸它，一共7次，它就会乖乖跟你回家咯！一共7次，要牢记！]]>
 			</des>
 		</proAction>
-		<proAction npcID="20" id="9" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="c3$a13$b0_20$o" colorID="0$1$1$1$0">
+		<proAction npcID="20" id="9" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="o$a13$b0_20$o" colorID="0$1$1$1$0">
 			<des>
 				<![CDATA[1#你已经孵化出【波波尔】宝宝了，好好培养它吧！]]>
 			</des>
-		</proAction>
+		</proAction> -->
 		<proAction npcID="20" id="10" type="3" to="o" />
-		<proAction npcID="20" id="11" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="o$a13$b0_20$o" colorID="0$1$1$0">
+		<!-- <proAction npcID="20" id="11" type="0" answer="知道了，谢谢你！$给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="o$a13$b0_20$o" colorID="0$1$1$0">
 			<des>
 				<![CDATA[1#我把你的【波波尔精灵蛋】放在左侧栏子里了，每天来摸摸它，一共7次，它就会乖乖跟你回家咯！一共7次，要牢记！]]>
 			</des>
-		</proAction>
+		</proAction> -->
 		<proAction npcID="20" id="12" type="0" answer="给精灵学魔法$我想买【闪灵胶片】$摩尔勇士万岁！" to="a13$b0_20$o" colorID="1$1$0">
 			<des>
 				<![CDATA[1#你了解精灵的天赋吗？种族不同的精灵资质也不同，选择适当的培养路线才能发挥精灵伙伴的力量。]]>
 			</des>
 		</proAction>
 		<proAction npcID="20" id="13" type="0" answer="我想买【闪灵胶片】$摩尔勇士万岁！" to="b0_20$o" colorID="1$0">
+			<des>
+				<![CDATA[1#为了方便未来勇士们为精灵们学习技能，所有的魔法课程也已经托付给【皮克司】教授了，快去【皮克司研究所】找他吧。]]>
+			</des>
+		</proAction>
+		<proAction npcID="20" id="14" type="0" answer="【封印蛋】$我想买【闪灵胶片】$摩尔勇士万岁！" to="submitPumpkinEgg$b0_20$o" colorID="1$1$0">
 			<des>
 				<![CDATA[1#为了方便未来勇士们为精灵们学习技能，所有的魔法课程也已经托付给【皮克司】教授了，快去【皮克司研究所】找他吧。]]>
 			</des>

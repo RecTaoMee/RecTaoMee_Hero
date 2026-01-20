@@ -134,7 +134,7 @@
 		</proAction>
 		<proAction id="26" npcID="45"  type="0" answer="我这就去！$摩尔勇士万岁！" event="medal_not_enough" to="o$o" colorID="1$0">
 			<des>
-				<![CDATA[1#证明你力量的【十字勋章】不足5个哦，请去勇士斗技场参加各类竞赛获取荣誉兑换十字勋章吧！]]>
+				<![CDATA[1#证明你力量的【十字勋章】不足哦，请去勇士斗技场参加各类竞赛获取荣誉兑换十字勋章吧！]]>
 			</des>
 		</proAction>
 		

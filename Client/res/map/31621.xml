@@ -9,9 +9,9 @@
    <npc>
       <node id="3" type="NPC" res="MC_pet_3059" level="contentLevel" mapShowSteps="5|6" action="0" />
 
-      <!-- <node id="4" type="NPC" res="MC_pet_3057" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="170,404" link="item1" action="12" taskShowSteps="11021_1" />
+      <node id="4" type="NPC" res="MC_pet_3057" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="170,404" link="item1" action="12" taskShowSteps="11021_1" />
       <node id="5" type="NPC" res="MC_pet_3058" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="410,223" link="item2" action="13" taskShowSteps="11021_1" />
-      <node id="6" type="NPC" res="MC_pet_59" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="500,203" link="item3" action="14" taskShowSteps="11021_1" /> -->
+      <node id="6" type="NPC" res="MC_pet_59" url="res/task/swf2/map_31621_1.swf" level="contentLevel" position="500,203" link="item3" action="14" taskShowSteps="11021_1" />
 
    </npc>
    <actions>

@@ -213,7 +213,7 @@
          </Event>
       </Step>
       <Step ID="14" ParentList="13" ParentCost="1">
-         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="20" TargetName="与t迷眼蝠t对话">
+         <Event Memo="进入c哭嚎狭间c后，你偶遇了似曾相识的存在，对方和c幽傀魄c究竟有着怎样的关系呢？向当事者问询一下吧。" TargetMap="31612" TargetObj="22" TargetName="与t冥傀魂t对话">
             <Trigger>
                <Item Type="OBJ_CLICK" MapID="31612" ObjID="22" />
             </Trigger>

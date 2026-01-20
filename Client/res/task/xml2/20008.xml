@@ -30,7 +30,8 @@
 					<Option Info="请让大家都幸福" NextStep="8" SkipTrigger="Y"  NotUpdateBuffer="Y" />
 					<Option Info="得到很多星豆" NextStep="9" SkipTrigger="Y"  NotUpdateBuffer="Y" />					
 					<Option Info="我想毁灭世界" NextStep="10" SkipTrigger="Y"  NotUpdateBuffer="Y" />	
-					<Option Info="我只想告诉你，我喜欢你" SkipTrigger="Y"  NotUpdateBuffer="Y" />									
+					<Option Info="我想成为国王"  SkipTrigger="Y"  NotUpdateBuffer="Y" />									
+					<Option Info="我只想告诉你，我喜欢你" NextStep="11" SkipTrigger="Y"  NotUpdateBuffer="Y" />									
 				</Action>
     		</Event>
     	</Step>
@@ -132,13 +133,26 @@
     			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />	
     		</Event>
     	</Step>			
-  		<Step ID="11" ParentList="2" ParentCost="1" >
+  		<Step ID="11" ParentList="0" ParentCost="1" >
     		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
 				<Trigger>
 					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
 				</Trigger>
 				<Action Type="TALK">
 					<Msg NpcID="2" ImageID="2" Info="谢谢你的鼓励^_^，\n人和神都需要来自别人的鼓励，\n无论听多少次都觉得很开心^^……" />
+					<Option Info="女神再见" />								
+				</Action>
+    			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />					
+    		</Event>
+    	</Step>		
+  		<Step ID="13" ParentList="2" ParentCost="1" >
+    		<Event Memo="站在大圣堂神圣的彩窗前与亲切的女神对话吧^_^。" TargetMap="11217" TargetObj="40001" TargetName="点击t彩色窗t">
+				<Trigger>
+					<Item Type="OBJ_CLICK" MapID="11102" ObjID="40001" />
+				</Trigger>
+				<Action Type="TALK">
+					<Msg NpcID="2" ImageID="2" Info="远大的理想呢，不过即使是神也不可以擅自干涉王国的秩序，倘若你真心希望王国走向强盛并为之努力的话，靠自己的双手实现也并非不可能哦——" />
+					<Msg NpcID="2" ImageID="2" Info="祝福你，ʌ ʌ加油！" />
 					<Option Info="女神再见" />								
 				</Action>
     			<Action Type="COMMAND" Command="REMOVE_MAP_OBJ" Params="11217, 40001" />					

@@ -8,4 +8,4 @@
 Lord M、阿格莱雅、崇林丶兰城、囧天大圣、乐乐熊、梦逝、南宫逸枫、我是好人
 
 ## 摩尔勇士复兴计划项目地址
-http://122.114.228.60/Home/Manual#overview5
+http://molehero.com/Home/Manual#overview5

@@ -217,10 +217,10 @@
 					<Option Info="我会努力的，开始吧！" />
 					<Option Info="等我准备好就来" NextStep="11" />
 				</Action>
-				<Action Type="COMMAND" Command="BATTLE" Params="3547"/>	
+				<Action Type="COMMAND" Command="MAP_EVENT" Params="a27"/>	
     		</Event>
 		</Step>		
-
+<!-- 
   		<Step ID="12" ParentList="11" ParentCost="1" >
 
 			<Condition>
@@ -249,7 +249,7 @@
 				</Action>
 				<Action Type="COMMAND" Command="BATTLE" Params="3547"/>	
     		</Event>
-		</Step>		
+		</Step>		 -->
 
 
 </Procedure>

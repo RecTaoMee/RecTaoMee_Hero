@@ -17,7 +17,7 @@
 	<npc>
 		<node id="22" type="NPC" res="MC_npc_400" url="res/task/swf2/task_11004_1.swf" level="contentLevel" position="870,509" link="item" action="3"/>
 		<!-- 11003 -->
-		<node id="11" type="Object" res="MC_pumpkin_hairpin" alpTaskID="11003_1_1" compTaskID="11003_2_2" visible="0"/>
+		<node id="11" type="Object" res="MC_pumpkin_hairpin" alpTaskID="11003_1_1" compTaskID="11003_2_2" visible="0" pods="ArrowHintPosPod" ArrowHintFollowMCVisible="1"/>
 		<node id="12" type="NPC" res="MC_pumpkin_0" alpTaskID="11003_1_1" compTaskID="11003_4_2" visible="0"/>
 		<node id="12" type="NPC" res="MC_pumpkin_1" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
 		<node id="12" type="NPC" res="MC_pumpkin_2" alpTaskID="11003_1_1" compTaskID="11003_3_2" visible="0"/>
@@ -70,7 +70,7 @@
 			</des>
 		</proAction>
 		<proAction id="2" type="5" fightID="3509" />
-		<proAction npcID="400" id="3" type="0" answer="我想知道怎样获得\n额外的万圣糖果$我想知道怎样抵抗\n南瓜军团的入侵$我要兑换万圣糖果$离开" to="a5$a4$f18$o" colorID="1$1$1$0" >
+		<proAction npcID="400" id="3" type="0" answer="我想知道怎样击败\n游荡南瓜骑士$我想知道怎样击败\n游荡寂灭骨龙$我想知道怎样抵抗\n南瓜军团的入侵$我要兑换万圣糖果$离开" to="a6$a7$a4$f18$o" colorID="1$1$1$1$0" >
 			<des>
 				<![CDATA[1#htmlMode未来勇士有什么问题呢？\n@cRed（活动代币【万圣糖果】将于活动结束时失效，请各位勇士及时兑换！）@!cRed]]>
 			</des>
@@ -84,6 +84,18 @@
 		<proAction npcID="400" id="5" type="0" answer="@blank" to="o" colorID="0">
 			<des>
 				<![CDATA[1#htmlMode击败史诗战场中游荡的寂灭骨龙将获得随机数量的万圣糖果，每次挑战将消耗@cRed100@!cRed点人物精力。]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="6" type="0" answer="@blank" to="o" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode怪物等级为我方最高等级，最低@cRed50@!cRed级，每次挑战消耗@cRed50@!cRed精力，每日最多挑战@cRed5@!cRed次，每次胜利可获得【万圣糖果】×2。$$]]>
+				<![CDATA[1#htmlMode南瓜小队长拥有特性@cRed坚韧、再生@!cRed；南瓜剑客拥有特性@cRed穿透@!cRed；南瓜护卫、南瓜守卫拥有特性@cRed坚韧@!cRed。]]>
+			</des>
+		</proAction>
+		<proAction npcID="400" id="7" type="0" answer="@blank" to="o" colorID="0">
+			<des>
+				<![CDATA[1#htmlMode怪物等级固定满级，每次挑战消耗@cRed100@!cRed精力，每日最多挑战@cRed10@!cRed次，每次胜利可获得【万圣糖果】×6/7。$$]]>
+				<![CDATA[1#htmlMode寂灭骨龙拥有特性@cRed重击、嗜血、坚韧@!cRed；萌萌收割者拥有特性@cRed毒刺、灵动@!cRed；电锯小丑拥有特性@cRed重击、坚韧@!cRed；噬魂鬼拥有特性@cRed猛禽、灾祸@!cRed。]]>
 			</des>
 		</proAction>
 				

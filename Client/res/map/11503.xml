@@ -19,7 +19,7 @@
         <node id="310" type="NPC" res="MC_kuluking" action="10"/>
         <node id="60" type="NPC" res="MC_npc_60" action="20"/>
         <node id="309" type="NPC" res="MC_npc_309" action="50" needType="level_return,beastGroup,beastGroup" need="25,2908,2909" needAction="60,62,63"/>
-		<node id="333" type="NPC" res="MC_collect_hand_3050" spawnGrpIDWithEmpty="3601" url="res/mapObj/treasure/grass.swf" level="downLevel" position="650,700" link="treasure"  />
+		<node id="333" type="OBJECT" res="MC_collect_hand_3050" pods="WalkToDistancePod" distance="140" spawnGrpIDWithEmpty="3601" url="res/mapObj/treasure/grass.swf" level="downLevel" position="650,700" link="treasure"  />
         <!--奇异之花下架了！（以后可以再开捕捉）
 		<node id="802" name="奇异之花" type="NPC" res="MC_npc_1" action="80" visible="0">
 			<event type="a83" hit="FunctionHit" func="gotoAndStop" params="3"/>
