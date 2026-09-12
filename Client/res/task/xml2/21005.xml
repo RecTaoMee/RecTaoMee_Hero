@@ -41,7 +41,7 @@
 				     <Item Type="NPC_OPTION" MapID="11303" ObjID="28" TaskOption="小提示！" />
 				</Trigger>
 					<Action Type="TALK">
-						<Msg NpcID="28" ImageID="2" Info="面对多个对手的时候，凝神箭是一个非常好的选择！" />
+						<Msg NpcID="28" ImageID="2" Info="面对单个强大的对手时，凝神箭是一个非常好的选择！" />
 						<Option Info="好的！" />
 					</Action>
     		</Event>

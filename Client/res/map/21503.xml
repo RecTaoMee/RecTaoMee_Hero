@@ -53,7 +53,7 @@
 				<![CDATA[1#……]]>
 			</des>
 		</proAction>					
-			<proAction npcID="329" id="12" type="0" answer="来战$准备一下" to="w2_21504_1$o" colorID="2$0" >
+			<proAction npcID="329" id="12" type="0" answer="来战$准备一下" to="changeMap_21504_1$o" colorID="2$0" >
 			<des>
 				<![CDATA[1#脚踩【@nick】之名的摩尔，近来之事，令吾深感黑暗之恐怖。$$]]>
 				<![CDATA[1#为避免此情重现，吾准备了一场特训，准备迎战吧！]]>

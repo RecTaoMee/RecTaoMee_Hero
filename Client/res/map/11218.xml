@@ -32,7 +32,7 @@
 				<![CDATA[1#嘻嘻，年轻的摩尔，你是来寻找和你【单人比试】的对手吗？]]>
 			</des>
 		</proAction>
-		<proAction npcID="45" id="2" type="0" answer="转动十字轮盘！$选择领域$竞技之塔1F-19F$竞技之塔20F-30F$修炼之域产出投放规则$摩尔勇士万岁！" to="a25$module_boards/PracticePanelModule$a50$a51$module_boards/PracticeAreaAwardModule$o" colorID="1$1$1$1$0$0">
+		<proAction npcID="45" id="2" type="0" answer="转动十字轮盘！$进入修炼之域$进入竞技之塔$修炼之域产出投放规则$摩尔勇士万岁！" to="a25$module_boards/PracticePanelModule$module_boards/GoldenArmorTowerPanelModule$module_boards/PracticeAreaAwardModule$o" colorID="1$1$1$0$0">
 			<des>
 				<![CDATA[1#【修炼之域】是训练预备勇士的场所，希望你能和伙伴们一起来冒险哟，会有你意想不到的惊喜哦！]]>
 			</des>
@@ -68,12 +68,12 @@
 				<![CDATA[1#当你的等级达到23级时，就可以参与激动人心的【自由比试】了！！！]]>
 			</des>
 		</proAction>
-		<proAction npcID="40" id="9" type="0" answer="知道了" to="o$o" colorID="0">
+		<proAction npcID="40" id="9" type="0" answer="知道了" to="o$o" colorID="0$0">
 			<des>
 				<![CDATA[1#当你的等级达到23级时，就可以参与激动人心的【单人比试】了！！！]]>
 			</des>
 		</proAction>
-		<proAction npcID="45" id="10" type="0" answer="知道了" to="o$o" colorID="0">
+		<proAction npcID="45" id="10" type="0" answer="知道了" to="o$o" colorID="0$0">
 			<des>
 				<![CDATA[1#等级达到20级，修炼之域的大门会正式向你开启，继续努力吧O(∩_∩)O~~]]>
 			</des>

@@ -44,7 +44,7 @@
             <Condition>
                 <Battle ID="3580" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="成功击败1队帕菲啦，但是还剩下3队帕菲" TargetMap="22105" TargetObj="1101606" TargetName="与帕菲对话">
+            <Event ConditionType="IN" Memo="成功击败1队c帕菲c啦，但是还剩下3队c帕菲c" TargetMap="22105" TargetObj="1101606" TargetName="与帕菲对话">
                 <Action Type="COMMAND" Command="NOTHING" />
             </Event>
             <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101606" TargetName="与t帕菲t对话">
@@ -64,7 +64,7 @@
             <Condition>
                 <Battle ID="3581" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="成功击败2队帕菲啦，但是还剩下2队帕菲" TargetMap="22105" TargetObj="1101607" TargetName="与帕菲对话">
+            <Event ConditionType="IN" Memo="成功击败2队c帕菲c啦，但是还剩下2队c帕菲c" TargetMap="22105" TargetObj="1101607" TargetName="与帕菲对话">
                 <Action Type="COMMAND" Command="NOTHING" />
             </Event>
             <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101607" TargetName="与t帕菲t对话">
@@ -84,7 +84,7 @@
             <Condition>
                 <Battle ID="3582" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="成功击败3队帕菲啦，但是还剩下1队帕菲" TargetMap="22105" TargetObj="1101608" TargetName="与帕菲对话">
+            <Event ConditionType="IN" Memo="成功击败3队c帕菲c啦，但是还剩下1队c帕菲c" TargetMap="22105" TargetObj="1101608" TargetName="与帕菲对话">
                 <Action Type="COMMAND" Command="NOTHING" />
             </Event>
             <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101608" TargetName="与t帕菲t对话">
@@ -104,7 +104,7 @@
             <Condition>
                 <Battle ID="3583" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="成功击败4队帕菲啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101609" TargetName="与帕菲对话">
+            <Event ConditionType="IN" Memo="成功击败4队c帕菲c啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101609" TargetName="与帕菲对话">
                 <Action Type="COMMAND" Command="NOTHING" />
             </Event>
             <Event ConditionType="OUT" Memo="c帕菲斯特c派出c帕菲c，小勇士快去击败它们吧" TargetMap="22105" TargetObj="1101609" TargetName="与t帕菲t对话">
@@ -124,7 +124,7 @@
             <Condition>
                 <Battle ID="3584" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="成功击败帕菲斯特啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
+            <Event ConditionType="IN" Memo="成功击败c帕菲斯特c啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101605" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -135,7 +135,7 @@
                 <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101605,3"/>
                 <Action Type="COMMAND" Command="DELAY" Params="2000"/>
             </Event>
-            <Event ConditionType="OUT" Memo="成功击败4队帕菲啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
+            <Event ConditionType="OUT" Memo="成功击败4队c帕菲c啦，与c帕菲斯特c对话" TargetMap="22105" TargetObj="1101605" TargetName="与t帕菲斯特t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101605" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -149,7 +149,7 @@
         </Step>
 
         <Step ID="8" ParentList="7" ParentCost="1">
-            <Event Memo="成功击退帕菲群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event Memo="成功击退c帕菲c群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -167,7 +167,7 @@
         </Step>
 
         <Step ID="9" ParentList="8" ParentCost="1">
-            <Event Memo="成功击退帕菲群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event Memo="成功击退c帕菲c群了，和两位外来之人对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -234,10 +234,10 @@
             <Condition>
                 <Battle ID="3587" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event ConditionType="IN" Memo="与c瑕因c对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Action Type="COMMAND" Command="NOTHING" />
             </Event>
-            <Event ConditionType="OUT" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event ConditionType="OUT" Memo="与c瑕因c对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -255,7 +255,7 @@
             <Condition>
                 <Battle ID="3588" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event ConditionType="IN" Memo="与c瑕因c对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -269,7 +269,7 @@
                 <Action Type="COMMAND" Command="EVENT" Params="map22105ChangeBg2"/>
                 <Action Type="MOVIE" Url="task_11016_9.swf" MapLevel="UP" Pos="406,255" />
             </Event>
-            <Event ConditionType="OUT" Memo="与t瑕因t对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
+            <Event ConditionType="OUT" Memo="与c瑕因c对话" TargetMap="22105" TargetObj="1101612" TargetName="与t瑕因t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101612" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -283,7 +283,7 @@
         </Step>
 
         <Step ID="14" ParentList="13" ParentCost="1">
-            <Event Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+            <Event Memo="与c莱托姆c对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -335,7 +335,7 @@
             <Condition>
                 <Battle ID="3589" Count="1" />
             </Condition>
-            <Event ConditionType="IN" Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+            <Event ConditionType="IN" Memo="与c莱托姆c对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>
@@ -362,14 +362,14 @@
                     <Option Info="@blank" />
                 </Action>
                 <Action Type="TALK">
-                    <Msg NpcID="1061" ImageID="2" Info="……家……人……" />
+                    <Msg NpcID="1061" ImageID="2" Info="……族……人……" />
                     <Option Info="@blank" />
                 </Action>
                 <Action Type="COMMAND" Command="GOTO_AND_PLAY" Params="22105,1101614,5"/>
                 <Action Type="COMMAND" Command="DELAY" Params="4000"/>
                 <Action Type="COMMAND" Command="EVENT" Params="map22105ChangeBg3"/>
             </Event>
-            <Event ConditionType="OUT" Memo="与莱托姆对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
+            <Event ConditionType="OUT" Memo="与c莱托姆c对话" TargetMap="22105" TargetObj="1101614" TargetName="与t莱托姆t对话">
                 <Trigger>
                     <Item Type="NPC_OPTION" MapID="22105" ObjID="1101614" TaskOption="【恶龙-莱托姆】" />
                 </Trigger>

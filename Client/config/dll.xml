@@ -1,5 +1,7 @@
 <taomee>
 	<Dll>
+		<!-- <item name="勇士23" path="dll/VersionXXX.swf" ver="20100601"/> -->
+		<!-- <item name="勇士22" path="dll/DebugUtilsDLL.swf" ver="20100601"/> -->
 		<item name="勇士0" path="dll/NewDLL.swf" ver="20100601"/>
 		<item name="勇士1" path="dll/TaomeeLibraryDLL.swf" ver="20100601"/>
 		<item name="勇士2" path="dll/ClientCoreDLL.swf" ver="20100601"/>
@@ -22,6 +24,8 @@
 		<item name="勇士19" path="res/config/task_summary.xml" ver="20100601"/>
 		<item name="勇士20" path="res/config/LoadingAwards.xml" ver="20100601"/>
 		<item name="勇士21" path="res/config/BattleMonsterTalk.xml" ver="20100601"/>
+		<item name="勇士22" path="res/config/bitmapSkeleton.xml" ver="20100601"/>
+		<item name="勇士23" path="res/config/GoldenArmorTowerConfig.xml" ver="20100601"/>
 	</Dll>
 	<Bean>
 		<!--=====================core=====================-->

@@ -83,7 +83,7 @@
 				</Action>
 				<Action Type="TALK">				
 					<Msg NpcID="32" ImageID="1" Info="摩尔庄园现在有没有新的smc职业新骑宠？\n瑞琪回来了吗？\n拉姆进化出新形态了吗？" />		
-					<Msg NpcID="32" ImageID="1" Info="……\n哈，不好意思问题比较多。\n长大了就有些还念过去……" />																																																																																															
+					<Msg NpcID="32" ImageID="1" Info="……\n哈，不好意思问题比较多。\n长大了就有些怀念过去……" />																																																																																															
 					<Option Info="理解" TalkOver="Y" />																																																		
 				</Action>	
     			<Action Type="MOVIE" Url="task_10075_1.swf" MapLevel="TASK" Pos="0,0" /> 													

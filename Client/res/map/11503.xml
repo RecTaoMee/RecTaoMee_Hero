@@ -30,7 +30,7 @@
     <actions>
         <proAction npcID="317" id="1" type="0" answer="挑战低级难度$挑战中级难度$挑战高级难度$击败你的奖励$好的" to="a65$a66$a67$a6$o" colorID="1$1$1$1$0$0">
             <des>
-                <![CDATA[1#很高兴又见到你，勇敢的未来勇士。如果想获得“织梦灵箔”就来挑战我吧！]]>
+                <![CDATA[1#很高兴又见到你，勇敢的未来勇士。如果想获得“织梦灵箔”就来挑战我吧！\n低级难度已完成%grpDayMax:3555%次，中级难度已完成%grpDayMax:3556%次。]]>
             </des>
         </proAction>
         <proAction id="2" type="5" fightID="3557" />
@@ -81,9 +81,10 @@
                 <![CDATA[1#娜蒂丝不愧为植物系精灵中的王者，看来我得先撤退了！]]>
             </des>
         </proAction>
-        <proAction npcID="317" id="16" type="0" answer="那是什么？" to="a17">
+        <proAction npcID="317" id="16" type="0" answer="@blank" to="get_pet_egg">
             <des>
-                <![CDATA[1#未来勇士，感谢你们及时赶到，在我沉睡时帮我抵挡住了库噜王的袭击，其实所有的精灵都存在一种神奇的天赋，那就是传说中的“种族技能”。]]>
+                <![CDATA[1#未来勇士，感谢你们及时赶到，在我沉睡时帮我抵挡住了库噜王的袭击。]]>
+                <!-- <![CDATA[1#未来勇士，感谢你们及时赶到，在我沉睡时帮我抵挡住了库噜王的袭击，其实所有的精灵都存在一种神奇的天赋，那就是传说中的“种族技能”。]]> -->
             </des>
         </proAction>
         <proAction npcID="317" id="17" type="0" answer="谢谢，还有什么事吗？" to="get_pet_egg">

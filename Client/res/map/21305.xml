@@ -17,7 +17,7 @@
         <proAction id="4" type="5" fightID="3600" />
       <proAction npcID="816" id="5" type="0" answer="小甜的提示$来战！$战术性撤退！" to="a6$a4$o" colorID="1$2$0">
          <des>
-            <![CDATA[1#……]]>
+            <![CDATA[1#……\n(今日已完成挑战%grpDayMax:3600%次)]]>
          </des>
       </proAction>
     </actions>
